@@ -1,0 +1,285 @@
+[
+  {
+    "video_id": "0274cf3f-d35a-83ec-9947-ea78488c848c",
+    "media": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "num_frames": 1221
+    },
+    "shots": [
+      {
+        "shot_no": 0,
+        "start_sec": 0.0,
+        "end_sec": 18.833333
+      },
+      {
+        "shot_no": 1,
+        "start_sec": 18.833333,
+        "end_sec": 50.833
+      }
+    ],
+    "observed_pts_slice": {
+      "index": 1219,
+      "frames": [
+        {
+          "best_effort_timestamp_time": "50.812012",
+          "duration_time": "0.041667"
+        },
+        {
+          "best_effort_timestamp_time": "50.853678",
+          "duration_time": "0.041667"
+        },
+        {
+          "best_effort_timestamp_time": "50.853678",
+          "duration_time": "0.041667"
+        }
+      ]
+    }
+  },
+  {
+    "video_id": "082bf0ae-3717-80db-bae9-6849067cab72",
+    "media": {
+      "width": 1280,
+      "height": 638,
+      "fps": 23.976023976,
+      "num_frames": 908
+    },
+    "shots": [
+      {
+        "shot_no": 0,
+        "start_sec": 0.0,
+        "end_sec": 2.25225
+      },
+      {
+        "shot_no": 1,
+        "start_sec": 2.25225,
+        "end_sec": 7.25725
+      },
+      {
+        "shot_no": 2,
+        "start_sec": 7.25725,
+        "end_sec": 7.632625
+      },
+      {
+        "shot_no": 3,
+        "start_sec": 7.632625,
+        "end_sec": 8.633625
+      },
+      {
+        "shot_no": 4,
+        "start_sec": 8.633625,
+        "end_sec": 9.634625
+      },
+      {
+        "shot_no": 5,
+        "start_sec": 9.634625,
+        "end_sec": 10.26025
+      },
+      {
+        "shot_no": 6,
+        "start_sec": 10.26025,
+        "end_sec": 12.26225
+      },
+      {
+        "shot_no": 7,
+        "start_sec": 12.26225,
+        "end_sec": 12.616771
+      },
+      {
+        "shot_no": 8,
+        "start_sec": 12.616771,
+        "end_sec": 14.139125
+      },
+      {
+        "shot_no": 9,
+        "start_sec": 14.139125,
+        "end_sec": 15.5155
+      },
+      {
+        "shot_no": 10,
+        "start_sec": 15.5155,
+        "end_sec": 16.120271
+      },
+      {
+        "shot_no": 11,
+        "start_sec": 16.120271,
+        "end_sec": 16.495646
+      },
+      {
+        "shot_no": 12,
+        "start_sec": 16.495646,
+        "end_sec": 18.5185
+      },
+      {
+        "shot_no": 13,
+        "start_sec": 18.5185,
+        "end_sec": 19.76975
+      },
+      {
+        "shot_no": 14,
+        "start_sec": 19.76975,
+        "end_sec": 20.457937
+      },
+      {
+        "shot_no": 15,
+        "start_sec": 20.457937,
+        "end_sec": 22.585062
+      },
+      {
+        "shot_no": 16,
+        "start_sec": 22.585062,
+        "end_sec": 25.588062
+      },
+      {
+        "shot_no": 17,
+        "start_sec": 25.588062,
+        "end_sec": 26.213687
+      },
+      {
+        "shot_no": 18,
+        "start_sec": 26.213687,
+        "end_sec": 26.964437
+      },
+      {
+        "shot_no": 19,
+        "start_sec": 26.964437,
+        "end_sec": 28.028
+      },
+      {
+        "shot_no": 20,
+        "start_sec": 28.028,
+        "end_sec": 29.5295
+      },
+      {
+        "shot_no": 21,
+        "start_sec": 29.5295,
+        "end_sec": 30.885021
+      },
+      {
+        "shot_no": 22,
+        "start_sec": 30.885021,
+        "end_sec": 32.032
+      },
+      {
+        "shot_no": 23,
+        "start_sec": 32.032,
+        "end_sec": 33.5335
+      },
+      {
+        "shot_no": 24,
+        "start_sec": 33.5335,
+        "end_sec": 34.659625
+      },
+      {
+        "shot_no": 25,
+        "start_sec": 34.659625,
+        "end_sec": 36.369667
+      },
+      {
+        "shot_no": 26,
+        "start_sec": 36.369667,
+        "end_sec": 37.829
+      }
+    ],
+    "observed_pts_slice": {
+      "index": 0,
+      "frames": [
+        {
+          "best_effort_timestamp_time": "0.059000",
+          "duration_time": "0.041708",
+          "side_data_list": [
+            {
+              "side_data_type": "H.26[45] User Data Unregistered SEI message"
+            }
+          ]
+        },
+        {
+          "best_effort_timestamp_time": "0.059000",
+          "duration_time": "0.041708"
+        },
+        {
+          "best_effort_timestamp_time": "0.100708",
+          "duration_time": "0.041708"
+        }
+      ]
+    }
+  },
+  {
+    "video_id": "08e1385d-1c6c-8bf0-90ec-5c4b0d3abd74",
+    "media": {
+      "width": 3840,
+      "height": 1298,
+      "fps": 23.976023976,
+      "num_frames": 2205
+    },
+    "shots": [
+      {
+        "shot_no": 0,
+        "start_sec": 0.0,
+        "end_sec": 1.584917
+      },
+      {
+        "shot_no": 1,
+        "start_sec": 1.584917,
+        "end_sec": 28.903875
+      },
+      {
+        "shot_no": 2,
+        "start_sec": 28.903875,
+        "end_sec": 34.325958
+      },
+      {
+        "shot_no": 3,
+        "start_sec": 34.325958,
+        "end_sec": 35.952583
+      },
+      {
+        "shot_no": 4,
+        "start_sec": 35.952583,
+        "end_sec": 44.502792
+      },
+      {
+        "shot_no": 5,
+        "start_sec": 44.502792,
+        "end_sec": 56.80675
+      },
+      {
+        "shot_no": 6,
+        "start_sec": 56.80675,
+        "end_sec": 60.477083
+      },
+      {
+        "shot_no": 7,
+        "start_sec": 60.477083,
+        "end_sec": 63.688625
+      },
+      {
+        "shot_no": 8,
+        "start_sec": 63.688625,
+        "end_sec": 91.925
+      }
+    ],
+    "observed_pts_slice": {
+      "index": 2202,
+      "frames": [
+        {
+          "best_effort_timestamp_time": "91.863042",
+          "duration_time": "0.041708"
+        },
+        {
+          "best_effort_timestamp_time": "91.904750",
+          "duration_time": "0.041708"
+        },
+        {
+          "best_effort_timestamp_time": "91.904750",
+          "duration_time": "0.041708"
+        },
+        {
+          "best_effort_timestamp_time": "91.946458",
+          "duration_time": "0.041708"
+        }
+      ]
+    }
+  }
+]

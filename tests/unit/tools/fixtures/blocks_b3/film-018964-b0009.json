@@ -1,0 +1,203 @@
+{
+ "key": "film-018964-b0009",
+ "shots": 6,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "A woman in a dark uniform searches a dark wooden attic with a flashlight, while a man watches her from above and another person crawls across the wooden beams."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with dark hair tied back, wearing a dark uniform with a light-colored strap across her chest",
+    "outfit": "a black uniform with a light-colored strap"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair and a beard, looking down",
+    "outfit": "a dark jacket and light shirt"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a person with blonde hair, wearing a grey top and dark pants",
+    "outfit": "a grey top and dark pants"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a flashlight emitting a bright blue light"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a dark, wooden attic or barn interior with exposed beams and planks"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 holds Object 1 and looks around a dark space, then shines the light.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing, leaning forward slightly",
+      "holding": [
+       "Object 1"
+      ]
+     }
+    ],
+    "changes": [
+     {
+      "name": "Object 1",
+      "what": "state",
+      "before": "off",
+      "after": "on, emitting bright light"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 looks down from a wooden opening and speaks.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "looking down from above"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 3 crawls across a wooden platform in the attic.",
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "crawling on all fours on a wooden platform"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "crawling on the left side",
+      "after": "crawling towards the right side"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 2 moves past a wooden wall, holding Object 1.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "moving past a wooden wall",
+      "holding": [
+       "Object 1"
+      ]
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 2 and another person walk across a wooden platform in the attic.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "walking across a wooden platform"
+     },
+     {
+      "name": "Character 4",
+      "posture": "walking across a wooden platform"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "standing on the left",
+      "after": "walking to the right"
+     },
+     {
+      "name": "Character 4",
+      "what": "posture",
+      "before": "standing on the right",
+      "after": "walking to the left"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "activity": "no_human_activity",
+    "action": "The camera looks up at the wooden roof structure of the attic, with a faint blue light visible in the distance.",
+    "present": [
+     {
+      "name": "Object 1",
+      "state": "emitting a faint blue light in the distance"
+     }
+    ],
+    "changes": []
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "1": [
+   "shot 1 change"
+  ],
+  "5": [
+   "shot 5 present 'Character 4'",
+   "shot 5 change"
+  ]
+ }
+}

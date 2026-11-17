@@ -1,0 +1,34 @@
+{
+  "artifact_type": "mspc_legacy_matched50_fixture",
+  "claim_boundary": "legacy_unscreened_not_frozen_benchmark",
+  "rows": [
+    {
+      "case_id": "fixture_matched50_01",
+      "story_prompt": "A kitchen story with persistent object state.",
+      "shot_prompts": [
+        "Alex opens the red jar on the counter.",
+        "The jar lid stays off beside the jar on the counter.",
+        "Alex pours sugar from the open jar into a bowl.",
+        "The open jar remains on the counter without its lid.",
+        "Alex wipes the counter beside the still-open jar."
+      ],
+      "subjects": [{"name": "Alex", "description": "Alex wears a blue apron."}],
+      "generator": "msm13",
+      "generation_paradigm": "native_multishot_open_source"
+    },
+    {
+      "case_id": "fixture_matched50_02",
+      "story_prompt": "A station room story.",
+      "shot_prompts": [
+        "Mira lifts the brass lamp from the suitcase.",
+        "Mira places the lamp on the bench in the same room.",
+        "The lamp stays lit on the bench.",
+        "Mira closes the suitcase while the lamp remains lit.",
+        "Mira walks away leaving the lit lamp on the bench."
+      ],
+      "subjects": [{"name": "Mira", "description": "Mira has silver hair."}],
+      "generator": "msm14b",
+      "generation_paradigm": "native_multishot_open_source"
+    }
+  ]
+}

@@ -1,0 +1,4011 @@
+{
+  "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/renderer-members-slice",
+  "rows": [
+    {
+      "manifest": {
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00c38db7-2cb8-8961-9878-a1cac7005684:<scene1>:block0004:train:0004-0004",
+        "mapping_schema": "scene_window_v1",
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00c38db7-2cb8-8961-9878-a1cac7005684.mp4",
+        "source_fps": "23.976023976023978",
+        "source_num_frames": "2305",
+        "source_width": "1920",
+        "source_height": "920",
+        "source_shot_segments": "[[504,563]]",
+        "source_frame_indices_by_shot": "[[504,506,507,509,510,512,514,515,517,518,520,522,523,525,527,528,530,531,533,535,536,538,539,541,543,544,546,548,549,551,552,554,556,557,559,560,562]]",
+        "shot_groups": "[[0,37]]",
+        "active_box": "[0,0,1920,920]",
+        "train_crop_box": "[163,0,1757,920]",
+        "film_key": "",
+        "source": "cinedance",
+        "scene_id": "cinedance:00c38db7-2cb8-8961-9878-a1cac7005684:<scene1>:block0004",
+        "container_preroll_frames": "",
+        "window_key": "cinedance-009577-w0002",
+        "shot_count": "1",
+        "render_frames": "37",
+        "shot_laion_aesthetic": "[5.5178]",
+        "shot_dover_technical": "[-0.05515]",
+        "min_laion_aesthetic": "5.5178",
+        "min_dover_technical": "-0.05515"
+      },
+      "annotation_result": {
+        "key": "cinedance-009577-w0002",
+        "source": "cinedance",
+        "shot_count": 1,
+        "from": "batch-00",
+        "usage": {
+          "prompt_tokens": 3438,
+          "completion_tokens": 993
+        },
+        "status": "ok",
+        "repairs": [],
+        "annotation": {
+          "video": {
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "summary": "A shirtless man sits inside an ambulance and looks at another person standing outside."
+          },
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a man with short brown hair, clean-shaven, shirtless, and a lean build"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "partial",
+              "appearance": "a person with short hair, wearing a dark shirt"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "an ambulance with white and blue panels and yellow and red reflective stripes"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "the interior and doorway of an ambulance"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 1 sits shirtless inside the ambulance and looks at Character 2, who is standing partially in the doorway.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "none on upper body",
+                  "posture": "sitting inside the ambulance",
+                  "state": "shirtless"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a dark shirt",
+                  "posture": "standing in the doorway"
+                },
+                {
+                  "name": "Object 1",
+                  "state": "doors open"
+                }
+              ],
+              "changes": []
+            }
+          ]
+        },
+        "hard_filter": [],
+        "class": "对白",
+        "marks": [],
+        "people": 2,
+        "clear_people": 1,
+        "recurring_people": 0,
+        "shot_texts": [
+          "Medium close-up shot. In the interior and doorway of an ambulance, Character 1, a man with short brown hair, clean-shaven, shirtless, and a lean build, is sitting inside the ambulance, wearing none on upper body, shirtless. Character 2, a person with short hair, wearing a dark shirt, is standing in the doorway, wearing a dark shirt. An ambulance with white and blue panels and yellow and red reflective stripes is doors open. Character 1 sits shirtless inside the ambulance and looks at Character 2, who is standing partially in the doorway."
+        ]
+      },
+      "cache_record": {
+        "cache_file": "latents/source_pipeline_v1:scene_1to5_v3_short:cinedance:00c38db7-2cb8-8961-9878-a1cac7005684:<scene1>:block0004:train:0004-0004.safetensors",
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00c38db7-2cb8-8961-9878-a1cac7005684:<scene1>:block0004:train:0004-0004",
+        "height": 480,
+        "index": 0,
+        "input_latents_shape": [
+          1,
+          48,
+          10,
+          30,
+          52
+        ],
+        "latent_shot_groups": null,
+        "num_frames": 37,
+        "provenance": {
+          "cache_version": "scene_targets_v1",
+          "context": null,
+          "encoding": {
+            "dtype": "bfloat16",
+            "implementation_revision": "3a3b8422-local-archive-T2",
+            "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+            "tile_size": [
+              30,
+              52
+            ],
+            "tile_stride": [
+              15,
+              26
+            ],
+            "tiled": false
+          },
+          "media": {
+            "files": [
+              {
+                "bytes": 45126813,
+                "mtime_ns": 1791665288712876980,
+                "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00c38db7-2cb8-8961-9878-a1cac7005684.mp4",
+                "source_fps": 23.976023976023978,
+                "source_height": 920,
+                "source_num_frames": 2305,
+                "source_width": 1920
+              }
+            ],
+            "preprocessing": {
+              "decoder": "ffmpeg-sequential",
+              "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+              "frame_basis": "ffmpeg_sequential_zero_based",
+              "pillow_version": "12.3.0",
+              "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+              "preroll_added": 0,
+              "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+              "spatial": [
+                {
+                  "active_box": [
+                    0,
+                    0,
+                    1920,
+                    920
+                  ],
+                  "coordinate_system": "pixel_edges",
+                  "crop_box_resized": [
+                    0,
+                    0,
+                    832,
+                    480
+                  ],
+                  "output_size": [
+                    832,
+                    480
+                  ],
+                  "resize_size": [
+                    832,
+                    480
+                  ],
+                  "source_size": [
+                    1920,
+                    920
+                  ],
+                  "source_to_target_matrix": [
+                    [
+                      0.5219573400250941,
+                      0,
+                      -85.07904642409034
+                    ],
+                    [
+                      0,
+                      0.5217391304347826,
+                      -0.0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ]
+                  ],
+                  "train_crop_box": [
+                    163,
+                    0,
+                    1757,
+                    920
+                  ]
+                }
+              ],
+              "torchvision_version": "0.26.0+cu128"
+            },
+            "sampling": {
+              "aligned_rgb_lengths": [
+                37
+              ],
+              "duration_weights": [
+                1.0
+              ],
+              "effective_train_fps": 15.035811645981138,
+              "frame_indices": [
+                504,
+                506,
+                507,
+                509,
+                510,
+                512,
+                514,
+                515,
+                517,
+                518,
+                520,
+                522,
+                523,
+                525,
+                527,
+                528,
+                530,
+                531,
+                533,
+                535,
+                536,
+                538,
+                539,
+                541,
+                543,
+                544,
+                546,
+                548,
+                549,
+                551,
+                552,
+                554,
+                556,
+                557,
+                559,
+                560,
+                562
+              ],
+              "frame_indices_by_shot": [
+                [
+                  504,
+                  506,
+                  507,
+                  509,
+                  510,
+                  512,
+                  514,
+                  515,
+                  517,
+                  518,
+                  520,
+                  522,
+                  523,
+                  525,
+                  527,
+                  528,
+                  530,
+                  531,
+                  533,
+                  535,
+                  536,
+                  538,
+                  539,
+                  541,
+                  543,
+                  544,
+                  546,
+                  548,
+                  549,
+                  551,
+                  552,
+                  554,
+                  556,
+                  557,
+                  559,
+                  560,
+                  562
+                ]
+              ],
+              "frame_policy": "fps_aware_target_fps",
+              "latent_lengths": [
+                10
+              ],
+              "latent_shot_groups": [
+                [
+                  0,
+                  10
+                ]
+              ],
+              "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+              "max_rgb_frames": 308,
+              "prompt_index_by_shot": [
+                0
+              ],
+              "raw_shot_groups": [
+                [
+                  504,
+                  563
+                ]
+              ],
+              "rgb_was_scaled": false,
+              "shot_durations_sec": [
+                2.4607916666666667
+              ],
+              "shot_groups": [
+                [
+                  0,
+                  37
+                ]
+              ],
+              "source_duration_sec": 2.4607916666666667,
+              "source_fps": 23.976023976023978,
+              "source_fps_by_shot": [
+                23.976023976023978
+              ],
+              "source_num_frames": 2305,
+              "source_num_frames_by_shot": [
+                2305
+              ],
+              "source_rgb_frames": 59,
+              "source_shot_segments": [
+                [
+                  504,
+                  563
+                ]
+              ],
+              "source_video_paths": [
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00c38db7-2cb8-8961-9878-a1cac7005684.mp4"
+              ],
+              "target_duration_sec": 2.4375,
+              "target_fps": 16.0,
+              "target_rgb_lengths": [
+                39
+              ],
+              "train_latent_frames": 10,
+              "train_rgb_frames": 37,
+              "train_shot_groups": [
+                [
+                  0,
+                  37
+                ]
+              ],
+              "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+              "vae_padding_frames": [
+                0
+              ],
+              "vae_temporal_stride": 4,
+              "vae_truncated_frames": [
+                2
+              ]
+            },
+            "scene": {
+              "container_preroll_frames": null,
+              "film_key": null,
+              "scene_id": "cinedance:00c38db7-2cb8-8961-9878-a1cac7005684:<scene1>:block0004",
+              "source": "cinedance"
+            },
+            "schema": "scene_window_v1",
+            "source_shot_segments": [
+              [
+                504,
+                563
+              ]
+            ]
+          },
+          "models": {
+            "vae": {
+              "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/renderer-members-slice/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+              "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+            }
+          },
+          "schema": "wan22_cache_provenance_v1"
+        },
+        "shot_count": 1,
+        "shot_groups": null,
+        "width": 832
+      }
+    },
+    {
+      "manifest": {
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:0076c6b0-8edf-87a2-b94b-543746a7fd29:<scene2>:block0001:train:0003-0004",
+        "mapping_schema": "scene_window_v1",
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0076c6b0-8edf-87a2-b94b-543746a7fd29.mp4",
+        "source_fps": "23.976023976023978",
+        "source_num_frames": "1783",
+        "source_width": "1920",
+        "source_height": "920",
+        "source_shot_segments": "[[218,259],[263,301]]",
+        "source_frame_indices_by_shot": "[[218,220,221,223,225,226,228,230,231,233,235,236,238,240,241,243,245,246,248,250,251,253,255,256,258],[263,265,266,268,269,271,272,274,275,277,278,280,281,283,285,286,288,289,291,292,294,295,297,298,300]]",
+        "shot_groups": "[[0,25],[25,50]]",
+        "active_box": "[0,0,1920,920]",
+        "train_crop_box": "[163,0,1757,920]",
+        "film_key": "",
+        "source": "cinedance",
+        "scene_id": "cinedance:0076c6b0-8edf-87a2-b94b-543746a7fd29:<scene2>:block0001",
+        "container_preroll_frames": "",
+        "window_key": "cinedance-009309-w0001",
+        "shot_count": "2",
+        "render_frames": "50",
+        "shot_laion_aesthetic": "[5.051,4.8487]",
+        "shot_dover_technical": "[-0.0912,-0.09113]",
+        "min_laion_aesthetic": "4.8487",
+        "min_dover_technical": "-0.0912"
+      },
+      "annotation_result": {
+        "key": "cinedance-009309-w0001",
+        "source": "cinedance",
+        "shot_count": 2,
+        "from": "batch-00",
+        "usage": {
+          "prompt_tokens": 3842,
+          "completion_tokens": 2141
+        },
+        "status": "ok",
+        "repairs": [],
+        "annotation": {
+          "video": {
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "summary": "A woman turns around in a garage or station with police vehicles to face a man, and they have a conversation."
+          },
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with blonde hair tied back in a ponytail, wearing a dark top and a green bomber jacket"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a man with dark skin and short dreadlocks, wearing a tan jacket over a white hoodie"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a black car"
+            },
+            {
+              "name": "Object 2",
+              "appearance": "a white SUV with blue stripes and text on the side"
+            },
+            {
+              "name": "Object 3",
+              "appearance": "a large white ambulance or emergency vehicle"
+            },
+            {
+              "name": "Object 4",
+              "appearance": "a trophy case with trophies"
+            },
+            {
+              "name": "Object 5",
+              "appearance": "a yellow sign that says 'SIGNAL AHEAD'"
+            },
+            {
+              "name": "Object 6",
+              "appearance": "a blue and white sign that says 'POLICE PARKING ONLY'"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "a large indoor garage or station with brick walls, tall windows, and parked emergency vehicles"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium shot",
+                "angle": "eye-level shot",
+                "movement": "handheld"
+              },
+              "activity": "action_or_state_change",
+              "action": "Character 1 turns around from facing away to face Character 2, looking surprised or concerned.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a green bomber jacket and dark top",
+                  "posture": "turning around"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a tan jacket and white hoodie",
+                  "posture": "standing",
+                  "state": "partially visible in foreground"
+                },
+                {
+                  "name": "Object 1",
+                  "appearance": "a black car"
+                },
+                {
+                  "name": "Object 2",
+                  "appearance": "a white SUV with blue stripes"
+                },
+                {
+                  "name": "Object 3",
+                  "appearance": "a large white emergency vehicle"
+                }
+              ],
+              "changes": [
+                {
+                  "name": "Character 1",
+                  "what": "posture",
+                  "before": "facing away",
+                  "after": "facing Character 2"
+                }
+              ]
+            },
+            {
+              "shot": 2,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 2 speaks to Character 1 with a serious expression.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a green bomber jacket",
+                  "posture": "standing, facing Character 2",
+                  "state": "partially visible on the right"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a tan jacket and white hoodie",
+                  "posture": "standing, facing Character 1"
+                },
+                {
+                  "name": "Object 4",
+                  "appearance": "a trophy case with trophies"
+                },
+                {
+                  "name": "Object 5",
+                  "appearance": "a yellow sign"
+                },
+                {
+                  "name": "Object 6",
+                  "appearance": "a blue and white sign"
+                }
+              ],
+              "changes": []
+            }
+          ]
+        },
+        "hard_filter": [],
+        "class": "核心",
+        "marks": [],
+        "people": 2,
+        "clear_people": 2,
+        "recurring_people": 2,
+        "shot_texts": [
+          "Medium shot, handheld. In a large indoor garage or station with brick walls, tall windows, and parked emergency vehicles, Character 1, a woman with blonde hair tied back in a ponytail, wearing a dark top and a green bomber jacket, is turning around, wearing a green bomber jacket and dark top. Character 2, a man with dark skin and short dreadlocks, wearing a tan jacket over a white hoodie, is standing, wearing a tan jacket and white hoodie, partially visible in foreground. Character 1 turns around from facing away to face Character 2, looking surprised or concerned. By the end of the shot, Character 1 is facing Character 2.",
+          "Medium close-up shot. In a large indoor garage or station with brick walls, tall windows, and parked emergency vehicles, Character 1, a woman with blonde hair tied back in a ponytail, wearing a dark top and a green bomber jacket, is standing, facing Character 2, wearing a green bomber jacket, partially visible on the right. Character 2, a man with dark skin and short dreadlocks, wearing a tan jacket over a white hoodie, is standing, facing Character 1, wearing a tan jacket and white hoodie. Character 2 speaks to Character 1 with a serious expression."
+        ]
+      },
+      "cache_record": {
+        "cache_file": "latents/source_pipeline_v1:scene_1to5_v3_short:cinedance:0076c6b0-8edf-87a2-b94b-543746a7fd29:<scene2>:block0001:train:0003-0004.safetensors",
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:0076c6b0-8edf-87a2-b94b-543746a7fd29:<scene2>:block0001:train:0003-0004",
+        "height": 480,
+        "index": 12,
+        "input_latents_shape": [
+          1,
+          48,
+          14,
+          30,
+          52
+        ],
+        "latent_shot_groups": [
+          [
+            0,
+            7
+          ],
+          [
+            7,
+            14
+          ]
+        ],
+        "num_frames": 50,
+        "provenance": {
+          "cache_version": "scene_targets_v1",
+          "context": null,
+          "encoding": {
+            "dtype": "bfloat16",
+            "implementation_revision": "3a3b8422-local-archive-T2",
+            "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+            "tile_size": [
+              30,
+              52
+            ],
+            "tile_stride": [
+              15,
+              26
+            ],
+            "tiled": false
+          },
+          "media": {
+            "files": [
+              {
+                "bytes": 35080220,
+                "mtime_ns": 1791665280556028545,
+                "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0076c6b0-8edf-87a2-b94b-543746a7fd29.mp4",
+                "source_fps": 23.976023976023978,
+                "source_height": 920,
+                "source_num_frames": 1783,
+                "source_width": 1920
+              }
+            ],
+            "preprocessing": {
+              "decoder": "ffmpeg-sequential",
+              "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+              "frame_basis": "ffmpeg_sequential_zero_based",
+              "pillow_version": "12.3.0",
+              "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+              "preroll_added": 0,
+              "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+              "spatial": [
+                {
+                  "active_box": [
+                    0,
+                    0,
+                    1920,
+                    920
+                  ],
+                  "coordinate_system": "pixel_edges",
+                  "crop_box_resized": [
+                    0,
+                    0,
+                    832,
+                    480
+                  ],
+                  "output_size": [
+                    832,
+                    480
+                  ],
+                  "resize_size": [
+                    832,
+                    480
+                  ],
+                  "source_size": [
+                    1920,
+                    920
+                  ],
+                  "source_to_target_matrix": [
+                    [
+                      0.5219573400250941,
+                      0,
+                      -85.07904642409034
+                    ],
+                    [
+                      0,
+                      0.5217391304347826,
+                      -0.0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ]
+                  ],
+                  "train_crop_box": [
+                    163,
+                    0,
+                    1757,
+                    920
+                  ]
+                }
+              ],
+              "torchvision_version": "0.26.0+cu128"
+            },
+            "sampling": {
+              "aligned_rgb_lengths": [
+                25,
+                25
+              ],
+              "duration_weights": [
+                0.5189873417721519,
+                0.48101265822784817
+              ],
+              "effective_train_fps": 15.174698719002519,
+              "frame_indices": [
+                218,
+                220,
+                221,
+                223,
+                225,
+                226,
+                228,
+                230,
+                231,
+                233,
+                235,
+                236,
+                238,
+                240,
+                241,
+                243,
+                245,
+                246,
+                248,
+                250,
+                251,
+                253,
+                255,
+                256,
+                258,
+                263,
+                265,
+                266,
+                268,
+                269,
+                271,
+                272,
+                274,
+                275,
+                277,
+                278,
+                280,
+                281,
+                283,
+                285,
+                286,
+                288,
+                289,
+                291,
+                292,
+                294,
+                295,
+                297,
+                298,
+                300
+              ],
+              "frame_indices_by_shot": [
+                [
+                  218,
+                  220,
+                  221,
+                  223,
+                  225,
+                  226,
+                  228,
+                  230,
+                  231,
+                  233,
+                  235,
+                  236,
+                  238,
+                  240,
+                  241,
+                  243,
+                  245,
+                  246,
+                  248,
+                  250,
+                  251,
+                  253,
+                  255,
+                  256,
+                  258
+                ],
+                [
+                  263,
+                  265,
+                  266,
+                  268,
+                  269,
+                  271,
+                  272,
+                  274,
+                  275,
+                  277,
+                  278,
+                  280,
+                  281,
+                  283,
+                  285,
+                  286,
+                  288,
+                  289,
+                  291,
+                  292,
+                  294,
+                  295,
+                  297,
+                  298,
+                  300
+                ]
+              ],
+              "frame_policy": "fps_aware_target_fps",
+              "latent_lengths": [
+                7,
+                7
+              ],
+              "latent_shot_groups": [
+                [
+                  0,
+                  7
+                ],
+                [
+                  7,
+                  14
+                ]
+              ],
+              "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+              "max_rgb_frames": 308,
+              "prompt_index_by_shot": [
+                0,
+                1
+              ],
+              "raw_shot_groups": [
+                [
+                  218,
+                  259
+                ],
+                [
+                  263,
+                  301
+                ]
+              ],
+              "rgb_was_scaled": false,
+              "shot_durations_sec": [
+                1.7100416666666665,
+                1.5849166666666665
+              ],
+              "shot_groups": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  25,
+                  50
+                ]
+              ],
+              "source_duration_sec": 3.2949583333333328,
+              "source_fps": 23.976023976023978,
+              "source_fps_by_shot": [
+                23.976023976023978,
+                23.976023976023978
+              ],
+              "source_num_frames": 1783,
+              "source_num_frames_by_shot": [
+                1783,
+                1783
+              ],
+              "source_rgb_frames": 79,
+              "source_shot_segments": [
+                [
+                  218,
+                  259
+                ],
+                [
+                  263,
+                  301
+                ]
+              ],
+              "source_video_paths": [
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0076c6b0-8edf-87a2-b94b-543746a7fd29.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0076c6b0-8edf-87a2-b94b-543746a7fd29.mp4"
+              ],
+              "target_duration_sec": 3.25,
+              "target_fps": 16.0,
+              "target_rgb_lengths": [
+                27,
+                25
+              ],
+              "train_latent_frames": 14,
+              "train_rgb_frames": 50,
+              "train_shot_groups": [
+                [
+                  0,
+                  25
+                ],
+                [
+                  25,
+                  50
+                ]
+              ],
+              "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+              "vae_padding_frames": [
+                0,
+                0
+              ],
+              "vae_temporal_stride": 4,
+              "vae_truncated_frames": [
+                2,
+                0
+              ]
+            },
+            "scene": {
+              "container_preroll_frames": null,
+              "film_key": null,
+              "scene_id": "cinedance:0076c6b0-8edf-87a2-b94b-543746a7fd29:<scene2>:block0001",
+              "source": "cinedance"
+            },
+            "schema": "scene_window_v1",
+            "source_shot_segments": [
+              [
+                218,
+                259
+              ],
+              [
+                263,
+                301
+              ]
+            ]
+          },
+          "models": {
+            "vae": {
+              "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/renderer-members-slice/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+              "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+            }
+          },
+          "schema": "wan22_cache_provenance_v1"
+        },
+        "shot_count": 2,
+        "shot_groups": [
+          [
+            0,
+            25
+          ],
+          [
+            25,
+            50
+          ]
+        ],
+        "width": 832
+      }
+    },
+    {
+      "manifest": {
+        "case_id": "source_pipeline_v1:cinedance:00f174a5-d033-8a7a-990b-a14fe450c69a:<scene1>:block0000:train:0000-0002",
+        "mapping_schema": "scene_window_v1",
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00f174a5-d033-8a7a-990b-a14fe450c69a.mp4",
+        "source_fps": "23.976023976023978",
+        "source_num_frames": "1043",
+        "source_width": "1280",
+        "source_height": "600",
+        "source_shot_segments": "[[2,52],[56,106],[110,278]]",
+        "source_frame_indices_by_shot": "[[2,4,5,7,8,10,11,13,14,16,17,19,20,22,23,25,26,28,30,31,33,34,36,37,39,40,42,43,45,46,48,49,51],[56,58,59,61,62,64,65,67,68,70,71,73,74,76,77,79,80,82,84,85,87,88,90,91,93,94,96,97,99,100,102,103,105],[110,112,113,115,116,118,119,121,122,124,125,127,129,130,132,133,135,136,138,139,141,142,144,146,147,149,150,152,153,155,156,158,159,161,163,164,166,167,169,170,172,173,175,176,178,180,181,183,184,186,187,189,190,192,194,195,197,198,200,201,203,204,206,207,209,211,212,214,215,217,218,220,221,223,224,226,228,229,231,232,234,235,237,238,240,241,243,245,246,248,249,251,252,254,255,257,258,260,262,263,265,266,268,269,271,272,274,275,277]]",
+        "shot_groups": "[[0,33],[33,66],[66,175]]",
+        "active_box": "[0,0,1280,600]",
+        "train_crop_box": "[120,0,1160,600]",
+        "film_key": "",
+        "source": "cinedance",
+        "scene_id": "cinedance:00f174a5-d033-8a7a-990b-a14fe450c69a:<scene1>:block0000",
+        "container_preroll_frames": "",
+        "window_key": "cinedance-009730-w0000",
+        "shot_count": "3",
+        "render_frames": "175",
+        "shot_laion_aesthetic": "[5.2583,5.472,5.3179]",
+        "shot_dover_technical": "[-0.05545,-0.03,-0.018]",
+        "min_laion_aesthetic": "5.2583",
+        "min_dover_technical": "-0.05545"
+      },
+      "annotation_result": {
+        "key": "cinedance-009730-w0000",
+        "source": "cinedance",
+        "shot_count": 3,
+        "from": "batch-00",
+        "usage": {
+          "prompt_tokens": 6977,
+          "completion_tokens": 2265
+        },
+        "status": "ok",
+        "repairs": [],
+        "annotation": {
+          "video": {
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "summary": "A young woman sits in an office and talks to two older women sitting across from her."
+          },
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a young woman with shoulder-length brown hair and a slim build"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with long blonde hair and a medium build"
+            },
+            {
+              "name": "Character 3",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with shoulder-length dark hair and a medium build"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a beige knitted sweater"
+            },
+            {
+              "name": "Object 2",
+              "appearance": "a dark blue button-up shirt"
+            },
+            {
+              "name": "Object 3",
+              "appearance": "a dark grey blazer over a brown top"
+            },
+            {
+              "name": "Object 4",
+              "appearance": "a wooden table"
+            },
+            {
+              "name": "Object 5",
+              "appearance": "wooden blinds covering windows"
+            },
+            {
+              "name": "Object 6",
+              "appearance": "blue binders on a shelf"
+            },
+            {
+              "name": "Object 7",
+              "appearance": "a stack of books or papers"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "an office or interview room with wooden blinds, a wooden table, and shelves with binders"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 1 sits and listens, then begins to speak.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "Object 1",
+                  "posture": "sitting"
+                },
+                {
+                  "name": "Object 5",
+                  "state": "closed"
+                },
+                {
+                  "name": "Object 6",
+                  "state": "on the shelf"
+                },
+                {
+                  "name": "Object 7",
+                  "state": "stacked on the shelf"
+                }
+              ],
+              "changes": [
+                {
+                  "name": "Character 1",
+                  "what": "state",
+                  "before": "listening",
+                  "after": "speaking"
+                }
+              ]
+            },
+            {
+              "shot": 2,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 2 and Character 3 sit at a table, looking at Character 1 and listening.",
+              "present": [
+                {
+                  "name": "Character 2",
+                  "clothing": "Object 2",
+                  "posture": "sitting at the table",
+                  "holding": []
+                },
+                {
+                  "name": "Character 3",
+                  "clothing": "Object 3",
+                  "posture": "sitting at the table",
+                  "holding": []
+                },
+                {
+                  "name": "Object 4",
+                  "state": "in front of them"
+                }
+              ],
+              "changes": []
+            },
+            {
+              "shot": 3,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 1 continues to speak with a concerned expression.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "Object 1",
+                  "posture": "sitting",
+                  "state": "speaking"
+                }
+              ],
+              "changes": []
+            }
+          ]
+        },
+        "hard_filter": [],
+        "class": "对白",
+        "marks": [],
+        "people": 3,
+        "clear_people": 3,
+        "recurring_people": 1,
+        "shot_texts": [
+          "Medium close-up shot. In an office or interview room with wooden blinds, a wooden table, and shelves with binders, Character 1, a young woman with shoulder-length brown hair and a slim build, is sitting, wearing Object 1. Wooden blinds covering windows is closed. Blue binders on a shelf is on the shelf. A stack of books or papers is stacked on the shelf. Character 1 sits and listens, then begins to speak. By the end of the shot, Character 1 is speaking.",
+          "Medium shot. In an office or interview room with wooden blinds, a wooden table, and shelves with binders, Character 2, a woman with long blonde hair and a medium build, is sitting at the table, wearing Object 2. Character 3, a woman with shoulder-length dark hair and a medium build, is sitting at the table, wearing Object 3. A wooden table is in front of them. Character 2 and Character 3 sit at a table, looking at Character 1 and listening.",
+          "Close-up shot. In an office or interview room with wooden blinds, a wooden table, and shelves with binders, Character 1, a young woman with shoulder-length brown hair and a slim build, is sitting, wearing Object 1, speaking. Character 1 continues to speak with a concerned expression."
+        ]
+      },
+      "cache_record": {
+        "cache_file": "latents/source_pipeline_v1:cinedance:00f174a5-d033-8a7a-990b-a14fe450c69a:<scene1>:block0000:train:0000-0002.safetensors",
+        "case_id": "source_pipeline_v1:cinedance:00f174a5-d033-8a7a-990b-a14fe450c69a:<scene1>:block0000:train:0000-0002",
+        "height": 480,
+        "index": 24,
+        "input_latents_shape": [
+          1,
+          48,
+          46,
+          30,
+          52
+        ],
+        "latent_shot_groups": [
+          [
+            0,
+            9
+          ],
+          [
+            9,
+            18
+          ],
+          [
+            18,
+            46
+          ]
+        ],
+        "num_frames": 175,
+        "provenance": {
+          "cache_version": "scene_targets_v1",
+          "context": null,
+          "encoding": {
+            "dtype": "bfloat16",
+            "implementation_revision": "3a3b8422-local-archive-T2",
+            "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+            "tile_size": [
+              30,
+              52
+            ],
+            "tile_stride": [
+              15,
+              26
+            ],
+            "tiled": false
+          },
+          "media": {
+            "files": [
+              {
+                "bytes": 9367246,
+                "mtime_ns": 1791665295965561641,
+                "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00f174a5-d033-8a7a-990b-a14fe450c69a.mp4",
+                "source_fps": 23.976023976023978,
+                "source_height": 600,
+                "source_num_frames": 1043,
+                "source_width": 1280
+              }
+            ],
+            "preprocessing": {
+              "decoder": "ffmpeg-sequential",
+              "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+              "frame_basis": "ffmpeg_sequential_zero_based",
+              "pillow_version": "12.3.0",
+              "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+              "preroll_added": 0,
+              "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+              "spatial": [
+                {
+                  "active_box": [
+                    0,
+                    0,
+                    1280,
+                    600
+                  ],
+                  "coordinate_system": "pixel_edges",
+                  "crop_box_resized": [
+                    0,
+                    0,
+                    832,
+                    480
+                  ],
+                  "output_size": [
+                    832,
+                    480
+                  ],
+                  "resize_size": [
+                    832,
+                    480
+                  ],
+                  "source_size": [
+                    1280,
+                    600
+                  ],
+                  "source_to_target_matrix": [
+                    [
+                      0.8,
+                      0,
+                      -96.0
+                    ],
+                    [
+                      0,
+                      0.8,
+                      -0.0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ]
+                  ],
+                  "train_crop_box": [
+                    120,
+                    0,
+                    1160,
+                    600
+                  ]
+                }
+              ],
+              "torchvision_version": "0.26.0+cu128"
+            },
+            "sampling": {
+              "aligned_rgb_lengths": [
+                33,
+                33,
+                109
+              ],
+              "duration_weights": [
+                0.1865671641791045,
+                0.1865671641791045,
+                0.6268656716417911
+              ],
+              "effective_train_fps": 15.655985805239538,
+              "frame_indices": [
+                2,
+                4,
+                5,
+                7,
+                8,
+                10,
+                11,
+                13,
+                14,
+                16,
+                17,
+                19,
+                20,
+                22,
+                23,
+                25,
+                26,
+                28,
+                30,
+                31,
+                33,
+                34,
+                36,
+                37,
+                39,
+                40,
+                42,
+                43,
+                45,
+                46,
+                48,
+                49,
+                51,
+                56,
+                58,
+                59,
+                61,
+                62,
+                64,
+                65,
+                67,
+                68,
+                70,
+                71,
+                73,
+                74,
+                76,
+                77,
+                79,
+                80,
+                82,
+                84,
+                85,
+                87,
+                88,
+                90,
+                91,
+                93,
+                94,
+                96,
+                97,
+                99,
+                100,
+                102,
+                103,
+                105,
+                110,
+                112,
+                113,
+                115,
+                116,
+                118,
+                119,
+                121,
+                122,
+                124,
+                125,
+                127,
+                129,
+                130,
+                132,
+                133,
+                135,
+                136,
+                138,
+                139,
+                141,
+                142,
+                144,
+                146,
+                147,
+                149,
+                150,
+                152,
+                153,
+                155,
+                156,
+                158,
+                159,
+                161,
+                163,
+                164,
+                166,
+                167,
+                169,
+                170,
+                172,
+                173,
+                175,
+                176,
+                178,
+                180,
+                181,
+                183,
+                184,
+                186,
+                187,
+                189,
+                190,
+                192,
+                194,
+                195,
+                197,
+                198,
+                200,
+                201,
+                203,
+                204,
+                206,
+                207,
+                209,
+                211,
+                212,
+                214,
+                215,
+                217,
+                218,
+                220,
+                221,
+                223,
+                224,
+                226,
+                228,
+                229,
+                231,
+                232,
+                234,
+                235,
+                237,
+                238,
+                240,
+                241,
+                243,
+                245,
+                246,
+                248,
+                249,
+                251,
+                252,
+                254,
+                255,
+                257,
+                258,
+                260,
+                262,
+                263,
+                265,
+                266,
+                268,
+                269,
+                271,
+                272,
+                274,
+                275,
+                277
+              ],
+              "frame_indices_by_shot": [
+                [
+                  2,
+                  4,
+                  5,
+                  7,
+                  8,
+                  10,
+                  11,
+                  13,
+                  14,
+                  16,
+                  17,
+                  19,
+                  20,
+                  22,
+                  23,
+                  25,
+                  26,
+                  28,
+                  30,
+                  31,
+                  33,
+                  34,
+                  36,
+                  37,
+                  39,
+                  40,
+                  42,
+                  43,
+                  45,
+                  46,
+                  48,
+                  49,
+                  51
+                ],
+                [
+                  56,
+                  58,
+                  59,
+                  61,
+                  62,
+                  64,
+                  65,
+                  67,
+                  68,
+                  70,
+                  71,
+                  73,
+                  74,
+                  76,
+                  77,
+                  79,
+                  80,
+                  82,
+                  84,
+                  85,
+                  87,
+                  88,
+                  90,
+                  91,
+                  93,
+                  94,
+                  96,
+                  97,
+                  99,
+                  100,
+                  102,
+                  103,
+                  105
+                ],
+                [
+                  110,
+                  112,
+                  113,
+                  115,
+                  116,
+                  118,
+                  119,
+                  121,
+                  122,
+                  124,
+                  125,
+                  127,
+                  129,
+                  130,
+                  132,
+                  133,
+                  135,
+                  136,
+                  138,
+                  139,
+                  141,
+                  142,
+                  144,
+                  146,
+                  147,
+                  149,
+                  150,
+                  152,
+                  153,
+                  155,
+                  156,
+                  158,
+                  159,
+                  161,
+                  163,
+                  164,
+                  166,
+                  167,
+                  169,
+                  170,
+                  172,
+                  173,
+                  175,
+                  176,
+                  178,
+                  180,
+                  181,
+                  183,
+                  184,
+                  186,
+                  187,
+                  189,
+                  190,
+                  192,
+                  194,
+                  195,
+                  197,
+                  198,
+                  200,
+                  201,
+                  203,
+                  204,
+                  206,
+                  207,
+                  209,
+                  211,
+                  212,
+                  214,
+                  215,
+                  217,
+                  218,
+                  220,
+                  221,
+                  223,
+                  224,
+                  226,
+                  228,
+                  229,
+                  231,
+                  232,
+                  234,
+                  235,
+                  237,
+                  238,
+                  240,
+                  241,
+                  243,
+                  245,
+                  246,
+                  248,
+                  249,
+                  251,
+                  252,
+                  254,
+                  255,
+                  257,
+                  258,
+                  260,
+                  262,
+                  263,
+                  265,
+                  266,
+                  268,
+                  269,
+                  271,
+                  272,
+                  274,
+                  275,
+                  277
+                ]
+              ],
+              "frame_policy": "fps_aware_target_fps",
+              "latent_lengths": [
+                9,
+                9,
+                28
+              ],
+              "latent_shot_groups": [
+                [
+                  0,
+                  9
+                ],
+                [
+                  9,
+                  18
+                ],
+                [
+                  18,
+                  46
+                ]
+              ],
+              "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+              "max_rgb_frames": 308,
+              "prompt_index_by_shot": [
+                0,
+                1,
+                2
+              ],
+              "raw_shot_groups": [
+                [
+                  2,
+                  52
+                ],
+                [
+                  56,
+                  106
+                ],
+                [
+                  110,
+                  278
+                ]
+              ],
+              "rgb_was_scaled": false,
+              "shot_durations_sec": [
+                2.0854166666666667,
+                2.0854166666666667,
+                7.007
+              ],
+              "shot_groups": [
+                [
+                  0,
+                  33
+                ],
+                [
+                  33,
+                  66
+                ],
+                [
+                  66,
+                  175
+                ]
+              ],
+              "source_duration_sec": 11.177833333333332,
+              "source_fps": 23.976023976023978,
+              "source_fps_by_shot": [
+                23.976023976023978,
+                23.976023976023978,
+                23.976023976023978
+              ],
+              "source_num_frames": 1043,
+              "source_num_frames_by_shot": [
+                1043,
+                1043,
+                1043
+              ],
+              "source_rgb_frames": 268,
+              "source_shot_segments": [
+                [
+                  2,
+                  52
+                ],
+                [
+                  56,
+                  106
+                ],
+                [
+                  110,
+                  278
+                ]
+              ],
+              "source_video_paths": [
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00f174a5-d033-8a7a-990b-a14fe450c69a.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00f174a5-d033-8a7a-990b-a14fe450c69a.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00f174a5-d033-8a7a-990b-a14fe450c69a.mp4"
+              ],
+              "target_duration_sec": 11.125,
+              "target_fps": 16.0,
+              "target_rgb_lengths": [
+                33,
+                33,
+                112
+              ],
+              "train_latent_frames": 46,
+              "train_rgb_frames": 175,
+              "train_shot_groups": [
+                [
+                  0,
+                  33
+                ],
+                [
+                  33,
+                  66
+                ],
+                [
+                  66,
+                  175
+                ]
+              ],
+              "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+              "vae_padding_frames": [
+                0,
+                0,
+                0
+              ],
+              "vae_temporal_stride": 4,
+              "vae_truncated_frames": [
+                0,
+                0,
+                3
+              ]
+            },
+            "scene": {
+              "container_preroll_frames": null,
+              "film_key": null,
+              "scene_id": "cinedance:00f174a5-d033-8a7a-990b-a14fe450c69a:<scene1>:block0000",
+              "source": "cinedance"
+            },
+            "schema": "scene_window_v1",
+            "source_shot_segments": [
+              [
+                2,
+                52
+              ],
+              [
+                56,
+                106
+              ],
+              [
+                110,
+                278
+              ]
+            ]
+          },
+          "models": {
+            "vae": {
+              "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/renderer-members-slice/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+              "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+            }
+          },
+          "schema": "wan22_cache_provenance_v1"
+        },
+        "shot_count": 3,
+        "shot_groups": [
+          [
+            0,
+            33
+          ],
+          [
+            33,
+            66
+          ],
+          [
+            66,
+            175
+          ]
+        ],
+        "width": 832
+      }
+    },
+    {
+      "manifest": {
+        "case_id": "source_pipeline_v1:cinedance:0031e902-6fb0-8f2a-b49d-19444ad7fee1:<scene1>:block0000:train:0015-0018",
+        "mapping_schema": "scene_window_v1",
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0031e902-6fb0-8f2a-b49d-19444ad7fee1.mp4",
+        "source_fps": "23.976023976023978",
+        "source_num_frames": "1259",
+        "source_width": "1024",
+        "source_height": "484",
+        "source_shot_segments": "[[739,783],[787,880],[884,976],[980,1041]]",
+        "source_frame_indices_by_shot": "[[739,741,742,744,745,747,748,750,751,753,754,756,757,759,761,762,764,765,767,768,770,771,773,774,776,777,779,780,782],[787,789,790,792,793,795,796,798,799,801,802,804,805,807,808,810,812,813,815,816,818,819,821,822,824,825,827,828,830,831,833,835,836,838,839,841,842,844,845,847,848,850,851,853,854,856,858,859,861,862,864,865,867,868,870,871,873,874,876,877,879],[884,886,887,889,890,892,893,895,896,898,899,901,902,904,905,907,908,910,911,913,914,916,917,919,920,922,923,925,926,928,930,931,933,934,936,937,939,940,942,943,945,946,948,949,951,952,954,955,957,958,960,961,963,964,966,967,969,970,972,973,975],[980,982,983,984,986,988,989,990,992,994,995,996,998,1000,1001,1002,1004,1006,1007,1008,1010,1012,1013,1014,1016,1018,1019,1020,1022,1024,1025,1026,1028,1030,1031,1032,1034,1036,1037,1038,1040]]",
+        "shot_groups": "[[0,29],[29,90],[90,151],[151,192]]",
+        "active_box": "[0,0,1024,484]",
+        "train_crop_box": "[93,0,931,484]",
+        "film_key": "",
+        "source": "cinedance",
+        "scene_id": "cinedance:0031e902-6fb0-8f2a-b49d-19444ad7fee1:<scene1>:block0000",
+        "container_preroll_frames": "",
+        "window_key": "cinedance-009054-w0003",
+        "shot_count": "4",
+        "render_frames": "192",
+        "shot_laion_aesthetic": "[5.2247,4.8151,5.2573,5.243]",
+        "shot_dover_technical": "[-0.04019,-0.08015,-0.06017,-0.03954]",
+        "min_laion_aesthetic": "4.8151",
+        "min_dover_technical": "-0.08015"
+      },
+      "annotation_result": {
+        "key": "cinedance-009054-w0003",
+        "source": "cinedance",
+        "shot_count": 4,
+        "from": "batch-00",
+        "usage": {
+          "prompt_tokens": 7773,
+          "completion_tokens": 3175
+        },
+        "status": "ok",
+        "repairs": [],
+        "annotation": {
+          "video": {
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "summary": "An older man and a younger man stand near a burned-out building while a third man lies injured on the ground."
+          },
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "an older man with white hair and a tan jacket"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a younger man with dark hair, sunglasses, and a black jacket"
+            },
+            {
+              "name": "Character 3",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a man with short dark hair, wearing a grey t-shirt and black jacket, lying on the ground with blood on his face and shirt"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a black SUV"
+            },
+            {
+              "name": "Object 2",
+              "appearance": "a large metal tub"
+            },
+            {
+              "name": "Object 3",
+              "appearance": "a gun"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "an outdoor area with two dilapidated buildings, one with a corrugated metal roof and the other brick, with smoke rising from the ground"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "wide shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "action_or_state_change",
+              "action": "Character 1 stands near Object 1 while Character 2 walks away from the smoke near the brick building. Character 3 lies on the ground.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a tan jacket",
+                  "posture": "standing near Object 1"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a black jacket and sunglasses",
+                  "posture": "walking away from the smoke"
+                },
+                {
+                  "name": "Character 3",
+                  "clothing": "a grey t-shirt and black jacket",
+                  "posture": "lying on the ground",
+                  "state": "blood on face and shirt"
+                },
+                {
+                  "name": "Object 1",
+                  "state": "parked"
+                },
+                {
+                  "name": "Object 2",
+                  "state": "on the ground"
+                }
+              ],
+              "changes": [
+                {
+                  "name": "Character 2",
+                  "what": "posture",
+                  "before": "standing near the smoke",
+                  "after": "walking away"
+                }
+              ]
+            },
+            {
+              "shot": 2,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "high angle shot",
+                "movement": "static"
+              },
+              "activity": "action_or_state_change",
+              "action": "Character 3 lies on the ground, breathing heavily with blood on his face and shirt.",
+              "present": [
+                {
+                  "name": "Character 3",
+                  "clothing": "a grey t-shirt and black jacket",
+                  "posture": "lying on the ground",
+                  "state": "blood on face and shirt, breathing heavily"
+                }
+              ],
+              "changes": [
+                {
+                  "name": "Character 3",
+                  "what": "state",
+                  "before": "lying still",
+                  "after": "breathing heavily"
+                }
+              ]
+            },
+            {
+              "shot": 3,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "action_or_state_change",
+              "action": "Character 1 looks at Character 2, who pulls out Object 3 and points it.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a tan jacket and scarf",
+                  "posture": "standing and looking at Character 2"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a black jacket and sunglasses",
+                  "posture": "standing and pointing Object 3"
+                },
+                {
+                  "name": "Object 3",
+                  "state": "being pointed"
+                }
+              ],
+              "changes": [
+                {
+                  "name": "Character 2",
+                  "what": "holding",
+                  "before": [],
+                  "after": [
+                    "Object 3"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "what": "posture",
+                  "before": "standing with hands down",
+                  "after": "pointing Object 3"
+                }
+              ]
+            },
+            {
+              "shot": 4,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "wide shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "action_or_state_change",
+              "action": "Character 1 walks towards Object 1 while Character 2 stands with Object 3 pointed, smoke rising around them.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a tan jacket",
+                  "posture": "walking towards Object 1"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a black jacket",
+                  "posture": "standing and pointing Object 3"
+                },
+                {
+                  "name": "Object 1",
+                  "state": "parked"
+                },
+                {
+                  "name": "Object 3",
+                  "state": "being pointed"
+                }
+              ],
+              "changes": [
+                {
+                  "name": "Character 1",
+                  "what": "posture",
+                  "before": "standing",
+                  "after": "walking towards Object 1"
+                }
+              ]
+            }
+          ]
+        },
+        "hard_filter": [],
+        "class": "核心",
+        "marks": [],
+        "people": 3,
+        "clear_people": 3,
+        "recurring_people": 3,
+        "shot_texts": [
+          "Wide shot. In an outdoor area with two dilapidated buildings, one with a corrugated metal roof and the other brick, with smoke rising from the ground, Character 1, an older man with white hair and a tan jacket, is standing near a black SUV, wearing a tan jacket. Character 2, a younger man with dark hair, sunglasses, and a black jacket, is walking away from the smoke, wearing a black jacket and sunglasses. Character 3, a man with short dark hair, wearing a grey t-shirt and black jacket, lying on the ground with blood on his face and shirt, is lying on the ground, wearing a grey t-shirt and black jacket, blood on face and shirt. The black SUV is parked. A large metal tub is on the ground. Character 1 stands near the black SUV while Character 2 walks away from the smoke near the brick building. Character 3 lies on the ground. By the end of the shot, Character 2 is walking away.",
+          "Close-up shot, high angle shot. In an outdoor area with two dilapidated buildings, one with a corrugated metal roof and the other brick, with smoke rising from the ground, Character 3, a man with short dark hair, wearing a grey t-shirt and black jacket, lying on the ground with blood on his face and shirt, is lying on the ground, wearing a grey t-shirt and black jacket, blood on face and shirt, breathing heavily. Character 3 lies on the ground, breathing heavily with blood on his face and shirt. By the end of the shot, Character 3 is breathing heavily.",
+          "Medium close-up shot. In an outdoor area with two dilapidated buildings, one with a corrugated metal roof and the other brick, with smoke rising from the ground, Character 1, an older man with white hair and a tan jacket, is standing and looking at Character 2, wearing a tan jacket and scarf. Character 2, a younger man with dark hair, sunglasses, and a black jacket, is standing and pointing a gun, wearing a black jacket and sunglasses. The gun is being pointed. Character 1 looks at Character 2, who pulls out the gun and points it. By the end of the shot, Character 2 holds the gun; Character 2 is pointing the gun.",
+          "Wide shot. In an outdoor area with two dilapidated buildings, one with a corrugated metal roof and the other brick, with smoke rising from the ground, Character 1, an older man with white hair and a tan jacket, is walking towards a black SUV, wearing a tan jacket. Character 2, a younger man with dark hair, sunglasses, and a black jacket, is standing and pointing a gun, wearing a black jacket. The black SUV is parked. The gun is being pointed. Character 1 walks towards the black SUV while Character 2 stands with the gun pointed, smoke rising around them."
+        ]
+      },
+      "cache_record": {
+        "cache_file": "latents/source_pipeline_v1:cinedance:0031e902-6fb0-8f2a-b49d-19444ad7fee1:<scene1>:block0000:train:0015-0018.safetensors",
+        "case_id": "source_pipeline_v1:cinedance:0031e902-6fb0-8f2a-b49d-19444ad7fee1:<scene1>:block0000:train:0015-0018",
+        "height": 480,
+        "index": 36,
+        "input_latents_shape": [
+          1,
+          48,
+          51,
+          30,
+          52
+        ],
+        "latent_shot_groups": [
+          [
+            0,
+            8
+          ],
+          [
+            8,
+            24
+          ],
+          [
+            24,
+            40
+          ],
+          [
+            40,
+            51
+          ]
+        ],
+        "num_frames": 192,
+        "provenance": {
+          "cache_version": "scene_targets_v1",
+          "context": null,
+          "encoding": {
+            "dtype": "bfloat16",
+            "implementation_revision": "3a3b8422-local-archive-T2",
+            "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+            "tile_size": [
+              30,
+              52
+            ],
+            "tile_stride": [
+              15,
+              26
+            ],
+            "tiled": false
+          },
+          "media": {
+            "files": [
+              {
+                "bytes": 12030454,
+                "mtime_ns": 1791664868405056370,
+                "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0031e902-6fb0-8f2a-b49d-19444ad7fee1.mp4",
+                "source_fps": 23.976023976023978,
+                "source_height": 484,
+                "source_num_frames": 1259,
+                "source_width": 1024
+              }
+            ],
+            "preprocessing": {
+              "decoder": "ffmpeg-sequential",
+              "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+              "frame_basis": "ffmpeg_sequential_zero_based",
+              "pillow_version": "12.3.0",
+              "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+              "preroll_added": 0,
+              "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+              "spatial": [
+                {
+                  "active_box": [
+                    0,
+                    0,
+                    1024,
+                    484
+                  ],
+                  "coordinate_system": "pixel_edges",
+                  "crop_box_resized": [
+                    0,
+                    0,
+                    832,
+                    480
+                  ],
+                  "output_size": [
+                    832,
+                    480
+                  ],
+                  "resize_size": [
+                    832,
+                    481
+                  ],
+                  "source_size": [
+                    1024,
+                    484
+                  ],
+                  "source_to_target_matrix": [
+                    [
+                      0.9928400954653938,
+                      0,
+                      -92.33412887828162
+                    ],
+                    [
+                      0,
+                      0.993801652892562,
+                      -0.0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ]
+                  ],
+                  "train_crop_box": [
+                    93,
+                    0,
+                    931,
+                    484
+                  ]
+                }
+              ],
+              "torchvision_version": "0.26.0+cu128"
+            },
+            "sampling": {
+              "aligned_rgb_lengths": [
+                29,
+                61,
+                61,
+                41
+              ],
+              "duration_weights": [
+                0.15172413793103448,
+                0.32068965517241377,
+                0.3172413793103448,
+                0.21034482758620687
+              ],
+              "effective_train_fps": 15.87378139102277,
+              "frame_indices": [
+                739,
+                741,
+                742,
+                744,
+                745,
+                747,
+                748,
+                750,
+                751,
+                753,
+                754,
+                756,
+                757,
+                759,
+                761,
+                762,
+                764,
+                765,
+                767,
+                768,
+                770,
+                771,
+                773,
+                774,
+                776,
+                777,
+                779,
+                780,
+                782,
+                787,
+                789,
+                790,
+                792,
+                793,
+                795,
+                796,
+                798,
+                799,
+                801,
+                802,
+                804,
+                805,
+                807,
+                808,
+                810,
+                812,
+                813,
+                815,
+                816,
+                818,
+                819,
+                821,
+                822,
+                824,
+                825,
+                827,
+                828,
+                830,
+                831,
+                833,
+                835,
+                836,
+                838,
+                839,
+                841,
+                842,
+                844,
+                845,
+                847,
+                848,
+                850,
+                851,
+                853,
+                854,
+                856,
+                858,
+                859,
+                861,
+                862,
+                864,
+                865,
+                867,
+                868,
+                870,
+                871,
+                873,
+                874,
+                876,
+                877,
+                879,
+                884,
+                886,
+                887,
+                889,
+                890,
+                892,
+                893,
+                895,
+                896,
+                898,
+                899,
+                901,
+                902,
+                904,
+                905,
+                907,
+                908,
+                910,
+                911,
+                913,
+                914,
+                916,
+                917,
+                919,
+                920,
+                922,
+                923,
+                925,
+                926,
+                928,
+                930,
+                931,
+                933,
+                934,
+                936,
+                937,
+                939,
+                940,
+                942,
+                943,
+                945,
+                946,
+                948,
+                949,
+                951,
+                952,
+                954,
+                955,
+                957,
+                958,
+                960,
+                961,
+                963,
+                964,
+                966,
+                967,
+                969,
+                970,
+                972,
+                973,
+                975,
+                980,
+                982,
+                983,
+                984,
+                986,
+                988,
+                989,
+                990,
+                992,
+                994,
+                995,
+                996,
+                998,
+                1000,
+                1001,
+                1002,
+                1004,
+                1006,
+                1007,
+                1008,
+                1010,
+                1012,
+                1013,
+                1014,
+                1016,
+                1018,
+                1019,
+                1020,
+                1022,
+                1024,
+                1025,
+                1026,
+                1028,
+                1030,
+                1031,
+                1032,
+                1034,
+                1036,
+                1037,
+                1038,
+                1040
+              ],
+              "frame_indices_by_shot": [
+                [
+                  739,
+                  741,
+                  742,
+                  744,
+                  745,
+                  747,
+                  748,
+                  750,
+                  751,
+                  753,
+                  754,
+                  756,
+                  757,
+                  759,
+                  761,
+                  762,
+                  764,
+                  765,
+                  767,
+                  768,
+                  770,
+                  771,
+                  773,
+                  774,
+                  776,
+                  777,
+                  779,
+                  780,
+                  782
+                ],
+                [
+                  787,
+                  789,
+                  790,
+                  792,
+                  793,
+                  795,
+                  796,
+                  798,
+                  799,
+                  801,
+                  802,
+                  804,
+                  805,
+                  807,
+                  808,
+                  810,
+                  812,
+                  813,
+                  815,
+                  816,
+                  818,
+                  819,
+                  821,
+                  822,
+                  824,
+                  825,
+                  827,
+                  828,
+                  830,
+                  831,
+                  833,
+                  835,
+                  836,
+                  838,
+                  839,
+                  841,
+                  842,
+                  844,
+                  845,
+                  847,
+                  848,
+                  850,
+                  851,
+                  853,
+                  854,
+                  856,
+                  858,
+                  859,
+                  861,
+                  862,
+                  864,
+                  865,
+                  867,
+                  868,
+                  870,
+                  871,
+                  873,
+                  874,
+                  876,
+                  877,
+                  879
+                ],
+                [
+                  884,
+                  886,
+                  887,
+                  889,
+                  890,
+                  892,
+                  893,
+                  895,
+                  896,
+                  898,
+                  899,
+                  901,
+                  902,
+                  904,
+                  905,
+                  907,
+                  908,
+                  910,
+                  911,
+                  913,
+                  914,
+                  916,
+                  917,
+                  919,
+                  920,
+                  922,
+                  923,
+                  925,
+                  926,
+                  928,
+                  930,
+                  931,
+                  933,
+                  934,
+                  936,
+                  937,
+                  939,
+                  940,
+                  942,
+                  943,
+                  945,
+                  946,
+                  948,
+                  949,
+                  951,
+                  952,
+                  954,
+                  955,
+                  957,
+                  958,
+                  960,
+                  961,
+                  963,
+                  964,
+                  966,
+                  967,
+                  969,
+                  970,
+                  972,
+                  973,
+                  975
+                ],
+                [
+                  980,
+                  982,
+                  983,
+                  984,
+                  986,
+                  988,
+                  989,
+                  990,
+                  992,
+                  994,
+                  995,
+                  996,
+                  998,
+                  1000,
+                  1001,
+                  1002,
+                  1004,
+                  1006,
+                  1007,
+                  1008,
+                  1010,
+                  1012,
+                  1013,
+                  1014,
+                  1016,
+                  1018,
+                  1019,
+                  1020,
+                  1022,
+                  1024,
+                  1025,
+                  1026,
+                  1028,
+                  1030,
+                  1031,
+                  1032,
+                  1034,
+                  1036,
+                  1037,
+                  1038,
+                  1040
+                ]
+              ],
+              "frame_policy": "fps_aware_target_fps",
+              "latent_lengths": [
+                8,
+                16,
+                16,
+                11
+              ],
+              "latent_shot_groups": [
+                [
+                  0,
+                  8
+                ],
+                [
+                  8,
+                  24
+                ],
+                [
+                  24,
+                  40
+                ],
+                [
+                  40,
+                  51
+                ]
+              ],
+              "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+              "max_rgb_frames": 308,
+              "prompt_index_by_shot": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "raw_shot_groups": [
+                [
+                  739,
+                  783
+                ],
+                [
+                  787,
+                  880
+                ],
+                [
+                  884,
+                  976
+                ],
+                [
+                  980,
+                  1041
+                ]
+              ],
+              "rgb_was_scaled": false,
+              "shot_durations_sec": [
+                1.8351666666666666,
+                3.878875,
+                3.8371666666666666,
+                2.544208333333333
+              ],
+              "shot_groups": [
+                [
+                  0,
+                  29
+                ],
+                [
+                  29,
+                  90
+                ],
+                [
+                  90,
+                  151
+                ],
+                [
+                  151,
+                  192
+                ]
+              ],
+              "source_duration_sec": 12.095416666666667,
+              "source_fps": 23.976023976023978,
+              "source_fps_by_shot": [
+                23.976023976023978,
+                23.976023976023978,
+                23.976023976023978,
+                23.976023976023978
+              ],
+              "source_num_frames": 1259,
+              "source_num_frames_by_shot": [
+                1259,
+                1259,
+                1259,
+                1259
+              ],
+              "source_rgb_frames": 290,
+              "source_shot_segments": [
+                [
+                  739,
+                  783
+                ],
+                [
+                  787,
+                  880
+                ],
+                [
+                  884,
+                  976
+                ],
+                [
+                  980,
+                  1041
+                ]
+              ],
+              "source_video_paths": [
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0031e902-6fb0-8f2a-b49d-19444ad7fee1.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0031e902-6fb0-8f2a-b49d-19444ad7fee1.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0031e902-6fb0-8f2a-b49d-19444ad7fee1.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0031e902-6fb0-8f2a-b49d-19444ad7fee1.mp4"
+              ],
+              "target_duration_sec": 12.0625,
+              "target_fps": 16.0,
+              "target_rgb_lengths": [
+                29,
+                62,
+                61,
+                41
+              ],
+              "train_latent_frames": 51,
+              "train_rgb_frames": 192,
+              "train_shot_groups": [
+                [
+                  0,
+                  29
+                ],
+                [
+                  29,
+                  90
+                ],
+                [
+                  90,
+                  151
+                ],
+                [
+                  151,
+                  192
+                ]
+              ],
+              "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+              "vae_padding_frames": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "vae_temporal_stride": 4,
+              "vae_truncated_frames": [
+                0,
+                1,
+                0,
+                0
+              ]
+            },
+            "scene": {
+              "container_preroll_frames": null,
+              "film_key": null,
+              "scene_id": "cinedance:0031e902-6fb0-8f2a-b49d-19444ad7fee1:<scene1>:block0000",
+              "source": "cinedance"
+            },
+            "schema": "scene_window_v1",
+            "source_shot_segments": [
+              [
+                739,
+                783
+              ],
+              [
+                787,
+                880
+              ],
+              [
+                884,
+                976
+              ],
+              [
+                980,
+                1041
+              ]
+            ]
+          },
+          "models": {
+            "vae": {
+              "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/renderer-members-slice/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+              "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+            }
+          },
+          "schema": "wan22_cache_provenance_v1"
+        },
+        "shot_count": 4,
+        "shot_groups": [
+          [
+            0,
+            29
+          ],
+          [
+            29,
+            90
+          ],
+          [
+            90,
+            151
+          ],
+          [
+            151,
+            192
+          ]
+        ],
+        "width": 832
+      }
+    },
+    {
+      "manifest": {
+        "case_id": "source_pipeline_v1:cinedance:01084e98-049c-8c6f-82d2-a6072fd8dc9b:<scene1>:block0000:train:0003-0007",
+        "mapping_schema": "scene_window_v1",
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4",
+        "source_fps": "23.976023976023978",
+        "source_num_frames": "882",
+        "source_width": "1920",
+        "source_height": "696",
+        "source_shot_segments": "[[121,241],[245,338],[342,418],[422,479],[483,560]]",
+        "source_frame_indices_by_shot": "[[121,123,124,126,127,129,130,132,134,135,137,138,140,141,143,144,146,148,149,151,152,154,155,157,159,160,162,163,165,166,168,170,171,173,174,176,177,179,181,182,184,185,187,188,190,191,193,195,196,198,199,201,202,204,206,207,209,210,212,213,215,217,218,220,221,223,224,226,227,229,231,232,234,235,237,238,240],[245,247,248,250,251,253,254,256,257,259,260,262,263,265,266,268,270,271,273,274,276,277,279,280,282,283,285,286,288,289,291,293,294,296,297,299,300,302,303,305,306,308,309,311,312,314,316,317,319,320,322,323,325,326,328,329,331,332,334,335,337],[342,344,345,347,348,350,351,353,354,356,358,359,361,362,364,365,367,369,370,372,373,375,376,378,380,381,383,384,386,387,389,390,392,394,395,397,398,400,401,403,404,406,408,409,411,412,414,415,417],[422,424,425,427,428,430,431,433,434,436,438,439,441,442,444,445,447,448,450,452,453,455,456,458,459,461,462,464,466,467,469,470,472,473,475,476,478],[483,485,486,488,489,491,493,494,496,497,499,500,502,504,505,507,508,510,511,513,515,516,518,519,521,523,524,526,527,529,531,532,534,535,537,538,540,542,543,545,546,548,549,551,553,554,556,557,559]]",
+        "shot_groups": "[[0,77],[77,138],[138,187],[187,224],[224,273]]",
+        "active_box": "[0,0,1920,696]",
+        "train_crop_box": "[357,0,1563,696]",
+        "film_key": "",
+        "source": "cinedance",
+        "scene_id": "cinedance:01084e98-049c-8c6f-82d2-a6072fd8dc9b:<scene1>:block0000",
+        "container_preroll_frames": "",
+        "window_key": "cinedance-009806-w0001",
+        "shot_count": "5",
+        "render_frames": "273",
+        "shot_laion_aesthetic": "[5.2134,4.5016,5.1833,5.0483,5.1989]",
+        "shot_dover_technical": "[-0.0191,-0.05575,-0.03271,-0.04852,-0.02405]",
+        "min_laion_aesthetic": "4.5016",
+        "min_dover_technical": "-0.05575"
+      },
+      "annotation_result": {
+        "key": "cinedance-009806-w0001",
+        "source": "cinedance",
+        "shot_count": 5,
+        "from": "batch-00",
+        "usage": {
+          "prompt_tokens": 10131,
+          "completion_tokens": 2685
+        },
+        "status": "ok",
+        "repairs": [],
+        "annotation": {
+          "video": {
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "summary": "A man sits at a computer talking while a woman stands behind him, and another man in a safety vest looks at a screen."
+          },
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a man with short dark curly hair and light skin"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "partial",
+              "appearance": "a woman with blonde wavy hair"
+            },
+            {
+              "name": "Character 3",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a man with thinning brown hair and a beard"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a black laptop or monitor screen"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "a dimly lit room with blue and warm lighting"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 1 sits and talks while looking at a screen, with Character 2 standing behind him with crossed arms.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a blue button-down shirt over a blue t-shirt",
+                  "posture": "sitting",
+                  "state": "talking"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a maroon top and khaki pants with a belt",
+                  "posture": "standing with arms crossed"
+                },
+                {
+                  "name": "Object 1",
+                  "state": "facing Character 1"
+                }
+              ],
+              "changes": []
+            },
+            {
+              "shot": 2,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 3 looks down at a screen and talks.",
+              "present": [
+                {
+                  "name": "Character 3",
+                  "clothing": "a yellow and blue high-visibility vest",
+                  "posture": "looking down",
+                  "state": "talking"
+                },
+                {
+                  "name": "Object 1",
+                  "state": "in front of Character 3"
+                }
+              ],
+              "changes": []
+            },
+            {
+              "shot": 3,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 2 looks down and then looks up.",
+              "present": [
+                {
+                  "name": "Character 2",
+                  "clothing": "a maroon top",
+                  "posture": "standing",
+                  "state": "looking down then up"
+                },
+                {
+                  "name": "Character 1",
+                  "posture": "sitting in front of Character 2"
+                }
+              ],
+              "changes": []
+            },
+            {
+              "shot": 4,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 1 continues to talk while looking at the screen, with Character 2 standing behind him.",
+              "present": [
+                {
+                  "name": "Character 1",
+                  "clothing": "a blue button-down shirt over a blue t-shirt",
+                  "posture": "sitting",
+                  "state": "talking"
+                },
+                {
+                  "name": "Character 2",
+                  "clothing": "a maroon top and khaki pants with a belt",
+                  "posture": "standing behind Character 1"
+                },
+                {
+                  "name": "Object 1",
+                  "state": "facing Character 1"
+                }
+              ],
+              "changes": []
+            },
+            {
+              "shot": 5,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "activity": "talking_only",
+              "action": "Character 2 looks down and talks.",
+              "present": [
+                {
+                  "name": "Character 2",
+                  "clothing": "a maroon top",
+                  "posture": "standing",
+                  "state": "talking"
+                },
+                {
+                  "name": "Character 1",
+                  "posture": "sitting in front of Character 2"
+                }
+              ],
+              "changes": []
+            }
+          ]
+        },
+        "hard_filter": [],
+        "class": "对白",
+        "marks": [],
+        "people": 3,
+        "clear_people": 2,
+        "recurring_people": 2,
+        "shot_texts": [
+          "Medium close-up shot. In a dimly lit room with blue and warm lighting, Character 1, a man with short dark curly hair and light skin, is sitting, wearing a blue button-down shirt over a blue t-shirt, talking. Character 2, a woman with blonde wavy hair, is standing with arms crossed, wearing a maroon top and khaki pants with a belt. A black laptop or monitor screen is facing Character 1. Character 1 sits and talks while looking at a screen, with Character 2 standing behind him with crossed arms.",
+          "Close-up shot. In a dimly lit room with blue and warm lighting, Character 3, a man with thinning brown hair and a beard, is looking down, wearing a yellow and blue high-visibility vest, talking. A black laptop or monitor screen is in front of Character 3. Character 3 looks down at a screen and talks.",
+          "Close-up shot. In a dimly lit room with blue and warm lighting, Character 2, a woman with blonde wavy hair, is standing, wearing a maroon top, looking down then up. Character 1, a man with short dark curly hair and light skin, is sitting in front of Character 2. Character 2 looks down and then looks up.",
+          "Medium close-up shot. In a dimly lit room with blue and warm lighting, Character 1, a man with short dark curly hair and light skin, is sitting, wearing a blue button-down shirt over a blue t-shirt, talking. Character 2, a woman with blonde wavy hair, is standing behind Character 1, wearing a maroon top and khaki pants with a belt. A black laptop or monitor screen is facing Character 1. Character 1 continues to talk while looking at the screen, with Character 2 standing behind him.",
+          "Close-up shot. In a dimly lit room with blue and warm lighting, Character 2, a woman with blonde wavy hair, is standing, wearing a maroon top, talking. Character 1, a man with short dark curly hair and light skin, is sitting in front of Character 2. Character 2 looks down and talks."
+        ]
+      },
+      "cache_record": {
+        "cache_file": "latents/source_pipeline_v1:cinedance:01084e98-049c-8c6f-82d2-a6072fd8dc9b:<scene1>:block0000:train:0003-0007.safetensors",
+        "case_id": "source_pipeline_v1:cinedance:01084e98-049c-8c6f-82d2-a6072fd8dc9b:<scene1>:block0000:train:0003-0007",
+        "height": 480,
+        "index": 48,
+        "input_latents_shape": [
+          1,
+          48,
+          72,
+          30,
+          52
+        ],
+        "latent_shot_groups": [
+          [
+            0,
+            20
+          ],
+          [
+            20,
+            36
+          ],
+          [
+            36,
+            49
+          ],
+          [
+            49,
+            59
+          ],
+          [
+            59,
+            72
+          ]
+        ],
+        "num_frames": 273,
+        "provenance": {
+          "cache_version": "scene_targets_v1",
+          "context": null,
+          "encoding": {
+            "dtype": "bfloat16",
+            "implementation_revision": "3a3b8422-local-archive-T2",
+            "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+            "tile_size": [
+              30,
+              52
+            ],
+            "tile_stride": [
+              15,
+              26
+            ],
+            "tiled": false
+          },
+          "media": {
+            "files": [
+              {
+                "bytes": 14663446,
+                "mtime_ns": 1791665299576234200,
+                "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4",
+                "source_fps": 23.976023976023978,
+                "source_height": 696,
+                "source_num_frames": 882,
+                "source_width": 1920
+              }
+            ],
+            "preprocessing": {
+              "decoder": "ffmpeg-sequential",
+              "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+              "frame_basis": "ffmpeg_sequential_zero_based",
+              "pillow_version": "12.3.0",
+              "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+              "preroll_added": 0,
+              "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+              "spatial": [
+                {
+                  "active_box": [
+                    0,
+                    0,
+                    1920,
+                    696
+                  ],
+                  "coordinate_system": "pixel_edges",
+                  "crop_box_resized": [
+                    0,
+                    0,
+                    832,
+                    480
+                  ],
+                  "output_size": [
+                    832,
+                    480
+                  ],
+                  "resize_size": [
+                    832,
+                    480
+                  ],
+                  "source_size": [
+                    1920,
+                    696
+                  ],
+                  "source_to_target_matrix": [
+                    [
+                      0.6898839137645107,
+                      0,
+                      -246.28855721393035
+                    ],
+                    [
+                      0,
+                      0.6896551724137931,
+                      -0.0
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ]
+                  ],
+                  "train_crop_box": [
+                    357,
+                    0,
+                    1563,
+                    696
+                  ]
+                }
+              ],
+              "torchvision_version": "0.26.0+cu128"
+            },
+            "sampling": {
+              "aligned_rgb_lengths": [
+                77,
+                61,
+                49,
+                37,
+                49
+              ],
+              "duration_weights": [
+                0.28368794326241137,
+                0.2198581560283688,
+                0.17966903073286053,
+                0.1347517730496454,
+                0.18203309692671393
+              ],
+              "effective_train_fps": 15.473887814313347,
+              "frame_indices": [
+                121,
+                123,
+                124,
+                126,
+                127,
+                129,
+                130,
+                132,
+                134,
+                135,
+                137,
+                138,
+                140,
+                141,
+                143,
+                144,
+                146,
+                148,
+                149,
+                151,
+                152,
+                154,
+                155,
+                157,
+                159,
+                160,
+                162,
+                163,
+                165,
+                166,
+                168,
+                170,
+                171,
+                173,
+                174,
+                176,
+                177,
+                179,
+                181,
+                182,
+                184,
+                185,
+                187,
+                188,
+                190,
+                191,
+                193,
+                195,
+                196,
+                198,
+                199,
+                201,
+                202,
+                204,
+                206,
+                207,
+                209,
+                210,
+                212,
+                213,
+                215,
+                217,
+                218,
+                220,
+                221,
+                223,
+                224,
+                226,
+                227,
+                229,
+                231,
+                232,
+                234,
+                235,
+                237,
+                238,
+                240,
+                245,
+                247,
+                248,
+                250,
+                251,
+                253,
+                254,
+                256,
+                257,
+                259,
+                260,
+                262,
+                263,
+                265,
+                266,
+                268,
+                270,
+                271,
+                273,
+                274,
+                276,
+                277,
+                279,
+                280,
+                282,
+                283,
+                285,
+                286,
+                288,
+                289,
+                291,
+                293,
+                294,
+                296,
+                297,
+                299,
+                300,
+                302,
+                303,
+                305,
+                306,
+                308,
+                309,
+                311,
+                312,
+                314,
+                316,
+                317,
+                319,
+                320,
+                322,
+                323,
+                325,
+                326,
+                328,
+                329,
+                331,
+                332,
+                334,
+                335,
+                337,
+                342,
+                344,
+                345,
+                347,
+                348,
+                350,
+                351,
+                353,
+                354,
+                356,
+                358,
+                359,
+                361,
+                362,
+                364,
+                365,
+                367,
+                369,
+                370,
+                372,
+                373,
+                375,
+                376,
+                378,
+                380,
+                381,
+                383,
+                384,
+                386,
+                387,
+                389,
+                390,
+                392,
+                394,
+                395,
+                397,
+                398,
+                400,
+                401,
+                403,
+                404,
+                406,
+                408,
+                409,
+                411,
+                412,
+                414,
+                415,
+                417,
+                422,
+                424,
+                425,
+                427,
+                428,
+                430,
+                431,
+                433,
+                434,
+                436,
+                438,
+                439,
+                441,
+                442,
+                444,
+                445,
+                447,
+                448,
+                450,
+                452,
+                453,
+                455,
+                456,
+                458,
+                459,
+                461,
+                462,
+                464,
+                466,
+                467,
+                469,
+                470,
+                472,
+                473,
+                475,
+                476,
+                478,
+                483,
+                485,
+                486,
+                488,
+                489,
+                491,
+                493,
+                494,
+                496,
+                497,
+                499,
+                500,
+                502,
+                504,
+                505,
+                507,
+                508,
+                510,
+                511,
+                513,
+                515,
+                516,
+                518,
+                519,
+                521,
+                523,
+                524,
+                526,
+                527,
+                529,
+                531,
+                532,
+                534,
+                535,
+                537,
+                538,
+                540,
+                542,
+                543,
+                545,
+                546,
+                548,
+                549,
+                551,
+                553,
+                554,
+                556,
+                557,
+                559
+              ],
+              "frame_indices_by_shot": [
+                [
+                  121,
+                  123,
+                  124,
+                  126,
+                  127,
+                  129,
+                  130,
+                  132,
+                  134,
+                  135,
+                  137,
+                  138,
+                  140,
+                  141,
+                  143,
+                  144,
+                  146,
+                  148,
+                  149,
+                  151,
+                  152,
+                  154,
+                  155,
+                  157,
+                  159,
+                  160,
+                  162,
+                  163,
+                  165,
+                  166,
+                  168,
+                  170,
+                  171,
+                  173,
+                  174,
+                  176,
+                  177,
+                  179,
+                  181,
+                  182,
+                  184,
+                  185,
+                  187,
+                  188,
+                  190,
+                  191,
+                  193,
+                  195,
+                  196,
+                  198,
+                  199,
+                  201,
+                  202,
+                  204,
+                  206,
+                  207,
+                  209,
+                  210,
+                  212,
+                  213,
+                  215,
+                  217,
+                  218,
+                  220,
+                  221,
+                  223,
+                  224,
+                  226,
+                  227,
+                  229,
+                  231,
+                  232,
+                  234,
+                  235,
+                  237,
+                  238,
+                  240
+                ],
+                [
+                  245,
+                  247,
+                  248,
+                  250,
+                  251,
+                  253,
+                  254,
+                  256,
+                  257,
+                  259,
+                  260,
+                  262,
+                  263,
+                  265,
+                  266,
+                  268,
+                  270,
+                  271,
+                  273,
+                  274,
+                  276,
+                  277,
+                  279,
+                  280,
+                  282,
+                  283,
+                  285,
+                  286,
+                  288,
+                  289,
+                  291,
+                  293,
+                  294,
+                  296,
+                  297,
+                  299,
+                  300,
+                  302,
+                  303,
+                  305,
+                  306,
+                  308,
+                  309,
+                  311,
+                  312,
+                  314,
+                  316,
+                  317,
+                  319,
+                  320,
+                  322,
+                  323,
+                  325,
+                  326,
+                  328,
+                  329,
+                  331,
+                  332,
+                  334,
+                  335,
+                  337
+                ],
+                [
+                  342,
+                  344,
+                  345,
+                  347,
+                  348,
+                  350,
+                  351,
+                  353,
+                  354,
+                  356,
+                  358,
+                  359,
+                  361,
+                  362,
+                  364,
+                  365,
+                  367,
+                  369,
+                  370,
+                  372,
+                  373,
+                  375,
+                  376,
+                  378,
+                  380,
+                  381,
+                  383,
+                  384,
+                  386,
+                  387,
+                  389,
+                  390,
+                  392,
+                  394,
+                  395,
+                  397,
+                  398,
+                  400,
+                  401,
+                  403,
+                  404,
+                  406,
+                  408,
+                  409,
+                  411,
+                  412,
+                  414,
+                  415,
+                  417
+                ],
+                [
+                  422,
+                  424,
+                  425,
+                  427,
+                  428,
+                  430,
+                  431,
+                  433,
+                  434,
+                  436,
+                  438,
+                  439,
+                  441,
+                  442,
+                  444,
+                  445,
+                  447,
+                  448,
+                  450,
+                  452,
+                  453,
+                  455,
+                  456,
+                  458,
+                  459,
+                  461,
+                  462,
+                  464,
+                  466,
+                  467,
+                  469,
+                  470,
+                  472,
+                  473,
+                  475,
+                  476,
+                  478
+                ],
+                [
+                  483,
+                  485,
+                  486,
+                  488,
+                  489,
+                  491,
+                  493,
+                  494,
+                  496,
+                  497,
+                  499,
+                  500,
+                  502,
+                  504,
+                  505,
+                  507,
+                  508,
+                  510,
+                  511,
+                  513,
+                  515,
+                  516,
+                  518,
+                  519,
+                  521,
+                  523,
+                  524,
+                  526,
+                  527,
+                  529,
+                  531,
+                  532,
+                  534,
+                  535,
+                  537,
+                  538,
+                  540,
+                  542,
+                  543,
+                  545,
+                  546,
+                  548,
+                  549,
+                  551,
+                  553,
+                  554,
+                  556,
+                  557,
+                  559
+                ]
+              ],
+              "frame_policy": "fps_aware_target_fps",
+              "latent_lengths": [
+                20,
+                16,
+                13,
+                10,
+                13
+              ],
+              "latent_shot_groups": [
+                [
+                  0,
+                  20
+                ],
+                [
+                  20,
+                  36
+                ],
+                [
+                  36,
+                  49
+                ],
+                [
+                  49,
+                  59
+                ],
+                [
+                  59,
+                  72
+                ]
+              ],
+              "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+              "max_rgb_frames": 308,
+              "prompt_index_by_shot": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "raw_shot_groups": [
+                [
+                  121,
+                  241
+                ],
+                [
+                  245,
+                  338
+                ],
+                [
+                  342,
+                  418
+                ],
+                [
+                  422,
+                  479
+                ],
+                [
+                  483,
+                  560
+                ]
+              ],
+              "rgb_was_scaled": false,
+              "shot_durations_sec": [
+                5.005,
+                3.878875,
+                3.169833333333333,
+                2.377375,
+                3.2115416666666663
+              ],
+              "shot_groups": [
+                [
+                  0,
+                  77
+                ],
+                [
+                  77,
+                  138
+                ],
+                [
+                  138,
+                  187
+                ],
+                [
+                  187,
+                  224
+                ],
+                [
+                  224,
+                  273
+                ]
+              ],
+              "source_duration_sec": 17.642625,
+              "source_fps": 23.976023976023978,
+              "source_fps_by_shot": [
+                23.976023976023978,
+                23.976023976023978,
+                23.976023976023978,
+                23.976023976023978,
+                23.976023976023978
+              ],
+              "source_num_frames": 882,
+              "source_num_frames_by_shot": [
+                882,
+                882,
+                882,
+                882,
+                882
+              ],
+              "source_rgb_frames": 423,
+              "source_shot_segments": [
+                [
+                  121,
+                  241
+                ],
+                [
+                  245,
+                  338
+                ],
+                [
+                  342,
+                  418
+                ],
+                [
+                  422,
+                  479
+                ],
+                [
+                  483,
+                  560
+                ]
+              ],
+              "source_video_paths": [
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4",
+                "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01084e98-049c-8c6f-82d2-a6072fd8dc9b.mp4"
+              ],
+              "target_duration_sec": 17.625,
+              "target_fps": 16.0,
+              "target_rgb_lengths": [
+                80,
+                62,
+                51,
+                38,
+                51
+              ],
+              "train_latent_frames": 72,
+              "train_rgb_frames": 273,
+              "train_shot_groups": [
+                [
+                  0,
+                  77
+                ],
+                [
+                  77,
+                  138
+                ],
+                [
+                  138,
+                  187
+                ],
+                [
+                  187,
+                  224
+                ],
+                [
+                  224,
+                  273
+                ]
+              ],
+              "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+              "vae_padding_frames": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "vae_temporal_stride": 4,
+              "vae_truncated_frames": [
+                3,
+                1,
+                2,
+                1,
+                2
+              ]
+            },
+            "scene": {
+              "container_preroll_frames": null,
+              "film_key": null,
+              "scene_id": "cinedance:01084e98-049c-8c6f-82d2-a6072fd8dc9b:<scene1>:block0000",
+              "source": "cinedance"
+            },
+            "schema": "scene_window_v1",
+            "source_shot_segments": [
+              [
+                121,
+                241
+              ],
+              [
+                245,
+                338
+              ],
+              [
+                342,
+                418
+              ],
+              [
+                422,
+                479
+              ],
+              [
+                483,
+                560
+              ]
+            ]
+          },
+          "models": {
+            "vae": {
+              "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/renderer-members-slice/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+              "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+            }
+          },
+          "schema": "wan22_cache_provenance_v1"
+        },
+        "shot_count": 5,
+        "shot_groups": [
+          [
+            0,
+            77
+          ],
+          [
+            77,
+            138
+          ],
+          [
+            138,
+            187
+          ],
+          [
+            187,
+            224
+          ],
+          [
+            224,
+            273
+          ]
+        ],
+        "width": 832
+      }
+    }
+  ]
+}

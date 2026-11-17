@@ -1,0 +1,1 @@
+{"state": "succeeded", "stage": "depth", "key": "cinedance-017336-b0002", "products": ["depth/s01/confidence.mp4", "depth/s01/depth.mp4", "depth/s01/metadata.json"], "seconds": 4.706909202039242, "output_bytes": 4143232, "model_load_seconds": 0.0, "completed_at": "2026-10-13T00:01:29.105619+00:00"}

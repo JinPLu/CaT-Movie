@@ -1,0 +1,270 @@
+{
+  "source": "Actual frozen full-pool training members; compact source-time metadata, no generated clip or synthetic video",
+  "members": [
+    {
+      "case_id": "story_block_v1:cinedance:0006d2ba-32c9-8ab4-8fee-2b9e04e6e4bb:<scene1>:block0000:0010-0018",
+      "key": "cinedance-008909-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0006d2ba-32c9-8ab4-8fee-2b9e04e6e4bb.mp4",
+      "source": "cinedance",
+      "scene": {
+        "fps": 23.976023976023978
+      },
+      "shots": [
+        {
+          "frames": 37,
+          "render_frames": 37,
+          "usable": true,
+          "start_frame": 878,
+          "end_frame": 934,
+          "seconds": 2.3356666666666666
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": true,
+          "start_frame": 939,
+          "end_frame": 971,
+          "seconds": 1.3346666666666667
+        },
+        {
+          "frames": 41,
+          "render_frames": 41,
+          "usable": true,
+          "start_frame": 976,
+          "end_frame": 1039,
+          "seconds": 2.6276249999999997
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": false,
+          "start_frame": 1044,
+          "end_frame": 1079,
+          "seconds": 1.4597916666666666
+        },
+        {
+          "frames": 25,
+          "render_frames": 25,
+          "usable": true,
+          "start_frame": 1084,
+          "end_frame": 1126,
+          "seconds": 1.75175
+        },
+        {
+          "frames": 73,
+          "render_frames": 73,
+          "usable": false,
+          "start_frame": 1131,
+          "end_frame": 1240,
+          "seconds": 4.546208333333333
+        },
+        {
+          "frames": 49,
+          "render_frames": 49,
+          "usable": false,
+          "start_frame": 1245,
+          "end_frame": 1320,
+          "seconds": 3.128125
+        },
+        {
+          "frames": 77,
+          "render_frames": 77,
+          "usable": true,
+          "start_frame": 1325,
+          "end_frame": 1441,
+          "seconds": 4.838166666666666
+        },
+        {
+          "frames": 49,
+          "render_frames": 49,
+          "usable": false,
+          "start_frame": 1446,
+          "end_frame": 1523,
+          "seconds": 3.2115416666666663
+        }
+      ]
+    },
+    {
+      "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_003/Daddy's_Home_2_(2017)_-_Do_We_Know_It's_Christmas?_Scene_(10_10)_|_Movieclips:scene000:0028-0036",
+      "key": "film-001769-b0003",
+      "film_key": "cinepile_t2v:daddy s home 2",
+      "source": "cinepile_t2v",
+      "scene": {
+        "fps": 23.976
+      },
+      "shots": [
+        {
+          "frames": 57,
+          "render_frames": 57,
+          "usable": true,
+          "start_frame": 1796,
+          "end_frame": 1886,
+          "seconds": 3.7537537537537538
+        },
+        {
+          "frames": 17,
+          "render_frames": 17,
+          "usable": true,
+          "start_frame": 1890,
+          "end_frame": 1919,
+          "seconds": 1.2095428762095428
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": true,
+          "start_frame": 1923,
+          "end_frame": 1959,
+          "seconds": 1.5015015015015016
+        },
+        {
+          "frames": 33,
+          "render_frames": 33,
+          "usable": true,
+          "start_frame": 1963,
+          "end_frame": 2017,
+          "seconds": 2.2522522522522523
+        },
+        {
+          "frames": 37,
+          "render_frames": 37,
+          "usable": true,
+          "start_frame": 2021,
+          "end_frame": 2078,
+          "seconds": 2.3773773773773774
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": true,
+          "start_frame": 2082,
+          "end_frame": 2115,
+          "seconds": 1.3763763763763763
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": true,
+          "start_frame": 2119,
+          "end_frame": 2152,
+          "seconds": 1.3763763763763763
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": true,
+          "start_frame": 2156,
+          "end_frame": 2189,
+          "seconds": 1.3763763763763763
+        },
+        {
+          "frames": 57,
+          "render_frames": 57,
+          "usable": true,
+          "start_frame": 2193,
+          "end_frame": 2282,
+          "seconds": 3.7120453787120455
+        }
+      ]
+    },
+    {
+      "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_010/The_Magnificent_Seven_(3_12)_Movie_CLIP_-_We_Need_Help_(1960)_HD:scene000:0000-0010",
+      "key": "film-007783-b0000",
+      "film_key": "cinepile_t2v:the magnificent seven",
+      "source": "cinepile_t2v",
+      "scene": {
+        "fps": 23.976
+      },
+      "shots": [
+        {
+          "frames": 197,
+          "render_frames": 197,
+          "usable": true,
+          "start_frame": 2,
+          "end_frame": 301,
+          "seconds": 12.470804137470804
+        },
+        {
+          "frames": 37,
+          "render_frames": 37,
+          "usable": true,
+          "start_frame": 305,
+          "end_frame": 360,
+          "seconds": 2.2939606272939606
+        },
+        {
+          "frames": 29,
+          "render_frames": 29,
+          "usable": true,
+          "start_frame": 364,
+          "end_frame": 407,
+          "seconds": 1.7934601267934602
+        },
+        {
+          "frames": 57,
+          "render_frames": 57,
+          "usable": true,
+          "start_frame": 411,
+          "end_frame": 497,
+          "seconds": 3.5869202535869205
+        },
+        {
+          "frames": 41,
+          "render_frames": 41,
+          "usable": true,
+          "start_frame": 501,
+          "end_frame": 567,
+          "seconds": 2.7527527527527527
+        },
+        {
+          "frames": 57,
+          "render_frames": 57,
+          "usable": true,
+          "start_frame": 571,
+          "end_frame": 657,
+          "seconds": 3.5869202535869205
+        },
+        {
+          "frames": 161,
+          "render_frames": 161,
+          "usable": true,
+          "start_frame": 661,
+          "end_frame": 904,
+          "seconds": 10.135135135135135
+        },
+        {
+          "frames": 69,
+          "render_frames": 69,
+          "usable": true,
+          "start_frame": 908,
+          "end_frame": 1013,
+          "seconds": 4.37937937937938
+        },
+        {
+          "frames": 161,
+          "render_frames": 161,
+          "usable": true,
+          "start_frame": 1017,
+          "end_frame": 1260,
+          "seconds": 10.135135135135135
+        },
+        {
+          "frames": 221,
+          "render_frames": 221,
+          "usable": true,
+          "start_frame": 1264,
+          "end_frame": 1598,
+          "seconds": 13.930597263930597
+        },
+        {
+          "frames": 73,
+          "render_frames": 73,
+          "usable": true,
+          "start_frame": 1602,
+          "end_frame": 1712,
+          "seconds": 4.587921254587921
+        }
+      ]
+    }
+  ]
+}

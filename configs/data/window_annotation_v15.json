@@ -1,0 +1,119 @@
+{
+ "schema_version": 15,
+ "kind": "window_annotation",
+ "contract": "window_annotation_v15_unified_20261012",
+ "basis": "单镜与多镜统一；粗筛并入标注；照官方不设 system；看到就记、不设任何上限；大件固定物并进物件；背景人群记成 group 条目；不要首末帧布尔、位置关系、「过程是否看得见」（近邻没有人对首末帧特殊处理，是过度设计）。整份提示词重写，不是在旧版上增补；取值定义里画面类型、叠加文字、活动三项沿用内容筛选第四版验过的原文。",
+ "call": {
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "model": "qwen3.7-flash",
+  "enable_thinking": true,
+  "video_fps": 2,
+  "message_layout": "一条 user 消息：视频在前，随后是 prompt，再空一行接各镜时间（每行 Shot N: 起–止 s）；不设 system",
+  "response_format": {
+   "type": "json_object"
+  },
+  "stream": true,
+  "sampling": "不传温度等采样参数，用服务端默认",
+  "max_tokens": "不设",
+  "video_transport": "实时：Base64（官方建议小于 7 MB 的文件内嵌）；批量：OSS 签名地址"
+ },
+ "prompt": "You will watch a short video and write structured notes about it. The notes are used to train a video-generation model. The video has one or more shots; a shot is one continuous piece of footage between two cuts. The time range of every shot is listed at the end.\n\nWrite only what you can see. If you cannot tell something, leave it out; do not guess. Do not use subtitles, titles, or what you know about the film or its actors. Do not say where things are in the frame (left, right, foreground, background) or which way people face; that is measured separately. Use short, plain English. Answer with one JSON object and nothing else.\n\n## 1. video: what kind of video this is\n- picture_type, one of:\n  \"live_action\": filmed with a camera in the real world.\n  \"animation_2d\": drawn or flat cartoon animation.\n  \"animation_3d_or_game\": computer-generated 3D animation, video-game footage, stop-motion or puppet animation, or a rendered visualisation.\n  \"screen_or_slides\": a screen recording, a slideshow of still images, or pages of text or graphics rather than moving footage.\n- on_screen_text: text or graphics laid over the picture. Text that belongs to the filmed scene, such as a shop sign or a phone screen, does not count. One of:\n  \"none\": nothing is laid over the picture.\n  \"corner_logo_or_watermark\": only a small logo, watermark, score bug or short label, in a corner or for a moment.\n  \"burned_subtitles\": subtitle or caption lines are burned into the picture for most of the video.\n  \"large_text_or_picture_in_picture\": large text blocks, a title card, a decorative frame, a split screen or picture-in-picture cover a substantial part of the picture for most of the video.\n- summary: one sentence saying who does what and where.\n\n## 2. characters, objects, places: everyone and everything you can see\nGive each one a name and keep it for the whole video: \"Character 1\", \"Character 2\", ...; \"Object 1\", \"Object 2\", ...; \"Location 1\", \"Location 2\", ... The same person, thing or place has the same name in every shot. If you are not sure that two appearances are the same one, give them different names.\n- characters: every person and animal you can tell apart. People you cannot tell apart one by one, such as a crowd or a row of soldiers, are a single entry.\n  kind: \"person\", \"animal\" or \"group\".\n  visibility: \"clear\" (a visible face or a distinctive whole figure), \"partial\" (only hands, feet, a back or other parts) or \"distant\" (always too small or too far away to tell apart).\n  appearance: what stays the same for the whole video, such as hair, build, skin tone, age, beard and face. Leave out clothing, pose, expression and anything temporary.\n- objects: every thing you can clearly see and identify: things people hold, wear for a moment or use, furniture, vehicles, doors, windows and so on.\n  appearance: what kind of thing it is, with its colour, material and shape. Leave out its momentary state, such as open, full or broken.\n- places: each room or site. Two shots show the same place if they show the same room or site, even from a different camera position.\n  appearance: what the place looks like.\n\n## 3. shots: one entry per shot, in order\n- shot: its number, starting at 1.\n- place: a location name.\n- camera: leave out any part you cannot tell.\n  shot_size: \"extreme close-up shot\", \"close-up shot\", \"medium close-up shot\", \"medium shot\", \"medium wide shot\", \"wide shot\" or \"extreme wide shot\".\n  angle: \"eye-level shot\", \"high angle shot\", \"low angle shot\", \"overhead shot\", \"over-the-shoulder shot\", \"dutch angle shot\" or \"aerial shot\".\n  movement: \"static\", \"pan left\", \"pan right\", \"tilt up\", \"tilt down\", \"push in\", \"pull out\", \"tracking\" or \"handheld\".\n- activity: what the people or animals in this shot do. One of:\n  \"action_or_state_change\": someone visibly does something with their body or with an object, or something visibly changes: picks up, puts down, puts on, opens, pours, cuts, hands over, sits down, stands up, walks somewhere, enters, leaves, hugs, hits, dances, plays a sport, cooks.\n  \"talking_only\": people only talk, sing, pose, look around or gesture; nothing else happens.\n  \"no_human_activity\": nobody acts: scenery, empty rooms, objects or vehicles on their own.\n- action: one sentence saying what happens in this shot. Refer to characters, objects and places by their names and do not repeat their appearance.\n- present: every character and object visible in this shot, each with how it looks when it first appears in the shot.\n  name\n  clothing (characters): what they wear.\n  posture (characters): body position and where they are, such as \"sitting at the dining table\" or \"standing in the doorway\".\n  state: anything temporary you can see, such as \"sweating\", \"a bandaged arm\", \"open\", \"full of water\" or \"lying on the table\".\n  holding (characters): names of the objects in their hands.\n- changes: what becomes different during this shot. One entry per change: name; what (\"clothing\", \"posture\", \"state\" or \"holding\"); before; after. For \"holding\", before and after are lists of object names. Write [] if nothing changes.\n\n## Example with two shots\n{\"video\": {\"picture_type\": \"live_action\", \"on_screen_text\": \"none\", \"summary\": \"An elderly woman drinks tea in a kitchen as a tall person comes in from outside with a suitcase.\"}, \"characters\": [{\"name\": \"Character 1\", \"kind\": \"person\", \"visibility\": \"clear\", \"appearance\": \"an elderly woman with short grey hair and a slim build\"}, {\"name\": \"Character 2\", \"kind\": \"person\", \"visibility\": \"clear\", \"appearance\": \"a tall person with long brown hair\"}], \"objects\": [{\"name\": \"Object 1\", \"appearance\": \"a white ceramic mug\"}, {\"name\": \"Object 2\", \"appearance\": \"a brown leather suitcase\"}, {\"name\": \"Object 3\", \"appearance\": \"a wooden dining table\"}, {\"name\": \"Object 4\", \"appearance\": \"a glass back door\"}], \"places\": [{\"name\": \"Location 1\", \"appearance\": \"a small kitchen with wooden cabinets\"}], \"shots\": [{\"shot\": 1, \"place\": \"Location 1\", \"camera\": {\"shot_size\": \"medium shot\", \"angle\": \"eye-level shot\", \"movement\": \"static\"}, \"activity\": \"action_or_state_change\", \"action\": \"Character 1 lifts Object 1 from Object 3 and drinks while Character 2 comes in through Object 4 carrying Object 2.\", \"present\": [{\"name\": \"Character 1\", \"clothing\": \"a navy sweater\", \"posture\": \"sitting at the dining table\"}, {\"name\": \"Character 2\", \"clothing\": \"a long grey coat\", \"posture\": \"walking in through the back door\", \"state\": \"wet hair\", \"holding\": [\"Object 2\"]}, {\"name\": \"Object 1\", \"state\": \"full of tea, standing on the table\"}, {\"name\": \"Object 2\"}, {\"name\": \"Object 3\"}, {\"name\": \"Object 4\", \"state\": \"open\"}], \"changes\": [{\"name\": \"Character 1\", \"what\": \"holding\", \"before\": [], \"after\": [\"Object 1\"]}]}, {\"shot\": 2, \"place\": \"Location 1\", \"camera\": {\"shot_size\": \"close-up shot\", \"angle\": \"eye-level shot\", \"movement\": \"static\"}, \"activity\": \"talking_only\", \"action\": \"Character 1 looks up and speaks to someone out of view.\", \"present\": [{\"name\": \"Character 1\", \"clothing\": \"a navy sweater\", \"posture\": \"sitting at the dining table\", \"holding\": [\"Object 1\"]}, {\"name\": \"Object 1\", \"state\": \"empty\"}, {\"name\": \"Object 3\"}], \"changes\": []}]}\n\n## Example with one shot\n{\"video\": {\"picture_type\": \"live_action\", \"on_screen_text\": \"corner_logo_or_watermark\", \"summary\": \"A young man ties his shoelaces on a park bench while joggers pass behind him.\"}, \"characters\": [{\"name\": \"Character 1\", \"kind\": \"person\", \"visibility\": \"clear\", \"appearance\": \"a young man with curly dark hair and a lean build\"}, {\"name\": \"Character 2\", \"kind\": \"group\", \"visibility\": \"distant\", \"appearance\": \"joggers on the path\"}], \"objects\": [{\"name\": \"Object 1\", \"appearance\": \"a green wooden bench\"}], \"places\": [{\"name\": \"Location 1\", \"appearance\": \"a tree-lined park path\"}], \"shots\": [{\"shot\": 1, \"place\": \"Location 1\", \"camera\": {\"shot_size\": \"medium wide shot\", \"angle\": \"eye-level shot\", \"movement\": \"static\"}, \"activity\": \"action_or_state_change\", \"action\": \"Character 1 bends forward on Object 1, ties the laces of one shoe, then sits up and looks down the path as Character 2 runs past.\", \"present\": [{\"name\": \"Character 1\", \"clothing\": \"a grey hoodie and black shorts\", \"posture\": \"sitting on the bench, bent over his shoe\"}, {\"name\": \"Character 2\", \"posture\": \"running along the path\"}, {\"name\": \"Object 1\"}], \"changes\": [{\"name\": \"Character 1\", \"what\": \"posture\", \"before\": \"bent forward over his shoe\", \"after\": \"sitting upright on the bench\"}]}]}\n",
+ "labels": {
+  "picture_type": [
+   "live_action",
+   "animation_2d",
+   "animation_3d_or_game",
+   "screen_or_slides"
+  ],
+  "on_screen_text": [
+   "none",
+   "corner_logo_or_watermark",
+   "burned_subtitles",
+   "large_text_or_picture_in_picture"
+  ],
+  "kind": [
+   "person",
+   "animal",
+   "group"
+  ],
+  "visibility": [
+   "clear",
+   "partial",
+   "distant"
+  ],
+  "activity": [
+   "action_or_state_change",
+   "talking_only",
+   "no_human_activity"
+  ],
+  "change_what": [
+   "clothing",
+   "posture",
+   "state",
+   "holding"
+  ]
+ },
+ "derived": {
+  "people": "kind 为 person 的人物",
+  "clear_people": "people 里 visibility 为 clear 的",
+  "recurring_people": "在两个及以上镜的 present 里出现的 people 数；单镜窗不适用",
+  "any_action": "至少一镜 activity 为 action_or_state_change",
+  "all_talking": "每一镜 activity 都是 talking_only"
+ },
+ "rules": {
+  "hard_filter": [
+   {
+    "name": "不是连续拍摄的画面",
+    "when": "picture_type == screen_or_slides"
+   },
+   {
+    "name": "烧录字幕",
+    "when": "on_screen_text == burned_subtitles"
+   },
+   {
+    "name": "大面积文字或画中画",
+    "when": "on_screen_text == large_text_or_picture_in_picture"
+   },
+   {
+    "name": "没有可认的主体",
+    "when": "没有 person 或 animal，或它们的 visibility 全是 distant"
+   }
+  ],
+  "classes": [
+   {
+    "name": "动画或游戏",
+    "when": "picture_type 为 animation_2d 或 animation_3d_or_game"
+   },
+   {
+    "name": "核心",
+    "when": "live_action 且 clear_people ≥ 1 且 any_action"
+   },
+   {
+    "name": "只见手或局部",
+    "when": "clear_people == 0 且有 people 的 visibility 为 partial"
+   },
+   {
+    "name": "对白",
+    "when": "all_talking 且 people ≥ 2"
+   },
+   {
+    "name": "单人讲话",
+    "when": "all_talking 且 people == 1"
+   },
+   {
+    "name": "其他留",
+    "when": "其余"
+   }
+  ],
+  "marks": [
+   {
+    "name": "有角标或水印",
+    "when": "on_screen_text == corner_logo_or_watermark"
+   },
+   {
+    "name": "无跨镜同人",
+    "when": "镜数 ≥ 2 且 recurring_people == 0；只打标，是否据此选数据留到训练时定"
+   }
+  ]
+ }
+}

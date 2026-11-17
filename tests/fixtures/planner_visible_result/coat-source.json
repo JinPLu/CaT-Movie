@@ -1,0 +1,304 @@
+[
+  {
+    "block_id": "cinedance-017111-b0001",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young woman with long dark hair",
+          "outfit": "a white cable-knit sweater and blue jeans"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a beige coat"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a wooden bookshelf"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a corkboard with sticky notes"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a desk"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a wooden chair"
+        },
+        {
+          "name": "Object 6",
+          "appearance": "a manila folder"
+        },
+        {
+          "name": "Object 7",
+          "appearance": "papers inside the folder"
+        },
+        {
+          "name": "Object 8",
+          "appearance": "a pen"
+        },
+        {
+          "name": "Object 9",
+          "appearance": "a desk lamp"
+        },
+        {
+          "name": "Object 10",
+          "appearance": "a bed"
+        },
+        {
+          "name": "Object 11",
+          "appearance": "curtains"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a bedroom or study with a desk, bookshelf, and bed"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing with her back to the camera"
+            },
+            {
+              "name": "Object 1",
+              "state": "being taken off"
+            },
+            {
+              "name": "Object 2",
+              "state": "filled with books"
+            },
+            {
+              "name": "Object 3",
+              "state": "covered in sticky notes"
+            },
+            {
+              "name": "Object 4",
+              "state": "cluttered with items"
+            },
+            {
+              "name": "Object 5",
+              "state": "empty"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 takes off her beige coat and places it on the wooden chair at the desk.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "outfit",
+              "before": "wearing a beige coat",
+              "after": "without the coat"
+            },
+            {
+              "name": "Object 1",
+              "what": "state",
+              "before": "worn by Character 1",
+              "after": "hanging on the chair"
+            }
+          ]
+        },
+        {
+          "shot": 2,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting at the desk",
+              "outfit": "without the coat"
+            },
+            {
+              "name": "Object 6",
+              "state": "being held"
+            },
+            {
+              "name": "Object 10",
+              "state": "visible in the background"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 sits at the desk, opens the manila folder, and looks inside.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "posture",
+              "before": "standing",
+              "after": "sitting"
+            },
+            {
+              "name": "Object 6",
+              "what": "state",
+              "before": "closed",
+              "after": "open"
+            }
+          ]
+        },
+        {
+          "shot": 3,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting at the desk",
+              "outfit": "without the coat"
+            },
+            {
+              "name": "Object 7",
+              "state": "being pulled out"
+            },
+            {
+              "name": "Object 2",
+              "state": "visible in the background"
+            },
+            {
+              "name": "Object 9",
+              "state": "on"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 pulls a stack of papers out of the manila folder.",
+          "changes": [
+            {
+              "name": "Object 7",
+              "what": "state",
+              "before": "inside the folder",
+              "after": "being held by Character 1"
+            }
+          ]
+        },
+        {
+          "shot": 4,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "over-the-shoulder shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "holding the papers",
+              "outfit": "without the coat"
+            },
+            {
+              "name": "Object 7",
+              "state": "showing text"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 holds up a paper with the heading '독서' (Reading) and reads it.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting at the desk",
+              "outfit": "without the coat"
+            },
+            {
+              "name": "Object 8",
+              "state": "being picked up"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 looks down at the papers and picks up a pen.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "holding",
+              "before": [],
+              "after": [
+                "Object 8"
+              ]
+            }
+          ]
+        },
+        {
+          "shot": 6,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting at the desk, writing",
+              "outfit": "without the coat"
+            },
+            {
+              "name": "Object 1",
+              "state": "hanging on the chair"
+            },
+            {
+              "name": "Object 4",
+              "state": "cluttered with papers"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 writes on the papers at the desk.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "posture",
+              "before": "looking at papers",
+              "after": "writing on papers"
+            }
+          ]
+        }
+      ],
+      "story": {
+        "paragraph": "A young woman with long dark hair is in her bedroom or study. She takes off her beige coat and hangs it on the chair at her desk. She sits down, opens a manila folder, and pulls out a stack of papers. She reads a document with the heading '독서' (Reading) and then picks up a pen to write on the papers at her desk.",
+        "summary": "A young woman takes off her coat, sits at her desk, reads some papers from a folder, and begins writing."
+      }
+    }
+  }
+]

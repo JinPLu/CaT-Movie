@@ -1,0 +1,28 @@
+{
+ "stories": [
+  {
+   "story_id": "cinedance-010094-b0000-shot01",
+   "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/015b7e00-9155-829b-8547-67dcb3345a69.mp4"
+  },
+  {
+   "story_id": "cinedance-010094-b0001-shot01",
+   "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/015b7e00-9155-829b-8547-67dcb3345a69.mp4"
+  },
+  {
+   "story_id": "cinedance-012125-b0000-shot01",
+   "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/038009ca-8c69-8268-b2fa-a3af8e962d0a.mp4"
+  },
+  {
+   "story_id": "cinedance-012125-b0001-shot01",
+   "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/038009ca-8c69-8268-b2fa-a3af8e962d0a.mp4"
+  },
+  {
+   "story_id": "cinedance-014083-b0000-shot01",
+   "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0003/0592a105-faab-8d9f-a32b-2b34b620104b.mp4"
+  },
+  {
+   "story_id": "cinedance-014083-b0001-shot01",
+   "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0003/0592a105-faab-8d9f-a32b-2b34b620104b.mp4"
+  }
+ ]
+}

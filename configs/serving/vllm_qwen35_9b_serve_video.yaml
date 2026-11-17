@@ -1,0 +1,30 @@
+# vLLM 启动 Qwen3.5-9B（本地权重）— Track-B video gate 专用（port 8001，GPU1）。
+# 与 mainline 8000 server 隔离；含 allowed-local-media-path 以支持 file:// 视频。
+
+vllm_executable: ${MSPC_SHARED_ROOT}/env/qwen35_vlm/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.5-9B
+host: "127.0.0.1"
+port: 8001
+tensor_parallel_size: 1
+max_model_len: 32768
+gpu_memory_utilization: 0.85
+dtype: auto
+trust_remote_code: true
+allowed_local_media_path: ${MSPC_SHARED_ROOT}
+reasoning_parser: qwen3
+media_io_kwargs:
+  video:
+    num_frames: -1
+mm_processor_kwargs:
+  fps: 2
+  do_sample_frames: true
+hf_token_file: ${MSPC_SHARED_ROOT}/OoVMetric/resource/huggingface_token.txt
+proxy_env_file: null
+extra_cli_args:
+  - "--served-model-name"
+  - "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.5-9B"
+  - "--default-chat-template-kwargs"
+  - '{"enable_thinking": false}'
+  - "--limit-mm-per-prompt"
+  - '{"image": 1, "video": 1}'
+  - "--enforce-eager"

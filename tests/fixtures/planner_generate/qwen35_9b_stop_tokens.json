@@ -1,0 +1,11 @@
+{
+ "config_text_eos_token_id": 248044,
+ "tokenizer_eos_token": "<|im_end|>",
+ "tokenizer_eos_token_id": 248046,
+ "tokens": {
+  "248044": "<|endoftext|>",
+  "248045": "<|im_start|>",
+  "248046": "<|im_end|>"
+ },
+ "source": "models_ckpt/Qwen3.5-9B config.json text_config.eos_token_id、tokenizer_config.json eos_token 与 added_tokens_decoder，10-10 现场读取"
+}

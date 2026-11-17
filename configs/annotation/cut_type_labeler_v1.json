@@ -1,0 +1,45 @@
+{
+  "schema_version": "cut_type_labeler_config_v1",
+  "closeai_base_url": "https://api.openai-proxy.org/v1",
+  "model": "qwen3.5-flash",
+  "temperature": 0,
+  "max_tokens": 700,
+  "enable_thinking": false,
+  "max_retries": 3,
+  "retry_base_seconds": 2.0,
+  "request_timeout_seconds": 90,
+  "rpm_limit": 1200,
+  "budget_hard_cap_usd": "5.00",
+  "cny_per_usd_budget_guard": "7.30",
+  "precall_prompt_tokens": 8000,
+  "precall_completion_tokens": 700,
+  "price_source": "CloseAI limited-time prices as of 2026-09-24, USD per million tokens (input/output); same table as configs/annotation/story_visual_setting_api_v1.json",
+  "prices_usd_per_mtok": {
+    "qwen3.5-flash": {"input_usd_per_mtok": "0.024", "output_usd_per_mtok": "0.18"},
+    "qwen3.6-flash": {"input_usd_per_mtok": "0.144", "output_usd_per_mtok": "0.88"},
+    "qwen3.5-plus": {"input_usd_per_mtok": "0.072", "output_usd_per_mtok": "0.45"},
+    "qwen3.6-plus": {"input_usd_per_mtok": "0.24", "output_usd_per_mtok": "1.4"},
+    "qwen3.7-plus": {"input_usd_per_mtok": "0.24", "output_usd_per_mtok": "0.96"}
+  },
+  "frames": {
+    "max_side": 512,
+    "jpeg_quality": 88
+  },
+  "pool": {
+    "metadata_csv": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/msm_global_caption/hq_pool_205k_20260831_v1/metadata.csv",
+    "excluded_case_ids": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/msm_global_caption/hq_pool_205k_20260831_v1/excluded_case_ids_with_screen_holdout.jsonl",
+    "quality_index": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/video_quality_index_205k_v1/video_quality_index.jsonl",
+    "ci_vid_train_samples": "${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/metadata/CI-VID_train_samples.jsonl",
+    "ci_vid_test_samples": "${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/metadata/CI-VID_test_samples.jsonl"
+  },
+  "sampling": {
+    "seed": 20260930,
+    "per_source": 150,
+    "random_per_source": 75,
+    "candidates_per_source": 360,
+    "boosted_return_per_source": 25,
+    "boosted_continuation_per_source": 25,
+    "dev_size": 100,
+    "workers": 32
+  }
+}

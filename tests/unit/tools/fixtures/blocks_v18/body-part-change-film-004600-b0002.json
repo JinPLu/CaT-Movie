@@ -1,0 +1,384 @@
+{
+ "key": "film-004600-b0002",
+ "shots": 11,
+ "source": "source-pipeline-20261011/review/blocks-v17/responses/film-004600-b0002.json",
+ "contract": "block_annotation_v17",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with long wavy blonde hair",
+    "outfit": "a black sleeveless top and a straw hat with a black band"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short brown hair",
+    "outfit": "a dark brown t-shirt"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair",
+    "outfit": "a white button-down shirt"
+   },
+   {
+    "name": "Group 1",
+    "kind": "group",
+    "visibility": "distant",
+    "appearance": "people in the background"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a black handbag with studs"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a chalkboard sign with 'Taste of the World' written on it"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a sign that says 'Hot Bar'"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "food display counters"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a busy indoor food market or cafeteria with brick walls and food counters"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking over her shoulder",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 3",
+      "posture": "walking towards the camera",
+      "outfit": "a white button-down shirt"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "A woman in a straw hat looks over her shoulder as a man in a white shirt walks towards her.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing next to a man",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing next to the woman",
+      "outfit": "a dark brown t-shirt"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "A man in a dark t-shirt stands next to the woman in the hat, and they both look in the same direction.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing at a food counter",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing at the food counter",
+      "outfit": "a dark brown t-shirt"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing at the food counter",
+      "outfit": "a white button-down shirt"
+     },
+     {
+      "name": "Object 2",
+      "state": "hanging above the counter"
+     },
+     {
+      "name": "Object 3",
+      "state": "hanging above the counter"
+     },
+     {
+      "name": "Object 4",
+      "state": "filled with food"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The three people stand at a food counter. The man in the white shirt shakes hands with the man in the dark t-shirt.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Character 3's hand"
+      ]
+     },
+     {
+      "name": "Character 3",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Character 2's hand"
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "talking to the man in the white shirt",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 3",
+      "posture": "talking to the woman",
+      "outfit": "a white button-down shirt"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman in the hat talks to the man in the white shirt.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "talking",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking at the woman",
+      "outfit": "a dark brown t-shirt"
+     },
+     {
+      "name": "Character 3",
+      "posture": "partially visible"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman talks while the man in the dark t-shirt looks on.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "talking",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 3",
+      "posture": "talking",
+      "outfit": "a white button-down shirt"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman and the man in the white shirt talk to each other.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "talking",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking away"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman continues talking while the man in the dark t-shirt looks away.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "laughing",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 3",
+      "posture": "smiling"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman laughs and the man in the white shirt smiles.",
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "talking and smiling",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 2",
+      "posture": "talking"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman smiles and talks to the man in the dark t-shirt.",
+    "changes": []
+   },
+   {
+    "shot": 10,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking back",
+      "outfit": "a black sleeveless top and a straw hat with a black band"
+     },
+     {
+      "name": "Character 3",
+      "posture": "looking at her"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman looks back over her shoulder while the man in the white shirt looks at her.",
+    "changes": []
+   },
+   {
+    "shot": 11,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "looking forward with a surprised expression"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The man in the dark t-shirt looks forward with a surprised expression.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "A woman wearing a straw hat and a man in a dark t-shirt are at a food counter in a busy indoor market. Another man in a white shirt approaches them. The three greet each other, and the man in the white shirt shakes hands with the man in the dark t-shirt. They engage in conversation, with the woman talking and laughing while the men listen and respond. The man in the dark t-shirt eventually looks forward with a surprised expression.",
+   "summary": "Three people greet each other and talk at a food counter in a busy indoor market."
+  }
+ }
+}

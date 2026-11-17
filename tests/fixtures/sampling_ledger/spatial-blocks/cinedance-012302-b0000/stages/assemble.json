@@ -1,0 +1,1 @@
+{"state": "succeeded", "stage": "assemble", "key": "cinedance-012302-b0000", "products": ["instance_depth.json", "instances.json", "masks.json"], "seconds": 0.18912973254919052, "output_bytes": 26069, "model_load_seconds": 0.0, "completed_at": "2026-10-13T00:02:00.520423+00:00"}

@@ -1,0 +1,28 @@
+# 规划器零样本/反写服务；驱动兼容cu128环境，任务结束停服释放租约。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.8-27B
+host: "127.0.0.1"
+port: 8188
+tensor_parallel_size: 2
+max_model_len: 131072
+gpu_memory_utilization: 0.80
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.8-27B"
+  - "--max-num-seqs"
+  - "4"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--mm-processor-cache-gb"
+  - "0"
+  - "--default-chat-template-kwargs"
+  - '{"enable_thinking":false}'
+  - "--limit-mm-per-prompt"
+  - '{"image":8,"video":0}'
+  - "--reasoning-parser"
+  - "qwen3"
+  - "--enforce-eager"
+ld_library_path: ""
+omp_num_threads: 4

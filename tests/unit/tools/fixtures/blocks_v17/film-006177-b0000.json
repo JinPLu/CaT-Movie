@@ -1,0 +1,362 @@
+{
+ "key": "film-006177-b0000",
+ "shots": 10,
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short brown hair, a mustache, and a medium build",
+    "outfit": "black swim trunks with purple trim"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short brown hair and a lean build",
+    "outfit": "a blue t-shirt"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a black cell phone"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a white cordless phone"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a black and purple speedo"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a yellow towel"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a potted plant"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a hot tub"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "sunglasses"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "an outdoor patio with a hot tub, columns, and a view of a lake"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "a bathroom with a sink, wooden cabinets, and patterned wallpaper"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "bending over, picking up a phone",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "black swim trunks with purple trim"
+     },
+     {
+      "name": "Object 4",
+      "state": "hanging on a stand"
+     },
+     {
+      "name": "Object 5",
+      "state": "in a pot"
+     },
+     {
+      "name": "Object 6",
+      "state": "empty"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 picks up a black cell phone from the edge of the hot tub, puts on sunglasses, and starts talking on the phone while standing up.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "black swim trunks with purple trim",
+      "after": "black swim trunks with purple trim and sunglasses"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting on a toilet",
+      "holding": [
+       "Object 2"
+      ]
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 sits in a bathroom, holding a white cordless phone to his ear and talking.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "black and purple speedo"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 is now wearing a black and purple speedo, still talking on the phone and gesturing with his free hand.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "black swim trunks with purple trim and sunglasses",
+      "after": "black and purple speedo"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting on a toilet",
+      "holding": [
+       "Object 2"
+      ]
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 continues talking on the white cordless phone in the bathroom.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "black and purple speedo"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 stands on the patio in a speedo, talking on the phone and gesturing.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting on a toilet",
+      "holding": [
+       "Object 2"
+      ]
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 listens and talks on the phone in the bathroom.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "getting into the hot tub",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "black and purple speedo"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 steps into the hot tub while talking on the phone.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing",
+      "after": "getting into the hot tub"
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting on a toilet",
+      "holding": [
+       "Object 2"
+      ]
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 continues the phone conversation from the bathroom.",
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "black and purple speedo and sunglasses"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1, now wearing sunglasses again, talks on the phone.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "black and purple speedo",
+      "after": "black and purple speedo and sunglasses"
+     }
+    ]
+   },
+   {
+    "shot": 10,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting on the edge of the hot tub with one leg in the water",
+      "holding": [
+       "Object 1"
+      ],
+      "outfit": "black and purple speedo and sunglasses"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 sits on the edge of the hot tub, talking on the phone.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing",
+      "after": "sitting on the edge of the hot tub with one leg in the water"
+     }
+    ]
+   }
+  ],
+  "story": {
+   "paragraph": "A man in black swim trunks picks up a cell phone on an outdoor patio and puts on sunglasses while talking. The scene cuts to another man in a blue t-shirt sitting in a bathroom, talking on a cordless phone. Back on the patio, the first man is now wearing a speedo and continues his phone conversation. He steps into a hot tub, still talking, and eventually sits on the edge with one leg in the water. The scene alternates between the two men having a phone conversation.",
+   "summary": "Two men have a phone conversation, one on a patio getting into a hot tub in a speedo, and the other sitting in a bathroom."
+  }
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {},
+ "source": "block-contract-v17-quick-check-20261013/answers/base/film-006177-b0000.json"
+}

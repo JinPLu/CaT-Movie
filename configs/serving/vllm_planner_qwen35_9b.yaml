@@ -1,0 +1,29 @@
+# 规划器零样本/反写服务；驱动兼容cu128环境，任务结束停服释放租约。
+# 11-06 调用复查：开 CUDA graph（去掉 --enforce-eager）、纯文本、
+# 前缀缓存，开发集逐镜档每条 82→31 秒，原答与各列在噪声内。不开多 token 预测：vLLM 0.19 下它让思考档的 JSON 结构约束失效。
+# 11-12 吞吐（outputs/experiments/planner-serving-throughput-20261112，同一 A100 卡、同 90 条请求）：--max-num-seqs 与客户端并发
+# 4 → 64 → 128，耗时 8:34 → 2:01 → 1:39，GPU 平均利用率 92%（64 路）；64 路出的计划与 4 路在判官噪声内一致。取 64：再往上只省长尾。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_v019_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.5-9B
+host: "127.0.0.1"
+port: 8185
+tensor_parallel_size: 1
+max_model_len: 131072
+gpu_memory_utilization: 0.80
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.5-9B"
+  - "--max-num-seqs"
+  - "64"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--default-chat-template-kwargs"
+  - '{"enable_thinking":false}'
+  - "--reasoning-parser"
+  - "qwen3"
+  - "--language-model-only"
+  - "--enable-prefix-caching"
+ld_library_path: ""
+omp_num_threads: 4

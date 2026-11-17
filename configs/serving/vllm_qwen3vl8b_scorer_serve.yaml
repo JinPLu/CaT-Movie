@@ -1,0 +1,31 @@
+# Local MSPC scorer smoke/fallback service.
+#
+# This is the lightweight local replacement path for DashScope outage handling.
+# It is suitable for endpoint smoke tests and fallback candidate mining, but the
+# paper-grade scorer target remains a larger model after validation.
+
+vllm_executable: ${MSPC_SHARED_ROOT}/Storyboard/.runtime/venvs/qwen3vl_scorer_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3-VL-8B-Instruct
+host: "127.0.0.1"
+port: 8000
+tensor_parallel_size: 1
+max_model_len: 32768
+gpu_memory_utilization: 0.85
+dtype: auto
+trust_remote_code: true
+allowed_local_media_path: ${MSPC_SHARED_ROOT}
+reasoning_parser: null
+media_io_kwargs:
+  video:
+    num_frames: -1
+mm_processor_kwargs:
+  fps: 2
+  do_sample_frames: true
+hf_token_file: ${MSPC_SHARED_ROOT}/OoVMetric/resource/huggingface_token.txt
+proxy_env_file: null
+extra_cli_args:
+  - "--enforce-eager"
+  - "--served-model-name"
+  - "qwen3vl8b-local"
+  - "--limit-mm-per-prompt"
+  - '{"image": 1, "video": 1}'

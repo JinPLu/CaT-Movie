@@ -1,0 +1,27 @@
+{
+  "model_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.5-9B",
+  "train_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/full-pool-training-inputs-20261028/planner-final/rows/train.jsonl",
+  "val_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/planner-v2-sparse-anchors-20261027/val.jsonl",
+  "output_dir": "${MSPC_SHARED_ROOT}/Storyboard/outputs/planner-training/qwen35-full-pool",
+  "rank": 8,
+  "alpha": 32,
+  "dropout": 0.05,
+  "learning_rate": 0.0001,
+  "warmup_ratio": 0.05,
+  "weight_decay": 0.1,
+  "max_grad_norm": 1.0,
+  "epochs": 1,
+  "global_batch_size": 16,
+  "gradient_checkpointing": true,
+  "seed": 42,
+  "save_every_steps": 500,
+  "loss_tracking": {
+    "project": "Storyboard",
+    "workspace": "JinPLu",
+    "experiment_name": "qwen35-full-pool",
+    "mode": "offline",
+    "api_key_file": null
+  },
+  "note": "全量规划器，一遍。训练行是 10-18 冻结池去 25 个确认错块、本轮 16k 块用修正成员、补标注新块与回源复核通过的块并入后，按 storyboard_v18_text_layout_request_v9 重导并挂稀疏锚。从 Qwen3.5-9B 新起 LoRA（adapter_init=null），不是布局消融规划器的续训。留出沿用本轮 384 行，便于和消融规划器的验证 loss 并排。r8／alpha32、lr1e-4、global batch16 与本轮相同；每卡 2 行、累积 2，给全量最长 17,736 token 的行留显存。",
+  "adapter_init": null
+}

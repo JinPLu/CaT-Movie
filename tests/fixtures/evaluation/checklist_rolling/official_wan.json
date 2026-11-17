@@ -1,0 +1,172 @@
+{
+ "story_id": "cinedance-009077-b0004-shot01",
+ "generation_status": "completed",
+ "video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/official-wan-ti2v-5b-clean-source-20261027/inference/raw/videos/official_wan_ti2v_5b/shots/seed-42/cinedance-009077-b0004-shot01/video.mp4",
+ "video_bytes": 28189616,
+ "segments_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/official-wan-ti2v-5b-clean-source-20261027/inference/raw/videos/official_wan_ti2v_5b/shots/seed-42/cinedance-009077-b0004-shot01/segments.json",
+ "segments": [
+  {
+   "start_shot": 0,
+   "end_shot": 1,
+   "frame_counts": [
+    13
+   ],
+   "output_frame_counts": [
+    21
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 21
+  },
+  {
+   "start_shot": 1,
+   "end_shot": 2,
+   "frame_counts": [
+    41
+   ],
+   "output_frame_counts": [
+    61
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 61
+  },
+  {
+   "start_shot": 2,
+   "end_shot": 3,
+   "frame_counts": [
+    41
+   ],
+   "output_frame_counts": [
+    61
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 61
+  },
+  {
+   "start_shot": 3,
+   "end_shot": 4,
+   "frame_counts": [
+    25
+   ],
+   "output_frame_counts": [
+    37
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 37
+  },
+  {
+   "start_shot": 4,
+   "end_shot": 5,
+   "frame_counts": [
+    17
+   ],
+   "output_frame_counts": [
+    25
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 25
+  },
+  {
+   "start_shot": 5,
+   "end_shot": 6,
+   "frame_counts": [
+    89
+   ],
+   "output_frame_counts": [
+    133
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 133
+  },
+  {
+   "start_shot": 6,
+   "end_shot": 7,
+   "frame_counts": [
+    37
+   ],
+   "output_frame_counts": [
+    57
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 57
+  },
+  {
+   "start_shot": 7,
+   "end_shot": 8,
+   "frame_counts": [
+    25
+   ],
+   "output_frame_counts": [
+    37
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 37
+  },
+  {
+   "start_shot": 8,
+   "end_shot": 9,
+   "frame_counts": [
+    13
+   ],
+   "output_frame_counts": [
+    21
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 21
+  },
+  {
+   "start_shot": 9,
+   "end_shot": 10,
+   "frame_counts": [
+    45
+   ],
+   "output_frame_counts": [
+    69
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 69
+  },
+  {
+   "start_shot": 10,
+   "end_shot": 11,
+   "frame_counts": [
+    53
+   ],
+   "output_frame_counts": [
+    81
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 81
+  },
+  {
+   "start_shot": 11,
+   "end_shot": 12,
+   "frame_counts": [
+    181
+   ],
+   "output_frame_counts": [
+    273
+   ],
+   "source_fps": 16,
+   "output_fps": 24,
+   "num_frames": 273
+  }
+ ],
+ "probe": {
+  "frames": 876,
+  "fps": 24.0,
+  "duration_seconds": 36.5,
+  "width": 1280,
+  "height": 704
+ }
+}

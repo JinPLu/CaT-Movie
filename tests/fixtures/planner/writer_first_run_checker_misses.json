@@ -1,0 +1,3414 @@
+{
+ "source": "outputs/experiments/planner-storyboard-writer-p2-20261010 (main-server), inputs/windows.jsonl + full/writer.jsonl",
+ "rows": [
+  {
+   "note": "10-10 首跑亲看 R02：逐镜档 s02 的 WRITE 动作句 'stirs the ice water in Subject 5 with Subject 4' 已蕴含 DO-NOT-WRITE 的 'Subject 1 holds Subject 4' 与 'Subject 5 is filled with ice water'，旧核对把两条记为复述；段落、梗概忠实，旧核对 written 只认到 1／0 条、整句判新增而丢弃。",
+   "case_id": "ci_vid:train:000236318",
+   "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "appearance": "fair-skinned person with only hands and forearms visible"
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "object",
+      "appearance": "a red bowl with a pale lavender interior"
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "object",
+      "appearance": "a shiny copper measuring cup with a wire handle"
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "object",
+      "appearance": "a long-handled light wooden spoon"
+     },
+     {
+      "subject_id": "Subject 5",
+      "kind": "object",
+      "appearance": "a brushed stainless steel bucket with side handles"
+     },
+     {
+      "subject_id": "Subject 6",
+      "kind": "object",
+      "appearance": "a contour glass bottle with a red cap, filled with dark liquid"
+     },
+     {
+      "subject_id": "Subject 7",
+      "kind": "object",
+      "appearance": "a contour glass bottle with a red cap, appearing empty"
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "appearance": "a kitchen with cream cabinet doors and a dark countertop",
+      "anchors": [
+       {
+        "id": "Location 1/Anchor 1",
+        "description": "cream-colored cabinet doors",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 2",
+        "description": "a dark countertop strip",
+        "front_definition": null
+       }
+      ]
+     }
+    ],
+    "initial_state": [
+     {
+      "subject": "Subject 5",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "empty",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "reaching into the bucket",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 4",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "submerged in water",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 5",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "filled with ice water",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "relation",
+      "predicate_or_axis": "in",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "reaching over the bucket",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 7",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 5",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "filled with ice and bottles",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 6",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "standing in the bucket",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 7",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "being lowered into the bucket",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 6",
+      "family": "relation",
+      "predicate_or_axis": "in",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 5",
+       "Subject 1",
+       "Subject 4"
+      ],
+      "visible_entities": [
+       "Subject 5",
+       "Subject 1",
+       "Subject 4"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 89,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 1 pours ice from Subject 2 into Subject 5, pours water from Subject 3 into Subject 5, then stirs the mixture with Subject 4."
+     },
+     {
+      "shot_id": "s02",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 4",
+       "Subject 5",
+       "Subject 6"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 4",
+       "Subject 5",
+       "Subject 6"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "background",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 53,
+      "shot_size": "close-up",
+      "camera_angle": "high",
+      "movement": "static",
+      "action": "Subject 1 stirs the ice water in Subject 5 with Subject 4, removes Subject 4, then lowers Subject 6 into Subject 5."
+     },
+     {
+      "shot_id": "s03",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 5",
+       "Subject 6",
+       "Subject 7"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 5",
+       "Subject 6",
+       "Subject 7"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 37,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 1 places Subject 7 into Subject 5 beside Subject 6, then withdraws the hand, leaving both bottles standing in the ice."
+     }
+    ],
+    "events": [
+     {
+      "event_id": "e1",
+      "shot_id": "s01",
+      "before": {
+       "subject": "Subject 5",
+       "family": "state",
+       "predicate_or_axis": "object_condition",
+       "object_or_value": "empty",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 5",
+       "family": "state",
+       "predicate_or_axis": "object_condition",
+       "object_or_value": "filled with ice water",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e2",
+      "shot_id": "s01",
+      "before": null,
+      "after": {
+       "subject": "Subject 1",
+       "family": "relation",
+       "predicate_or_axis": "holds",
+       "object_or_value": "Subject 4",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e3",
+      "shot_id": "s02",
+      "before": {
+       "subject": "Subject 1",
+       "family": "relation",
+       "predicate_or_axis": "holds",
+       "object_or_value": "Subject 4",
+       "scope": "scene",
+       "shot_span": [
+        1,
+        1
+       ],
+       "evidence": "observed"
+      },
+      "after": null,
+      "on_screen": true
+     },
+     {
+      "event_id": "e4",
+      "shot_id": "s02",
+      "before": null,
+      "after": {
+       "subject": "Subject 1",
+       "family": "relation",
+       "predicate_or_axis": "holds",
+       "object_or_value": "Subject 6",
+       "scope": "scene",
+       "shot_span": [
+        1,
+        1
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e5",
+      "shot_id": "s03",
+      "before": {
+       "subject": "Subject 1",
+       "family": "relation",
+       "predicate_or_axis": "holds",
+       "object_or_value": "Subject 7",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "after": null,
+      "on_screen": true
+     },
+     {
+      "event_id": "e6",
+      "shot_id": "s03",
+      "before": {
+       "subject": "Subject 7",
+       "family": "state",
+       "predicate_or_axis": "object_condition",
+       "object_or_value": "being lowered into the bucket",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 7",
+       "family": "state",
+       "predicate_or_axis": "object_condition",
+       "object_or_value": "standing in the bucket",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     }
+    ]
+   },
+   "shot_text": "SUBJECTS\n- Subject 1 (person): fair-skinned person with only hands and forearms visible\n- Subject 2 (object): a red bowl with a pale lavender interior\n- Subject 3 (object): a shiny copper measuring cup with a wire handle\n- Subject 4 (object): a long-handled light wooden spoon\n- Subject 5 (object): a brushed stainless steel bucket with side handles\n- Subject 6 (object): a contour glass bottle with a red cap, filled with dark liquid\n- Subject 7 (object): a contour glass bottle with a red cap, appearing empty\nLOCATIONS\n- Location 1: a kitchen with cream cabinet doors and a dark countertop\nSHOTS\ns01: Medium shot at eye level, static camera, in Location 1. Initially empty, Subject 5 is filled with ice water as Subject 1 pours ice from Subject 2 and water from Subject 3 into it, then takes hold of Subject 4 and stirs the mixture.\ns02: Close-up from a high angle, static camera, in Location 1. Subject 1 reaches into the bucket, stirring the ice water with Subject 4, which is inside Subject 5 and submerged in water; Subject 1 then releases and removes Subject 4, takes hold of Subject 6, and lowers it into Subject 5.\ns03: Medium shot at eye level, static camera, in Location 1, where Subject 5 is filled with ice and bottles, with Subject 6 inside standing in the bucket. Subject 1 reaches over the bucket while holding Subject 7 as it is being lowered into Subject 5 beside Subject 6, then releases Subject 7, leaving it standing in the bucket alongside Subject 6 as the hand withdraws.",
+   "synopsis": "In a kitchen, a person prepares a stainless steel bucket with ice and water, stirs the mixture, and places two contour glass bottles inside.",
+   "paragraph": "In a kitchen, a fair-skinned person pours ice from a red bowl and water from a copper measuring cup into an empty brushed stainless steel bucket. The person stirs the ice water with a long-handled wooden spoon before removing the spoon. Next, the person places a filled contour glass bottle into the bucket, followed by an empty contour glass bottle set beside the first.",
+   "run1_checks": {
+    "shot": {
+     "written": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52
+     ],
+     "restated": [
+      29,
+      31
+     ],
+     "added_facts": [],
+     "status": "kept",
+     "reason": null
+    },
+    "synopsis": {
+     "written": [],
+     "restated": [],
+     "added_facts": [
+      "In a kitchen, a person prepares a stainless steel bucket with ice and water, stirs the mixture, and places two contour glass bottles inside."
+     ],
+     "status": "discarded",
+     "reason": "label_check_added_facts"
+    },
+    "paragraph": {
+     "written": [
+      15
+     ],
+     "restated": [],
+     "added_facts": [
+      "In a kitchen, a fair-skinned person pours ice from a red bowl and water from a copper measuring cup into an empty brushed stainless steel bucket.",
+      "The person stirs the ice water with a long-handled wooden spoon before removing the spoon.",
+      "The person places a filled contour glass bottle into the bucket.",
+      "The person places an empty contour glass bottle into the bucket set beside the first."
+     ],
+     "status": "discarded",
+     "reason": "label_check_added_facts"
+    }
+   }
+  },
+  {
+   "note": "10-10 首跑亲看 R08：旧核对的复述 [37,52,54,55,67] 中 54、55 由 s03 WRITE 动作句蕴含，37、52、67（后续镜服装）剧本没写，是误报；body 状态 'standing on the left/in the middle/on the right' 与事件 'turned to screen-left' 把屏幕方位带进写手表。",
+   "case_id": "full:cine250k:cine250k:326318830_30",
+   "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "appearance": "a woman with long braided hair with red streaks"
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "appearance": "a woman with long straight black hair"
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "appearance": "a woman with brown hair in a loose braid with a floral hair accessory"
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "person",
+      "appearance": "a man with short black hair"
+     },
+     {
+      "subject_id": "Subject 5",
+      "kind": "object",
+      "appearance": "a silver and black microphone with a green band"
+     },
+     {
+      "subject_id": "Subject 6",
+      "kind": "object",
+      "appearance": "a bouquet of pink and white roses"
+     },
+     {
+      "subject_id": "Subject 7",
+      "kind": "object",
+      "appearance": "an open pink folder with printed pages"
+     },
+     {
+      "subject_id": "Subject 8",
+      "kind": "object",
+      "appearance": "a pink balloon on a thin string"
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "appearance": "an outdoor wedding venue at night with bright lights and plants",
+      "anchors": [
+       {
+        "id": "Location 1/Anchor 1",
+        "description": "a table with drink jars",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 2",
+        "description": "a building with slatted blinds",
+        "front_definition": null
+       }
+      ]
+     }
+    ],
+    "initial_state": [
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a black top with sheer sleeves",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing on the left",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a tan jacket",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing in the middle",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 6",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white strapless dress",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing on the right",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white strapless dress",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing and reading",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 7",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white suit with a black shirt",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing with back to camera",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white strapless dress",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing with back to camera",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 7",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white suit with a blue flower corsage",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing facing camera",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white strapless dress",
+      "scope": "scene",
+      "shot_span": [
+       3,
+       3
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing on the left",
+      "scope": "scene",
+      "shot_span": [
+       3,
+       3
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 8",
+      "scope": "scene",
+      "shot_span": [
+       3,
+       3
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white suit with a gray cravat",
+      "scope": "scene",
+      "shot_span": [
+       3,
+       3
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 4",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing on the right",
+      "scope": "scene",
+      "shot_span": [
+       3,
+       3
+      ],
+      "evidence": "observed"
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 5",
+       "Subject 6"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 5",
+       "Subject 6"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 29,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 1 speaks into Subject 5 while Subject 2 holds Subject 6, and Subject 3 smiles and turns toward the others."
+     },
+     {
+      "shot_id": "s02",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 5",
+       "Subject 7"
+      ],
+      "visible_entities": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 5",
+       "Subject 7"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-right",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "away",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 29,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 3 reads from Subject 7 while holding Subject 5, standing before Subject 4."
+     },
+     {
+      "shot_id": "s03",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 5",
+       "Subject 7"
+      ],
+      "visible_entities": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 5",
+       "Subject 7"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-right",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 41,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 4 stands facing Subject 3, who holds Subject 7 and speaks into Subject 5."
+     },
+     {
+      "shot_id": "s04",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 8"
+      ],
+      "visible_entities": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 8"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-right",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 8",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 8",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@3",
+        "shot_span": [
+         3,
+         3
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 33,
+      "shot_size": "medium close-up",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 3 and Subject 4 stand side by side smiling, Subject 3 holding the string of Subject 8."
+     }
+    ],
+    "events": [
+     {
+      "event_id": "e1",
+      "shot_id": "s01",
+      "before": {
+       "subject": "Subject 3",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing on the right",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 3",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "turned toward Subject 2",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e2",
+      "shot_id": "s04",
+      "before": {
+       "subject": "Subject 3",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing on the left",
+       "scope": "scene",
+       "shot_span": [
+        3,
+        3
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 3",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "turned to screen-left",
+       "scope": "scene",
+       "shot_span": [
+        3,
+        3
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     }
+    ]
+   },
+   "shot_text": "SUBJECTS\n- Subject 1 (person): a woman with long braided hair with red streaks\n- Subject 2 (person): a woman with long straight black hair\n- Subject 3 (person): a woman with brown hair in a loose braid with a floral hair accessory\n- Subject 4 (person): a man with short black hair\n- Subject 5 (object): a silver and black microphone with a green band\n- Subject 6 (object): a bouquet of pink and white roses\n- Subject 7 (object): an open pink folder with printed pages\n- Subject 8 (object): a pink balloon on a thin string\nLOCATIONS\n- Location 1: an outdoor wedding venue at night with bright lights and plants\nSHOTS\ns01: Static eye-level medium shot in Location 1. On the left, Subject 1, wearing a black top with sheer sleeves, holds Subject 5 and speaks into it. In the middle, Subject 2, wearing a tan jacket, holds Subject 6. On the right, Subject 3, in a white strapless dress, smiles and turns toward Subject 2.\ns02: Static eye-level medium shot in Location 1. Subject 4 stands with his back to the camera wearing a white suit with a black shirt, while Subject 3 stands before him holding both Subject 5 and Subject 7, reading aloud from Subject 7.\ns03: Static eye-level medium shot in Location 1. Subject 4, wearing a white suit adorned with a blue flower corsage, stands facing the camera toward Subject 3, whose back is turned as she speaks into Subject 5 while holding Subject 7.\ns04: Static eye-level medium close-up in Location 1. Subject 4, in a white suit with a gray cravat, stands on the right next to Subject 3, who holds Subject 8's string on the left; both smile as Subject 3 turns toward screen-left.",
+   "synopsis": "At an outdoor wedding venue at night, a woman in a white strapless dress interacts with guests, reads aloud from a folder to a man in a white suit, and smiles beside him while holding a balloon.",
+   "paragraph": "At a brightly lit outdoor wedding venue at night, a woman in a black top speaks into a microphone while a woman in a tan jacket holds a bouquet of roses, and a woman in a white strapless dress smiles and turns toward her. Later, the woman in the white dress holds the microphone and reads aloud from an open pink folder to a man dressed in a white suit. The man faces her as she continues reading, and the two subsequently stand side-by-side smiling as she holds the string of a pink balloon.",
+   "run1_checks": {
+    "shot": {
+     "written": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72
+     ],
+     "restated": [
+      37,
+      52,
+      54,
+      55,
+      67
+     ],
+     "added_facts": [],
+     "status": "kept",
+     "reason": null
+    },
+    "synopsis": {
+     "written": [
+      6
+     ],
+     "restated": [],
+     "added_facts": [
+      "a woman in a white strapless dress interacts with guests",
+      "a woman reads aloud from a folder to a man in a white suit",
+      "a woman smiles beside a man while holding a balloon"
+     ],
+     "status": "discarded",
+     "reason": "label_check_added_facts"
+    },
+    "paragraph": {
+     "written": [
+      6,
+      7,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      20,
+      22,
+      23,
+      25,
+      27,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      47,
+      48,
+      49,
+      58,
+      63,
+      64,
+      65,
+      66,
+      67,
+      69
+     ],
+     "restated": [
+      37,
+      67
+     ],
+     "added_facts": [
+      "Subject 3 reads aloud in s02",
+      "Subject 3 continues reading in s03"
+     ],
+     "status": "discarded",
+     "reason": "label_check_added_facts"
+    }
+   }
+  },
+  {
+   "note": "10-10 首跑整窗报错：段落校验 'the camera' 误杀；表里动作句是 'talks to the camera'、'turning from the doorway toward the camera'。",
+   "case_id": "ci_vid:train:000226831",
+   "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "appearance": "a man with short hair and a full beard"
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "appearance": "a man with a buzz cut, full beard and arm tattoos"
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "object",
+      "appearance": "a black selfie stick with a phone mount"
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "appearance": "a brushed-metal elevator opening onto a hallway with a Hollywood mural",
+      "anchors": [
+       {
+        "id": "Location 1/Anchor 1",
+        "description": "a metal elevator button panel",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 2",
+        "description": "the elevator door",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 3",
+        "description": "a hallway wall with a Hollywood sign mural",
+        "front_definition": null
+       }
+      ]
+     }
+    ],
+    "initial_state": [
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a blue tie-dye t-shirt",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing inside the elevator",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a blue tie-dye t-shirt",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing inside the elevator",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a black t-shirt",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing in the hallway with one arm raised",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "relation",
+      "predicate_or_axis": "at",
+      "object_or_value": "Location 1/Anchor 2",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 25,
+      "shot_size": "close-up",
+      "camera_angle": "eye level",
+      "movement": "handheld",
+      "action": "Subject 1 looks around inside the elevator, turning from the doorway toward the camera."
+     },
+     {
+      "shot_id": "s02",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Location 1/Anchor 2"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "background",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 157,
+      "shot_size": "medium close-up",
+      "camera_angle": "eye level",
+      "movement": "handheld",
+      "action": "Subject 2 holds the elevator door open while Subject 1, holding Subject 3, talks to the camera."
+     }
+    ],
+    "events": [
+     {
+      "event_id": "e1",
+      "shot_id": "s01",
+      "before": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing inside the elevator",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing facing the camera",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e2",
+      "shot_id": "s01",
+      "before": null,
+      "after": {
+       "subject": "Subject 1",
+       "family": "relation",
+       "predicate_or_axis": "holds",
+       "object_or_value": "Subject 3",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": false
+     },
+     {
+      "event_id": "e3",
+      "shot_id": "s02",
+      "before": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing inside the elevator",
+       "scope": "scene",
+       "shot_span": [
+        1,
+        1
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing facing the camera",
+       "scope": "scene",
+       "shot_span": [
+        1,
+        1
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     }
+    ]
+   },
+   "run1_error": "ValueError: paragraph must not describe the camera or number shots"
+  },
+  {
+   "note": "10-10 首跑亲看 R12：body 状态 'standing facing right/left'、'walking in from the right'、'standing in profile'、'standing with back partly to camera' 把方位带进写手表；s03 两个事件只把 'standing holding hands' 改成 'facing the camera'，剥掉方位后只剩朝向变化。",
+   "case_id": "full:cine250k:cine250k:386644107_170",
+   "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "appearance": "woman with dark hair in an updo and a long white veil"
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "appearance": "man with light brown hair and a short beard"
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "appearance": "woman with long dark hair"
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "object",
+      "appearance": "a small shiny copper cup"
+     },
+     {
+      "subject_id": "Subject 5",
+      "kind": "object",
+      "appearance": "a small shiny copper cup"
+     },
+     {
+      "subject_id": "Subject 6",
+      "kind": "person",
+      "appearance": "woman with long dark hair"
+     },
+     {
+      "subject_id": "Subject 7",
+      "kind": "object",
+      "appearance": "a black handheld microphone"
+     },
+     {
+      "subject_id": "Subject 8",
+      "kind": "object",
+      "appearance": "a folded patterned shawl"
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "appearance": "an outdoor beach wedding site with ocean, rocks and floral arches",
+      "anchors": [
+       {
+        "id": "Location 1/Anchor 1",
+        "description": "a wooden table with a floral arrangement",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 2",
+        "description": "a flower-covered arch",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 3",
+        "description": "the sea and large boulders",
+        "front_definition": null
+       }
+      ]
+     }
+    ],
+    "initial_state": [
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white lace gown with a long veil",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing facing right",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 4",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a blue suit",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing facing left",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a long maroon dress",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing between the couple",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white lace gown with a long veil",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing in profile",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 4",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a blue suit",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing with back partly to camera",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 5",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a long maroon dress",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing between them",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white lace gown with a long veil",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing holding hands with Subject 2",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a blue suit",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 2",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing holding hands with Subject 1",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a long maroon dress",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "standing facing the couple",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 3",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 7",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 6",
+      "family": "state",
+      "predicate_or_axis": "costume",
+      "object_or_value": "a white top and olive trousers",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 6",
+      "family": "state",
+      "predicate_or_axis": "body",
+      "object_or_value": "walking in from the right",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 6",
+      "family": "relation",
+      "predicate_or_axis": "holds",
+      "object_or_value": "Subject 8",
+      "scope": "scene",
+      "shot_span": [
+       2,
+       2
+      ],
+      "evidence": "observed"
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4",
+       "Subject 5"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4",
+       "Subject 5"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-right",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 37,
+      "shot_size": "wide",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 1 and Subject 2 raise Subject 4 and Subject 5 to drink while Subject 3 stands between them."
+     },
+     {
+      "shot_id": "s02",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4",
+       "Subject 5"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4",
+       "Subject 5"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-right",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "background",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 4",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 5",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@1",
+        "shot_span": [
+         1,
+         1
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 41,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 2 lowers Subject 5 after drinking while Subject 1 keeps Subject 4 raised and Subject 3 smiles between them."
+     },
+     {
+      "shot_id": "s03",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 6",
+       "Subject 7",
+       "Subject 8"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 6",
+       "Subject 7",
+       "Subject 8"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "away",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 2",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "away",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 3",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 6",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "screen-left",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 7",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 8",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "right",
+        "scope": "screen@2",
+        "shot_span": [
+         2,
+         2
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 97,
+      "shot_size": "wide",
+      "camera_angle": "eye level",
+      "movement": "static",
+      "action": "Subject 3 speaks into Subject 7 while Subject 6 approaches carrying Subject 8; Subject 1 and Subject 2 turn to face the camera holding hands."
+     }
+    ],
+    "events": [
+     {
+      "event_id": "e1",
+      "shot_id": "s01",
+      "before": {
+       "subject": "Subject 2",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing facing left",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 2",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "lowering the cup",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e2",
+      "shot_id": "s01",
+      "before": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing facing right",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "holding the cup up",
+       "scope": "scene",
+       "shot_span": [
+        0,
+        0
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e3",
+      "shot_id": "s02",
+      "before": {
+       "subject": "Subject 2",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing with back partly to camera",
+       "scope": "scene",
+       "shot_span": [
+        1,
+        1
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 2",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "cup lowered",
+       "scope": "scene",
+       "shot_span": [
+        1,
+        1
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e4",
+      "shot_id": "s03",
+      "before": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing holding hands with Subject 2",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 1",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "facing the camera",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     },
+     {
+      "event_id": "e5",
+      "shot_id": "s03",
+      "before": {
+       "subject": "Subject 2",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "standing holding hands with Subject 1",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "after": {
+       "subject": "Subject 2",
+       "family": "state",
+       "predicate_or_axis": "body",
+       "object_or_value": "facing the camera",
+       "scope": "scene",
+       "shot_span": [
+        2,
+        2
+       ],
+       "evidence": "observed"
+      },
+      "on_screen": true
+     }
+    ]
+   }
+  },
+  {
+   "note": "10-10 首跑亲看 R04：两镜运镜是 pull out、pan right（非缺省，照写），机位一平视一俯视，两镜同一地点。",
+   "case_id": "ci_vid:train:000044398",
+   "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "object",
+      "appearance": "a dark green glass champagne bottle with a round cream label"
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "object",
+      "appearance": "a tall clear glass flute filled with pale bubbly liquid"
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "appearance": "the side console of an airplane first-class seat with a window, wooden ledge and perforated metal shelf",
+      "anchors": [
+       {
+        "id": "Location 1/Anchor 1",
+        "description": "an oval airplane window",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 2",
+        "description": "a light wooden ledge",
+        "front_definition": null
+       },
+       {
+        "id": "Location 1/Anchor 3",
+        "description": "a perforated metal shelf",
+        "front_definition": null
+       }
+      ]
+     }
+    ],
+    "initial_state": [
+     {
+      "subject": "Subject 1",
+      "family": "state",
+      "predicate_or_axis": "object_condition",
+      "object_or_value": "standing upright",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Location 1",
+      "family": "state",
+      "predicate_or_axis": "environment",
+      "object_or_value": "bright daylight through the window",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Subject 1",
+      "family": "relation",
+      "predicate_or_axis": "on",
+      "object_or_value": "Location 1/Anchor 2",
+      "scope": "scene",
+      "shot_span": [
+       0,
+       0
+      ],
+      "evidence": "observed"
+     },
+     {
+      "subject": "Location 1",
+      "family": "state",
+      "predicate_or_axis": "environment",
+      "object_or_value": "a glowing light strip on the console",
+      "scope": "scene",
+      "shot_span": [
+       1,
+       1
+      ],
+      "evidence": "observed"
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2"
+      ],
+      "visible_entities": [
+       "Subject 1",
+       "Subject 2",
+       "Location 1/Anchor 2"
+      ],
+      "screen_facts": [
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "horizontal",
+        "object_or_value": "center",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "depth",
+        "object_or_value": "foreground",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       },
+       {
+        "subject": "Subject 1",
+        "family": "screen",
+        "predicate_or_axis": "orientation",
+        "object_or_value": "toward camera",
+        "scope": "screen@0",
+        "shot_span": [
+         0,
+         0
+        ],
+        "evidence": "observed"
+       }
+      ],
+      "frame_count": 69,
+      "shot_size": "medium",
+      "camera_angle": "eye level",
+      "movement": "pull out",
+      "action": "Subject 1 stands on a wooden ledge as the view widens to reveal Subject 2 beside it near the window."
+     },
+     {
+      "shot_id": "s02",
+      "location_id": "Location 1",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "visible_entities": [
+       "Subject 2"
+      ],
+      "screen_facts": [],
+      "frame_count": 65,
+      "shot_size": "medium close-up",
+      "camera_angle": "high",
+      "movement": "pan right",
+      "action": "The view moves across printed menus to reveal Subject 2 standing beside a zippered pouch on a lit console."
+     }
+    ],
+    "events": []
+   }
+  }
+ ]
+}

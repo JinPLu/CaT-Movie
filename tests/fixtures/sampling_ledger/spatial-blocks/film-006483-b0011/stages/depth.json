@@ -1,0 +1,1 @@
+{"state": "succeeded", "stage": "depth", "key": "film-006483-b0011", "products": ["depth/s01/confidence.mp4", "depth/s01/depth.mp4", "depth/s01/metadata.json", "depth/s02/confidence.mp4", "depth/s02/depth.mp4", "depth/s02/metadata.json"], "seconds": 1.4693785160779953, "output_bytes": 2800598, "model_load_seconds": 0.0, "completed_at": "2026-10-13T00:01:52.762280+00:00"}

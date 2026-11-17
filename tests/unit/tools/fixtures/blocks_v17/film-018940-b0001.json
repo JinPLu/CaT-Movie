@@ -1,0 +1,289 @@
+{
+ "key": "film-018940-b0001",
+ "shots": 8,
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man with a medium build",
+    "outfit": "a dark jacket and dark pants"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a person wearing a dark helmet and dark clothing",
+    "outfit": "a dark jacket, dark pants, and a helmet"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with glasses and dark hair",
+    "outfit": "a dark jacket"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a handgun"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a black car with headlights on"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a motorcycle with a sidecar"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a license plate reading 77 NKX 670"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a building with red banners and columns"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a street with streetlights"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a city street at night with a large building featuring red banners"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 aims Object 1 forward.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing in the street"
+     },
+     {
+      "name": "Object 2",
+      "state": "driving towards Character 1 with headlights on"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 stands in the street as Object 2 drives towards him.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "riding Object 3",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 3",
+      "state": "driving through traffic"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 rides Object 3 through city traffic while holding Object 1.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "riding Object 3"
+     },
+     {
+      "name": "Object 3",
+      "state": "driving down a street"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 continues riding Object 3 down the street.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 2",
+      "state": "driving away"
+     },
+     {
+      "name": "Object 3",
+      "state": "driving in the distance"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Object 2 drives away down the street while Object 3 follows.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Object 2",
+      "state": "driving with headlights on"
+     },
+     {
+      "name": "Object 3",
+      "state": "driving alongside Object 2"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Object 2 and Object 3 drive down the street at night.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "riding Object 3"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting in the sidecar of Object 3",
+      "holding": [
+       "binoculars"
+      ]
+     },
+     {
+      "name": "Object 3",
+      "state": "driving"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 rides Object 3 while Character 3 sits in the sidecar looking through binoculars.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "sitting",
+      "holding": [
+       "binoculars"
+      ]
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 3 looks through the binoculars.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "A bald man stands in a city street at night and aims a handgun at an approaching black car. A person on a motorcycle with a sidecar drives through the city traffic, following the car. The person on the motorcycle continues down the street while another man in the sidecar looks through binoculars.",
+   "summary": "A bald man aims a gun at a car on a city street at night while a motorcycle with a sidecar follows the car."
+  }
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "7": [
+   "shot 7 holding of Character 3"
+  ],
+  "8": [
+   "shot 8 holding of Character 3"
+  ]
+ },
+ "source": "block-contract-v17-quick-check-20261013/answers/base/film-018940-b0001.json"
+}

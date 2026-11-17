@@ -1,0 +1,258 @@
+[
+  {
+    "schema_version": "scene_window_v1",
+    "window_id": "cinepile_t2v:video_batch_20250817_133943_001/10,000_BC_(7_10)_Movie_CLIP_-_We_Hunt_Together_(2008)_HD:scene000:train:0000-0003",
+    "kind": "train",
+    "scene_id": "cinepile_t2v:video_batch_20250817_133943_001/10,000_BC_(7_10)_Movie_CLIP_-_We_Hunt_Together_(2008)_HD:scene000",
+    "film_key": "cinepile_t2v:10 000 bc",
+    "source": "cinepile_t2v",
+    "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_001/10,000_BC_(7_10)_Movie_CLIP_-_We_Hunt_Together_(2008)_HD.mp4",
+    "fps": 23.976,
+    "container_preroll_frames": 0,
+    "crop_box": [
+      284,
+      30,
+      1636,
+      810
+    ],
+    "shot_count": 4,
+    "render_frames": 152,
+    "shots": [
+      {
+        "source_shot_index": 0,
+        "start_frame": 0,
+        "end_frame": 41,
+        "seconds": 1.71,
+        "render_frames": 25
+      },
+      {
+        "source_shot_index": 1,
+        "start_frame": 41,
+        "end_frame": 97,
+        "seconds": 2.336,
+        "render_frames": 37
+      },
+      {
+        "source_shot_index": 2,
+        "start_frame": 97,
+        "end_frame": 166,
+        "seconds": 2.878,
+        "render_frames": 45
+      },
+      {
+        "source_shot_index": 3,
+        "start_frame": 166,
+        "end_frame": 237,
+        "seconds": 2.961,
+        "render_frames": 45
+      }
+    ],
+    "boundary_revision": {
+      "version": "shot_boundary_revision_v1",
+      "detector": "transnetv2@0.5",
+      "trimmed_shots": 0,
+      "shots_with_low_peaks": 0
+    },
+    "width": 1920,
+    "height": 810,
+    "video_frame_count": 1322
+  },
+  {
+    "schema_version": "scene_window_v1",
+    "window_id": "moviechat_1k:19:scene001:train:0014-0016",
+    "kind": "train",
+    "scene_id": "moviechat_1k:19:scene001",
+    "film_key": "moviechat_1k:19",
+    "source": "moviechat_1k",
+    "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/19.mp4",
+    "fps": 23.976023976023978,
+    "container_preroll_frames": 0,
+    "crop_box": [
+      126,
+      60,
+      722,
+      404
+    ],
+    "shot_count": 3,
+    "render_frames": 227,
+    "shots": [
+      {
+        "source_shot_index": 14,
+        "start_frame": 819,
+        "end_frame": 876,
+        "seconds": 2.377,
+        "render_frames": 37
+      },
+      {
+        "source_shot_index": 15,
+        "start_frame": 876,
+        "end_frame": 1030,
+        "seconds": 6.423,
+        "render_frames": 101
+      },
+      {
+        "source_shot_index": 16,
+        "start_frame": 1030,
+        "end_frame": 1166,
+        "seconds": 5.672,
+        "render_frames": 89
+      }
+    ],
+    "boundary_revision": {
+      "version": "shot_boundary_revision_v1",
+      "detector": "transnetv2@0.5",
+      "trimmed_shots": 0,
+      "shots_with_low_peaks": 1
+    },
+    "width": 848,
+    "height": 464,
+    "video_frame_count": 11509
+  },
+  {
+    "schema_version": "scene_window_v1",
+    "window_id": "cinedance:000163d1-d98b-83db-bf00-b21490822a66:<scene1>:train:0000-0003",
+    "kind": "train",
+    "scene_id": "cinedance:000163d1-d98b-83db-bf00-b21490822a66:<scene1>",
+    "film_key": null,
+    "source": "cinedance",
+    "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/000163d1-d98b-83db-bf00-b21490822a66.mp4",
+    "fps": 23.976023976023978,
+    "width": 1280,
+    "height": 600,
+    "video_frame_count": 1317,
+    "container_preroll_frames": null,
+    "frame_basis": "ffmpeg_sequential_zero_based",
+    "time_to_frame_rule": "round_half_up_seconds_times_fps",
+    "active_box": [
+      0,
+      0,
+      1280,
+      600
+    ],
+    "crop_box": [
+      0,
+      0,
+      1280,
+      600
+    ],
+    "boundary_revision": null,
+    "shot_count": 4,
+    "render_frames": 308,
+    "shots": [
+      {
+        "source_shot_index": 0,
+        "start_frame": 0,
+        "end_frame": 117,
+        "seconds": 4.879874999999999,
+        "render_frames": 77,
+        "scene": "<scene1>",
+        "characters": [
+          "<char1>",
+          "<char2>"
+        ]
+      },
+      {
+        "source_shot_index": 1,
+        "start_frame": 117,
+        "end_frame": 181,
+        "seconds": 2.6693333333333333,
+        "render_frames": 41,
+        "scene": "<scene1>",
+        "characters": [
+          "<char2>"
+        ]
+      },
+      {
+        "source_shot_index": 2,
+        "start_frame": 181,
+        "end_frame": 377,
+        "seconds": 8.174833333333332,
+        "render_frames": 129,
+        "scene": "<scene1>",
+        "characters": [
+          "<char1>"
+        ]
+      },
+      {
+        "source_shot_index": 3,
+        "start_frame": 377,
+        "end_frame": 472,
+        "seconds": 3.9622916666666663,
+        "render_frames": 61,
+        "scene": "<scene1>",
+        "characters": [
+          "<char2>"
+        ]
+      }
+    ],
+    "annotation_scene_ids": [
+      "<scene1>"
+    ],
+    "annotation_video_id": "000163d1-d98b-83db-bf00-b21490822a66"
+  },
+  {
+    "schema_version": "scene_window_v1",
+    "window_id": "moviechat_1k:MI6-20:scene004:train:0096-0100",
+    "kind": "train",
+    "scene_id": "moviechat_1k:MI6-20:scene004",
+    "film_key": "moviechat_1k:MI6",
+    "source": "moviechat_1k",
+    "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/MI6-20.mp4",
+    "fps": 23.976023976023978,
+    "container_preroll_frames": 201,
+    "crop_box": [
+      111,
+      40,
+      1809,
+      1020
+    ],
+    "shot_count": 5,
+    "render_frames": 309,
+    "shots": [
+      {
+        "source_shot_index": 96,
+        "start_frame": 8978,
+        "end_frame": 9047,
+        "seconds": 2.878,
+        "render_frames": 45
+      },
+      {
+        "source_shot_index": 97,
+        "start_frame": 9047,
+        "end_frame": 9089,
+        "seconds": 1.752,
+        "render_frames": 25
+      },
+      {
+        "source_shot_index": 98,
+        "start_frame": 9089,
+        "end_frame": 9198,
+        "seconds": 4.546,
+        "render_frames": 73
+      },
+      {
+        "source_shot_index": 99,
+        "start_frame": 9198,
+        "end_frame": 9342,
+        "seconds": 6.006,
+        "render_frames": 93
+      },
+      {
+        "source_shot_index": 100,
+        "start_frame": 9342,
+        "end_frame": 9455,
+        "seconds": 4.713,
+        "render_frames": 73
+      }
+    ],
+    "boundary_revision": {
+      "version": "shot_boundary_revision_v1",
+      "detector": "transnetv2@0.5",
+      "trimmed_shots": 0,
+      "shots_with_low_peaks": 0
+    },
+    "width": 1920,
+    "height": 1080,
+    "video_frame_count": 10072
+  }
+]

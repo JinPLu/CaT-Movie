@@ -1,0 +1,920 @@
+{
+  "source_export": "outputs/experiments/planner-information-stratification-20261108/supervision-repair/full/repaired",
+  "source_code_revision": "4002a4667cb45fdab3ac41d63afc4c75a9dc4715",
+  "rows": [
+    {
+      "sample_id": "cinedance-012518-b0002/shot/0:4",
+      "case_id": "story_block_v1:cinedance:03eae778-95e6-8d79-9fd5-9b25cde18062:<scene2>:block0001:0011-0019",
+      "block_key": "cinedance-012518-b0002",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/03eae778-95e6-8d79-9fd5-9b25cde18062.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 10.25 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nSUBJECTS\n- Character 1 (person): a young man with dark hair and a slim build, wearing a white undershirt, a light grey unbuttoned shirt, and dark trousers\n- Character 2 (person): a man with short dark hair and a slim build, wearing a dark grey military-style uniform with a belt\n- Character 3 (person): a man with short dark hair, a mustache, and a slim build, wearing a white shirt and a brown vest\n- Character 4 (group): soldiers wearing dark uniforms and caps, wearing dark military uniforms and caps\n- Object 1 (object): a wooden cabinet with many drawers\n- Object 2 (object): a wall clock\n- Object 3 (object): a wooden desk\nLOCATIONS\n- Location 1: an office or room with wooden furniture, patterned floor, and decorative wall panels\nSHOTS\ns01: Medium shot. Character 1 falls to the floor and lies there while Character 2 stands over him.\ns02: Medium wide shot. Character 2 walks across the room while Character 3 stands at a desk looking down, and soldiers stand nearby.\ns03: Medium shot. Character 1 lies motionless on the patterned floor.\ns04: Character 3 looks down at Character 1 lying on the floor.",
+      "shot_span": [
+        0,
+        4
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark hair and a slim build",
+            "outfit": "a white undershirt, a light grey unbuttoned shirt, and dark trousers"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a slim build",
+            "outfit": "a dark grey military-style uniform with a belt"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair, a mustache, and a slim build",
+            "outfit": "a white shirt and a brown vest"
+          },
+          {
+            "name": "Character 4",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "soldiers wearing dark uniforms and caps",
+            "outfit": "dark military uniforms and caps"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a wooden cabinet with many drawers"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a wall clock"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a wooden desk"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an office or room with wooden furniture, patterned floor, and decorative wall panels"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "falling to the floor",
+                "state": "lying on the floor"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 falls to the floor and lies there while Character 2 stands over him.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "falling",
+                "after": "lying on the floor"
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 1",
+                "side": "center"
+              },
+              {
+                "name": "Character 2",
+                "side": "center"
+              }
+            ],
+            "frame_count": 29
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing at a desk",
+                "state": "looking down"
+              },
+              {
+                "name": "Character 4",
+                "posture": "standing"
+              },
+              {
+                "name": "Object 1",
+                "state": "standing against the wall"
+              },
+              {
+                "name": "Object 2",
+                "state": "hanging on the wall"
+              },
+              {
+                "name": "Object 3",
+                "state": "standing in the room"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 3"
+              }
+            ],
+            "action": "Character 2 walks across the room while Character 3 stands at a desk looking down, and soldiers stand nearby.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "standing",
+                "after": "walking"
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 2",
+                "side": "left"
+              }
+            ],
+            "frame_count": 45
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "lying on the floor",
+                "state": "unconscious or asleep"
+              }
+            ],
+            "action": "Character 1 lies motionless on the patterned floor.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "looking down"
+              },
+              {
+                "name": "Character 1",
+                "posture": "lying on the floor"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 3"
+              },
+              {
+                "subject": "Character 3",
+                "relation": "in_front_of",
+                "object": "Character 1"
+              }
+            ],
+            "action": "Character 3 looks down at Character 1 lying on the floor.",
+            "changes": [],
+            "frame_count": 69
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-012518-b0002/shot/5:9",
+      "case_id": "story_block_v1:cinedance:03eae778-95e6-8d79-9fd5-9b25cde18062:<scene2>:block0001:0011-0019",
+      "block_key": "cinedance-012518-b0002",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/03eae778-95e6-8d79-9fd5-9b25cde18062.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 27.5 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nSUBJECTS\n- Character 1 (person): a man with short dark hair and a slim build, wearing a dark grey military-style uniform with a belt\n- Character 2 (person): a man with short dark hair, a mustache, and a slim build, wearing a white shirt and a brown vest\n- Character 3 (group): soldiers wearing dark uniforms and caps, wearing dark military uniforms and caps\n- Character 4 (person): a young man with dark hair and a slim build, wearing a white undershirt, a light grey unbuttoned shirt, and dark trousers\n- Object 1 (object): a large book or folder\nLOCATIONS\n- Location 1: an office or room with wooden furniture, patterned floor, and decorative wall panels\nSHOTS\ns01: Medium wide shot. Character 1 points and gives an order as soldiers grab Character 4 and drag him away while Character 2 watches.\ns02: Close-up shot. Character 2 looks concerned as Character 1 stands nearby.\ns03: Medium shot. Character 1 holds a book and shows it to Character 2, who takes it and looks at it.\ns04: Close-up shot. Character 2 reads the book with a serious expression while Character 1 watches him.",
+      "shot_span": [
+        5,
+        9
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a slim build",
+            "outfit": "a dark grey military-style uniform with a belt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair, a mustache, and a slim build",
+            "outfit": "a white shirt and a brown vest"
+          },
+          {
+            "name": "Character 3",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "soldiers wearing dark uniforms and caps",
+            "outfit": "dark military uniforms and caps"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark hair and a slim build",
+            "outfit": "a white undershirt, a light grey unbuttoned shirt, and dark trousers"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a large book or folder"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an office or room with wooden furniture, patterned floor, and decorative wall panels"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "pointing"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing at a desk"
+              },
+              {
+                "name": "Character 3",
+                "posture": "grabbing Character 4"
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting up"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 points and gives an order as soldiers grab Character 4 and drag him away while Character 2 watches.",
+            "changes": [
+              {
+                "name": "Character 4",
+                "what": "posture",
+                "before": "sitting up",
+                "after": "being dragged"
+              }
+            ],
+            "frame_count": 133
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "left-heavy composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "state": "looking concerned"
+              },
+              {
+                "name": "Character 1",
+                "posture": "standing"
+              }
+            ],
+            "action": "Character 2 looks concerned as Character 1 stands nearby.",
+            "changes": [],
+            "ending_sides": [
+              {
+                "name": "Character 2",
+                "side": "right"
+              }
+            ],
+            "frame_count": 77
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "symmetrical composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 1",
+                "posture": "holding a book"
+              },
+              {
+                "name": "Object 1",
+                "state": "being held"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              }
+            ],
+            "action": "Character 1 holds a book and shows it to Character 2, who takes it and looks at it.",
+            "changes": [
+              {
+                "name": "Object 1",
+                "what": "holding",
+                "before": [
+                  "Character 1"
+                ],
+                "after": [
+                  "Character 2"
+                ]
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 2",
+                "side": "center"
+              }
+            ],
+            "frame_count": 137
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "looking at the book"
+              },
+              {
+                "name": "Character 1",
+                "posture": "looking at Character 2"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 2 reads the book with a serious expression while Character 1 watches him.",
+            "changes": [],
+            "ending_sides": [
+              {
+                "name": "Character 2",
+                "side": "left"
+              }
+            ],
+            "frame_count": 93
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008882-b0001/paragraph/0:7",
+      "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0007-0013",
+      "block_key": "cinedance-008882-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 9.6875 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nA young man dressed entirely in black, including a leather jacket, hoodie, cap, sunglasses, and gloves, stands in a room with wooden furniture and bookshelves. He points a gloved finger at a middle-aged man wearing a plaid sweater vest who is holding a smartphone and looking surprised. The young man maintains a serious expression while looking around, and the middle-aged man watches him with a confused and worried look.",
+      "shot_span": [
+        0,
+        7
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark hair",
+            "outfit": "a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a middle-aged man with short, curly dark hair",
+            "outfit": "a beige and blue plaid sweater vest over a beige long-sleeve shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a black smartphone"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a wooden bookshelf filled with books"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a chandelier"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a wooden cabinet or door"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a lamp"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "curtains"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an indoor room with wooden furniture, bookshelves, and curtains"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+              }
+            ],
+            "action": "Character 1 stands with a serious expression, looking slightly downward.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 points a gloved finger at Character 2, who looks surprised while holding a smartphone.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 looks to the side with a serious expression.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 looks up with a confused and slightly worried expression.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 turns their head slightly, maintaining a serious expression.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 looks to the side, showing their profile.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 7,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 continues to look confused and concerned.",
+            "changes": [],
+            "frame_count": 13
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008935-b0001/paragraph/0:6",
+      "case_id": "story_block_v1:cinedance:000fd4d8-829b-80b4-9007-31398c46dfec:<scene3>:block0002:0006-0011",
+      "block_key": "cinedance-008935-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/000fd4d8-829b-80b4-9007-31398c46dfec.mp4",
+      "split": "val",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 23.875 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nA woman with long black hair and a sailor uniform stands before a golden structure with a pink eye and pentagram banners. She smiles menacingly and then points a spear at a young man with an eyepatch and bandaged arm standing on a nearby balcony. The young man speaks in shock. The scene cuts to a blonde boy in a black suit standing on a red tiled floor, surrounded by giant, colorful disembodied arms and legs. The young man with the eyepatch is then shown again, looking to the side with a worried expression.",
+      "shot_span": [
+        0,
+        6
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long black hair, purple eyes, and pale skin",
+            "outfit": "a black and white sailor-style uniform with a red headband"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with short black hair, green eyes, and pale skin, wearing an eyepatch over his right eye",
+            "outfit": "a black jacket over a white shirt with bandages on his left arm"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young boy with blonde hair, wearing a black suit",
+            "outfit": "a black suit and white shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a golden structure with a pink eye and purple banners with white pentagrams"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a silver spear or staff"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "giant disembodied arms and legs of various colors"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark, red-lit area with a golden structure and red walls"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a red tiled floor area"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "animation_2d",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 stands in front of Object 1.",
+            "changes": [],
+            "frame_count": 57
+          },
+          {
+            "shot": 2,
+            "picture_type": "animation_2d",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing"
+              }
+            ],
+            "action": "Character 1 smiles menacingly.",
+            "changes": [],
+            "frame_count": 89
+          },
+          {
+            "shot": 3,
+            "picture_type": "animation_2d",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "left-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing on a balcony"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 points Object 2 at Character 2, who looks surprised.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              }
+            ],
+            "frame_count": 53
+          },
+          {
+            "shot": 4,
+            "picture_type": "animation_2d",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing"
+              }
+            ],
+            "action": "Character 2 speaks with a shocked expression.",
+            "changes": [],
+            "frame_count": 105
+          },
+          {
+            "shot": 5,
+            "picture_type": "animation_2d",
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "high angle shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "Character 3 stands on a red tiled floor surrounded by giant disembodied limbs.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 6,
+            "picture_type": "animation_2d",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing"
+              }
+            ],
+            "action": "Character 2 looks to the side with a worried expression.",
+            "changes": [],
+            "frame_count": 45
+          }
+        ]
+      }
+    }
+  ]
+}

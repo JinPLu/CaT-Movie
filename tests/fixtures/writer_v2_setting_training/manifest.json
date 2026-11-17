@@ -1,0 +1,256 @@
+{
+ "schema": "mspc_latent_cache_manifest_v5",
+ "cache_layout": "latents_only",
+ "shards": 1,
+ "total_rows": 6,
+ "records": [
+  {
+   "cache_file": "latents/ci_vid:test:000000005.safetensors",
+   "case_id": "ci_vid:test:000000005",
+   "height": 480,
+   "index": 0,
+   "input_latents_shape": [
+    1,
+    48,
+    30,
+    30,
+    52
+   ],
+   "latent_shot_groups": [
+    [
+     0,
+     18
+    ],
+    [
+     18,
+     30
+    ]
+   ],
+   "num_frames": 114,
+   "shot_count": 2,
+   "shot_groups": [
+    [
+     0,
+     69
+    ],
+    [
+     69,
+     114
+    ]
+   ],
+   "width": 832
+  },
+  {
+   "cache_file": "latents/ci_vid:test:000000012.safetensors",
+   "case_id": "ci_vid:test:000000012",
+   "height": 480,
+   "index": 1,
+   "input_latents_shape": [
+    1,
+    48,
+    21,
+    30,
+    52
+   ],
+   "latent_shot_groups": [
+    [
+     0,
+     13
+    ],
+    [
+     13,
+     21
+    ]
+   ],
+   "num_frames": 78,
+   "shot_count": 2,
+   "shot_groups": [
+    [
+     0,
+     49
+    ],
+    [
+     49,
+     78
+    ]
+   ],
+   "width": 832
+  },
+  {
+   "cache_file": "latents/ci_vid:test:000000045.safetensors",
+   "case_id": "ci_vid:test:000000045",
+   "height": 480,
+   "index": 2,
+   "input_latents_shape": [
+    1,
+    48,
+    78,
+    30,
+    52
+   ],
+   "latent_shot_groups": [
+    [
+     0,
+     14
+    ],
+    [
+     14,
+     53
+    ],
+    [
+     53,
+     78
+    ]
+   ],
+   "num_frames": 303,
+   "shot_count": 3,
+   "shot_groups": [
+    [
+     0,
+     53
+    ],
+    [
+     53,
+     206
+    ],
+    [
+     206,
+     303
+    ]
+   ],
+   "width": 832
+  },
+  {
+   "cache_file": "latents/ci_vid:test:000000075.safetensors",
+   "case_id": "ci_vid:test:000000075",
+   "height": 480,
+   "index": 3,
+   "input_latents_shape": [
+    1,
+    48,
+    69,
+    30,
+    52
+   ],
+   "latent_shot_groups": [
+    [
+     0,
+     30
+    ],
+    [
+     30,
+     69
+    ]
+   ],
+   "num_frames": 270,
+   "shot_count": 2,
+   "shot_groups": [
+    [
+     0,
+     117
+    ],
+    [
+     117,
+     270
+    ]
+   ],
+   "width": 832
+  },
+  {
+   "cache_file": "latents/ci_vid:test:000000262.safetensors",
+   "case_id": "ci_vid:test:000000262",
+   "height": 480,
+   "index": 4,
+   "input_latents_shape": [
+    1,
+    48,
+    53,
+    30,
+    52
+   ],
+   "latent_shot_groups": [
+    [
+     0,
+     22
+    ],
+    [
+     22,
+     35
+    ],
+    [
+     35,
+     43
+    ],
+    [
+     43,
+     53
+    ]
+   ],
+   "num_frames": 200,
+   "shot_count": 4,
+   "shot_groups": [
+    [
+     0,
+     85
+    ],
+    [
+     85,
+     134
+    ],
+    [
+     134,
+     163
+    ],
+    [
+     163,
+     200
+    ]
+   ],
+   "width": 832
+  },
+  {
+   "cache_file": "latents/ci_vid:test:000000286.safetensors",
+   "case_id": "ci_vid:test:000000286",
+   "height": 480,
+   "index": 5,
+   "input_latents_shape": [
+    1,
+    48,
+    53,
+    30,
+    52
+   ],
+   "latent_shot_groups": [
+    [
+     0,
+     8
+    ],
+    [
+     8,
+     16
+    ],
+    [
+     16,
+     53
+    ]
+   ],
+   "num_frames": 203,
+   "shot_count": 3,
+   "shot_groups": [
+    [
+     0,
+     29
+    ],
+    [
+     29,
+     58
+    ],
+    [
+     58,
+     203
+    ]
+   ],
+   "width": 832
+  }
+ ]
+}

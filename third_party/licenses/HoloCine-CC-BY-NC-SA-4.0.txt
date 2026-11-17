@@ -1,0 +1,11 @@
+SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+HoloCine
+https://github.com/yihao-meng/HoloCine
+
+This upstream is licensed under Creative Commons Attribution-NonCommercial-ShareAlike
+4.0 International. The authors state that the code is provided for academic
+research purposes only.
+
+Full license text:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode

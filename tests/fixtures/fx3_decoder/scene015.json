@@ -1,0 +1,11 @@
+{
+  "scene_id": "moviechat_1k:S01E3-6:scene004",
+  "source": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/S01E3-6.mp4",
+  "manifest_middle": 2417,
+  "container_preroll_frames": 79,
+  "requested_decord_frame": 2496,
+  "width": 1280,
+  "height": 720,
+  "unrequested_frame_zero_error": "Unable to handle EOF because it takes too long to retrieve last few frames",
+  "evidence": "outputs/experiments/fx3-decode-forensics-20261007-r2/full-replay/015-traceback.txt"
+}

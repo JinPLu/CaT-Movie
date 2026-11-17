@@ -1,0 +1,69 @@
+{
+  "contents": [
+    {
+      "role": "user",
+      "parts": [
+        {
+          "fileData": {
+            "fileUri": "https://generativelanguage.googleapis.com/v1beta/files/0zokszlhpy7l",
+            "mimeType": "video/mp4"
+          },
+          "videoMetadata": {
+            "fps": 2
+          }
+        },
+        {
+          "text": "## Request\nSUBJECTS\n- Character 1 (person): a young man with short black hair and a slim build, wearing a blue and white varsity jacket\n- Character 2 (person): a young man with short black hair and a slim build, wearing a grey long-sleeve shirt\n- Character 3 (group): people in the background\n- Object 1 (object): a dartboard\n- Object 2 (object): a red dart\n- Object 3 (object): a yellow dart\n- Object 4 (object): a bar counter\n- Object 5 (object): hanging lights\nLOCATIONS\n- Location 1: a dimly lit bar or pub with neon signs and dartboards\nSHOTS\ns01: Medium shot. Character 1 and Character 2 stand in a bar, talking and smiling at each other.\ns02: Close-up shot. Character 1 gestures towards himself while talking to Character 2.\ns03: Close-up shot, over-the-shoulder shot. Character 2 smiles and laughs while looking at Character 1.\ns04: Close-up shot. Character 1 looks down and then back up at Character 2.\ns05: Medium shot. Character 1 holds a red dart and talks to Character 2 in front of a dartboard.\ns06: Close-up shot. Character 1 and Character 2 continue their conversation, smiling.\ns07: Medium shot. Character 1 raises his hand as if to throw something, then they both look forward.\ns08: Extreme close-up shot. A red dart lands in the bullseye of the dartboard.\ns09: Close-up shot. Character 1 and Character 2 smile and talk after the successful throw.\ns10: Close-up shot, over-the-shoulder shot. Character 1 puts his arm around Character 2's shoulder.\ns11: Medium shot. Character 2 holds a yellow dart and prepares to throw it while Character 1 watches with arms crossed.\ns12: Extreme close-up shot. A yellow dart lands next to the red dart in the bullseye of the dartboard.\n\n## Shots in this video\nShot 1: 0:00–0:05 · Shot 2: 0:05–0:07 · Shot 3: 0:07–0:09 · Shot 4: 0:09–0:11 · Shot 5: 0:11–0:15 · Shot 6: 0:15–0:18 · Shot 7: 0:18–0:20 · Shot 8: 0:20–0:22 · Shot 9: 0:22–0:23 · Shot 10: 0:23–0:25 · Shot 11: 0:25–0:27 · Shot 12: 0:27–0:28\n\n## Questions\n1. (0:11–0:15) Does Character 1 hold Object 2?\n2. (0:20–0:22) Does Object 2 land in the bullseye of Object 1?\n3. (end of 0:20–0:22) Is Object 2 in the bullseye of Object 1?\n4. (0:23–0:25) Does Character 1 put his arm around Character 2's shoulder?\n5. (end of 0:23–0:25) Is Character 1's arm around Character 2's shoulder?\n6. (0:25–0:27) Does Character 2 hold Object 3 ready to throw it?\n7. (0:27–0:28) Does Object 3 land next to Object 2 in the bullseye of Object 1?\n8. (end of 0:27–0:28) Is Object 3 next to Object 2 in the bullseye of Object 1?\n9. Is Character 1 at 0:05–0:07 the same person as at 0:00–0:05?\n10. Is Character 1 at 0:25–0:27 the same person as at 0:00–0:05?\n11. Is Character 2 at 0:07–0:09 the same person as at 0:00–0:05?\n12. Is Character 2 at 0:25–0:27 the same person as at 0:00–0:05?\n13. Is Object 1 at 0:20–0:22 the same object as at 0:11–0:15?\n14. Is Object 1 at 0:27–0:28 the same object as at 0:11–0:15?\n15. Is Object 2 at 0:20–0:22 the same object as at 0:11–0:15?\n16. Is Object 2 at 0:27–0:28 the same object as at 0:11–0:15?\n17. Is Object 3 at 0:27–0:28 the same object as at 0:25–0:27?\n18. Are 0:05–0:07 and 0:00–0:05 in the same place (Location 1)?\n19. Are 0:27–0:28 and 0:00–0:05 in the same place (Location 1)?\n20. Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?\n21. Is Character 1 at 0:22–0:23 the same person as at 0:00–0:05?\n22. Is Character 2 at 0:22–0:23 the same person as at 0:00–0:05?\n23. (0:25–0:27) Is Character 2 holding Object 3?\n\nBased on the video and the request above, answer each question.\n- yes: you can clearly see it in the video.\n- no: it does not happen, the person or object is not there, or it cannot be clearly seen.\nAn action counts only if you see it happen; seeing only its end result is not enough.\nWhen a question compares a person, animal, object or place across two time ranges, compare the actual individual you see, not whether both match the request's description. The same person must have the same face and build; the same object must be the same individual object; the same place must be the same specific setting with the same layout and landmarks. Matching clothing, hair colour or a similar kind of place alone is not enough. If the visual style changes between the two time ranges (for example live action versus cartoon or 3D animation), it is not the same person, object or place. Clothing may change only where the request says so.\nGive a short reason and the time (m:ss) where you saw it."
+        }
+      ]
+    }
+  ],
+  "generationConfig": {
+    "thinkingConfig": {
+      "thinkingLevel": "low"
+    },
+    "maxOutputTokens": 24576,
+    "mediaResolution": "MEDIA_RESOLUTION_LOW",
+    "responseMimeType": "application/json",
+    "responseJsonSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answers"
+      ],
+      "properties": {
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "question",
+              "answer",
+              "reason",
+              "time"
+            ],
+            "properties": {
+              "question": {
+                "type": "integer"
+              },
+              "answer": {
+                "type": "string",
+                "enum": [
+                  "yes",
+                  "no"
+                ]
+              },
+              "reason": {
+                "type": "string"
+              },
+              "time": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

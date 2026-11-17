@@ -1,0 +1,461 @@
+{
+  "story_id": "film-001591-b0001-shot01",
+  "split": "test",
+  "fps": 16,
+  "target_seconds": 47.75,
+  "storyboard": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with messy dark hair, a pointed nose, and a lean build",
+        "outfit": "a white lab coat over a grey shirt"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with blonde hair in a ponytail, glasses, and a slim build",
+        "outfit": "a pink shirt and light pink pants"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a large man with a mustache, a round build, and a bald head",
+        "outfit": "a light purple polo shirt with the name Tim on it"
+      },
+      {
+        "name": "Character 4",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a large man with a beard, a muscular build, and dark skin",
+        "outfit": "a blue police uniform with a cap"
+      },
+      {
+        "name": "Character 5",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a tall man with spiky brown hair and a slim build",
+        "outfit": "a dark grey t-shirt with a brain graphic and text"
+      },
+      {
+        "name": "Character 6",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a short man with a blue cap and a round build",
+        "outfit": "a light grey t-shirt and a blue cap"
+      },
+      {
+        "name": "Character 7",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a small monkey with a grey face and a white headband"
+      },
+      {
+        "name": "Character 8",
+        "kind": "group",
+        "visibility": "clear",
+        "appearance": "a group of animated green pickles with faces and legs"
+      },
+      {
+        "name": "Character 9",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a large animated cheeseburger with legs"
+      },
+      {
+        "name": "Character 10",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a small animated leek with a face and arms"
+      },
+      {
+        "name": "Character 11",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a small animated blueberry with a face and arms"
+      },
+      {
+        "name": "Character 12",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a large animated strawberry with a face"
+      },
+      {
+        "name": "Character 13",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a round, orange and purple insect-like creature with a purple head"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a large, multi-colored crystal landscape with green maze-like structures"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a white bucket with the word Chum on it"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a pile of yellow lemons and kiwi slices with faces"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a wall of white marshmallows with faces"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a map or paper held by Character 1"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a vibrant, surreal landscape made of food and crystals, with purple, pink, and green colors"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "extreme wide shot",
+          "angle": "high angle shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing on a green maze structure"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing next to Character 1"
+          }
+        ],
+        "action": "Character 1 and Character 2 stand on a green maze structure in a vibrant food landscape.",
+        "changes": [],
+        "frame_count": 41
+      },
+      {
+        "shot": 2,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing among a group of pickles",
+            "holding": [
+              "Object 2"
+            ]
+          },
+          {
+            "name": "Character 8"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "action": "Character 3 stands among a group of animated pickles holding a bucket.",
+        "changes": [],
+        "frame_count": 45
+      },
+      {
+        "shot": 3,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 9"
+          },
+          {
+            "name": "Character 10"
+          }
+        ],
+        "action": "A large cheeseburger stands while a small leek drinks from a puddle and then spits it out.",
+        "changes": [],
+        "frame_count": 73
+      },
+      {
+        "shot": 4,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 10",
+            "posture": "standing with a shocked expression"
+          }
+        ],
+        "action": "The small leek stands with a shocked expression.",
+        "changes": [],
+        "frame_count": 33
+      },
+      {
+        "shot": 5,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 4",
+            "posture": "kneeling and holding a pile of lemons",
+            "holding": [
+              "Object 3"
+            ]
+          },
+          {
+            "name": "Character 6",
+            "posture": "sitting against a wall of marshmallows"
+          },
+          {
+            "name": "Object 3"
+          }
+        ],
+        "action": "Character 4 kneels and picks up a pile of lemons, then stands up and looks sad while crying.",
+        "changes": [
+          {
+            "name": "Character 4",
+            "what": "posture",
+            "before": "kneeling",
+            "after": "standing"
+          },
+          {
+            "name": "Character 4",
+            "what": "state",
+            "before": "smiling",
+            "after": "crying"
+          }
+        ],
+        "frame_count": 185
+      },
+      {
+        "shot": 6,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 11",
+            "posture": "standing between a pair of shoes"
+          }
+        ],
+        "action": "A small blueberry stands between a pair of shoes and looks up.",
+        "changes": [],
+        "frame_count": 57
+      },
+      {
+        "shot": 7,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "extreme wide shot",
+          "angle": "high angle shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing on the maze structure"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing next to Character 1"
+          }
+        ],
+        "action": "Character 1 and Character 2 stand on the maze structure as long snake-like creatures approach.",
+        "changes": [],
+        "frame_count": 65
+      },
+      {
+        "shot": 8,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing and holding a strawberry",
+            "holding": [
+              "Character 12"
+            ]
+          },
+          {
+            "name": "Character 12"
+          }
+        ],
+        "action": "Character 1 and Character 2 stand together, with Character 2 holding a large strawberry.",
+        "changes": [],
+        "frame_count": 25
+      },
+      {
+        "shot": 9,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing and looking at a map",
+            "holding": [
+              "Object 5"
+            ]
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing and holding a strawberry",
+            "holding": [
+              "Character 12"
+            ]
+          },
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 5",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 6",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 7",
+            "posture": "sitting on Character 3's shoulder"
+          },
+          {
+            "name": "Object 5"
+          },
+          {
+            "name": "Character 12"
+          }
+        ],
+        "action": "A group of people gather together, with Character 1 looking at a map and Character 2 holding a strawberry.",
+        "changes": [],
+        "frame_count": 121
+      },
+      {
+        "shot": 10,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 13",
+            "posture": "standing on a pile of crystals"
+          }
+        ],
+        "action": "A round insect-like creature stands on a pile of crystals.",
+        "changes": [],
+        "frame_count": 37
+      },
+      {
+        "shot": 11,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing and holding a strawberry",
+            "holding": [
+              "Character 12"
+            ]
+          },
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 5",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 6",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 12"
+          }
+        ],
+        "action": "The group stands together looking forward.",
+        "changes": [],
+        "frame_count": 41
+      },
+      {
+        "shot": 12,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 13",
+            "posture": "standing on a pile of crystals"
+          }
+        ],
+        "action": "The insect-like creature stands on the crystals and looks around.",
+        "changes": [],
+        "frame_count": 41
+      }
+    ]
+  },
+  "inputs": {
+    "shots": {
+      "text": "SUBJECTS\n- Character 1 (person): a man with messy dark hair, a pointed nose, and a lean build, wearing a white lab coat over a grey shirt\n- Character 2 (person): a woman with blonde hair in a ponytail, glasses, and a slim build, wearing a pink shirt and light pink pants\n- Character 3 (person): a large man with a mustache, a round build, and a bald head, wearing a light purple polo shirt with the name Tim on it\n- Character 4 (person): a large man with a beard, a muscular build, and dark skin, wearing a blue police uniform with a cap\n- Character 5 (person): a tall man with spiky brown hair and a slim build, wearing a dark grey t-shirt with a brain graphic and text\n- Character 6 (person): a short man with a blue cap and a round build, wearing a light grey t-shirt and a blue cap\n- Character 7 (animal): a small monkey with a grey face and a white headband\n- Character 8 (group): a group of animated green pickles with faces and legs\n- Character 9 (animal): a large animated cheeseburger with legs\n- Character 10 (animal): a small animated leek with a face and arms\n- Character 11 (animal): a small animated blueberry with a face and arms\n- Character 12 (animal): a large animated strawberry with a face\n- Character 13 (animal): a round, orange and purple insect-like creature with a purple head\n- Object 1 (object): a large, multi-colored crystal landscape with green maze-like structures\n- Object 2 (object): a white bucket with the word Chum on it\n- Object 3 (object): a pile of yellow lemons and kiwi slices with faces\n- Object 4 (object): a wall of white marshmallows with faces\n- Object 5 (object): a map or paper held by Character 1\nLOCATIONS\n- Location 1: a vibrant, surreal landscape made of food and crystals, with purple, pink, and green colors\nSHOTS\ns01: Extreme wide shot, high angle shot. Character 1 and Character 2 stand on a green maze structure in a vibrant food landscape.\ns02: Medium shot. Character 3 stands among a group of animated pickles holding a bucket.\ns03: Medium shot. A large cheeseburger stands while a small leek drinks from a puddle and then spits it out.\ns04: Close-up shot. The small leek stands with a shocked expression.\ns05: Medium close-up shot. Character 4 kneels and picks up a pile of lemons, then stands up and looks sad while crying.\ns06: Close-up shot. A small blueberry stands between a pair of shoes and looks up.\ns07: Extreme wide shot, high angle shot. Character 1 and Character 2 stand on the maze structure as long snake-like creatures approach.\ns08: Medium shot. Character 1 and Character 2 stand together, with Character 2 holding a large strawberry.\ns09: Medium shot. A group of people gather together, with Character 1 looking at a map and Character 2 holding a strawberry.\ns10: Medium shot. A round insect-like creature stands on a pile of crystals.\ns11: Medium shot. The group stands together looking forward.\ns12: Medium shot. The insect-like creature stands on the crystals and looks around.",
+      "expected_shot_count": 12,
+      "expected_cut_times_seconds": null
+    }
+  }
+}

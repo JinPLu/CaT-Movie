@@ -1,0 +1,840 @@
+{
+ "source": "主服务器 outputs/experiments/long-evaluation-preflight-20261007T001000Z/inputs/ab_pairs30.json（long_story_ab_reviewed_draft_v1）；主体描述含规则 5 状态词的 6 例",
+ "pairs": [
+  {
+   "story_id": "lsh-010",
+   "context_b": {
+    "story_prompt": "A sequence of shots depicting a military assembly and a figure in a suit interacting with a large, eye-like machine, interspersed with a close-up of hands playing a keyboard.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "A group of soldiers wearing green camouflage uniforms and helmets, holding rifles."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "Man with a large chin, wearing a black suit and red tie."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "object",
+      "attributes": "A large, circular, mechanical structure resembling a giant eye with a red center and blue iris."
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "object",
+      "attributes": "A black electronic keyboard instrument."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "An outdoor military formation area with a dark background."
+     },
+     {
+      "location_id": "Location 2",
+      "attributes": "A dark, industrial interior featuring a massive circular wall structure."
+     },
+     {
+      "location_id": "Location 3",
+      "attributes": "An outdoor elevated platform overlooking a vast green landscape at sunset."
+     },
+     {
+      "location_id": "Location 4",
+      "attributes": "A high vantage point overlooking a military parade ground with rows of tanks and soldiers."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "Medium shot, eye-level. A dense formation of soldiers stands in profile, holding rifles at the ready. The soldiers are static, looking forward.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "Wide shot, low angle. A man in a suit stands on a set of stairs, facing a massive, glowing blue circular structure on the wall. The man remains stationary, observing the structure.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 33
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "Extreme long shot, side profile. A silhouette of a man runs across a narrow bridge or platform against a sunset sky. He stops and stands still on the right side of the platform.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 3",
+      "frame_count": 57
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "Wide shot, low angle. The man in the suit stands on a small platform in front of the giant eye-like structure. He is centered in the frame, facing the machine.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 49
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "Close-up, low angle. The man in the suit is shown from the chest up against a cloudy sky. He gestures with his hands, moving them up and down in a rhythmic motion. At the start, Subject 2 is wearing black-rimmed glasses. Then Subject 2 takes off his black-rimmed glasses.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 3",
+      "frame_count": 49
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "Close-up, high angle. A pair of hands in black sleeves plays a black keyboard. The fingers press various keys in a sequence.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 4"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 57
+     },
+     {
+      "shot_id": "s07",
+      "prompt": "Extreme long shot, high angle. The man in the suit stands at a podium on a raised stage, playing a keyboard. Below the stage, a massive army of tanks and soldiers is arranged in rows.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 4",
+       "Subject 1"
+      ],
+      "location_id": "Location 4",
+      "frame_count": 61
+     },
+     {
+      "shot_id": "s08",
+      "prompt": "Wide shot, low angle. The man in the suit stands on the platform in front of the giant eye-like structure. He raises his arms slightly in a gesture.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 37
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 2",
+    "event_shot": 5,
+    "prior": "wearing black-rimmed glasses",
+    "post": "not wearing glasses",
+    "action": "takes off his black-rimmed glasses"
+   }
+  },
+  {
+   "story_id": "lsh-020",
+   "context_b": {
+    "story_prompt": "A sequence of shots depicting a formal dining scene in a dimly lit, wood-paneled room, interspersed with a brief cut to a hallway where a man in a suit interacts with a woman.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "Older seated woman with grey swept-back hair, wearing a black dress."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "A man with a mustache, wearing a dark suit and tie."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "attributes": "A bald man wearing a dark suit and tie."
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "person",
+      "attributes": "A young man with slicked-back dark hair, wearing a dark suit and tie."
+     },
+     {
+      "subject_id": "Subject 5",
+      "kind": "person",
+      "attributes": "A woman with short dark hair, wearing a dark dress."
+     },
+     {
+      "subject_id": "Subject 6",
+      "kind": "person",
+      "attributes": "A man with short dark hair, wearing a dark suit and tie."
+     },
+     {
+      "subject_id": "Subject 7",
+      "kind": "person",
+      "attributes": "A woman with short dark hair, wearing a dark dress."
+     },
+     {
+      "subject_id": "Subject 8",
+      "kind": "person",
+      "attributes": "A man with short dark hair, wearing a dark suit and tie."
+     },
+     {
+      "subject_id": "Subject 9",
+      "kind": "person",
+      "attributes": "Standing woman with short grey-brown hair and a white apron."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "A formal dining room with dark wood paneling, a long table set with white plates and cups, and dim lighting."
+     },
+     {
+      "location_id": "Location 2",
+      "attributes": "A hallway with a staircase, wooden railings, and a coat rack."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "Medium eye-level shot of the dining table. Subject 9 stands behind seated Subject 3, Subject 1 and Subject 2.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 9"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 49
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "Medium shot, eye-level, in the hallway. Subject 4 walks into the frame from the left. Subject 5 walks past him in the foreground, out of focus. Subject 4 stops and turns to face Subject 6, who is standing near the coat rack. They appear to be talking.",
+      "present_subjects": [
+       "Subject 4",
+       "Subject 5",
+       "Subject 6"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 113
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "Wide shot, eye-level, in the dining room. A long table is filled with people. Subject 6 and Subject 7 are seated in the center. Subject 8 is seated to their left. They are all looking towards the right of the frame.",
+      "present_subjects": [
+       "Subject 6",
+       "Subject 7",
+       "Subject 8"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 61
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "Medium shot, eye-level, in the dining room. Subject 3, Subject 1, and Subject 2 are seated at the table. Subject 1 is holding a white cup. They are looking towards the right of the frame. At the start, Subject 1 is holding a white teacup. Then Subject 1 sets her white teacup on the table and withdraws her hand.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 41
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "Close-up, eye-level, in the dining room. Subject 6 is looking down and to the left. Subject 7 is seated to his right, looking down.",
+      "present_subjects": [
+       "Subject 6",
+       "Subject 7"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "Close-up, eye-level, in the dining room. Subject 4 is looking down and to the left. He has a slight smile on his face.",
+      "present_subjects": [
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 25
+     },
+     {
+      "shot_id": "s07",
+      "prompt": "Medium eye-level dining-room shot. Subject 3, Subject 1 and Subject 2 sit at the table and look towards the right.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 57
+     },
+     {
+      "shot_id": "s08",
+      "prompt": "Medium eye-level dining-room shot. Subject 3, Subject 1 and Subject 2 sit at the table and look towards the right.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 49
+     },
+     {
+      "shot_id": "s09",
+      "prompt": "Medium shot, eye-level, in the dining room. Subject 8 and Subject 7 are seated at the table. Subject 7 has a surprised expression on her face, with her mouth open. She then turns her head to the left.",
+      "present_subjects": [
+       "Subject 7",
+       "Subject 8"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 65
+     },
+     {
+      "shot_id": "s10",
+      "prompt": "Medium eye-level dining-room shot. Subject 3, Subject 1 and Subject 2 sit at the table and look towards the right.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 89
+     },
+     {
+      "shot_id": "s11",
+      "prompt": "Medium eye-level dining-room shot. Subject 3, Subject 1 and Subject 2 sit at the table and look towards the right.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 37
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 4,
+    "prior": "holding a white teacup",
+    "post": "empty-handed with the teacup resting on the table",
+    "action": "sets her white teacup on the table and withdraws her hand"
+   }
+  },
+  {
+   "story_id": "lsh-023",
+   "context_b": {
+    "story_prompt": "A white pig stands in a straw-filled pen, looking around and moving its head, while a small spider is seen crawling on the wooden fence behind it.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "animal",
+      "attributes": "A young, white pig with pink ears and snout, standing on four legs."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "object",
+      "attributes": "A small, light-colored spider with long legs."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "An outdoor animal pen with a floor covered in dry straw, enclosed by a wooden fence. In the background, a fairground or festival area is visible with tents and string lights."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "Medium shot, eye-level. Subject 1 stands in the straw pen, facing left. It turns its head to face the camera, then lowers its head towards the ground. At the start, Subject 1 is mouth empty. Then Subject 1 picks up a large bundle of straw from the ground in its mouth.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 25
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "Close-up, low angle. The shot focuses on a section of the wooden fence. Subject 2 is visible on the wood, near a small hole.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 25
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "Medium shot, eye-level. Subject 1 stands in the pen, facing right. It turns its head to look towards the camera and moves its mouth.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 33
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "Close-up, low angle. The shot focuses on the wooden fence. Subject 2 is seen crawling along the edge of a wooden plank.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 65
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "Medium shot, eye-level. Subject 1 stands in the pen, facing right. It turns its head to look towards the camera.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "Close-up, low angle. The shot focuses on the wooden fence. Subject 2 continues to crawl along the edge of the wooden plank.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 117
+     },
+     {
+      "shot_id": "s07",
+      "prompt": "Medium shot, eye-level. Subject 1 stands in the pen, facing right. It turns its head to look towards the camera and moves its mouth.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 37
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 1,
+    "prior": "mouth empty",
+    "post": "holding a large bundle of straw in its mouth",
+    "action": "picks up a large bundle of straw from the ground in its mouth"
+   }
+  },
+  {
+   "story_id": "lsh-024",
+   "context_b": {
+    "story_prompt": "A confrontation on a sandy shore, alternating two men and a group of onlookers near the water.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "Male, balding, wearing a light grey jacket over a dark shirt and dark trousers."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "Male, dark hair, wearing a dark brown jacket over a black turtleneck and brown trousers."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "attributes": "Male, older, grey hair, wearing a maroon robe, seated in a wheelchair."
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "person",
+      "attributes": "Female, blonde hair, wearing a dark brown jacket."
+     },
+     {
+      "subject_id": "Subject 5",
+      "kind": "person",
+      "attributes": "Male, young, curly brown hair, wearing an orange t-shirt and dark jacket."
+     },
+     {
+      "subject_id": "Subject 6",
+      "kind": "person",
+      "attributes": "Female, dark hair, wearing a dark jacket, holding a child."
+     },
+     {
+      "subject_id": "Subject 7",
+      "kind": "object",
+      "attributes": "A circular, metallic device with a central red lens and surrounding segments."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "An outdoor area with sandy ground, large rock formations, and a small stream or waterfall in the background."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "Medium shot, eye-level. Subject 1 and Subject 2 stand facing each other on the sand. Subject 1 holds Subject 7. Subject 2 moves forward, and Subject 1 reacts, causing Subject 2 to fall backward onto the ground.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 7"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 49
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "Medium close-up, eye-level. Subject 1 stands near the water, looking forward with a serious expression. He raises Subject 7 in front of him. At the start, Subject 1 is holding the round device in both hands. Then Subject 1 drops the round device onto the sand and opens both hands.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 7"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 29
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "Medium shot, eye-level. A group of people stands by the water. Subject 3 is in a wheelchair. Subject 4 stands behind him. Subject 5 and Subject 6 are to the left. Subject 3 extends his arms outward.",
+      "present_subjects": [
+       "Subject 3",
+       "Subject 4",
+       "Subject 5",
+       "Subject 6"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "Close-up, high angle. Subject 2 is on the ground, looking up and to the side with a pained or intense expression.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "Medium close-up of Subject 1 facing forward near the water with a focused expression.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 7"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "Medium close-up, eye-level. Subject 3 and Subject 4 are close together. Subject 4 has her arm around Subject 3. Subject 3 gestures with his hand.",
+      "present_subjects": [
+       "Subject 3",
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s07",
+      "prompt": "Close-up, high angle. Subject 2 is on the ground, looking up. He moves his head slightly.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s08",
+      "prompt": "Medium close-up of Subject 1 near the water as a bright red and white light illuminates the foreground.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 7"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 2,
+    "prior": "holding the round device in both hands",
+    "post": "empty-handed with the round device on the sand",
+    "action": "drops the round device onto the sand and opens both hands"
+   }
+  },
+  {
+   "story_id": "lsh-028",
+   "context_b": {
+    "story_prompt": "A tense confrontation unfolds on a sports field between a coach and a player, with a young athlete observing the exchange with a mix of anger and confusion.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "Man with a goatee, a neck tattoo and a brown jersey over a red shirt."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "A white man with short brown hair, wearing a light grey t-shirt with the word 'CREW' on it."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "attributes": "A white man with a goatee, wearing a grey jacket over a grey t-shirt and a blue baseball cap. He has a whistle on a lanyard around his neck."
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "person",
+      "attributes": "A white man with short brown hair, wearing a light grey t-shirt, standing slightly behind Subject 2."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "An outdoor area with a wall covered in green ivy in the background. A white bench or barrier is visible in some shots."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "A medium close-up, over-the-shoulder shot from behind Subject 3, focusing on Subject 1. Subject 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall. At the start, Subject 1 is wearing the blue baseball cap. Then Subject 1 takes off his blue baseball cap.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 37
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "A medium close-up of Subject 2, who is looking off-screen to the right with an angry and intense expression. His brow is furrowed and his mouth is open as if shouting. Subject 4 is partially visible in the background, also looking in the same direction with a concerned expression.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "A medium close-up, over-the-shoulder shot from behind Subject 3, focusing on Subject 1. Subject 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 29
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "A medium close-up of Subject 2, who is looking off-screen to the right with an angry and intense expression. His brow is furrowed and his mouth is open as if shouting. Subject 4 is partially visible in the background, also looking in the same direction with a concerned expression.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 53
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "A medium close-up, over-the-shoulder shot from behind Subject 3, focusing on Subject 1. Subject 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "A medium shot showing Subject 3 on the left, Subject 2 and Subject 4 in the center, and Subject 1 on the right. Subject 3 is gesturing with his right hand towards Subject 1 while speaking. Subject 2 and Subject 4 watch the interaction. Subject 1 stands with his back partially to the camera, listening.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 41
+     },
+     {
+      "shot_id": "s07",
+      "prompt": "A medium close-up, over-the-shoulder shot from behind Subject 1, focusing on Subject 3. Subject 3 is looking towards the right of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s08",
+      "prompt": "A medium close-up of Subject 2, who is looking off-screen to the right with a serious expression. His mouth is slightly open. Subject 4 is partially visible in the background, looking in the same direction with a slight smile.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s09",
+      "prompt": "A medium close-up, over-the-shoulder shot from behind Subject 3, focusing on Subject 1. Subject 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s10",
+      "prompt": "A medium shot showing Subject 3 on the left and Subject 1 on the right. Subject 3 is gesturing with his right hand towards Subject 1 while speaking. Subject 1 stands with his back partially to the camera, listening.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 41
+     },
+     {
+      "shot_id": "s11",
+      "prompt": "A close-up, over-the-shoulder shot from behind Subject 1, focusing on Subject 3. Subject 3 is looking towards the right of the frame, his mouth moving as if speaking. The camera slowly zooms in on his face.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 141
+     },
+     {
+      "shot_id": "s12",
+      "prompt": "A medium close-up, over-the-shoulder shot from behind Subject 3, focusing on Subject 1. Subject 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 3"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 117
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 1,
+    "prior": "wearing the blue baseball cap",
+    "post": "bareheaded",
+    "action": "takes off his blue baseball cap"
+   }
+  },
+  {
+   "story_id": "lsh-029",
+   "context_b": {
+    "story_prompt": "A group of people gathers around a young girl lying on the ground beneath a wooden structure, with an older man and a younger man attending to her. The scene shifts between close-ups of the individuals' concerned expressions and wider shots of the group's interaction.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "Older man with white hair and a mustache, a dark suit, white shirt and dark tie."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "A middle-aged man with short brown hair, wearing a light-colored, patterned short-sleeved shirt and blue jeans."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "attributes": "A young girl with long, curly brown hair, wearing a light-colored top and blue denim overalls."
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "person",
+      "attributes": "A young woman with reddish-brown hair, wearing a light blue short-sleeved shirt tied at the waist over a white top, and light pink shorts."
+     },
+     {
+      "subject_id": "Subject 5",
+      "kind": "person",
+      "attributes": "A man standing in the background, wearing a white shirt, dark trousers, and suspenders."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "An outdoor area with dry, yellowish grass. A large wooden structure, possibly a windmill or part of a barn, is prominent. In the background, there is a field of tall green crops and a line of trees under a clear blue sky."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "A medium shot from a slightly high angle shows Subject 1 and Subject 2 kneeling on the ground, attending to Subject 3 who is lying down. Subject 4 and Subject 5 stand behind them, observing. Subject 1 leans over Subject 3, while Subject 2 holds her head. The group is positioned under the wooden beams of a structure. At the start, Subject 1 is wearing the checked flat cap. Then Subject 1 takes off his checked flat cap.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4",
+       "Subject 5"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 77
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "A close-up shot focuses on the face of Subject 2. He is looking down and to his left with a concerned expression. The background is a soft-focus view of trees and sky.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 25
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "The shot returns to the medium view of the group. Subject 1 and Subject 2 continue to attend to Subject 3. Subject 1's hands are on Subject 3's chest. Subject 2 holds her head. Subject 4 stands behind them, looking on. Subject 5 is also visible in the background.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2",
+       "Subject 3",
+       "Subject 4",
+       "Subject 5"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 101
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "A close-up shot of Subject 1. He is looking down, then briefly looks up and to his right before looking down again. His expression is serious and focused. The wooden beams of the structure are visible behind him.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 81
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "A medium close-up shot shows Subject 2 holding Subject 3, who is now sitting up. She is leaning against him. Subject 4 stands to their left, with her hand on Subject 3's head. Subject 2 looks off to the side with a concerned expression.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 3",
+       "Subject 4"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 65
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "A medium shot of Subject 1, who is now standing. He is looking towards the right of the frame and appears to be speaking. In the background, a baseball field is visible with a player in a white uniform and a vintage car parked nearby.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 69
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 1,
+    "prior": "wearing the checked flat cap",
+    "post": "bareheaded",
+    "action": "takes off his checked flat cap"
+   }
+  }
+ ]
+}

@@ -1,0 +1,1483 @@
+{
+  "source_members": "outputs/experiments/renderer-layout-baseline-20261027/inputs/train.jsonl",
+  "cases": [
+    {
+      "case_id": "story_block_v1:cinedance:0124eaa4-c735-8336-985a-1b7365ac2b8c:<scene2>:block0001:0001-0004",
+      "original_shot_index": 1,
+      "sample_indices": [
+        2454
+      ],
+      "before_token_count": 514,
+      "before_text": "2D animation. Wide shot. In an office break room or lounge with beige walls, couches, tables, and bulletin boards, Character 1, a light blue alien with dark blue spots on its head, large eyes, and a slender build, is sitting on a couch, wearing a grey tank top, dark pants, and dark boots with blue accents, holding a lit cigar. Character 2, a man with dark hair, a mustache, and glasses, is standing, wearing a brown suit jacket, a green shirt, and a tie, holding a yellow mug. Character 3, a heavyset man with short dark hair, is standing, wearing a red t-shirt with white trim and green shorts. Character 4, a man with short black hair and a lean build, is sitting on a couch, wearing a grey blazer, a blue shirt, and dark pants, holding the lit cigar. Character 5, a pregnant woman with short blonde hair, is sitting on a couch, wearing a white long-sleeved top and light grey pants, holding a donut. Character 6, a woman with long dark hair and a pink headband, is sitting at a table, wearing a yellow long-sleeved top and green pants. Character 7, a woman with short black hair, is sitting at a table, wearing a green cardigan, a white top, and a gold necklace, holding the lit cigar and the yellow mug. A bulletin board with papers is open on the coffee table. A group of people are gathered in an office lounge. Character 1 sits on a couch smoking a cigar. Character 2 stands holding a mug. Character 3 stands nearby. Character 4 sits on another couch smoking a cigar. Character 5 sits next to him holding a donut. Character 6 and Character 7 sit at a table, with Character 7 smoking a cigar and holding a mug. Layout: Character 1 stays center, small; Character 2 stays left, medium; Character 3 stays left, medium; Character 4 stays left, small; Character 5 stays center, small; Character 6 is right, small at the start and ends right, medium at the end; Character 7 stays right, medium; a brown leather couch stays center, small; the bulletin board with papers stays left, small; a round wooden table is right, small at the start and ends right, medium at the end.",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a light blue alien with dark blue spots on its head, large eyes, and a slender build",
+            "outfit": "a grey tank top, dark pants, and dark boots with blue accents"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair, a mustache, and glasses",
+            "outfit": "a brown suit jacket, a green shirt, and a tie"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a heavyset man with short dark hair",
+            "outfit": "a red t-shirt with white trim and green shorts"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short black hair and a lean build",
+            "outfit": "a grey blazer, a blue shirt, and dark pants"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a pregnant woman with short blonde hair",
+            "outfit": "a white long-sleeved top and light grey pants"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long dark hair and a pink headband",
+            "outfit": "a yellow long-sleeved top and green pants"
+          },
+          {
+            "name": "Character 7",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with short black hair",
+            "outfit": "a green cardigan, a white top, and a gold necklace"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a lit cigar"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a brown leather couch"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a donut"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a yellow mug"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a round wooden table"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a green chair"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a floor lamp with a yellow shade"
+          },
+          {
+            "name": "Object 8",
+            "appearance": "a shield-shaped emblem on the wall with a clock and text"
+          },
+          {
+            "name": "Object 9",
+            "appearance": "a bulletin board with papers"
+          },
+          {
+            "name": "Object 10",
+            "appearance": "a pink box of donuts"
+          },
+          {
+            "name": "Object 11",
+            "appearance": "a coffee table"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an office break room or lounge with beige walls, couches, tables, and bulletin boards"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 2,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting on a couch",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting on a couch",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 5",
+                "posture": "sitting on a couch",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 6",
+                "posture": "sitting at a table"
+              },
+              {
+                "name": "Character 7",
+                "posture": "sitting at a table",
+                "holding": [
+                  "Object 1",
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 9",
+                "state": "open on the coffee table"
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 6"
+              },
+              {
+                "name": "Object 7"
+              },
+              {
+                "name": "Object 8"
+              },
+              {
+                "name": "Object 10"
+              },
+              {
+                "name": "Object 11"
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "A group of people are gathered in an office lounge. Character 1 sits on a couch smoking a cigar. Character 2 stands holding a mug. Character 3 stands nearby. Character 4 sits on another couch smoking a cigar. Character 5 sits next to him holding a donut. Character 6 and Character 7 sit at a table, with Character 7 smoking a cigar and holding a mug.",
+            "changes": []
+          }
+        ],
+        "layouts": [
+          {
+            "shot": 2,
+            "entities": [
+              {
+                "name": "Character 1",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.54,
+                      0.38,
+                      0.66,
+                      0.68
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.54,
+                      0.39,
+                      0.66,
+                      0.68
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 2",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.23,
+                      0.12,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.23,
+                      0.12,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 3",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.11,
+                      0.32,
+                      0.28,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.11,
+                      0.32,
+                      0.28,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 4",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.23,
+                      0.35,
+                      0.37,
+                      0.73
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.23,
+                      0.36,
+                      0.37,
+                      0.73
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 5",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.37,
+                      0.36,
+                      0.47,
+                      0.68
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.37,
+                      0.35,
+                      0.47,
+                      0.68
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 6",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.62,
+                      0.56,
+                      0.79,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.61,
+                      0.57,
+                      0.81,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 7",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.79,
+                      0.51,
+                      0.97,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.79,
+                      0.51,
+                      0.96,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 2",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.24,
+                      0.46,
+                      0.52,
+                      0.72
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.24,
+                      0.46,
+                      0.52,
+                      0.72
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 9",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.05,
+                      0.2,
+                      0.2,
+                      0.43
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.05,
+                      0.2,
+                      0.2,
+                      0.42
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 5",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.69,
+                      0.75,
+                      0.96,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.62,
+                      0.76,
+                      0.96,
+                      1.0
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_007/Same_Kind_of_Different_as_Me_(2017)_-_Christmas_Dinner_Scene_(8_10)_|_Movieclips:scene000:0000-0008",
+      "original_shot_index": 5,
+      "sample_indices": [
+        3390,
+        4595
+      ],
+      "before_token_count": 513,
+      "before_text": "Live-action footage. Medium wide shot. In a dining room decorated for Christmas with a fireplace and a Christmas tree, Character 1, an older man with white hair and a white beard, is sitting at the dining table, wearing a plaid shirt and a brown vest. Character 2, a woman with short dark curly hair, is sitting at the dining table, wearing a dark top and a red and grey patterned scarf. Character 3, an older man with dark skin, a grey beard, and balding hair, is sitting at the dining table, wearing a dark suit and a grey shirt. Character 4, a young man with short brown hair, is sitting at the dining table, wearing a maroon button-down shirt. Character 5, a woman with shoulder-length brown hair and a red headband, is sitting at the dining table, wearing a white turtleneck sweater and a pearl necklace. Character 6, a young woman with long blonde hair and a light blue knit hat, is sitting at the dining table, wearing a beige knit sweater. Character 7, a man with short dark hair and glasses, is sitting at the dining table, wearing a dark plaid shirt. A wooden dining table is set with food and drinks. A roasted turkey is on the table. Plates of food including ham and carrots is on the table. Glasses with amber liquid is on the table. A bowl of cranberry sauce is on the table. A Christmas tree with lights is lit in the background. A fireplace with stockings is in the background. The group continues to sit around the table with their heads bowed. Near to far, closer to the camera first: Character 5 stays right, medium; Character 4 stays center, medium; Character 3 stays left, small; the fireplace with stockings stays left, medium. Near to far, closer to the camera first: the wooden dining table stays center, large; Character 7 stays right, large; Character 1 stays left, large; the bowl of cranberry sauce stays center, small; plates of food including ham and carrots stays left, small; Character 6 stays right, small. Layout: Character 2 stays left, medium; the roasted turkey stays center, small; glasses with amber liquid stays right, small; the Christmas tree with lights stays center, small.",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older man with white hair and a white beard",
+            "outfit": "a plaid shirt and a brown vest"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with short dark curly hair",
+            "outfit": "a dark top and a red and grey patterned scarf"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older man with dark skin, a grey beard, and balding hair",
+            "outfit": "a dark suit and a grey shirt"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with short brown hair",
+            "outfit": "a maroon button-down shirt"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with shoulder-length brown hair and a red headband",
+            "outfit": "a white turtleneck sweater and a pearl necklace"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with long blonde hair and a light blue knit hat",
+            "outfit": "a beige knit sweater"
+          },
+          {
+            "name": "Character 7",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and glasses",
+            "outfit": "a dark plaid shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a wooden dining table"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a roasted turkey"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "plates of food including ham and carrots"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "glasses with amber liquid"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a bowl of cranberry sauce"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a bowl of green beans"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a Christmas tree with lights"
+          },
+          {
+            "name": "Object 8",
+            "appearance": "a fireplace with stockings"
+          },
+          {
+            "name": "Object 9",
+            "appearance": "a wooden sideboard with Christmas decorations"
+          },
+          {
+            "name": "Object 10",
+            "appearance": "a white cloth napkin"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dining room decorated for Christmas with a fireplace and a Christmas tree"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Character 5",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Character 6",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Character 7",
+                "posture": "sitting at the dining table"
+              },
+              {
+                "name": "Object 1",
+                "state": "set with food and drinks"
+              },
+              {
+                "name": "Object 2",
+                "state": "on the table"
+              },
+              {
+                "name": "Object 3",
+                "state": "on the table"
+              },
+              {
+                "name": "Object 4",
+                "state": "on the table"
+              },
+              {
+                "name": "Object 5",
+                "state": "on the table"
+              },
+              {
+                "name": "Object 7",
+                "state": "lit in the background"
+              },
+              {
+                "name": "Object 8",
+                "state": "in the background"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "The group continues to sit around the table with their heads bowed.",
+            "changes": []
+          }
+        ],
+        "layouts": [
+          {
+            "shot": 6,
+            "entities": [
+              {
+                "name": "Character 1",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.07,
+                      0.45,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.07,
+                      0.45,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 2",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.2,
+                      0.2,
+                      0.68
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.21,
+                      0.18,
+                      0.68
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 3",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.21,
+                      0.24,
+                      0.41,
+                      0.58
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.21,
+                      0.24,
+                      0.41,
+                      0.59
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 4",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.46,
+                      0.2,
+                      0.7,
+                      0.58
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.46,
+                      0.2,
+                      0.7,
+                      0.58
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 5",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.58,
+                      0.22,
+                      0.86,
+                      0.7
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.58,
+                      0.22,
+                      0.86,
+                      0.7
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 6",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.87,
+                      0.21,
+                      1.0,
+                      0.63
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.87,
+                      0.21,
+                      1.0,
+                      0.63
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 7",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.41,
+                      0.0,
+                      1.0,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.39,
+                      0.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 1",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.17,
+                      0.56,
+                      1.0,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.17,
+                      0.54,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 2",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.46,
+                      0.55,
+                      0.57,
+                      0.66
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.46,
+                      0.55,
+                      0.57,
+                      0.67
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 3",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.19,
+                      0.72,
+                      0.43,
+                      0.83
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.19,
+                      0.72,
+                      0.43,
+                      0.83
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 4",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.65,
+                      0.55,
+                      0.71,
+                      0.69
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.64,
+                      0.55,
+                      0.71,
+                      0.69
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 5",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.51,
+                      0.75,
+                      0.66,
+                      0.88
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.51,
+                      0.75,
+                      0.66,
+                      0.88
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 7",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.55,
+                      0.03,
+                      0.66,
+                      0.35
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.55,
+                      0.03,
+                      0.67,
+                      0.35
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 8",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.06,
+                      0.01,
+                      0.45,
+                      0.36
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.06,
+                      0.0,
+                      0.45,
+                      0.36
+                    ]
+                  }
+                ]
+              }
+            ],
+            "front_of": [
+              {
+                "near": "Object 1",
+                "far": "Character 7"
+              },
+              {
+                "near": "Character 7",
+                "far": "Character 1"
+              },
+              {
+                "near": "Character 1",
+                "far": "Object 5"
+              },
+              {
+                "near": "Object 5",
+                "far": "Object 3"
+              },
+              {
+                "near": "Object 3",
+                "far": "Character 6"
+              },
+              {
+                "near": "Character 5",
+                "far": "Character 4"
+              },
+              {
+                "near": "Character 4",
+                "far": "Character 3"
+              },
+              {
+                "near": "Character 3",
+                "far": "Object 8"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "story_block_v1:cinedance:046b242f-bb98-849d-b06c-e21f7cc08dbe:<scene1>:block0000:0000-0001",
+      "original_shot_index": 0,
+      "sample_indices": [
+        8708
+      ],
+      "before_token_count": 517,
+      "before_text": "Live-action footage. Medium shot, pan. In an office or study room with large windows, desks, and seating areas, Character 1, a woman with dark hair tied back in a ponytail, is sitting at a desk, wearing a dark hoodie, holding a smartphone. Character 2, a man with dark hair and glasses, is sitting next to Character 1, wearing a grey sweater, holding the smartphone. Character 3, a man with dark hair and a beard, wearing glasses, is walking, wearing a light grey jacket and white shirt, holding the smartphone. Character 4, a man with dark hair, glasses, and a beard, is sitting on a sofa, wearing a beige cardigan over a collared shirt, holding the smartphone. Character 5, a woman with dark hair and bangs, is sitting on a sofa, wearing a brown fuzzy sweater, holding the smartphone. Character 6, a man with dark hair, is sitting on a sofa, wearing a dark jacket, holding the smartphone. A computer monitor is on a desk. A desk lamp is on a desk. A leather sofa is occupied. Stacks of books and papers is on desks and tables. Large windows with blinds is in the background. The camera pans across an office where several people are sitting at desks or on sofas, all looking at their smartphones. Near to far, closer to the camera first: Character 2 is center, medium at the start and ends center, large at 0.31; large windows with blinds stays center, large. Near to far, closer to the camera first: the leather sofa is left, small at 0.46 and ends right, medium at 0.72; Character 5 is left, small at 0.62 and ends left, large at the end. Near to far, closer to the camera first: stacks of books and papers is center, small at the start and ends right, small at 0.28; the desk lamp is left, small at the start and ends right, small at 0.28. Layout: Character 1 is right, large at the start and ends right, small at 0.28; Character 4 is left, medium at 0.49 and ends center, medium at 0.87; the computer monitor is center, small at the start and ends right, small at 0.36.",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair tied back in a ponytail",
+            "outfit": "a dark hoodie"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair and glasses",
+            "outfit": "a grey sweater"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair and a beard, wearing glasses",
+            "outfit": "a light grey jacket and white shirt"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair, glasses, and a beard",
+            "outfit": "a beige cardigan over a collared shirt"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair and bangs",
+            "outfit": "a brown fuzzy sweater"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a man with dark hair",
+            "outfit": "a dark jacket"
+          },
+          {
+            "name": "Character 7",
+            "kind": "group",
+            "visibility": "distant",
+            "appearance": "people in the background",
+            "outfit": "various"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a computer monitor"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a desk lamp"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a smartphone"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a leather sofa"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a television set"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a green cabinet"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a coffee table"
+          },
+          {
+            "name": "Object 8",
+            "appearance": "stacks of books and papers"
+          },
+          {
+            "name": "Object 9",
+            "appearance": "large windows with blinds"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an office or study room with large windows, desks, and seating areas"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "pan"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting next to Character 1",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "walking",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting on a sofa",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 5",
+                "posture": "sitting on a sofa",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 6",
+                "posture": "sitting on a sofa",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Object 1",
+                "state": "on a desk"
+              },
+              {
+                "name": "Object 2",
+                "state": "on a desk"
+              },
+              {
+                "name": "Object 4",
+                "state": "occupied"
+              },
+              {
+                "name": "Object 8",
+                "state": "on desks and tables"
+              },
+              {
+                "name": "Object 9",
+                "state": "in the background"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The camera pans across an office where several people are sitting at desks or on sofas, all looking at their smartphones.",
+            "changes": []
+          }
+        ],
+        "layouts": [
+          {
+            "shot": 1,
+            "entities": [
+              {
+                "name": "Character 1",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.53,
+                      0.18,
+                      0.89,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 0.28,
+                    "visibility": "visible",
+                    "box": [
+                      0.94,
+                      0.67,
+                      1.0,
+                      0.83
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 2",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.56,
+                      0.21,
+                      0.76,
+                      0.67
+                    ]
+                  },
+                  {
+                    "time": 0.31,
+                    "visibility": "visible",
+                    "box": [
+                      0.18,
+                      0.4,
+                      1.0,
+                      0.87
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 4",
+                "anchors": [
+                  {
+                    "time": 0.49,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.37,
+                      0.16,
+                      0.93
+                    ]
+                  },
+                  {
+                    "time": 0.87,
+                    "visibility": "visible",
+                    "box": [
+                      0.08,
+                      0.56,
+                      1.0,
+                      0.78
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Character 5",
+                "anchors": [
+                  {
+                    "time": 0.62,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.5,
+                      0.03,
+                      0.68
+                    ]
+                  },
+                  {
+                    "time": 1.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.08,
+                      0.16,
+                      0.53,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 1",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.23,
+                      0.32,
+                      0.46,
+                      0.65
+                    ]
+                  },
+                  {
+                    "time": 0.36,
+                    "visibility": "visible",
+                    "box": [
+                      0.88,
+                      0.53,
+                      1.0,
+                      0.95
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 2",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.25,
+                      0.16,
+                      0.36,
+                      0.72
+                    ]
+                  },
+                  {
+                    "time": 0.28,
+                    "visibility": "visible",
+                    "box": [
+                      0.65,
+                      0.29,
+                      0.75,
+                      0.84
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 4",
+                "anchors": [
+                  {
+                    "time": 0.46,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.57,
+                      0.17,
+                      1.0
+                    ]
+                  },
+                  {
+                    "time": 0.72,
+                    "visibility": "visible",
+                    "box": [
+                      0.48,
+                      0.65,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 8",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.29,
+                      0.71,
+                      0.61,
+                      0.82
+                    ]
+                  },
+                  {
+                    "time": 0.28,
+                    "visibility": "visible",
+                    "box": [
+                      0.86,
+                      0.97,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Object 9",
+                "anchors": [
+                  {
+                    "time": 0.0,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.51
+                    ]
+                  },
+                  {
+                    "time": 0.51,
+                    "visibility": "visible",
+                    "box": [
+                      0.0,
+                      0.0,
+                      1.0,
+                      0.55
+                    ]
+                  }
+                ]
+              }
+            ],
+            "front_of": [
+              {
+                "near": "Object 8",
+                "far": "Object 2"
+              },
+              {
+                "near": "Object 4",
+                "far": "Character 5"
+              },
+              {
+                "near": "Character 2",
+                "far": "Object 9"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

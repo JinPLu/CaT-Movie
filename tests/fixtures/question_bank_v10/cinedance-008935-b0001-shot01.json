@@ -1,0 +1,454 @@
+{
+ "story_id": "cinedance-008935-b0001-shot01",
+ "source": "test split: questions.reviewed.no-layout.json, benchmark_storyboards_v4.json, request_presence run (question-bank-v10-20261106/request-presence)",
+ "writer_output": {
+  "names": [
+   {
+    "id": "Character 1",
+    "name": "Character 1"
+   },
+   {
+    "id": "Character 2",
+    "name": "Character 2"
+   },
+   {
+    "id": "Character 3",
+    "name": "Character 3"
+   },
+   {
+    "id": "Object 1",
+    "name": "Object 1"
+   },
+   {
+    "id": "Object 2",
+    "name": "Object 2"
+   },
+   {
+    "id": "Object 3",
+    "name": "Object 3"
+   },
+   {
+    "id": "Object 4",
+    "name": "Object 4"
+   },
+   {
+    "id": "Location 1",
+    "name": "Location 1"
+   },
+   {
+    "id": "Location 2",
+    "name": "Location 2"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "present": [
+     "Character 1",
+     "Object 2",
+     "Object 3"
+    ]
+   },
+   {
+    "shot": 2,
+    "present": [
+     "Character 1"
+    ]
+   },
+   {
+    "shot": 3,
+    "present": [
+     "Character 1",
+     "Character 2",
+     "Object 1"
+    ]
+   },
+   {
+    "shot": 4,
+    "present": [
+     "Character 2"
+    ]
+   },
+   {
+    "shot": 5,
+    "present": [
+     "Character 3",
+     "Object 4"
+    ]
+   },
+   {
+    "shot": 6,
+    "present": [
+     "Character 2"
+    ]
+   }
+  ],
+  "actions": [
+   {
+    "shot": 3,
+    "question": "Does Character 1 point Object 1 at Character 2?",
+    "participants": [
+     "Character 1",
+     "Object 1",
+     "Character 2"
+    ],
+    "result": null
+   }
+  ]
+ },
+ "board": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with long black hair, purple eyes, and a red headband",
+    "outfit": "a black and white sailor-style school uniform with red accents and a black pleated skirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young man with short black hair, green eyes, and an eyepatch over his right eye",
+    "outfit": "a black school uniform jacket over a white shirt with bandages on his chest and left arm"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young man with short blonde hair and a lean build",
+    "outfit": "a black suit jacket, white shirt, and dark pants"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a long, thin spear or staff with a golden tip"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a large building with a purple facade, golden roof accents, and pentagram symbols"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a large red eye on the building"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "giant disembodied arms and legs of various colors"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a dark, red-lit interior space with angular architecture and a large building facade visible outside"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "a dark, red-tiled room or void"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing on a staircase"
+     },
+     {
+      "name": "Object 2",
+      "state": "with a large red eye and pentagram symbols"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "action": "A woman with long black hair stands on a staircase in front of a building with pentagram symbols and a large red eye.",
+    "changes": [],
+    "frame_count": 57
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking forward with a slight smile"
+     }
+    ],
+    "action": "The woman with long black hair smiles menacingly.",
+    "changes": [],
+    "frame_count": 89
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "pointing a spear forward",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing on a higher level, looking down"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "The woman points a long spear at a young man with an eyepatch who is standing on a higher level.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Object 1"
+      ]
+     }
+    ],
+    "frame_count": 53
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "looking shocked and speaking",
+      "state": "with bandages on his chest and arm"
+     }
+    ],
+    "action": "The young man with the eyepatch and bandages looks shocked and speaks.",
+    "changes": [],
+    "frame_count": 105
+   },
+   {
+    "shot": 5,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "standing in the center of a red-tiled room"
+     },
+     {
+      "name": "Object 4",
+      "posture": "surrounding the young man"
+     }
+    ],
+    "action": "A blonde young man stands in a red room surrounded by giant disembodied arms and legs.",
+    "changes": [],
+    "frame_count": 33
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "looking down with a shocked expression",
+      "state": "with bandages on his chest and arm"
+     }
+    ],
+    "action": "The young man with the eyepatch looks down in shock.",
+    "changes": [],
+    "frame_count": 45
+   }
+  ]
+ },
+ "requirements": [
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q01",
+   "dimension": "event",
+   "shot": 3,
+   "reference_shot": null,
+   "anchor": "during",
+   "question": "Does Character 1 point Object 1 at Character 2?",
+   "depends_on": [
+    "Character 1",
+    "Object 1",
+    "Character 2"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q02",
+   "dimension": "character",
+   "shot": 2,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Is Character 1 at {shot 2} the same person as at {shot 1}?",
+   "depends_on": [
+    "Character 1"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q03",
+   "dimension": "character",
+   "shot": 3,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+   "depends_on": [
+    "Character 1"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q04",
+   "dimension": "character",
+   "shot": 4,
+   "reference_shot": 3,
+   "anchor": "during",
+   "question": "Is Character 2 at {shot 4} the same person as at {shot 3}?",
+   "depends_on": [
+    "Character 2"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q05",
+   "dimension": "character",
+   "shot": 6,
+   "reference_shot": 3,
+   "anchor": "during",
+   "question": "Is Character 2 at {shot 6} the same person as at {shot 3}?",
+   "depends_on": [
+    "Character 2"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q06",
+   "dimension": "place",
+   "shot": 2,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+   "depends_on": []
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/q07",
+   "dimension": "place",
+   "shot": 6,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Are {shot 6} and {shot 1} in the same place (Location 1)?",
+   "depends_on": []
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/s01",
+   "dimension": "style",
+   "shot": 1,
+   "reference_shot": null,
+   "anchor": "during",
+   "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+   "depends_on": []
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/m01",
+   "dimension": "monitor",
+   "shot": 5,
+   "reference_shot": 3,
+   "anchor": "during",
+   "question": "Is Character 2 at {shot 3} the same person as Character 3 at {shot 5}?",
+   "depends_on": []
+  },
+  {
+   "requirement_id": "cinedance-008935-b0001-shot01/m02",
+   "dimension": "monitor",
+   "shot": 5,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Are {shot 5} and {shot 1} in the same place?",
+   "depends_on": []
+  }
+ ],
+ "request": "SUBJECTS\n- Character 1 (person): a woman with long black hair, purple eyes, and a red headband, wearing a black and white sailor-style school uniform with red accents and a black pleated skirt\n- Character 2 (person): a young man with short black hair, green eyes, and an eyepatch over his right eye, wearing a black school uniform jacket over a white shirt with bandages on his chest and left arm\n- Character 3 (person): a young man with short blonde hair and a lean build, wearing a black suit jacket, white shirt, and dark pants\n- Object 1 (object): a long, thin spear or staff with a golden tip\n- Object 2 (object): a large building with a purple facade, golden roof accents, and pentagram symbols\n- Object 3 (object): a large red eye on the building\n- Object 4 (object): giant disembodied arms and legs of various colors\nLOCATIONS\n- Location 1: a dark, red-lit interior space with angular architecture and a large building facade visible outside\n- Location 2: a dark, red-tiled room or void\nSHOTS\ns01: Medium shot. A woman with long black hair stands on a staircase in front of a building with pentagram symbols and a large red eye.\ns02: Close-up shot. The woman with long black hair smiles menacingly.\ns03: Medium shot. The woman points a long spear at a young man with an eyepatch who is standing on a higher level.\ns04: Medium close-up shot. The young man with the eyepatch and bandages looks shocked and speaks.\ns05: Wide shot, high angle shot. A blonde young man stands in a red room surrounded by giant disembodied arms and legs.\ns06: Close-up shot. The young man with the eyepatch looks down in shock.",
+ "presence": {
+  "shots": [
+   {
+    "shot": 1,
+    "on_screen": [
+     "Character 1",
+     "Object 2",
+     "Object 3"
+    ],
+    "location": "Location 1",
+    "evidence": "“A woman with long black hair stands on a staircase in front of a building with pentagram symbols and a large red eye” establishes Location 1."
+   },
+   {
+    "shot": 2,
+    "on_screen": [
+     "Character 1"
+    ],
+    "location": "Location 1",
+    "evidence": "“The woman with long black hair smiles menacingly” continues her scene from s01. The building and eye are not required in this close-up."
+   },
+   {
+    "shot": 3,
+    "on_screen": [
+     "Character 1",
+     "Character 2",
+     "Object 1"
+    ],
+    "location": "Location 1",
+    "evidence": "“The woman points a long spear” and the young man “is standing on a higher level” continue the established setting and explicitly position both people."
+   },
+   {
+    "shot": 4,
+    "on_screen": [
+     "Character 2"
+    ],
+    "location": "Location 1",
+    "evidence": "“The young man with the eyepatch and bandages looks shocked and speaks” continues his appearance in s03 without a setting change."
+   },
+   {
+    "shot": 5,
+    "on_screen": [
+     "Character 3",
+     "Object 4"
+    ],
+    "location": "Location 2",
+    "evidence": "“A blonde young man stands in a red room surrounded by giant disembodied arms and legs” establishes Location 2."
+   },
+   {
+    "shot": 6,
+    "on_screen": [
+     "Character 2"
+    ],
+    "location": null,
+    "evidence": "“The young man with the eyepatch looks down in shock” specifies no setting and does not clearly continue the blonde man's red-room scene."
+   }
+  ]
+ }
+}

@@ -1,0 +1,224 @@
+{
+ "key": "film-003226-b0000",
+ "shots": 8,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "A man and a woman walk along a rocky coastline as explosions occur around them, eventually ending up on a cliff edge with a small creature on the woman's shoulder."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short brown hair, wearing a torn white shirt and light pink trousers",
+    "outfit": "a torn white shirt and light pink trousers"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with dark curly hair tied back, wearing a black short-sleeved top and black pants",
+    "outfit": "a black short-sleeved top and black pants"
+   },
+   {
+    "name": "Object 1",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a small, green, alien-like creature with a red, segmented shell-like head and body"
+   }
+  ],
+  "objects": [],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a rocky coastline with cliffs, trees, and the ocean in the background"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 and Character 2 walk along a rocky path near the coast.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking"
+     },
+     {
+      "name": "Character 2",
+      "posture": "walking"
+     },
+     {
+      "name": "Object 1",
+      "posture": "sitting on Character 2's shoulder"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "low angle shot",
+     "angle": "low angle shot",
+     "movement": "handheld"
+    },
+    "activity": "action_or_state_change",
+    "action": "Explosions occur behind Character 1 and Character 2, causing dust and debris to fly as they react and move forward.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "running and reacting to explosions"
+     },
+     {
+      "name": "Character 2",
+      "posture": "running and reacting to explosions"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 and Character 2 continue to move away from the dust cloud on a rocky ridge.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking away"
+     },
+     {
+      "name": "Character 2",
+      "posture": "walking away"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "extreme wide shot",
+     "angle": "overhead shot",
+     "movement": "pull out"
+    },
+    "activity": "action_or_state_change",
+    "action": "An aerial view shows Character 1 and Character 2 walking along a narrow cliff edge while large dust clouds and explosions occur around them.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking along the cliff edge"
+     },
+     {
+      "name": "Character 2",
+      "posture": "walking along the cliff edge"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 and Character 2 stand on the edge of a cliff as two glowing, fiery figures appear behind them.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing on the cliff edge"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing on the cliff edge"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "no_human_activity",
+    "action": "A close-up shows two glowing, ethereal faces with blue eyes in a nebula-like background.",
+    "present": [],
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 and Character 2 stand on the cliff edge looking out over the ocean.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing on the cliff edge"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing on the cliff edge"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A close-up shows Object 1 sitting on the shoulder of Character 2, looking around.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1",
+      "posture": "sitting on Character 2's shoulder"
+     }
+    ],
+    "changes": []
+   }
+  ]
+ },
+ "expected_block_errors": [
+  "characters entry 'Object 1'"
+ ],
+ "expected_shot_errors": {
+  "1": [
+   "shot 1 present 'Object 1'"
+  ],
+  "8": [
+   "shot 8 present 'Object 1'"
+  ]
+ }
+}

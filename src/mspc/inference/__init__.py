@@ -1,0 +1,1 @@
+"""Canonical MSPC inference owners."""

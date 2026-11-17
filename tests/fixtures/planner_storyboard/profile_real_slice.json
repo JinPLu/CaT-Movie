@@ -1,0 +1,3750 @@
+{
+  "source": "planner-training-readiness-20261020/inputs/sample-200-current.jsonl plus metrics/full-pool-rows.jsonl",
+  "selection": "first seven rows of each train tier and first one row of each val tier from the measured real 200-row slice",
+  "rows": [
+    {
+      "sample_id": "cinedance-008882-b0001/summary/0:7",
+      "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0007-0013",
+      "block_key": "cinedance-008882-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 9.6875 seconds total; 16 fps.\n\nUser request:\nA man in black clothing and sunglasses points at a surprised man holding a smartphone in a room with wooden furniture.",
+      "shot_span": [
+        0,
+        7
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark hair",
+            "outfit": "a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a middle-aged man with short, curly dark hair",
+            "outfit": "a beige and blue plaid sweater vest over a beige long-sleeve shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a black smartphone"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a wooden bookshelf filled with books"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a chandelier"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a wooden cabinet or door"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a lamp"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "curtains"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an indoor room with wooden furniture, bookshelves, and curtains"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+              }
+            ],
+            "action": "Character 1 stands with a serious expression, looking slightly downward.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 points a gloved finger at Character 2, who looks surprised while holding a smartphone.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 looks to the side with a serious expression.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 looks up with a confused and slightly worried expression.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 turns their head slightly, maintaining a serious expression.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 looks to the side, showing their profile.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 continues to look confused and concerned.",
+            "changes": [],
+            "frame_count": 13
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-009723-b0004/summary/0:1",
+      "case_id": "story_block_v1:cinedance:00efd815-8462-838f-ba0b-c662e44eb45d:<scene5>:block0004:0004-0004",
+      "block_key": "cinedance-009723-b0004",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00efd815-8462-838f-ba0b-c662e44eb45d.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 2.0625 seconds total; 16 fps.\n\nUser request:\nA woman in a green jacket walks down a hallway past several other people standing or walking.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark curly hair and a medium build",
+            "outfit": "a green bomber jacket, an orange shirt, and white pants"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair in a ponytail and a medium build",
+            "outfit": "a white hoodie and blue shorts"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with a red headband, short dark hair, and a slim build",
+            "outfit": "a white t-shirt and blue jeans"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a man with short grey hair and a slim build",
+            "outfit": "a grey shirt and dark pants"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long dark hair and a slim build",
+            "outfit": "a purple shirt and dark skirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a brown leather shoulder bag"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a brown leather shoulder bag"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a dark folder or book"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a white cup"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a school or hospital hallway with windows on the left and doors on the right"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "walking down the hallway towards the camera",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "walking away from the camera"
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing in the hallway",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 4",
+                "posture": "standing on the left side",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Character 5",
+                "posture": "standing on the right side",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "Character 1 walks down the hallway towards the camera while other people stand or walk around her.",
+            "changes": [],
+            "frame_count": 33
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-010539-b0001/summary/0:3",
+      "case_id": "story_block_v1:cinedance:01d2beb4-0320-8397-8832-213988f14d36:<scene1>:block0000:0002-0004",
+      "block_key": "cinedance-010539-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/01d2beb4-0320-8397-8832-213988f14d36.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 12.4375 seconds total; 16 fps.\n\nUser request:\nA person receives a business card and signs a document in a cafeteria, then sits alone by the window.",
+      "shot_span": [
+        0,
+        3
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a person with dark hair",
+            "outfit": "a beige long-sleeved top"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a person with short dark hair",
+            "outfit": "a white shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a white business card with Japanese text"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a white pen"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a document with Japanese text"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a white cup"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a plate of food"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a glass of water"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a wooden table"
+          },
+          {
+            "name": "Object 8",
+            "appearance": "a tray"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a cafeteria or dining area with large windows and a city view"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a table",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at a table",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1",
+                "state": "being handed over"
+              },
+              {
+                "name": "Object 4",
+                "state": "on a tray"
+              },
+              {
+                "name": "Object 5",
+                "state": "on a tray"
+              },
+              {
+                "name": "Object 6",
+                "state": "on a tray"
+              },
+              {
+                "name": "Object 7",
+                "state": "under the tray"
+              },
+              {
+                "name": "Object 8",
+                "state": "on the table"
+              }
+            ],
+            "action": "Character 2 hands a white business card to Character 1, who takes it and holds it with both hands.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "what": "holding",
+                "before": [
+                  "Object 1"
+                ],
+                "after": []
+              }
+            ],
+            "frame_count": 53
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "over-the-shoulder shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a table",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 2",
+                "state": "being used to write"
+              },
+              {
+                "name": "Object 3",
+                "state": "on the table"
+              }
+            ],
+            "action": "Character 1 holds a white pen and writes on a document with Japanese text.",
+            "changes": [],
+            "frame_count": 89
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting alone at a table near a window"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at a table in the foreground"
+              },
+              {
+                "name": "Object 7",
+                "state": "in the room"
+              }
+            ],
+            "action": "Character 1 sits alone at a table near a large window looking out, while Character 2 sits at another table in the foreground.",
+            "changes": [],
+            "frame_count": 57
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-011442-b0000/summary/0:2",
+      "case_id": "story_block_v1:cinedance:02ce9597-fb21-86b4-8f5d-49eb52202b24:<scene1>:block0000:0000-0001",
+      "block_key": "cinedance-011442-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/02ce9597-fb21-86b4-8f5d-49eb52202b24.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 15.625 seconds total; 16 fps.\n\nUser request:\nA young woman runs to a large creature on a platform, hugs it sadly, and looks at it with concern while other figures stand nearby.",
+      "shot_span": [
+        0,
+        2
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with dark hair in a braid, light skin",
+            "outfit": "a light green long-sleeved top and matching pants with pockets"
+          },
+          {
+            "name": "Character 2",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a large, furry, brown creature with dark spots on its head, green eyes"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a tall, slender, green humanoid figure with a smooth, featureless face"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a tall, blue-skinned humanoid with long ears, wearing brown robes"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a yellow and grey futuristic vehicle or pod with orange lights"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "large grey rocks and concrete blocks"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a metal railing"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a wooden staff"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an outdoor platform or deck with a view of a pink and blue sky with clouds"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "running then kneeling beside Character 2"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying down"
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "walking into the frame",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 1",
+                "state": "parked"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "action": "Character 1 runs from Object 1 to Character 2, kneels, and hugs its head. Character 3 stands nearby while Character 4 walks past them carrying Object 4.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "running",
+                "after": "kneeling and hugging Character 2"
+              },
+              {
+                "name": "Character 4",
+                "what": "posture",
+                "before": "off-screen",
+                "after": "walking into frame"
+              }
+            ],
+            "frame_count": 173
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "kneeling beside Character 2",
+                "state": "looking sad"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying down, eyes open"
+              }
+            ],
+            "action": "Character 1 looks at Character 2 with a sad expression, then looks down sadly.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "hugging Character 2",
+                "after": "looking sad and concerned"
+              }
+            ],
+            "frame_count": 77
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-012285-b0004/summary/0:1",
+      "case_id": "story_block_v1:cinedance:03a61443-011f-89d3-a692-ce1f86f6793a:<scene2>:block0005:0012-0012",
+      "block_key": "cinedance-012285-b0004",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/03a61443-011f-89d3-a692-ce1f86f6793a.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 4.5625 seconds total; 16 fps.\n\nUser request:\nAn elderly man with an eyepatch sits in a chair and laughs before looking down.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an elderly man with grey hair, a goatee, an eyepatch over his left eye, and thick white eyebrows",
+            "outfit": "a green hat, a black cloak with yellow trim, and a green shirt with yellow trim"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a grey mechanical chair or seat with triangular panels behind it"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a grey room or interior with metallic or mechanical walls"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting in a chair",
+                "state": "laughing with mouth open"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 sits in a grey mechanical chair and laughs with his mouth wide open, then closes his mouth and looks down.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "laughing with mouth open",
+                "after": "mouth closed, looking down"
+              }
+            ],
+            "frame_count": 73
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-013119-b0001/summary/0:2",
+      "case_id": "story_block_v1:cinedance:0490ae54-6619-8b96-a494-97047d6cfd2a:<scene1>:block0002:0002-0003",
+      "block_key": "cinedance-013119-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/0490ae54-6619-8b96-a494-97047d6cfd2a.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 8.625 seconds total; 16 fps.\n\nUser request:\nA woman and a man take turns speaking to the camera against a dark blue background.",
+      "shot_span": [
+        0,
+        2
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark curly hair pulled back, medium skin tone",
+            "outfit": "a dark collared shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair, medium skin tone",
+            "outfit": "a light blue button-down shirt"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a plain dark blue background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "facing the camera"
+              }
+            ],
+            "action": "A woman with dark curly hair speaks directly to the camera against a dark blue background.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "facing the camera"
+              }
+            ],
+            "action": "A man in a light blue shirt speaks and gestures with his hands against the same dark blue background.",
+            "changes": [],
+            "frame_count": 121
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-013922-b0000/summary/0:1",
+      "case_id": "story_block_v1:cinedance:0566c055-8de6-8c0b-b5b8-1177bab1e9eb:<scene1>:block0000:0000-0000",
+      "block_key": "cinedance-013922-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0003/0566c055-8de6-8c0b-b5b8-1177bab1e9eb.mp4",
+      "split": "train",
+      "tier": "summary",
+      "script": "Production requirements: approximately 3.0625 seconds total; 16 fps.\n\nUser request:\nA red-skinned alien kneels in a park at night as a green-skinned person falls from above and lands on the grass next to them.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a red-skinned alien with a squid-like face and large blue eyes",
+            "outfit": "a black suit with a purple tie"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a green-skinned person with dark hair",
+            "outfit": "a dark grey outfit"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a tall wooden ladder"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "street lamps with glowing yellow lights"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "palm trees and dark cypress trees"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a park at night with a starry purple sky, green grass, and a road"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "kneeling on the grass",
+                "state": "looking to the right with a hand near the face",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying flat on the grass",
+                "state": "unconscious",
+                "holding": []
+              },
+              {
+                "name": "Object 1",
+                "state": "leaning upwards out of frame"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "Character 1 kneels on the grass in a park at night. Character 2 falls from above and lands on the grass next to Character 1.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "state",
+                "before": "falling",
+                "after": "lying on the grass"
+              }
+            ],
+            "frame_count": 49
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008935-b0000/summary/0:1",
+      "case_id": "story_block_v1:cinedance:000fd4d8-829b-80b4-9007-31398c46dfec:<scene3>:block0002:0002-0002",
+      "block_key": "cinedance-008935-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/000fd4d8-829b-80b4-9007-31398c46dfec.mp4",
+      "split": "val",
+      "tier": "summary",
+      "script": "Production requirements: approximately 2.8125 seconds total; 16 fps.\n\nUser request:\nA large, muscular red-skinned humanoid with horns and white armor stands still in a dark, reddish environment.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a large, muscular red-skinned humanoid with two grey horns on its head and a dark face with glowing red eyes",
+            "outfit": "a white, jagged armor-like chest piece with purple trim and glowing yellow accents on the arms"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark, reddish environment with blurred architectural elements in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing and facing forward"
+              }
+            ],
+            "action": "A large, muscular red-skinned humanoid with horns and white armor stands still in a dark, reddish environment.",
+            "changes": [],
+            "frame_count": 45
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008882-b0001/paragraph/0:7",
+      "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0007-0013",
+      "block_key": "cinedance-008882-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 9.6875 seconds total; 16 fps.\n\nUser request:\nA young man dressed entirely in black, including a leather jacket, hoodie, cap, sunglasses, and gloves, stands in a room with wooden furniture and bookshelves. He points a gloved finger at a middle-aged man wearing a plaid sweater vest who is holding a smartphone and looking surprised. The young man maintains a serious expression while looking around, and the middle-aged man watches him with a confused and worried look.",
+      "shot_span": [
+        0,
+        7
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark hair",
+            "outfit": "a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a middle-aged man with short, curly dark hair",
+            "outfit": "a beige and blue plaid sweater vest over a beige long-sleeve shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a black smartphone"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a wooden bookshelf filled with books"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a chandelier"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a wooden cabinet or door"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a lamp"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "curtains"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an indoor room with wooden furniture, bookshelves, and curtains"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+              }
+            ],
+            "action": "Character 1 stands with a serious expression, looking slightly downward.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 points a gloved finger at Character 2, who looks surprised while holding a smartphone.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 looks to the side with a serious expression.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 looks up with a confused and slightly worried expression.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 turns their head slightly, maintaining a serious expression.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+              }
+            ],
+            "action": "Character 1 looks to the side, showing their profile.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 continues to look confused and concerned.",
+            "changes": [],
+            "frame_count": 13
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-009748-b0000/paragraph/0:9",
+      "case_id": "story_block_v1:cinedance:00f83202-11b3-8225-a57e-b112760b1cc8:<scene1>:block0000:0001-0009",
+      "block_key": "cinedance-009748-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00f83202-11b3-8225-a57e-b112760b1cc8.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 21.8125 seconds total; 16 fps.\n\nUser request:\nIn a forest clearing, a monkey wearing a pineapple on its head and a leaf necklace stands near a tree. It speaks angrily to a smaller monkey that approaches carrying a large pile of fruit, including bananas, apples, and a watermelon. The larger monkey gestures and talks sternly, then looks shocked and covers its mouth. After speaking again, the smaller monkey walks past the larger monkey, a bear, and a fox, and heads into a rocky cave entrance.",
+      "shot_span": [
+        0,
+        9
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a brown monkey with a pineapple on its head and a green leaf necklace",
+            "outfit": "a green leaf necklace"
+          },
+          {
+            "name": "Character 2",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a smaller brown monkey with large ears"
+          },
+          {
+            "name": "Character 3",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a large brown bear with a white chest marking"
+          },
+          {
+            "name": "Character 4",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a small orange fox"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a pineapple"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a green leaf necklace"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a bunch of bananas"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "red apples"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a small watermelon"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a tree"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a rocky cave entrance"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a forest clearing with a river, pine trees, and rocky areas"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing near a tree",
+                "holding": []
+              },
+              {
+                "name": "Object 1",
+                "state": "on Character 1's head"
+              },
+              {
+                "name": "Object 2",
+                "state": "around Character 1's neck"
+              },
+              {
+                "name": "Object 6",
+                "state": "near Character 1"
+              }
+            ],
+            "action": "Character 1 stands near a tree in a forest clearing with a pineapple on its head.",
+            "changes": [],
+            "frame_count": 13
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing with hands on hips",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing behind Character 1"
+              }
+            ],
+            "action": "Character 1 speaks with an angry expression while standing with hands on hips, with Character 3 visible behind.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "holding a bunch of fruit",
+                "holding": [
+                  "Object 3",
+                  "Object 4",
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              }
+            ],
+            "action": "Character 2 holds a large amount of fruit including bananas, apples, and a watermelon, looking surprised and then smiling.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "state",
+                "before": "surprised",
+                "after": "smiling"
+              }
+            ],
+            "frame_count": 29
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing with hands on hips"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing still",
+                "holding": [
+                  "Object 3",
+                  "Object 4",
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "standing"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              }
+            ],
+            "action": "Character 2 walks towards Character 1, Character 3, and Character 4 while carrying a large pile of fruit.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "standing still",
+                "after": "walking towards the group"
+              }
+            ],
+            "frame_count": 25
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing with hands on hips",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing partially visible"
+              }
+            ],
+            "action": "Character 1 gestures with its hands while speaking with a stern expression.",
+            "changes": [],
+            "frame_count": 61
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "holding fruit",
+                "holding": [
+                  "Object 3",
+                  "Object 4",
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              }
+            ],
+            "action": "Character 2 holds the fruit and speaks, looking up and changing expressions from happy to surprised to sleepy.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "state",
+                "before": "happy",
+                "after": "surprised and sleepy"
+              }
+            ],
+            "frame_count": 101
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing partially visible"
+              }
+            ],
+            "action": "Character 1 looks shocked and covers its mouth with its hands.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "stern",
+                "after": "shocked"
+              },
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "hands on hips",
+                "after": "covering mouth"
+              }
+            ],
+            "frame_count": 17
+          },
+          {
+            "shot": 8,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing and speaking",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "holding fruit",
+                "holding": [
+                  "Object 3",
+                  "Object 4",
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              }
+            ],
+            "action": "Character 1 speaks angrily at Character 2, who looks up at it while holding the fruit.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 9,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing with hands on hips"
+              },
+              {
+                "name": "Character 2",
+                "posture": "walking into a cave",
+                "holding": [
+                  "Object 3",
+                  "Object 4",
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "standing"
+              },
+              {
+                "name": "Object 7",
+                "state": "cave entrance"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              }
+            ],
+            "action": "Character 2 walks past the group and into a rocky cave entrance while carrying the fruit.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "standing",
+                "after": "walking into cave"
+              }
+            ],
+            "frame_count": 45
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-010598-b0001/paragraph/0:2",
+      "case_id": "story_block_v1:cinedance:01df2633-6d71-884a-976f-bc86716109d0:<scene1>:block0000:0002-0003",
+      "block_key": "cinedance-010598-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/01df2633-6d71-884a-976f-bc86716109d0.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 2.375 seconds total; 16 fps.\n\nUser request:\nA man with blonde hair, a mustache, and sunglasses stands outdoors under a blue sky. He holds a microphone and speaks or sings with his mouth open. The camera then pans to show him holding the microphone out to the side while smiling.",
+      "shot_span": [
+        0,
+        2
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with blonde slicked-back hair, a mustache, and sunglasses",
+            "outfit": "a black suit and white shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a microphone with a green grid head and a light blue handle"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "outdoors under a blue sky with some clouds"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 holds Object 1 and speaks or sings with his mouth open.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "low angle shot",
+              "movement": "pan"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "The camera pans to show Character 1 holding Object 1 out to the side while smiling.",
+            "changes": [],
+            "frame_count": 13
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-011524-b0001/paragraph/0:11",
+      "case_id": "story_block_v1:cinedance:02e67404-841e-8232-8b64-6b29d8427234:<scene1>:block0000:0008-0018",
+      "block_key": "cinedance-011524-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/02e67404-841e-8232-8b64-6b29d8427234.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 45.1875 seconds total; 16 fps.\n\nUser request:\nA person in a white coat walks down a hallway, followed by a woman in a beige suit. The woman pauses, looks down thoughtfully, and then turns to look back over her shoulder. She enters a hospital room where an older woman is lying in a bed with a nasal cannula. The woman in the beige suit smiles and approaches the bed, leaning over to speak with the patient. The patient listens, closes her eyes briefly, and looks back at the visitor, who maintains a concerned expression while talking.",
+      "shot_span": [
+        0,
+        11
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with shoulder-length dark brown hair and a slim build",
+            "outfit": "a beige suit with a dark blue top underneath"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older woman with dark hair and a frail build",
+            "outfit": "a pink hospital gown"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a person with short dark hair",
+            "outfit": "a white coat"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a hospital bed with white linens and a metal frame"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "an IV drip stand with a clear bag of fluid"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a nasal cannula tube"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a wooden wardrobe or cabinet"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a door with a vertical rectangular window"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a metal handrail on the wall"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a hospital room with neutral walls, a wooden headboard, and medical equipment"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "walking away from the camera"
+              },
+              {
+                "name": "Character 1",
+                "posture": "following Character 3"
+              }
+            ],
+            "action": "Character 3 walks away from the camera down a hallway, followed by Character 1.",
+            "changes": [],
+            "frame_count": 41
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1"
+              }
+            ],
+            "action": "Character 1 looks down with a thoughtful expression.",
+            "changes": [],
+            "frame_count": 57
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1"
+              }
+            ],
+            "action": "Character 1 stands near a door and looks back over her shoulder.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying in a hospital bed",
+                "state": "wearing a nasal cannula"
+              }
+            ],
+            "action": "Character 2 lies in a hospital bed, looking towards the door.",
+            "changes": [],
+            "frame_count": 61
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying in bed"
+              }
+            ],
+            "action": "Character 1 smiles and approaches the bed where Character 2 is lying.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning over the bed"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying in bed"
+              },
+              {
+                "name": "Object 1",
+                "state": "occupied by Character 2"
+              },
+              {
+                "name": "Object 2",
+                "state": "hanging beside the bed"
+              }
+            ],
+            "action": "Character 1 walks to the side of the hospital bed and leans over to talk to Character 2.",
+            "changes": [],
+            "frame_count": 213
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning forward"
+              }
+            ],
+            "action": "Character 1 looks down and speaks to Character 2.",
+            "changes": [],
+            "frame_count": 57
+          },
+          {
+            "shot": 8,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying in bed",
+                "state": "wearing a nasal cannula"
+              }
+            ],
+            "action": "Character 2 listens and looks up at Character 1.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 9,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning forward"
+              }
+            ],
+            "action": "Character 1 continues to speak to Character 2.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 10,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying in bed",
+                "state": "wearing a nasal cannula"
+              },
+              {
+                "name": "Character 1",
+                "posture": "leaning forward"
+              }
+            ],
+            "action": "Character 2 closes her eyes briefly and then looks back at Character 1.",
+            "changes": [],
+            "frame_count": 93
+          },
+          {
+            "shot": 11,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning forward"
+              }
+            ],
+            "action": "Character 1 looks down with a concerned expression.",
+            "changes": [],
+            "frame_count": 45
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-012385-b0002/paragraph/0:9",
+      "case_id": "story_block_v1:cinedance:03c47e23-b16c-8929-b533-152b35162c11:<scene1>:block0000:0019-0027",
+      "block_key": "cinedance-012385-b0002",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/03c47e23-b16c-8929-b533-152b35162c11.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 16.3125 seconds total; 16 fps.\n\nUser request:\nA man in a suit and glasses leans over a camera, making exaggerated facial expressions and talking. The scene cuts to another man in a suit lying on a grey carpeted floor with his head on a round, ornate red and gold cushion. He looks up with a confused expression, then closes his eyes. The first man leans over him, looking down, while the man on the floor looks back up. The scene cuts back to the man on the floor looking up confusedly, and then back to the first man talking and making faces at the camera. Finally, the man on the floor is shown looking up with a small wooden sign on the floor near his head, before cutting back to the first man talking.",
+      "shot_span": [
+        0,
+        9
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short black hair, wearing glasses, and a slim build",
+            "outfit": "a black suit, white shirt, and black tie"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short black hair, a round face, and a slim build",
+            "outfit": "a black suit, white shirt, and black tie"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a round, ornate red and gold cushion"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a small wooden sign with text on it"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a room with a ceiling decorated with colorful ribbons or flags"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a room with a grey carpeted floor"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "extreme close-up shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning over the camera",
+                "state": "mouth open, making faces"
+              }
+            ],
+            "action": "Character 1 leans over the camera, making exaggerated facial expressions with his mouth open and closed.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "mouth open",
+                "after": "mouth closed"
+              }
+            ],
+            "frame_count": 33
+          },
+          {
+            "shot": 2,
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "overhead shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying on the floor",
+                "state": "eyes open, looking up",
+                "holding": []
+              },
+              {
+                "name": "Object 1",
+                "state": "under Character 2's head"
+              }
+            ],
+            "action": "Character 2 lies on the floor with his head on a round cushion, looking up with a confused expression.",
+            "changes": [],
+            "frame_count": 13
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "extreme close-up shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning over the camera",
+                "state": "mouth moving, making faces"
+              }
+            ],
+            "action": "Character 1 continues to lean over the camera, making more exaggerated facial expressions.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 4,
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "overhead shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying on the floor",
+                "state": "eyes open"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 closes his eyes while lying on the cushion.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "state",
+                "before": "eyes open",
+                "after": "eyes closed"
+              }
+            ],
+            "frame_count": 21
+          },
+          {
+            "shot": 5,
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning over Character 2",
+                "state": "looking down"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying on the floor",
+                "state": "eyes open, looking up"
+              }
+            ],
+            "action": "Character 1 leans over Character 2, looking down at him, while Character 2 looks back up.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 6,
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "overhead shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying on the floor",
+                "state": "eyes open, looking up, confused expression"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 2 lies on the cushion, looking up with a confused expression.",
+            "changes": [],
+            "frame_count": 53
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning over the camera",
+                "state": "talking, making faces"
+              }
+            ],
+            "action": "Character 1 leans over the camera, talking and making exaggerated facial expressions.",
+            "changes": [],
+            "frame_count": 57
+          },
+          {
+            "shot": 8,
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "overhead shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "lying on the floor",
+                "state": "looking up"
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2",
+                "state": "on the floor near Character 2's head"
+              }
+            ],
+            "action": "Character 2 lies on the cushion looking up, with a small wooden sign on the floor near his head.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 9,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "leaning over the camera",
+                "state": "talking, mouth open"
+              }
+            ],
+            "action": "Character 1 leans over the camera, talking with his mouth open.",
+            "changes": [],
+            "frame_count": 13
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-013229-b0003/paragraph/0:1",
+      "case_id": "story_block_v1:cinedance:04b0c297-6776-8324-949c-f7c1ff372a41:<scene2>:block0003:0008-0008",
+      "block_key": "cinedance-013229-b0003",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/04b0c297-6776-8324-949c-f7c1ff372a41.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 2.5625 seconds total; 16 fps.\n\nUser request:\nA man with short dark hair and light stubble sits inside a car, looking forward with a neutral expression. The camera captures a close-up of his face through the car window.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an adult man with short dark hair, light stubble, and a tanned complexion",
+            "outfit": "a dark shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a dark car interior with a window frame and a seat headrest"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "the interior of a car"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting in the driver's seat",
+                "state": "looking forward"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 sits in the car looking forward with a neutral expression.",
+            "changes": [],
+            "frame_count": 41
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-014070-b0002/paragraph/0:1",
+      "case_id": "story_block_v1:cinedance:058e1d32-8c14-8312-b2a2-a1ab5f1686d7:<scene3>:block0002:0005-0005",
+      "block_key": "cinedance-014070-b0002",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0003/058e1d32-8c14-8312-b2a2-a1ab5f1686d7.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 14.0625 seconds total; 16 fps.\n\nUser request:\nA man with dark hair and a beard is sitting inside a dark red car parked on a dark street at night. He gets out of the car and stands on the sidewalk. A red and white scooter carrying two people wearing helmets rides past him and continues down the street, passing a parked grey car.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair and a beard",
+            "outfit": "a dark jacket with a light-colored collar"
+          },
+          {
+            "name": "Character 2",
+            "kind": "group",
+            "visibility": "partial",
+            "appearance": "two people on a scooter",
+            "outfit": "helmets, dark clothing, and a red jacket"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a dark red car"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a red and white scooter"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a grey car parked on the street"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark street at night with hedges and parked cars"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "pan"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting in a car, then standing on the street"
+              },
+              {
+                "name": "Object 1",
+                "state": "parked"
+              },
+              {
+                "name": "Character 2",
+                "posture": "riding a scooter"
+              },
+              {
+                "name": "Object 2",
+                "state": "moving"
+              },
+              {
+                "name": "Object 3",
+                "state": "parked"
+              }
+            ],
+            "action": "A man sits in a parked dark red car, then gets out and stands on the street as a scooter with two people rides past him and down the street.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "sitting in a car",
+                "after": "standing on the street"
+              },
+              {
+                "name": "Object 2",
+                "what": "state",
+                "before": "parked",
+                "after": "moving down the street"
+              }
+            ],
+            "frame_count": 225
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008935-b0000/paragraph/0:1",
+      "case_id": "story_block_v1:cinedance:000fd4d8-829b-80b4-9007-31398c46dfec:<scene3>:block0002:0002-0002",
+      "block_key": "cinedance-008935-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/000fd4d8-829b-80b4-9007-31398c46dfec.mp4",
+      "split": "val",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 2.8125 seconds total; 16 fps.\n\nUser request:\nA large, muscular red-skinned humanoid with two grey horns and a dark face stands in a dark, reddish environment. The character wears a white, jagged armor-like chest piece with purple trim and has glowing yellow accents on its arms. The character remains completely still throughout the scene.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a large, muscular red-skinned humanoid with two grey horns on its head and a dark face with glowing red eyes",
+            "outfit": "a white, jagged armor-like chest piece with purple trim and glowing yellow accents on the arms"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark, reddish environment with blurred architectural elements in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing and facing forward"
+              }
+            ],
+            "action": "A large, muscular red-skinned humanoid with horns and white armor stands still in a dark, reddish environment.",
+            "changes": [],
+            "frame_count": 45
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008882-b0000/shot/0:5",
+      "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0000-0006",
+      "block_key": "cinedance-008882-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 10.8125 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a man with short, curly, dark hair with some grey, medium build, wearing a beige and blue plaid sweater with a high collar and dark trousers\n- Character 2 (person): a person with a slim build, wearing a black leather jacket, black hood, black cap, black sunglasses, black face covering, black gloves, and dark sneakers\n- Object 1 (object): a bookshelf filled with books\n- Object 2 (object): a chandelier\n- Object 3 (object): a floor lamp\n- Object 4 (object): a golf putter\n- Object 5 (object): white golf balls\n- Object 6 (object): a green putting mat with a wooden border\n- Object 7 (object): a wooden desk\nLOCATIONS\n- Location 1: a room with wooden paneling, bookshelves, a desk, and a chandelier\nSHOTS\ns01: Medium shot, low angle shot. Character 1 stands in a room holding a golf putter, looking down.\ns02: Close-up shot. Character 1 hits a golf ball with the putter on a green mat, and another person's foot steps on a golf ball.\ns03: Medium close-up shot. Character 1 looks up with a surprised expression as Character 2 stands in front of him.\ns04: Medium shot. Character 2 walks past Character 1 in a room with wooden paneling and a desk.\ns05: Medium close-up shot. Character 1 watches Character 2 walk away.",
+      "shot_span": [
+        0,
+        5
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short, curly, dark hair with some grey, medium build",
+            "outfit": "a beige and blue plaid sweater with a high collar and dark trousers"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a person with a slim build",
+            "outfit": "a black leather jacket, black hood, black cap, black sunglasses, black face covering, black gloves, and dark sneakers"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a bookshelf filled with books"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a chandelier"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a floor lamp"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a golf putter"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "white golf balls"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a green putting mat with a wooden border"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a wooden desk"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a room with wooden paneling, bookshelves, a desk, and a chandelier"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing, holding a putter",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 1",
+                "state": "filled with books"
+              },
+              {
+                "name": "Object 2",
+                "state": "lit"
+              },
+              {
+                "name": "Object 3",
+                "state": "lit"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "action": "Character 1 stands in a room holding a golf putter, looking down.",
+            "changes": [],
+            "frame_count": 41
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "feet visible in black shoes"
+              },
+              {
+                "name": "Object 4",
+                "state": "hitting a golf ball"
+              },
+              {
+                "name": "Object 5",
+                "state": "rolling on the mat"
+              },
+              {
+                "name": "Object 6"
+              }
+            ],
+            "action": "Character 1 hits a golf ball with the putter on a green mat, and another person's foot steps on a golf ball.",
+            "changes": [
+              {
+                "name": "Object 5",
+                "what": "state",
+                "before": "stationary",
+                "after": "rolling"
+              }
+            ],
+            "frame_count": 37
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "looking up and to the side",
+                "state": "surprised expression"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing in front of Character 1",
+                "state": "partially visible"
+              }
+            ],
+            "action": "Character 1 looks up with a surprised expression as Character 2 stands in front of him.",
+            "changes": [],
+            "frame_count": 37
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing, looking at Character 2"
+              },
+              {
+                "name": "Character 2",
+                "posture": "walking past Character 1"
+              },
+              {
+                "name": "Object 7",
+                "state": "in the foreground"
+              }
+            ],
+            "action": "Character 2 walks past Character 1 in a room with wooden paneling and a desk.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "standing",
+                "after": "walking"
+              }
+            ],
+            "frame_count": 29
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing, looking at Character 2"
+              },
+              {
+                "name": "Character 2",
+                "posture": "walking away",
+                "state": "partially visible"
+              }
+            ],
+            "action": "Character 1 watches Character 2 walk away.",
+            "changes": [],
+            "frame_count": 29
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-010029-b0001/shot/0:3",
+      "case_id": "story_block_v1:cinedance:0146cc73-ef2a-889c-b7ad-526690a69923:<scene1>:block0000:0013-0015",
+      "block_key": "cinedance-010029-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0146cc73-ef2a-889c-b7ad-526690a69923.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 16.4375 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a man with long purple hair and green eyes, wearing purple and grey armor\n- Character 2 (person): a man with long teal hair, wearing purple and grey armor\n- Character 3 (person): a man with short dark green hair, wearing purple and grey armor\n- Object 1 (object): pink flowers on the ground\nLOCATIONS\n- Location 1: a field of pink flowers under a starry night sky with rocky cliffs\nSHOTS\ns01: Medium shot, low angle shot. A man with long purple hair in armor looks down.\ns02: Medium wide shot. A man with long teal hair sits on a field of pink flowers looking down, while the legs of a standing man are visible in the foreground.\ns03: Close-up shot. A man with short dark green hair sits on the field of pink flowers and looks up with a determined expression.",
+      "shot_span": [
+        0,
+        3
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with long purple hair and green eyes",
+            "outfit": "purple and grey armor"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with long teal hair",
+            "outfit": "purple and grey armor"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark green hair",
+            "outfit": "purple and grey armor"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "pink flowers on the ground"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a field of pink flowers under a starry night sky with rocky cliffs"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "low angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "looking down"
+              }
+            ],
+            "action": "A man with long purple hair in armor looks down.",
+            "changes": [],
+            "frame_count": 69
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "sitting on the ground",
+                "state": "looking down"
+              },
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "legs visible in foreground"
+              },
+              {
+                "name": "Object 1",
+                "state": "covering the ground"
+              }
+            ],
+            "action": "A man with long teal hair sits on a field of pink flowers looking down, while the legs of a standing man are visible in the foreground.",
+            "changes": [],
+            "frame_count": 141
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "sitting on the ground",
+                "state": "looking up with a determined expression"
+              },
+              {
+                "name": "Object 1",
+                "state": "covering the ground"
+              }
+            ],
+            "action": "A man with short dark green hair sits on the field of pink flowers and looks up with a determined expression.",
+            "changes": [],
+            "frame_count": 53
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-011191-b0001/shot/0:5",
+      "case_id": "story_block_v1:cinedance:028ded27-14e7-843f-bbc5-8d0ac399d60d:<scene2>:block0001:0001-0005",
+      "block_key": "cinedance-011191-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/028ded27-14e7-843f-bbc5-8d0ac399d60d.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 24.3125 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a young woman with dark hair tied back in a ponytail and a slim build, wearing a pink long-sleeved shirt with an orange collar\n- Character 2 (person): a young woman with long dark hair and a slim build, wearing a blue short-sleeved shirt and dark shorts\n- Object 1 (object): a low wooden table\n- Object 2 (object): a light switch on the wall\n- Object 3 (object): a glass bookshelf filled with books\nLOCATIONS\n- Location 1: a room with a purple floor, wooden door frames, and a bookshelf\nSHOTS\ns01: Medium wide shot, high angle shot. Character 1 kneels on the floor looking at Character 2, who is lying face down on a low wooden table.\ns02: Medium shot. Character 2 sits up and stands up from the table while Character 1 watches.\ns03: Medium close-up shot. Character 2 looks at Character 1 with a tired expression, with a bookshelf visible behind her.\ns04: Medium shot. Character 1 looks surprised while Character 2 looks down at her hand or arm.\ns05: Close-up shot. Character 2 looks up with a surprised expression.",
+      "shot_span": [
+        0,
+        5
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with dark hair tied back in a ponytail and a slim build",
+            "outfit": "a pink long-sleeved shirt with an orange collar"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with long dark hair and a slim build",
+            "outfit": "a blue short-sleeved shirt and dark shorts"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a low wooden table"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a light switch on the wall"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a glass bookshelf filled with books"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a room with a purple floor, wooden door frames, and a bookshelf"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "high angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "kneeling on the floor"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying face down on the table",
+                "state": "sleeping or unconscious"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 kneels on the floor looking at Character 2, who is lying face down on a low wooden table.",
+            "changes": [],
+            "frame_count": 153
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying on the table",
+                "state": "waking up"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "Character 2 sits up and stands up from the table while Character 1 watches.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "lying on the table",
+                "after": "standing up"
+              }
+            ],
+            "frame_count": 29
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting or standing",
+                "state": "looking tired"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "Character 2 looks at Character 1 with a tired expression, with a bookshelf visible behind her.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "looking surprised"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "state": "looking down"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "Character 1 looks surprised while Character 2 looks down at her hand or arm.",
+            "changes": [],
+            "frame_count": 97
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "looking up",
+                "state": "surprised"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "Character 2 looks up with a surprised expression.",
+            "changes": [],
+            "frame_count": 61
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-012342-b0001/shot/0:1",
+      "case_id": "story_block_v1:cinedance:03b896ab-2aac-84e8-8223-2cd00523aa25:<scene1>:block0000:0006-0007",
+      "block_key": "cinedance-012342-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/03b896ab-2aac-84e8-8223-2cd00523aa25.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 1.8125 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): an older man with short grey hair and a heavy build, wearing a grey jacket with a red collar\n- Character 2 (person): only hands are visible\n- Object 1 (object): a silver revolver\nLOCATIONS\n- Location 1: a dark, dimly lit area with stacked wooden logs or crates in the background\nSHOTS\ns01: Medium shot, handheld. Character 1 raises his hands and flinches while Character 2 points a revolver at him.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older man with short grey hair and a heavy build",
+            "outfit": "a grey jacket with a red collar"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "only hands are visible"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a silver revolver"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark, dimly lit area with stacked wooden logs or crates in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "handheld"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing with hands raised in surrender",
+                "state": "looking down, flinching"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 raises his hands and flinches while Character 2 points a revolver at him.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "standing with one arm raised",
+                "after": "standing with both hands raised near his head"
+              }
+            ],
+            "frame_count": 29
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-013468-b0002/shot/4:5",
+      "case_id": "story_block_v1:cinedance:04f154b0-dc01-88c2-9f8b-47eb9c445a19:<scene3>:block0002:0015-0019",
+      "block_key": "cinedance-013468-b0002",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0002/04f154b0-dc01-88c2-9f8b-47eb9c445a19.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 1.5625 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a woman with blonde hair and bangs, wearing a black blazer and a white collared shirt\n- Object 1 (object): a flashlight emitting a bright light\nLOCATIONS\n- Location 1: a dark room illuminated by flashlights\nSHOTS\ns01: Close-up shot. Character 1 continues to look at the newspaper clipping while holding the flashlight.",
+      "shot_span": [
+        4,
+        5
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with blonde hair and bangs",
+            "outfit": "a black blazer and a white collared shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a flashlight emitting a bright light"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark room illuminated by flashlights"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 1 continues to look at the newspaper clipping while holding the flashlight.",
+            "changes": [],
+            "frame_count": 25
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-014550-b0000/shot/5:9",
+      "case_id": "story_block_v1:cinedance:0619fa6a-6c58-8669-a7c3-907c58a53184:<scene1>:block0000:0000-0008",
+      "block_key": "cinedance-014550-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0003/0619fa6a-6c58-8669-a7c3-907c58a53184.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 15 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a man with short dark hair and a lean build, wearing a dark plaid shirt\n- Character 2 (person): a woman with long dark hair, wearing a dark top\n- Object 1 (object): a television screen\n- Object 2 (object): a wooden bar counter\n- Object 3 (object): a glass with a straw and green garnish\n- Object 4 (object): a remote control\nLOCATIONS\n- Location 1: a dimly lit bar with wooden counters and hanging lights\nSHOTS\ns01: Medium shot. The man behind the bar points a remote control at the television and then rests his hands on the counter.\ns02: Close-up shot. The woman looks at the man while holding her drink.\ns03: Close-up shot. The man looks at the woman and speaks.\ns04: Close-up shot. The woman looks at the man with a concerned expression.",
+      "shot_span": [
+        5,
+        9
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a lean build",
+            "outfit": "a dark plaid shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long dark hair",
+            "outfit": "a dark top"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a television screen"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a wooden bar counter"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a glass with a straw and green garnish"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a remote control"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit bar with wooden counters and hanging lights"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing behind the bar",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at the bar"
+              },
+              {
+                "name": "Object 1",
+                "state": "on"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "action": "The man behind the bar points a remote control at the television and then rests his hands on the counter.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [
+                  "Object 4"
+                ],
+                "after": []
+              }
+            ],
+            "frame_count": 65
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "sitting at the bar",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "The woman looks at the man while holding her drink.",
+            "changes": [],
+            "frame_count": 57
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing behind the bar"
+              }
+            ],
+            "action": "The man looks at the woman and speaks.",
+            "changes": [],
+            "frame_count": 73
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "sitting at the bar",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "The woman looks at the man with a concerned expression.",
+            "changes": [],
+            "frame_count": 45
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-015639-b0002/shot/1:2",
+      "case_id": "story_block_v1:cinedance:0747efb6-eb02-83c9-8c2c-ce9b4ec25b88:<scene1>:block0002:0007-0008",
+      "block_key": "cinedance-015639-b0002",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0004/0747efb6-eb02-83c9-8c2c-ce9b4ec25b88.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 5.3125 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (animal): white rabbits with long ears\n- Character 2 (person): a young girl with short black hair and a round face, wearing an orange onesie\n- Object 1 (object): a black plate with white round objects\nLOCATIONS\n- Location 1: a starry night sky with a curved horizon and a red carpet\nSHOTS\ns01: Medium shot. A rabbit offers a plate of white round objects to the girl, who kneels down and smiles.",
+      "shot_span": [
+        1,
+        2
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "white rabbits with long ears"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young girl with short black hair and a round face",
+            "outfit": "an orange onesie"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a black plate with white round objects"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a starry night sky with a curved horizon and a red carpet"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting and holding a plate",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing then kneeling",
+                "holding": []
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "A rabbit offers a plate of white round objects to the girl, who kneels down and smiles.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "standing",
+                "after": "kneeling"
+              }
+            ],
+            "frame_count": 85
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-008935-b0000/shot/0:1",
+      "case_id": "story_block_v1:cinedance:000fd4d8-829b-80b4-9007-31398c46dfec:<scene3>:block0002:0002-0002",
+      "block_key": "cinedance-008935-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/000fd4d8-829b-80b4-9007-31398c46dfec.mp4",
+      "split": "val",
+      "tier": "shot",
+      "script": "Production requirements: approximately 2.8125 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a large, muscular red-skinned humanoid with two grey horns on its head and a dark face with glowing red eyes, wearing a white, jagged armor-like chest piece with purple trim and glowing yellow accents on the arms\nLOCATIONS\n- Location 1: a dark, reddish environment with blurred architectural elements in the background\nSHOTS\ns01: Medium shot. A large, muscular red-skinned humanoid with horns and white armor stands still in a dark, reddish environment.",
+      "shot_span": [
+        0,
+        1
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a large, muscular red-skinned humanoid with two grey horns on its head and a dark face with glowing red eyes",
+            "outfit": "a white, jagged armor-like chest piece with purple trim and glowing yellow accents on the arms"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark, reddish environment with blurred architectural elements in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing and facing forward"
+              }
+            ],
+            "action": "A large, muscular red-skinned humanoid with horns and white armor stands still in a dark, reddish environment.",
+            "changes": [],
+            "frame_count": 45
+          }
+        ]
+      }
+    }
+  ],
+  "lengths": [
+    {
+      "sample_id": "cinedance-008882-b0000/shot/0:5",
+      "block_key": "cinedance-008882-b0000",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 5,
+      "frames": 173,
+      "sequence_tokens": 4106,
+      "prompt_tokens": 3288,
+      "supervised_tokens": 818
+    },
+    {
+      "sample_id": "cinedance-008882-b0001/summary/0:7",
+      "block_key": "cinedance-008882-b0001",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 7,
+      "frames": 155,
+      "sequence_tokens": 3780,
+      "prompt_tokens": 2975,
+      "supervised_tokens": 805
+    },
+    {
+      "sample_id": "cinedance-008882-b0001/paragraph/0:7",
+      "block_key": "cinedance-008882-b0001",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 7,
+      "frames": 155,
+      "sequence_tokens": 3843,
+      "prompt_tokens": 3038,
+      "supervised_tokens": 805
+    },
+    {
+      "sample_id": "cinedance-009723-b0004/summary/0:1",
+      "block_key": "cinedance-009723-b0004",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 33,
+      "sequence_tokens": 3454,
+      "prompt_tokens": 2971,
+      "supervised_tokens": 483
+    },
+    {
+      "sample_id": "cinedance-009748-b0000/paragraph/0:9",
+      "block_key": "cinedance-009748-b0000",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 9,
+      "frames": 349,
+      "sequence_tokens": 4455,
+      "prompt_tokens": 3047,
+      "supervised_tokens": 1408
+    },
+    {
+      "sample_id": "cinedance-010029-b0001/shot/0:3",
+      "block_key": "cinedance-010029-b0001",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 3,
+      "frames": 263,
+      "sequence_tokens": 3591,
+      "prompt_tokens": 3150,
+      "supervised_tokens": 441
+    },
+    {
+      "sample_id": "cinedance-010539-b0001/summary/0:3",
+      "block_key": "cinedance-010539-b0001",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 3,
+      "frames": 199,
+      "sequence_tokens": 3622,
+      "prompt_tokens": 2975,
+      "supervised_tokens": 647
+    },
+    {
+      "sample_id": "cinedance-010598-b0001/paragraph/0:2",
+      "block_key": "cinedance-010598-b0001",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 2,
+      "frames": 38,
+      "sequence_tokens": 3265,
+      "prompt_tokens": 3001,
+      "supervised_tokens": 264
+    },
+    {
+      "sample_id": "cinedance-011191-b0001/shot/0:5",
+      "block_key": "cinedance-011191-b0001",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 5,
+      "frames": 389,
+      "sequence_tokens": 3907,
+      "prompt_tokens": 3227,
+      "supervised_tokens": 680
+    },
+    {
+      "sample_id": "cinedance-011442-b0000/summary/0:2",
+      "block_key": "cinedance-011442-b0000",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 2,
+      "frames": 250,
+      "sequence_tokens": 3565,
+      "prompt_tokens": 2981,
+      "supervised_tokens": 584
+    },
+    {
+      "sample_id": "cinedance-011524-b0001/paragraph/0:11",
+      "block_key": "cinedance-011524-b0001",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 11,
+      "frames": 723,
+      "sequence_tokens": 4163,
+      "prompt_tokens": 3057,
+      "supervised_tokens": 1106
+    },
+    {
+      "sample_id": "cinedance-012285-b0004/summary/0:1",
+      "block_key": "cinedance-012285-b0004",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 73,
+      "sequence_tokens": 3213,
+      "prompt_tokens": 2971,
+      "supervised_tokens": 242
+    },
+    {
+      "sample_id": "cinedance-012342-b0001/shot/0:1",
+      "block_key": "cinedance-012342-b0001",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 29,
+      "sequence_tokens": 3318,
+      "prompt_tokens": 3065,
+      "supervised_tokens": 253
+    },
+    {
+      "sample_id": "cinedance-012385-b0002/paragraph/0:9",
+      "block_key": "cinedance-012385-b0002",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 9,
+      "frames": 261,
+      "sequence_tokens": 4130,
+      "prompt_tokens": 3098,
+      "supervised_tokens": 1032
+    },
+    {
+      "sample_id": "cinedance-013119-b0001/summary/0:2",
+      "block_key": "cinedance-013119-b0001",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 2,
+      "frames": 138,
+      "sequence_tokens": 3226,
+      "prompt_tokens": 2969,
+      "supervised_tokens": 257
+    },
+    {
+      "sample_id": "cinedance-013229-b0003/paragraph/0:1",
+      "block_key": "cinedance-013229-b0003",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 41,
+      "sequence_tokens": 3165,
+      "prompt_tokens": 2989,
+      "supervised_tokens": 176
+    },
+    {
+      "sample_id": "cinedance-013468-b0002/shot/4:5",
+      "block_key": "cinedance-013468-b0002",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 25,
+      "sequence_tokens": 3207,
+      "prompt_tokens": 3041,
+      "supervised_tokens": 166
+    },
+    {
+      "sample_id": "cinedance-013922-b0000/summary/0:1",
+      "block_key": "cinedance-013922-b0000",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 49,
+      "sequence_tokens": 3322,
+      "prompt_tokens": 2983,
+      "supervised_tokens": 339
+    },
+    {
+      "sample_id": "cinedance-014070-b0002/paragraph/0:1",
+      "block_key": "cinedance-014070-b0002",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 225,
+      "sequence_tokens": 3353,
+      "prompt_tokens": 3014,
+      "supervised_tokens": 339
+    },
+    {
+      "sample_id": "cinedance-014550-b0000/shot/5:9",
+      "block_key": "cinedance-014550-b0000",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 4,
+      "frames": 240,
+      "sequence_tokens": 3685,
+      "prompt_tokens": 3154,
+      "supervised_tokens": 531
+    },
+    {
+      "sample_id": "cinedance-015639-b0002/shot/1:2",
+      "block_key": "cinedance-015639-b0002",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "train",
+      "shot_count": 1,
+      "frames": 85,
+      "sequence_tokens": 3301,
+      "prompt_tokens": 3062,
+      "supervised_tokens": 239
+    },
+    {
+      "sample_id": "cinedance-008935-b0000/summary/0:1",
+      "block_key": "cinedance-008935-b0000",
+      "source": "cinedance",
+      "tier": "summary",
+      "split": "val",
+      "shot_count": 1,
+      "frames": 45,
+      "sequence_tokens": 3154,
+      "prompt_tokens": 2976,
+      "supervised_tokens": 178
+    },
+    {
+      "sample_id": "cinedance-008935-b0000/paragraph/0:1",
+      "block_key": "cinedance-008935-b0000",
+      "source": "cinedance",
+      "tier": "paragraph",
+      "split": "val",
+      "shot_count": 1,
+      "frames": 45,
+      "sequence_tokens": 3189,
+      "prompt_tokens": 3011,
+      "supervised_tokens": 178
+    },
+    {
+      "sample_id": "cinedance-008935-b0000/shot/0:1",
+      "block_key": "cinedance-008935-b0000",
+      "source": "cinedance",
+      "tier": "shot",
+      "split": "val",
+      "shot_count": 1,
+      "frames": 45,
+      "sequence_tokens": 3242,
+      "prompt_tokens": 3064,
+      "supervised_tokens": 178
+    }
+  ]
+}

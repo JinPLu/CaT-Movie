@@ -1,0 +1,1405 @@
+{
+  "source": "supervision-repair/full/repaired/train-planner-rows.jsonl from 4002a4667; exact pending shots and registries, no invented action or endpoint",
+  "cases": [
+    {
+      "sample_id": "cinedance-009581-b0001/shot/0:7",
+      "block_key": "cinedance-009581-b0001",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair tied in a bun",
+            "outfit": "a white robe"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair tied in two buns",
+            "outfit": "a white towel wrapped around her body"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with short dark hair and a white towel on her head",
+            "outfit": "a white towel wrapped around her body"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a girl with long dark hair and blue eyes",
+            "outfit": "a white towel wrapped around her body"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a girl with brown hair tied back",
+            "outfit": "a white towel wrapped around her body"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a girl with short dark hair and a white towel on her head",
+            "outfit": "a white towel wrapped around her body"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a light blue ceramic bottle with a nozzle"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an outdoor bathing area with stone pavement and traditional architecture"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 2,
+            "picture_type": "animation_2d",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting"
+              },
+              {
+                "name": "Character 2",
+                "posture": "lying face down"
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "standing"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 3",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 3",
+                "relation": "in_front_of",
+                "object": "Character 4"
+              }
+            ],
+            "action": "Character 1 hands Object 1 to Character 2, who sits up and takes it.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "lying face down",
+                "after": "sitting up"
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 3",
+                "side": "center"
+              }
+            ],
+            "frame_count": 93
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-010926-b0000/paragraph/0:7",
+      "block_key": "cinedance-010926-b0000",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with short brown hair and a lean build",
+            "outfit": "a dark blue argyle sweater and grey jeans"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with blonde shoulder-length hair",
+            "outfit": "a red cardigan over a striped shirt and blue jeans"
+          },
+          {
+            "name": "Character 3",
+            "kind": "group",
+            "visibility": "distant",
+            "appearance": "people walking and standing around the school parking lot"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a yellow school bus with black stripes and text on the side"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a dark grey minivan"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a silver car"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a brown paper envelope"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a black and blue duffel bag"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a brown shoulder bag"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a school parking lot with a yellow school bus, parked cars, and people walking around"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "symmetrical composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing by the minivan",
+                "holding": [
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing by Character 1",
+                "holding": [
+                  "Object 6"
+                ]
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 6"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 2 hands Object 4 to Character 1, who takes it and looks down at it.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [
+                  "Object 5"
+                ],
+                "after": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "what": "holding",
+                "before": [
+                  "Object 6"
+                ],
+                "after": [
+                  "Object 6",
+                  "Object 4"
+                ]
+              }
+            ],
+            "frame_count": 41
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-012298-b0001/shot/0:2",
+      "block_key": "cinedance-012298-b0001",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older woman with short blonde hair",
+            "outfit": "a dark dress with floral patterns on the sleeves and a dark beaded necklace"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a person with dark hair",
+            "outfit": "a light-colored suit jacket"
+          },
+          {
+            "name": "Character 3",
+            "kind": "group",
+            "visibility": "distant",
+            "appearance": "people sitting in chairs facing the woman",
+            "outfit": "dark clothing"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a curved brown velvet sofa"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a glass with amber liquid"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a round coffee table"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "professional lighting equipment on stands"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a boom microphone"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "brown curtains"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a black lamp"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a room with brown curtains, a curved sofa, and professional lighting equipment"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting on the sofa",
+                "holding": []
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "Character 1 takes the glass, smiles, takes a sip, and then makes a face before speaking.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "smiling",
+                "after": "making a face"
+              }
+            ],
+            "frame_count": 157
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-012469-b0000/paragraph/0:1",
+      "block_key": "cinedance-012469-b0000",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a person with blonde hair",
+            "outfit": "a dark coat and dark skirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a framed picture of a heart"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a vase with flowers"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a white vase"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a dark wooden console table"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a wall sconce with two shades"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a wooden dresser with drawers"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit hallway with wainscoting"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "left-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "outfit": "a dark coat and dark skirt",
+                "posture": "walking into the frame from the left"
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 6"
+              }
+            ],
+            "action": "Character 1 walks into the dimly lit hallway from the left, passes the console table, and exits the frame to the right.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "not in frame",
+                "after": "walking out of frame to the right"
+              }
+            ],
+            "frame_count": 113
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-013366-b0001/shot/1:8",
+      "block_key": "cinedance-013366-b0001",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short brown hair, a goatee, fair skin",
+            "outfit": "a dark jacket over a grey hoodie"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with reddish-brown hair tied back, fair skin",
+            "outfit": "a dark military uniform with gold buttons and insignia"
+          },
+          {
+            "name": "Character 3",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "young men in grey military uniforms with black ties",
+            "outfit": "grey military uniforms with black ties"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with reddish-blonde hair tied back, blue eyes, fair skin",
+            "outfit": "a black leather jacket and a grey scarf"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with short dark hair, fair skin",
+            "outfit": "a grey military uniform with a black tie"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with short blonde hair, fair skin",
+            "outfit": "a grey military uniform with a black tie and red cord"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "long tables with food trays, cups, and utensils"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "benches"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a yellow folder"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a large indoor space, possibly a parking garage or large hall, with concrete pillars and fluorescent lighting"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a large dining hall with long tables, benches, and windows with green frames"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 4",
+                "posture": "walking",
+                "holding": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at tables"
+              },
+              {
+                "name": "Object 1",
+                "state": "set with food"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 4",
+                "relation": "left_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 4 walks past Character 2 and the seated Character 3, then Character 2 gives a command and Character 3 begins to eat.",
+            "changes": [
+              {
+                "name": "Character 3",
+                "what": "posture",
+                "before": "sitting still",
+                "after": "eating"
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 4",
+                "side": "right"
+              }
+            ],
+            "frame_count": 205
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-015766-b0000/paragraph/0:11",
+      "block_key": "cinedance-015766-b0000",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a middle-aged man with short black hair, wearing sunglasses",
+            "outfit": "a purple robe"
+          },
+          {
+            "name": "Character 2",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "a large group of young men with short black hair",
+            "outfit": "black robes"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark bowl-cut hair",
+            "outfit": "a black robe and a necklace with a green pendant"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a large traditional building with a grey tiled roof"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "modern high-rise buildings in the distance"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "large clay pots"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a courtyard in front of a traditional building with modern buildings in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 8,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "pan"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1"
+              }
+            ],
+            "action": "Character 1 turns his head, smiles slightly, and gives a thumbs-up gesture while walking slowly to the right.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "standing still",
+                "after": "walking to the right"
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 1",
+                "side": "right"
+              }
+            ],
+            "frame_count": 217
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "film-001692-b0003/paragraph/0:11",
+      "block_key": "film-001692-b0003",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with dark wavy hair, dark eyes, and a slim build",
+            "outfit": "a white cold-shoulder top with a floral pattern"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older woman with dark hair pulled back, wearing pearl drop earrings",
+            "outfit": "a white pinstripe blazer over a dark top"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a woman with short dark hair",
+            "outfit": "a white top with small dark dots"
+          },
+          {
+            "name": "Character 4",
+            "kind": "group",
+            "visibility": "distant",
+            "appearance": "people sitting at tables in the background",
+            "outfit": "various casual clothing"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a mahjong table with green tiles"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "wooden chairs"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "stained glass windows"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a restaurant or club interior with wooden furniture, stained glass windows, and multiple tables where people are sitting"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a table"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at a table",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at a table"
+              },
+              {
+                "name": "Object 1",
+                "state": "set up for a game"
+              },
+              {
+                "name": "Character 4"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 3"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 3"
+              }
+            ],
+            "action": "Character 2 gestures with her hands over the mahjong table while speaking to Character 1 and Character 3.",
+            "changes": [],
+            "frame_count": 17
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "film-006455-b0004/paragraph/0:6",
+      "block_key": "film-006455-b0004",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short white hair",
+            "outfit": "a brown military uniform and cap"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair",
+            "outfit": "a tan military uniform"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair",
+            "outfit": "a green military uniform and an MP helmet"
+          },
+          {
+            "name": "Character 4",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "a line of men in green military uniforms",
+            "outfit": "green military uniforms"
+          },
+          {
+            "name": "Character 5",
+            "kind": "group",
+            "visibility": "distant",
+            "appearance": "men in military uniforms standing guard",
+            "outfit": "military uniforms and helmets"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a glass with liquid"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a handgun"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit room with grey walls"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "an outdoor area with dirt ground, grass, and a barbed wire fence"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "talking, then picking up a glass and drinking",
+                "holding": []
+              },
+              {
+                "name": "Object 1",
+                "state": "being held and drunk from"
+              }
+            ],
+            "action": "The man in the brown uniform continues talking, then picks up a glass of liquid and takes a drink.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 1"
+                ]
+              }
+            ],
+            "frame_count": 105
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "film-006916-b0001/paragraph/0:8",
+      "block_key": "film-006916-b0001",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a goatee",
+            "outfit": "a black tuxedo with a black bow tie and a white rose boutonniere"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair in an updo with a tiara",
+            "outfit": "a white wedding dress"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair pulled back with a white flower",
+            "outfit": "a silver bridesmaid dress"
+          },
+          {
+            "name": "Character 4",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "several women with dark hair in updos",
+            "outfit": "silver bridesmaid dresses"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a bruised left eye",
+            "outfit": "a black tuxedo with a black bow tie and a white and purple boutonniere"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a mustache",
+            "outfit": "a black tuxedo with a black bow tie and a white rose boutonniere"
+          },
+          {
+            "name": "Character 7",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with short curly dark hair",
+            "outfit": "a dark dress with pink straps and a beaded necklace"
+          },
+          {
+            "name": "Character 8",
+            "kind": "group",
+            "visibility": "partial",
+            "appearance": "guests sitting at tables in the background"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a lit white candle"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "wine glasses"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a decorated Christmas tree"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a backdrop with fairy lights"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a wedding reception hall with tables, fairy lights, and a Christmas tree"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 5",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 6",
+                "posture": "sitting"
+              },
+              {
+                "name": "Object 1",
+                "state": "lit"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 5",
+                "relation": "left_of",
+                "object": "Character 6"
+              },
+              {
+                "subject": "Character 6",
+                "relation": "in_front_of",
+                "object": "Character 5"
+              }
+            ],
+            "action": "Character 5 stands and gives a speech while Character 6 sits next to him and looks up at him.",
+            "changes": [],
+            "frame_count": 169
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "film-007010-b0000/shot/0:6",
+      "block_key": "film-007010-b0000",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark curly hair",
+            "outfit": "a striped button-down shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair",
+            "outfit": "a dark brown button-down shirt"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit lounge or bar with red circular wall decorations and a couch"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting on a couch, gesturing with a thumbs up"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting on the couch"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 gives a thumbs up and continues talking to Character 2.",
+            "changes": [],
+            "frame_count": 105
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "film-008511-b0001/paragraph/0:10",
+      "block_key": "film-008511-b0001",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with blonde hair tied back, fair skin, blue eyes",
+            "outfit": "a black leather jacket over a dark green turtleneck sweater, black gloves"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair with some grey, fair skin, blue eyes",
+            "outfit": "a grey cable-knit sweater over a blue shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a white smartphone"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an outdoor field with dry grass and trees in the background under an overcast sky"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 2 hands Object 1 to Character 1, who takes it and looks at it.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "what": "holding",
+                "before": [
+                  "Object 1"
+                ],
+                "after": []
+              },
+              {
+                "name": "Character 2",
+                "what": "state",
+                "after": "empty-handed"
+              }
+            ],
+            "frame_count": 85
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "film-019378-b0014/paragraph/0:4",
+      "block_key": "film-019378-b0014",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older man with a shaved head and a grey goatee",
+            "outfit": "a dark jacket and dark trousers"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair and a medium build",
+            "outfit": "a green suit jacket and a blue shirt"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair and a medium build",
+            "outfit": "a patterned dark shirt"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark curly hair",
+            "outfit": "a patterned dress with red flowers"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "partial",
+            "appearance": "a man with short dark hair",
+            "outfit": "none visible"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with a shaved head and a patterned shirt",
+            "outfit": "a black and white patterned shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a red and silver car"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a row of glass fish tanks"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a bed with white sheets"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a glass bottle"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit indoor corridor with shops on either side"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a bedroom with a large bed"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 4",
+                "posture": "kneeling on the bed, massaging Character 5"
+              },
+              {
+                "name": "Character 5",
+                "posture": "lying face down on the bed"
+              },
+              {
+                "name": "Object 3",
+                "state": "made with white sheets"
+              },
+              {
+                "name": "Object 4",
+                "state": "sitting on the bed"
+              }
+            ],
+            "action": "Character 4 gives a massage to Character 5, who is lying face down on a bed with white sheets.",
+            "changes": [],
+            "frame_count": 37
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "cinedance-010938-b0000/shot/0:5",
+      "block_key": "cinedance-010938-b0000",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark shoulder-length hair",
+            "outfit": "a black turtleneck and a brown and green plaid shawl"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair",
+            "outfit": "a beige vest over a dark long-sleeved shirt"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair",
+            "outfit": "a brown jacket"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a framed photograph of two people"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a laptop"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a green smartphone"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a couch"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a bookshelf with books and posters"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a floor lamp"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a living room with a couch, bookshelf, and lamps"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting on the couch",
+                "holding": []
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "action": "The woman picks up a green smartphone, looks at it, and then puts it to her ear to make a call.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "looking at phone",
+                "after": "phone to ear"
+              }
+            ],
+            "frame_count": 117
+          }
+        ]
+      }
+    }
+  ]
+}

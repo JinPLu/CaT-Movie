@@ -1,0 +1,1966 @@
+{
+ "source": "2026-10-09 J2 重校准 J2@T1 三遍的真实产物，只取这里列的 10 次调用：prepared.json 的调用行投影到读数用到的键，judge_results.json 与 judge_responses.jsonl 的行原样。选法：lsh-007-b 是 T1 第二遍仅有的两次假阳，lsh-013 a/b 是三遍里判证据不足的题，pos/lsh-024 是被真片否定的原题面，pos/lsh-025 与 neg/lsh-025 落在冻结修订 4 的排除镜上（回归集不出这两题）。",
+ "config": {
+  "schema_version": "mspc_long_script_assertions_judge_v2",
+  "paper_cell": "script_state_bench_v1_assertion_buckets",
+  "provider": "openrouter",
+  "model": "google/gemini-3.8-flash",
+  "model_role": "script_assertions",
+  "openrouter_base_url": "https://openrouter.ai/api/v1",
+  "input_modality": "images",
+  "temperature": 1.0,
+  "max_tokens": 32768,
+  "request_timeout_seconds": 300,
+  "request_options": {
+   "reasoning": {
+    "effort": "minimal"
+   },
+   "provider": {
+    "only": [
+     "google-ai-studio"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true
+   }
+  },
+  "input_usd_per_mtok": "0.75",
+  "output_usd_per_mtok": "3.75",
+  "budget_hard_cap_usd": "10.00",
+  "precall_prompt_tokens": 60000,
+  "precall_completion_tokens": 10000,
+  "frame_max_side": 448,
+  "estimated_image_tokens_low": 258,
+  "estimated_image_tokens_high": 1032,
+  "estimated_output_tokens_per_assertion": 64,
+  "cost_note": "沿用已入库 Gemini 3.8 Flash AI Studio 单价 $0.75/$3.75 per million tokens；图token区间与每题64输出token仅预算推断。prepare会计算每窗实际帧数与题数；本轮不调用。",
+  "min_tokens_per_frame": 128,
+  "decision_note": "新量具 J2，与参数登记表 V03 冲突故作新量具登记，列名加 _j2，不与 J1 相减。变更：temperature 0.0→1.0（Gemini 3 官方默认）；路由加 require_parameters=true（只走真正支持 response_format/temperature 的端点，不支持即失败，不静默丢参）；输出改 json_schema strict，字段顺序 evidence→in_scene→（长集 before_frame/after_frame）→sufficient_evidence→holds；提示词加先证据后判、先判在场、证据不足档。J1（v1 配置）只能通过提交号复现。"
+ },
+ "sets": {
+  "w5": [
+   {
+    "call_id": "lsh-007-a",
+    "story_id": "lsh-007",
+    "side": "a",
+    "assertions": [
+     {
+      "assertion_id": "event_e1",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 1",
+      "check_shot": "s03",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "green shirt opened widely at the neck",
+      "contrast_state": "green shirt fastened at the neck",
+      "expected_answer": "no"
+     },
+     {
+      "assertion_id": "state_s05",
+      "kind": "post_event_state",
+      "subject_id": "Subject 1",
+      "check_shot": "s05",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "green shirt fastened at the neck",
+      "contrast_state": "green shirt opened widely at the neck",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [
+     "event_e1",
+     "state_s05"
+    ],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-007-b",
+    "story_id": "lsh-007",
+    "side": "b",
+    "assertions": [
+     {
+      "assertion_id": "event_e1",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 1",
+      "check_shot": "s03",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "green shirt opened widely at the neck",
+      "contrast_state": "green shirt fastened at the neck",
+      "expected_answer": "yes"
+     },
+     {
+      "assertion_id": "state_s05",
+      "kind": "post_event_state",
+      "subject_id": "Subject 1",
+      "check_shot": "s05",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "green shirt opened widely at the neck",
+      "contrast_state": "green shirt fastened at the neck",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [
+     "event_e1",
+     "state_s05"
+    ],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-013-a",
+    "story_id": "lsh-013",
+    "side": "a",
+    "assertions": [
+     {
+      "assertion_id": "event_e1",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 4",
+      "check_shot": "s03",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "bareheaded",
+      "contrast_state": "wearing the brown fedora",
+      "expected_answer": "no"
+     },
+     {
+      "assertion_id": "state_s09",
+      "kind": "post_event_state",
+      "subject_id": "Subject 4",
+      "check_shot": "s09",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "wearing the brown fedora",
+      "contrast_state": "bareheaded",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [
+     "event_e1",
+     "state_s09"
+    ],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-013-b",
+    "story_id": "lsh-013",
+    "side": "b",
+    "assertions": [
+     {
+      "assertion_id": "event_e1",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 4",
+      "check_shot": "s03",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "bareheaded",
+      "contrast_state": "wearing the brown fedora",
+      "expected_answer": "yes"
+     },
+     {
+      "assertion_id": "state_s09",
+      "kind": "post_event_state",
+      "subject_id": "Subject 4",
+      "check_shot": "s09",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "bareheaded",
+      "contrast_state": "wearing the brown fedora",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [
+     "event_e1",
+     "state_s09"
+    ],
+    "manual_unresolved_assertion_ids": []
+   }
+  ],
+  "pos": [
+   {
+    "call_id": "lsh-001-single",
+    "story_id": "lsh-001",
+    "side": "single",
+    "assertions": [
+     {
+      "assertion_id": "lsh-001-real-transfer-s02",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 2",
+      "check_shot": "s02",
+      "reference_shot": null,
+      "event_id": "lsh-001-real-transfer",
+      "state": "holding the red-and-silver cylindrical container after receiving it",
+      "contrast_state": "not holding the red-and-silver cylindrical container",
+      "expected_answer": "yes"
+     },
+     {
+      "assertion_id": "lsh-001-transfer-persists-s04",
+      "kind": "post_event_state",
+      "subject_id": "Subject 2",
+      "check_shot": "s04",
+      "reference_shot": null,
+      "event_id": "lsh-001-real-transfer",
+      "state": "holding the same red-and-silver cylindrical container",
+      "contrast_state": "not holding that container",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-024-single",
+    "story_id": "lsh-024",
+    "side": "single",
+    "assertions": [
+     {
+      "assertion_id": "lsh-024-falls-back-s01",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 2",
+      "check_shot": "s01",
+      "reference_shot": null,
+      "event_id": "lsh-024-falls-back",
+      "state": "fallen backward onto the ground",
+      "contrast_state": "standing on the sand",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-025-single",
+    "story_id": "lsh-025",
+    "side": "single",
+    "assertions": [
+     {
+      "assertion_id": "lsh-025-lifted-s08",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 1",
+      "check_shot": "s08",
+      "reference_shot": null,
+      "event_id": "lsh-025-lifted",
+      "state": "lifted up by the crowd",
+      "contrast_state": "not yet lifted up by the crowd",
+      "expected_answer": "yes"
+     }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+   }
+  ],
+  "neg": [
+   {
+    "call_id": "lsh-001-single",
+    "story_id": "lsh-001",
+    "side": "single",
+    "assertions": [
+     {
+      "assertion_id": "lsh-001-counterfactual-event",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 1",
+      "check_shot": "s01",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "bareheaded",
+      "contrast_state": "wearing the checkered cap",
+      "expected_answer": "no"
+     }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-024-single",
+    "story_id": "lsh-024",
+    "side": "single",
+    "assertions": [
+     {
+      "assertion_id": "lsh-024-counterfactual-event",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 1",
+      "check_shot": "s02",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "empty-handed with the round device on the sand",
+      "contrast_state": "holding the round device in both hands",
+      "expected_answer": "no"
+     }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+   },
+   {
+    "call_id": "lsh-025-single",
+    "story_id": "lsh-025",
+    "side": "single",
+    "assertions": [
+     {
+      "assertion_id": "lsh-025-counterfactual-event",
+      "kind": "in_shot_event_execution",
+      "subject_id": "Subject 1",
+      "check_shot": "s04",
+      "reference_shot": null,
+      "event_id": "injected_e1",
+      "state": "wearing dark sunglasses",
+      "contrast_state": "not wearing sunglasses",
+      "expected_answer": "no"
+     }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+   }
+  ]
+ },
+ "passes": {
+  "t1-r1": {
+   "w5": {
+    "results": {
+     "lsh-007-a": {
+      "call_id": "lsh-007-a",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 6, Subject 1 lies down and then sits up in a green shirt, which remains closed at the collar without being unbuttoned or opened widely.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s05": {
+        "evidence": "In images 7 through 11, Subject 1 appears wearing his green shirt fastened at the neck.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-007-b": {
+      "call_id": "lsh-007-b",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 6, Subject 1 wears a green shirt that remains buttoned up to the neck without visibly being unbuttoned or pulled open widely.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s05": {
+        "evidence": "In images 7 through 11, Subject 1 wears a green shirt that is buttoned up to the neck rather than opened widely.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-013-a": {
+      "call_id": "lsh-013-a",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 to 5, Subject 4 is wearing the brown fedora while climbing scaffolding, and he leaves the frame entirely before Image 6 where only the other man remains, never shown bareheaded.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s09": {
+        "evidence": "Images 7 through 11 show Shot 9, where Subject 4 enters and stands by the pole wearing a brown fedora across Images 8, 9, 10, and 11.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-013-b": {
+      "call_id": "lsh-013-b",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 2 to 5, Subject 4 is wearing the brown fedora while climbing the scaffolding, and by image 6 he has moved out of view, with no moment showing him becoming bareheaded.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s09": {
+        "evidence": "In images 8 through 11, Subject 4 is wearing the brown fedora alongside Subject 7 near the giraffe enclosure.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-007-a",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 6, Subject 1 lies down and then sits up in a green shirt, which remains closed at the collar without being unbuttoned or opened widely.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s05\": {\n    \"evidence\": \"In images 7 through 11, Subject 1 appears wearing his green shirt fastened at the neck.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 13907,
+       "completion_tokens": 185,
+       "total_tokens": 14092
+      },
+      "cost_usd": "0.0111",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.011124",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-007-b",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 6, Subject 1 wears a green shirt that remains buttoned up to the neck without visibly being unbuttoned or pulled open widely.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s05\": {\n    \"evidence\": \"In images 7 through 11, Subject 1 wears a green shirt that is buttoned up to the neck rather than opened widely.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 13927,
+       "completion_tokens": 188,
+       "total_tokens": 14115
+      },
+      "cost_usd": "0.0112",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.01115025",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-013-a",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 to 5, Subject 4 is wearing the brown fedora while climbing scaffolding, and he leaves the frame entirely before Image 6 where only the other man remains, never shown bareheaded.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s09\": {\n    \"evidence\": \"Images 7 through 11 show Shot 9, where Subject 4 enters and stands by the pole wearing a brown fedora across Images 8, 9, 10, and 11.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14256,
+       "completion_tokens": 213,
+       "total_tokens": 14469
+      },
+      "cost_usd": "0.0115",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.01149075",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-013-b",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 2 to 5, Subject 4 is wearing the brown fedora while climbing the scaffolding, and by image 6 he has moved out of view, with no moment showing him becoming bareheaded.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s09\": {\n    \"evidence\": \"In images 8 through 11, Subject 4 is wearing the brown fedora alongside Subject 7 near the giraffe enclosure.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14271,
+       "completion_tokens": 196,
+       "total_tokens": 14467
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.01143825",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   },
+   "pos": {
+    "results": {
+     "lsh-001-single": {
+      "call_id": "lsh-001-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-001-real-transfer-s02": {
+        "evidence": "In Image 1, Subject 3 holds the container towards Subject 2, while in Image 2 both touch it, and by Image 3 through Image 6 Subject 2 holds it alone.",
+        "in_scene": "yes",
+        "before_frame": 1,
+        "after_frame": 3,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "lsh-001-transfer-persists-s04": {
+        "evidence": "Images 7 through 11 show Subject 2 in shot s04 holding the red-and-silver cylindrical container.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-024-single": {
+      "call_id": "lsh-024-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-024-falls-back-s01": {
+        "evidence": "Frames 1 through 4 show Subject 2 standing on the sand, while in frame 6 he lies prone face-down on the ground rather than having fallen backward.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-025-single": {
+      "call_id": "lsh-025-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-025-lifted-s08": {
+        "evidence": "Images 1 and 2 show crowd members with raised hands, while Images 3 to 6 show Subject 1 already airborne and crowd-surfing held up by the crowd.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": false,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-001-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-001-real-transfer-s02\": {\n    \"evidence\": \"In Image 1, Subject 3 holds the container towards Subject 2, while in Image 2 both touch it, and by Image 3 through Image 6 Subject 2 holds it alone.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": 1,\n    \"after_frame\": 3,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  },\n  \"lsh-001-transfer-persists-s04\": {\n    \"evidence\": \"Images 7 through 11 show Subject 2 in shot s04 holding the red-and-silver cylindrical container.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14087,
+       "completion_tokens": 215,
+       "total_tokens": 14302
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0113715",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-024-single",
+      "status": "received",
+      "raw_text": "{\"lsh-024-falls-back-s01\": {\"evidence\": \"Frames 1 through 4 show Subject 2 standing on the sand, while in frame 6 he lies prone face-down on the ground rather than having fallen backward.\", \"in_scene\": \"yes\", \"before_frame\": null, \"after_frame\": null, \"sufficient_evidence\": true, \"holds\": false}}",
+      "usage": {
+       "prompt_tokens": 8336,
+       "completion_tokens": 89,
+       "total_tokens": 8425
+      },
+      "cost_usd": "0.0066",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.00658575",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-025-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-025-lifted-s08\": {\n    \"evidence\": \"Images 1 and 2 show crowd members with raised hands, while Images 3 to 6 show Subject 1 already airborne and crowd-surfing held up by the crowd.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": false,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8461,
+       "completion_tokens": 109,
+       "total_tokens": 8570
+      },
+      "cost_usd": "0.0068",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0067545",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   },
+   "neg": {
+    "results": {
+     "lsh-001-single": {
+      "call_id": "lsh-001-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-001-counterfactual-event": {
+        "evidence": "In Images 1 through 6, Subject 1 wears the checkered cap continuously throughout all shown frames.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-024-single": {
+      "call_id": "lsh-024-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-024-counterfactual-event": {
+        "evidence": "In image 1 through image 4, Subject 1 stands without the device visible in frame, then raises Subject 7 into view in image 5 and holds it in both hands in image 6.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-025-single": {
+      "call_id": "lsh-025-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-025-counterfactual-event": {
+        "evidence": "In image 3 and image 4, Subject 1 is shown without sunglasses throughout, and is not seen putting on or wearing dark sunglasses.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-001-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-001-counterfactual-event\": {\n    \"evidence\": \"In Images 1 through 6, Subject 1 wears the checkered cap continuously throughout all shown frames.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8219,
+       "completion_tokens": 92,
+       "total_tokens": 8311
+      },
+      "cost_usd": "0.0065",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.00650925",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-024-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-024-counterfactual-event\": {\n    \"evidence\": \"In image 1 through image 4, Subject 1 stands without the device visible in frame, then raises Subject 7 into view in image 5 and holds it in both hands in image 6.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8323,
+       "completion_tokens": 113,
+       "total_tokens": 8436
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.006666",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-025-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-025-counterfactual-event\": {\n    \"evidence\": \"In image 3 and image 4, Subject 1 is shown without sunglasses throughout, and is not seen putting on or wearing dark sunglasses.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8440,
+       "completion_tokens": 99,
+       "total_tokens": 8539
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.00670125",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   }
+  },
+  "t1-r2": {
+   "w5": {
+    "results": {
+     "lsh-007-a": {
+      "call_id": "lsh-007-a",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 6, Subject 1 lies down and then sits up with his green shirt remaining closed at the neck, without opening it widely.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s05": {
+        "evidence": "In images 7 through 11, Subject 1 is shown from the chest up wearing his green shirt fastened at the neck.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-007-b": {
+      "call_id": "lsh-007-b",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 3, Subject 1 lies on a surface with his shirt collar closed, and by images 4 through 6, he sits up with his green shirt collar unbuttoned and open.",
+        "in_scene": "yes",
+        "before_frame": 1,
+        "after_frame": 5,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s05": {
+        "evidence": "Images 7 through 11 show Subject 1 standing outdoors with his green shirt collar open at the neck.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-013-a": {
+      "call_id": "lsh-013-a",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 5, Subject 4 is seen wearing a brown fedora, while in image 6 Subject 4 is not visible.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": false,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s09": {
+        "evidence": "In images 8 through 11, Subject 4 is visible wearing the brown fedora next to Subject 7.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-013-b": {
+      "call_id": "lsh-013-b",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 5, Subject 4 is wearing a brown fedora while climbing the structure, and in image 6, Subject 4 has left the frame leaving only the other worker visible.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s09": {
+        "evidence": "Images 8 through 11 show Subject 4 wearing the brown fedora alongside Subject 7, while Image 7 shows only Subject 7.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-007-a",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 6, Subject 1 lies down and then sits up with his green shirt remaining closed at the neck, without opening it widely.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s05\": {\n    \"evidence\": \"In images 7 through 11, Subject 1 is shown from the chest up wearing his green shirt fastened at the neck.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 13907,
+       "completion_tokens": 185,
+       "total_tokens": 14092
+      },
+      "cost_usd": "0.0111",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.003313575",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11571,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-007-b",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 3, Subject 1 lies on a surface with his shirt collar closed, and by images 4 through 6, he sits up with his green shirt collar unbuttoned and open.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": 1,\n    \"after_frame\": 5,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  },\n  \"state_s05\": {\n    \"evidence\": \"Images 7 through 11 show Subject 1 standing outdoors with his green shirt collar open at the neck.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 13927,
+       "completion_tokens": 194,
+       "total_tokens": 14121
+      },
+      "cost_usd": "0.0112",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.003360975",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11573,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-013-a",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 5, Subject 4 is seen wearing a brown fedora, while in image 6 Subject 4 is not visible.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": false,\n    \"holds\": false\n  },\n  \"state_s09\": {\n    \"evidence\": \"In images 8 through 11, Subject 4 is visible wearing the brown fedora next to Subject 7.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14256,
+       "completion_tokens": 182,
+       "total_tokens": 14438
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0035526",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11588,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-013-b",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 5, Subject 4 is wearing a brown fedora while climbing the structure, and in image 6, Subject 4 has left the frame leaving only the other worker visible.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s09\": {\n    \"evidence\": \"Images 8 through 11 show Subject 4 wearing the brown fedora alongside Subject 7, while Image 7 shows only Subject 7.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14271,
+       "completion_tokens": 199,
+       "total_tokens": 14470
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.003626925",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11589,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   },
+   "pos": {
+    "results": {
+     "lsh-001-single": {
+      "call_id": "lsh-001-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-001-real-transfer-s02": {
+        "evidence": "In Image 1, Subject 3 holds the cylindrical container while Subject 2 does not hold it, in Image 2 Subject 2 reaches for it, and by Image 3 Subject 2 holds the cylindrical container alone.",
+        "in_scene": "yes",
+        "before_frame": 1,
+        "after_frame": 3,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "lsh-001-transfer-persists-s04": {
+        "evidence": "Images 7, 8, 9, 10, and 11 show Subject 2 holding the small red-and-silver cylindrical container.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-024-single": {
+      "call_id": "lsh-024-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-024-falls-back-s01": {
+        "evidence": "In images 1 through 4, Subject 2 stands on the sand facing Subject 1, while in image 6, Subject 2 lies face down on his stomach on the sand rather than falling backward.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-025-single": {
+      "call_id": "lsh-025-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-025-lifted-s08": {
+        "evidence": "In images 1 and 2, crowd hands reach upward, while in images 3 to 6, Subject 1 is shown crowd-surfing / already being supported aloft by hands above the crowd.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": false,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-001-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-001-real-transfer-s02\": {\n    \"evidence\": \"In Image 1, Subject 3 holds the cylindrical container while Subject 2 does not hold it, in Image 2 Subject 2 reaches for it, and by Image 3 Subject 2 holds the cylindrical container alone.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": 1,\n    \"after_frame\": 3,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  },\n  \"lsh-001-transfer-persists-s04\": {\n    \"evidence\": \"Images 7, 8, 9, 10, and 11 show Subject 2 holding the small red-and-silver cylindrical container.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14087,
+       "completion_tokens": 227,
+       "total_tokens": 14314
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0114165",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-024-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-024-falls-back-s01\": {\n    \"evidence\": \"In images 1 through 4, Subject 2 stands on the sand facing Subject 1, while in image 6, Subject 2 lies face down on his stomach on the sand rather than falling backward.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8336,
+       "completion_tokens": 117,
+       "total_tokens": 8453
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.00669075",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-025-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-025-lifted-s08\": {\n    \"evidence\": \"In images 1 and 2, crowd hands reach upward, while in images 3 to 6, Subject 1 is shown crowd-surfing / already being supported aloft by hands above the crowd.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": false,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8461,
+       "completion_tokens": 114,
+       "total_tokens": 8575
+      },
+      "cost_usd": "0.0068",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.00677325",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   },
+   "neg": {
+    "results": {
+     "lsh-001-single": {
+      "call_id": "lsh-001-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-001-counterfactual-event": {
+        "evidence": "In images 1 through 6, Subject 1 continuously wears the checkered cap on his head.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-024-single": {
+      "call_id": "lsh-024-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-024-counterfactual-event": {
+        "evidence": "In image 1 through image 4, Subject 1 looks forward without the device raised, then brings the round device up in image 5 and holds it in image 6, never placing it on the sand.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-025-single": {
+      "call_id": "lsh-025-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-025-counterfactual-event": {
+        "evidence": "In image 3 and image 4, Subject 1 is shown without sunglasses throughout, and does not put on or wear dark sunglasses in any of the images.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-001-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-001-counterfactual-event\": {\n    \"evidence\": \"In images 1 through 6, Subject 1 continuously wears the checkered cap on his head.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8219,
+       "completion_tokens": 90,
+       "total_tokens": 8309
+      },
+      "cost_usd": "0.0065",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.00650175",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-024-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-024-counterfactual-event\": {\n    \"evidence\": \"In image 1 through image 4, Subject 1 looks forward without the device raised, then brings the round device up in image 5 and holds it in image 6, never placing it on the sand.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8323,
+       "completion_tokens": 115,
+       "total_tokens": 8438
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0040734",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 3852,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-025-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-025-counterfactual-event\": {\n    \"evidence\": \"In image 3 and image 4, Subject 1 is shown without sunglasses throughout, and does not put on or wear dark sunglasses in any of the images.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8440,
+       "completion_tokens": 104,
+       "total_tokens": 8544
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.004117875",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 3855,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   }
+  },
+  "t1-r3": {
+   "w5": {
+    "results": {
+     "lsh-007-a": {
+      "call_id": "lsh-007-a",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 6, Subject 1 lies down then sits up wearing a green shirt, which remains closed at the collar without visibly opening widely.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s05": {
+        "evidence": "In images 7 through 11, Subject 1 is shown speaking with his green shirt fastened closed up to the neck.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-007-b": {
+      "call_id": "lsh-007-b",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 1 through 6, Subject 1 wears a green shirt that remains buttoned up to near the collar without unfastening or opening widely at the neck.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s05": {
+        "evidence": "In images 7 through 11, Subject 1 wears a green shirt that is closed near the neck rather than opened widely.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-013-a": {
+      "call_id": "lsh-013-a",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 2 through 5, Subject 4 is seen wearing the brown fedora while climbing the scaffolding, and by image 6 he has exited the frame, never appearing bareheaded.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s09": {
+        "evidence": "In images 8 through 11, Subject 4 is wearing the brown fedora while standing near Subject 7 by the pole in the giraffe enclosure.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-013-b": {
+      "call_id": "lsh-013-b",
+      "status": "parsed",
+      "answers": {
+       "event_e1": {
+        "evidence": "In images 2 through 5 Subject 4 wears a brown fedora while climbing scaffolding, and in image 6 Subject 4 is no longer visible while another worker looks up.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": false,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "state_s09": {
+        "evidence": "In image 7 Subject 4 is not yet visible, while in images 8 through 11 Subject 4 wears a brown fedora next to Subject 7.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-007-a",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 6, Subject 1 lies down then sits up wearing a green shirt, which remains closed at the collar without visibly opening widely.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s05\": {\n    \"evidence\": \"In images 7 through 11, Subject 1 is shown speaking with his green shirt fastened closed up to the neck.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 13907,
+       "completion_tokens": 184,
+       "total_tokens": 14091
+      },
+      "cost_usd": "0.0111",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.003309825",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11571,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-007-b",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 1 through 6, Subject 1 wears a green shirt that remains buttoned up to near the collar without unfastening or opening widely at the neck.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s05\": {\n    \"evidence\": \"In images 7 through 11, Subject 1 wears a green shirt that is closed near the neck rather than opened widely.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 13927,
+       "completion_tokens": 187,
+       "total_tokens": 14114
+      },
+      "cost_usd": "0.0111",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.003334725",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11573,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-013-a",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 2 through 5, Subject 4 is seen wearing the brown fedora while climbing the scaffolding, and by image 6 he has exited the frame, never appearing bareheaded.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  },\n  \"state_s09\": {\n    \"evidence\": \"In images 8 through 11, Subject 4 is wearing the brown fedora while standing near Subject 7 by the pole in the giraffe enclosure.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14256,
+       "completion_tokens": 196,
+       "total_tokens": 14452
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0036051",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11588,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-013-b",
+      "status": "received",
+      "raw_text": "{\n  \"event_e1\": {\n    \"evidence\": \"In images 2 through 5 Subject 4 wears a brown fedora while climbing scaffolding, and in image 6 Subject 4 is no longer visible while another worker looks up.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": false,\n    \"holds\": false\n  },\n  \"state_s09\": {\n    \"evidence\": \"In image 7 Subject 4 is not yet visible, while in images 8 through 11 Subject 4 wears a brown fedora next to Subject 7.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14271,
+       "completion_tokens": 198,
+       "total_tokens": 14469
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.003623175",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 11589,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   },
+   "pos": {
+    "results": {
+     "lsh-001-single": {
+      "call_id": "lsh-001-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-001-real-transfer-s02": {
+        "evidence": "In image 1, Subject 3 holds the cylindrical container while Subject 2 does not touch it, whereas by image 3 through image 6 Subject 2 holds the container in his hand.",
+        "in_scene": "yes",
+        "before_frame": 1,
+        "after_frame": 3,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       },
+       "lsh-001-transfer-persists-s04": {
+        "evidence": "In images 8, 9, 10, and 11, Subject 2 holds the small red-and-silver cylindrical container in his hand.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": true,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-024-single": {
+      "call_id": "lsh-024-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-024-falls-back-s01": {
+        "evidence": "In Images 1 through 4, Subject 2 is standing on the sand facing Subject 1, while in Images 5 and 6, he falls forward face-down onto the sand rather than backward.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-025-single": {
+      "call_id": "lsh-025-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-025-lifted-s08": {
+        "evidence": "Images 1 and 2 show crowd hands in the air, while images 3 through 6 show Subject 1 already being held up and crowd-surfing above the hands without showing him on the ground transitioning to being lifted.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-001-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-001-real-transfer-s02\": {\n    \"evidence\": \"In image 1, Subject 3 holds the cylindrical container while Subject 2 does not touch it, whereas by image 3 through image 6 Subject 2 holds the container in his hand.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": 1,\n    \"after_frame\": 3,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  },\n  \"lsh-001-transfer-persists-s04\": {\n    \"evidence\": \"In images 8, 9, 10, and 11, Subject 2 holds the small red-and-silver cylindrical container in his hand.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": true\n  }\n}",
+      "usage": {
+       "prompt_tokens": 14087,
+       "completion_tokens": 222,
+       "total_tokens": 14309
+      },
+      "cost_usd": "0.0114",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.01139775",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-024-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-024-falls-back-s01\": {\n    \"evidence\": \"In Images 1 through 4, Subject 2 is standing on the sand facing Subject 1, while in Images 5 and 6, he falls forward face-down onto the sand rather than backward.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8336,
+       "completion_tokens": 116,
+       "total_tokens": 8452
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.006687",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-025-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-025-lifted-s08\": {\n    \"evidence\": \"Images 1 and 2 show crowd hands in the air, while images 3 through 6 show Subject 1 already being held up and crowd-surfing above the hands without showing him on the ground transitioning to being lifted.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8461,
+       "completion_tokens": 119,
+       "total_tokens": 8580
+      },
+      "cost_usd": "0.0068",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.006792",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   },
+   "neg": {
+    "results": {
+     "lsh-001-single": {
+      "call_id": "lsh-001-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-001-counterfactual-event": {
+        "evidence": "In Images 1 through 6, Subject 1 wears the checkered cap continuously throughout the shot.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-024-single": {
+      "call_id": "lsh-024-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-024-counterfactual-event": {
+        "evidence": "In image 1 through image 4 Subject 1 is shown from the chest up looking forward, in image 5 he begins raising the circular device, and in image 6 he holds the round device up in both hands.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     },
+     "lsh-025-single": {
+      "call_id": "lsh-025-single",
+      "status": "parsed",
+      "answers": {
+       "lsh-025-counterfactual-event": {
+        "evidence": "In image 3 and image 4, Subject 1 is shown without sunglasses throughout his appearance.",
+        "in_scene": "yes",
+        "before_frame": null,
+        "after_frame": null,
+        "sufficient_evidence": true,
+        "holds": false,
+        "field_order": [
+         "evidence",
+         "in_scene",
+         "before_frame",
+         "after_frame",
+         "sufficient_evidence",
+         "holds"
+        ]
+       }
+      }
+     }
+    },
+    "responses": [
+     {
+      "call_id": "lsh-001-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-001-counterfactual-event\": {\n    \"evidence\": \"In Images 1 through 6, Subject 1 wears the checkered cap continuously throughout the shot.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8219,
+       "completion_tokens": 91,
+       "total_tokens": 8310
+      },
+      "cost_usd": "0.0065",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0065055",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-024-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-024-counterfactual-event\": {\n    \"evidence\": \"In image 1 through image 4 Subject 1 is shown from the chest up looking forward, in image 5 he begins raising the circular device, and in image 6 he holds the round device up in both hands.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8323,
+       "completion_tokens": 117,
+       "total_tokens": 8440
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.0040809",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 3852,
+        "video_tokens": 0
+       }
+      }
+     },
+     {
+      "call_id": "lsh-025-single",
+      "status": "received",
+      "raw_text": "{\n  \"lsh-025-counterfactual-event\": {\n    \"evidence\": \"In image 3 and image 4, Subject 1 is shown without sunglasses throughout his appearance.\",\n    \"in_scene\": \"yes\",\n    \"before_frame\": null,\n    \"after_frame\": null,\n    \"sufficient_evidence\": true,\n    \"holds\": false\n  }\n}",
+      "usage": {
+       "prompt_tokens": 8440,
+       "completion_tokens": 91,
+       "total_tokens": 8531
+      },
+      "cost_usd": "0.0067",
+      "served": {
+       "provider": "Google AI Studio",
+       "service_tier": "default",
+       "reported_cost_usd": "0.004069125",
+       "reasoning_tokens": 0,
+       "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 3855,
+        "video_tokens": 0
+       }
+      }
+     }
+    ]
+   }
+  }
+ }
+}

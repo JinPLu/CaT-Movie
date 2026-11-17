@@ -1,0 +1,77 @@
+{
+  "case_id": "ci_vid:train:000001299",
+  "pool_index": 697,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "person",
+        "appearance": "female tennis player in white and blue kit with white headband and hair bun"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "网球场",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          1
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 53,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The scene captures a moment during a professional tennis match, featuring a player poised to serve. She is wearing a modern tennis outfit consisting of a blue and white shirt, blue shorts, a headband, and white athletic shoes. She also has a knee support strap on her right leg. Her stance suggests concentration and readiness, as she is gently bouncing the tennis ball with her racket as part of her pre-serve ritual. In the foreground, a scoreboard displays the names VONDROUSOVA and JABEUR, with the score tied at 40-40, indicating a deuce situation. The tennis ball speed is recorded at 159 km/h. On the perimeter of the court, a ballperson can be seen standing motionless, waiting attentively. The setting suggests a professional venue, likely a major international tennis tournament, evidenced by prominent advertising banners on the back wall featuring brands like Emirates and TMGM.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 81,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video footage showcases a tennis player on a blue hard court during a match. The player is wearing a white and blue sports outfit composed of a short-sleeve shirt and shorts, complemented by a headband and a wristband on the right wrist. The player is seen holding a tennis ball in their right hand. The player is preparing for a serve, indicated by the body posture leaning forward and focusing on the tennis court. They exhibit a concentrated and determined demeanor as they focus on their task. A digital scoreboard overlay shows the match score with 'VONDROUSOVA' at 6 games and 5 points and 'JABEUR' at 1 game and 5 with advantage (AD). The player on screen is Jabeur as per the scoreboard. The preparation for the serve is captured in a few consecutive seconds, showing brief but deliberate movements associated with serving in tennis.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": []
+  },
+  "observed_issues": [
+    {
+      "rule": 6,
+      "path": "g2",
+      "message": "unresolved reference demands [0, 1]"
+    }
+  ],
+  "compiled_segments": null
+}

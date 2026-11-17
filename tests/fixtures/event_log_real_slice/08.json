@@ -1,0 +1,137 @@
+{
+  "case_id": "ci_vid:train:000003107",
+  "pool_index": 1491,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "object",
+        "appearance": "dark blue denim shorts with metal buttons and pockets"
+      },
+      {
+        "subject_id": "Subject 2",
+        "kind": "object",
+        "appearance": "white sewing machine"
+      },
+      {
+        "subject_id": "Subject 3",
+        "kind": "person",
+        "appearance": "hands operating the sewing machine and handling the shorts"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "缝纫工作台",
+        "anchors": []
+      },
+      {
+        "location_id": "Location 2",
+        "appearance": "木质桌面",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "object_condition",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "object_condition",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video depicts a close-up view of a sewing operation on denim fabric using a sewing machine. A person's hand, with well-manicured nails, guides the fabric carefully under the machine's needle, focusing on stitching along what appears to be a hem or seam. The fabric is dark blue denim with orange-brown stitching, indicating it might be part of a pair of jeans. The sewing machine is precise and steady, showing the detailed stitching work. The operator adjusts the fabric as it moves, ensuring the seam is straight and tight. This short clip demonstrates the careful attention and skill required in garment manufacturing or alteration, highlighting the texture of the denim and the intricate mechanics of the machine.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 3"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A pair of blue denim jeans is laid flat on a wooden surface. These jeans have a prominent classic five-pocket style with two front pockets, one of which has a small coin pocket with a metal emblem attached to it. The jeans are distinguished by their color and texture, exhibiting a moderately faded appearance with slight wear marks, common in denim. There are several metallic buttons visible on the waistband, indicating a button-fly design. Above the waistband is the text '44 cm' in red, suggesting a measurement related to the jeans. A person is seen measuring the waistband using a green measuring tape, holding it firmly across the folded front of the jeans to determine the exact width. This is indicative of a demonstration video, possibly educational, where measurements of clothing items are shown.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 3"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 3"
+        ],
+        "frame_count": 53,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "Two hands are shown on a wooden surface, interacting with a pair of blue denim jeans. The hands, delicately manicured, initially smooth the fabric, focusing around the waistband and the front button area. The denim has typical metallic rivets and bold stitching, indicating it is a classic style. The fabric appears slightly distressed, a common fashion detail, with noticeable fading and wear patterns near the pockets and seams. As the sequence progresses, the hands unfold the waistband to reveal the inner lining and pockets of the jeans. This detailed interaction suggests either a demonstration of the jeans' features or a folding technique being displayed.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 3"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": []
+  },
+  "observed_issues": [
+    {
+      "rule": 5,
+      "path": "Subject 3",
+      "message": "state predicate in static appearance: operating / handling, found in visual review"
+    }
+  ]
+}

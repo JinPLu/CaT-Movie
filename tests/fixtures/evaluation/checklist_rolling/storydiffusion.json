@@ -1,0 +1,40 @@
+{
+ "story_id": "cinedance-008935-b0001-shot01",
+ "generation_status": "completed",
+ "video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/storydiffusion-test92-20261027/inference/raw/videos/storydiffusion_wan_a14b/cinedance-008935-b0001-shot01/video.mp4",
+ "video_bytes": 11838857,
+ "segments_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/storydiffusion-test92-20261027/inference/raw/videos/storydiffusion_wan_a14b/cinedance-008935-b0001-shot01/segments.json",
+ "segments": [
+  {
+   "shot": 1,
+   "num_frames": 57
+  },
+  {
+   "shot": 2,
+   "num_frames": 89
+  },
+  {
+   "shot": 3,
+   "num_frames": 53
+  },
+  {
+   "shot": 4,
+   "num_frames": 105
+  },
+  {
+   "shot": 5,
+   "num_frames": 33
+  },
+  {
+   "shot": 6,
+   "num_frames": 45
+  }
+ ],
+ "probe": {
+  "frames": 382,
+  "fps": 16.0,
+  "duration_seconds": 23.875,
+  "width": 832,
+  "height": 480
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "source_run": "planner-v2-execution-20261007-thinking-continuation",
+  "source_response": "baseline/script_true_history.responses.jsonl",
+  "raw_response": "{\"error\":{\"message\":\"Internal server error\",\"type\":\"InternalServerError\",\"param\":null,\"code\":500}}",
+  "http_status": 500,
+  "latency_seconds": 0.04677797760814428,
+  "service_exception": "(EngineCore pid=3336693) ERROR 10-07 21:52:18 [core.py:1494] AssertionError: Expected a cached item for mm_hash='92eef97ad351de7e7e8be98ed3b6548de049a1ec24aad7ec037e02b806758520'",
+  "real_input_fixture": "real_history.jpg"
+}

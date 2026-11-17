@@ -1,0 +1,5269 @@
+{
+  "origin": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/final/windows.jsonl",
+  "scenes": {
+    "gap": [
+      {
+        "key": "cinedance-008882-w0000",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0000-0003",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0000-0003",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 4,
+          "render_frames": 144,
+          "shots": [
+            {
+              "source_shot_index": 0,
+              "start_frame": 2,
+              "end_frame": 63,
+              "seconds": 2.544208333333333,
+              "render_frames": 41,
+              "mean_luma": 117.98013305664062,
+              "min_luma": 117.44215393066406,
+              "max_luma": 118.35997772216797,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.03504533693194389,
+              "laion_aesthetic": 5.970465342203776
+            },
+            {
+              "source_shot_index": 1,
+              "start_frame": 67,
+              "end_frame": 123,
+              "seconds": 2.3356666666666666,
+              "render_frames": 37,
+              "mean_luma": 88.2010726928711,
+              "min_luma": 85.98751068115234,
+              "max_luma": 94.6258773803711,
+              "scene": "<scene1>",
+              "characters": [],
+              "dover_technical": -0.0653403177857399,
+              "laion_aesthetic": 5.089596271514893
+            },
+            {
+              "source_shot_index": 2,
+              "start_frame": 127,
+              "end_frame": 182,
+              "seconds": 2.2939583333333333,
+              "render_frames": 37,
+              "mean_luma": 63.561378479003906,
+              "min_luma": 45.14805603027344,
+              "max_luma": 88.35623931884766,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.01688689924776554,
+              "laion_aesthetic": 5.765330155690511
+            },
+            {
+              "source_shot_index": 3,
+              "start_frame": 186,
+              "end_frame": 229,
+              "seconds": 1.7934583333333332,
+              "render_frames": 29,
+              "mean_luma": 67.46927642822266,
+              "min_luma": 65.87073516845703,
+              "max_luma": 69.82991790771484,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>",
+                "<char2>"
+              ],
+              "dover_technical": -0.056453436613082886,
+              "laion_aesthetic": 5.521589120229085
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  0,
+                  65
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  0,
+                  65
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  2,
+                  63
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  65,
+                  125
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  65,
+                  125
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  67,
+                  123
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  125,
+                  184
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  125,
+                  184
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  127,
+                  182
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  184,
+                  231
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  184,
+                  231
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  186,
+                  229
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.0653403177857399,
+            "min_laion_aesthetic": 5.089596271514893
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0000.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 3.0
+            },
+            {
+              "shot": 1,
+              "start": 3.0,
+              "end": 6.0
+            },
+            {
+              "shot": 2,
+              "start": 6.0,
+              "end": 9.0
+            },
+            {
+              "shot": 3,
+              "start": 9.0,
+              "end": 11.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 2
+            },
+            {
+              "shot": 0,
+              "source_frame": 14
+            },
+            {
+              "shot": 0,
+              "source_frame": 26
+            },
+            {
+              "shot": 0,
+              "source_frame": 38
+            },
+            {
+              "shot": 0,
+              "source_frame": 50
+            },
+            {
+              "shot": 0,
+              "source_frame": 62
+            },
+            {
+              "shot": 1,
+              "source_frame": 67
+            },
+            {
+              "shot": 1,
+              "source_frame": 79
+            },
+            {
+              "shot": 1,
+              "source_frame": 91
+            },
+            {
+              "shot": 1,
+              "source_frame": 104
+            },
+            {
+              "shot": 1,
+              "source_frame": 116
+            },
+            {
+              "shot": 1,
+              "source_frame": 122
+            },
+            {
+              "shot": 2,
+              "source_frame": 127
+            },
+            {
+              "shot": 2,
+              "source_frame": 139
+            },
+            {
+              "shot": 2,
+              "source_frame": 151
+            },
+            {
+              "shot": 2,
+              "source_frame": 163
+            },
+            {
+              "shot": 2,
+              "source_frame": 175
+            },
+            {
+              "shot": 2,
+              "source_frame": 181
+            },
+            {
+              "shot": 3,
+              "source_frame": 186
+            },
+            {
+              "shot": 3,
+              "source_frame": 198
+            },
+            {
+              "shot": 3,
+              "source_frame": 210
+            },
+            {
+              "shot": 3,
+              "source_frame": 222
+            },
+            {
+              "shot": 3,
+              "source_frame": 228
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0001",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0004-0006",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0004-0006",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 3,
+          "render_frames": 107,
+          "shots": [
+            {
+              "source_shot_index": 4,
+              "start_frame": 233,
+              "end_frame": 279,
+              "seconds": 1.9185833333333333,
+              "render_frames": 29,
+              "mean_luma": 81.23333740234375,
+              "min_luma": 55.47200393676758,
+              "max_luma": 88.15802001953125,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.01370649691671133,
+              "laion_aesthetic": 5.3942491213480634
+            },
+            {
+              "source_shot_index": 5,
+              "start_frame": 283,
+              "end_frame": 370,
+              "seconds": 3.6286249999999995,
+              "render_frames": 57,
+              "mean_luma": 84.92997741699219,
+              "min_luma": 64.45330810546875,
+              "max_luma": 96.36579895019531,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.05739932134747505,
+              "laion_aesthetic": 4.466777642567952
+            },
+            {
+              "source_shot_index": 6,
+              "start_frame": 374,
+              "end_frame": 407,
+              "seconds": 1.376375,
+              "render_frames": 21,
+              "mean_luma": 97.58422088623047,
+              "min_luma": 91.7734375,
+              "max_luma": 102.34501647949219,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.016328798606991768,
+              "laion_aesthetic": 5.964501698811849
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  231,
+                  281
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  231,
+                  281
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  233,
+                  279
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  281,
+                  372
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  281,
+                  372
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  283,
+                  370
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  372,
+                  409
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  372,
+                  409
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  374,
+                  407
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.05739932134747505,
+            "min_laion_aesthetic": 4.466777642567952
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0001.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "shot": 1,
+              "start": 2.5,
+              "end": 6.5
+            },
+            {
+              "shot": 2,
+              "start": 6.5,
+              "end": 8.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 233
+            },
+            {
+              "shot": 0,
+              "source_frame": 246
+            },
+            {
+              "shot": 0,
+              "source_frame": 259
+            },
+            {
+              "shot": 0,
+              "source_frame": 272
+            },
+            {
+              "shot": 0,
+              "source_frame": 278
+            },
+            {
+              "shot": 1,
+              "source_frame": 283
+            },
+            {
+              "shot": 1,
+              "source_frame": 295
+            },
+            {
+              "shot": 1,
+              "source_frame": 308
+            },
+            {
+              "shot": 1,
+              "source_frame": 320
+            },
+            {
+              "shot": 1,
+              "source_frame": 332
+            },
+            {
+              "shot": 1,
+              "source_frame": 344
+            },
+            {
+              "shot": 1,
+              "source_frame": 357
+            },
+            {
+              "shot": 1,
+              "source_frame": 369
+            },
+            {
+              "shot": 2,
+              "source_frame": 374
+            },
+            {
+              "shot": 2,
+              "source_frame": 387
+            },
+            {
+              "shot": 2,
+              "source_frame": 400
+            },
+            {
+              "shot": 2,
+              "source_frame": 406
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0002",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0007-0010",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0007-0010",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 4,
+          "render_frames": 88,
+          "shots": [
+            {
+              "source_shot_index": 7,
+              "start_frame": 411,
+              "end_frame": 439,
+              "seconds": 1.1678333333333333,
+              "render_frames": 17,
+              "mean_luma": 45.59617614746094,
+              "min_luma": 42.00448989868164,
+              "max_luma": 51.77675247192383,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.05807368457317352,
+              "laion_aesthetic": 5.722585042317708
+            },
+            {
+              "source_shot_index": 8,
+              "start_frame": 443,
+              "end_frame": 486,
+              "seconds": 1.7934583333333332,
+              "render_frames": 29,
+              "mean_luma": 100.47162628173828,
+              "min_luma": 96.81165313720703,
+              "max_luma": 104.64419555664062,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.02013678103685379,
+              "laion_aesthetic": 5.960669835408528
+            },
+            {
+              "source_shot_index": 9,
+              "start_frame": 490,
+              "end_frame": 527,
+              "seconds": 1.5432083333333333,
+              "render_frames": 25,
+              "mean_luma": 80.75507354736328,
+              "min_luma": 78.41473388671875,
+              "max_luma": 83.8731689453125,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.04076029360294342,
+              "laion_aesthetic": 5.936692078908284
+            },
+            {
+              "source_shot_index": 10,
+              "start_frame": 531,
+              "end_frame": 561,
+              "seconds": 1.25125,
+              "render_frames": 17,
+              "mean_luma": 120.64514923095703,
+              "min_luma": 119.28478240966797,
+              "max_luma": 121.59721374511719,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.029287850484251976,
+              "laion_aesthetic": 6.009538014729817
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  409,
+                  441
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  409,
+                  441
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  411,
+                  439
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  441,
+                  488
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  441,
+                  488
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  443,
+                  486
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  488,
+                  529
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  488,
+                  529
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  490,
+                  527
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  529,
+                  563
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  529,
+                  563
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  531,
+                  561
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.05807368457317352,
+            "min_laion_aesthetic": 5.722585042317708
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0002.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 1.5
+            },
+            {
+              "shot": 1,
+              "start": 1.5,
+              "end": 4.0
+            },
+            {
+              "shot": 2,
+              "start": 4.0,
+              "end": 6.0
+            },
+            {
+              "shot": 3,
+              "start": 6.0,
+              "end": 7.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 411
+            },
+            {
+              "shot": 0,
+              "source_frame": 425
+            },
+            {
+              "shot": 0,
+              "source_frame": 438
+            },
+            {
+              "shot": 1,
+              "source_frame": 443
+            },
+            {
+              "shot": 1,
+              "source_frame": 455
+            },
+            {
+              "shot": 1,
+              "source_frame": 467
+            },
+            {
+              "shot": 1,
+              "source_frame": 479
+            },
+            {
+              "shot": 1,
+              "source_frame": 485
+            },
+            {
+              "shot": 2,
+              "source_frame": 490
+            },
+            {
+              "shot": 2,
+              "source_frame": 502
+            },
+            {
+              "shot": 2,
+              "source_frame": 514
+            },
+            {
+              "shot": 2,
+              "source_frame": 526
+            },
+            {
+              "shot": 3,
+              "source_frame": 531
+            },
+            {
+              "shot": 3,
+              "source_frame": 545
+            },
+            {
+              "shot": 3,
+              "source_frame": 560
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0003",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0011-0013",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0011-0013",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 3,
+          "render_frames": 67,
+          "shots": [
+            {
+              "source_shot_index": 11,
+              "start_frame": 565,
+              "end_frame": 614,
+              "seconds": 2.043708333333333,
+              "render_frames": 33,
+              "mean_luma": 78.26223754882812,
+              "min_luma": 73.98595428466797,
+              "max_luma": 80.84174346923828,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.03419801965355873,
+              "laion_aesthetic": 5.786701997121175
+            },
+            {
+              "source_shot_index": 12,
+              "start_frame": 618,
+              "end_frame": 653,
+              "seconds": 1.4597916666666666,
+              "render_frames": 21,
+              "mean_luma": 43.09593963623047,
+              "min_luma": 42.062232971191406,
+              "max_luma": 43.892974853515625,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.0752856656908989,
+              "laion_aesthetic": 5.562315146128337
+            },
+            {
+              "source_shot_index": 13,
+              "start_frame": 657,
+              "end_frame": 677,
+              "seconds": 0.8341666666666666,
+              "render_frames": 13,
+              "mean_luma": 106.25785064697266,
+              "min_luma": 104.67939758300781,
+              "max_luma": 108.36617279052734,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.019830500707030296,
+              "laion_aesthetic": 5.881167411804199
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  563,
+                  616
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  563,
+                  616
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  565,
+                  614
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  616,
+                  655
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  616,
+                  655
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  618,
+                  653
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  655,
+                  679
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  655,
+                  679
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  657,
+                  677
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.0752856656908989,
+            "min_laion_aesthetic": 5.562315146128337
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0003.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "shot": 1,
+              "start": 2.5,
+              "end": 4.5
+            },
+            {
+              "shot": 2,
+              "start": 4.5,
+              "end": 6.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 565
+            },
+            {
+              "shot": 0,
+              "source_frame": 577
+            },
+            {
+              "shot": 0,
+              "source_frame": 589
+            },
+            {
+              "shot": 0,
+              "source_frame": 601
+            },
+            {
+              "shot": 0,
+              "source_frame": 613
+            },
+            {
+              "shot": 1,
+              "source_frame": 618
+            },
+            {
+              "shot": 1,
+              "source_frame": 632
+            },
+            {
+              "shot": 1,
+              "source_frame": 645
+            },
+            {
+              "shot": 1,
+              "source_frame": 652
+            },
+            {
+              "shot": 2,
+              "source_frame": 657
+            },
+            {
+              "shot": 2,
+              "source_frame": 670
+            },
+            {
+              "shot": 2,
+              "source_frame": 676
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0004",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0015-0018",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0015-0018",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 4,
+          "render_frames": 96,
+          "shots": [
+            {
+              "source_shot_index": 15,
+              "start_frame": 816,
+              "end_frame": 851,
+              "seconds": 1.4597916666666666,
+              "render_frames": 21,
+              "mean_luma": 81.00445556640625,
+              "min_luma": 79.17228698730469,
+              "max_luma": 82.7243881225586,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>",
+                "<char2>"
+              ],
+              "dover_technical": -0.05740072950720787,
+              "laion_aesthetic": 5.158175468444824
+            },
+            {
+              "source_shot_index": 16,
+              "start_frame": 855,
+              "end_frame": 893,
+              "seconds": 1.5849166666666665,
+              "render_frames": 25,
+              "mean_luma": 75.59473419189453,
+              "min_luma": 73.64733123779297,
+              "max_luma": 76.40949249267578,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.0733989030122757,
+              "laion_aesthetic": 5.178694089253743
+            },
+            {
+              "source_shot_index": 17,
+              "start_frame": 897,
+              "end_frame": 934,
+              "seconds": 1.5432083333333333,
+              "render_frames": 25,
+              "mean_luma": 73.22915649414062,
+              "min_luma": 70.36774444580078,
+              "max_luma": 76.34879302978516,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.009937209077179432,
+              "laion_aesthetic": 5.712185064951579
+            },
+            {
+              "source_shot_index": 18,
+              "start_frame": 938,
+              "end_frame": 979,
+              "seconds": 1.7100416666666665,
+              "render_frames": 25,
+              "mean_luma": 68.60375213623047,
+              "min_luma": 67.46499633789062,
+              "max_luma": 69.53604888916016,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.05926303192973137,
+              "laion_aesthetic": 5.5622665087382
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  814,
+                  853
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  814,
+                  853
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  816,
+                  851
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  853,
+                  895
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  853,
+                  895
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  855,
+                  893
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  895,
+                  936
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  895,
+                  936
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  897,
+                  934
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  936,
+                  981
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  936,
+                  981
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  938,
+                  979
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.0733989030122757,
+            "min_laion_aesthetic": 5.158175468444824
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0004.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 4.0
+            },
+            {
+              "shot": 2,
+              "start": 4.0,
+              "end": 6.0
+            },
+            {
+              "shot": 3,
+              "start": 6.0,
+              "end": 8.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 816
+            },
+            {
+              "shot": 0,
+              "source_frame": 830
+            },
+            {
+              "shot": 0,
+              "source_frame": 843
+            },
+            {
+              "shot": 0,
+              "source_frame": 850
+            },
+            {
+              "shot": 1,
+              "source_frame": 855
+            },
+            {
+              "shot": 1,
+              "source_frame": 867
+            },
+            {
+              "shot": 1,
+              "source_frame": 880
+            },
+            {
+              "shot": 1,
+              "source_frame": 892
+            },
+            {
+              "shot": 2,
+              "source_frame": 897
+            },
+            {
+              "shot": 2,
+              "source_frame": 909
+            },
+            {
+              "shot": 2,
+              "source_frame": 921
+            },
+            {
+              "shot": 2,
+              "source_frame": 933
+            },
+            {
+              "shot": 3,
+              "source_frame": 938
+            },
+            {
+              "shot": 3,
+              "source_frame": 951
+            },
+            {
+              "shot": 3,
+              "source_frame": 965
+            },
+            {
+              "shot": 3,
+              "source_frame": 978
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0005",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0021-0025",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0021-0025",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 5,
+          "render_frames": 113,
+          "shots": [
+            {
+              "source_shot_index": 21,
+              "start_frame": 1020,
+              "end_frame": 1056,
+              "seconds": 1.5014999999999998,
+              "render_frames": 21,
+              "mean_luma": 77.54545593261719,
+              "min_luma": 74.8743667602539,
+              "max_luma": 79.812744140625,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.010826731100678444,
+              "laion_aesthetic": 5.715642929077148
+            },
+            {
+              "source_shot_index": 22,
+              "start_frame": 1060,
+              "end_frame": 1081,
+              "seconds": 0.875875,
+              "render_frames": 13,
+              "mean_luma": 67.9717788696289,
+              "min_luma": 66.96239471435547,
+              "max_luma": 68.91427612304688,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.06150045245885849,
+              "laion_aesthetic": 5.5595143636067705
+            },
+            {
+              "source_shot_index": 23,
+              "start_frame": 1085,
+              "end_frame": 1123,
+              "seconds": 1.5849166666666665,
+              "render_frames": 25,
+              "mean_luma": 79.40620422363281,
+              "min_luma": 73.89029693603516,
+              "max_luma": 82.75997161865234,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.037579141557216644,
+              "laion_aesthetic": 5.7752580642700195
+            },
+            {
+              "source_shot_index": 24,
+              "start_frame": 1127,
+              "end_frame": 1157,
+              "seconds": 1.25125,
+              "render_frames": 17,
+              "mean_luma": 61.65270233154297,
+              "min_luma": 61.34154510498047,
+              "max_luma": 61.98957061767578,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.03419440612196922,
+              "laion_aesthetic": 5.553182760874431
+            },
+            {
+              "source_shot_index": 25,
+              "start_frame": 1161,
+              "end_frame": 1218,
+              "seconds": 2.377375,
+              "render_frames": 37,
+              "mean_luma": 76.49678802490234,
+              "min_luma": 73.8357162475586,
+              "max_luma": 78.92696380615234,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.01843014545738697,
+              "laion_aesthetic": 5.679091930389404
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1018,
+                  1058
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1018,
+                  1058
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1020,
+                  1056
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1058,
+                  1083
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1058,
+                  1083
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1060,
+                  1081
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1083,
+                  1125
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1083,
+                  1125
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1085,
+                  1123
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1125,
+                  1159
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1125,
+                  1159
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1127,
+                  1157
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1159,
+                  1220
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1159,
+                  1220
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1161,
+                  1218
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.06150045245885849,
+            "min_laion_aesthetic": 5.553182760874431
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0005.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 3.5
+            },
+            {
+              "shot": 2,
+              "start": 3.5,
+              "end": 5.5
+            },
+            {
+              "shot": 3,
+              "start": 5.5,
+              "end": 7.0
+            },
+            {
+              "shot": 4,
+              "start": 7.0,
+              "end": 10.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1020
+            },
+            {
+              "shot": 0,
+              "source_frame": 1034
+            },
+            {
+              "shot": 0,
+              "source_frame": 1048
+            },
+            {
+              "shot": 0,
+              "source_frame": 1055
+            },
+            {
+              "shot": 1,
+              "source_frame": 1060
+            },
+            {
+              "shot": 1,
+              "source_frame": 1073
+            },
+            {
+              "shot": 1,
+              "source_frame": 1080
+            },
+            {
+              "shot": 2,
+              "source_frame": 1085
+            },
+            {
+              "shot": 2,
+              "source_frame": 1097
+            },
+            {
+              "shot": 2,
+              "source_frame": 1110
+            },
+            {
+              "shot": 2,
+              "source_frame": 1122
+            },
+            {
+              "shot": 3,
+              "source_frame": 1127
+            },
+            {
+              "shot": 3,
+              "source_frame": 1141
+            },
+            {
+              "shot": 3,
+              "source_frame": 1156
+            },
+            {
+              "shot": 4,
+              "source_frame": 1161
+            },
+            {
+              "shot": 4,
+              "source_frame": 1173
+            },
+            {
+              "shot": 4,
+              "source_frame": 1186
+            },
+            {
+              "shot": 4,
+              "source_frame": 1198
+            },
+            {
+              "shot": 4,
+              "source_frame": 1211
+            },
+            {
+              "shot": 4,
+              "source_frame": 1217
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0006",
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0030-0031",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0030-0031",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 2,
+          "render_frames": 62,
+          "shots": [
+            {
+              "source_shot_index": 30,
+              "start_frame": 1296,
+              "end_frame": 1329,
+              "seconds": 1.376375,
+              "render_frames": 21,
+              "mean_luma": 84.83573150634766,
+              "min_luma": 80.95887756347656,
+              "max_luma": 91.50360870361328,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.054198287427425385,
+              "laion_aesthetic": 5.491363366444905
+            },
+            {
+              "source_shot_index": 31,
+              "start_frame": 1333,
+              "end_frame": 1394,
+              "seconds": 2.544208333333333,
+              "render_frames": 41,
+              "mean_luma": 71.6111831665039,
+              "min_luma": 66.2552261352539,
+              "max_luma": 94.86418151855469,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.035438746213912964,
+              "laion_aesthetic": 5.354509353637695
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1294,
+                  1331
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1294,
+                  1331
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1296,
+                  1329
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1331,
+                  1396
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1331,
+                  1396
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1333,
+                  1394
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.054198287427425385,
+            "min_laion_aesthetic": 5.354509353637695
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0006.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 5.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1296
+            },
+            {
+              "shot": 0,
+              "source_frame": 1309
+            },
+            {
+              "shot": 0,
+              "source_frame": 1322
+            },
+            {
+              "shot": 0,
+              "source_frame": 1328
+            },
+            {
+              "shot": 1,
+              "source_frame": 1333
+            },
+            {
+              "shot": 1,
+              "source_frame": 1345
+            },
+            {
+              "shot": 1,
+              "source_frame": 1357
+            },
+            {
+              "shot": 1,
+              "source_frame": 1369
+            },
+            {
+              "shot": 1,
+              "source_frame": 1381
+            },
+            {
+              "shot": 1,
+              "source_frame": 1393
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0007",
+        "case_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0039-0042",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0039-0042",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 4,
+          "render_frames": 96,
+          "shots": [
+            {
+              "source_shot_index": 39,
+              "start_frame": 1612,
+              "end_frame": 1659,
+              "seconds": 1.9602916666666665,
+              "render_frames": 29,
+              "mean_luma": 84.05728149414062,
+              "min_luma": 81.09040069580078,
+              "max_luma": 90.46426391601562,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>",
+                "<char2>"
+              ],
+              "dover_technical": -0.07695816457271576,
+              "laion_aesthetic": 5.862587610880534
+            },
+            {
+              "source_shot_index": 40,
+              "start_frame": 1663,
+              "end_frame": 1697,
+              "seconds": 1.4180833333333331,
+              "render_frames": 21,
+              "mean_luma": 87.81201934814453,
+              "min_luma": 86.1595458984375,
+              "max_luma": 89.65912628173828,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>",
+                "<char2>"
+              ],
+              "dover_technical": -0.06542140990495682,
+              "laion_aesthetic": 5.660122712453206
+            },
+            {
+              "source_shot_index": 41,
+              "start_frame": 1701,
+              "end_frame": 1745,
+              "seconds": 1.8351666666666666,
+              "render_frames": 29,
+              "mean_luma": 74.91283416748047,
+              "min_luma": 73.13360595703125,
+              "max_luma": 77.2690658569336,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.04014016315340996,
+              "laion_aesthetic": 5.9511566162109375
+            },
+            {
+              "source_shot_index": 42,
+              "start_frame": 1749,
+              "end_frame": 1775,
+              "seconds": 1.0844166666666666,
+              "render_frames": 17,
+              "mean_luma": 58.78066635131836,
+              "min_luma": 54.96354293823242,
+              "max_luma": 65.50466918945312,
+              "scene": "<scene1>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.11877961456775665,
+              "laion_aesthetic": 4.432403723398845
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1610,
+                  1661
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1610,
+                  1661
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1612,
+                  1659
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1661,
+                  1699
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1661,
+                  1699
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1663,
+                  1697
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1699,
+                  1747
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1699,
+                  1747
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1701,
+                  1745
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1747,
+                  1777
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1747,
+                  1777
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1749,
+                  1775
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.11877961456775665,
+            "min_laion_aesthetic": 4.432403723398845
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/window-proxy/cinedance-008882-w0007.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "shot": 1,
+              "start": 2.5,
+              "end": 4.5
+            },
+            {
+              "shot": 2,
+              "start": 4.5,
+              "end": 7.0
+            },
+            {
+              "shot": 3,
+              "start": 7.0,
+              "end": 8.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1612
+            },
+            {
+              "shot": 0,
+              "source_frame": 1625
+            },
+            {
+              "shot": 0,
+              "source_frame": 1638
+            },
+            {
+              "shot": 0,
+              "source_frame": 1651
+            },
+            {
+              "shot": 0,
+              "source_frame": 1658
+            },
+            {
+              "shot": 1,
+              "source_frame": 1663
+            },
+            {
+              "shot": 1,
+              "source_frame": 1676
+            },
+            {
+              "shot": 1,
+              "source_frame": 1689
+            },
+            {
+              "shot": 1,
+              "source_frame": 1696
+            },
+            {
+              "shot": 2,
+              "source_frame": 1701
+            },
+            {
+              "shot": 2,
+              "source_frame": 1713
+            },
+            {
+              "shot": 2,
+              "source_frame": 1726
+            },
+            {
+              "shot": 2,
+              "source_frame": 1738
+            },
+            {
+              "shot": 2,
+              "source_frame": 1744
+            },
+            {
+              "shot": 3,
+              "source_frame": 1749
+            },
+            {
+              "shot": 3,
+              "source_frame": 1761
+            },
+            {
+              "shot": 3,
+              "source_frame": 1774
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0008",
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0043-0043",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0043-0043",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 1,
+          "render_frames": 37,
+          "shots": [
+            {
+              "source_shot_index": 43,
+              "start_frame": 1779,
+              "end_frame": 1839,
+              "seconds": 2.5025,
+              "render_frames": 37,
+              "mean_luma": 70.59107971191406,
+              "min_luma": 68.18852233886719,
+              "max_luma": 85.94287872314453,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.034655336290597916,
+              "laion_aesthetic": 5.433933099110921
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1777,
+                  1841
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1777,
+                  1841
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1779,
+                  1839
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.034655336290597916,
+            "min_laion_aesthetic": 5.433933099110921
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/proxy/cinedance-008882-e0029.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 3.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1779
+            },
+            {
+              "shot": 0,
+              "source_frame": 1792
+            },
+            {
+              "shot": 0,
+              "source_frame": 1805
+            },
+            {
+              "shot": 0,
+              "source_frame": 1818
+            },
+            {
+              "shot": 0,
+              "source_frame": 1831
+            },
+            {
+              "shot": 0,
+              "source_frame": 1838
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008882-w0009",
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0052-0052",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:train:0052-0052",
+          "kind": "train",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+          "fps": 23.976023976023978,
+          "container_preroll_frames": null,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_count": 1,
+          "render_frames": 101,
+          "shots": [
+            {
+              "source_shot_index": 52,
+              "start_frame": 1982,
+              "end_frame": 2134,
+              "seconds": 6.339666666666666,
+              "render_frames": 101,
+              "mean_luma": 68.71224975585938,
+              "min_luma": 30.69675064086914,
+              "max_luma": 88.67218017578125,
+              "scene": "<scene1>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.051824912428855896,
+              "laion_aesthetic": 4.863979498545329
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1920,
+          "height": 1080,
+          "video_frame_count": 2136,
+          "active_box": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+                "segment": [
+                  1980,
+                  2136
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1980,
+                  2136
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1982,
+                  2134
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.051824912428855896,
+            "min_laion_aesthetic": 4.863979498545329
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008882/proxy/cinedance-008882-e0030.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            24,
+            0,
+            1896,
+            1080
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 7.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1982
+            },
+            {
+              "shot": 0,
+              "source_frame": 1994
+            },
+            {
+              "shot": 0,
+              "source_frame": 2006
+            },
+            {
+              "shot": 0,
+              "source_frame": 2018
+            },
+            {
+              "shot": 0,
+              "source_frame": 2030
+            },
+            {
+              "shot": 0,
+              "source_frame": 2042
+            },
+            {
+              "shot": 0,
+              "source_frame": 2054
+            },
+            {
+              "shot": 0,
+              "source_frame": 2067
+            },
+            {
+              "shot": 0,
+              "source_frame": 2079
+            },
+            {
+              "shot": 0,
+              "source_frame": 2091
+            },
+            {
+              "shot": 0,
+              "source_frame": 2103
+            },
+            {
+              "shot": 0,
+              "source_frame": 2115
+            },
+            {
+              "shot": 0,
+              "source_frame": 2127
+            },
+            {
+              "shot": 0,
+              "source_frame": 2133
+            }
+          ]
+        }
+      }
+    ],
+    "single": [
+      {
+        "key": "cinedance-008887-w0000",
+        "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene1>:block0000:train:0000-0000",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene1>:block0000:train:0000-0000",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene1>:block0000",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 1,
+          "render_frames": 37,
+          "shots": [
+            {
+              "source_shot_index": 0,
+              "start_frame": 2,
+              "end_frame": 62,
+              "seconds": 2.5,
+              "render_frames": 37,
+              "mean_luma": 133.78282165527344,
+              "min_luma": 133.6218719482422,
+              "max_luma": 133.90396118164062,
+              "scene": "<scene1>",
+              "characters": [],
+              "dover_technical": -0.01634039729833603,
+              "laion_aesthetic": 4.750474770863851
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  0,
+                  64
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  0,
+                  64
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  2,
+                  62
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.01634039729833603,
+            "min_laion_aesthetic": 4.750474770863851
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/proxy/cinedance-008887-e0000.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 3.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 2
+            },
+            {
+              "shot": 0,
+              "source_frame": 15
+            },
+            {
+              "shot": 0,
+              "source_frame": 28
+            },
+            {
+              "shot": 0,
+              "source_frame": 41
+            },
+            {
+              "shot": 0,
+              "source_frame": 54
+            },
+            {
+              "shot": 0,
+              "source_frame": 61
+            }
+          ]
+        }
+      }
+    ],
+    "connected": [
+      {
+        "key": "cinedance-008887-w0001",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0001-0004",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0001-0004",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 4,
+          "render_frames": 244,
+          "shots": [
+            {
+              "source_shot_index": 1,
+              "start_frame": 66,
+              "end_frame": 108,
+              "seconds": 1.75,
+              "render_frames": 25,
+              "mean_luma": 116.36333465576172,
+              "min_luma": 115.45387268066406,
+              "max_luma": 117.01268005371094,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.06309985369443893,
+              "laion_aesthetic": 5.267652193705241
+            },
+            {
+              "source_shot_index": 2,
+              "start_frame": 112,
+              "end_frame": 196,
+              "seconds": 3.5,
+              "render_frames": 53,
+              "mean_luma": 51.724185943603516,
+              "min_luma": 46.007144927978516,
+              "max_luma": 53.398956298828125,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.038758985698223114,
+              "laion_aesthetic": 5.308016459147136
+            },
+            {
+              "source_shot_index": 3,
+              "start_frame": 200,
+              "end_frame": 360,
+              "seconds": 6.666666666666667,
+              "render_frames": 105,
+              "mean_luma": 76.2195053100586,
+              "min_luma": 75.47280883789062,
+              "max_luma": 77.21566009521484,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>",
+                "<char2>",
+                "<char3>",
+                "<char4>"
+              ],
+              "dover_technical": -0.058227818459272385,
+              "laion_aesthetic": 5.616573333740234
+            },
+            {
+              "source_shot_index": 4,
+              "start_frame": 364,
+              "end_frame": 458,
+              "seconds": 3.9166666666666665,
+              "render_frames": 61,
+              "mean_luma": 84.98314666748047,
+              "min_luma": 84.53077697753906,
+              "max_luma": 85.61206817626953,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>",
+                "<char3>"
+              ],
+              "dover_technical": -0.09128327667713165,
+              "laion_aesthetic": 4.8699014981587725
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  64,
+                  110
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  64,
+                  110
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  66,
+                  108
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  110,
+                  198
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  110,
+                  198
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  112,
+                  196
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  198,
+                  362
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  198,
+                  362
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  200,
+                  360
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  362,
+                  460
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  362,
+                  460
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  364,
+                  458
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.09128327667713165,
+            "min_laion_aesthetic": 4.8699014981587725
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0001.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 6.0
+            },
+            {
+              "shot": 2,
+              "start": 6.0,
+              "end": 13.0
+            },
+            {
+              "shot": 3,
+              "start": 13.0,
+              "end": 17.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 66
+            },
+            {
+              "shot": 0,
+              "source_frame": 80
+            },
+            {
+              "shot": 0,
+              "source_frame": 93
+            },
+            {
+              "shot": 0,
+              "source_frame": 107
+            },
+            {
+              "shot": 1,
+              "source_frame": 112
+            },
+            {
+              "shot": 1,
+              "source_frame": 125
+            },
+            {
+              "shot": 1,
+              "source_frame": 138
+            },
+            {
+              "shot": 1,
+              "source_frame": 150
+            },
+            {
+              "shot": 1,
+              "source_frame": 163
+            },
+            {
+              "shot": 1,
+              "source_frame": 176
+            },
+            {
+              "shot": 1,
+              "source_frame": 189
+            },
+            {
+              "shot": 1,
+              "source_frame": 195
+            },
+            {
+              "shot": 2,
+              "source_frame": 200
+            },
+            {
+              "shot": 2,
+              "source_frame": 212
+            },
+            {
+              "shot": 2,
+              "source_frame": 224
+            },
+            {
+              "shot": 2,
+              "source_frame": 237
+            },
+            {
+              "shot": 2,
+              "source_frame": 249
+            },
+            {
+              "shot": 2,
+              "source_frame": 261
+            },
+            {
+              "shot": 2,
+              "source_frame": 273
+            },
+            {
+              "shot": 2,
+              "source_frame": 286
+            },
+            {
+              "shot": 2,
+              "source_frame": 298
+            },
+            {
+              "shot": 2,
+              "source_frame": 310
+            },
+            {
+              "shot": 2,
+              "source_frame": 322
+            },
+            {
+              "shot": 2,
+              "source_frame": 335
+            },
+            {
+              "shot": 2,
+              "source_frame": 347
+            },
+            {
+              "shot": 2,
+              "source_frame": 359
+            },
+            {
+              "shot": 3,
+              "source_frame": 364
+            },
+            {
+              "shot": 3,
+              "source_frame": 376
+            },
+            {
+              "shot": 3,
+              "source_frame": 389
+            },
+            {
+              "shot": 3,
+              "source_frame": 401
+            },
+            {
+              "shot": 3,
+              "source_frame": 414
+            },
+            {
+              "shot": 3,
+              "source_frame": 426
+            },
+            {
+              "shot": 3,
+              "source_frame": 438
+            },
+            {
+              "shot": 3,
+              "source_frame": 451
+            },
+            {
+              "shot": 3,
+              "source_frame": 457
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0002",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0005-0008",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0005-0008",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 4,
+          "render_frames": 172,
+          "shots": [
+            {
+              "source_shot_index": 5,
+              "start_frame": 462,
+              "end_frame": 581,
+              "seconds": 4.958333333333333,
+              "render_frames": 77,
+              "mean_luma": 114.68706512451172,
+              "min_luma": 113.01217651367188,
+              "max_luma": 116.14380645751953,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.06153193488717079,
+              "laion_aesthetic": 5.241300582885742
+            },
+            {
+              "source_shot_index": 6,
+              "start_frame": 585,
+              "end_frame": 620,
+              "seconds": 1.4583333333333333,
+              "render_frames": 21,
+              "mean_luma": 61.23939514160156,
+              "min_luma": 60.642181396484375,
+              "max_luma": 61.76769256591797,
+              "scene": "<scene2>",
+              "characters": [
+                "<char4>"
+              ],
+              "dover_technical": -0.030859852209687233,
+              "laion_aesthetic": 5.252426465352376
+            },
+            {
+              "source_shot_index": 7,
+              "start_frame": 624,
+              "end_frame": 667,
+              "seconds": 1.7916666666666667,
+              "render_frames": 29,
+              "mean_luma": 44.29631805419922,
+              "min_luma": 43.878509521484375,
+              "max_luma": 44.90337371826172,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.07110702246427536,
+              "laion_aesthetic": 4.7832895914713545
+            },
+            {
+              "source_shot_index": 8,
+              "start_frame": 671,
+              "end_frame": 738,
+              "seconds": 2.7916666666666665,
+              "render_frames": 45,
+              "mean_luma": 40.007869720458984,
+              "min_luma": 39.81364059448242,
+              "max_luma": 40.1531982421875,
+              "scene": "<scene2>",
+              "characters": [],
+              "dover_technical": -0.0991491824388504,
+              "laion_aesthetic": 5.256160736083984
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  460,
+                  583
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  460,
+                  583
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  462,
+                  581
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  583,
+                  622
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  583,
+                  622
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  585,
+                  620
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  622,
+                  669
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  622,
+                  669
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  624,
+                  667
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  669,
+                  740
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  669,
+                  740
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  671,
+                  738
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.0991491824388504,
+            "min_laion_aesthetic": 4.7832895914713545
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0002.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 5.5
+            },
+            {
+              "shot": 1,
+              "start": 5.5,
+              "end": 7.5
+            },
+            {
+              "shot": 2,
+              "start": 7.5,
+              "end": 10.0
+            },
+            {
+              "shot": 3,
+              "start": 10.0,
+              "end": 13.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 462
+            },
+            {
+              "shot": 0,
+              "source_frame": 474
+            },
+            {
+              "shot": 0,
+              "source_frame": 487
+            },
+            {
+              "shot": 0,
+              "source_frame": 499
+            },
+            {
+              "shot": 0,
+              "source_frame": 512
+            },
+            {
+              "shot": 0,
+              "source_frame": 524
+            },
+            {
+              "shot": 0,
+              "source_frame": 537
+            },
+            {
+              "shot": 0,
+              "source_frame": 549
+            },
+            {
+              "shot": 0,
+              "source_frame": 561
+            },
+            {
+              "shot": 0,
+              "source_frame": 574
+            },
+            {
+              "shot": 0,
+              "source_frame": 580
+            },
+            {
+              "shot": 1,
+              "source_frame": 585
+            },
+            {
+              "shot": 1,
+              "source_frame": 599
+            },
+            {
+              "shot": 1,
+              "source_frame": 612
+            },
+            {
+              "shot": 1,
+              "source_frame": 619
+            },
+            {
+              "shot": 2,
+              "source_frame": 624
+            },
+            {
+              "shot": 2,
+              "source_frame": 636
+            },
+            {
+              "shot": 2,
+              "source_frame": 648
+            },
+            {
+              "shot": 2,
+              "source_frame": 660
+            },
+            {
+              "shot": 2,
+              "source_frame": 666
+            },
+            {
+              "shot": 3,
+              "source_frame": 671
+            },
+            {
+              "shot": 3,
+              "source_frame": 683
+            },
+            {
+              "shot": 3,
+              "source_frame": 695
+            },
+            {
+              "shot": 3,
+              "source_frame": 707
+            },
+            {
+              "shot": 3,
+              "source_frame": 719
+            },
+            {
+              "shot": 3,
+              "source_frame": 731
+            },
+            {
+              "shot": 3,
+              "source_frame": 737
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0003",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0009-0012",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0009-0012",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 4,
+          "render_frames": 148,
+          "shots": [
+            {
+              "source_shot_index": 9,
+              "start_frame": 742,
+              "end_frame": 773,
+              "seconds": 1.2916666666666667,
+              "render_frames": 21,
+              "mean_luma": 109.32991027832031,
+              "min_luma": 108.59952545166016,
+              "max_luma": 111.1464614868164,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.03702959790825844,
+              "laion_aesthetic": 5.28533395131429
+            },
+            {
+              "source_shot_index": 10,
+              "start_frame": 777,
+              "end_frame": 838,
+              "seconds": 2.5416666666666665,
+              "render_frames": 41,
+              "mean_luma": 49.6552734375,
+              "min_luma": 49.171504974365234,
+              "max_luma": 50.03183364868164,
+              "scene": "<scene2>",
+              "characters": [
+                "<char3>"
+              ],
+              "dover_technical": -0.022707339376211166,
+              "laion_aesthetic": 5.766981442769368
+            },
+            {
+              "source_shot_index": 11,
+              "start_frame": 842,
+              "end_frame": 945,
+              "seconds": 4.291666666666667,
+              "render_frames": 69,
+              "mean_luma": 55.77028274536133,
+              "min_luma": 55.510650634765625,
+              "max_luma": 55.9268913269043,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.018556438386440277,
+              "laion_aesthetic": 5.657243728637695
+            },
+            {
+              "source_shot_index": 12,
+              "start_frame": 949,
+              "end_frame": 977,
+              "seconds": 1.1666666666666667,
+              "render_frames": 17,
+              "mean_luma": 51.136924743652344,
+              "min_luma": 50.77707290649414,
+              "max_luma": 51.329769134521484,
+              "scene": "<scene2>",
+              "characters": [
+                "<char3>"
+              ],
+              "dover_technical": -0.028700899332761765,
+              "laion_aesthetic": 5.47067403793335
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  740,
+                  775
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  740,
+                  775
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  742,
+                  773
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  775,
+                  840
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  775,
+                  840
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  777,
+                  838
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  840,
+                  947
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  840,
+                  947
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  842,
+                  945
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  947,
+                  979
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  947,
+                  979
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  949,
+                  977
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.03702959790825844,
+            "min_laion_aesthetic": 5.28533395131429
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0003.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 5.0
+            },
+            {
+              "shot": 2,
+              "start": 5.0,
+              "end": 10.0
+            },
+            {
+              "shot": 3,
+              "start": 10.0,
+              "end": 11.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 742
+            },
+            {
+              "shot": 0,
+              "source_frame": 754
+            },
+            {
+              "shot": 0,
+              "source_frame": 766
+            },
+            {
+              "shot": 0,
+              "source_frame": 772
+            },
+            {
+              "shot": 1,
+              "source_frame": 777
+            },
+            {
+              "shot": 1,
+              "source_frame": 789
+            },
+            {
+              "shot": 1,
+              "source_frame": 801
+            },
+            {
+              "shot": 1,
+              "source_frame": 813
+            },
+            {
+              "shot": 1,
+              "source_frame": 825
+            },
+            {
+              "shot": 1,
+              "source_frame": 837
+            },
+            {
+              "shot": 2,
+              "source_frame": 842
+            },
+            {
+              "shot": 2,
+              "source_frame": 854
+            },
+            {
+              "shot": 2,
+              "source_frame": 866
+            },
+            {
+              "shot": 2,
+              "source_frame": 878
+            },
+            {
+              "shot": 2,
+              "source_frame": 890
+            },
+            {
+              "shot": 2,
+              "source_frame": 902
+            },
+            {
+              "shot": 2,
+              "source_frame": 914
+            },
+            {
+              "shot": 2,
+              "source_frame": 926
+            },
+            {
+              "shot": 2,
+              "source_frame": 938
+            },
+            {
+              "shot": 2,
+              "source_frame": 944
+            },
+            {
+              "shot": 3,
+              "source_frame": 949
+            },
+            {
+              "shot": 3,
+              "source_frame": 963
+            },
+            {
+              "shot": 3,
+              "source_frame": 976
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0004",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0013-0017",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0013-0017",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 5,
+          "render_frames": 201,
+          "shots": [
+            {
+              "source_shot_index": 13,
+              "start_frame": 981,
+              "end_frame": 1085,
+              "seconds": 4.333333333333333,
+              "render_frames": 69,
+              "mean_luma": 46.05204772949219,
+              "min_luma": 43.90914535522461,
+              "max_luma": 46.47627258300781,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.032415855675935745,
+              "laion_aesthetic": 5.329063256581624
+            },
+            {
+              "source_shot_index": 14,
+              "start_frame": 1089,
+              "end_frame": 1188,
+              "seconds": 4.125,
+              "render_frames": 65,
+              "mean_luma": 84.21382141113281,
+              "min_luma": 82.21353912353516,
+              "max_luma": 85.00313568115234,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>",
+                "<char3>"
+              ],
+              "dover_technical": -0.10182194411754608,
+              "laion_aesthetic": 4.80692720413208
+            },
+            {
+              "source_shot_index": 15,
+              "start_frame": 1192,
+              "end_frame": 1218,
+              "seconds": 1.0833333333333333,
+              "render_frames": 17,
+              "mean_luma": 48.07194900512695,
+              "min_luma": 47.938072204589844,
+              "max_luma": 48.15929412841797,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.025067295879125595,
+              "laion_aesthetic": 5.415099461873372
+            },
+            {
+              "source_shot_index": 16,
+              "start_frame": 1222,
+              "end_frame": 1256,
+              "seconds": 1.4166666666666667,
+              "render_frames": 21,
+              "mean_luma": 104.93878173828125,
+              "min_luma": 103.27952575683594,
+              "max_luma": 106.42628479003906,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.02039848454296589,
+              "laion_aesthetic": 5.413752714792888
+            },
+            {
+              "source_shot_index": 17,
+              "start_frame": 1260,
+              "end_frame": 1305,
+              "seconds": 1.875,
+              "render_frames": 29,
+              "mean_luma": 47.129669189453125,
+              "min_luma": 46.583248138427734,
+              "max_luma": 47.65028381347656,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.02056991681456566,
+              "laion_aesthetic": 5.493097464243571
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  979,
+                  1087
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  979,
+                  1087
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  981,
+                  1085
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1087,
+                  1190
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1087,
+                  1190
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1089,
+                  1188
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1190,
+                  1220
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1190,
+                  1220
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1192,
+                  1218
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1220,
+                  1258
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1220,
+                  1258
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1222,
+                  1256
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1258,
+                  1307
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1258,
+                  1307
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1260,
+                  1305
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.10182194411754608,
+            "min_laion_aesthetic": 4.80692720413208
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0004.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 5.0
+            },
+            {
+              "shot": 1,
+              "start": 5.0,
+              "end": 9.5
+            },
+            {
+              "shot": 2,
+              "start": 9.5,
+              "end": 11.0
+            },
+            {
+              "shot": 3,
+              "start": 11.0,
+              "end": 13.0
+            },
+            {
+              "shot": 4,
+              "start": 13.0,
+              "end": 15.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 981
+            },
+            {
+              "shot": 0,
+              "source_frame": 993
+            },
+            {
+              "shot": 0,
+              "source_frame": 1005
+            },
+            {
+              "shot": 0,
+              "source_frame": 1017
+            },
+            {
+              "shot": 0,
+              "source_frame": 1029
+            },
+            {
+              "shot": 0,
+              "source_frame": 1042
+            },
+            {
+              "shot": 0,
+              "source_frame": 1054
+            },
+            {
+              "shot": 0,
+              "source_frame": 1066
+            },
+            {
+              "shot": 0,
+              "source_frame": 1078
+            },
+            {
+              "shot": 0,
+              "source_frame": 1084
+            },
+            {
+              "shot": 1,
+              "source_frame": 1089
+            },
+            {
+              "shot": 1,
+              "source_frame": 1101
+            },
+            {
+              "shot": 1,
+              "source_frame": 1113
+            },
+            {
+              "shot": 1,
+              "source_frame": 1126
+            },
+            {
+              "shot": 1,
+              "source_frame": 1138
+            },
+            {
+              "shot": 1,
+              "source_frame": 1150
+            },
+            {
+              "shot": 1,
+              "source_frame": 1163
+            },
+            {
+              "shot": 1,
+              "source_frame": 1175
+            },
+            {
+              "shot": 1,
+              "source_frame": 1187
+            },
+            {
+              "shot": 2,
+              "source_frame": 1192
+            },
+            {
+              "shot": 2,
+              "source_frame": 1204
+            },
+            {
+              "shot": 2,
+              "source_frame": 1217
+            },
+            {
+              "shot": 3,
+              "source_frame": 1222
+            },
+            {
+              "shot": 3,
+              "source_frame": 1235
+            },
+            {
+              "shot": 3,
+              "source_frame": 1248
+            },
+            {
+              "shot": 3,
+              "source_frame": 1255
+            },
+            {
+              "shot": 4,
+              "source_frame": 1260
+            },
+            {
+              "shot": 4,
+              "source_frame": 1273
+            },
+            {
+              "shot": 4,
+              "source_frame": 1285
+            },
+            {
+              "shot": 4,
+              "source_frame": 1298
+            },
+            {
+              "shot": 4,
+              "source_frame": 1304
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0005",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0018-0020",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0018-0020",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 3,
+          "render_frames": 39,
+          "shots": [
+            {
+              "source_shot_index": 18,
+              "start_frame": 1309,
+              "end_frame": 1329,
+              "seconds": 0.8333333333333334,
+              "render_frames": 13,
+              "mean_luma": 114.8261489868164,
+              "min_luma": 114.66757202148438,
+              "max_luma": 114.94285583496094,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.051697030663490295,
+              "laion_aesthetic": 5.526577790578206
+            },
+            {
+              "source_shot_index": 19,
+              "start_frame": 1333,
+              "end_frame": 1354,
+              "seconds": 0.875,
+              "render_frames": 13,
+              "mean_luma": 35.368980407714844,
+              "min_luma": 35.13587951660156,
+              "max_luma": 35.651634216308594,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.017902344465255737,
+              "laion_aesthetic": 5.593304793039958
+            },
+            {
+              "source_shot_index": 20,
+              "start_frame": 1358,
+              "end_frame": 1378,
+              "seconds": 0.8333333333333334,
+              "render_frames": 13,
+              "mean_luma": 114.900634765625,
+              "min_luma": 114.65766906738281,
+              "max_luma": 115.0208969116211,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.0535837821662426,
+              "laion_aesthetic": 5.600142637888591
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1307,
+                  1331
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1307,
+                  1331
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1309,
+                  1329
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1331,
+                  1356
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1331,
+                  1356
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1333,
+                  1354
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1356,
+                  1380
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1356,
+                  1380
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1358,
+                  1378
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.0535837821662426,
+            "min_laion_aesthetic": 5.526577790578206
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0005.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 1.5
+            },
+            {
+              "shot": 1,
+              "start": 1.5,
+              "end": 3.0
+            },
+            {
+              "shot": 2,
+              "start": 3.0,
+              "end": 4.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1309
+            },
+            {
+              "shot": 0,
+              "source_frame": 1322
+            },
+            {
+              "shot": 0,
+              "source_frame": 1328
+            },
+            {
+              "shot": 1,
+              "source_frame": 1333
+            },
+            {
+              "shot": 1,
+              "source_frame": 1346
+            },
+            {
+              "shot": 1,
+              "source_frame": 1353
+            },
+            {
+              "shot": 2,
+              "source_frame": 1358
+            },
+            {
+              "shot": 2,
+              "source_frame": 1371
+            },
+            {
+              "shot": 2,
+              "source_frame": 1377
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0006",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0021-0023",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0021-0023",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 3,
+          "render_frames": 103,
+          "shots": [
+            {
+              "source_shot_index": 21,
+              "start_frame": 1382,
+              "end_frame": 1432,
+              "seconds": 2.0833333333333335,
+              "render_frames": 33,
+              "mean_luma": 60.68889617919922,
+              "min_luma": 59.935089111328125,
+              "max_luma": 61.04069519042969,
+              "scene": "<scene2>",
+              "characters": [
+                "<char4>"
+              ],
+              "dover_technical": -0.04700639843940735,
+              "laion_aesthetic": 5.379957516988118
+            },
+            {
+              "source_shot_index": 22,
+              "start_frame": 1436,
+              "end_frame": 1499,
+              "seconds": 2.625,
+              "render_frames": 41,
+              "mean_luma": 109.01180267333984,
+              "min_luma": 107.09832763671875,
+              "max_luma": 110.60202026367188,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.028880242258310318,
+              "laion_aesthetic": 5.27159055074056
+            },
+            {
+              "source_shot_index": 23,
+              "start_frame": 1503,
+              "end_frame": 1550,
+              "seconds": 1.9583333333333333,
+              "render_frames": 29,
+              "mean_luma": 80.00556182861328,
+              "min_luma": 79.87283325195312,
+              "max_luma": 80.17347717285156,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>",
+                "<char2>",
+                "<char3>",
+                "<char4>"
+              ],
+              "dover_technical": -0.05916161462664604,
+              "laion_aesthetic": 5.661554495493571
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1380,
+                  1434
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1380,
+                  1434
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1382,
+                  1432
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1434,
+                  1501
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1434,
+                  1501
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1436,
+                  1499
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1501,
+                  1552
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1501,
+                  1552
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1503,
+                  1550
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.05916161462664604,
+            "min_laion_aesthetic": 5.27159055074056
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0006.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.5
+            },
+            {
+              "shot": 1,
+              "start": 2.5,
+              "end": 5.5
+            },
+            {
+              "shot": 2,
+              "start": 5.5,
+              "end": 8.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1382
+            },
+            {
+              "shot": 0,
+              "source_frame": 1394
+            },
+            {
+              "shot": 0,
+              "source_frame": 1406
+            },
+            {
+              "shot": 0,
+              "source_frame": 1419
+            },
+            {
+              "shot": 0,
+              "source_frame": 1431
+            },
+            {
+              "shot": 1,
+              "source_frame": 1436
+            },
+            {
+              "shot": 1,
+              "source_frame": 1448
+            },
+            {
+              "shot": 1,
+              "source_frame": 1461
+            },
+            {
+              "shot": 1,
+              "source_frame": 1473
+            },
+            {
+              "shot": 1,
+              "source_frame": 1486
+            },
+            {
+              "shot": 1,
+              "source_frame": 1498
+            },
+            {
+              "shot": 2,
+              "source_frame": 1503
+            },
+            {
+              "shot": 2,
+              "source_frame": 1516
+            },
+            {
+              "shot": 2,
+              "source_frame": 1529
+            },
+            {
+              "shot": 2,
+              "source_frame": 1542
+            },
+            {
+              "shot": 2,
+              "source_frame": 1549
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0007",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0024-0027",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0024-0027",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 4,
+          "render_frames": 64,
+          "shots": [
+            {
+              "source_shot_index": 24,
+              "start_frame": 1554,
+              "end_frame": 1589,
+              "seconds": 1.4583333333333333,
+              "render_frames": 21,
+              "mean_luma": 48.41966247558594,
+              "min_luma": 48.17000961303711,
+              "max_luma": 48.540992736816406,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.02198573388159275,
+              "laion_aesthetic": 5.509458700815837
+            },
+            {
+              "source_shot_index": 25,
+              "start_frame": 1593,
+              "end_frame": 1616,
+              "seconds": 0.9583333333333334,
+              "render_frames": 13,
+              "mean_luma": 49.727439880371094,
+              "min_luma": 49.6121826171875,
+              "max_luma": 49.92094802856445,
+              "scene": "<scene2>",
+              "characters": [
+                "<char3>"
+              ],
+              "dover_technical": -0.032000601291656494,
+              "laion_aesthetic": 5.642376899719238
+            },
+            {
+              "source_shot_index": 26,
+              "start_frame": 1620,
+              "end_frame": 1642,
+              "seconds": 0.9166666666666666,
+              "render_frames": 13,
+              "mean_luma": 112.75430297851562,
+              "min_luma": 112.31314086914062,
+              "max_luma": 113.00916290283203,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.052869535982608795,
+              "laion_aesthetic": 5.720458189646403
+            },
+            {
+              "source_shot_index": 27,
+              "start_frame": 1646,
+              "end_frame": 1673,
+              "seconds": 1.125,
+              "render_frames": 17,
+              "mean_luma": 48.542789459228516,
+              "min_luma": 48.334083557128906,
+              "max_luma": 48.707435607910156,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.028078483417630196,
+              "laion_aesthetic": 5.508886178334554
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1552,
+                  1591
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1552,
+                  1591
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1554,
+                  1589
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1591,
+                  1618
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1591,
+                  1618
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1593,
+                  1616
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1618,
+                  1644
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1618,
+                  1644
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1620,
+                  1642
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1644,
+                  1675
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1644,
+                  1675
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1646,
+                  1673
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.052869535982608795,
+            "min_laion_aesthetic": 5.508886178334554
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0007.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 3.5
+            },
+            {
+              "shot": 2,
+              "start": 3.5,
+              "end": 5.0
+            },
+            {
+              "shot": 3,
+              "start": 5.0,
+              "end": 6.5
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1554
+            },
+            {
+              "shot": 0,
+              "source_frame": 1568
+            },
+            {
+              "shot": 0,
+              "source_frame": 1581
+            },
+            {
+              "shot": 0,
+              "source_frame": 1588
+            },
+            {
+              "shot": 1,
+              "source_frame": 1593
+            },
+            {
+              "shot": 1,
+              "source_frame": 1608
+            },
+            {
+              "shot": 1,
+              "source_frame": 1615
+            },
+            {
+              "shot": 2,
+              "source_frame": 1620
+            },
+            {
+              "shot": 2,
+              "source_frame": 1634
+            },
+            {
+              "shot": 2,
+              "source_frame": 1641
+            },
+            {
+              "shot": 3,
+              "source_frame": 1646
+            },
+            {
+              "shot": 3,
+              "source_frame": 1659
+            },
+            {
+              "shot": 3,
+              "source_frame": 1672
+            }
+          ]
+        }
+      },
+      {
+        "key": "cinedance-008887-w0008",
+        "case_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0028-0030",
+        "family": "cinedance",
+        "source": "cinedance",
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "source_pipeline_v1:cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001:train:0028-0030",
+          "kind": "train",
+          "scene_id": "cinedance:0001a95f-b7bf-8f43-8216-c3da2c5f06ed:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_count": 3,
+          "render_frames": 51,
+          "shots": [
+            {
+              "source_shot_index": 28,
+              "start_frame": 1677,
+              "end_frame": 1708,
+              "seconds": 1.2916666666666667,
+              "render_frames": 21,
+              "mean_luma": 60.866798400878906,
+              "min_luma": 60.069419860839844,
+              "max_luma": 61.36707305908203,
+              "scene": "<scene2>",
+              "characters": [
+                "<char4>"
+              ],
+              "dover_technical": -0.05028219148516655,
+              "laion_aesthetic": 5.200888792673747
+            },
+            {
+              "source_shot_index": 29,
+              "start_frame": 1712,
+              "end_frame": 1735,
+              "seconds": 0.9583333333333334,
+              "render_frames": 13,
+              "mean_luma": 112.86103820800781,
+              "min_luma": 112.39532470703125,
+              "max_luma": 113.08878326416016,
+              "scene": "<scene2>",
+              "characters": [
+                "<char1>"
+              ],
+              "dover_technical": -0.05697260797023773,
+              "laion_aesthetic": 5.743767102559407
+            },
+            {
+              "source_shot_index": 30,
+              "start_frame": 1739,
+              "end_frame": 1768,
+              "seconds": 1.2083333333333333,
+              "render_frames": 17,
+              "mean_luma": 37.05792236328125,
+              "min_luma": 36.91011047363281,
+              "max_luma": 37.15286636352539,
+              "scene": "<scene2>",
+              "characters": [
+                "<char2>"
+              ],
+              "dover_technical": -0.025002170354127884,
+              "laion_aesthetic": 5.826788584391276
+            }
+          ],
+          "cut_version": "source_pipeline_v1",
+          "width": 1918,
+          "height": 734,
+          "video_frame_count": 1770,
+          "active_box": [
+            0,
+            0,
+            1918,
+            734
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1675,
+                  1710
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1675,
+                  1710
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1677,
+                  1708
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1710,
+                  1737
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1710,
+                  1737
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1712,
+                  1735
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              },
+              {
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001a95f-b7bf-8f43-8216-c3da2c5f06ed.mp4",
+                "segment": [
+                  1737,
+                  1770
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_revised_segment": [
+                  1737,
+                  1770
+                ],
+                "boundary_guard_frames": 2,
+                "revised_segment": [
+                  1739,
+                  1768
+                ],
+                "boundary_cuts": [],
+                "status": "kept",
+                "reasons": []
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.05697260797023773,
+            "min_laion_aesthetic": 5.200888792673747
+          }
+        },
+        "proxy": {
+          "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-008887/window-proxy/cinedance-008887-w0008.mp4",
+          "fps": 2,
+          "proxy_width": 832,
+          "proxy_height": 480,
+          "crop_box": [
+            323,
+            0,
+            1595,
+            734
+          ],
+          "shot_timestamps": [
+            {
+              "shot": 0,
+              "start": 0.0,
+              "end": 2.0
+            },
+            {
+              "shot": 1,
+              "start": 2.0,
+              "end": 3.5
+            },
+            {
+              "shot": 2,
+              "start": 3.5,
+              "end": 5.0
+            }
+          ],
+          "proxy_to_source_frames": [
+            {
+              "shot": 0,
+              "source_frame": 1677
+            },
+            {
+              "shot": 0,
+              "source_frame": 1689
+            },
+            {
+              "shot": 0,
+              "source_frame": 1701
+            },
+            {
+              "shot": 0,
+              "source_frame": 1707
+            },
+            {
+              "shot": 1,
+              "source_frame": 1712
+            },
+            {
+              "shot": 1,
+              "source_frame": 1727
+            },
+            {
+              "shot": 1,
+              "source_frame": 1734
+            },
+            {
+              "shot": 2,
+              "source_frame": 1739
+            },
+            {
+              "shot": 2,
+              "source_frame": 1753
+            },
+            {
+              "shot": 2,
+              "source_frame": 1767
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

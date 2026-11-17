@@ -1,0 +1,204 @@
+{
+  "case_id": "ci_vid:train:000022425",
+  "pool_index": 9989,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "animal",
+        "appearance": "brown cartoon dog with a large black nose and white eyes"
+      },
+      {
+        "subject_id": "Subject 2",
+        "kind": "object",
+        "appearance": "small cake with red topping on a blue plate"
+      },
+      {
+        "subject_id": "Subject 3",
+        "kind": "animal",
+        "appearance": "white unicorn with green mane and tail"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "粉色放射状背景",
+        "anchors": []
+      },
+      {
+        "location_id": "Location 2",
+        "appearance": "粉色背景",
+        "anchors": []
+      },
+      {
+        "location_id": "Location 3",
+        "appearance": "粉色天空与彩虹",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "eyes wide open, mouth open, longing expression",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "object_condition",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A cartoon horse dressed as a waiter is seen holding a tray with a piece of cake on it. The horse has a large, wide grin that stretches nearly across its entire face, with its eyes bulging humorously. Its long neck extends as it uses a long, flexible pink tongue to hold the tray, showing off a skillful balance. The cake on the tray is vibrant, with layers of yellow and green topped with bright pink frosting. The horse is depicted in an animated style, characterized by exaggerated features and expressive eyes, typical of humorous cartoons. This character appears eager and excited, with its cartoonish expression suggesting a lively situation. The use of bright colors and bold outlines adds to the whimsical and cheerful feel of the scene.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 2"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 17,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A stylized animated character resembling an anthropomorphic animal is depicted with exaggerated and humorous features. The character has a large snout, spiky mane, and vividly pink, tear-filled eyes that are wide open, expressing an intense emotion. The tears stream down its cheeks, suggesting a strong feeling. The animation likely portrays a comedic scenario, where the characters exaggerated facial expressions are the focal point, despite the brevity of the content capture. The pastel-colored environment and whimsical character design align with animation styles typically seen in children's cartoons or comedic animated shorts.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 3",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 3"
+        ],
+        "frame_count": 69,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A whimsical animated scene features a dynamic character, likely an anthropomorphic dog, joyfully riding on the back of a unicorn. The unicorn has a pastel yellow body with large bright eyes, and a vibrant green mane and tail, complemented by a spiraling yellow horn. The dog's expressive face displays wide eyes and a broad smile, with its mouth open in delight. Its arms are thrown up, emphasizing the excitement of the ride. Together, they gallop across a vivid rainbow that arches across the lower part of the setting. Accompanying them, several small, animated purple dolphins leap playfully through the air, adding an element of magical camaraderie to the scene. These dolphins occasionally make contact with the rainbow, causing splashes of sparkle in the vivid atmosphere. This playful interaction unfolds in an energetic and cheerful manner throughout the short duration of the scene.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 3"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "e1",
+        "shot_id": "s02",
+        "on_screen": "unknown",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "eyes wide open, mouth open, longing expression",
+          "scope": "scene",
+          "shot_span": [
+            1,
+            1
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "eyes closed, crying, moved expression",
+          "scope": "scene",
+          "shot_span": [
+            1,
+            2
+          ],
+          "evidence": "observed"
+        }
+      },
+      {
+        "event_id": "e2",
+        "shot_id": "s03",
+        "on_screen": "unknown",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "standing still, crying",
+          "scope": "scene",
+          "shot_span": [
+            2,
+            2
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "riding on a unicorn's back with arms spread out and an excited expression",
+          "scope": "scene",
+          "shot_span": [
+            2,
+            2
+          ],
+          "evidence": "observed"
+        }
+      }
+    ]
+  },
+  "observed_issues": [
+    {
+      "rule": 5,
+      "path": "Subject 1",
+      "message": "state longer than 8 words"
+    },
+    {
+      "rule": 2,
+      "path": "e2",
+      "message": "prior 'standing still, crying' != opening value 'eyes closed, crying, moved expression'"
+    }
+  ],
+  "compiled_segments": null
+}

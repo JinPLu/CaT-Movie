@@ -1,0 +1,229 @@
+{
+ "provenance": "主服务器 renderer-floor-v8-20261008/boundary-revision-20261009/run2500（2026-10-09，decord 256x144→INTER_AREA 96x54，TransNetV2 CPU，阈值 0.5）；路径相对 OoVMetric/resource/。",
+ "windows": {
+  "floor-0000": {
+   "note": "Cine250K：镜尾各混入下一镜 1 帧（50407、50474），旧逻辑固定丢镜尾 1 帧恰好覆盖；第 3 镜无切点。",
+   "case_id": "full:cine250k:cine250k:304608563_71",
+   "shots": [
+    {
+     "source_video_path": "cine250k/raw_videos/304608563.mp4",
+     "source_shot_segment": [
+      50299,
+      50408
+     ],
+     "source_fps": 29.97002997002997,
+     "transnet_cuts": [
+      50407
+     ],
+     "source_num_frames": 89460
+    },
+    {
+     "source_video_path": "cine250k/raw_videos/304608563.mp4",
+     "source_shot_segment": [
+      50408,
+      50475
+     ],
+     "source_fps": 29.97002997002997,
+     "transnet_cuts": [
+      50474
+     ],
+     "source_num_frames": 89460
+    },
+    {
+     "source_video_path": "cine250k/raw_videos/304608563.mp4",
+     "source_shot_segment": [
+      50475,
+      50572
+     ],
+     "source_fps": 29.97002997002997,
+     "transnet_cuts": [],
+     "source_num_frames": 89460
+    }
+   ]
+  },
+  "floor-0006": {
+   "note": "CI-VID：三镜开头都带前一镜残帧（4、1、12 帧）。",
+   "case_id": "ci_vid:train:000012281",
+   "shots": [
+    {
+     "source_video_path": "ci_vid/videos/chunk_906/1f47a0d2589fa190efd863b4dabbeb1f/0/0.mp4",
+     "source_shot_segment": [
+      0,
+      71
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [
+      4
+     ],
+     "source_num_frames": 71
+    },
+    {
+     "source_video_path": "ci_vid/videos/chunk_906/1f47a0d2589fa190efd863b4dabbeb1f/0/1.mp4",
+     "source_shot_segment": [
+      0,
+      60
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [
+      1
+     ],
+     "source_num_frames": 60
+    },
+    {
+     "source_video_path": "ci_vid/videos/chunk_906/1f47a0d2589fa190efd863b4dabbeb1f/0/2.mp4",
+     "source_shot_segment": [
+      0,
+      52
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [
+      12
+     ],
+     "source_num_frames": 52
+    }
+   ]
+  },
+  "floor-0022": {
+   "note": "CI-VID：手遮挡镜头。content_diff（阈值 27）在 46、24/50/146/174/202 报切点属误报，TransNetV2 无切点。",
+   "case_id": "ci_vid:train:000130666",
+   "shots": [
+    {
+     "source_video_path": "ci_vid/videos/chunk_77/db3b4d6921145e2df9a9053874e58e14/1/0.mp4",
+     "source_shot_segment": [
+      0,
+      193
+     ],
+     "source_fps": 50.0,
+     "transnet_cuts": [],
+     "source_num_frames": 193
+    },
+    {
+     "source_video_path": "ci_vid/videos/chunk_77/db3b4d6921145e2df9a9053874e58e14/1/1.mp4",
+     "source_shot_segment": [
+      0,
+      228
+     ],
+     "source_fps": 50.0,
+     "transnet_cuts": [],
+     "source_num_frames": 228
+    }
+   ]
+  },
+  "floor-0028": {
+   "note": "CI-VID：s1 第 0 帧是原片上一镜（两人站在空地），第 1 帧起才是草垛镜。",
+   "case_id": "ci_vid:train:000221375",
+   "shots": [
+    {
+     "source_video_path": "ci_vid/videos/chunk_783/2bb92822889dd8409aa4a0467b96c529/0/0.mp4",
+     "source_shot_segment": [
+      0,
+      49
+     ],
+     "source_fps": 23.976,
+     "transnet_cuts": [],
+     "source_num_frames": 49
+    },
+    {
+     "source_video_path": "ci_vid/videos/chunk_783/2bb92822889dd8409aa4a0467b96c529/0/1.mp4",
+     "source_shot_segment": [
+      0,
+      85
+     ],
+     "source_fps": 23.976,
+     "transnet_cuts": [
+      1
+     ],
+     "source_num_frames": 85
+    }
+   ]
+  },
+  "floor-0055": {
+   "note": "CI-VID：原当作干净对照；10-09 看帧发现 s0 第 69–72 帧是叠化转场（两镜画面重叠），TransNetV2 在 71 报切点，content_diff 漏。",
+   "case_id": "ci_vid:train:000292622",
+   "shots": [
+    {
+     "source_video_path": "ci_vid/videos/chunk_93/af9dea71a4f15650c30e7e73de943720/1/0.mp4",
+     "source_shot_segment": [
+      0,
+      141
+     ],
+     "source_fps": 29.97,
+     "transnet_cuts": [
+      71
+     ],
+     "source_num_frames": 141
+    },
+    {
+     "source_video_path": "ci_vid/videos/chunk_93/af9dea71a4f15650c30e7e73de943720/1/1.mp4",
+     "source_shot_segment": [
+      0,
+      300
+     ],
+     "source_fps": 29.97,
+     "transnet_cuts": [],
+     "source_num_frames": 300
+    },
+    {
+     "source_video_path": "ci_vid/videos/chunk_93/af9dea71a4f15650c30e7e73de943720/1/2.mp4",
+     "source_shot_segment": [
+      0,
+      150
+     ],
+     "source_fps": 29.97,
+     "transnet_cuts": [],
+     "source_num_frames": 150
+    }
+   ]
+  },
+  "floor-0062": {
+   "note": "Cine250K：s0、s1 镜尾各混入下一镜 2 帧（6422、6494）。",
+   "case_id": "full:cine250k:cine250k:24714838_72",
+   "shots": [
+    {
+     "source_video_path": "cine250k/raw_videos/24714838.mp4",
+     "source_shot_segment": [
+      6349,
+      6424
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [
+      6422
+     ],
+     "source_num_frames": 9278
+    },
+    {
+     "source_video_path": "cine250k/raw_videos/24714838.mp4",
+     "source_shot_segment": [
+      6424,
+      6496
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [
+      6494
+     ],
+     "source_num_frames": 9278
+    },
+    {
+     "source_video_path": "cine250k/raw_videos/24714838.mp4",
+     "source_shot_segment": [
+      6496,
+      6549
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [],
+     "source_num_frames": 9278
+    },
+    {
+     "source_video_path": "cine250k/raw_videos/24714838.mp4",
+     "source_shot_segment": [
+      6549,
+      6633
+     ],
+     "source_fps": 25.0,
+     "transnet_cuts": [],
+     "source_num_frames": 9278
+    }
+   ]
+  }
+ }
+}

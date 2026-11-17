@@ -1,0 +1,158 @@
+schema_version = 1
+
+# `fork_commit == base_commit` means Storyboard carries no separate upstream
+# fork repository. Local divergence is the checked, rebuildable patchset named
+# by the corresponding import records.
+
+# The Wan2.1 execution surface (DiffSynth runtime, infer/train entries and the
+# captioned-video helper) was retired with the Wan2.1 arm. What remains derived
+# from MultiShotMaster is the multi-shot dataset adapter.
+[[upstreams]]
+kind = "fork"
+name = "multishotmaster-dataset"
+url = "https://github.com/KlingAIResearch/MultiShotMaster.git"
+base_commit = "1df812dda262639e4a3ca6e4a1da9000b0a8e124"
+fork_commit = "1df812dda262639e4a3ca6e4a1da9000b0a8e124"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE.txt"
+license_path = "third_party/licenses/multishotmaster-LICENSE"
+license_sha256 = "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+checkout_path = "MultiShotMaster"
+
+[[upstreams.imports]]
+mode = "normalized-diff"
+upstream_path = "diffsynth/core/data/unified_dataset.py"
+local_path = "src/mspc/data/multishot.py"
+expected_sha256 = "9ca58c53df7fed84003447bbb02842fb1b9a47c5c6cfa2c4291bf14cf4f6cef8"
+patch_path = "third_party/patches/multishotmaster-dataset-to-storyboard.patch"
+patch_sha256 = "73af2d6642ae5bb8f3db5c2635bf86594d27f5c444472c2777d958bad0f5d7a9"
+
+[[upstreams]]
+kind = "fork"
+name = "wan22-official-runtime"
+url = "https://github.com/Wan-Video/Wan2.2.git"
+base_commit = "2677beaaf508dc2251dcf5056b0af1ef007b7623"
+fork_commit = "2677beaaf508dc2251dcf5056b0af1ef007b7623"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE.txt"
+license_path = "third_party/licenses/Wan2.2-Apache-2.0.txt"
+license_sha256 = "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+checkout_path = "Wan2.2"
+
+[[upstreams.imports]]
+mode = "exact-copy"
+upstream_path = "wan"
+local_path = "train/wan22_5b/official/wan"
+materialize_path = "wan22/official/wan"
+expected_sha256 = "d790fc31c82666d554aca754e469497964428866032a520bdec9eff96752ada7"
+
+[[upstreams.imports]]
+mode = "normalized-diff"
+upstream_path = "generate.py"
+local_path = "train/wan22_5b/official/generate.py"
+materialize_path = "wan22/official/generate.py"
+expected_sha256 = "81b48f2c151ad2f025e72a5c695fad11e346ae933b2278423af2bdb2ebdd78e7"
+patch_path = "third_party/patches/wan22-generate-line-endings.patch"
+patch_sha256 = "445f89e2db096fb86e9f3cf73099141354c2bdf87cdcb8016ff049c036baddea"
+
+# 原生数值验收的只读官方参照，与上面冻结的baseline runtime不是同一revision。
+# 不替换2677...的已发布baseline，不向训练消费者复制另一套Wan实现。
+[[upstreams]]
+kind = "dependency"
+name = "wan22-official-numerical-reference"
+url = "https://github.com/Wan-Video/Wan2.2.git"
+base_commit = "1ea34ff48f87168174e12956e200b1d908b1c5ff"
+fork_commit = "1ea34ff48f87168174e12956e200b1d908b1c5ff"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE.txt"
+license_path = "third_party/licenses/Wan2.2-Apache-2.0.txt"
+license_sha256 = "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+checkout_path = "Wan2.2-numerical-reference"
+
+# Provenance only. `third_party/wan22_runtime/diffsynth/` is maintained in this
+# repository; it is no longer materialized from a patch. `kind = "dependency"`
+# is the existing schema slot for an entry with no import/materialize boundary
+# (same as bernini / veomni).
+[[upstreams]]
+kind = "dependency"
+name = "diffsynth-studio-wan22-multishot-runtime"
+url = "https://github.com/modelscope/DiffSynth-Studio.git"
+base_commit = "6477e11e4a81a5521d0f24972bcabf80838f32da"
+fork_commit = "6477e11e4a81a5521d0f24972bcabf80838f32da"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE"
+license_path = "third_party/licenses/DiffSynth-Studio-Apache-2.0.txt"
+license_sha256 = "d43b96112d60d83595395649e61c6bc215f568052a979320489556c6c1262eb1"
+checkout_path = "DiffSynth-Studio"
+
+[[upstreams]]
+kind = "dependency"
+name = "bernini"
+url = "https://github.com/bytedance/Bernini.git"
+base_commit = "82d573e9a553dccb1405dde4cb0f26466f9df6c5"
+fork_commit = "82d573e9a553dccb1405dde4cb0f26466f9df6c5"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE"
+license_path = "third_party/licenses/bernini-LICENSE"
+license_sha256 = "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+checkout_path = "Bernini"
+
+# Torch 2.8/Transformers 4.57 move helpers out of Bernini's original import
+# surface. The materialized runtime also hands the explicit tested PyTorch
+# FlexAttention backward-kernel options to SM120; it preserves FA2 selection
+# and the complete plan-slot visibility mask.
+[[upstreams]]
+kind = "fork"
+name = "bernini-sm120-fa283-flex-runtime"
+url = "https://github.com/bytedance/Bernini.git"
+base_commit = "82d573e9a553dccb1405dde4cb0f26466f9df6c5"
+fork_commit = "82d573e9a553dccb1405dde4cb0f26466f9df6c5"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE"
+license_path = "third_party/licenses/bernini-LICENSE"
+license_sha256 = "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+checkout_path = "Bernini"
+
+[[upstreams.imports]]
+mode = "normalized-diff"
+upstream_path = "."
+expected_sha256 = "53686427c74b996067800c6d379881fa7b764f6a325b3770270350d11ef5091a"
+patch_path = "third_party/patches/bernini-sm120-fa283-transformers457-import.patch"
+patch_sha256 = "085b6633290ffc758ea33616960f2be8204994cd8807b88cc5eb5851d6620d3a"
+materialize_path = "Bernini"
+
+[[upstreams]]
+kind = "dependency"
+name = "veomni"
+url = "https://github.com/ByteDance-Seed/VeOmni.git"
+base_commit = "6ab293ecdfdd90ef3941fc81065d9f947b5b4e4f"
+fork_commit = "6ab293ecdfdd90ef3941fc81065d9f947b5b4e4f"
+license = "Apache-2.0"
+license_upstream_path = "LICENSE"
+license_path = "third_party/licenses/veomni-LICENSE"
+license_sha256 = "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+checkout_path = "VeOmni"
+
+[[upstreams]]
+kind = "dependency"
+name = "holocine"
+url = "https://github.com/yihao-meng/HoloCine.git"
+base_commit = "0a7630ba448e13ddc7b872638b578e5618208c45"
+fork_commit = "0a7630ba448e13ddc7b872638b578e5618208c45"
+license = "CC-BY-NC-SA-4.0"
+license_upstream_path = "LICENSE"
+license_path = "third_party/licenses/HoloCine-CC-BY-NC-SA-4.0.txt"
+license_sha256 = "4fe0b4d1469e5ed7a754e148ce66c57902b71d3f6ca3a6e582d27a496d63e349"
+checkout_path = "HoloCine"
+
+[[upstreams]]
+kind = "dependency"
+name = "storymem"
+url = "https://github.com/Kevin-thu/StoryMem.git"
+base_commit = "052c68d2627a22a95f79dbb4d3376cc30c96f1a3"
+fork_commit = "052c68d2627a22a95f79dbb4d3376cc30c96f1a3"
+license = "S-Lab-1.0"
+license_upstream_path = "LICENSE.md"
+license_path = "third_party/licenses/StoryMem-S-Lab-1.0.txt"
+license_sha256 = "ce8d2753e4ea6972793f859fe9ef53121b038a27f93198f6d50ec40a0e10a366"
+checkout_path = "StoryMem"

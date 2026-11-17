@@ -1,0 +1,100 @@
+{
+ "story_id": "cinedance-010094-b0000-shot01",
+ "status": "rated",
+ "result": {
+  "answers": [
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q01",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q02",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q03",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q04",
+    "answer": "no"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q05",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q06",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q07",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q08",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q09",
+    "answer": "no"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q10",
+    "answer": "no"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q11",
+    "answer": "no"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q12",
+    "answer": "no"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q13",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q14",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q15",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q16",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q17",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q18",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q19",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q20",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q21",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q22",
+    "answer": "yes"
+   },
+   {
+    "requirement_id": "cinedance-010094-b0000-shot01/q23",
+    "answer": "yes"
+   }
+  ]
+ }
+}

@@ -1,0 +1,993 @@
+{
+  "source": "benchmark-v3-baselines-20261024/test; frozen question catalog",
+  "requests": {
+    "evaluation_scope": "system",
+    "request_version": "story_requests_v3",
+    "authoring": {
+      "source": "第 18 版质量池验证集（按片留出）重切窗口并按第 18 版合同重标（tools/data/build_benchmark.py）",
+      "rule": "6–12 镜、≤60 秒、训练同一质量门；至少一处镜内变化、一个跨镜人物、一个动作镜；每片至多 3 段；按片随机（seed 42）分开发集至少 30 个故事",
+      "dropped": {
+        "cinedance-009332-b0002-shot01": "content",
+        "cinedance-009401-b0000-shot01": "content",
+        "cinedance-009613-b0000-shot01": "content",
+        "cinedance-009734-b0003-shot05": "content",
+        "cinedance-011398-b0002-shot04": "content",
+        "cinedance-012085-b0001-shot01": "content",
+        "cinedance-012125-b0002-shot02": "content",
+        "cinedance-012200-b0000-shot02": "content",
+        "cinedance-012853-b0004-shot03": "content",
+        "cinedance-012853-b0002-shot01": "content",
+        "cinedance-014617-b0001-shot01": "content",
+        "cinedance-015004-b0000-shot01": "content",
+        "cinedance-015509-b0001-shot04": "content",
+        "cinedance-016267-b0000-shot02": "content",
+        "cinedance-016322-b0001-shot01": "content",
+        "cinedance-016537-b0000-shot04": "content",
+        "cinedance-016951-b0000-shot03": "content",
+        "cinedance-017890-b0000-shot01": "content",
+        "film-000123-b0000-shot01": "content",
+        "film-000124-b0004-shot01": "content",
+        "film-000125-b0000-shot01": "content",
+        "film-000125-b0001-shot04": "content",
+        "film-000126-b0000-shot01": "content",
+        "film-000126-b0001-shot04": "content",
+        "film-000127-b0001-shot02": "content",
+        "film-000128-b0000-shot01": "content",
+        "film-000128-b0001-shot01": "content",
+        "film-000129-b0001-shot03": "content",
+        "film-001592-b0000-shot01": "content",
+        "film-001593-b0000-shot01": "content",
+        "film-001594-b0002-shot01": "content",
+        "film-002570-b0003-shot02": "content",
+        "film-003538-b0009-shot01": "content",
+        "film-003539-b0001-shot01": "content",
+        "film-003539-b0002-shot01": "content",
+        "film-003551-b0001-shot03": "content",
+        "film-003553-b0002-shot08": "content",
+        "film-003553-b0004-shot01": "content",
+        "film-003554-b0000-shot02": "content",
+        "film-003555-b0001-shot07": "content",
+        "film-003556-b0003-shot07": "content",
+        "film-003557-b0001-shot01": "content",
+        "film-003557-b0002-shot01": "content",
+        "film-003634-b0000-shot01": "content",
+        "film-003995-b0002-shot06": "content",
+        "film-003996-b0007-shot02": "content",
+        "film-003996-b0008-shot05": "content",
+        "film-004060-b0001-shot09": "content",
+        "film-004061-b0001-shot01": "content",
+        "film-004402-b0000-shot01": "content",
+        "film-004405-b0003-shot02": "content",
+        "film-004446-b0002-shot02": "content",
+        "film-005224-b0001-shot01": "content",
+        "film-005226-b0000-shot09": "content",
+        "film-005227-b0002-shot01": "content",
+        "film-007249-b0000-shot01": "content",
+        "film-007249-b0001-shot01": "content",
+        "film-007249-b0002-shot06": "content",
+        "film-007489-b0000-shot01": "content",
+        "film-007489-b0001-shot01": "content",
+        "film-007492-b0000-shot07": "content",
+        "film-007999-b0002-shot01": "content",
+        "film-007999-b0004-shot01": "content",
+        "film-008001-b0001-shot01": "content",
+        "film-008004-b0000-shot01": "content",
+        "film-008393-b0000-shot01": "content",
+        "film-008393-b0002-shot01": "content",
+        "film-000122-b0002-shot01": "per_film_cap",
+        "film-000124-b0000-shot05": "per_film_cap",
+        "film-000122-b0000-shot01": "per_film_cap",
+        "film-000122-b0004-shot02": "per_film_cap",
+        "film-000123-b0002-shot03": "per_film_cap",
+        "film-000128-b0002-shot01": "per_film_cap",
+        "film-001591-b0001-shot01": "per_film_cap",
+        "film-001593-b0005-shot01": "per_film_cap",
+        "film-001596-b0000-shot01": "per_film_cap",
+        "film-001596-b0004-shot01": "per_film_cap",
+        "film-003553-b0000-shot01": "per_film_cap",
+        "film-003553-b0001-shot03": "per_film_cap",
+        "film-003553-b0007-shot01": "per_film_cap",
+        "film-003556-b0005-shot01": "per_film_cap",
+        "film-004063-b0001-shot03": "per_film_cap",
+        "film-004064-b0000-shot06": "per_film_cap",
+        "film-004064-b0003-shot02": "per_film_cap",
+        "film-004446-b0000-shot01": "per_film_cap",
+        "film-004446-b0001-shot01": "per_film_cap",
+        "film-005223-b0000-shot01": "per_film_cap",
+        "film-005228-b0000-shot10": "per_film_cap",
+        "film-005227-b0000-shot01": "per_film_cap",
+        "film-007248-b0001-shot02": "per_film_cap",
+        "film-007250-b0004-shot01": "per_film_cap",
+        "film-008004-b0002-shot01": "per_film_cap",
+        "film-007998-b0000-shot01": "per_film_cap",
+        "film-008002-b0002-shot01": "per_film_cap",
+        "film-008001-b0002-shot02": "per_film_cap",
+        "film-008001-b0014-shot01": "per_film_cap"
+      }
+    },
+    "stories": [
+      {
+        "story_id": "cinedance-008935-b0001-shot01",
+        "split": "test",
+        "target_seconds": 23.875,
+        "fps": 16,
+        "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/000fd4d8-829b-80b4-9007-31398c46dfec.mp4",
+        "content": {
+          "changes": 1,
+          "change_kinds": [
+            "holding"
+          ],
+          "recurring_characters": 2,
+          "recurring_objects": 0,
+          "places": 2,
+          "action_shots": 1,
+          "shots": 6,
+          "seconds": 23.875
+        },
+        "inputs": {
+          "synopsis": {
+            "text": "A woman points a spear at a bandaged young man with an eyepatch, who looks shocked, before a brief cut to another young man surrounded by giant limbs.",
+            "expected_shot_count": null,
+            "expected_cut_times_seconds": null
+          },
+          "paragraph": {
+            "text": "A woman with long black hair and a red headband stands on a staircase in front of a dark building with pentagrams and a large eye. She smiles menacingly and points a long spear at a young man with an eyepatch and bandages on his chest and arm. The young man looks shocked and speaks. The scene cuts to a blonde young man standing in a red room surrounded by giant disembodied limbs. The scene cuts back to the young man with the eyepatch looking down in shock.",
+            "expected_shot_count": null,
+            "expected_cut_times_seconds": null
+          },
+          "shots": {
+            "text": "SUBJECTS\n- Character 1 (person): a woman with long black hair, purple eyes, and a red headband, wearing a black and white sailor-style school uniform with red accents and a black pleated skirt\n- Character 2 (person): a young man with short black hair, green eyes, and an eyepatch over his right eye, wearing a black school uniform jacket over a white shirt with bandages on his chest and left arm\n- Character 3 (person): a young man with short blonde hair and a lean build, wearing a black suit jacket, white shirt, and dark pants\n- Object 1 (object): a long, thin spear or staff with a golden tip\n- Object 2 (object): a large building with a purple facade, golden roof accents, and pentagram symbols\n- Object 3 (object): a large red eye on the building\n- Object 4 (object): giant disembodied arms and legs of various colors\nLOCATIONS\n- Location 1: a dark, red-lit interior space with angular architecture and a large building facade visible outside\n- Location 2: a dark, red-tiled room or void\nSHOTS\ns01: Medium shot. A woman with long black hair stands on a staircase in front of a building with pentagram symbols and a large red eye.\ns02: Close-up shot. The woman with long black hair smiles menacingly.\ns03: Medium shot. The woman points a long spear at a young man with an eyepatch who is standing on a higher level.\ns04: Medium close-up shot. The young man with the eyepatch and bandages looks shocked and speaks.\ns05: Wide shot, high angle shot. A blonde young man stands in a red room surrounded by giant disembodied arms and legs.\ns06: Close-up shot. The young man with the eyepatch looks down in shock.",
+            "expected_shot_count": 6,
+            "expected_cut_times_seconds": null
+          }
+        }
+      },
+      {
+        "story_id": "film-007998-b0006-shot01",
+        "split": "test",
+        "target_seconds": 32.0,
+        "fps": 16,
+        "film_key": "cinepile_t2v:trolls",
+        "content": {
+          "changes": 7,
+          "change_kinds": [
+            "holding",
+            "posture",
+            "state"
+          ],
+          "recurring_characters": 6,
+          "recurring_objects": 1,
+          "places": 2,
+          "action_shots": 8,
+          "shots": 12,
+          "seconds": 32.0
+        },
+        "inputs": {
+          "synopsis": {
+            "text": "Magic transforms a village tree into a blooming wonder, and a pink female troll is crowned and celebrated by a crowd before sharing a heartfelt hug with a blue male troll.",
+            "expected_shot_count": null,
+            "expected_cut_times_seconds": null
+          },
+          "paragraph": {
+            "text": "Rainbow-colored magic spreads across a whimsical village, reaching a large bare tree in the center of a roundabout, which then blooms with green leaves and sparkling lights. The scene shifts to a grassy area where a large crowd of trolls and creatures dance and celebrate around a mushroom stage. An older male troll places a large green leaf crown on a pink female troll's head. They smile and raise their arms together as the crowd cheers. The pink female troll is then approached by a blue male troll with a tall purple afro; they look at each other, hold hands, and share a warm hug.",
+            "expected_shot_count": null,
+            "expected_cut_times_seconds": null
+          },
+          "shots": {
+            "text": "SUBJECTS\n- Character 1 (person): a female troll with pink skin, a high pink ponytail, and a leaf crown, wearing a teal dress with white flowers\n- Character 2 (person): a male troll with orange skin, a large pink afro, and a pink mustache, wearing a teal vest and brown shorts\n- Character 3 (person): a male troll with blue skin and a tall purple afro, wearing a green leafy vest and brown shorts\n- Character 4 (person): a female troll with white skin and a tall white afro, wearing a sparkly white outfit\n- Character 5 (group): various trolls and large creatures dancing and celebrating\n- Character 6 (person): a large male creature with a crown and a fur cape\n- Character 7 (person): a large female creature with purple hair and a pink dress\n- Object 1 (object): a large bare tree in the center of a roundabout\n- Object 2 (object): a rainbow-colored paint or magic spreading across the ground\n- Object 3 (object): a large green leaf crown\n- Object 4 (object): a large mushroom stage\nLOCATIONS\n- Location 1: a whimsical village with a central roundabout and a large bare tree\n- Location 2: a grassy area with a large mushroom stage surrounded by a crowd\nSHOTS\ns01: Extreme wide shot, aerial shot, push in. Rainbow-colored magic spreads across the ground in a whimsical village, reaching a large bare tree in the center of a roundabout, which then blooms with green leaves and sparkling lights.\ns02: Medium wide shot. A large crowd of trolls and creatures dance and celebrate around a large mushroom stage.\ns03: Medium close-up shot. Character 2 places a large green leaf crown on Character 1's head.\ns04: Close-up shot. Character 1 smiles and looks forward.\ns05: Medium close-up shot. Character 2 leans in to whisper to Character 1, then they both raise their arms and smile.\ns06: Medium wide shot. The crowd continues to dance and cheer, with Character 6 and Character 7 smiling and holding small troll figures.\ns07: Close-up shot. Character 1 smiles and looks around.\ns08: Medium shot. Character 6 and Character 7 smile and look forward while holding small troll figures.\ns09: Medium shot. Character 1 stands on the mushroom stage and smiles.\ns10: Medium shot. A group of small trolls jump and cheer excitedly.\ns11: Medium close-up shot. Character 3 approaches Character 1, they look at each other, and hold hands.\ns12: Close-up shot. Character 1 and Character 3 lean in and hug each other.",
+            "expected_shot_count": 12,
+            "expected_cut_times_seconds": null
+          }
+        }
+      }
+    ]
+  },
+  "questions": {
+    "benchmark": "configs/benchmark/story_requests_v3.json",
+    "storyboards": "configs/benchmark/benchmark_storyboards_v3.json",
+    "request_tier": "shots",
+    "writer": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "workers": 15,
+      "calls": 63
+    },
+    "questions_from": "mspc.evaluation.question_writer.questions",
+    "stories": {
+      "cinedance-008935-b0001-shot01": {
+        "split": "test",
+        "request": "SUBJECTS\n- Character 1 (person): a woman with long black hair, purple eyes, and a red headband, wearing a black and white sailor-style school uniform with red accents and a black pleated skirt\n- Character 2 (person): a young man with short black hair, green eyes, and an eyepatch over his right eye, wearing a black school uniform jacket over a white shirt with bandages on his chest and left arm\n- Character 3 (person): a young man with short blonde hair and a lean build, wearing a black suit jacket, white shirt, and dark pants\n- Object 1 (object): a long, thin spear or staff with a golden tip\n- Object 2 (object): a large building with a purple facade, golden roof accents, and pentagram symbols\n- Object 3 (object): a large red eye on the building\n- Object 4 (object): giant disembodied arms and legs of various colors\nLOCATIONS\n- Location 1: a dark, red-lit interior space with angular architecture and a large building facade visible outside\n- Location 2: a dark, red-tiled room or void\nSHOTS\ns01: Medium shot. A woman with long black hair stands on a staircase in front of a building with pentagram symbols and a large red eye.\ns02: Close-up shot. The woman with long black hair smiles menacingly.\ns03: Medium shot. The woman points a long spear at a young man with an eyepatch who is standing on a higher level.\ns04: Medium close-up shot. The young man with the eyepatch and bandages looks shocked and speaks.\ns05: Wide shot, high angle shot. A blonde young man stands in a red room surrounded by giant disembodied arms and legs.\ns06: Close-up shot. The young man with the eyepatch looks down in shock.",
+        "writer_output": {
+          "names": [
+            {
+              "id": "Character 1",
+              "name": "Character 1"
+            },
+            {
+              "id": "Character 2",
+              "name": "Character 2"
+            },
+            {
+              "id": "Character 3",
+              "name": "Character 3"
+            },
+            {
+              "id": "Object 1",
+              "name": "Object 1"
+            },
+            {
+              "id": "Object 2",
+              "name": "Object 2"
+            },
+            {
+              "id": "Object 3",
+              "name": "Object 3"
+            },
+            {
+              "id": "Object 4",
+              "name": "Object 4"
+            },
+            {
+              "id": "Location 1",
+              "name": "Location 1"
+            },
+            {
+              "id": "Location 2",
+              "name": "Location 2"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "present": [
+                "Character 1",
+                "Object 2",
+                "Object 3"
+              ]
+            },
+            {
+              "shot": 2,
+              "present": [
+                "Character 1"
+              ]
+            },
+            {
+              "shot": 3,
+              "present": [
+                "Character 1",
+                "Character 2",
+                "Object 1"
+              ]
+            },
+            {
+              "shot": 4,
+              "present": [
+                "Character 2"
+              ]
+            },
+            {
+              "shot": 5,
+              "present": [
+                "Character 3",
+                "Object 4"
+              ]
+            },
+            {
+              "shot": 6,
+              "present": [
+                "Character 2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "shot": 3,
+              "question": "Does Character 1 point Object 1 at Character 2?",
+              "participants": [
+                "Character 1",
+                "Object 1",
+                "Character 2"
+              ],
+              "result": null
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q01",
+            "dimension": "event",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 point Object 1 at Character 2?",
+            "depends_on": [
+              "Character 1",
+              "Object 1",
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q02",
+            "dimension": "character",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 2} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q03",
+            "dimension": "character",
+            "shot": 3,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q04",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 3,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 4} the same person as at {shot 3}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q05",
+            "dimension": "character",
+            "shot": 6,
+            "reference_shot": 3,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 6} the same person as at {shot 3}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q06",
+            "dimension": "place",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          },
+          {
+            "requirement_id": "cinedance-008935-b0001-shot01/q07",
+            "dimension": "place",
+            "shot": 6,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 6} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          }
+        ],
+        "origin": "codex_exec"
+      },
+      "film-007998-b0006-shot01": {
+        "split": "test",
+        "request": "SUBJECTS\n- Character 1 (person): a female troll with pink skin, a high pink ponytail, and a leaf crown, wearing a teal dress with white flowers\n- Character 2 (person): a male troll with orange skin, a large pink afro, and a pink mustache, wearing a teal vest and brown shorts\n- Character 3 (person): a male troll with blue skin and a tall purple afro, wearing a green leafy vest and brown shorts\n- Character 4 (person): a female troll with white skin and a tall white afro, wearing a sparkly white outfit\n- Character 5 (group): various trolls and large creatures dancing and celebrating\n- Character 6 (person): a large male creature with a crown and a fur cape\n- Character 7 (person): a large female creature with purple hair and a pink dress\n- Object 1 (object): a large bare tree in the center of a roundabout\n- Object 2 (object): a rainbow-colored paint or magic spreading across the ground\n- Object 3 (object): a large green leaf crown\n- Object 4 (object): a large mushroom stage\nLOCATIONS\n- Location 1: a whimsical village with a central roundabout and a large bare tree\n- Location 2: a grassy area with a large mushroom stage surrounded by a crowd\nSHOTS\ns01: Extreme wide shot, aerial shot, push in. Rainbow-colored magic spreads across the ground in a whimsical village, reaching a large bare tree in the center of a roundabout, which then blooms with green leaves and sparkling lights.\ns02: Medium wide shot. A large crowd of trolls and creatures dance and celebrate around a large mushroom stage.\ns03: Medium close-up shot. Character 2 places a large green leaf crown on Character 1's head.\ns04: Close-up shot. Character 1 smiles and looks forward.\ns05: Medium close-up shot. Character 2 leans in to whisper to Character 1, then they both raise their arms and smile.\ns06: Medium wide shot. The crowd continues to dance and cheer, with Character 6 and Character 7 smiling and holding small troll figures.\ns07: Close-up shot. Character 1 smiles and looks around.\ns08: Medium shot. Character 6 and Character 7 smile and look forward while holding small troll figures.\ns09: Medium shot. Character 1 stands on the mushroom stage and smiles.\ns10: Medium shot. A group of small trolls jump and cheer excitedly.\ns11: Medium close-up shot. Character 3 approaches Character 1, they look at each other, and hold hands.\ns12: Close-up shot. Character 1 and Character 3 lean in and hug each other.",
+        "writer_output": {
+          "names": [
+            {
+              "id": "Character 1",
+              "name": "Character 1"
+            },
+            {
+              "id": "Character 2",
+              "name": "Character 2"
+            },
+            {
+              "id": "Character 3",
+              "name": "Character 3"
+            },
+            {
+              "id": "Character 4",
+              "name": "Character 4"
+            },
+            {
+              "id": "Character 5",
+              "name": "Character 5"
+            },
+            {
+              "id": "Character 6",
+              "name": "Character 6"
+            },
+            {
+              "id": "Character 7",
+              "name": "Character 7"
+            },
+            {
+              "id": "Object 1",
+              "name": "Object 1"
+            },
+            {
+              "id": "Object 2",
+              "name": "Object 2"
+            },
+            {
+              "id": "Object 3",
+              "name": "Object 3"
+            },
+            {
+              "id": "Object 4",
+              "name": "Object 4"
+            },
+            {
+              "id": "Location 1",
+              "name": "Location 1"
+            },
+            {
+              "id": "Location 2",
+              "name": "Location 2"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "present": [
+                "Object 1",
+                "Object 2"
+              ]
+            },
+            {
+              "shot": 2,
+              "present": [
+                "Character 5",
+                "Object 4"
+              ]
+            },
+            {
+              "shot": 3,
+              "present": [
+                "Character 1",
+                "Character 2",
+                "Object 3"
+              ]
+            },
+            {
+              "shot": 4,
+              "present": [
+                "Character 1"
+              ]
+            },
+            {
+              "shot": 5,
+              "present": [
+                "Character 1",
+                "Character 2"
+              ]
+            },
+            {
+              "shot": 6,
+              "present": [
+                "Character 5",
+                "Character 6",
+                "Character 7"
+              ]
+            },
+            {
+              "shot": 7,
+              "present": [
+                "Character 1"
+              ]
+            },
+            {
+              "shot": 8,
+              "present": [
+                "Character 6",
+                "Character 7"
+              ]
+            },
+            {
+              "shot": 9,
+              "present": [
+                "Character 1",
+                "Object 4"
+              ]
+            },
+            {
+              "shot": 10,
+              "present": [
+                "Character 5"
+              ]
+            },
+            {
+              "shot": 11,
+              "present": [
+                "Character 1",
+                "Character 3"
+              ]
+            },
+            {
+              "shot": 12,
+              "present": [
+                "Character 1",
+                "Character 3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "shot": 1,
+              "question": "Does Object 2 spread across the ground to Object 1?",
+              "participants": [
+                "Object 2",
+                "Object 1"
+              ],
+              "result": {
+                "question": "Is Object 2 spread across the ground up to Object 1?",
+                "entity": "Object 2",
+                "kind": "holding_or_place"
+              }
+            },
+            {
+              "shot": 1,
+              "question": "Does Object 1 bloom with green leaves and sparkling lights?",
+              "participants": [
+                "Object 1"
+              ],
+              "result": {
+                "question": "Does Object 1 have green leaves and sparkling lights?",
+                "entity": "Object 1",
+                "kind": "appearance"
+              }
+            },
+            {
+              "shot": 2,
+              "question": "Does Character 5 dance around Object 4?",
+              "participants": [
+                "Character 5",
+                "Object 4"
+              ],
+              "result": null
+            },
+            {
+              "shot": 3,
+              "question": "Does Character 2 place Object 3 on Character 1's head?",
+              "participants": [
+                "Character 2",
+                "Object 3",
+                "Character 1"
+              ],
+              "result": {
+                "question": "Is Object 3 on Character 1's head?",
+                "entity": "Object 3",
+                "kind": "holding_or_place"
+              }
+            },
+            {
+              "shot": 6,
+              "question": "Does Character 5 dance?",
+              "participants": [
+                "Character 5"
+              ],
+              "result": null
+            },
+            {
+              "shot": 6,
+              "question": "Does Character 6 hold small troll figures?",
+              "participants": [
+                "Character 6"
+              ],
+              "result": null
+            },
+            {
+              "shot": 6,
+              "question": "Does Character 7 hold small troll figures?",
+              "participants": [
+                "Character 7"
+              ],
+              "result": null
+            },
+            {
+              "shot": 8,
+              "question": "Does Character 6 hold small troll figures?",
+              "participants": [
+                "Character 6"
+              ],
+              "result": null
+            },
+            {
+              "shot": 8,
+              "question": "Does Character 7 hold small troll figures?",
+              "participants": [
+                "Character 7"
+              ],
+              "result": null
+            },
+            {
+              "shot": 9,
+              "question": "Does Character 1 stand on Object 4?",
+              "participants": [
+                "Character 1",
+                "Object 4"
+              ],
+              "result": null
+            },
+            {
+              "shot": 10,
+              "question": "Does Character 5 jump?",
+              "participants": [
+                "Character 5"
+              ],
+              "result": null
+            },
+            {
+              "shot": 11,
+              "question": "Does Character 3 approach Character 1?",
+              "participants": [
+                "Character 3",
+                "Character 1"
+              ],
+              "result": null
+            },
+            {
+              "shot": 11,
+              "question": "Do Character 1 and Character 3 hold hands?",
+              "participants": [
+                "Character 1",
+                "Character 3"
+              ],
+              "result": null
+            },
+            {
+              "shot": 12,
+              "question": "Do Character 1 and Character 3 hug each other?",
+              "participants": [
+                "Character 1",
+                "Character 3"
+              ],
+              "result": null
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "requirement_id": "film-007998-b0006-shot01/q01",
+            "dimension": "event",
+            "shot": 1,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Object 2 spread across the ground to Object 1?",
+            "depends_on": [
+              "Object 2",
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q02",
+            "dimension": "state",
+            "shot": 1,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Object 2 spread across the ground up to Object 1?",
+            "depends_on": [
+              "Object 2"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q03",
+            "dimension": "event",
+            "shot": 1,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Object 1 bloom with green leaves and sparkling lights?",
+            "depends_on": [
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q04",
+            "dimension": "state",
+            "shot": 1,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Does Object 1 have green leaves and sparkling lights?",
+            "depends_on": [
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q05",
+            "dimension": "event",
+            "shot": 2,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 5 dance around Object 4?",
+            "depends_on": [
+              "Character 5",
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q06",
+            "dimension": "event",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 place Object 3 on Character 1's head?",
+            "depends_on": [
+              "Character 2",
+              "Object 3",
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q07",
+            "dimension": "state",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Object 3 on Character 1's head?",
+            "depends_on": [
+              "Object 3"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q08",
+            "dimension": "event",
+            "shot": 6,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 5 dance?",
+            "depends_on": [
+              "Character 5"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q09",
+            "dimension": "event",
+            "shot": 6,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 6 hold small troll figures?",
+            "depends_on": [
+              "Character 6"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q10",
+            "dimension": "event",
+            "shot": 6,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 7 hold small troll figures?",
+            "depends_on": [
+              "Character 7"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q11",
+            "dimension": "event",
+            "shot": 8,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 6 hold small troll figures?",
+            "depends_on": [
+              "Character 6"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q12",
+            "dimension": "event",
+            "shot": 8,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 7 hold small troll figures?",
+            "depends_on": [
+              "Character 7"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q13",
+            "dimension": "event",
+            "shot": 9,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 stand on Object 4?",
+            "depends_on": [
+              "Character 1",
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q14",
+            "dimension": "event",
+            "shot": 10,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 5 jump?",
+            "depends_on": [
+              "Character 5"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q15",
+            "dimension": "event",
+            "shot": 11,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 3 approach Character 1?",
+            "depends_on": [
+              "Character 3",
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q16",
+            "dimension": "event",
+            "shot": 11,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Do Character 1 and Character 3 hold hands?",
+            "depends_on": [
+              "Character 1",
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q17",
+            "dimension": "event",
+            "shot": 12,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Do Character 1 and Character 3 hug each other?",
+            "depends_on": [
+              "Character 1",
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q18",
+            "dimension": "character",
+            "shot": 6,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 5 at {shot 6} the same group as at {shot 2}?",
+            "depends_on": [
+              "Character 5"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q19",
+            "dimension": "character",
+            "shot": 10,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 5 at {shot 10} the same group as at {shot 2}?",
+            "depends_on": [
+              "Character 5"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q20",
+            "dimension": "object",
+            "shot": 9,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Object 4 at {shot 9} the same object as at {shot 2}?",
+            "depends_on": [
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q21",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 3,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 4} the same person as at {shot 3}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q22",
+            "dimension": "character",
+            "shot": 12,
+            "reference_shot": 3,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 12} the same person as at {shot 3}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q23",
+            "dimension": "character",
+            "shot": 5,
+            "reference_shot": 3,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 5} the same person as at {shot 3}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q24",
+            "dimension": "character",
+            "shot": 8,
+            "reference_shot": 6,
+            "anchor": "during",
+            "question": "Is Character 6 at {shot 8} the same person as at {shot 6}?",
+            "depends_on": [
+              "Character 6"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q25",
+            "dimension": "character",
+            "shot": 8,
+            "reference_shot": 6,
+            "anchor": "during",
+            "question": "Is Character 7 at {shot 8} the same person as at {shot 6}?",
+            "depends_on": [
+              "Character 7"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q26",
+            "dimension": "character",
+            "shot": 12,
+            "reference_shot": 11,
+            "anchor": "during",
+            "question": "Is Character 3 at {shot 12} the same person as at {shot 11}?",
+            "depends_on": [
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q27",
+            "dimension": "place",
+            "shot": 3,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Are {shot 3} and {shot 2} in the same place (Location 2)?",
+            "depends_on": []
+          },
+          {
+            "requirement_id": "film-007998-b0006-shot01/q28",
+            "dimension": "place",
+            "shot": 12,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Are {shot 12} and {shot 2} in the same place (Location 2)?",
+            "depends_on": []
+          }
+        ],
+        "origin": "codex_exec"
+      }
+    }
+  },
+  "generation": {
+    "status": "adaptation_failed",
+    "plan": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/test/inputs/plans/public_qwen/shots/seed-42/film-007998-b0006-shot01.json",
+    "error": "ValueError: shot 3 cannot fit multishotmaster without truncation or changing the story"
+  },
+  "completed_timing": {
+    "method": "native_wan_5b",
+    "input_tier": "shots",
+    "seed": 42,
+    "story_id": "cinedance-008935-b0001-shot01",
+    "video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/test/inference/raw/videos/native_wan_5b/shots/seed-42/cinedance-008935-b0001-shot01/video.mp4",
+    "duration_seconds": 23.875,
+    "shot_seconds": [
+      3.5625,
+      5.5625,
+      3.3125,
+      6.5625,
+      2.0625,
+      2.8125
+    ],
+    "timing_source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/test/inference/raw/videos/native_wan_5b/shots/seed-42/cinedance-008935-b0001-shot01/segments.json",
+    "generation_record_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/test/inference/raw/videos/native_wan_5b/shots/seed-42/cinedance-008935-b0001-shot01/generation.json"
+  }
+}

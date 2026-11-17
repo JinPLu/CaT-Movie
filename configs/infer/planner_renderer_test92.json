@@ -1,0 +1,22 @@
+{
+  "run_dir": "outputs/experiments/planner-renderer-test92-seed42",
+  "split": "test",
+  "input_tier": "shots",
+  "requests": "configs/benchmark/story_requests_v4.json",
+  "storyboards": "configs/benchmark/benchmark_storyboards_v4.json",
+  "conditions": [
+    {
+      "name": "planner-renderer-test92-seed42",
+      "renderer_config": "configs/infer/renderer_wan22_final_step3000.py",
+      "checkpoint": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/renderer-wan22-final-20261113/training/wan22_final_704p__20261112T231417_893962Z/checkpoints/step-3000.safetensors",
+      "history_policy": "plan_selection",
+      "plan_dir": "outputs/experiments/planner-renderer-test92-seed42/plans",
+      "seed": 42,
+      "segment_seed_stride": 1009,
+      "segment_max_shots": null,
+      "segment_max_frames": 112,
+      "output_dir": "outputs/experiments/planner-renderer-test92-seed42/inference/raw/planner-renderer-test92-seed42",
+      "token_edits_dir": null
+    }
+  ]
+}

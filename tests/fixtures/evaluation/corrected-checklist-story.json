@@ -1,0 +1,819 @@
+{
+  "request": {
+    "story_id": "film-004060-b0000-shot01",
+    "split": "dev",
+    "target_seconds": 36.0,
+    "fps": 16,
+    "film_key": "cinepile_t2v:not another teen movie",
+    "content": {
+      "changes": 2,
+      "change_kinds": [
+        "holding",
+        "posture"
+      ],
+      "recurring_characters": 5,
+      "recurring_objects": 3,
+      "places": 1,
+      "action_shots": 1,
+      "shots": 12,
+      "seconds": 36.0
+    },
+    "inputs": {
+      "synopsis": {
+        "text": "A group of four young men have a conversation in an outdoor courtyard, with close-ups showing their reactions and gestures.",
+        "expected_shot_count": null,
+        "expected_cut_times_seconds": null
+      },
+      "paragraph": {
+        "text": "Four young men stand together in an outdoor courtyard with white columns. One man in a blue and red varsity jacket speaks and gestures while the others listen. The camera cuts between close-ups of the speakers and the listeners. One of the men in a white jersey pulls out a pen and gestures with it. Another man places his hand on the speaker's shoulder. The conversation continues with close-ups of the men facing each other.",
+        "expected_shot_count": null,
+        "expected_cut_times_seconds": null
+      },
+      "shots": {
+        "text": "SUBJECTS\n- Character 1 (person): a young man with dark hair and a slim build, wearing a blue and red varsity jacket over a dark shirt and jeans\n- Character 2 (person): a young man with dark curly hair and a slim build, wearing a red hoodie and dark pants\n- Character 3 (person): a young man with blond hair and a slim build, wearing a white and black turtleneck sweater and jeans\n- Character 4 (person): a heavyset young man with a round face, wearing a white jersey with the number 69 and a black cowboy hat\n- Character 5 (group): various people walking in the background\n- Object 1 (object): a brown leather backpack strap\n- Object 2 (object): a black shoulder bag strap\n- Object 3 (object): a grey backpack\n- Object 4 (object): a pen\n- Object 5 (object): a sign with text\nLOCATIONS\n- Location 1: an outdoor courtyard or walkway with white columns and arches\nSHOTS\ns01: Medium wide shot. Character 1 stands with three other men in a courtyard, gesturing and talking while others walk past in the background.\ns02: Close-up shot. Character 1 continues talking, looking slightly upwards and to the side.\ns03: Medium close-up shot. Character 1 and Character 2 stand together, with Character 1 talking and looking forward.\ns04: Medium close-up shot. Character 3 and Character 4 stand together, listening and looking around.\ns05: Medium close-up shot. Character 1 and Character 2 continue to stand and listen.\ns06: Medium wide shot. The four men stand together in the courtyard, with Character 1 gesturing slightly.\ns07: Close-up shot. Character 1 speaks, looking slightly to the side.\ns08: Medium close-up shot. Character 3 and Character 4 react to the conversation, with Character 4 looking down and smiling.\ns09: Medium close-up shot. Character 2 places a hand on Character 1's shoulder as they listen.\ns10: Medium close-up shot. Character 4 pulls out a pen and gestures with it while talking to Character 3.\ns11: Medium close-up shot. Character 1 and Character 2 continue to stand and listen to the others.\ns12: Close-up shot. Character 1 and Character 3 face each other and talk.",
+        "expected_shot_count": 12,
+        "expected_cut_times_seconds": null
+      }
+    }
+  },
+  "board": {
+    "story_id": "film-004060-b0000-shot01",
+    "split": "dev",
+    "fps": 16,
+    "target_seconds": 36.0,
+    "storyboard": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young man with dark hair and a slim build",
+          "outfit": "a blue and red varsity jacket over a dark shirt and jeans"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young man with dark curly hair and a slim build",
+          "outfit": "a red hoodie and dark pants"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young man with blond hair and a slim build",
+          "outfit": "a white and black turtleneck sweater and jeans"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a heavyset young man with a round face",
+          "outfit": "a white jersey with the number 69 and a black cowboy hat"
+        },
+        {
+          "name": "Character 5",
+          "kind": "group",
+          "visibility": "partial",
+          "appearance": "various people walking in the background"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a brown leather backpack strap"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a black shoulder bag strap"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a grey backpack"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a pen"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a sign with text"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "an outdoor courtyard or walkway with white columns and arches"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing and gesturing with his right hand"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing with hands in pockets"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing with hands in pockets"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 5",
+              "posture": "walking in the background"
+            },
+            {
+              "name": "Object 1"
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 3"
+            },
+            {
+              "name": "Object 5"
+            }
+          ],
+          "action": "Character 1 stands with three other men in a courtyard, gesturing and talking while others walk past in the background.",
+          "changes": [],
+          "frame_count": 81
+        },
+        {
+          "shot": 2,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            }
+          ],
+          "action": "Character 1 continues talking, looking slightly upwards and to the side.",
+          "changes": [],
+          "frame_count": 49
+        },
+        {
+          "shot": 3,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "action": "Character 1 and Character 2 stand together, with Character 1 talking and looking forward.",
+          "changes": [],
+          "frame_count": 61
+        },
+        {
+          "shot": 4,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Character 5",
+              "posture": "walking in the background"
+            }
+          ],
+          "action": "Character 3 and Character 4 stand together, listening and looking around.",
+          "changes": [],
+          "frame_count": 29
+        },
+        {
+          "shot": 5,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "action": "Character 1 and Character 2 continue to stand and listen.",
+          "changes": [],
+          "frame_count": 37
+        },
+        {
+          "shot": 6,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1"
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "action": "The four men stand together in the courtyard, with Character 1 gesturing slightly.",
+          "changes": [],
+          "frame_count": 49
+        },
+        {
+          "shot": 7,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            }
+          ],
+          "action": "Character 1 speaks, looking slightly to the side.",
+          "changes": [],
+          "frame_count": 33
+        },
+        {
+          "shot": 8,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Character 5",
+              "posture": "walking in the background"
+            }
+          ],
+          "action": "Character 3 and Character 4 react to the conversation, with Character 4 looking down and smiling.",
+          "changes": [],
+          "frame_count": 41
+        },
+        {
+          "shot": 9,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "action": "Character 2 places a hand on Character 1's shoulder as they listen.",
+          "changes": [
+            {
+              "name": "Character 2",
+              "what": "posture",
+              "before": "standing with hands in pockets",
+              "after": "standing with a hand on Character 1's shoulder"
+            }
+          ],
+          "frame_count": 21
+        },
+        {
+          "shot": 10,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing",
+              "holding": []
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "action": "Character 4 pulls out a pen and gestures with it while talking to Character 3.",
+          "changes": [
+            {
+              "name": "Character 4",
+              "what": "holding",
+              "before": [],
+              "after": [
+                "Object 4"
+              ]
+            }
+          ],
+          "frame_count": 45
+        },
+        {
+          "shot": 11,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "action": "Character 1 and Character 2 continue to stand and listen to the others.",
+          "changes": [],
+          "frame_count": 45
+        },
+        {
+          "shot": 12,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            }
+          ],
+          "action": "Character 1 and Character 3 face each other and talk.",
+          "changes": [],
+          "frame_count": 85
+        }
+      ]
+    },
+    "inputs": {
+      "shots": {
+        "text": "SUBJECTS\n- Character 1 (person): a young man with dark hair and a slim build, wearing a blue and red varsity jacket over a dark shirt and jeans\n- Character 2 (person): a young man with dark curly hair and a slim build, wearing a red hoodie and dark pants\n- Character 3 (person): a young man with blond hair and a slim build, wearing a white and black turtleneck sweater and jeans\n- Character 4 (person): a heavyset young man with a round face, wearing a white jersey with the number 69 and a black cowboy hat\n- Character 5 (group): various people walking in the background\n- Object 1 (object): a brown leather backpack strap\n- Object 2 (object): a black shoulder bag strap\n- Object 3 (object): a grey backpack\n- Object 4 (object): a pen\n- Object 5 (object): a sign with text\nLOCATIONS\n- Location 1: an outdoor courtyard or walkway with white columns and arches\nSHOTS\ns01: Medium wide shot. Character 1 stands with three other men in a courtyard, gesturing and talking while others walk past in the background.\ns02: Close-up shot. Character 1 continues talking, looking slightly upwards and to the side.\ns03: Medium close-up shot. Character 1 and Character 2 stand together, with Character 1 talking and looking forward.\ns04: Medium close-up shot. Character 3 and Character 4 stand together, listening and looking around.\ns05: Medium close-up shot. Character 1 and Character 2 continue to stand and listen.\ns06: Medium wide shot. The four men stand together in the courtyard, with Character 1 gesturing slightly.\ns07: Close-up shot. Character 1 speaks, looking slightly to the side.\ns08: Medium close-up shot. Character 3 and Character 4 react to the conversation, with Character 4 looking down and smiling.\ns09: Medium close-up shot. Character 2 places a hand on Character 1's shoulder as they listen.\ns10: Medium close-up shot. Character 4 pulls out a pen and gestures with it while talking to Character 3.\ns11: Medium close-up shot. Character 1 and Character 2 continue to stand and listen to the others.\ns12: Close-up shot. Character 1 and Character 3 face each other and talk.",
+        "expected_shot_count": 12,
+        "expected_cut_times_seconds": null
+      }
+    }
+  },
+  "catalog": {
+    "stories": {
+      "film-004060-b0000-shot01": {
+        "split": "dev",
+        "request": "SUBJECTS\n- Character 1 (person): a young man with dark hair and a slim build, wearing a blue and red varsity jacket over a dark shirt and jeans\n- Character 2 (person): a young man with dark curly hair and a slim build, wearing a red hoodie and dark pants\n- Character 3 (person): a young man with blond hair and a slim build, wearing a white and black turtleneck sweater and jeans\n- Character 4 (person): a heavyset young man with a round face, wearing a white jersey with the number 69 and a black cowboy hat\n- Character 5 (group): various people walking in the background\n- Object 1 (object): a brown leather backpack strap\n- Object 2 (object): a black shoulder bag strap\n- Object 3 (object): a grey backpack\n- Object 4 (object): a pen\n- Object 5 (object): a sign with text\nLOCATIONS\n- Location 1: an outdoor courtyard or walkway with white columns and arches\nSHOTS\ns01: Medium wide shot. Character 1 stands with three other men in a courtyard, gesturing and talking while others walk past in the background.\ns02: Close-up shot. Character 1 continues talking, looking slightly upwards and to the side.\ns03: Medium close-up shot. Character 1 and Character 2 stand together, with Character 1 talking and looking forward.\ns04: Medium close-up shot. Character 3 and Character 4 stand together, listening and looking around.\ns05: Medium close-up shot. Character 1 and Character 2 continue to stand and listen.\ns06: Medium wide shot. The four men stand together in the courtyard, with Character 1 gesturing slightly.\ns07: Close-up shot. Character 1 speaks, looking slightly to the side.\ns08: Medium close-up shot. Character 3 and Character 4 react to the conversation, with Character 4 looking down and smiling.\ns09: Medium close-up shot. Character 2 places a hand on Character 1's shoulder as they listen.\ns10: Medium close-up shot. Character 4 pulls out a pen and gestures with it while talking to Character 3.\ns11: Medium close-up shot. Character 1 and Character 2 continue to stand and listen to the others.\ns12: Close-up shot. Character 1 and Character 3 face each other and talk.",
+        "writer_output": {
+          "names": [
+            {
+              "id": "Character 1",
+              "name": "Character 1"
+            },
+            {
+              "id": "Character 2",
+              "name": "Character 2"
+            },
+            {
+              "id": "Character 3",
+              "name": "Character 3"
+            },
+            {
+              "id": "Character 4",
+              "name": "Character 4"
+            },
+            {
+              "id": "Character 5",
+              "name": "Character 5"
+            },
+            {
+              "id": "Object 1",
+              "name": "Object 1"
+            },
+            {
+              "id": "Object 2",
+              "name": "Object 2"
+            },
+            {
+              "id": "Object 3",
+              "name": "Object 3"
+            },
+            {
+              "id": "Object 4",
+              "name": "Object 4"
+            },
+            {
+              "id": "Object 5",
+              "name": "Object 5"
+            },
+            {
+              "id": "Location 1",
+              "name": "Location 1"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "present": [
+                "Character 1",
+                "Character 2",
+                "Character 3",
+                "Character 4",
+                "Character 5"
+              ]
+            },
+            {
+              "shot": 2,
+              "present": [
+                "Character 1"
+              ]
+            },
+            {
+              "shot": 3,
+              "present": [
+                "Character 1",
+                "Character 2"
+              ]
+            },
+            {
+              "shot": 4,
+              "present": [
+                "Character 3",
+                "Character 4"
+              ]
+            },
+            {
+              "shot": 5,
+              "present": [
+                "Character 1",
+                "Character 2"
+              ]
+            },
+            {
+              "shot": 6,
+              "present": [
+                "Character 1",
+                "Character 2",
+                "Character 3",
+                "Character 4"
+              ]
+            },
+            {
+              "shot": 7,
+              "present": [
+                "Character 1"
+              ]
+            },
+            {
+              "shot": 8,
+              "present": [
+                "Character 3",
+                "Character 4"
+              ]
+            },
+            {
+              "shot": 9,
+              "present": [
+                "Character 1",
+                "Character 2"
+              ]
+            },
+            {
+              "shot": 10,
+              "present": [
+                "Character 3",
+                "Character 4",
+                "Object 4"
+              ]
+            },
+            {
+              "shot": 11,
+              "present": [
+                "Character 1",
+                "Character 2",
+                "Character 3",
+                "Character 4"
+              ]
+            },
+            {
+              "shot": 12,
+              "present": [
+                "Character 1",
+                "Character 3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "shot": 9,
+              "question": "Does Character 2 place a hand on Character 1's shoulder?",
+              "participants": [
+                "Character 2",
+                "Character 1"
+              ],
+              "result": {
+                "question": "Is Character 2's hand on Character 1's shoulder?",
+                "entity": "Character 2",
+                "kind": "holding_or_place"
+              }
+            },
+            {
+              "shot": 10,
+              "question": "Does Character 4 pull out Object 4?",
+              "participants": [
+                "Character 4",
+                "Object 4"
+              ],
+              "result": {
+                "question": "Is Character 4 holding Object 4?",
+                "entity": "Object 4",
+                "kind": "holding_or_place"
+              }
+            },
+            {
+              "shot": 10,
+              "question": "Does Character 4 gesture with Object 4?",
+              "participants": [
+                "Character 4",
+                "Object 4"
+              ],
+              "result": null
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "requirement_id": "film-004060-b0000-shot01/q01",
+            "dimension": "event",
+            "shot": 9,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 place a hand on Character 1's shoulder?",
+            "depends_on": [
+              "Character 2",
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q02",
+            "dimension": "state",
+            "shot": 9,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Character 2's hand on Character 1's shoulder?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q03",
+            "dimension": "event",
+            "shot": 10,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 4 pull out Object 4?",
+            "depends_on": [
+              "Character 4",
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q04",
+            "dimension": "state",
+            "shot": 10,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Character 4 holding Object 4?",
+            "depends_on": [
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q05",
+            "dimension": "event",
+            "shot": 10,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 4 gesture with Object 4?",
+            "depends_on": [
+              "Character 4",
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q06",
+            "dimension": "character",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 2} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q07",
+            "dimension": "character",
+            "shot": 12,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 12} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q08",
+            "dimension": "character",
+            "shot": 3,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 3} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q09",
+            "dimension": "character",
+            "shot": 11,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 11} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q10",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 3 at {shot 4} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q11",
+            "dimension": "character",
+            "shot": 12,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 3 at {shot 12} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q12",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 4 at {shot 4} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 4"
+            ]
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q14",
+            "dimension": "place",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          },
+          {
+            "requirement_id": "film-004060-b0000-shot01/q15",
+            "dimension": "place",
+            "shot": 12,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 12} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          }
+        ],
+        "origin": "reused_dev"
+      }
+    }
+  }
+}

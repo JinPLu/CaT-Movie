@@ -1,0 +1,984 @@
+[
+  {
+    "label": "short_window_below_min_frames",
+    "scene_index": 0,
+    "seed": 20261005,
+    "scene": {
+      "schema_version": "scene_shot_manifest_v1",
+      "scene_id": "cinepile_t2v:video_batch_20250817_133943_001/10,000_BC_(7_10)_Movie_CLIP_-_We_Hunt_Together_(2008)_HD:scene000",
+      "source": "cinepile_t2v",
+      "video_id": "video_batch_20250817_133943_001/10,000_BC_(7_10)_Movie_CLIP_-_We_Hunt_Together_(2008)_HD",
+      "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_001/10,000_BC_(7_10)_Movie_CLIP_-_We_Hunt_Together_(2008)_HD.mp4",
+      "fps": 23.976,
+      "fps_fraction": "2997/125",
+      "width": 1920,
+      "height": 810,
+      "video_frame_count": 1322,
+      "container_preroll_frames": 0,
+      "active_box": [
+        0,
+        30,
+        1920,
+        810
+      ],
+      "subtitle_sample_hits": 1,
+      "video_flags": [],
+      "scene_index": 0,
+      "scene_frame_span": [
+        0,
+        1322
+      ],
+      "shot_boundary_source": "transnetv2",
+      "scene_boundary_source": "movieclips_clip",
+      "end_card_start_frame": 1266,
+      "shot_count": 14,
+      "dropped_short_shots": 0,
+      "shots": [
+        {
+          "source_shot_index": 0,
+          "start_frame": 0,
+          "end_frame": 41,
+          "frame_count": 41,
+          "duration_s": 1.71,
+          "flags": []
+        },
+        {
+          "source_shot_index": 1,
+          "start_frame": 41,
+          "end_frame": 97,
+          "frame_count": 56,
+          "duration_s": 2.336,
+          "flags": []
+        },
+        {
+          "source_shot_index": 2,
+          "start_frame": 97,
+          "end_frame": 166,
+          "frame_count": 69,
+          "duration_s": 2.878,
+          "flags": []
+        },
+        {
+          "source_shot_index": 3,
+          "start_frame": 166,
+          "end_frame": 237,
+          "frame_count": 71,
+          "duration_s": 2.961,
+          "flags": []
+        },
+        {
+          "source_shot_index": 4,
+          "start_frame": 237,
+          "end_frame": 448,
+          "frame_count": 211,
+          "duration_s": 8.8,
+          "flags": []
+        },
+        {
+          "source_shot_index": 5,
+          "start_frame": 448,
+          "end_frame": 647,
+          "frame_count": 199,
+          "duration_s": 8.3,
+          "flags": []
+        },
+        {
+          "source_shot_index": 6,
+          "start_frame": 647,
+          "end_frame": 862,
+          "frame_count": 215,
+          "duration_s": 8.967,
+          "flags": []
+        },
+        {
+          "source_shot_index": 7,
+          "start_frame": 862,
+          "end_frame": 941,
+          "frame_count": 79,
+          "duration_s": 3.295,
+          "flags": []
+        },
+        {
+          "source_shot_index": 8,
+          "start_frame": 941,
+          "end_frame": 1045,
+          "frame_count": 104,
+          "duration_s": 4.338,
+          "flags": []
+        },
+        {
+          "source_shot_index": 9,
+          "start_frame": 1045,
+          "end_frame": 1121,
+          "frame_count": 76,
+          "duration_s": 3.17,
+          "flags": []
+        },
+        {
+          "source_shot_index": 10,
+          "start_frame": 1121,
+          "end_frame": 1193,
+          "frame_count": 72,
+          "duration_s": 3.003,
+          "flags": []
+        },
+        {
+          "source_shot_index": 11,
+          "start_frame": 1193,
+          "end_frame": 1217,
+          "frame_count": 24,
+          "duration_s": 1.001,
+          "flags": []
+        },
+        {
+          "source_shot_index": 12,
+          "start_frame": 1217,
+          "end_frame": 1254,
+          "frame_count": 37,
+          "duration_s": 1.543,
+          "flags": []
+        },
+        {
+          "source_shot_index": 13,
+          "start_frame": 1254,
+          "end_frame": 1322,
+          "frame_count": 68,
+          "duration_s": 2.836,
+          "flags": [
+            "end_card"
+          ]
+        }
+      ],
+      "metadata": {
+        "name_style": "movie_clip_hd",
+        "film_title": "10,000 BC",
+        "year": 2008,
+        "clip_index": 7,
+        "clip_total": 10
+      }
+    },
+    "expected_short_windows": [],
+    "expected_rejected_short_windows": [
+      {
+        "source_shot_indices": [
+          12
+        ],
+        "shot_count": 1,
+        "render_frames": 25,
+        "reason": "short_window_below_min_frames"
+      }
+    ]
+  },
+  {
+    "label": "short2",
+    "scene_index": 3,
+    "seed": 20261005,
+    "scene": {
+      "schema_version": "scene_shot_manifest_v1",
+      "scene_id": "cinepile_t2v:video_batch_20250817_133943_001/10_Cloverfield_Lane_(2016)_-_Frank_&_Mildred_Scene_(3_10)_|_Movieclips:scene000",
+      "source": "cinepile_t2v",
+      "video_id": "video_batch_20250817_133943_001/10_Cloverfield_Lane_(2016)_-_Frank_&_Mildred_Scene_(3_10)_|_Movieclips",
+      "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_001/10_Cloverfield_Lane_(2016)_-_Frank_&_Mildred_Scene_(3_10)_|_Movieclips.mp4",
+      "fps": 23.976,
+      "fps_fraction": "2997/125",
+      "width": 1920,
+      "height": 810,
+      "video_frame_count": 2478,
+      "container_preroll_frames": 0,
+      "active_box": [
+        40,
+        30,
+        1920,
+        810
+      ],
+      "subtitle_sample_hits": 0,
+      "video_flags": [],
+      "scene_index": 0,
+      "scene_frame_span": [
+        0,
+        2478
+      ],
+      "shot_boundary_source": "transnetv2",
+      "scene_boundary_source": "movieclips_clip",
+      "end_card_start_frame": null,
+      "shot_count": 22,
+      "dropped_short_shots": 0,
+      "shots": [
+        {
+          "source_shot_index": 0,
+          "start_frame": 0,
+          "end_frame": 204,
+          "frame_count": 204,
+          "duration_s": 8.509,
+          "flags": []
+        },
+        {
+          "source_shot_index": 1,
+          "start_frame": 204,
+          "end_frame": 264,
+          "frame_count": 60,
+          "duration_s": 2.503,
+          "flags": []
+        },
+        {
+          "source_shot_index": 2,
+          "start_frame": 264,
+          "end_frame": 559,
+          "frame_count": 295,
+          "duration_s": 12.304,
+          "flags": []
+        },
+        {
+          "source_shot_index": 3,
+          "start_frame": 559,
+          "end_frame": 680,
+          "frame_count": 121,
+          "duration_s": 5.047,
+          "flags": []
+        },
+        {
+          "source_shot_index": 4,
+          "start_frame": 680,
+          "end_frame": 876,
+          "frame_count": 196,
+          "duration_s": 8.175,
+          "flags": []
+        },
+        {
+          "source_shot_index": 5,
+          "start_frame": 876,
+          "end_frame": 1068,
+          "frame_count": 192,
+          "duration_s": 8.008,
+          "flags": []
+        },
+        {
+          "source_shot_index": 6,
+          "start_frame": 1068,
+          "end_frame": 1130,
+          "frame_count": 62,
+          "duration_s": 2.586,
+          "flags": []
+        },
+        {
+          "source_shot_index": 7,
+          "start_frame": 1130,
+          "end_frame": 1230,
+          "frame_count": 100,
+          "duration_s": 4.171,
+          "flags": []
+        },
+        {
+          "source_shot_index": 8,
+          "start_frame": 1230,
+          "end_frame": 1282,
+          "frame_count": 52,
+          "duration_s": 2.169,
+          "flags": [
+            "text_on_black"
+          ]
+        },
+        {
+          "source_shot_index": 9,
+          "start_frame": 1282,
+          "end_frame": 1421,
+          "frame_count": 139,
+          "duration_s": 5.797,
+          "flags": []
+        },
+        {
+          "source_shot_index": 10,
+          "start_frame": 1421,
+          "end_frame": 1564,
+          "frame_count": 143,
+          "duration_s": 5.964,
+          "flags": []
+        },
+        {
+          "source_shot_index": 11,
+          "start_frame": 1564,
+          "end_frame": 1633,
+          "frame_count": 69,
+          "duration_s": 2.878,
+          "flags": []
+        },
+        {
+          "source_shot_index": 12,
+          "start_frame": 1633,
+          "end_frame": 1855,
+          "frame_count": 222,
+          "duration_s": 9.259,
+          "flags": []
+        },
+        {
+          "source_shot_index": 13,
+          "start_frame": 1855,
+          "end_frame": 1958,
+          "frame_count": 103,
+          "duration_s": 4.296,
+          "flags": []
+        },
+        {
+          "source_shot_index": 14,
+          "start_frame": 1958,
+          "end_frame": 2009,
+          "frame_count": 51,
+          "duration_s": 2.127,
+          "flags": []
+        },
+        {
+          "source_shot_index": 15,
+          "start_frame": 2009,
+          "end_frame": 2068,
+          "frame_count": 59,
+          "duration_s": 2.461,
+          "flags": []
+        },
+        {
+          "source_shot_index": 16,
+          "start_frame": 2068,
+          "end_frame": 2158,
+          "frame_count": 90,
+          "duration_s": 3.754,
+          "flags": []
+        },
+        {
+          "source_shot_index": 17,
+          "start_frame": 2158,
+          "end_frame": 2219,
+          "frame_count": 61,
+          "duration_s": 2.544,
+          "flags": []
+        },
+        {
+          "source_shot_index": 18,
+          "start_frame": 2219,
+          "end_frame": 2269,
+          "frame_count": 50,
+          "duration_s": 2.085,
+          "flags": []
+        },
+        {
+          "source_shot_index": 19,
+          "start_frame": 2269,
+          "end_frame": 2327,
+          "frame_count": 58,
+          "duration_s": 2.419,
+          "flags": []
+        },
+        {
+          "source_shot_index": 20,
+          "start_frame": 2327,
+          "end_frame": 2412,
+          "frame_count": 85,
+          "duration_s": 3.545,
+          "flags": []
+        },
+        {
+          "source_shot_index": 21,
+          "start_frame": 2412,
+          "end_frame": 2478,
+          "frame_count": 66,
+          "duration_s": 2.753,
+          "flags": []
+        }
+      ],
+      "metadata": {
+        "name_style": "movieclips_scene",
+        "film_title": "10 Cloverfield Lane",
+        "year": 2016,
+        "clip_index": 3,
+        "clip_total": 10
+      }
+    },
+    "expected_short_windows": [
+      {
+        "window_id": "scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_001/10_Cloverfield_Lane_(2016)_-_Frank_&_Mildred_Scene_(3_10)_|_Movieclips:scene000:train:0020-0021",
+        "shot_count": 2,
+        "render_frames": 98,
+        "shots": [
+          {
+            "source_shot_index": 20,
+            "start_frame": 2327,
+            "end_frame": 2412,
+            "seconds": 3.545,
+            "render_frames": 57
+          },
+          {
+            "source_shot_index": 21,
+            "start_frame": 2412,
+            "end_frame": 2478,
+            "seconds": 2.753,
+            "render_frames": 41
+          }
+        ]
+      }
+    ],
+    "expected_rejected_short_windows": [
+      {
+        "source_shot_indices": [
+          7
+        ],
+        "shot_count": 1,
+        "render_frames": 65,
+        "reason": "short_window_below_min_frames"
+      }
+    ]
+  },
+  {
+    "label": "short_window_over_frame_cap",
+    "scene_index": 7,
+    "seed": 20261005,
+    "scene": {
+      "schema_version": "scene_shot_manifest_v1",
+      "scene_id": "cinepile_t2v:video_batch_20250817_133943_001/12_Angry_Men_(2_10)_Movie_CLIP_-_It's_the_Same_Knife!_(1957)_HD:scene000",
+      "source": "cinepile_t2v",
+      "video_id": "video_batch_20250817_133943_001/12_Angry_Men_(2_10)_Movie_CLIP_-_It's_the_Same_Knife!_(1957)_HD",
+      "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_001/12_Angry_Men_(2_10)_Movie_CLIP_-_It's_the_Same_Knife!_(1957)_HD.mp4",
+      "fps": 23.976,
+      "fps_fraction": "2997/125",
+      "width": 1920,
+      "height": 810,
+      "video_frame_count": 3045,
+      "container_preroll_frames": 0,
+      "active_box": [
+        80,
+        0,
+        1840,
+        810
+      ],
+      "subtitle_sample_hits": 0,
+      "video_flags": [],
+      "scene_index": 0,
+      "scene_frame_span": [
+        0,
+        3045
+      ],
+      "shot_boundary_source": "transnetv2",
+      "scene_boundary_source": "movieclips_clip",
+      "end_card_start_frame": 2989,
+      "shot_count": 21,
+      "dropped_short_shots": 0,
+      "shots": [
+        {
+          "source_shot_index": 0,
+          "start_frame": 0,
+          "end_frame": 359,
+          "frame_count": 359,
+          "duration_s": 14.973,
+          "flags": []
+        },
+        {
+          "source_shot_index": 1,
+          "start_frame": 359,
+          "end_frame": 708,
+          "frame_count": 349,
+          "duration_s": 14.556,
+          "flags": []
+        },
+        {
+          "source_shot_index": 2,
+          "start_frame": 708,
+          "end_frame": 988,
+          "frame_count": 280,
+          "duration_s": 11.678,
+          "flags": []
+        },
+        {
+          "source_shot_index": 3,
+          "start_frame": 988,
+          "end_frame": 1047,
+          "frame_count": 59,
+          "duration_s": 2.461,
+          "flags": []
+        },
+        {
+          "source_shot_index": 4,
+          "start_frame": 1047,
+          "end_frame": 1084,
+          "frame_count": 37,
+          "duration_s": 1.543,
+          "flags": []
+        },
+        {
+          "source_shot_index": 5,
+          "start_frame": 1084,
+          "end_frame": 1253,
+          "frame_count": 169,
+          "duration_s": 7.049,
+          "flags": []
+        },
+        {
+          "source_shot_index": 6,
+          "start_frame": 1253,
+          "end_frame": 1383,
+          "frame_count": 130,
+          "duration_s": 5.422,
+          "flags": []
+        },
+        {
+          "source_shot_index": 7,
+          "start_frame": 1383,
+          "end_frame": 1616,
+          "frame_count": 233,
+          "duration_s": 9.718,
+          "flags": []
+        },
+        {
+          "source_shot_index": 8,
+          "start_frame": 1616,
+          "end_frame": 1692,
+          "frame_count": 76,
+          "duration_s": 3.17,
+          "flags": []
+        },
+        {
+          "source_shot_index": 9,
+          "start_frame": 1692,
+          "end_frame": 1749,
+          "frame_count": 57,
+          "duration_s": 2.377,
+          "flags": []
+        },
+        {
+          "source_shot_index": 10,
+          "start_frame": 1749,
+          "end_frame": 1883,
+          "frame_count": 134,
+          "duration_s": 5.589,
+          "flags": []
+        },
+        {
+          "source_shot_index": 11,
+          "start_frame": 1883,
+          "end_frame": 1926,
+          "frame_count": 43,
+          "duration_s": 1.793,
+          "flags": []
+        },
+        {
+          "source_shot_index": 12,
+          "start_frame": 1926,
+          "end_frame": 2049,
+          "frame_count": 123,
+          "duration_s": 5.13,
+          "flags": []
+        },
+        {
+          "source_shot_index": 13,
+          "start_frame": 2049,
+          "end_frame": 2151,
+          "frame_count": 102,
+          "duration_s": 4.254,
+          "flags": []
+        },
+        {
+          "source_shot_index": 14,
+          "start_frame": 2151,
+          "end_frame": 2184,
+          "frame_count": 33,
+          "duration_s": 1.376,
+          "flags": []
+        },
+        {
+          "source_shot_index": 15,
+          "start_frame": 2184,
+          "end_frame": 2225,
+          "frame_count": 41,
+          "duration_s": 1.71,
+          "flags": []
+        },
+        {
+          "source_shot_index": 16,
+          "start_frame": 2225,
+          "end_frame": 2249,
+          "frame_count": 24,
+          "duration_s": 1.001,
+          "flags": []
+        },
+        {
+          "source_shot_index": 17,
+          "start_frame": 2249,
+          "end_frame": 2328,
+          "frame_count": 79,
+          "duration_s": 3.295,
+          "flags": []
+        },
+        {
+          "source_shot_index": 18,
+          "start_frame": 2328,
+          "end_frame": 2659,
+          "frame_count": 331,
+          "duration_s": 13.805,
+          "flags": []
+        },
+        {
+          "source_shot_index": 19,
+          "start_frame": 2659,
+          "end_frame": 2978,
+          "frame_count": 319,
+          "duration_s": 13.305,
+          "flags": []
+        },
+        {
+          "source_shot_index": 20,
+          "start_frame": 2978,
+          "end_frame": 3045,
+          "frame_count": 67,
+          "duration_s": 2.794,
+          "flags": [
+            "end_card"
+          ]
+        }
+      ],
+      "metadata": {
+        "name_style": "movie_clip_hd",
+        "film_title": "12 Angry Men",
+        "year": 1957,
+        "clip_index": 2,
+        "clip_total": 10
+      }
+    },
+    "expected_short_windows": [],
+    "expected_rejected_short_windows": [
+      {
+        "source_shot_indices": [
+          18,
+          19
+        ],
+        "shot_count": 2,
+        "render_frames": 434,
+        "reason": "short_window_over_frame_cap"
+      }
+    ]
+  },
+  {
+    "label": "short1",
+    "scene_index": 9,
+    "seed": 20261005,
+    "scene": {
+      "schema_version": "scene_shot_manifest_v1",
+      "scene_id": "cinepile_t2v:video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD:scene000",
+      "source": "cinepile_t2v",
+      "video_id": "video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD",
+      "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD.mp4",
+      "fps": 23.976,
+      "fps_fraction": "2997/125",
+      "width": 1920,
+      "height": 810,
+      "video_frame_count": 5420,
+      "container_preroll_frames": 0,
+      "active_box": [
+        80,
+        0,
+        1840,
+        810
+      ],
+      "subtitle_sample_hits": 0,
+      "video_flags": [],
+      "scene_index": 0,
+      "scene_frame_span": [
+        0,
+        5420
+      ],
+      "shot_boundary_source": "transnetv2",
+      "scene_boundary_source": "movieclips_clip",
+      "end_card_start_frame": 5359,
+      "shot_count": 25,
+      "dropped_short_shots": 1,
+      "shots": [
+        {
+          "source_shot_index": 1,
+          "start_frame": 12,
+          "end_frame": 330,
+          "frame_count": 318,
+          "duration_s": 13.263,
+          "flags": []
+        },
+        {
+          "source_shot_index": 2,
+          "start_frame": 330,
+          "end_frame": 431,
+          "frame_count": 101,
+          "duration_s": 4.213,
+          "flags": []
+        },
+        {
+          "source_shot_index": 3,
+          "start_frame": 431,
+          "end_frame": 990,
+          "frame_count": 559,
+          "duration_s": 23.315,
+          "flags": []
+        },
+        {
+          "source_shot_index": 4,
+          "start_frame": 990,
+          "end_frame": 1131,
+          "frame_count": 141,
+          "duration_s": 5.881,
+          "flags": []
+        },
+        {
+          "source_shot_index": 5,
+          "start_frame": 1131,
+          "end_frame": 1780,
+          "frame_count": 649,
+          "duration_s": 27.069,
+          "flags": []
+        },
+        {
+          "source_shot_index": 6,
+          "start_frame": 1780,
+          "end_frame": 2076,
+          "frame_count": 296,
+          "duration_s": 12.346,
+          "flags": []
+        },
+        {
+          "source_shot_index": 7,
+          "start_frame": 2076,
+          "end_frame": 3325,
+          "frame_count": 1249,
+          "duration_s": 52.094,
+          "flags": []
+        },
+        {
+          "source_shot_index": 8,
+          "start_frame": 3325,
+          "end_frame": 3438,
+          "frame_count": 113,
+          "duration_s": 4.713,
+          "flags": []
+        },
+        {
+          "source_shot_index": 9,
+          "start_frame": 3438,
+          "end_frame": 3812,
+          "frame_count": 374,
+          "duration_s": 15.599,
+          "flags": []
+        },
+        {
+          "source_shot_index": 10,
+          "start_frame": 3812,
+          "end_frame": 4432,
+          "frame_count": 620,
+          "duration_s": 25.859,
+          "flags": []
+        },
+        {
+          "source_shot_index": 11,
+          "start_frame": 4432,
+          "end_frame": 4533,
+          "frame_count": 101,
+          "duration_s": 4.213,
+          "flags": []
+        },
+        {
+          "source_shot_index": 12,
+          "start_frame": 4533,
+          "end_frame": 4561,
+          "frame_count": 28,
+          "duration_s": 1.168,
+          "flags": []
+        },
+        {
+          "source_shot_index": 13,
+          "start_frame": 4561,
+          "end_frame": 4647,
+          "frame_count": 86,
+          "duration_s": 3.587,
+          "flags": []
+        },
+        {
+          "source_shot_index": 14,
+          "start_frame": 4647,
+          "end_frame": 4696,
+          "frame_count": 49,
+          "duration_s": 2.044,
+          "flags": []
+        },
+        {
+          "source_shot_index": 15,
+          "start_frame": 4696,
+          "end_frame": 4776,
+          "frame_count": 80,
+          "duration_s": 3.337,
+          "flags": []
+        },
+        {
+          "source_shot_index": 16,
+          "start_frame": 4776,
+          "end_frame": 4825,
+          "frame_count": 49,
+          "duration_s": 2.044,
+          "flags": []
+        },
+        {
+          "source_shot_index": 17,
+          "start_frame": 4825,
+          "end_frame": 4870,
+          "frame_count": 45,
+          "duration_s": 1.877,
+          "flags": []
+        },
+        {
+          "source_shot_index": 18,
+          "start_frame": 4870,
+          "end_frame": 4929,
+          "frame_count": 59,
+          "duration_s": 2.461,
+          "flags": []
+        },
+        {
+          "source_shot_index": 19,
+          "start_frame": 4929,
+          "end_frame": 4968,
+          "frame_count": 39,
+          "duration_s": 1.627,
+          "flags": []
+        },
+        {
+          "source_shot_index": 20,
+          "start_frame": 4968,
+          "end_frame": 4996,
+          "frame_count": 28,
+          "duration_s": 1.168,
+          "flags": []
+        },
+        {
+          "source_shot_index": 21,
+          "start_frame": 4996,
+          "end_frame": 5023,
+          "frame_count": 27,
+          "duration_s": 1.126,
+          "flags": []
+        },
+        {
+          "source_shot_index": 22,
+          "start_frame": 5023,
+          "end_frame": 5051,
+          "frame_count": 28,
+          "duration_s": 1.168,
+          "flags": []
+        },
+        {
+          "source_shot_index": 23,
+          "start_frame": 5051,
+          "end_frame": 5144,
+          "frame_count": 93,
+          "duration_s": 3.879,
+          "flags": []
+        },
+        {
+          "source_shot_index": 24,
+          "start_frame": 5144,
+          "end_frame": 5204,
+          "frame_count": 60,
+          "duration_s": 2.503,
+          "flags": []
+        },
+        {
+          "source_shot_index": 25,
+          "start_frame": 5204,
+          "end_frame": 5420,
+          "frame_count": 216,
+          "duration_s": 9.009,
+          "flags": [
+            "end_card"
+          ]
+        }
+      ],
+      "metadata": {
+        "name_style": "movie_clip_hd",
+        "film_title": "12 Angry Men",
+        "year": 1957,
+        "clip_index": 5,
+        "clip_total": 10
+      }
+    },
+    "expected_short_windows": [
+      {
+        "window_id": "scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD:scene000:train:0001-0002",
+        "shot_count": 2,
+        "render_frames": 274,
+        "shots": [
+          {
+            "source_shot_index": 1,
+            "start_frame": 12,
+            "end_frame": 330,
+            "seconds": 13.263,
+            "render_frames": 209
+          },
+          {
+            "source_shot_index": 2,
+            "start_frame": 330,
+            "end_frame": 431,
+            "seconds": 4.213,
+            "render_frames": 65
+          }
+        ]
+      },
+      {
+        "window_id": "scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD:scene000:train:0004-0004",
+        "shot_count": 1,
+        "render_frames": 93,
+        "shots": [
+          {
+            "source_shot_index": 4,
+            "start_frame": 990,
+            "end_frame": 1131,
+            "seconds": 5.881,
+            "render_frames": 93
+          }
+        ]
+      },
+      {
+        "window_id": "scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD:scene000:train:0006-0006",
+        "shot_count": 1,
+        "render_frames": 197,
+        "shots": [
+          {
+            "source_shot_index": 6,
+            "start_frame": 1780,
+            "end_frame": 2076,
+            "seconds": 12.346,
+            "render_frames": 197
+          }
+        ]
+      },
+      {
+        "window_id": "scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_001/12_Angry_Men_(5_10)_Movie_CLIP_-_Re-enactment_(1957)_HD:scene000:train:0023-0024",
+        "shot_count": 2,
+        "render_frames": 98,
+        "shots": [
+          {
+            "source_shot_index": 23,
+            "start_frame": 5051,
+            "end_frame": 5144,
+            "seconds": 3.879,
+            "render_frames": 61
+          },
+          {
+            "source_shot_index": 24,
+            "start_frame": 5144,
+            "end_frame": 5204,
+            "seconds": 2.503,
+            "render_frames": 37
+          }
+        ]
+      }
+    ],
+    "expected_rejected_short_windows": [
+      {
+        "source_shot_indices": [
+          8
+        ],
+        "shot_count": 1,
+        "render_frames": 73,
+        "reason": "short_window_below_min_frames"
+      }
+    ]
+  }
+]

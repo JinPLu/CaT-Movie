@@ -1,0 +1,1678 @@
+{
+ "source": "benchmark_storyboards_v4.json dev; public Qwen3.5-9B v12 nonthinking greedy, planner-call-settings-recheck-20261106/nothink_greedy_1",
+ "cases": [
+  {
+   "story_id": "film-000127-b0000-shot01",
+   "reference": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with a shaved head, mustache, and medium build",
+      "outfit": "a grey suit, a pink shirt, and a purple tie"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with long dark hair and a slim build",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a large bed with a patterned bedspread"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a doorway"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a table with lit candles and glasses"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a pink shirt"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a pair of dark trousers"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "white underwear"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a hotel room or bedroom with warm lighting, patterned curtains, and a large bed"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "a grey suit, a pink shirt, and a purple tie",
+        "posture": "walking through a doorway"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing in the bedroom"
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "action": "Character 1 walks through a doorway into a bedroom where Character 2 is standing in lingerie.",
+      "changes": [],
+      "frame_count": 197
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "a grey suit, a pink shirt, and a purple tie",
+        "posture": "standing",
+        "state": "looking surprised"
+       }
+      ],
+      "action": "Character 1 looks surprised.",
+      "changes": [],
+      "frame_count": 25
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "a grey suit, a pink shirt, and a purple tie",
+        "posture": "standing in the doorway"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing in the room"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 1 takes off his grey suit jacket and tie, now only wearing a pink shirt and dark trousers, while standing near a table with lit candles.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "a grey suit, a pink shirt, and a purple tie",
+        "after": "a pink shirt and dark trousers"
+       }
+      ],
+      "frame_count": 61
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "a pink shirt and dark trousers",
+        "posture": "standing in front of Character 2"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing in front of Character 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 and Character 2 stand facing each other near the bed.",
+      "changes": [],
+      "frame_count": 89
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "a pink shirt and dark trousers",
+        "posture": "standing"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 3"
+       },
+       {
+        "name": "Object 4"
+       }
+      ],
+      "action": "Character 2 helps Character 1 take off his pink shirt, leaving him shirtless in dark trousers.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "a pink shirt and dark trousers",
+        "after": "dark trousers"
+       },
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 4"
+        ]
+       }
+      ],
+      "frame_count": 125
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "dark trousers",
+        "posture": "standing",
+        "state": "shirtless"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing behind Character 1"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 stands behind the shirtless Character 1, leaning in close to him near the table with candles.",
+      "changes": [],
+      "frame_count": 53
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "dark trousers",
+        "posture": "standing",
+        "state": "shirtless"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing behind Character 1"
+       }
+      ],
+      "action": "Character 2 leans in and speaks to Character 1 from behind.",
+      "changes": [],
+      "frame_count": 65
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "dark trousers",
+        "posture": "standing",
+        "state": "shirtless"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 1 is now standing shirtless in white underwear.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "dark trousers",
+        "after": "white underwear"
+       }
+      ],
+      "frame_count": 105
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "white underwear",
+        "posture": "standing",
+        "state": "shirtless"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing in front of Character 1"
+       }
+      ],
+      "action": "Character 2 stands in front of Character 1, looking at him and speaking.",
+      "changes": [],
+      "frame_count": 73
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "outfit": "white underwear",
+        "posture": "standing",
+        "state": "shirtless"
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 1 sits down while Character 2 kneels on the floor looking up at him.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "sitting on the edge of a table or chair"
+       },
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "kneeling on the floor looking up at Character 1"
+       }
+      ],
+      "frame_count": 57
+     },
+     {
+      "shot": 11,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "high angle shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+        "posture": "kneeling on the floor looking up"
+       }
+      ],
+      "action": "Character 2 looks up and speaks.",
+      "changes": [],
+      "frame_count": 61
+     }
+    ]
+   },
+   "request": "SUBJECTS\n- Character 1 (person): a man with a shaved head, mustache, and medium build, wearing a grey suit, a pink shirt, and a purple tie\n- Character 2 (person): a woman with long dark hair and a slim build, wearing a black leather lingerie set with spikes, long black gloves, and thigh-high black boots\n- Object 1 (object): a large bed with a patterned bedspread\n- Object 2 (object): a doorway\n- Object 3 (object): a table with lit candles and glasses\n- Object 4 (object): a pink shirt\n- Object 5 (object): a pair of dark trousers\n- Object 6 (object): white underwear\nLOCATIONS\n- Location 1: a hotel room or bedroom with warm lighting, patterned curtains, and a large bed\nSHOTS\ns01: Medium shot, tracking. Character 1 walks through a doorway into a bedroom where Character 2 is standing in lingerie.\ns02: Close-up shot. Character 1 looks surprised.\ns03: Medium shot. Character 1 takes off his grey suit jacket and tie, now only wearing a pink shirt and dark trousers, while standing near a table with lit candles.\ns04: Medium shot. Character 1 and Character 2 stand facing each other near the bed.\ns05: Wide shot. Character 2 helps Character 1 take off his pink shirt, leaving him shirtless in dark trousers.\ns06: Medium shot. Character 2 stands behind the shirtless Character 1, leaning in close to him near the table with candles.\ns07: Close-up shot. Character 2 leans in and speaks to Character 1 from behind.\ns08: Medium shot. Character 1 is now standing shirtless in white underwear.\ns09: Close-up shot. Character 2 stands in front of Character 1, looking at him and speaking.\ns10: Medium shot. Character 1 sits down while Character 2 kneels on the floor looking up at him.\ns11: Close-up shot, high angle shot. Character 2 looks up and speaks.",
+   "plan": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "a man with a shaved head, mustache, and medium build",
+      "outfit": "a grey suit, a pink shirt, and a purple tie"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "a woman with long dark hair and a slim build",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a large bed with a patterned bedspread"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a doorway"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a table with lit candles and glasses"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a pink shirt"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a pair of dark trousers"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "white underwear"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a hotel room or bedroom with warm lighting, patterned curtains, and a large bed"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "walking",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "in_front_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 walks through a doorway into a bedroom where Character 2 is standing in lingerie.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "Character 1 looks surprised.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "after": "with a surprised expression"
+       }
+      ],
+      "frame_count": 53
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 5"
+       }
+      ],
+      "action": "Character 1 takes off his grey suit jacket and tie, now only wearing a pink shirt and dark trousers, while standing near a table with lit candles.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "a grey suit, a pink shirt, and a purple tie",
+        "after": "a pink shirt and a pair of dark trousers"
+       },
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 4",
+         "Object 5"
+        ]
+       }
+      ],
+      "frame_count": 101
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 and Character 2 stand facing each other near the bed.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "wide shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 4"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Object 4"
+       }
+      ],
+      "action": "Character 2 helps Character 1 take off his pink shirt, leaving him shirtless in dark trousers.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "a pink shirt and a pair of dark trousers",
+        "after": "a pair of dark trousers"
+       },
+       {
+        "name": "Character 2",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 4"
+        ]
+       }
+      ],
+      "frame_count": 101
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 4"
+        ]
+       },
+       {
+        "name": "Object 4"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "in_front_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 2 stands behind the shirtless Character 1, leaning in close to him near the table with candles.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "leaning in close"
+       }
+      ],
+      "frame_count": 101
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "leaning in",
+        "holding": [
+         "Object 4"
+        ]
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Object 4"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "in_front_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 2 leans in and speaks to Character 1 from behind.",
+      "changes": [],
+      "frame_count": 53
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "Character 1 is now standing shirtless in white underwear.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "a pair of dark trousers",
+        "after": "white underwear"
+       }
+      ],
+      "frame_count": 101
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "in_front_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 2 stands in front of Character 1, looking at him and speaking.",
+      "changes": [],
+      "frame_count": 49
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "in_front_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 1 sits down while Character 2 kneels on the floor looking up at him.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "sitting"
+       },
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "kneeling"
+       }
+      ],
+      "frame_count": 101
+     },
+     {
+      "shot": 11,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "high angle shot"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "kneeling",
+        "holding": []
+       },
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "in_front_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 2 looks up and speaks.",
+      "changes": [],
+      "frame_count": 49
+     }
+    ]
+   }
+  },
+  {
+   "story_id": "film-000129-b0000-shot01",
+   "reference": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark hair and glasses",
+      "outfit": "a dark suit, a light shirt, and a striped tie"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with a shaved head and a mustache",
+      "outfit": "a light grey suit, a blue shirt, and a grey tie"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "partial",
+      "appearance": "a woman with long blonde hair",
+      "outfit": "a dark top"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a piece of paper"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a grey jacket"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a dark bookshelf"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a desk lamp"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a dark desk"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a laptop"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "a folder"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "an office chair"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "an office with a desk, bookshelf, and computer monitors"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at a desk",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 3",
+        "posture": "sitting behind Character 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 sits at a desk looking at a piece of paper while Character 3 sits behind him.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at a desk",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing near Character 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 2 stands near Character 1, who is holding a piece of paper.",
+      "changes": [],
+      "frame_count": 13
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at a desk",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing near Character 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 talks to Character 2 while holding the paper.",
+      "changes": [],
+      "frame_count": 25
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "pan"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "walking towards the desk",
+        "holding": [
+         "Object 2"
+        ]
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "action": "Character 2 walks towards the desk while taking off his grey jacket.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "holding",
+        "before": [
+         "Object 2"
+        ],
+        "after": []
+       }
+      ],
+      "frame_count": 109
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing near the desk",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a light grey suit, a blue shirt, and a grey tie",
+        "posture": "walking towards the desk chair"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "action": "Character 1 stands holding a folder while Character 2 walks to the desk chair.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "outfit",
+        "before": "a light grey suit, a blue shirt, and a grey tie",
+        "after": "a blue shirt and a grey tie"
+       }
+      ],
+      "frame_count": 177
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing near the desk",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a blue shirt and a grey tie",
+        "posture": "walking towards the desk chair"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "action": "Character 2 sits at the desk and opens a laptop while Character 1 stands nearby holding a folder.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "walking towards the desk chair",
+        "after": "sitting at the desk"
+       }
+      ],
+      "frame_count": 141
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing near the desk",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a blue shirt and a grey tie",
+        "posture": "sitting at the desk"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "action": "Character 1 talks to Character 2, who is sitting at the desk.",
+      "changes": [],
+      "frame_count": 29
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing near the desk",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "outfit": "a blue shirt and a grey tie",
+        "posture": "sitting at the desk"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "action": "Character 1 walks away from the desk while Character 2 remains seated.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing near the desk",
+        "after": "walking away from the desk"
+       }
+      ],
+      "frame_count": 25
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway"
+       }
+      ],
+      "action": "Character 1 stands in the doorway and talks.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "outfit": "a blue shirt and a grey tie",
+        "posture": "sitting at the desk"
+       }
+      ],
+      "action": "Character 2 sits at the desk and looks towards the doorway.",
+      "changes": [],
+      "frame_count": 13
+     },
+     {
+      "shot": 11,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway"
+       }
+      ],
+      "action": "Character 1 stands in the doorway and talks.",
+      "changes": [],
+      "frame_count": 29
+     },
+     {
+      "shot": 12,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "outfit": "a blue shirt and a grey tie",
+        "posture": "sitting at the desk"
+       }
+      ],
+      "action": "Character 2 sits at the desk and looks towards the doorway.",
+      "changes": [],
+      "frame_count": 21
+     }
+    ]
+   },
+   "request": "SUBJECTS\n- Character 1 (person): a man with dark hair and glasses, wearing a dark suit, a light shirt, and a striped tie\n- Character 2 (person): a man with a shaved head and a mustache, wearing a light grey suit, a blue shirt, and a grey tie\n- Character 3 (person): a woman with long blonde hair, wearing a dark top\n- Object 1 (object): a piece of paper\n- Object 2 (object): a grey jacket\n- Object 3 (object): a dark bookshelf\n- Object 4 (object): a desk lamp\n- Object 5 (object): a dark desk\n- Object 6 (object): a laptop\n- Object 7 (object): a folder\n- Object 8 (object): an office chair\nLOCATIONS\n- Location 1: an office with a desk, bookshelf, and computer monitors\nSHOTS\ns01: Medium shot. Character 1 sits at a desk looking at a piece of paper while Character 3 sits behind him.\ns02: Medium close-up shot. Character 2 stands near Character 1, who is holding a piece of paper.\ns03: Medium shot. Character 1 talks to Character 2 while holding the paper.\ns04: Medium shot, pan. Character 2 walks towards the desk while taking off his grey jacket.\ns05: Medium wide shot. Character 1 stands holding a folder while Character 2 walks to the desk chair.\ns06: Medium wide shot. Character 2 sits at the desk and opens a laptop while Character 1 stands nearby holding a folder.\ns07: Medium close-up shot. Character 1 talks to Character 2, who is sitting at the desk.\ns08: Medium shot. Character 1 walks away from the desk while Character 2 remains seated.\ns09: Close-up shot. Character 1 stands in the doorway and talks.\ns10: Medium close-up shot. Character 2 sits at the desk and looks towards the doorway.\ns11: Close-up shot. Character 1 stands in the doorway and talks.\ns12: Medium close-up shot. Character 2 sits at the desk and looks towards the doorway.",
+   "plan": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "a man with dark hair and glasses",
+      "outfit": "a dark suit, a light shirt, and a striped tie"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "a man with a shaved head and a mustache",
+      "outfit": "a light grey suit, a blue shirt, and a grey tie"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "appearance": "a woman with long blonde hair",
+      "outfit": "a dark top"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a piece of paper"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a grey jacket"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a dark bookshelf"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a desk lamp"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a dark desk"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a laptop"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "a folder"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "an office chair"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "an office with a desk, bookshelf, and computer monitors"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at the desk",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 3",
+        "posture": "sitting behind Character 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 3",
+        "relation": "in_front_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 1 sits at a desk looking at a piece of paper while Character 3 sits behind him.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing near Character 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 2 stands near Character 1, who is holding a piece of paper.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 talks to Character 2 while holding the paper.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "pan"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 2"
+        ]
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "relations": [],
+      "action": "Character 2 walks towards the desk while taking off his grey jacket.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "holding",
+        "before": [
+         "Object 2"
+        ],
+        "after": []
+       },
+       {
+        "name": "Character 2",
+        "what": "state",
+        "after": "empty-handed"
+       }
+      ],
+      "frame_count": 57
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "walking to the desk chair"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 stands holding a folder while Character 2 walks to the desk chair.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "walking to the desk chair",
+        "holding": [
+         "Object 6"
+        ]
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing nearby",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Object 6"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 2 sits at the desk and opens a laptop while Character 1 stands nearby holding a folder.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "walking to the desk chair",
+        "after": "sitting at the desk"
+       },
+       {
+        "name": "Character 2",
+        "what": "state",
+        "after": "opening the laptop"
+       }
+      ],
+      "frame_count": 57
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "sitting at the desk"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 talks to Character 2, who is sitting at the desk.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "seated at the desk"
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 walks away from the desk while Character 2 remains seated.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "walking away from the desk"
+       }
+      ],
+      "frame_count": 57
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "walking away from the desk",
+        "holding": [
+         "Object 7"
+        ]
+       },
+       {
+        "name": "Object 7"
+       }
+      ],
+      "relations": [],
+      "action": "Character 1 stands in the doorway and talks.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "walking away from the desk",
+        "after": "standing in the doorway"
+       },
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [
+         "Object 7"
+        ],
+        "after": []
+       },
+       {
+        "name": "Character 1",
+        "what": "state",
+        "after": "empty-handed"
+       }
+      ],
+      "frame_count": 57
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "sitting at the desk"
+       }
+      ],
+      "relations": [],
+      "action": "Character 2 sits at the desk and looks towards the doorway.",
+      "changes": [],
+      "frame_count": 57
+     },
+     {
+      "shot": 11,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway",
+        "holding": []
+       }
+      ],
+      "relations": [],
+      "action": "Character 1 stands in the doorway and talks.",
+      "changes": [],
+      "frame_count": 53
+     },
+     {
+      "shot": 12,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "sitting at the desk"
+       }
+      ],
+      "relations": [],
+      "action": "Character 2 sits at the desk and looks towards the doorway.",
+      "changes": [],
+      "frame_count": 53
+     }
+    ]
+   }
+  }
+ ]
+}

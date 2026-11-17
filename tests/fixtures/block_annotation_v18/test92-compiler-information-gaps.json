@@ -1,0 +1,211 @@
+[
+  {
+    "story_id": "cinedance-009077-b0004-shot01",
+    "source_shot_number": 1,
+    "source_manifest": "outputs/experiments/test92-prompt-information-audit-20261107/review/compiler-input-manifest.json",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a middle-aged man with thinning dark hair and a clean-shaven face",
+          "outfit": "a black and maroon judge's robe over a white shirt and grey tie"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with shoulder-length brown hair and a slim build",
+          "outfit": "a white collared shirt"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short dark hair and a slim build",
+          "outfit": "a black suit, white shirt, and striped tie"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young man with dark hair covering his forehead and a slim build",
+          "outfit": "a grey button-down shirt and dark pants"
+        },
+        {
+          "name": "Character 5",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man wearing a black cap with a gold emblem",
+          "outfit": "a light blue uniform shirt"
+        },
+        {
+          "name": "Character 6",
+          "kind": "group",
+          "visibility": "clear",
+          "appearance": "a panel of judges and a jury or audience members",
+          "outfit": "formal business attire and judicial robes"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a black leather chair"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a microphone on a stand"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a wooden door"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a wooden bench"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a wooden wall paneling"
+        },
+        {
+          "name": "Object 6",
+          "appearance": "a blue chair"
+        },
+        {
+          "name": "Object 7",
+          "appearance": "a laptop or monitor"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a courtroom with wooden paneling, benches, and a judge's bench"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting behind the judge's bench",
+              "holding": []
+            },
+            {
+              "name": "Object 1",
+              "posture": "behind Character 1"
+            },
+            {
+              "name": "Object 2",
+              "posture": "in front of Character 1"
+            },
+            {
+              "name": "Object 7",
+              "posture": "in front of Character 1"
+            }
+          ],
+          "action": "A judge speaks from behind his bench.",
+          "changes": [],
+          "frame_count": 13
+        }
+      ]
+    }
+  },
+  {
+    "story_id": "film-005223-b0001-shot01",
+    "source_shot_number": 8,
+    "source_manifest": "outputs/experiments/test92-prompt-information-audit-20261107/review/compiler-input-manifest.json",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short dark hair and a lean build",
+          "outfit": "a white bathrobe"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with blonde hair tied back in a ponytail and a slim build",
+          "outfit": "a light grey robe over a white top"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a glass of liquid"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a wooden dresser with a mirror"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a lamp"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a bed"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a wooden stool"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a dimly lit bedroom with a bed, dresser, and lamps"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 8,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing by the dresser",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "action": "The man stands by the dresser, takes a drink from the glass, and puts it down.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "holding",
+              "before": [
+                "Object 1"
+              ],
+              "after": []
+            }
+          ],
+          "frame_count": 61
+        }
+      ]
+    }
+  }
+]

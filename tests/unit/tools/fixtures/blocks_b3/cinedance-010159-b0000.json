@@ -1,0 +1,231 @@
+{
+ "key": "cinedance-010159-b0000",
+ "shots": 6,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "Several law enforcement officers in FBI and Police jackets enter and look around a hotel room."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man with a medium build",
+    "outfit": "a dark jacket with FBI on the back"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man with a heavy build",
+    "outfit": "a dark jacket with POLICE on the front"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with dark hair in a ponytail",
+    "outfit": "a dark jacket with POLICE on the front"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a man with short dark hair",
+    "outfit": "a dark jacket"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a large video camera"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a dark suitcase"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a bed with grey bedding"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a wooden nightstand with a lamp"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a window with striped curtains"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a dark armchair"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "a floor lamp"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a hotel room with a bed, windows, and lamps"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "activity": "action_or_state_change",
+    "action": "A cameraman walks past Character 1 and Character 2 carrying Object 1. Character 1 walks towards Object 6 and sits down.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking then sitting on Object 6"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing by the window"
+     },
+     {
+      "name": "Object 1",
+      "holding": [
+       "Character 4"
+      ]
+     },
+     {
+      "name": "Object 2",
+      "holding": [
+       "Character 2"
+      ]
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "walking",
+      "after": "sitting on Object 6"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "activity": "no_human_activity",
+    "action": "The camera pans across the bed and nightstand.",
+    "present": [
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1, Character 2, Character 3, and Character 4 stand in the room talking.",
+    "present": [
+     {
+      "name": "Character 1"
+     },
+     {
+      "name": "Character 2"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing and gesturing"
+     },
+     {
+      "name": "Character 4"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 3 looks to the side and speaks.",
+    "present": [
+     {
+      "name": "Character 3"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 looks around the room.",
+    "present": [
+     {
+      "name": "Character 2"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 looks down and then turns to walk towards the window.",
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "looking down",
+      "after": "turning and walking"
+     }
+    ]
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "1": [
+   "shot 1 holding of Object 1"
+  ]
+ }
+}

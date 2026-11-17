@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "ci_vid:train:000137429",
+    "dataset": "ci_vid",
+    "source_video_paths": "[\"${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/videos/chunk_758/4da4d479b7137dc4f8f0a464c4b28b2a/1/0.mp4\",\"${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/videos/chunk_758/4da4d479b7137dc4f8f0a464c4b28b2a/1/1.mp4\"]",
+    "source_shot_segments": "[[0,99],[0,250]]"
+  },
+  {
+    "case_id": "full:cine250k:cine250k:304608563_71",
+    "dataset": "cine250k",
+    "source_video_paths": "[\"${MSPC_SHARED_ROOT}/OoVMetric/resource/cine250k/raw_videos/304608563.mp4\",\"${MSPC_SHARED_ROOT}/OoVMetric/resource/cine250k/raw_videos/304608563.mp4\",\"${MSPC_SHARED_ROOT}/OoVMetric/resource/cine250k/raw_videos/304608563.mp4\"]",
+    "source_shot_segments": "[[50299,50408],[50408,50475],[50475,50572]]"
+  }
+]

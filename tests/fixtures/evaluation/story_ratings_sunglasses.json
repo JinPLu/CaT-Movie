@@ -1,0 +1,60 @@
+{
+  "ratings": [
+    {
+      "question_number": 1,
+      "reason": "The characters blend in the second half, where the second woman mistakenly adopts the sunglasses and white blazer of the first.",
+      "timestamps_seconds": [
+        2.5,
+        8.5,
+        11.5,
+        14.0
+      ],
+      "score": 2,
+      "status": "rated"
+    },
+    {
+      "question_number": 2,
+      "reason": "The handgun and sunglasses retain relatively consistent visual designs across their appearances.",
+      "timestamps_seconds": [
+        4.0,
+        6.5
+      ],
+      "score": 3,
+      "status": "rated"
+    },
+    {
+      "question_number": 3,
+      "reason": "The dimly lit interior with stone walls remains coherent across shots without noticeable spatial shifts.",
+      "timestamps_seconds": [
+        0.5,
+        3.0,
+        11.0
+      ],
+      "score": 3,
+      "status": "rated"
+    },
+    {
+      "question_number": 4,
+      "reason": "The action of putting on sunglasses is missing, and the later alternating reactions fail to show the first woman looking back.",
+      "timestamps_seconds": [
+        0.0,
+        4.5,
+        6.5,
+        11.5
+      ],
+      "score": 2,
+      "status": "rated"
+    },
+    {
+      "question_number": 5,
+      "reason": "The sunglasses are worn prematurely from the start, and later incorrectly transfer to the second character along with clothing elements.",
+      "timestamps_seconds": [
+        0.0,
+        11.5,
+        14.0
+      ],
+      "score": 2,
+      "status": "rated"
+    }
+  ]
+}

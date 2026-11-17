@@ -1,0 +1,1095 @@
+{
+ "status": "completed",
+ "storyboard": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with long dark hair, wearing a pink hair clip",
+    "outfit": "a grey sweatshirt and grey sweatpants"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair, a beard, and glasses",
+    "outfit": "a brown long-sleeve shirt and grey sweatpants"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young child with dark hair sleeping",
+    "outfit": "sleepwear"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young child with dark hair sleeping",
+    "outfit": "sleepwear"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a pink toothbrush"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a framed picture of a green landscape with clouds"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a plaid pillow"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a bed with blue star-patterned blankets"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a white microwave"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a white electric kettle"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "a jar with a red lid"
+   },
+   {
+    "name": "Object 8",
+    "appearance": "a table with a patterned tablecloth"
+   },
+   {
+    "name": "Object 9",
+    "appearance": "a frosted glass door"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a small apartment interior with a bathroom area and a living/sleeping area"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 1 brushes her teeth while looking at Character 2.",
+    "changes": [],
+    "references": [],
+    "frame_count": 109
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "over-the-shoulder shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 3"
+      ]
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "action": "Character 2 talks to Character 1 while holding a pillow.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 2",
+      "shot": 1
+     },
+     {
+      "name": "Character 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 173
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 2 bends down out of frame while Character 1 continues brushing her teeth.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "standing",
+      "after": "bending down"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 2
+     },
+     {
+      "name": "Character 2",
+      "shot": 2
+     },
+     {
+      "name": "Object 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 101
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "bending down",
+      "holding": [
+       "Object 3"
+      ]
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing in the doorway"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "action": "Character 2 walks away through a doorway carrying a pillow.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "bending down",
+      "after": "walking away"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 2",
+      "shot": 3
+     },
+     {
+      "name": "Character 1",
+      "shot": 3
+     },
+     {
+      "name": "Object 3",
+      "shot": 2
+     }
+    ],
+    "frame_count": 133
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 1 stands and brushes her teeth in the doorway.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 4
+     },
+     {
+      "name": "Object 1",
+      "shot": 3
+     }
+    ],
+    "frame_count": 57
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "lying in bed"
+     },
+     {
+      "name": "Character 4",
+      "posture": "lying in bed"
+     }
+    ],
+    "action": "A view into the living area shows two children sleeping in a bed.",
+    "changes": [],
+    "references": [],
+    "frame_count": 53
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "lying in bed",
+      "state": "sleeping"
+     },
+     {
+      "name": "Character 4",
+      "posture": "lying in bed",
+      "state": "sleeping"
+     }
+    ],
+    "action": "Two children are shown sleeping closely together in a bed with star-patterned blankets.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 3",
+      "shot": 6
+     },
+     {
+      "name": "Character 4",
+      "shot": 6
+     }
+    ],
+    "frame_count": 61
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 1 continues brushing her teeth and looks to the side with a surprised expression.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 5
+     },
+     {
+      "name": "Object 1",
+      "shot": 5
+     }
+    ],
+    "frame_count": 81
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 2"
+     }
+    ],
+    "action": "A framed picture of a green landscape hangs on the wall.",
+    "changes": [],
+    "references": [],
+    "frame_count": 13
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 1 looks at the picture on the wall with a confused expression while brushing her teeth.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 8
+     },
+     {
+      "name": "Object 2",
+      "shot": 9
+     },
+     {
+      "name": "Object 1",
+      "shot": 8
+     }
+    ],
+    "frame_count": 33
+   }
+  ],
+  "layouts": [
+   {
+    "shot": 1,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.17,
+         0.0,
+         0.66,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.15,
+         0.0,
+         0.64,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.62,
+         0.0,
+         1.0,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.61,
+         0.0,
+         1.0,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.37,
+         0.49,
+         0.44,
+         0.62
+        ]
+       },
+       {
+        "time": 0.96,
+        "visibility": "visible",
+        "box": [
+         0.33,
+         0.43,
+         0.4,
+         0.56
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 2",
+      "far": "Object 1"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "entities": [
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.25,
+         0.0,
+         0.74,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.23,
+         0.0,
+         0.74,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.0,
+         0.31,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.0,
+         0.31,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 3",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.56,
+         0.86,
+         0.75,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.56,
+         0.86,
+         0.75,
+         1.0
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 1",
+      "far": "Character 2"
+     },
+     {
+      "near": "Character 2",
+      "far": "Object 3"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.17,
+         0.0,
+         0.64,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.16,
+         0.0,
+         0.62,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.61,
+         0.0,
+         1.0,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.0,
+         0.54,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.35,
+         0.5,
+         0.43,
+         0.63
+        ]
+       },
+       {
+        "time": 0.8,
+        "visibility": "visible",
+        "box": [
+         0.35,
+         0.45,
+         0.42,
+         0.58
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 2",
+      "far": "Object 1"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "entities": [
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.45,
+         0.12,
+         0.67,
+         1.0
+        ]
+       },
+       {
+        "time": 0.41,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.0,
+         0.13,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.12,
+         0.27,
+         0.22,
+         0.97
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.12,
+         0.27,
+         0.22,
+         0.97
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 3",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.45,
+         0.63,
+         0.56,
+         0.76
+        ]
+       },
+       {
+        "time": 0.34,
+        "visibility": "visible",
+        "box": [
+         0.14,
+         0.57,
+         0.24,
+         0.73
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 2",
+      "far": "Object 3"
+     },
+     {
+      "near": "Object 3",
+      "far": "Character 1"
+     }
+    ]
+   },
+   {
+    "shot": 5,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.37,
+         0.06,
+         0.64,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.38,
+         0.06,
+         0.64,
+         1.0
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "entities": [
+     {
+      "name": "Character 3",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.46,
+         0.47,
+         0.66,
+         0.67
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.46,
+         0.47,
+         0.66,
+         0.67
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 4",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.64,
+         0.45,
+         0.83,
+         0.67
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.64,
+         0.45,
+         0.83,
+         0.67
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 7,
+    "entities": [
+     {
+      "name": "Character 3",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.0,
+         0.53,
+         0.88
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.0,
+         0.53,
+         0.88
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 4",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.52,
+         0.0,
+         1.0,
+         0.88
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.52,
+         0.0,
+         1.0,
+         0.88
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.2,
+         0.0,
+         0.66,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.17,
+         0.0,
+         0.64,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.37,
+         0.46,
+         0.44,
+         0.58
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.34,
+         0.46,
+         0.42,
+         0.59
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 9,
+    "entities": [
+     {
+      "name": "Object 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.07,
+         0.0,
+         0.86,
+         0.95
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.07,
+         0.0,
+         0.86,
+         0.95
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 10,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.15,
+         0.0,
+         0.63,
+         1.0
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.15,
+         0.0,
+         0.64,
+         1.0
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.56,
+         0.0,
+         1.0,
+         0.75
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.56,
+         0.0,
+         1.0,
+         0.75
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.35,
+         0.45,
+         0.42,
+         0.57
+        ]
+       },
+       {
+        "time": 1.0,
+        "visibility": "visible",
+        "box": [
+         0.35,
+         0.46,
+         0.42,
+         0.58
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 1",
+      "far": "Object 2"
+     }
+    ]
+   }
+  ]
+ }
+}

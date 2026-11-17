@@ -1,0 +1,300 @@
+{
+ "key": "film-001889-b0003",
+ "shots": 9,
+ "source": "block-contract-v17-quick-check-20261013/v18-others/answers/r1/film-001889-b0003.json",
+ "contract": "block_annotation_v18",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a person in a black suit with cat-like ears and a tail",
+    "outfit": "a black suit"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a person in a white suit with a smooth, featureless head and a large mouth",
+    "outfit": "a white suit"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "multiple white and red missiles hanging from the ceiling"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a purple wall or structure"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a large Rubik's cube"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a purple structure with missiles hanging from the ceiling, high above the sky"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "hanging upside down from the ceiling"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing against a purple wall"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 hangs upside down among hanging missiles while Character 2 stands against the wall looking scared.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 is covered in white foam or dust and looks panicked.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "state",
+      "before": "clean white suit",
+      "after": "covered in white foam or dust"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "partially hidden behind a purple wall panel"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 hides behind a purple wall panel, with only their mouth and eyes visible, looking nervous.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "standing against the wall",
+      "after": "hiding behind a wall panel"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "hanging upside down"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The cluster of missiles is released and falls away, revealing the sky.",
+    "changes": [
+     {
+      "name": "Object 1",
+      "what": "state",
+      "before": "hanging from the ceiling",
+      "after": "falling away"
+     }
+    ]
+   },
+   {
+    "shot": 5,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "hanging upside down"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing against the wall, covered in white spots"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 reaches out to Character 2, who is now covered in white spots and looks terrified.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "state",
+      "before": "clean white suit",
+      "after": "covered in white spots"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "hanging upside down"
+     },
+     {
+      "name": "Character 2",
+      "posture": "hanging from Character 1's hand"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 grabs Character 2's hand and pulls them up, swinging them around.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "standing against the wall",
+      "after": "hanging from Character 1's hand"
+     }
+    ]
+   },
+   {
+    "shot": 7,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "hanging upside down, holding Character 2"
+     },
+     {
+      "name": "Character 2",
+      "posture": "hanging upside down, wrapped around Character 1"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 and Character 2 swing together, with Character 2 wrapping their legs and arms around Character 1.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "hanging from Character 1's hand",
+      "after": "wrapped around Character 1"
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "tilt up"
+    },
+    "present": [
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Location 1",
+      "posture": "a purple pyramid structure"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "The camera tilts up to reveal a large Rubik's cube balancing on top of a purple pyramid structure.",
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing on the purple surface"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing on the purple surface"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 and Character 2 stand on the purple surface, looking up at the sky.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "A person in a black suit hangs upside down among hanging missiles while a person in a white suit stands against a purple wall looking scared. The person in white gets covered in foam and hides behind a wall panel. The missiles fall away, and the person in black reaches out to the person in white, who is now covered in spots. The person in black grabs the person in white and swings them around, eventually wrapping them up together. The camera pans up to show a large Rubik's cube on top of a purple pyramid. Finally, both characters stand on the purple surface looking up at the sky.",
+   "summary": "A person in a black suit rescues a person in a white suit from a dangerous situation with hanging missiles, and they end up standing together on a purple structure under a Rubik's cube."
+  }
+ }
+}

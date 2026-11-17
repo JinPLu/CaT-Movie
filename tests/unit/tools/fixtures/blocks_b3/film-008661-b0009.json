@@ -1,0 +1,398 @@
+{
+ "key": "film-008661-b0009",
+ "shots": 11,
+ "answer": {
+  "video": {
+   "picture_type": "animation_3d_or_game",
+   "on_screen_text": "none",
+   "summary": "A blue-skinned humanoid character wakes up in a medical facility, examines their hands and body, sits up on a bed, and looks around while medical personnel observe."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a tall, blue-skinned humanoid with yellow eyes, pointed ears, and black hair tied back",
+    "outfit": "a light blue hospital gown"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with short hair",
+    "outfit": "a white protective suit with a clear face shield"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short hair",
+    "outfit": "a white protective suit with a clear face shield"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with a long black braid",
+    "outfit": "a light blue hospital gown"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a medical bed with a green pillow"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "medical sensors and wires attached to the head"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "overhead surgical lights"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a window looking into another room"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a large circular medical machine or pod"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a sterile, futuristic medical room with white walls, medical equipment, and overhead lights"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "extreme close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1's eyes open and look around.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "lying on a bed",
+      "state": "eyes opening"
+     },
+     {
+      "name": "Object 2",
+      "state": "attached to head"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "state",
+      "before": "eyes closed",
+      "after": "eyes open"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "low angle shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 and Character 3 look down at Character 1 and speak.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "looking down"
+     },
+     {
+      "name": "Character 3",
+      "posture": "looking down",
+      "holding": [
+       "a small light"
+      ]
+     },
+     {
+      "name": "Object 3",
+      "state": "on"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 lies on the bed and looks up at the medical personnel.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "lying on the bed"
+     },
+     {
+      "name": "Object 1",
+      "state": "under Character 1"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "low angle shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 and Character 3 continue to look down and speak to Character 1.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "looking down"
+     },
+     {
+      "name": "Character 3",
+      "posture": "looking down"
+     },
+     {
+      "name": "Object 3",
+      "state": "on"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 sits up slightly, smiles, and raises their hands.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting up on the bed"
+     },
+     {
+      "name": "Character 2",
+      "posture": "leaning in"
+     },
+     {
+      "name": "Character 3",
+      "posture": "leaning in"
+     },
+     {
+      "name": "Object 1",
+      "state": "under Character 1"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "lying down",
+      "after": "sitting up"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "point-of-view shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 looks at their blue hands and moves their fingers.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking at hands"
+     },
+     {
+      "name": "Character 3",
+      "posture": "looking at Character 1"
+     },
+     {
+      "name": "Object 4",
+      "state": "visible in background"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 interacts with a medical person, then sits up fully and looks around the room.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting on the edge of the bed"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing next to the bed"
+     },
+     {
+      "name": "Object 5",
+      "state": "visible in background"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "sitting on the edge",
+      "after": "sitting upright on the bed"
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 looks at their hand and speaks while looking around.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting on the bed"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing in background"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 sits on the bed and moves their legs and feet, while Character 4 sits on a nearby bed.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting on the bed"
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting on another bed"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing nearby"
+     },
+     {
+      "name": "Object 1",
+      "state": "under Character 1 and Character 4"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "sitting with legs straight",
+      "after": "moving legs and feet"
+     }
+    ]
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 looks to the side and speaks.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting on the bed"
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting in background"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 11,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 leans forward on the bed, looking at their feet, then leans back.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "leaning forward on the bed"
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting on another bed"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing nearby"
+     },
+     {
+      "name": "Object 1",
+      "state": "under Character 1"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "leaning forward",
+      "after": "leaning back"
+     }
+    ]
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "2": [
+   "shot 2 holding of Character 3"
+  ]
+ }
+}

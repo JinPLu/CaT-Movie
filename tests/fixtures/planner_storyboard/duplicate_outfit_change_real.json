@@ -1,0 +1,366 @@
+{
+ "source": "v20 规划原答，补充样本 film-008726-b0001 逐镜 0:12 种子 43（11-14）：第 3 镜同一条衣着变化写了两遍",
+ "story_id": "film-008726-b0001__shot__0:12",
+ "raw_storyboard": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "appearance": "a young woman with blue hair in pigtails, fair skin",
+    "outfit": "a dark grey cardigan over a white floral top and pink pants"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "appearance": "a man with short white hair, fair skin, wearing glasses, scars on his face",
+    "outfit": "a dark purple bodysuit with a mask"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "appearance": "a man with short blonde hair, green eyes",
+    "outfit": "a black cat mask with ears, a black bodysuit with a bell"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "appearance": "a man with short white hair, fair skin, wearing glasses, scars on his face",
+    "outfit": "a beige suit jacket, grey vest, white shirt, red pants"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a broken concrete bridge over water"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a metal grate or railing"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "glowing yellow butterflies"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a ruined city with a river and a broken bridge, destroyed buildings in the background"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "high angle shot",
+     "movement": "pull out"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "crawling on hands and knees",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "bent over",
+      "holding": []
+     }
+    ],
+    "action": "Character 1, the young woman in the dark grey cardigan and pink pants, crawls across a broken concrete slab towards a broken bridge where Character 2, the man in the dark purple bodysuit and mask, is standing bent over.",
+    "changes": [],
+    "frame_count": 225
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1, the young woman in the dark grey cardigan, stands looking sad and crosses her arms.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "state",
+      "after": "looking sad"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 2, the man in the dark purple bodysuit and mask, transforms into Character 4 as glowing yellow butterflies swarm around him.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "outfit",
+      "before": "a dark purple bodysuit with a mask",
+      "after": "a beige suit jacket, grey vest, white shirt, red pants"
+     },
+     {
+      "name": "Character 2",
+      "what": "outfit",
+      "before": "a dark purple bodysuit with a mask",
+      "after": "a beige suit jacket, grey vest, white shirt, red pants"
+     },
+     {
+      "name": "Character 4",
+      "what": "outfit",
+      "before": [],
+      "after": "a beige suit jacket, grey vest, white shirt, red pants"
+     },
+     {
+      "name": "Character 3",
+      "what": "state",
+      "after": "swarming"
+     }
+    ],
+    "frame_count": 225
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 4, the man in the beige suit jacket and red pants, looks down with a sad expression.",
+    "changes": [
+     {
+      "name": "Character 4",
+      "what": "state",
+      "after": "looking sad"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1, the young woman in the dark grey cardigan, looks down sadly, then looks up with a surprised expression.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "state",
+      "before": "looking down sadly",
+      "after": "looking up with a surprised expression"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing on the bridge",
+      "holding": []
+     },
+     {
+      "name": "Character 3",
+      "posture": "lying on the ground nearby",
+      "holding": []
+     }
+    ],
+    "action": "Character 1, the young woman in the dark grey cardigan, stands looking at Character 4 on the bridge, while Character 3 lies on the ground nearby.",
+    "changes": [],
+    "frame_count": 64
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 4, the man in the beige suit jacket and red pants, stands looking down with a dirty face.",
+    "changes": [
+     {
+      "name": "Character 4",
+      "what": "state",
+      "after": "with a dirty face"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 4, the man in the beige suit jacket and red pants, looks down with his mouth slightly open.",
+    "changes": [
+     {
+      "name": "Character 4",
+      "what": "state",
+      "after": "mouth slightly open"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "sitting up on the ground",
+      "holding": []
+     }
+    ],
+    "action": "Character 3, the man in the black cat mask and black bodysuit, sits up on the ground and looks up.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "lying on the ground",
+      "after": "sitting up"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 4, the man in the beige suit jacket and red pants, looks down and talks, gesturing with his hands.",
+    "changes": [],
+    "frame_count": 64
+   },
+   {
+    "shot": 11,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 3, the man in the black cat mask and black bodysuit, stands and looks up.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "sitting up",
+      "after": "standing"
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 12,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 4, the man in the beige suit jacket and red pants, looks down and talks with a sad expression.",
+    "changes": [
+     {
+      "name": "Character 4",
+      "what": "state",
+      "after": "talking with a sad expression"
+     }
+    ],
+    "frame_count": 64
+   }
+  ]
+ }
+}

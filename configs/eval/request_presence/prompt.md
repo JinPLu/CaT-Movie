@@ -1,0 +1,7 @@
+You read the request for a multi-shot video. It is the only input the video generator receives. For every shot, decide two things from the request alone.
+
+1. On screen. Which registered people, animals, groups and objects the request requires to be visible in that shot. Count an entity as on screen only when the shot's text makes it act, hold or wear something, be in a pose or a position, or be described as visible there (by id, name, description or pronoun). An entity that is only looked at, spoken to, listened to, followed, waited for, pointed at from off screen, thought about or mentioned is not on screen in that shot. An object is on screen when the shot's text puts it in the shot (held, worn, used, placed, opened, seen). When the text does not settle it, the entity is not on screen.
+
+2. Location. Which registered location the shot takes place in, if a reader of the request can tell. If the request registers only one location, every shot is in it. Otherwise give the location that the shot's text names or makes clear (for example "in the driver's seat" in a story whose locations include a car interior), or that the shot clearly continues from the previous shot without any change of setting; give null when the text does not let the reader tell. Do not guess from what a film would usually show.
+
+Use the registered ids exactly as written in the request (for example `Character 2`, `Object 3`, `Location 1`). For each shot give a short quote from the request as evidence for the location and for anything you left out that the shot's text mentions.

@@ -1,0 +1,248 @@
+{
+  "key": "cinedance-009700-b0001",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with black hair, pale skin, and a slender build",
+        "outfit": "a dark jacket, blue jeans, and an orange scarf"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with blonde hair in a bob cut, pale skin, and a slender build",
+        "outfit": "an orange dress over a blue long-sleeved shirt and dark boots"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a muscular man with a shaved head and a red mohawk, pale skin, and blue eyes"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a pink van with its side door open"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a snowy road with white lane markings and snow-covered ground on the sides"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "extreme wide shot",
+          "angle": "high angle shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing on the road with arms crossed"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing on the road with arms crossed"
+          },
+          {
+            "name": "Character 3",
+            "posture": "stepping out of the pink van",
+            "state": "door open"
+          },
+          {
+            "name": "Object 1",
+            "state": "parked on the road, door open"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 3 steps out of the pink van while Character 1 and Character 2 stand on the road watching him.",
+        "changes": [
+          {
+            "name": "Character 3",
+            "what": "posture",
+            "before": "inside the van",
+            "after": "stepping out of the van"
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 looks back over his shoulder with a serious expression.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 looks forward with a serious expression.",
+        "changes": []
+      },
+      {
+        "shot": 4,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 looks back with a slightly open mouth, then closes it.",
+        "changes": []
+      },
+      {
+        "shot": 5,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 smiles slightly.",
+        "changes": [
+          {
+            "name": "Character 3",
+            "what": "state",
+            "before": "serious expression",
+            "after": "slight smile"
+          }
+        ]
+      },
+      {
+        "shot": 6,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 smiles slightly, then returns to a serious expression.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "state",
+            "before": "serious expression",
+            "after": "slight smile",
+            "end_state": "serious expression"
+          }
+        ]
+      },
+      {
+        "shot": 7,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 looks to the side with a serious expression, with snowy pine trees in the background.",
+        "changes": []
+      },
+      {
+        "shot": 8,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 and Character 2 stand side by side looking forward with serious expressions.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "A muscular man with a red mohawk steps out of a pink van parked on a snowy road. Two people, a man with black hair and an orange scarf and a woman with blonde hair in an orange dress, stand on the road watching him. The man with black hair looks back at him with a serious expression, then smiles briefly before looking serious again. The man from the van smiles slightly in response, then looks away with a serious expression. Finally, the man and woman stand together looking forward.",
+      "summary": "A man with a red mohawk exits a pink van on a snowy road to face a man and a woman standing nearby."
+    }
+  },
+  "frame_counts": [
+    37,
+    37,
+    49,
+    33,
+    33,
+    181,
+    77,
+    17
+  ]
+}

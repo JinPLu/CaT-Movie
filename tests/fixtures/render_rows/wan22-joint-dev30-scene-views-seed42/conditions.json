@@ -1,0 +1,24 @@
+{
+  "run_dir": "${MSPC_SHARED_ROOT}/ckp/renderer-gap-diagnostics-20261112/rows/wan22-joint-dev30-scene-views-seed42",
+  "split": "dev",
+  "input_tier": "shots",
+  "requests": "${MSPC_SHARED_ROOT}/Storyboard-runs/363beac737f8f6e5ec6b404cc0a2a2f625f9b259-root/Storyboard/configs/benchmark/story_requests_v4.json",
+  "storyboards": "${MSPC_SHARED_ROOT}/Storyboard-runs/363beac737f8f6e5ec6b404cc0a2a2f625f9b259-root/Storyboard/configs/benchmark/benchmark_storyboards_v4.json",
+  "conditions": [
+    {
+      "name": "wan22-joint-dev30-scene-views-seed42",
+      "renderer_config": "${MSPC_SHARED_ROOT}/ckp/renderer-gap-diagnostics-20261112/rows/wan22-joint-dev30-scene-views-seed42/inputs/renderer.json",
+      "checkpoint": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/renderer-native-backbones-20261108/wan22-720p/training/joint_wan22_720p__20261108T154428_805369Z/checkpoints/step-3000.safetensors",
+      "history_policy": "entity_scene_views",
+      "plan_dir": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/entity-numbered-actions/dev30-plans",
+      "seed": 42,
+      "segment_seed_stride": 1009,
+      "segment_max_shots": null,
+      "segment_max_frames": 128,
+      "output_dir": "${MSPC_SHARED_ROOT}/ckp/renderer-gap-diagnostics-20261112/rows/wan22-joint-dev30-scene-views-seed42/inference/raw/wan22-joint-dev30-scene-views-seed42",
+      "reference_clip": null,
+      "planner_reader": "${MSPC_SHARED_ROOT}/ckp/renderer-gap-diagnostics-20261112/rows/wan22-joint-dev30-scene-views-seed42/inputs/reader.json",
+      "token_edits_dir": null
+    }
+  ]
+}

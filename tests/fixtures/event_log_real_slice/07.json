@@ -1,0 +1,99 @@
+{
+  "case_id": "ci_vid:train:000007878",
+  "pool_index": 3571,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "person",
+        "appearance": "man wearing a black hoodie, black full-face respirator, and blue gloves"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "废弃厂房内部",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          1
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 97,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video portrays a person engaged in the act of spray painting on a vertical surface, seemingly a wall in an indoor setting. The individual is dressed in a dark hoodie with blue paint splatters and is wearing a respirator mask equipped with mesh to protect against inhaling paint fumes. The process of spray painting is depicted through the dynamic motion of the person's arm as they apply bursts of paint, creating vibrant color patterns of orange, yellow, and possibly red on the wall. As the video progresses, the person pauses and lifts the mask from their face, revealing their head. This movement indicates the completion of their immediate task or the need for a brief respite. The video likely highlights the artistry of graffiti or mural making, documenting the crucial moments when an artist brings their creative vision to life using spray paint as their medium.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 61,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A person, possibly an artist, is engaged in the act of spray painting a vibrant and colorful mural on a textured wall. The individual's bald head is covered with a protective headgear, while a dark hoodie shields their neck and shoulders. Their focus is on applying shades of yellow, orange, and red in circular patterns against a blue backdrop. The hand, protected by a glove, holds a spray can that emits paint in smooth strokes to create art. The mural's vibrant colors contrast strongly against the blue wall, emphasizing the artist's use of complementary colors to make the artwork stand out. The person works methodically, moving their arm back and forth to cover the designated area with paint.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": []
+  },
+  "observed_issues": [],
+  "compiled_segments": [
+    {
+      "segment_id": "g1",
+      "reference_shot_ids": [],
+      "reference_rows": [],
+      "target_rows": [
+        "The video portrays a person engaged in the act of spray painting on a vertical surface, seemingly a wall in an indoor setting. The individual is dressed in a dark hoodie with blue paint splatters and is wearing a respirator mask equipped with mesh to protect against inhaling paint fumes. The process of spray painting is depicted through the dynamic motion of the person's arm as they apply bursts of paint, creating vibrant color patterns of orange, yellow, and possibly red on the wall. As the video progresses, the person pauses and lifts the mask from their face, revealing their head. This movement indicates the completion of their immediate task or the need for a brief respite. The video likely highlights the artistry of graffiti or mural making, documenting the crucial moments when an artist brings their creative vision to life using spray paint as their medium. Design: Subject 1: man wearing a black hoodie, black full-face respirator, and blue gloves; Location 1: 废弃厂房内部."
+      ],
+      "token_counts": [
+        218
+      ]
+    },
+    {
+      "segment_id": "g2",
+      "reference_shot_ids": [
+        "s01"
+      ],
+      "reference_rows": [
+        "Reference still from an earlier shot of this story; not the current shot. Reference 1, the last frame of shot 1. Design: Subject 1: man wearing a black hoodie, black full-face respirator, and blue gloves; Location 1: 废弃厂房内部."
+      ],
+      "target_rows": [
+        "A person, possibly an artist, is engaged in the act of spray painting a vibrant and colorful mural on a textured wall. The individual's bald head is covered with a protective headgear, while a dark hoodie shields their neck and shoulders. Their focus is on applying shades of yellow, orange, and red in circular patterns against a blue backdrop. The hand, protected by a glove, holds a spray can that emits paint in smooth strokes to create art. The mural's vibrant colors contrast strongly against the blue wall, emphasizing the artist's use of complementary colors to make the artwork stand out. The person works methodically, moving their arm back and forth to cover the designated area with paint. Design: Subject 1: man wearing a black hoodie, black full-face respirator, and blue gloves; Location 1: 废弃厂房内部. Reference 1 is the last frame of shot 1; take Subject 1 and Location 1 from it; their current state is unspecified."
+      ],
+      "token_counts": [
+        64,
+        221
+      ]
+    }
+  ]
+}

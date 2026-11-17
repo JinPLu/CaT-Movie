@@ -1,0 +1,348 @@
+{
+  "key": "film-006160-b0002",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with short brown hair and a slim build",
+        "outfit": "a navy blue blazer and a white blouse"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short brown hair and a medium build",
+        "outfit": "a black blazer and a grey t-shirt"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with long dark hair and bangs",
+        "outfit": "a dark patterned top"
+      },
+      {
+        "name": "Character 5",
+        "kind": "group",
+        "visibility": "distant",
+        "appearance": "people working at desks",
+        "outfit": "office attire"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a large red painting in a light wooden frame"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a glass desk with various office supplies"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a white computer monitor"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a coat rack with a black coat"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a lamp with a white shade"
+      },
+      {
+        "name": "Object 6",
+        "appearance": "papers"
+      },
+      {
+        "name": "Object 7",
+        "appearance": "an orange sofa"
+      },
+      {
+        "name": "Object 8",
+        "appearance": "a glass partition"
+      },
+      {
+        "name": "Object 9",
+        "appearance": "a table with coffee urns"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a modern office space with glass walls and white walls"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting",
+            "holding": [
+              "Object 6"
+            ]
+          },
+          {
+            "name": "Object 6"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "A woman in a navy blazer sits holding papers and smiles while looking off-camera.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing up and walking"
+          },
+          {
+            "name": "Object 1",
+            "state": "hanging on the wall"
+          },
+          {
+            "name": "Object 2",
+            "state": "cluttered with office supplies"
+          },
+          {
+            "name": "Object 3",
+            "state": "on the desk"
+          },
+          {
+            "name": "Object 4",
+            "state": "standing against the wall"
+          },
+          {
+            "name": "Object 5",
+            "state": "on the desk"
+          },
+          {
+            "name": "Object 6",
+            "state": "in the woman's hand"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman stands up from her desk, walks to the side, places the papers on the desk, and picks up a folder.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "posture",
+            "before": "sitting",
+            "after": "standing and walking"
+          }
+        ]
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 2",
+            "posture": "sitting on an orange sofa"
+          },
+          {
+            "name": "Character 3",
+            "posture": "sitting on an orange sofa"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The woman walks past a man and a woman sitting on an orange sofa. The man and woman look at her as she passes.",
+        "changes": []
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting at the desk"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The woman sits back down at her desk and speaks to the people opposite her.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "posture",
+            "before": "standing",
+            "after": "sitting"
+          }
+        ]
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 3",
+            "posture": "sitting"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man and woman on the sofa listen and look down or away.",
+        "changes": []
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The woman at the desk continues speaking with a serious expression.",
+        "changes": []
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 3",
+            "posture": "sitting"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The woman on the sofa touches her hair while the man looks forward.",
+        "changes": []
+      },
+      {
+        "shot": 8,
+        "picture_type": "live_action",
+        "on_screen_text": "corner_logo_or_watermark",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "walking"
+          },
+          {
+            "name": "Character 3",
+            "posture": "walking"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 5",
+            "posture": "sitting at desks"
+          },
+          {
+            "name": "Object 8",
+            "state": "separating the rooms"
+          },
+          {
+            "name": "Object 9",
+            "state": "against the wall"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The man and woman walk out of the office room through a glass door, while the woman at the desk watches them leave from the doorway.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "sitting",
+            "after": "walking out"
+          },
+          {
+            "name": "Character 3",
+            "what": "posture",
+            "before": "sitting",
+            "after": "walking out"
+          }
+        ]
+      }
+    ],
+    "story": {
+      "paragraph": "A woman in a navy blazer sits in an office holding papers, smiling. She stands up, walks to her desk, and places the papers down before picking up a folder. She then walks past a man and a woman sitting on an orange sofa in the waiting area. The woman returns to her desk and speaks to the couple. After the conversation, the man and woman stand up and walk out of the office through a glass door, while the woman in the blazer watches them leave from the doorway.",
+      "summary": "A woman in an office conducts a meeting with a couple, after which they leave the room while she watches from the doorway."
+    }
+  },
+  "frame_counts": [
+    41,
+    165,
+    157,
+    49,
+    21,
+    29,
+    57,
+    61
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "note": "真实原回答文本与当时issues原样截取，离线fixture；不得修复或回写历史评分",
+  "responses": [
+    {
+      "name": "r2_27b_plain",
+      "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/planner-v2-execution-20261007-r2/baseline/27b/nonthinking/script_only.jsonl",
+      "source_line": 1,
+      "raw_content": "{\"schema\": \"event_log_v3\", \"style\": \"stylized narrative with special effects\", \"subjects\": [{\"subject_id\": \"Subject 1\", \"kind\": \"person\", \"appearance\": \"Short-haired man wearing a blue t-shirt and yellow shorts\"}, {\"subject_id\": \"Subject 2\", \"kind\": \"person\", \"appearance\": \"Boy wearing a red hoodie and a red crown headpiece\"}, {\"subject_id\": \"Subject 3\", \"kind\": \"person\", \"appearance\": \"Girl wearing a blue sequined dress and a blue crown headpiece\"}], \"locations\": [{\"location_id\": \"Location 1\", \"appearance\": \"厨房\", \"anchors\": []}, {\"location_id\": \"Location 2\", \"appearance\": \"室内，有一把红色椅子\", \"anchors\": []}], \"initial_state\": [{\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"wearing a blue t-shirt and yellow shorts\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"wearing a red hoodie and a red crown headpiece\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"wearing a blue sequined dress and a blue crown headpiece\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Location 1\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"kitchen setting\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Location 2\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"indoor room with a red chair\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}], \"shots\": [{\"shot_id\": \"s01\", \"location_id\": \"Location 1\", \"present_subjects\": [\"Subject 1\"], \"visible_entities\": [\"Subject 1\", \"Location 1\"], \"screen_facts\": [{\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"depth\", \"object_or_value\": \"foreground\", \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [250, 100, 750, 900], \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"unknown\"}], \"frame_count\": 41, \"shot_size\": \"medium shot\", \"camera_angle\": \"eye level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 1在厨房被冰雪特效覆盖\", \"movement\": \"unknown\"}, {\"shot_id\": \"s02\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 2\"], \"visible_entities\": [\"Subject 2\", \"Location 2\"], \"screen_facts\": [{\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"depth\", \"object_or_value\": \"foreground\", \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [250, 100, 750, 900], \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}], \"frame_count\": 29, \"shot_size\": \"medium close-up\", \"camera_angle\": \"eye level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 2在红椅上抱头\", \"movement\": \"unknown\"}, {\"shot_id\": \"s03\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 3\"], \"visible_entities\": [\"Subject 3\", \"Location 2\"], \"screen_facts\": [{\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"depth\", \"object_or_value\": \"foreground\", \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [250, 100, 750, 900], \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}], \"frame_count\": 29, \"shot_size\": \"medium close-up\", \"camera_angle\": \"eye level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 3在室内举起手指伴随灯泡特效\", \"movement\": \"unknown\"}], \"events\": [{\"event_id\": \"e1\", \"shot_id\": \"s01\", \"before\": null, \"after\": {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"covered by snow and ice effect\", \"scope\": \"scene\", \"shot_span\": [0], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e2\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"relation\", \"predicate_or_axis\": \"in\", \"object_or_value\": \"red chair\", \"scope\": \"scene\", \"shot_span\": [1], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e3\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"holding head with both hands\", \"scope\": \"scene\", \"shot_span\": [1], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e4\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"raising finger\", \"scope\": \"scene\", \"shot_span\": [2], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e5\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"accompanied by lightbulb effect\", \"scope\": \"scene\", \"shot_span\": [2], \"evidence\": \"observed\"}, \"on_screen\": true}], \"segments\": [{\"segment_id\": \"g1\", \"shot_ids\": [\"s02\", \"s03\"], \"reference_keys\": [{\"key\": [\"s01\"], \"version_id\": \"v1\"}, {\"location_id\": \"Location 2\", \"setup_of\": \"indoor room with red chair\"}]}]}",
+      "historical_issues": [
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e1",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e2",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e3",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e4",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e5",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 3,
+          "path": "e2",
+          "message": "both event endpoints must be visibly verifiable"
+        },
+        {
+          "rule": 4,
+          "path": "e5",
+          "message": "duplicate same-shot fact-key event"
+        },
+        {
+          "rule": 1,
+          "path": "g1",
+          "message": "invalid fact-key/version reference"
+        },
+        {
+          "rule": 1,
+          "path": "g1",
+          "message": "invalid setup reference"
+        }
+      ]
+    },
+    {
+      "name": "r2_27b_history",
+      "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/planner-v2-execution-20261007-r2/baseline/27b/nonthinking/script_true_history.jsonl",
+      "source_line": 1,
+      "raw_content": "{\"schema\": \"event_log_v3\", \"style\": \"live-action comedic fantasy with VFX overlays\", \"subjects\": [{\"subject_id\": \"Subject 1\", \"kind\": \"person\", \"appearance\": \"Short-haired man wearing a blue t-shirt and yellow shorts\"}, {\"subject_id\": \"Subject 2\", \"kind\": \"person\", \"appearance\": \"Boy wearing a red hoodie and a red crown headpiece\"}, {\"subject_id\": \"Subject 3\", \"kind\": \"person\", \"appearance\": \"Girl wearing a blue sequined dress and a blue crown headpiece\"}], \"locations\": [{\"location_id\": \"Location 1\", \"appearance\": \"厨房\", \"anchors\": []}, {\"location_id\": \"Location 2\", \"appearance\": \"室内\", \"anchors\": []}], \"initial_state\": [{\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"blue t-shirt and yellow shorts\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"red hoodie and red crown headpiece\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"carried\"}, {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"blue sequined dress and blue crown headpiece\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"carried\"}, {\"subject\": \"Location 1\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"kitchen with cream cabinets, sink, countertop, and small props\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Location 2\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"indoor room\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 1\", \"family\": \"relation\", \"predicate_or_axis\": \"at\", \"object_or_value\": \"Location 1\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"relation\", \"predicate_or_axis\": \"in front of\", \"object_or_value\": \"Location 1\", \"scope\": \"scene\", \"shot_span\": [0, 2], \"evidence\": \"observed\"}], \"shots\": [{\"shot_id\": \"s01\", \"location_id\": \"Location 1\", \"present_subjects\": [\"Subject 1\"], \"visible_entities\": [\"Subject 1\", \"Location 1\"], \"screen_facts\": [{\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"depth\", \"object_or_value\": \"foreground\", \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [420, 25, 760, 830], \"scope\": \"screen@0\", \"shot_span\": [0], \"evidence\": \"observed\"}], \"frame_count\": 41, \"shot_size\": \"medium shot\", \"camera_angle\": \"eye-level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 1 stands in the kitchen while ice-spike visual effects cover the foreground and parts of his body.\", \"movement\": \"unknown\"}, {\"shot_id\": \"s02\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 2\"], \"visible_entities\": [\"Subject 2\", \"Location 2\"], \"screen_facts\": [{\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"depth\", \"object_or_value\": \"foreground\", \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [320, 180, 680, 900], \"scope\": \"screen@1\", \"shot_span\": [1], \"evidence\": \"unknown\"}], \"frame_count\": 29, \"shot_size\": \"medium close-up\", \"camera_angle\": \"eye-level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 2 sits on a red chair and holds his head with both hands.\", \"movement\": \"unknown\"}, {\"shot_id\": \"s03\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 3\"], \"visible_entities\": [\"Subject 3\", \"Location 2\"], \"screen_facts\": [{\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"depth\", \"object_or_value\": \"foreground\", \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [300, 150, 700, 920], \"scope\": \"screen@2\", \"shot_span\": [2], \"evidence\": \"unknown\"}], \"frame_count\": 29, \"shot_size\": \"medium close-up\", \"camera_angle\": \"eye-level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 3 raises one finger while a light-bulb visual effect appears above her hand.\", \"movement\": \"unknown\"}], \"events\": [{\"event_id\": \"e1\", \"shot_id\": \"s01\", \"before\": null, \"after\": {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"covered by ice-spike visual effects\", \"scope\": \"scene\", \"shot_span\": [0], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e2\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"relation\", \"predicate_or_axis\": \"on\", \"object_or_value\": \"red chair\", \"scope\": \"scene\", \"shot_span\": [1], \"evidence\": \"unknown\"}, \"on_screen\": \"unknown\"}, {\"event_id\": \"e3\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"holding his head with both hands\", \"scope\": \"scene\", \"shot_span\": [1], \"evidence\": \"unknown\"}, \"on_screen\": \"unknown\"}, {\"event_id\": \"e4\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"raising one finger\", \"scope\": \"scene\", \"shot_span\": [2], \"evidence\": \"unknown\"}, \"on_screen\": \"unknown\"}], \"segments\": [{\"segment_id\": \"g1\", \"shot_ids\": [\"s01\", \"s02\", \"s03\"], \"reference_keys\": [{\"key\": [\"Subject 1\", \"Location 1\"], \"version_id\": \"history:s01\"}, {\"location_id\": \"Location 2\", \"setup_of\": \"indoor room\"}]}]}",
+      "historical_issues": [
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s01",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s02",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "s03",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e1",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e2",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e3",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e4",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 2,
+          "path": "e2",
+          "message": "event requires confirmed scene facts; unknown is not deletion"
+        },
+        {
+          "rule": 2,
+          "path": "e3",
+          "message": "event requires confirmed scene facts; unknown is not deletion"
+        },
+        {
+          "rule": 2,
+          "path": "e4",
+          "message": "event requires confirmed scene facts; unknown is not deletion"
+        },
+        {
+          "rule": 1,
+          "path": "g1",
+          "message": "invalid fact-key/version reference"
+        },
+        {
+          "rule": 1,
+          "path": "g1",
+          "message": "invalid setup reference"
+        }
+      ]
+    },
+    {
+      "name": "r2_9b_history",
+      "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/planner-v2-execution-20261007-r2/baseline/9b/thinking/script_true_history.jsonl",
+      "source_line": 1,
+      "raw_content": "{\"schema\": \"event_log_v3\", \"style\": \"Narrative_Video\", \"subjects\": [{\"subject_id\": \"Subject 1\", \"kind\": \"person\", \"appearance\": \"Short-haired man wearing a blue t-shirt and yellow shorts\"}, {\"subject_id\": \"Subject 2\", \"kind\": \"person\", \"appearance\": \"Boy wearing a red hoodie and a red crown headpiece\"}, {\"subject_id\": \"Subject 3\", \"kind\": \"person\", \"appearance\": \"Girl wearing a blue sequined dress and a blue crown headpiece\"}], \"locations\": [{\"location_id\": \"Location 1\", \"appearance\": \"厨房\", \"anchors\": [{\"id\": \"kitchen_sink\", \"description\": \"Gold faucet sink\", \"front_definition\": \"left\"}, {\"id\": \"cabinets\", \"description\": \"White kitchen cabinets\", \"front_definition\": \"above\"}]}, {\"location_id\": \"Location 2\", \"appearance\": \"室内\", \"anchors\": [{\"id\": \"red_chair\", \"description\": \"Red seating furniture\", \"front_definition\": \"center\"}]}], \"initial_state\": [{\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"object_condition\", \"object_or_value\": \"ice_covered\", \"scope\": \"scene\", \"shot_span\": [0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"relation\", \"predicate_or_axis\": \"at\", \"object_or_value\": \"Location 1\", \"scope\": \"scene\", \"shot_span\": [0], \"evidence\": \"observed\"}], \"shots\": [{\"shot_id\": \"s01\", \"location_id\": \"Location 1\", \"present_subjects\": [\"Subject 1\"], \"visible_entities\": [\"Subject 1\"], \"screen_facts\": [], \"frame_count\": 41, \"shot_size\": \"medium\", \"camera_angle\": \"front\", \"cut_type\": \"cut\", \"action\": \"Subject 1 covered in ice effects\", \"movement\": \"unknown\"}, {\"shot_id\": \"s02\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 2\"], \"visible_entities\": [\"Subject 2\"], \"screen_facts\": [], \"frame_count\": 29, \"shot_size\": \"medium\", \"camera_angle\": \"close_up\", \"cut_type\": \"cut\", \"action\": \"Subject 2 huddling head on red chair\", \"movement\": \"unknown\"}, {\"shot_id\": \"s03\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 3\"], \"visible_entities\": [\"Subject 3\"], \"screen_facts\": [], \"frame_count\": 29, \"shot_size\": \"medium\", \"camera_angle\": \"close_up\", \"cut_type\": \"cut\", \"action\": \"Subject 3 raises finger with lightbulb effect\", \"movement\": \"unknown\"}], \"events\": [{\"event_id\": \"e1\", \"shot_id\": \"s02\", \"before\": {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"object_condition\", \"object_or_value\": \"ice_covered\", \"scope\": \"scene\", \"shot_span\": [0], \"evidence\": \"observed\"}, \"after\": {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"object_condition\", \"object_or_value\": \"huddled\", \"scope\": \"scene\", \"shot_span\": [1], \"evidence\": \"carried\"}, \"on_screen\": true}, {\"event_id\": \"e2\", \"shot_id\": \"s03\", \"before\": {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"object_condition\", \"object_or_value\": \"huddled\", \"scope\": \"scene\", \"shot_span\": [1], \"evidence\": \"carried\"}, \"after\": {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"finger_raised\", \"scope\": \"scene\", \"shot_span\": [2], \"evidence\": \"unknown\"}, \"on_screen\": true}], \"segments\": [{\"segment_id\": \"g1\", \"shot_ids\": [\"s01\"], \"reference_keys\": []}, {\"segment_id\": \"g2\", \"shot_ids\": [\"s02\"], \"reference_keys\": [{\"key\": [\"g1\"], \"version_id\": \"1\"}]}, {\"segment_id\": \"g3\", \"shot_ids\": [\"s03\"], \"reference_keys\": [{\"key\": [\"g2\"], \"version_id\": \"1\"}]}]}",
+      "historical_issues": [
+        {
+          "rule": 1,
+          "path": "kitchen_sink",
+          "message": "anchor must belong to its registered location"
+        },
+        {
+          "rule": 1,
+          "path": "cabinets",
+          "message": "anchor must belong to its registered location"
+        },
+        {
+          "rule": 1,
+          "path": "red_chair",
+          "message": "anchor must belong to its registered location"
+        },
+        {
+          "rule": 1,
+          "path": "initial_state",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "initial_state",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e1",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e1",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e2",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 1,
+          "path": "e2",
+          "message": "invalid shot_span"
+        },
+        {
+          "rule": 2,
+          "path": "e1",
+          "message": "replacement must keep one fact key; transfer uses delete/add"
+        },
+        {
+          "rule": 3,
+          "path": "e1",
+          "message": "both event endpoints must be visibly verifiable"
+        },
+        {
+          "rule": 2,
+          "path": "e2",
+          "message": "event requires confirmed scene facts; unknown is not deletion"
+        },
+        {
+          "rule": 2,
+          "path": "e2",
+          "message": "replacement must keep one fact key; transfer uses delete/add"
+        },
+        {
+          "rule": 3,
+          "path": "e2",
+          "message": "both event endpoints must be visibly verifiable"
+        },
+        {
+          "rule": 1,
+          "path": "g2",
+          "message": "invalid fact-key/version reference"
+        },
+        {
+          "rule": 1,
+          "path": "g3",
+          "message": "invalid fact-key/version reference"
+        }
+      ]
+    },
+    {
+      "name": "cachefix_reference",
+      "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/planner-v2-execution-20261007-mm-cachefix/baseline/script_true_history.jsonl",
+      "source_line": 1,
+      "raw_content": "{\"schema\": \"event_log_v3\", \"style\": \"Comedy visual effects\", \"subjects\": [{\"subject_id\": \"Subject 1\", \"kind\": \"person\", \"appearance\": \"Short-haired man wearing a blue t-shirt and yellow shorts\"}, {\"subject_id\": \"Subject 2\", \"kind\": \"person\", \"appearance\": \"Boy wearing a red hoodie and a red crown headpiece\"}, {\"subject_id\": \"Subject 3\", \"kind\": \"person\", \"appearance\": \"Girl wearing a blue sequined dress and a blue crown headpiece\"}], \"locations\": [{\"location_id\": \"Location 1\", \"appearance\": \"厨房\", \"anchors\": []}, {\"location_id\": \"Location 2\", \"appearance\": \"室内\", \"anchors\": []}], \"initial_state\": [{\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"blue t-shirt\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"standing\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"relation\", \"predicate_or_axis\": \"in\", \"object_or_value\": \"Location 1\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Location 1\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"kitchen with visible counters and cabinets\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}], \"shots\": [{\"shot_id\": \"s01\", \"location_id\": \"Location 1\", \"present_subjects\": [\"Subject 1\"], \"visible_entities\": [\"Subject 1\"], \"screen_facts\": [{\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [380, 60, 640, 980], \"scope\": \"screen@0\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@0\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}], \"frame_count\": 41, \"shot_size\": \"medium shot\", \"camera_angle\": \"eye-level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 1 stands in the kitchen while an ice/snow effect covers him and the foreground.\", \"movement\": \"unknown\"}, {\"shot_id\": \"s02\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 2\"], \"visible_entities\": [\"Subject 2\"], \"screen_facts\": [{\"subject\": \"Subject 2\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [320, 200, 680, 980], \"scope\": \"screen@1\", \"shot_span\": [1, 1], \"evidence\": \"unknown\"}], \"frame_count\": 29, \"shot_size\": \"medium shot\", \"camera_angle\": \"eye-level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 2 sits on a red chair and holds his head.\", \"movement\": \"unknown\"}, {\"shot_id\": \"s03\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 3\"], \"visible_entities\": [\"Subject 3\"], \"screen_facts\": [{\"subject\": \"Subject 3\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [330, 160, 670, 980], \"scope\": \"screen@2\", \"shot_span\": [2, 2], \"evidence\": \"unknown\"}], \"frame_count\": 29, \"shot_size\": \"medium shot\", \"camera_angle\": \"eye-level\", \"cut_type\": \"hard cut\", \"action\": \"Subject 3 raises a finger while a light bulb effect appears.\", \"movement\": \"unknown\"}], \"events\": [{\"event_id\": \"e1\", \"shot_id\": \"s01\", \"before\": {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"standing\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, \"after\": {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"standing and covered by ice/snow effect\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e2\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"sitting on a red chair and holding his head\", \"scope\": \"scene\", \"shot_span\": [1, 1], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e3\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"raising a finger\", \"scope\": \"scene\", \"shot_span\": [2, 2], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e4\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Location 2\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"light bulb effect visible\", \"scope\": \"scene\", \"shot_span\": [2, 2], \"evidence\": \"observed\"}, \"on_screen\": \"unknown\"}], \"segments\": [{\"segment_id\": \"g1\", \"shot_ids\": [\"s02\", \"s03\"], \"reference_keys\": [{\"key\": [\"s01\"], \"version_id\": \"2.6666666666666665\"}]}]}",
+      "historical_issues": [
+        {
+          "rule": 1,
+          "path": "g1",
+          "message": "invalid fact-key/version reference"
+        }
+      ]
+    },
+    {
+      "name": "sol_setup",
+      "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/planner-native-sol-reference-20261007T140203Z/inference/script_true_history/raw-response.txt",
+      "source_line": null,
+      "raw_content": "{\"schema\": \"event_log_v3\", \"style\": \"真人短剧，明亮室内光线，夸张表情，冰雪和灯泡视觉特效\", \"subjects\": [{\"subject_id\": \"Subject 1\", \"kind\": \"person\", \"appearance\": \"Short-haired man wearing a blue t-shirt and yellow shorts\"}, {\"subject_id\": \"Subject 2\", \"kind\": \"person\", \"appearance\": \"Boy wearing a red hoodie and a red crown headpiece\"}, {\"subject_id\": \"Subject 3\", \"kind\": \"person\", \"appearance\": \"Girl wearing a blue sequined dress and a blue crown headpiece\"}, {\"subject_id\": \"Subject 4\", \"kind\": \"object\", \"appearance\": \"红色椅子\"}, {\"subject_id\": \"Subject 5\", \"kind\": \"object\", \"appearance\": \"灯泡形视觉特效\"}], \"locations\": [{\"location_id\": \"Location 1\", \"appearance\": \"厨房\", \"anchors\": []}, {\"location_id\": \"Location 2\", \"appearance\": \"室内\", \"anchors\": []}], \"initial_state\": [{\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"costume\", \"object_or_value\": \"蓝色上衣表面覆盖冰霜特效\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"双臂表面覆盖冰霜特效，表情惊慌\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Location 1\", \"family\": \"state\", \"predicate_or_axis\": \"environment\", \"object_or_value\": \"厨房内出现大量尖锐冰晶视觉特效\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"unknown\", \"scope\": \"scene\", \"shot_span\": [0, 0], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"unknown\", \"scope\": \"scene\", \"shot_span\": [0, 1], \"evidence\": \"unknown\"}], \"shots\": [{\"shot_id\": \"s01\", \"location_id\": \"Location 1\", \"present_subjects\": [\"Subject 1\"], \"visible_entities\": [\"Subject 1\", \"Location 1\"], \"screen_facts\": [{\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"horizontal\", \"object_or_value\": \"center\", \"scope\": \"screen@0\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"orientation\", \"object_or_value\": \"toward camera\", \"scope\": \"screen@0\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"gaze\", \"object_or_value\": \"unknown\", \"scope\": \"screen@0\", \"shot_span\": [0, 0], \"evidence\": \"unknown\"}, {\"subject\": \"Subject 1\", \"family\": \"screen\", \"predicate_or_axis\": \"bbox\", \"object_or_value\": [384, 28, 725, 900], \"scope\": \"screen@0\", \"shot_span\": [0, 0], \"evidence\": \"observed\"}], \"frame_count\": 41, \"shot_size\": \"中景\", \"camera_angle\": \"平视\", \"cut_type\": \"故事开场\", \"action\": \"Subject 1在厨房被冰雪特效覆盖，惊慌地握起一只手；前景冰晶遮挡其下半身，背景可见浅色橱柜、水槽和台面。\", \"movement\": \"unknown\"}, {\"shot_id\": \"s02\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 2\", \"Subject 4\"], \"visible_entities\": [\"Subject 2\", \"Subject 4\", \"Location 2\"], \"screen_facts\": [], \"frame_count\": 29, \"shot_size\": \"中景\", \"camera_angle\": \"平视\", \"cut_type\": \"直接切换\", \"action\": \"Subject 2坐在红椅上，抬起双手抱住自己的头，表现出苦恼。\", \"movement\": \"unknown\"}, {\"shot_id\": \"s03\", \"location_id\": \"Location 2\", \"present_subjects\": [\"Subject 3\", \"Subject 5\"], \"visible_entities\": [\"Subject 3\", \"Subject 5\", \"Location 2\"], \"screen_facts\": [], \"frame_count\": 29, \"shot_size\": \"中景\", \"camera_angle\": \"平视\", \"cut_type\": \"直接切换\", \"action\": \"Subject 3在室内举起一根手指，露出想到办法的表情，同时头旁出现发亮的灯泡特效。\", \"movement\": \"unknown\"}], \"events\": [{\"event_id\": \"e1\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"relation\", \"predicate_or_axis\": \"on\", \"object_or_value\": \"Subject 4\", \"scope\": \"scene\", \"shot_span\": [1, 1], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e2\", \"shot_id\": \"s02\", \"before\": null, \"after\": {\"subject\": \"Subject 2\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"双手抱头，表情苦恼\", \"scope\": \"scene\", \"shot_span\": [1, 1], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e3\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Subject 3\", \"family\": \"state\", \"predicate_or_axis\": \"body\", \"object_or_value\": \"举起一根手指，露出想到办法的表情\", \"scope\": \"scene\", \"shot_span\": [2, 2], \"evidence\": \"observed\"}, \"on_screen\": true}, {\"event_id\": \"e4\", \"shot_id\": \"s03\", \"before\": null, \"after\": {\"subject\": \"Subject 5\", \"family\": \"state\", \"predicate_or_axis\": \"object_condition\", \"object_or_value\": \"出现并发亮\", \"scope\": \"scene\", \"shot_span\": [2, 2], \"evidence\": \"observed\"}, \"on_screen\": true}], \"segments\": [{\"segment_id\": \"g1\", \"shot_ids\": [\"s01\"], \"reference_keys\": [{\"location_id\": \"Location 1\", \"setup_of\": \"Location 1\"}]}, {\"segment_id\": \"g2\", \"shot_ids\": [\"s02\", \"s03\"], \"reference_keys\": [{\"location_id\": \"Location 2\", \"setup_of\": \"Location 2\"}]}]}",
+      "historical_issues": [
+        {
+          "rule": 1,
+          "path": "g1",
+          "message": "invalid setup reference"
+        },
+        {
+          "rule": 1,
+          "path": "g2",
+          "message": "invalid setup reference"
+        }
+      ]
+    }
+  ]
+}

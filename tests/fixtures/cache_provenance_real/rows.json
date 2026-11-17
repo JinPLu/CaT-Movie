@@ -1,0 +1,440 @@
+{
+  "source": "FX1 first actual 200 headers and FX3 fixed 200 proxy descriptions; neither gives historical VAE provenance",
+  "historical": {
+    "case_id": "ci_vid:test:000000002",
+    "index": 0,
+    "cache_file": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/latent_cache/hq_pool_205k_full_v1/latents/ci_vid:test:000000002.safetensors",
+    "reusable": false,
+    "reasons": [
+      "manifest: cache provenance is missing or unsupported; use a new version directory",
+      "header: cache provenance is missing or unsupported; use a new version directory"
+    ],
+    "frozen_source_row": {
+      "case_id": "ci_vid:test:000000002",
+      "dataset": "ci_vid",
+      "lane": "generic_multishot",
+      "mapping_kind": "multisource",
+      "mapping_schema": "multishot_csv_multisource_mapping_v4_tail_padding",
+      "shot_count": "2",
+      "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/videos/chunk_318/1da6c4295c38efc4be7d90dfb9514a8f/0/0.mp4",
+      "shot_groups": "[[0,153],[153,222]]",
+      "source_frame_indices": "",
+      "source_video_paths": "[\"${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/videos/chunk_318/1da6c4295c38efc4be7d90dfb9514a8f/0/0.mp4\",\"${MSPC_SHARED_ROOT}/OoVMetric/resource/ci_vid/videos/chunk_318/1da6c4295c38efc4be7d90dfb9514a8f/0/1.mp4\"]",
+      "source_shot_segments": "[[0,300],[0,131]]",
+      "source_frame_indices_by_shot": "[[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101,103,105,107,109,111,113,115,117,119,121,123,125,127,129,131,133,135,137,139,141,143,145,147,149,151,153,155,157,159,161,163,165,167,169,171,173,175,177,179,181,183,185,187,189,191,193,195,197,199,201,203,205,207,209,211,213,215,217,219,221,223,225,227,229,231,233,235,237,239,241,243,245,247,249,251,253,255,257,259,261,263,265,267,269,271,273,275,277,279,281,283,285,287,289,291,293,295,297,299,299,299,299],[0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,130,130,130]]",
+      "state_candidate": "false",
+      "generic_multishot_candidate": "true",
+      "transition_candidate": "false",
+      "event_status": "",
+      "caption_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/hq_pool/20260819_ci_cine_v1/captions/ci_vid:test:000000002.json",
+      "caption_provenance": "selected_shot_captions_rejoined_v1",
+      "training_allowed": "false",
+      "training_admission": "mechanical_holdout"
+    },
+    "record": {
+      "cache_file": "latents/ci_vid:test:000000002.safetensors",
+      "case_id": "ci_vid:test:000000002",
+      "height": 480,
+      "index": 0,
+      "input_latents_shape": [
+        1,
+        48,
+        57,
+        30,
+        52
+      ],
+      "latent_shot_groups": [
+        [
+          0,
+          39
+        ],
+        [
+          39,
+          57
+        ]
+      ],
+      "num_frames": 222,
+      "shot_count": 2,
+      "shot_groups": [
+        [
+          0,
+          153
+        ],
+        [
+          153,
+          222
+        ]
+      ],
+      "width": 832
+    },
+    "header_metadata": {
+      "num_frames": "222",
+      "input_latents_shape": "[1, 48, 57, 30, 52]",
+      "cache_layout": "latents_only",
+      "height": "480",
+      "case_id": "ci_vid:test:000000002",
+      "shot_groups": "[[0, 153], [153, 222]]",
+      "latent_shot_groups": "[[0, 39], [39, 57]]",
+      "width": "832"
+    }
+  },
+  "new_proxy_media": {
+    "case_id": "ci_vid:train:000000753",
+    "media": {
+      "schema": "diagnostic_proxy_native_fps_first_4n_plus_1",
+      "files": [
+        {
+          "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/annotations/proxies/09/0924a055c876c51e8bd7ec9f012034dadc1ec1eb.mp4",
+          "bytes": 154593,
+          "mtime_ns": 1787509457302576714,
+          "source_fps": 12.0,
+          "source_num_frames": 33,
+          "source_height": 360,
+          "source_width": 640
+        },
+        {
+          "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/annotations/proxies/8e/8eb7689d6165e3fea74e1511a8d9f144c7125480.mp4",
+          "bytes": 105077,
+          "mtime_ns": 1787509460584657993,
+          "source_fps": 12.0,
+          "source_num_frames": 22,
+          "source_height": 360,
+          "source_width": 640
+        },
+        {
+          "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/annotations/proxies/51/514f34e3e1904e720acee8bea47c06218d0bbea7.mp4",
+          "bytes": 79191,
+          "mtime_ns": 1787509463480884597,
+          "source_fps": 12.0,
+          "source_num_frames": 23,
+          "source_height": 360,
+          "source_width": 640
+        }
+      ],
+      "source_shot_segments": [
+        [
+          0,
+          33
+        ],
+        [
+          0,
+          22
+        ],
+        [
+          0,
+          23
+        ]
+      ],
+      "sampling": {
+        "target_fps": null,
+        "source_fps_by_shot": [
+          12.0,
+          12.0,
+          12.0
+        ],
+        "shot_groups": [
+          [
+            0,
+            33
+          ],
+          [
+            33,
+            54
+          ],
+          [
+            54,
+            75
+          ]
+        ],
+        "latent_shot_groups": [
+          [
+            0,
+            9
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            15,
+            21
+          ]
+        ],
+        "frame_indices_by_shot": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        ]
+      },
+      "preprocessing": {
+        "decoder": "eva-decord",
+        "decoder_version": "0.6.1",
+        "torchvision_version": "0.26.0+cu128",
+        "spatial": [
+          {
+            "source_size": [
+              640,
+              360
+            ],
+            "resize_size": [
+              853,
+              480
+            ],
+            "crop_box_resized": [
+              10,
+              0,
+              842,
+              480
+            ],
+            "output_size": [
+              832,
+              480
+            ],
+            "coordinate_system": "pixel_edges",
+            "matrix": [
+              [
+                1.3328125,
+                0,
+                -10
+              ],
+              [
+                0,
+                1.3333333333333333,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "visible_source_box": [
+              7.502930832356389,
+              0.0,
+              631.746776084408,
+              360.0
+            ],
+            "source_to_target_matrix": [
+              [
+                1.3328125,
+                0,
+                -10
+              ],
+              [
+                0,
+                1.3333333333333333,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "source_size": [
+              640,
+              360
+            ],
+            "resize_size": [
+              853,
+              480
+            ],
+            "crop_box_resized": [
+              10,
+              0,
+              842,
+              480
+            ],
+            "output_size": [
+              832,
+              480
+            ],
+            "coordinate_system": "pixel_edges",
+            "matrix": [
+              [
+                1.3328125,
+                0,
+                -10
+              ],
+              [
+                0,
+                1.3333333333333333,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "visible_source_box": [
+              7.502930832356389,
+              0.0,
+              631.746776084408,
+              360.0
+            ],
+            "source_to_target_matrix": [
+              [
+                1.3328125,
+                0,
+                -10
+              ],
+              [
+                0,
+                1.3333333333333333,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "source_size": [
+              640,
+              360
+            ],
+            "resize_size": [
+              853,
+              480
+            ],
+            "crop_box_resized": [
+              10,
+              0,
+              842,
+              480
+            ],
+            "output_size": [
+              832,
+              480
+            ],
+            "coordinate_system": "pixel_edges",
+            "matrix": [
+              [
+                1.3328125,
+                0,
+                -10
+              ],
+              [
+                0,
+                1.3333333333333333,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "visible_source_box": [
+              7.502930832356389,
+              0.0,
+              631.746776084408,
+              360.0
+            ],
+            "source_to_target_matrix": [
+              [
+                1.3328125,
+                0,
+                -10
+              ],
+              [
+                0,
+                1.3333333333333333,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        ],
+        "pixel_conversion": "uint8_RGB_to_float_minus1_plus1"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "first_batch_v1",
+  "about": "首批进训练的窗。条件出处：数据基建讨论「验收后定下的选窗条件」与 10-12 的质量线决定。",
+  "classes": ["核心", "对白"],
+  "class_share_cap": {"对白": 0.15},
+  "drop_marks": ["有角标或水印"],
+  "min_laion_aesthetic": 4.5,
+  "max_windows": 25000,
+  "seed": 20261012
+}

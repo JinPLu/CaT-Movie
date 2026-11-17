@@ -1,0 +1,135 @@
+{
+  "key": "film-003415-b0000",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short dark hair",
+        "outfit": "a light-colored shirt and dark trousers with suspenders"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short dark hair",
+        "outfit": "a light-colored shirt, dark vest, and dark trousers"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a large wooden crate filled with dark objects"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a wooden staircase"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a mechanical claw holding a round, textured object"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a round, textured, yellowish object"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a dimly lit industrial interior with pipes, machinery, and wooden structures"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "walking down the stairs"
+          },
+          {
+            "name": "Character 2",
+            "posture": "walking down the stairs"
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 and Character 2 walk down a wooden staircase in an industrial setting and continue walking away from the camera.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "posture",
+            "before": "walking down the stairs",
+            "after": "walking on the floor"
+          },
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "walking down the stairs",
+            "after": "walking on the floor"
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Object 3",
+            "holding": [
+              "Object 4"
+            ]
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A mechanical claw releases a round, textured object, which falls onto a surface and rolls.",
+        "changes": [
+          {
+            "name": "Object 3",
+            "what": "holding",
+            "before": [
+              "Object 4"
+            ],
+            "after": []
+          },
+          {
+            "name": "Object 4",
+            "what": "state",
+            "before": "held by a claw",
+            "after": "rolling on a surface"
+          }
+        ]
+      }
+    ],
+    "story": {
+      "paragraph": "Two men walk down a wooden staircase in a dimly lit industrial facility filled with pipes and machinery. They reach the bottom and walk away from the camera. In a close-up view, a mechanical claw releases a round, textured object onto a surface, where it rolls away amidst steam.",
+      "summary": "Two men walk through an industrial facility while a mechanical claw drops a round object onto a surface."
+    }
+  },
+  "shot_count": 2
+}

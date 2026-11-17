@@ -1,0 +1,35 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\n  \"answers\": [\n    {\"question\": 1, \"answer\": \"yes\", \"reason\": \"Character 1 holds the red dart in front of him.\", \"time\": \"0:13\"},\n    {\"question\": 2, \"answer\": \"yes\", \"reason\": \"The red dart is seen hitting the center bullseye of the dartboard.\", \"time\": \"0:20\"},\n    {\"question\": 3, \"answer\": \"yes\", \"reason\": \"The red dart is embedded in the center bullseye at the end of the shot.\", \"time\": \"0:21\"},\n    {\"question\": 4, \"answer\": \"no\", \"reason\": \"Character 2 puts his arm around Character 1's shoulder, not Character 1 putting his arm around Character 2.\", \"time\": \"0:23\"},\n    {\"question\": 5, \"answer\": \"no\", \"reason\": \"Character 2's arm is around Character 1, not Character 1's arm around Character 2.\", \"time\": \"0:24\"},\n    {\"question\": 6, \"answer\": \"yes\", \"reason\": \"Character 2 holds the yellow dart and gestures as if ready to throw it.\", \"time\": \"0:25\"},\n    {\"question\": 7, \"answer\": \"yes\", \"reason\": \"The yellow dart lands near the red dart right on the bullseye.\", \"time\": \"0:27\"},\n    {\"question\": 8, \"answer\": \"yes\", \"reason\": \"The yellow dart is visibly stuck next to the red dart in the bullseye.\", \"time\": \"0:28\"},\n    {\"question\": 9, \"answer\": \"yes\", \"reason\": \"Character 1 has the same facial features, hair, and varsity jacket.\", \"time\": \"0:06\"},\n    {\"question\": 10, \"answer\": \"yes\", \"reason\": \"Character 1 has the same face and blue/white varsity jacket.\", \"time\": \"0:25\"},\n    {\"question\": 11, \"answer\": \"yes\", \"reason\": \"Character 2 has the same facial features, hair, and grey shirt.\", \"time\": \"0:08\"},\n    {\"question\": 12, \"answer\": \"yes\", \"reason\": \"Character 2 has the same face, hair, and grey long-sleeve shirt.\", \"time\": \"0:26\"},\n    {\"question\": 13, \"answer\": \"yes\", \"reason\": \"The dartboard matches the identical distinctive glowing green-and-yellow design.\", \"time\": \"0:20\"},\n    {\"question\": 14, \"answer\": \"yes\", \"reason\": \"The dartboard has the exact same glowing design and numbers.\", \"time\": \"0:27\"},\n    {\"question\": 15, \"answer\": \"yes\", \"reason\": \"It is the same red dart with red flights.\", \"time\": \"0:20\"},\n    {\"question\": 16, \"answer\": \"yes\", \"reason\": \"The red dart is identical in appearance and position.\", \"time\": \"0:27\"},\n    {\"question\": 17, \"answer\": \"yes\", \"reason\": \"The yellow dart with white shaft and yellow flights is the same.\", \"time\": \"0:27\"},\n    {\"question\": 18, \"answer\": \"yes\", \"reason\": \"The scene continues in the same bar environment.\", \"time\": \"0:05\"},\n    {\"question\": 19, \"answer\": \"yes\", \"reason\": \"The dartboard is located inside the same bar location.\", \"time\": \"0:27\"},\n    {\"question\": 20, \"answer\": \"yes\", \"reason\": \"All shots maintain a consistent live-action visual style throughout the video.\", \"time\": \"0:14\"},\n    {\"question\": 21, \"answer\": \"yes\", \"reason\": \"Character 1 has the same face and clothing.\", \"time\": \"0:22\"},\n    {\"question\": 22, \"answer\": \"yes\", \"reason\": \"Character 2 has the same face and grey shirt.\", \"time\": \"0:22\"},\n    {\"question\": 23, \"answer\": \"yes\", \"reason\": \"Character 2 is holding the yellow dart in his hand.\", \"time\": \"0:25\"}\n  ]\n}",
+            "thoughtSignature": "EmkKZwFpFH0TvFbNwJ0aFfUTwRIuSTZYgK82XP47mYyCpYu7t8UQjM9kyMPzLD5g+6x/lw1FPxkFmf+JYeYXkisTXQxNDR3bLn6P/rHrpbkRwAOsh9ZbS98GpTYMf4vEvnZPfaDgijJef38="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 5389,
+    "candidatesTokenCount": 976,
+    "totalTokenCount": 6365,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 3762
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 1627
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.8-flash",
+  "responseId": "ho7tarapB-rfrfcPlO-4yQk"
+}

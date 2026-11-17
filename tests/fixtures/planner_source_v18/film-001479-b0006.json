@@ -1,0 +1,333 @@
+{
+  "key": "film-001479-b0006",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a middle-aged man with short dark hair, receding hairline, and a heavy build",
+        "outfit": "a dark grey button-down shirt with a dark bow tie"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with short blonde wavy hair",
+        "outfit": "a long pink sleeveless dress"
+      },
+      {
+        "name": "Character 3",
+        "kind": "group",
+        "visibility": "partial",
+        "appearance": "silhouettes of people in the audience"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a large lamp with a fringed shade"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a dark platform or stage prop"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a lamp with a warm shade"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a dark stage with purple and blue lighting and a starry backdrop"
+      },
+      {
+        "name": "Location 2",
+        "appearance": "a dimly lit room with patterned wallpaper"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting",
+            "state": "singing or speaking"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "A man in a dark shirt and bow tie sings or speaks while looking forward.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing on a platform",
+            "outfit": "a long pink sleeveless dress"
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A woman in a pink dress stands on a platform behind the man, gesturing and moving her dress.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "crouching on the platform",
+            "outfit": "a long pink sleeveless dress"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman in the pink dress crouches down on the platform.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "standing",
+            "after": "crouching"
+          }
+        ]
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "crouching",
+            "state": "looking down and moving her head"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A close-up shows the woman looking down and moving her head.",
+        "changes": []
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing up and lifting her leg",
+            "outfit": "a long pink sleeveless dress"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman stands up, lifts her leg, and poses while the man watches and gestures.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "crouching",
+            "after": "standing with leg lifted"
+          }
+        ]
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing with leg lifted",
+            "outfit": "a long pink sleeveless dress"
+          },
+          {
+            "name": "Object 1",
+            "state": "hanging from the ceiling"
+          },
+          {
+            "name": "Character 3",
+            "posture": "sitting in the audience"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A wide shot shows the woman sitting on the platform and the man sitting nearby, with an audience watching.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "standing with leg lifted",
+            "after": "sitting on the platform"
+          }
+        ]
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting",
+            "state": "singing or speaking"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "A close-up of the man singing or speaking.",
+        "changes": []
+      },
+      {
+        "shot": 8,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 2",
+            "posture": "sitting on the platform",
+            "outfit": "a long pink sleeveless dress"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman in the pink dress stands and moves towards the seated man.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "sitting on the platform",
+            "after": "standing and moving towards the man"
+          }
+        ]
+      },
+      {
+        "shot": 9,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting",
+            "outfit": "a dark grey button-down shirt with a dark bow tie"
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing close to the man",
+            "outfit": "a long pink sleeveless dress"
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The man and woman stand close together in a dimly lit room, arguing or talking intensely, with the woman gesturing and touching the man's chest.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "outfit",
+            "before": "a long pink sleeveless dress",
+            "after": "a pink top or dress"
+          },
+          {
+            "name": "Character 1",
+            "what": "posture",
+            "before": "sitting",
+            "after": "standing"
+          }
+        ]
+      }
+    ],
+    "story": {
+      "paragraph": "A man in a dark shirt and bow tie sings on a dark stage with purple lighting. A woman in a long pink dress performs on a platform behind him, crouching, posing, and moving around. The scene then shifts to a dimly lit room with patterned wallpaper, where the man and woman stand close together, arguing or talking intensely while she gestures and touches his chest.",
+      "summary": "A man sings on stage while a woman in a pink dress performs behind him, and then they are seen arguing in a dimly lit room."
+    }
+  },
+  "frame_counts": [
+    13,
+    41,
+    17,
+    13,
+    33,
+    29,
+    17,
+    17,
+    217
+  ]
+}

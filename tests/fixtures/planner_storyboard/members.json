@@ -1,0 +1,2442 @@
+{
+  "source": "本机保存真实327块快照，2026-10-13 03:02Z；200块CPU验收切片的4个原始成员，不是当前全量覆盖。",
+  "rows": [
+    {
+      "key": "cinedance-018630-b0000",
+      "case_id": "story_block_v1:cinedance:0a7489d0-17ed-86ce-9d4d-0f22c2a60836:<scene1>:block0000:0000-0004",
+      "source": "cinedance",
+      "family": "cinedance",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a7489d0-17ed-86ce-9d4d-0f22c2a60836.mp4",
+      "split": "train",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a white dog with black ears and a black spot on his back",
+            "outfit": "a red collar"
+          },
+          {
+            "name": "Character 2",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "pink rabbits with white tails"
+          },
+          {
+            "name": "Character 3",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "pink birds with yellow beaks and wings"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a straw hat with a red band"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a brown cane"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a yellow and red book"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a grassy field with a blue sky"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a grassy field with a large tree and bushes"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "animation_2d",
+            "on_screen_text": "large_text_or_picture_in_picture",
+            "place": null,
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Object 1",
+                "state": "none"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "A title card reads 'SNOOPY'S SUMMERTIME FUN LIST #2' with a drawing of a rabbit.",
+            "changes": []
+          },
+          {
+            "shot": 2,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "walking and dancing",
+                "state": "wearing a straw hat, holding a cane and a book",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting and lying in a grassy field"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "A white dog walks and dances among a group of pink rabbits in a grassy field. He puts on a straw hat, holds a cane and a book, and kicks his leg up before sitting down.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "outfit",
+                "before": "a red collar",
+                "after": "a red collar and a straw hat"
+              },
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2",
+                  "Object 3"
+                ]
+              },
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "walking and dancing",
+                "after": "sitting"
+              }
+            ]
+          },
+          {
+            "shot": 3,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "sitting and lying down"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The pink rabbits look around and then lie down or hop away.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "sitting",
+                "after": "lying down or hopping away"
+              }
+            ]
+          },
+          {
+            "shot": 4,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "looking angry",
+                "outfit": "a red collar and a straw hat"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "The white dog looks angry and thinks.",
+            "changes": []
+          },
+          {
+            "shot": 5,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "walking and dancing",
+                "state": "none",
+                "outfit": "a red collar and a straw hat"
+              },
+              {
+                "name": "Character 3",
+                "posture": "walking and dancing"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The white dog walks and dances in a field with a tree, joined by a group of pink birds with yellow beaks.",
+            "changes": []
+          }
+        ],
+        "story": {
+          "paragraph": "A title card introduces 'Snoopy's Summertime Fun List #2'. A white dog with black ears walks and dances among a group of pink rabbits in a grassy field. He puts on a straw hat, holds a cane and a book, and kicks his leg up before sitting down. The rabbits then lie down or hop away. The dog looks angry and thinks. Later, he walks and dances in a field with a tree, joined by a group of pink birds with yellow beaks.",
+          "summary": "A white dog dances among rabbits and birds in a grassy field, wearing a hat and holding a cane and book."
+        }
+      },
+      "shots": [
+        {
+          "source_shot_index": 0,
+          "start_frame": 2,
+          "end_frame": 68,
+          "seconds": 2.75275,
+          "render_frames": 41,
+          "sid": "cinedance-018630",
+          "scene_id": "cinedance:0a7489d0-17ed-86ce-9d4d-0f22c2a60836:<scene1>:block0000",
+          "score_key": "cinedance-018630-e0000",
+          "mean_luma": 184.849853515625,
+          "min_luma": 184.7603759765625,
+          "max_luma": 184.931884765625,
+          "dover_technical": -0.08713976293802261,
+          "laion_aesthetic": 4.630457083384196,
+          "scene": "<scene1>",
+          "characters": [],
+          "block_key": "cinedance-018630-b0000",
+          "shot": 1,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 41,
+          "aesthetic": 4.630457083384196,
+          "sharpness": -0.08713976293802261,
+          "usable": false,
+          "unusable_reasons": [
+            "这一镜修不好",
+            "大面积文字或画中画"
+          ],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": null,
+          "on_screen_text": null,
+          "activity": null,
+          "shot_size": null,
+          "angle": null,
+          "movement": null,
+          "place": null,
+          "place_appearance": null,
+          "present_people": null,
+          "present_clear_people": null,
+          "present_objects": null,
+          "other_outfit_worn": null,
+          "outfit_change": null,
+          "changes": null,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 1,
+          "start_frame": 72,
+          "end_frame": 390,
+          "seconds": 13.26325,
+          "render_frames": 209,
+          "sid": "cinedance-018630",
+          "scene_id": "cinedance:0a7489d0-17ed-86ce-9d4d-0f22c2a60836:<scene1>:block0000",
+          "score_key": "cinedance-018630-e0001",
+          "mean_luma": 197.50494384765625,
+          "min_luma": 195.1383056640625,
+          "max_luma": 198.64071655273438,
+          "dover_technical": -0.07406868785619736,
+          "laion_aesthetic": 5.38905143737793,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-018630-b0000",
+          "shot": 2,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 209,
+          "aesthetic": 5.38905143737793,
+          "sharpness": -0.07406868785619736,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "animation_2d",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a grassy field with a blue sky",
+          "present_people": 0,
+          "present_clear_people": 0,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": true,
+          "changes": 3,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 2,
+          "start_frame": 394,
+          "end_frame": 478,
+          "seconds": 3.5035,
+          "render_frames": 53,
+          "sid": "cinedance-018630",
+          "scene_id": "cinedance:0a7489d0-17ed-86ce-9d4d-0f22c2a60836:<scene1>:block0000",
+          "score_key": "cinedance-018630-e0002",
+          "mean_luma": 165.07852172851562,
+          "min_luma": 163.9161376953125,
+          "max_luma": 166.61846923828125,
+          "dover_technical": -0.06883169710636139,
+          "laion_aesthetic": 5.162360191345215,
+          "scene": "<scene1>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-018630-b0000",
+          "shot": 3,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 53,
+          "aesthetic": 5.162360191345215,
+          "sharpness": -0.06883169710636139,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "animation_2d",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a grassy field with a blue sky",
+          "present_people": 0,
+          "present_clear_people": 0,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 1,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 3,
+          "start_frame": 482,
+          "end_frame": 527,
+          "seconds": 1.8768749999999998,
+          "render_frames": 29,
+          "sid": "cinedance-018630",
+          "scene_id": "cinedance:0a7489d0-17ed-86ce-9d4d-0f22c2a60836:<scene1>:block0000",
+          "score_key": "cinedance-018630-e0003",
+          "mean_luma": 182.17369079589844,
+          "min_luma": 171.1954803466797,
+          "max_luma": 183.97474670410156,
+          "dover_technical": -0.09670768678188324,
+          "laion_aesthetic": 5.163575967152913,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-018630-b0000",
+          "shot": 4,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 29,
+          "aesthetic": 5.163575967152913,
+          "sharpness": -0.09670768678188324,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "animation_2d",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a grassy field with a blue sky",
+          "present_people": 0,
+          "present_clear_people": 0,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 4,
+          "start_frame": 531,
+          "end_frame": 636,
+          "seconds": 4.379375,
+          "render_frames": 69,
+          "sid": "cinedance-018630",
+          "scene_id": "cinedance:0a7489d0-17ed-86ce-9d4d-0f22c2a60836:<scene1>:block0000",
+          "score_key": "cinedance-018630-e0004",
+          "mean_luma": 172.05088806152344,
+          "min_luma": 170.1379852294922,
+          "max_luma": 174.3888702392578,
+          "dover_technical": -0.07349498569965363,
+          "laion_aesthetic": 5.504446665445964,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-018630-b0000",
+          "shot": 5,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 69,
+          "aesthetic": 5.504446665445964,
+          "sharpness": -0.07349498569965363,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "animation_2d",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 2",
+          "place_appearance": "a grassy field with a large tree and bushes",
+          "present_people": 0,
+          "present_clear_people": 0,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        }
+      ]
+    },
+    {
+      "key": "cinedance-010141-b0002",
+      "case_id": "story_block_v1:cinedance:01660f19-559c-8798-afed-fdb3a164b5ac:<scene1>:block0000:0015-0019",
+      "source": "cinedance",
+      "family": "cinedance",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/01660f19-559c-8798-afed-fdb3a164b5ac.mp4",
+      "split": "train",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark, slightly messy, wavy hair and a slim build",
+            "outfit": "a white medical coat"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with dark, wavy hair and a slim build",
+            "outfit": "a white medical coat over a light blue shirt and dark tie with a red lanyard"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "distant",
+            "appearance": "a person with dark hair tied back",
+            "outfit": "a white uniform"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a medical monitor or equipment with buttons and screens"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a white wall with light switches"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a hospital room or medical facility with white walls"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting and looking at Character 2",
+                "state": "talking, expression changes from serious to surprised"
+              },
+              {
+                "name": "Character 2",
+                "posture": "partially visible from the back"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 1 talks to Character 2, his expression shifting from serious to surprised.",
+            "changes": []
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "partially visible from the back"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting and looking at Character 1",
+                "state": "smiling slightly, then looking down"
+              },
+              {
+                "name": "Object 1",
+                "state": "visible in the background"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 2 looks at Character 1, smiles slightly, and then looks down.",
+            "changes": []
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting and looking at Character 2",
+                "state": "talking, expression serious"
+              },
+              {
+                "name": "Character 2",
+                "posture": "partially visible from the back"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 1 continues talking to Character 2 with a serious expression.",
+            "changes": []
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "partially visible from the back"
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting and looking down, then looks up at Character 1",
+                "state": "talking"
+              },
+              {
+                "name": "Object 1",
+                "state": "visible in the background"
+              },
+              {
+                "name": "Object 2",
+                "state": "visible in the background"
+              },
+              {
+                "name": "Character 3",
+                "posture": "walking in the background",
+                "visibility": "distant"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 2 looks down while talking, then looks up at Character 1. Character 3 walks past in the background.",
+            "changes": []
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting and looking at Character 2",
+                "state": "listening, expression serious"
+              },
+              {
+                "name": "Character 2",
+                "posture": "partially visible from the back"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 1 listens to Character 2 with a serious expression.",
+            "changes": []
+          }
+        ],
+        "story": {
+          "paragraph": "Two young men in white medical coats are having a conversation in a hospital room. The first man speaks with a serious expression that turns to surprise, while the second man listens, smiles briefly, and looks down. The first man continues to speak seriously. The second man then looks up and speaks, while a third person in a white uniform walks past in the background. The first man listens intently.",
+          "summary": "Two doctors have a serious conversation in a hospital room while a nurse walks by in the background."
+        }
+      },
+      "shots": [
+        {
+          "source_shot_index": 15,
+          "start_frame": 2190,
+          "end_frame": 2434,
+          "seconds": 8.141466666666666,
+          "render_frames": 129,
+          "sid": "cinedance-010141",
+          "scene_id": "cinedance:01660f19-559c-8798-afed-fdb3a164b5ac:<scene1>:block0000",
+          "score_key": "cinedance-010141-e0014",
+          "mean_luma": 88.89319610595703,
+          "min_luma": 87.05432891845703,
+          "max_luma": 90.11602020263672,
+          "dover_technical": -0.046602677553892136,
+          "laion_aesthetic": 5.60355011622111,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010141-b0002",
+          "shot": 1,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 129,
+          "aesthetic": 5.60355011622111,
+          "sharpness": -0.046602677553892136,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a hospital room or medical facility with white walls",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 16,
+          "start_frame": 2438,
+          "end_frame": 2529,
+          "seconds": 3.036366666666667,
+          "render_frames": 49,
+          "sid": "cinedance-010141",
+          "scene_id": "cinedance:01660f19-559c-8798-afed-fdb3a164b5ac:<scene1>:block0000",
+          "score_key": "cinedance-010141-e0015",
+          "mean_luma": 102.99888610839844,
+          "min_luma": 100.04395294189453,
+          "max_luma": 105.9188003540039,
+          "dover_technical": -0.03103470243513584,
+          "laion_aesthetic": 5.530101935068767,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010141-b0002",
+          "shot": 2,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 49,
+          "aesthetic": 5.530101935068767,
+          "sharpness": -0.03103470243513584,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a hospital room or medical facility with white walls",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 1,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 17,
+          "start_frame": 2533,
+          "end_frame": 2694,
+          "seconds": 5.372033333333333,
+          "render_frames": 85,
+          "sid": "cinedance-010141",
+          "scene_id": "cinedance:01660f19-559c-8798-afed-fdb3a164b5ac:<scene1>:block0000",
+          "score_key": "cinedance-010141-e0016",
+          "mean_luma": 86.83673095703125,
+          "min_luma": 82.72814178466797,
+          "max_luma": 95.1379623413086,
+          "dover_technical": -0.04617336764931679,
+          "laion_aesthetic": 5.470423062642415,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010141-b0002",
+          "shot": 3,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 85,
+          "aesthetic": 5.470423062642415,
+          "sharpness": -0.04617336764931679,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a hospital room or medical facility with white walls",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 18,
+          "start_frame": 2698,
+          "end_frame": 2845,
+          "seconds": 4.9049000000000005,
+          "render_frames": 77,
+          "sid": "cinedance-010141",
+          "scene_id": "cinedance:01660f19-559c-8798-afed-fdb3a164b5ac:<scene1>:block0000",
+          "score_key": "cinedance-010141-e0017",
+          "mean_luma": 105.44456481933594,
+          "min_luma": 100.93061065673828,
+          "max_luma": 107.17698669433594,
+          "dover_technical": -0.03665344789624214,
+          "laion_aesthetic": 5.353605429331462,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010141-b0002",
+          "shot": 4,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 77,
+          "aesthetic": 5.353605429331462,
+          "sharpness": -0.03665344789624214,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a hospital room or medical facility with white walls",
+          "present_people": 3,
+          "present_clear_people": 2,
+          "present_objects": 2,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 19,
+          "start_frame": 2849,
+          "end_frame": 3032,
+          "seconds": 6.1061000000000005,
+          "render_frames": 97,
+          "sid": "cinedance-010141",
+          "scene_id": "cinedance:01660f19-559c-8798-afed-fdb3a164b5ac:<scene1>:block0000",
+          "score_key": "cinedance-010141-e0018",
+          "mean_luma": 83.77758026123047,
+          "min_luma": 78.60688781738281,
+          "max_luma": 91.34332275390625,
+          "dover_technical": -0.040749598294496536,
+          "laion_aesthetic": 5.329238573710124,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010141-b0002",
+          "shot": 5,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 97,
+          "aesthetic": 5.329238573710124,
+          "sharpness": -0.040749598294496536,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a hospital room or medical facility with white walls",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        }
+      ]
+    },
+    {
+      "key": "cinedance-010742-b0001",
+      "case_id": "story_block_v1:cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000:0005-0015",
+      "source": "cinedance",
+      "family": "cinedance",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/02086e19-de5a-8490-b033-ffc949503e7f.mp4",
+      "split": "train",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young woman with long dark hair tied back",
+            "outfit": "a beige coat over a red sweater and white collared shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young man with short dark hair",
+            "outfit": "a dark brown cardigan over a black shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a small hand shovel or trowel"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a larger garden shovel"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a long planter box filled with dark soil"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "white gardening gloves"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a glass window or wall structure"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a greenhouse or sunroom with glass walls and white frames"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting or leaning against a wall",
+                "state": "looking down and to the side"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "Character 1 sits quietly, looking down with a thoughtful expression.",
+            "changes": []
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "bent over a planter box",
+                "holding": [
+                  "Object 1"
+                ],
+                "outfit": "white gardening gloves"
+              },
+              {
+                "name": "Character 1",
+                "posture": "standing in the background",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 3",
+                "state": "filled with soil"
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "Character 2 uses a small trowel to work the soil in a long planter box while Character 1 stands behind him holding a larger shovel.",
+            "changes": []
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "bent over, looking at the soil",
+                "outfit": "white gardening gloves"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "Character 2 continues to focus on the soil in the planter box.",
+            "changes": []
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "looking at Character 2"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "Character 1 watches Character 2 work in silence.",
+            "changes": []
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "bent over",
+                "outfit": "white gardening gloves"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "Character 2 remains focused on his task in the soil.",
+            "changes": []
+          },
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "looking down"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "Character 1 looks down, appearing contemplative.",
+            "changes": []
+          },
+          {
+            "shot": 7,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Object 2",
+                "state": "held by Character 1"
+              },
+              {
+                "name": "Object 3",
+                "state": "filled with soil"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The larger shovel is plunged into the soil in the planter box.",
+            "changes": [
+              {
+                "name": "Object 2",
+                "what": "state",
+                "before": "held by Character 1",
+                "after": "stuck into the soil"
+              }
+            ]
+          },
+          {
+            "shot": 8,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "bent over",
+                "outfit": "white gardening gloves"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "Character 2 looks down at the soil.",
+            "changes": []
+          },
+          {
+            "shot": 9,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing and digging",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "bent over",
+                "holding": [
+                  "Object 4"
+                ],
+                "outfit": "white gardening gloves"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "Character 1 begins digging in the planter box with the larger shovel while Character 2 stands up and watches.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "bent over",
+                "after": "standing up straight"
+              }
+            ]
+          },
+          {
+            "shot": 10,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "looking up at Character 2"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing next to her",
+                "outfit": "white gardening gloves"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 1 looks up at Character 2, and they appear to be interacting.",
+            "changes": []
+          },
+          {
+            "shot": 11,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "state": "talking",
+                "outfit": "white gardening gloves"
+              },
+              {
+                "name": "Character 1",
+                "posture": "standing next to him",
+                "state": "looking down"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 2 speaks while looking at Character 1, who looks down at the soil.",
+            "changes": []
+          }
+        ],
+        "story": {
+          "paragraph": "A young woman in a beige coat sits quietly in a greenhouse, looking contemplative. A young man in a dark cardigan works the soil in a long planter box with a small trowel while wearing white gloves. The woman stands behind him holding a larger shovel. She then begins digging in the soil with the larger shovel while the man stands up and watches her. They stand side by side, and the man speaks to her while she looks down at the work.",
+          "summary": "A young man and woman work together in a greenhouse planter box, with the woman digging in the soil while the man watches and speaks to her."
+        }
+      },
+      "shots": [
+        {
+          "source_shot_index": 5,
+          "start_frame": 331,
+          "end_frame": 359,
+          "seconds": 1.1678333333333333,
+          "render_frames": 17,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0004",
+          "mean_luma": 62.77245330810547,
+          "min_luma": 61.02213668823242,
+          "max_luma": 64.33564758300781,
+          "dover_technical": -0.053168851882219315,
+          "laion_aesthetic": 5.224009037017822,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 1,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 17,
+          "aesthetic": 5.224009037017822,
+          "sharpness": -0.053168851882219315,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "no_human_activity",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 6,
+          "start_frame": 363,
+          "end_frame": 497,
+          "seconds": 5.588916666666666,
+          "render_frames": 89,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0005",
+          "mean_luma": 55.694881439208984,
+          "min_luma": 41.84864044189453,
+          "max_luma": 62.721473693847656,
+          "dover_technical": -0.06567679345607758,
+          "laion_aesthetic": 5.468926906585693,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 2,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 89,
+          "aesthetic": 5.468926906585693,
+          "sharpness": -0.06567679345607758,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 1,
+          "other_outfit_worn": true,
+          "outfit_change": true,
+          "changes": 1,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 7,
+          "start_frame": 501,
+          "end_frame": 593,
+          "seconds": 3.8371666666666666,
+          "render_frames": 61,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0006",
+          "mean_luma": 40.47439956665039,
+          "min_luma": 37.6439094543457,
+          "max_luma": 42.3685302734375,
+          "dover_technical": -0.038506604731082916,
+          "laion_aesthetic": 5.739806652069092,
+          "scene": "<scene1>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 3,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 61,
+          "aesthetic": 5.739806652069092,
+          "sharpness": -0.038506604731082916,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "no_human_activity",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 8,
+          "start_frame": 597,
+          "end_frame": 673,
+          "seconds": 3.169833333333333,
+          "render_frames": 49,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0007",
+          "mean_luma": 73.68077087402344,
+          "min_luma": 62.54042434692383,
+          "max_luma": 78.19194030761719,
+          "dover_technical": -0.012922987341880798,
+          "laion_aesthetic": 5.503960768381755,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 4,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 49,
+          "aesthetic": 5.503960768381755,
+          "sharpness": -0.012922987341880798,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "no_human_activity",
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 9,
+          "start_frame": 677,
+          "end_frame": 706,
+          "seconds": 1.2095416666666665,
+          "render_frames": 17,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0008",
+          "mean_luma": 34.08061218261719,
+          "min_luma": 31.994611740112305,
+          "max_luma": 37.01942443847656,
+          "dover_technical": -0.04420848563313484,
+          "laion_aesthetic": 5.854230721791585,
+          "scene": "<scene1>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 5,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 17,
+          "aesthetic": 5.854230721791585,
+          "sharpness": -0.04420848563313484,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "no_human_activity",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 10,
+          "start_frame": 710,
+          "end_frame": 744,
+          "seconds": 1.4180833333333331,
+          "render_frames": 21,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0009",
+          "mean_luma": 66.33711242675781,
+          "min_luma": 64.7206802368164,
+          "max_luma": 68.0971908569336,
+          "dover_technical": -0.04152834415435791,
+          "laion_aesthetic": 5.638206799825032,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 6,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 21,
+          "aesthetic": 5.638206799825032,
+          "sharpness": -0.04152834415435791,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "no_human_activity",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 11,
+          "start_frame": 748,
+          "end_frame": 790,
+          "seconds": 1.75175,
+          "render_frames": 25,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0010",
+          "mean_luma": 28.570392608642578,
+          "min_luma": 24.949731826782227,
+          "max_luma": 30.809913635253906,
+          "dover_technical": -0.07674243301153183,
+          "laion_aesthetic": 4.81683333714803,
+          "scene": "<scene1>",
+          "characters": [],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 7,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 25,
+          "aesthetic": 4.81683333714803,
+          "sharpness": -0.07674243301153183,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 0,
+          "present_clear_people": 0,
+          "present_objects": 2,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 1,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 12,
+          "start_frame": 794,
+          "end_frame": 849,
+          "seconds": 2.2939583333333333,
+          "render_frames": 37,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0011",
+          "mean_luma": 45.061485290527344,
+          "min_luma": 41.58972930908203,
+          "max_luma": 48.81705093383789,
+          "dover_technical": -0.03581951931118965,
+          "laion_aesthetic": 5.680473327636719,
+          "scene": "<scene1>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 8,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 37,
+          "aesthetic": 5.680473327636719,
+          "sharpness": -0.03581951931118965,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "no_human_activity",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 13,
+          "start_frame": 853,
+          "end_frame": 924,
+          "seconds": 2.9612916666666664,
+          "render_frames": 45,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0012",
+          "mean_luma": 59.06198501586914,
+          "min_luma": 55.873802185058594,
+          "max_luma": 64.4175796508789,
+          "dover_technical": -0.030846456065773964,
+          "laion_aesthetic": 5.739669481913249,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>",
+            "<char2>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 9,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 45,
+          "aesthetic": 5.739669481913249,
+          "sharpness": -0.030846456065773964,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 1,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 2,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 14,
+          "start_frame": 928,
+          "end_frame": 970,
+          "seconds": 1.75175,
+          "render_frames": 25,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0013",
+          "mean_luma": 65.12150573730469,
+          "min_luma": 62.07867431640625,
+          "max_luma": 67.01814270019531,
+          "dover_technical": -0.009402433410286903,
+          "laion_aesthetic": 5.841719468434651,
+          "scene": "<scene1>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 10,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 25,
+          "aesthetic": 5.841719468434651,
+          "sharpness": -0.009402433410286903,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 15,
+          "start_frame": 974,
+          "end_frame": 1064,
+          "seconds": 3.7537499999999997,
+          "render_frames": 57,
+          "sid": "cinedance-010742",
+          "scene_id": "cinedance:02086e19-de5a-8490-b033-ffc949503e7f:<scene1>:block0000",
+          "score_key": "cinedance-010742-e0014",
+          "mean_luma": 48.51237487792969,
+          "min_luma": 46.32906723022461,
+          "max_luma": 50.378639221191406,
+          "dover_technical": -0.02398015931248665,
+          "laion_aesthetic": 5.848641077677409,
+          "scene": "<scene1>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-010742-b0001",
+          "shot": 11,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 57,
+          "aesthetic": 5.848641077677409,
+          "sharpness": -0.02398015931248665,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a greenhouse or sunroom with glass walls and white frames",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 0,
+          "other_outfit_worn": true,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "program_edited",
+          "repair_rules": [
+            "换装后补穿着"
+          ],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        }
+      ]
+    },
+    {
+      "key": "cinedance-009335-b0001",
+      "case_id": "story_block_v1:cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001:0009-0015",
+      "source": "cinedance",
+      "family": "cinedance",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/007d77f5-0bd0-8003-a045-96ae0d9d3870.mp4",
+      "split": "val",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "an older man with grey hair and a grey beard",
+            "outfit": "a grey shirt and a dark tie"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a younger man with slicked-back brown hair and a light beard",
+            "outfit": "a grey suit jacket, a white patterned shirt, a dark tie, and a dark scarf"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "bookshelves filled with old books"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a book on a shelf"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a control panel with a green circle display"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit room with bookshelves"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing by the bookshelves"
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing in the foreground, partially visible"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 1 looks back at Character 2 while standing near the bookshelves.",
+            "changes": []
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "looking back"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "Character 1 turns towards the bookshelves and reaches out to touch a book.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "looking back",
+                "after": "facing the bookshelves"
+              }
+            ]
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "touching a book on the shelf"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "Character 1 runs his hand along the spines of the books on the shelf.",
+            "changes": []
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing and looking forward"
+              },
+              {
+                "name": "Object 3"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 2 looks forward with a slight smile while standing near a control panel.",
+            "changes": []
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "looking back over his shoulder"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 1 looks back over his shoulder towards Character 2.",
+            "changes": []
+          },
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "talking"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 2 speaks while looking at Character 1.",
+            "changes": []
+          },
+          {
+            "shot": 7,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "talking and smiling"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "Character 2 continues speaking, smiling and looking slightly down before looking back up.",
+            "changes": []
+          }
+        ],
+        "story": {
+          "paragraph": "An older man with grey hair and a beard stands in a dimly lit room filled with bookshelves. He turns to look at a younger man with slicked-back brown hair standing nearby. The older man then faces the shelves and runs his hand along the books. The younger man, wearing a suit and scarf, stands near a control panel and speaks to the older man. The older man looks back over his shoulder to listen. The younger man continues to speak, smiling as he talks.",
+          "summary": "An older man browses bookshelves in a dim room while a younger man in a suit stands nearby and speaks to him."
+        }
+      },
+      "shots": [
+        {
+          "source_shot_index": 9,
+          "start_frame": 545,
+          "end_frame": 591,
+          "seconds": 1.9185833333333333,
+          "render_frames": 29,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0009",
+          "mean_luma": 26.25598907470703,
+          "min_luma": 22.322322845458984,
+          "max_luma": 27.554298400878906,
+          "dover_technical": -0.11571992933750153,
+          "laion_aesthetic": 5.064050515492757,
+          "scene": "<scene2>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 1,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 29,
+          "aesthetic": 5.064050515492757,
+          "sharpness": -0.11571992933750153,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 2,
+          "present_clear_people": 2,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 10,
+          "start_frame": 595,
+          "end_frame": 648,
+          "seconds": 2.2105416666666664,
+          "render_frames": 33,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0010",
+          "mean_luma": 37.343894958496094,
+          "min_luma": 35.41332244873047,
+          "max_luma": 38.288414001464844,
+          "dover_technical": -0.06574536859989166,
+          "laion_aesthetic": 5.40563980738322,
+          "scene": "<scene2>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 2,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 33,
+          "aesthetic": 5.40563980738322,
+          "sharpness": -0.06574536859989166,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 1,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 11,
+          "start_frame": 652,
+          "end_frame": 722,
+          "seconds": 2.919583333333333,
+          "render_frames": 45,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0011",
+          "mean_luma": 16.373167037963867,
+          "min_luma": 15.44665813446045,
+          "max_luma": 17.225013732910156,
+          "dover_technical": -0.09212347120046616,
+          "laion_aesthetic": 5.464043617248535,
+          "scene": "<scene2>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 3,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 45,
+          "aesthetic": 5.464043617248535,
+          "sharpness": -0.09212347120046616,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "action_or_state_change",
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 12,
+          "start_frame": 726,
+          "end_frame": 768,
+          "seconds": 1.75175,
+          "render_frames": 25,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0012",
+          "mean_luma": 28.38268280029297,
+          "min_luma": 28.06999969482422,
+          "max_luma": 28.90760612487793,
+          "dover_technical": -0.07285932451486588,
+          "laion_aesthetic": 5.243917624155681,
+          "scene": "<scene2>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 4,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 25,
+          "aesthetic": 5.243917624155681,
+          "sharpness": -0.07285932451486588,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 1,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 13,
+          "start_frame": 772,
+          "end_frame": 849,
+          "seconds": 3.2115416666666663,
+          "render_frames": 49,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0013",
+          "mean_luma": 18.849987030029297,
+          "min_luma": 16.703407287597656,
+          "max_luma": 19.706863403320312,
+          "dover_technical": -0.05921444669365883,
+          "laion_aesthetic": 5.527040481567383,
+          "scene": "<scene2>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 5,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 49,
+          "aesthetic": 5.527040481567383,
+          "sharpness": -0.05921444669365883,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 14,
+          "start_frame": 853,
+          "end_frame": 926,
+          "seconds": 3.044708333333333,
+          "render_frames": 49,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0014",
+          "mean_luma": 26.729028701782227,
+          "min_luma": 24.063859939575195,
+          "max_luma": 28.35804557800293,
+          "dover_technical": -0.09765259921550751,
+          "laion_aesthetic": 5.147023836771647,
+          "scene": "<scene2>",
+          "characters": [
+            "<char2>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 6,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 49,
+          "aesthetic": 5.147023836771647,
+          "sharpness": -0.09765259921550751,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        },
+        {
+          "source_shot_index": 15,
+          "start_frame": 930,
+          "end_frame": 1096,
+          "seconds": 6.923583333333333,
+          "render_frames": 109,
+          "sid": "cinedance-009335",
+          "scene_id": "cinedance:007d77f5-0bd0-8003-a045-96ae0d9d3870:<scene2>:block0001",
+          "score_key": "cinedance-009335-e0015",
+          "mean_luma": 22.48484230041504,
+          "min_luma": 21.36113739013672,
+          "max_luma": 23.913951873779297,
+          "dover_technical": -0.1254427582025528,
+          "laion_aesthetic": 5.500847339630127,
+          "scene": "<scene2>",
+          "characters": [
+            "<char1>"
+          ],
+          "block_key": "cinedance-009335-b0001",
+          "shot": 7,
+          "source": "cinedance",
+          "family": "cinedance",
+          "frames": 109,
+          "aesthetic": 5.500847339630127,
+          "sharpness": -0.1254427582025528,
+          "usable": true,
+          "unusable_reasons": [],
+          "marks": [],
+          "eval_excluded": false,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "activity": "talking_only",
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static",
+          "place": "Location 1",
+          "place_appearance": "a dimly lit room with bookshelves",
+          "present_people": 1,
+          "present_clear_people": 1,
+          "present_objects": 0,
+          "other_outfit_worn": false,
+          "outfit_change": false,
+          "changes": 0,
+          "answer_origin": "as_returned",
+          "repair_rules": [],
+          "deleted_paths": [],
+          "target_latents": null,
+          "reference_frames": null,
+          "has_depth": null,
+          "has_masks": null
+        }
+      ]
+    }
+  ]
+}

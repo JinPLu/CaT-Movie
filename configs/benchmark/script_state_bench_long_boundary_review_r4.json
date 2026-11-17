@@ -1,0 +1,1627 @@
+{
+ "schema_version": "long_story_boundary_review_v1",
+ "scan": "outputs/experiments/eval-boundary-scan-20261010（主服务器）：逐镜 TransNetV2，阈值 0.5 的切点与 0.2–0.5 的低置信峰；代码 0ee2df63",
+ "frame_convention": "frame 是进入新镜的第一帧，FFmpeg -fps_mode passthrough 顺序解码帧号（与冻结区间同一约定）；segment 是修订 3 的源镜区间 [start, end)",
+ "position_rule": "切点距镜首 ≤0.5 秒为 head、距镜尾 ≤0.5 秒为 tail，其余为 mid（shot_boundary_revision.BOUNDARY_EDGE_SECONDS）",
+ "review": "Claude 10-10 亲看全部 100 条：每条看镜首、切点前两帧、切点帧及后一帧、镜尾；不确定的再看切点前后各 6 帧连续帧条。verdict 只有 cut 进修订 4。",
+ "user_decision": "按看帧复核结论修订",
+ "items": [
+  {
+   "window_id": "lsh-002",
+   "split": "dev",
+   "shot": 5,
+   "segment": [
+    672,
+    705
+   ],
+   "fps": 23.976,
+   "frame": 689,
+   "prob": 0.8441,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "正反打"
+  },
+  {
+   "window_id": "lsh-002",
+   "split": "dev",
+   "shot": 6,
+   "segment": [
+    705,
+    747
+   ],
+   "fps": 23.976,
+   "frame": 720,
+   "prob": 0.3594,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "爆炸火花，连续"
+  },
+  {
+   "window_id": "lsh-004",
+   "split": "dev",
+   "shot": 1,
+   "segment": [
+    1243,
+    1279
+   ],
+   "fps": 23.976,
+   "frame": 1248,
+   "prob": 0.2551,
+   "band": "0.2-0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "暗场运动，连续"
+  },
+  {
+   "window_id": "lsh-007",
+   "split": "dev",
+   "shot": 3,
+   "segment": [
+    1019,
+    1108
+   ],
+   "fps": 23.976,
+   "frame": 1069,
+   "prob": 0.3017,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续运动镜头，相邻帧同一场景"
+  },
+  {
+   "window_id": "lsh-009",
+   "split": "dev",
+   "shot": 1,
+   "segment": [
+    195,
+    236
+   ],
+   "fps": 23.976,
+   "frame": 217,
+   "prob": 0.5554,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "暗场切到月夜树林"
+  },
+  {
+   "window_id": "lsh-009",
+   "split": "dev",
+   "shot": 4,
+   "segment": [
+    302,
+    341
+   ],
+   "fps": 23.976,
+   "frame": 313,
+   "prob": 0.2176,
+   "band": "0.2-0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "动画推近，连续"
+  },
+  {
+   "window_id": "lsh-021",
+   "split": "dev",
+   "shot": 4,
+   "segment": [
+    573,
+    657
+   ],
+   "fps": 23.976,
+   "frame": 606,
+   "prob": 0.2514,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "船体切到两人与水柱"
+  },
+  {
+   "window_id": "lsh-021",
+   "split": "dev",
+   "shot": 7,
+   "segment": [
+    735,
+    806
+   ],
+   "fps": 23.976,
+   "frame": 805,
+   "prob": 0.3725,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-021",
+   "split": "dev",
+   "shot": 10,
+   "segment": [
+    911,
+    958
+   ],
+   "fps": 23.976,
+   "frame": 928,
+   "prob": 0.2627,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "亮处手部切到暗处水花"
+  },
+  {
+   "window_id": "lsh-025",
+   "split": "dev",
+   "shot": 4,
+   "segment": [
+    1473,
+    1591
+   ],
+   "fps": 23.976,
+   "frame": 1546,
+   "prob": 0.4009,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "人群近景切到另一组人群（已知漏检）"
+  },
+  {
+   "window_id": "lsh-025",
+   "split": "dev",
+   "shot": 4,
+   "segment": [
+    1473,
+    1591
+   ],
+   "fps": 23.976,
+   "frame": 1590,
+   "prob": 0.2909,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "末三帧同一画面"
+  },
+  {
+   "window_id": "lsh-025",
+   "split": "dev",
+   "shot": 8,
+   "segment": [
+    1765,
+    1853
+   ],
+   "fps": 23.976,
+   "frame": 1792,
+   "prob": 0.2676,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "人群举手切到仰拍被举起的人"
+  },
+  {
+   "window_id": "lsh-026",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1730,
+    2159
+   ],
+   "fps": 23.976,
+   "frame": 1955,
+   "prob": 0.2899,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "正面少年切到背影"
+  },
+  {
+   "window_id": "lsh-026",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1730,
+    2159
+   ],
+   "fps": 23.976,
+   "frame": 2020,
+   "prob": 0.3882,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "背影切到远处盔甲人"
+  },
+  {
+   "window_id": "lsh-026",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1730,
+    2159
+   ],
+   "fps": 23.976,
+   "frame": 2046,
+   "prob": 0.3432,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "盔甲人切回背影"
+  },
+  {
+   "window_id": "lsh-026",
+   "split": "test",
+   "shot": 10,
+   "segment": [
+    2597,
+    2714
+   ],
+   "fps": 23.976,
+   "frame": 2637,
+   "prob": 0.4287,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "楼梯边人物切到暗处横梁，逐帧突变"
+  },
+  {
+   "window_id": "lsh-026",
+   "split": "test",
+   "shot": 10,
+   "segment": [
+    2597,
+    2714
+   ],
+   "fps": 23.976,
+   "frame": 2659,
+   "prob": 0.3067,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "楼梯切到暗红近景，逐帧突变"
+  },
+  {
+   "window_id": "lsh-031",
+   "split": "dev",
+   "shot": 2,
+   "segment": [
+    1868,
+    1968
+   ],
+   "fps": 23.976,
+   "frame": 1887,
+   "prob": 0.2001,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "天空与楼，闪光"
+  },
+  {
+   "window_id": "lsh-031",
+   "split": "dev",
+   "shot": 2,
+   "segment": [
+    1868,
+    1968
+   ],
+   "fps": 23.976,
+   "frame": 1892,
+   "prob": 0.3056,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-031",
+   "split": "dev",
+   "shot": 2,
+   "segment": [
+    1868,
+    1968
+   ],
+   "fps": 23.976,
+   "frame": 1938,
+   "prob": 0.2232,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "跟拍飞行，连续"
+  },
+  {
+   "window_id": "lsh-032",
+   "split": "test",
+   "shot": 8,
+   "segment": [
+    2829,
+    2875
+   ],
+   "fps": 23.976,
+   "frame": 2872,
+   "prob": 0.5975,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "叠化进片尾卡"
+  },
+  {
+   "window_id": "lsh-032",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    2875,
+    2988
+   ],
+   "fps": 23.976,
+   "frame": 2878,
+   "prob": 0.7345,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "cut",
+   "note": "片尾卡叠化完成；本镜整镜是片尾卡"
+  },
+  {
+   "window_id": "lsh-034",
+   "split": "test",
+   "shot": 10,
+   "segment": [
+    1624,
+    1715
+   ],
+   "fps": 23.976,
+   "frame": 1652,
+   "prob": 0.3382,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "男子近景切到暗室全景（豹）"
+  },
+  {
+   "window_id": "lsh-042",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    3108,
+    3190
+   ],
+   "fps": 23.976,
+   "frame": 3185,
+   "prob": 0.9584,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "背心男子近景切到两人"
+  },
+  {
+   "window_id": "lsh-047",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    578,
+    637
+   ],
+   "fps": 23.976,
+   "frame": 583,
+   "prob": 0.2165,
+   "band": "0.2-0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "甩镜"
+  },
+  {
+   "window_id": "lsh-047",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    578,
+    637
+   ],
+   "fps": 23.976,
+   "frame": 622,
+   "prob": 0.2155,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "模糊运动"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    3301,
+    3435
+   ],
+   "fps": 23.976,
+   "frame": 3339,
+   "prob": 0.334,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "灯光闪烁"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    3301,
+    3435
+   ],
+   "fps": 23.976,
+   "frame": 3407,
+   "prob": 0.2135,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "灯光闪烁"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    3435,
+    3470
+   ],
+   "fps": 23.976,
+   "frame": 3443,
+   "prob": 0.6732,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "灯光闪烁，同一构图"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    3435,
+    3470
+   ],
+   "fps": 23.976,
+   "frame": 3453,
+   "prob": 0.3881,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "灯光闪烁"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    3500,
+    3536
+   ],
+   "fps": 23.976,
+   "frame": 3510,
+   "prob": 0.6806,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "灯光闪烁，同一构图"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    3574,
+    3604
+   ],
+   "fps": 23.976,
+   "frame": 3594,
+   "prob": 0.299,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "灯光变色"
+  },
+  {
+   "window_id": "lsh-050",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    3574,
+    3604
+   ],
+   "fps": 23.976,
+   "frame": 3599,
+   "prob": 0.5485,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "灯光变色，同一构图"
+  },
+  {
+   "window_id": "lsh-055",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    580,
+    672
+   ],
+   "fps": 23.976,
+   "frame": 602,
+   "prob": 0.2484,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续"
+  },
+  {
+   "window_id": "lsh-056",
+   "split": "test",
+   "shot": 10,
+   "segment": [
+    745,
+    1074
+   ],
+   "fps": 23.976,
+   "frame": 827,
+   "prob": 0.2017,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "暗场：门边手部切到窗前人影，逐帧看构图突变"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    2495,
+    2594
+   ],
+   "fps": 23.976,
+   "frame": 2558,
+   "prob": 0.2787,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "甩镜，逐帧连续"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    2495,
+    2594
+   ],
+   "fps": 23.976,
+   "frame": 2588,
+   "prob": 0.6202,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "手持快速摇，逐帧连续"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2594,
+    2723
+   ],
+   "fps": 23.976,
+   "frame": 2606,
+   "prob": 0.4518,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2594,
+    2723
+   ],
+   "fps": 23.976,
+   "frame": 2609,
+   "prob": 0.2004,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2594,
+    2723
+   ],
+   "fps": 23.976,
+   "frame": 2614,
+   "prob": 0.263,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "甩镜与手部遮挡"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2594,
+    2723
+   ],
+   "fps": 23.976,
+   "frame": 2624,
+   "prob": 0.4826,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "手部划过镜头"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2594,
+    2723
+   ],
+   "fps": 23.976,
+   "frame": 2630,
+   "prob": 0.2547,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续"
+  },
+  {
+   "window_id": "lsh-057",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    2942,
+    3091
+   ],
+   "fps": 23.976,
+   "frame": 3088,
+   "prob": 0.8069,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "叠化进片尾卡"
+  },
+  {
+   "window_id": "lsh-062",
+   "split": "test",
+   "shot": 11,
+   "segment": [
+    1238,
+    1356
+   ],
+   "fps": 23.976,
+   "frame": 1244,
+   "prob": 0.7789,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "cut",
+   "note": "叠化进片尾卡（Movieclips）；裁后本镜整镜是片尾卡"
+  },
+  {
+   "window_id": "lsh-063",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    488,
+    580
+   ],
+   "fps": 23.976,
+   "frame": 579,
+   "prob": 0.2073,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "末三帧同一画面"
+  },
+  {
+   "window_id": "lsh-066",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1107,
+    1278
+   ],
+   "fps": 23.976,
+   "frame": 1220,
+   "prob": 0.3341,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "暗处腿脚切到提灯两人"
+  },
+  {
+   "window_id": "lsh-066",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1107,
+    1278
+   ],
+   "fps": 23.976,
+   "frame": 1247,
+   "prob": 0.2305,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "两人切到暗墙画框"
+  },
+  {
+   "window_id": "lsh-066",
+   "split": "test",
+   "shot": 8,
+   "segment": [
+    1638,
+    1848
+   ],
+   "fps": 23.976,
+   "frame": 1665,
+   "prob": 0.4967,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "暗室全景切到女子近景，逐帧突变"
+  },
+  {
+   "window_id": "lsh-066",
+   "split": "test",
+   "shot": 8,
+   "segment": [
+    1638,
+    1848
+   ],
+   "fps": 23.976,
+   "frame": 1832,
+   "prob": 0.5545,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "灯光／遮挡渐变，相邻帧连续"
+  },
+  {
+   "window_id": "lsh-066",
+   "split": "test",
+   "shot": 8,
+   "segment": [
+    1638,
+    1848
+   ],
+   "fps": 23.976,
+   "frame": 1847,
+   "prob": 0.4668,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一光晕"
+  },
+  {
+   "window_id": "lsh-066",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    1848,
+    1908
+   ],
+   "fps": 23.976,
+   "frame": 1850,
+   "prob": 0.4756,
+   "band": "0.2-0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "同一暗场灯光"
+  },
+  {
+   "window_id": "lsh-070",
+   "split": "test",
+   "shot": 11,
+   "segment": [
+    751,
+    797
+   ],
+   "fps": 23.976,
+   "frame": 758,
+   "prob": 0.7524,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "cut",
+   "note": "暗场残帧切到亮洞口，逐帧突变"
+  },
+  {
+   "window_id": "lsh-078",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    354,
+    378
+   ],
+   "fps": 23.976,
+   "frame": 365,
+   "prob": 0.306,
+   "band": "0.2-0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "同一人物，连续"
+  },
+  {
+   "window_id": "lsh-079",
+   "split": "test",
+   "shot": 7,
+   "segment": [
+    3328,
+    3502
+   ],
+   "fps": 23.976,
+   "frame": 3500,
+   "prob": 0.5135,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "叠化进片尾卡"
+  },
+  {
+   "window_id": "lsh-087",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    329,
+    405
+   ],
+   "fps": 23.976,
+   "frame": 404,
+   "prob": 0.5629,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "动画运动模糊，末帧同一画面"
+  },
+  {
+   "window_id": "lsh-087",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    405,
+    479
+   ],
+   "fps": 23.976,
+   "frame": 409,
+   "prob": 0.779,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "cut",
+   "note": "暗场残帧切到夕阳拥抱"
+  },
+  {
+   "window_id": "lsh-087",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    479,
+    525
+   ],
+   "fps": 23.976,
+   "frame": 504,
+   "prob": 0.6217,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "动画角色变色，构图不变"
+  },
+  {
+   "window_id": "lsh-089",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    934,
+    1077
+   ],
+   "fps": 23.976,
+   "frame": 937,
+   "prob": 0.5197,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "no_cut",
+   "note": "聚光灯光晕"
+  },
+  {
+   "window_id": "lsh-089",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    934,
+    1077
+   ],
+   "fps": 23.976,
+   "frame": 1009,
+   "prob": 0.267,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "强光后由正面切到背影（切点藏在光晕里）"
+  },
+  {
+   "window_id": "lsh-089",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    934,
+    1077
+   ],
+   "fps": 23.976,
+   "frame": 1018,
+   "prob": 0.3114,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "光晕，同一构图"
+  },
+  {
+   "window_id": "lsh-091",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    952,
+    1068
+   ],
+   "fps": 23.976,
+   "frame": 1067,
+   "prob": 0.2699,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "动画运动模糊"
+  },
+  {
+   "window_id": "lsh-091",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    1068,
+    1219
+   ],
+   "fps": 23.976,
+   "frame": 1163,
+   "prob": 0.2864,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续"
+  },
+  {
+   "window_id": "lsh-091",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    1068,
+    1219
+   ],
+   "fps": 23.976,
+   "frame": 1208,
+   "prob": 0.5578,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "角色出画，连续"
+  },
+  {
+   "window_id": "lsh-092",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    2111,
+    2286
+   ],
+   "fps": 23.976,
+   "frame": 2236,
+   "prob": 0.2103,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "连续"
+  },
+  {
+   "window_id": "lsh-095",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    1048,
+    1163
+   ],
+   "fps": 23.976,
+   "frame": 1162,
+   "prob": 0.9201,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "森林中白狗切到天空下白狗近景"
+  },
+  {
+   "window_id": "lsh-095",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1163,
+    1209
+   ],
+   "fps": 23.976,
+   "frame": 1164,
+   "prob": 0.9826,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "cut",
+   "note": "张嘴近景残帧切到松鼠树林"
+  },
+  {
+   "window_id": "lsh-095",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    1277,
+    1571
+   ],
+   "fps": 23.976,
+   "frame": 1311,
+   "prob": 0.2121,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "动物出画，连续"
+  },
+  {
+   "window_id": "lsh-095",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    1277,
+    1571
+   ],
+   "fps": 23.976,
+   "frame": 1380,
+   "prob": 0.3606,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "草丛，连续"
+  },
+  {
+   "window_id": "lsh-099",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1599,
+    1683
+   ],
+   "fps": 23.976,
+   "frame": 1669,
+   "prob": 0.205,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-102",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    1528,
+    1555
+   ],
+   "fps": 23.976,
+   "frame": 1543,
+   "prob": 0.6146,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "动作剪辑，近景切中景踢门"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    1183,
+    1430
+   ],
+   "fps": 23.976,
+   "frame": 1253,
+   "prob": 0.5284,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "水下模糊运动，相邻帧连续"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    1183,
+    1430
+   ],
+   "fps": 23.976,
+   "frame": 1376,
+   "prob": 0.2262,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "远处水花切到近处人脸，逐帧突变"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1430,
+    1661
+   ],
+   "fps": 23.976,
+   "frame": 1490,
+   "prob": 0.2139,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "水中全景切到近处头发手臂"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1430,
+    1661
+   ],
+   "fps": 23.976,
+   "frame": 1628,
+   "prob": 0.2891,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "水面运动"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    1430,
+    1661
+   ],
+   "fps": 23.976,
+   "frame": 1635,
+   "prob": 0.3961,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "uncertain",
+   "note": "水下模糊；本镜已因 1490 的真切排除，不影响结果"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    1749,
+    1776
+   ],
+   "fps": 23.976,
+   "frame": 1775,
+   "prob": 0.5296,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一暗场"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    1776,
+    1811
+   ],
+   "fps": 23.976,
+   "frame": 1790,
+   "prob": 0.268,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "光晕，连续"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 7,
+   "segment": [
+    1811,
+    1899
+   ],
+   "fps": 23.976,
+   "frame": 1835,
+   "prob": 0.5876,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "水花近景切两人中景"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 8,
+   "segment": [
+    1899,
+    2026
+   ],
+   "fps": 23.976,
+   "frame": 1976,
+   "prob": 0.2442,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "暗室灯光切到低角度水面，逐帧突变"
+  },
+  {
+   "window_id": "lsh-104",
+   "split": "test",
+   "shot": 10,
+   "segment": [
+    2173,
+    2421
+   ],
+   "fps": 23.976,
+   "frame": 2402,
+   "prob": 0.2145,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "水下，连续"
+  },
+  {
+   "window_id": "lsh-107",
+   "split": "test",
+   "shot": 7,
+   "segment": [
+    2335,
+    2426
+   ],
+   "fps": 23.976,
+   "frame": 2385,
+   "prob": 0.323,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "纸张，连续"
+  },
+  {
+   "window_id": "lsh-111",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    2309,
+    2353
+   ],
+   "fps": 23.976,
+   "frame": 2352,
+   "prob": 0.6246,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "前景紫发划过后换成栏杆举手画面，与下一镜同机位"
+  },
+  {
+   "window_id": "lsh-111",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2353,
+    2453
+   ],
+   "fps": 23.976,
+   "frame": 2357,
+   "prob": 0.8968,
+   "band": "0.5",
+   "position": "head",
+   "verdict": "cut",
+   "note": "夜色栏杆切到舞池全景"
+  },
+  {
+   "window_id": "lsh-111",
+   "split": "test",
+   "shot": 4,
+   "segment": [
+    2353,
+    2453
+   ],
+   "fps": 23.976,
+   "frame": 2445,
+   "prob": 0.329,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-113",
+   "split": "test",
+   "shot": 2,
+   "segment": [
+    1966,
+    2262
+   ],
+   "fps": 23.976,
+   "frame": 2207,
+   "prob": 0.3257,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "静止过肩镜头突然换成甩动的全景，逐帧突变"
+  },
+  {
+   "window_id": "lsh-113",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    2262,
+    2397
+   ],
+   "fps": 23.976,
+   "frame": 2285,
+   "prob": 0.2458,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "走动人物切到电脑近景，逐帧突变"
+  },
+  {
+   "window_id": "lsh-113",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    2449,
+    2528
+   ],
+   "fps": 23.976,
+   "frame": 2523,
+   "prob": 0.6862,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "前景人物切到粉衬衫男子"
+  },
+  {
+   "window_id": "lsh-113",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    2449,
+    2528
+   ],
+   "fps": 23.976,
+   "frame": 2527,
+   "prob": 0.263,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-124",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    1955,
+    2094
+   ],
+   "fps": 23.976,
+   "frame": 2066,
+   "prob": 0.2665,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "拉开外套，连续"
+  },
+  {
+   "window_id": "lsh-124",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    2277,
+    2339
+   ],
+   "fps": 23.976,
+   "frame": 2324,
+   "prob": 0.3632,
+   "band": "0.2-0.5",
+   "position": "mid",
+   "verdict": "no_cut",
+   "note": "手部特写连续"
+  },
+  {
+   "window_id": "lsh-142",
+   "split": "test",
+   "shot": 8,
+   "segment": [
+    7542,
+    7610
+   ],
+   "fps": 25.0,
+   "frame": 7609,
+   "prob": 0.5493,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "动画灯光变暗"
+  },
+  {
+   "window_id": "lsh-145",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    2435,
+    2478
+   ],
+   "fps": 25.0,
+   "frame": 2477,
+   "prob": 0.528,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-145",
+   "split": "test",
+   "shot": 5,
+   "segment": [
+    2768,
+    2796
+   ],
+   "fps": 25.0,
+   "frame": 2795,
+   "prob": 0.6631,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "运镜，逐帧连续"
+  },
+  {
+   "window_id": "lsh-145",
+   "split": "test",
+   "shot": 6,
+   "segment": [
+    2796,
+    2867
+   ],
+   "fps": 25.0,
+   "frame": 2866,
+   "prob": 0.6297,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "同一画面"
+  },
+  {
+   "window_id": "lsh-146",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    8260,
+    8385
+   ],
+   "fps": 25.0,
+   "frame": 8334,
+   "prob": 0.9052,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "腿部切到头盔近景"
+  },
+  {
+   "window_id": "lsh-146",
+   "split": "test",
+   "shot": 11,
+   "segment": [
+    8435,
+    8641
+   ],
+   "fps": 25.0,
+   "frame": 8579,
+   "prob": 0.9323,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "人物切到手臂屏幕特写"
+  },
+  {
+   "window_id": "lsh-153",
+   "split": "test",
+   "shot": 1,
+   "segment": [
+    3958,
+    3995
+   ],
+   "fps": 25.0,
+   "frame": 3979,
+   "prob": 0.5421,
+   "band": "0.5",
+   "position": "mid",
+   "verdict": "cut",
+   "note": "窗外切到持枪近景"
+  },
+  {
+   "window_id": "lsh-153",
+   "split": "test",
+   "shot": 3,
+   "segment": [
+    4039,
+    4092
+   ],
+   "fps": 25.0,
+   "frame": 4091,
+   "prob": 0.2951,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "扬尘散开，同一构图"
+  },
+  {
+   "window_id": "lsh-153",
+   "split": "test",
+   "shot": 9,
+   "segment": [
+    4403,
+    4475
+   ],
+   "fps": 25.0,
+   "frame": 4474,
+   "prob": 0.399,
+   "band": "0.2-0.5",
+   "position": "tail",
+   "verdict": "no_cut",
+   "note": "跟拍运动"
+  },
+  {
+   "window_id": "lsh-160",
+   "split": "test",
+   "shot": 7,
+   "segment": [
+    7593,
+    7640
+   ],
+   "fps": 25.0,
+   "frame": 7634,
+   "prob": 0.9208,
+   "band": "0.5",
+   "position": "tail",
+   "verdict": "cut",
+   "note": "女子近景切到人群"
+  }
+ ],
+ "whole_shot_exclusions": [
+  {
+   "window_id": "lsh-032",
+   "split": "test",
+   "shot": 9,
+   "reason": "end_card",
+   "note": "裁去开头叠化后整镜是 Movieclips 片尾卡（海报与推荐缩略图），无可评影片内容"
+  },
+  {
+   "window_id": "lsh-062",
+   "split": "test",
+   "shot": 11,
+   "reason": "end_card",
+   "note": "裁去开头叠化后整镜是 Movieclips 片尾卡（海报与推荐缩略图），无可评影片内容"
+  }
+ ],
+ "whole_shot_review": "Claude 10-10 另看全部 138 窗首镜与末镜（修订 4 区间）的中间帧，频道片尾卡或台标画面只有这两镜；lsh-111 s11 的直播界面是片中画面，不算。"
+}

@@ -1,0 +1,39 @@
+{
+  "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0178e16b-c527-872f-9a3f-aa6cd32b105d.mp4",
+  "sample_id": 40,
+  "segment": [
+    0,
+    103
+  ],
+  "command": [
+    "${MSPC_SHARED_ROOT}/env/bin/ffmpeg",
+    "-v",
+    "error",
+    "-nostdin",
+    "-threads",
+    "1",
+    "-filter_threads",
+    "1",
+    "-i",
+    "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0178e16b-c527-872f-9a3f-aa6cd32b105d.mp4",
+    "-map",
+    "0:v:0",
+    "-vf",
+    "setpts=N",
+    "-fps_mode",
+    "passthrough",
+    "-enc_time_base",
+    "demux",
+    "-frames:v",
+    "103",
+    "-s",
+    "48x27",
+    "-pix_fmt",
+    "rgb24",
+    "-f",
+    "rawvideo",
+    "-threads",
+    "1",
+    "pipe:1"
+  ]
+}

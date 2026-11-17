@@ -1,0 +1,41 @@
+schema_version: state_predicates_v2
+state_axes: [costume, body, object_condition, environment]
+relation_groups:
+  contact_possession: [holds, wears, carries, touches]
+  containment_support: [in, "on", under, attached to]
+  relative_position: [in front of, behind, next to, against, between, at]
+anchor_orientation_predicates: [in front of, behind]
+portable_predicates: [holds, wears, carries]
+nonpersistent_predicates: [touches]
+containment_predicates: [in]
+screen_axes:
+  horizontal: [left, center, right]
+  depth: [foreground, background]
+  orientation: [toward camera, away, screen-left, screen-right]
+  gaze: entity_or_unknown
+  bbox: normalized_xyxy_0_1000
+evidence: [observed, carried, unknown]
+coverage:
+  costume: 衣着外观
+  body: 身体状态
+  object_condition: 物体状态
+  environment: 环境状态
+  contact_possession: 占有与接触
+  containment_support: 包含与位置
+  relative_position: 包含与位置
+  interpersonal: 人与人持续关系
+relation_coverage:
+  holds: 占有与接触
+  wears: 占有与接触
+  carries: 占有与接触
+  touches: 占有与接触
+  attached to: 占有与接触
+  in: 包含与位置
+  "on": 包含与位置
+  under: 包含与位置
+  in front of: 包含与位置
+  behind: 包含与位置
+  next to: 包含与位置
+  against: 包含与位置
+  between: 包含与位置
+  at: 包含与位置

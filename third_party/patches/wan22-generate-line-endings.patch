@@ -1,0 +1,13 @@
+diff --git a/generate.py b/generate.py
+index 3a5cbcd..64e7707 100644
+--- a/generate.py
++++ b/generate.py
+@@ -244,7 +244,7 @@ def _parse_args():
+         action="store_true",
+         default=False,
+         help="Whether to use relighting lora.")
+-    
++
+     # following args only works for s2v
+     parser.add_argument(
+         "--num_clip",

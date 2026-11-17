@@ -1,0 +1,296 @@
+{
+  "story_id": "cinedance-014127-b0000-shot01",
+  "split": "dev",
+  "fps": 16,
+  "target_seconds": 29.1875,
+  "storyboard": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a young woman with long brown hair",
+        "outfit": "a dark jacket with a fur hood, a red scarf, and dark jeans"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a middle-aged man with a receding hairline and a beard",
+        "outfit": "a brown jacket over brown overalls and a dark shirt"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a bicycle"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a cat"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a green trash can"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "black trash bags"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a wooden fence"
+      },
+      {
+        "name": "Object 6",
+        "appearance": "white trash bags"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a paved alleyway or driveway next to a house with wooden siding and fences"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "walking while pushing a bicycle",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 2",
+            "posture": "sitting on top of a trash can"
+          },
+          {
+            "name": "Object 3",
+            "posture": "standing next to a wooden fence"
+          },
+          {
+            "name": "Object 4",
+            "posture": "on the ground next to the trash can"
+          },
+          {
+            "name": "Object 5",
+            "posture": "standing along the side of the path"
+          },
+          {
+            "name": "Object 6",
+            "posture": "on the ground next to the fence"
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "action": "A young woman walks down a paved path pushing a bicycle while a cat sits on a nearby trash can.",
+        "changes": [],
+        "frame_count": 81
+      },
+      {
+        "shot": 2,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "walking forward"
+          }
+        ],
+        "action": "A man in overalls walks forward along the side of a house.",
+        "changes": [],
+        "frame_count": 21
+      },
+      {
+        "shot": 3,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "looking forward with a surprised expression"
+          }
+        ],
+        "action": "The young woman looks up with a surprised expression.",
+        "changes": [],
+        "frame_count": 13
+      },
+      {
+        "shot": 4,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "walking forward and looking at the woman"
+          }
+        ],
+        "action": "The man continues walking towards the woman while looking at her.",
+        "changes": [],
+        "frame_count": 41
+      },
+      {
+        "shot": 5,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "looking at the man"
+          }
+        ],
+        "action": "The woman looks at the man with a concerned expression.",
+        "changes": [],
+        "frame_count": 17
+      },
+      {
+        "shot": 6,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "looking down at the woman"
+          }
+        ],
+        "action": "The man looks down at the woman with a serious expression.",
+        "changes": [],
+        "frame_count": 25
+      },
+      {
+        "shot": 7,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "looking at the man and speaking"
+          }
+        ],
+        "action": "The woman speaks to the man with a worried expression.",
+        "changes": [],
+        "frame_count": 137
+      },
+      {
+        "shot": 8,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "looking at the woman"
+          }
+        ],
+        "action": "The man looks at the woman and speaks.",
+        "changes": [],
+        "frame_count": 17
+      },
+      {
+        "shot": 9,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "looking at the man"
+          }
+        ],
+        "action": "The woman listens to the man with a concerned expression.",
+        "changes": [],
+        "frame_count": 45
+      },
+      {
+        "shot": 10,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "looking at the woman"
+          }
+        ],
+        "action": "The man turns around and walks away from the woman.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "looking at the woman",
+            "after": "turning away and walking"
+          }
+        ],
+        "frame_count": 49
+      },
+      {
+        "shot": 11,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing and watching the man leave"
+          }
+        ],
+        "action": "The woman stands and watches the man walk away.",
+        "changes": [],
+        "frame_count": 21
+      }
+    ]
+  },
+  "inputs": {
+    "shots": {
+      "text": "SUBJECTS\n- Character 1 (person): a young woman with long brown hair, wearing a dark jacket with a fur hood, a red scarf, and dark jeans\n- Character 2 (person): a middle-aged man with a receding hairline and a beard, wearing a brown jacket over brown overalls and a dark shirt\n- Object 1 (object): a bicycle\n- Object 2 (object): a cat\n- Object 3 (object): a green trash can\n- Object 4 (object): black trash bags\n- Object 5 (object): a wooden fence\n- Object 6 (object): white trash bags\nLOCATIONS\n- Location 1: a paved alleyway or driveway next to a house with wooden siding and fences\nSHOTS\ns01: Medium wide shot. A young woman walks down a paved path pushing a bicycle while a cat sits on a nearby trash can.\ns02: Medium shot. A man in overalls walks forward along the side of a house.\ns03: Close-up shot. The young woman looks up with a surprised expression.\ns04: Medium shot. The man continues walking towards the woman while looking at her.\ns05: Medium close-up shot. The woman looks at the man with a concerned expression.\ns06: Close-up shot. The man looks down at the woman with a serious expression.\ns07: Close-up shot. The woman speaks to the man with a worried expression.\ns08: Close-up shot. The man looks at the woman and speaks.\ns09: Close-up shot. The woman listens to the man with a concerned expression.\ns10: Medium close-up shot. The man turns around and walks away from the woman.\ns11: Close-up shot. The woman stands and watches the man walk away.",
+      "expected_shot_count": 11,
+      "expected_cut_times_seconds": null
+    }
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "change": {
+    "id": "cinedance-014083-b0001-shot9-change1",
+    "target": "cinedance-014083-b0001-shot9",
+    "reference": "cinedance-014083-b0001-shot8",
+    "entity": "Character 5",
+    "attribute": "posture",
+    "before": "standing",
+    "after": "falling down",
+    "before_category": "standing",
+    "after_category": "falling down",
+    "block": "cinedance-014083-b0001",
+    "source": "cinedance",
+    "style": "animation_3d_or_game",
+    "distance": 1
+  },
+  "row": {
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young girl with wavy reddish-brown hair",
+          "outfit": "a purple dress and a purple head wrap"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a girl with dark curly hair tied with a red bow",
+          "outfit": "a yellow top and an orange skirt"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a girl with short brown hair and an eyepatch",
+          "outfit": "a teal top and a blue skirt"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a boy with red hair",
+          "outfit": "a red and white striped shirt and blue striped pants"
+        },
+        {
+          "name": "Character 5",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a boy with blonde hair",
+          "outfit": "a navy blue captain's coat, white pants, and a black captain's hat"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a wooden toy sword"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a wooden ship's wheel"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a broom"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a wooden barrel"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a wooden ship structure with a sail"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a wooden playship built in a tree, surrounded by green foliage"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 swings a wooden toy sword.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing on a raised platform"
+            },
+            {
+              "name": "Character 2",
+              "posture": "hanging from a rope net"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 4",
+              "posture": "crawling on the deck"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 2 jumps down from the net, Character 3 drops the broom, and Character 4 crawls away.",
+          "changes": [
+            {
+              "name": "Character 3",
+              "what": "holding",
+              "before": [
+                "Object 3"
+              ],
+              "after": []
+            }
+          ]
+        },
+        {
+          "shot": 3,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 3"
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 3 sits inside the wooden barrel.",
+          "changes": [
+            {
+              "name": "Character 3",
+              "what": "posture",
+              "before": "standing",
+              "after": "sitting inside a wooden barrel"
+            }
+          ]
+        },
+        {
+          "shot": 4,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "wide shot",
+            "angle": "high angle shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "running"
+            },
+            {
+              "name": "Character 2",
+              "posture": "running"
+            },
+            {
+              "name": "Character 3",
+              "posture": "running"
+            },
+            {
+              "name": "Character 4",
+              "posture": "running"
+            },
+            {
+              "name": "Character 5",
+              "posture": "climbing down stairs",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 5"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "The children run across the deck of the playship as Character 5 climbs down the stairs holding a toy sword.",
+          "changes": [
+            {
+              "name": "Character 5",
+              "what": "posture",
+              "before": "climbing down stairs",
+              "after": "standing on the deck"
+            }
+          ]
+        },
+        {
+          "shot": 5,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 5",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 and Character 5 face each other and swing their wooden toy swords.",
+          "changes": []
+        },
+        {
+          "shot": 6,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 5",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 and Character 5 continue to play-fight with their wooden swords.",
+          "changes": []
+        },
+        {
+          "shot": 7,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 5",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 5 smiles and holds his wooden sword.",
+          "changes": []
+        },
+        {
+          "shot": 8,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 5",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 and Character 5 clash their wooden swords together.",
+          "changes": []
+        },
+        {
+          "shot": 9,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "angle": "overhead shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "running"
+            },
+            {
+              "name": "Character 3",
+              "posture": "running"
+            },
+            {
+              "name": "Character 4",
+              "posture": "running"
+            },
+            {
+              "name": "Character 5",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 and Character 5 fight on the deck while the other children run around them, and Character 5 falls down.",
+          "changes": [
+            {
+              "name": "Character 5",
+              "what": "posture",
+              "before": "standing",
+              "after": "falling down"
+            }
+          ]
+        },
+        {
+          "shot": 10,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "running"
+            },
+            {
+              "name": "Character 3",
+              "posture": "running"
+            },
+            {
+              "name": "Character 4",
+              "posture": "running"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 2, Character 3, and Character 4 run around the central mast, bump into each other, and fall down.",
+          "changes": [
+            {
+              "name": "Character 2",
+              "what": "posture",
+              "before": "running",
+              "after": "sitting on the deck"
+            },
+            {
+              "name": "Character 3",
+              "what": "posture",
+              "before": "running",
+              "after": "sitting on the deck"
+            },
+            {
+              "name": "Character 4",
+              "what": "posture",
+              "before": "running",
+              "after": "standing and running away"
+            }
+          ]
+        },
+        {
+          "shot": 11,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 5",
+              "posture": "falling down",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 5 stands on the stairs raising his sword while Character 1 stands below him.",
+          "changes": [
+            {
+              "name": "Character 5",
+              "what": "posture",
+              "before": "falling down",
+              "after": "standing on stairs"
+            }
+          ]
+        }
+      ],
+      "story": {
+        "paragraph": "A young girl in a purple dress swings a wooden toy sword on a playship. Other children are playing around her; one girl jumps from a net, another drops a broom and sits in a barrel, and a boy crawls on the deck. A boy dressed as a captain climbs down the stairs with his own sword. The girl in purple and the captain boy face off and play-fight with their wooden swords. Meanwhile, the other three children run around the mast, bump into each other, and fall down. The captain boy falls down during the fight but later stands on the stairs, raising his sword to continue the game.",
+        "summary": "Children play pirate on a treehouse playship, engaging in sword fights and running around the deck."
+      }
+    },
+    "shot_index": 8
+  }
+}

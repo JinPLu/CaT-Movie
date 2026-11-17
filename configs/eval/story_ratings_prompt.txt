@@ -1,0 +1,135 @@
+You are evaluating how well a generated multi-shot video realizes a story.
+Watch the complete video and evaluate the five dimensions defined below.
+Use the supplied story request to understand what is intended, and the video
+as evidence of what is actually shown.
+
+EVALUATION DIMENSIONS
+
+Question 1 — Character consistency
+How consistently does the video preserve the identities of the characters
+across their appearances?
+
+Consider whether recurring characters remain recognizable as the same
+individuals, whether different characters remain distinguishable, and
+whether identities are replaced, exchanged, duplicated, or mixed. Follow
+characters through the story, including returns after an absence. Use facial
+features, hair, body features and other visible evidence together; clothing
+or accessories alone do not establish identity. Allow changes of viewpoint,
+lighting, expression, pose and appearance that are consistent with the story.
+Distinguish a character that differs from its textual description but remains
+consistent from one that changes identity across shots.
+
+Question 2 — Object consistency
+How consistently does the video preserve the identities and stable physical
+properties of recurring objects?
+
+Compare visible shape, proportions, structure and distinctive details across
+appearances. Distinguish the same physical object from another object of the
+same category. Consider unexplained substitutions, duplication, disappearance
+or structural changes where the story requires continuity. Allow viewpoint,
+lighting and occlusion differences, as well as physical changes requested
+by the story. An object being outside the frame is not by itself evidence
+that it has disappeared from the story.
+
+Question 3 — Location consistency
+How coherently does the video depict the places and spatial relationships
+required by the story across shots?
+
+For views of the same place, consider whether the layout, stable landmarks
+and relationships among visible environmental features are compatible.
+For changes of place, consider whether they agree with the story. Allow
+reverse angles, changes of framing, camera movement, lighting changes and
+intentional scene transitions. Similar colors alone do not establish the
+same place, and different visible backgrounds do not necessarily establish
+different places. A cut is not itself an inconsistency in a multi-shot video.
+
+Question 4 — Event completion
+How fully does the video depict the actions and events requested by the story?
+
+Consider who acts, what or whom the action affects, the visible action or
+interaction, and whether the requested outcome is reached. Check relevant
+order and timing when they are specified. Distinguish completed events from
+attempted or incomplete actions, unrelated motion, and absent events.
+When an on-screen process is requested, a static final state alone does not
+establish that the process was performed. Do not require an on-screen process
+when the story requests only an outcome or explicitly places the event
+off-screen. Consider all requested events, not just one successful event.
+
+Question 5 — State continuity and updates
+How correctly does the video maintain and update story-relevant states over time?
+
+Consider whether properties, possessions, conditions and relationships that
+should persist remain stable; whether requested changes occur at the
+appropriate point; and whether later appearances retain the updated state
+until another change is warranted by the story. Look for premature changes,
+missing updates, unexplained reversals and states assigned to the wrong
+person or object. Keep each state attached to the entity it concerns.
+Evaluate visible later states independently of whether an earlier action
+was depicted: an omitted action does not by itself make a correct later
+state incorrect. Do not infer a hidden state merely from the story request.
+
+RATING SCALE
+
+Use the same four-level scale for all five dimensions:
+
+1 — Poor: The relevant requirements are largely unfulfilled. Major failures
+    or inconsistencies dominate the dimension.
+2 — Fair: The relevant requirements are partly fulfilled, but substantial
+    failures or inconsistencies limit the overall result.
+3 — Good: The relevant requirements are generally fulfilled. Remaining
+    shortcomings are limited, and the dimension works well overall.
+4 — Excellent: The relevant requirements are fulfilled clearly and
+    consistently, with no meaningful shortcomings in this dimension.
+
+Judge the extent and severity of the observed successes and failures across
+the video. These are overall ratings for each dimension, not percentages of
+shots, counts of errors, or automatic deductions for a particular error type.
+Use the same standards across different stories and visual styles. A video
+does not need to look photorealistic to receive a high score.
+
+EVIDENCE AND SCOPE
+
+- Base judgments on visible evidence. The story request states the target;
+  it does not establish that the target was achieved. Do not substitute
+  dialogue, subtitles or prior knowledge of a source film for visual evidence.
+- Review the relevant appearances and events throughout the video. Include
+  substantial successes and consequential failures, rather than selecting
+  only a favorable or unfavorable moment.
+- Allow intentional differences and changes supported by the story. Do not
+  invent additional requirements or penalize a different but valid depiction.
+- Assess each dimension on its own evidence. The same visible defect can
+  affect multiple dimensions when relevant, but one low score does not
+  automatically determine another. General image quality matters here only
+  insofar as it affects the property being evaluated or its visibility.
+- If the story contains no applicable requirement for a dimension, mark it
+  not_applicable. A required character, object, event or state missing from
+  the generated video is evidence of non-fulfillment, not a reason to mark
+  the dimension not_applicable.
+- Rate every applicable dimension by how clearly and successfully the
+  generated video depicts the required content. Blur, distortion, poor
+  framing, or omitted visual evidence that prevents a required identity,
+  action, or state from being established is a failure of the generated
+  result and must lower the rating according to its extent and severity.
+  Do not exclude that dimension from scoring. Allow intentional occlusion
+  and stylistic choices when the required content is still conveyed.
+
+STORY REQUEST
+{story_request}
+
+OUTPUT
+
+Return one JSON object containing a "ratings" array with exactly five entries,
+one for each question in the order above. Each entry must contain:
+- "question_number": an integer from 1 to 5.
+- "status": "rated" or "not_applicable".
+- "score": an integer from 1 to 4 when status is "rated"; otherwise null.
+- "reason": a brief explanation of the decisive visible evidence and how it
+  supports the rating. Name the relevant characters, objects or events in
+  natural language when needed. For not_applicable, explain why.
+- "timestamps_seconds": approximate evidence times in seconds. For a
+  cross-shot comparison, include the views being compared; for a failure,
+  include where it is visible. Use an empty array if no meaningful evidence
+  time can be given.
+
+Give one score per dimension for the whole video. Do not return separate
+per-shot scores, an overall combined score, or a step-by-step reasoning trace.

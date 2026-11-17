@@ -1,0 +1,49 @@
+[project]
+name = "storyboard-person-tools"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "torch==2.10.0",
+  "torchvision==0.25.0",
+  "torchreid @ git+https://github.com/KaiyangZhou/deep-person-reid.git@f8cd150fdf77e8d9e1ed143b7f308c2c609ded50",
+  "rtmlib==0.0.16",
+  "insightface==2.1",
+  "onnxruntime-gpu==1.26.0",
+  "numpy<2.4",
+  "pillow",
+  # 空间层姿态入口复用块标注合同与持有实体检查。
+  "pydantic>=2.5,<3",
+  # torchreid 关构建隔离时，用环境里的 setuptools 与 Cython 编译 rank_cy 扩展。
+  "setuptools",
+  # OpenCV 5 刚发布，rtmlib 0.0.16 与 insightface 2.1 的仿射、dnn 调用按 4.x 写，先固定 4.x。
+  "opencv-python<5",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = [{index = "pytorch-cu128", marker = "sys_platform == 'linux'"}]
+torchvision = [{index = "pytorch-cu128", marker = "sys_platform == 'linux'"}]
+
+# torchreid 的 setup.py 在构建时执行 torchreid/__init__.py（导入 torch、scipy 等），官方装法是先装依赖再
+# `python setup.py develop`。这里照办：锁文件用下面的静态元数据（与该提交 requirements.txt 一致：tb-nightly 换成同一模块的
+# 正式版 tensorboard（torchreid.engine 导入时要用），去掉 flake8、yapf、isort 这些开发工具），
+# 安装时关构建隔离、分两步 sync（见 README）。
+[[tool.uv.dependency-metadata]]
+name = "torchreid"
+version = "1.4.0"
+requires-dist = ["numpy", "Cython", "h5py", "Pillow", "six", "scipy", "opencv-python", "matplotlib", "tensorboard", "future", "yacs", "gdown", "imageio", "chardet"]
+
+[tool.uv]
+no-build-isolation-package = ["torchreid"]
+environments = ["sys_platform == 'linux'"]
+# 官方 GPU 用法：insightface 与 rtmlib 声明的是 CPU 版 onnxruntime，按 insightface README「Do not keep both runtime
+# distributions installed together」换成 onnxruntime-gpu（1.26.0 是最后一个 CUDA 12 构建，主服务器驱动 535 不支持 CUDA 13）。
+# rtmlib 同时声明 opencv-python 与 opencv-contrib-python（同一个 cv2 模块互相覆盖），只留 opencv-python。
+override-dependencies = [
+  "onnxruntime; sys_platform == 'never'",
+  "opencv-contrib-python; sys_platform == 'never'",
+]

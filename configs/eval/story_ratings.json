@@ -1,0 +1,22 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "max_tokens": 8192,
+  "min_video_tokens_per_second": 33,
+  "precall_prompt_tokens": 32768,
+  "request_options": {
+    "reasoning": {
+      "effort": "medium"
+    },
+    "provider": {
+      "only": [
+        "google-ai-studio"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true
+    }
+  },
+  "price": {
+    "input_usd_per_mtok": "0.75",
+    "output_usd_per_mtok": "3.75"
+  }
+}

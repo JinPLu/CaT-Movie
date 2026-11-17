@@ -1,0 +1,448 @@
+{
+  "source_case_id": "story_block_v1:cinedance:022802a3-2555-8bd3-b680-6c6d41b7b408:<scene2>:block0001:0001-0002",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with blonde hair tied back, fair skin",
+        "outfit": "a white halter top and a black skirt"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "partial",
+        "appearance": "a person with dark hair",
+        "outfit": "a dark top"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a dark grey mobile phone"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a silver ring"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a silver necklace"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a black office chair"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a desk"
+      },
+      {
+        "name": "Object 6",
+        "appearance": "a coat rack with clothes"
+      },
+      {
+        "name": "Object 7",
+        "appearance": "a red first aid box"
+      },
+      {
+        "name": "Object 8",
+        "appearance": "a desk lamp"
+      },
+      {
+        "name": "Object 9",
+        "appearance": "a filing cabinet"
+      },
+      {
+        "name": "Object 10",
+        "appearance": "clipboards on the wall"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "an office room with blue walls, fluorescent ceiling lights, a desk, and a coat rack"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 1"
+            ],
+            "state": "wearing a ring and necklace"
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "A woman holds a mobile phone to her ear and looks forward with a serious expression.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing with one arm crossed",
+            "holding": [
+              "Object 1"
+            ],
+            "outfit": "a white halter top and a black skirt"
+          },
+          {
+            "name": "Character 2",
+            "posture": "sitting at a desk, head down"
+          },
+          {
+            "name": "Object 4",
+            "state": "occupied by Character 2"
+          },
+          {
+            "name": "Object 5",
+            "state": "occupied by Character 2"
+          },
+          {
+            "name": "Object 6",
+            "state": "hanging with clothes"
+          },
+          {
+            "name": "Object 7",
+            "state": "on a shelf"
+          },
+          {
+            "name": "Object 8",
+            "state": "on a desk"
+          },
+          {
+            "name": "Object 9",
+            "state": "against the wall"
+          },
+          {
+            "name": "Object 10",
+            "state": "hanging on the wall"
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The woman continues talking on the phone while standing in the office, looking down at another person sitting at a desk with their head down.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "A woman with blonde hair is seen in a close-up, holding a mobile phone to her ear with a serious expression. The camera pulls back to reveal she is in an office, wearing a white halter top and black skirt. She stands with one arm crossed, continuing her phone conversation while looking down at a second person who is sitting at a desk with their head resting on their arms.",
+      "summary": "A woman in an office stands and talks on her mobile phone while looking at a person sitting at a desk."
+    },
+    "layouts": [
+      {
+        "shot": 1,
+        "entities": [
+          {
+            "name": "Character 1",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.0,
+                  0.0,
+                  0.53,
+                  1.0
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.0,
+                  0.0,
+                  0.49,
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 1",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.03,
+                  0.37,
+                  0.3,
+                  0.84
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.01,
+                  0.39,
+                  0.25,
+                  0.81
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "entities": [
+          {
+            "name": "Character 1",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.22,
+                  0.1,
+                  0.4,
+                  0.64
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.23,
+                  0.1,
+                  0.41,
+                  0.61
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Character 2",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.19,
+                  0.53,
+                  0.64,
+                  1.0
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.11,
+                  0.53,
+                  0.56,
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 4",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.11,
+                  0.6,
+                  0.35,
+                  1.0
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.08,
+                  0.6,
+                  0.28,
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 6",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.63,
+                  0.36,
+                  0.79,
+                  0.83
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.66,
+                  0.35,
+                  0.82,
+                  0.83
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 7",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.8,
+                  0.38,
+                  0.9,
+                  0.49
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.83,
+                  0.38,
+                  0.91,
+                  0.48
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 8",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.89,
+                  0.29,
+                  0.95,
+                  0.43
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.92,
+                  0.28,
+                  0.97,
+                  0.37
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 9",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.78,
+                  0.51,
+                  0.88,
+                  0.96
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.81,
+                  0.51,
+                  0.9,
+                  0.96
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 10",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.1,
+                  0.42,
+                  0.19,
+                  0.53
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.13,
+                  0.42,
+                  0.22,
+                  0.53
+                ]
+              }
+            ]
+          }
+        ],
+        "front_of": [
+          {
+            "near": "Character 2",
+            "far": "Object 4"
+          },
+          {
+            "near": "Object 4",
+            "far": "Character 1"
+          },
+          {
+            "near": "Character 1",
+            "far": "Object 8"
+          },
+          {
+            "near": "Object 8",
+            "far": "Object 9"
+          }
+        ]
+      }
+    ]
+  },
+  "shot_index": 1,
+  "real_failure": {
+    "status": "transport_failed",
+    "http_status": 400,
+    "error": "HTTP Error 400: Bad Request",
+    "raw_response": "{\"error\":{\"message\":\"Grammar error: Unimplemented keys: [\\\"uniqueItems\\\"]\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}}"
+  }
+}

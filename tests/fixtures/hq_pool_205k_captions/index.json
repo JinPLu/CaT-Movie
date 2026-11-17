@@ -1,0 +1,18 @@
+[
+  {
+    "case_id": "ci_vid:test:000000009",
+    "dataset": "ci_vid",
+    "shot_count": 3,
+    "shot_groups": "[[0,69],[69,186],[186,219]]",
+    "caption_provenance": "selected_shot_captions_rejoined_v1",
+    "caption_file": "ci_vid_test_000000009.json"
+  },
+  {
+    "case_id": "full:cine250k:cine250k:10002406_32",
+    "dataset": "cine250k",
+    "shot_count": 2,
+    "shot_groups": "[[0,97],[97,186]]",
+    "caption_provenance": "selected_shot_captions_rejoined_v1",
+    "caption_file": "full_cine250k_cine250k_10002406_32.json"
+  }
+]

@@ -1,0 +1,308 @@
+[
+  {
+    "case_id": "ci_vid:train:000028799",
+    "event_log": {
+      "schema": "event_log_v3",
+      "subjects": [
+        {
+          "subject_id": "Subject 1",
+          "kind": "person",
+          "appearance": "Male wearing a red baseball cap, red t-shirt, and yellow high-visibility vest"
+        },
+        {
+          "subject_id": "Subject 2",
+          "kind": "object",
+          "appearance": "Silver Volkswagen Jetta sedan with red wheels"
+        }
+      ],
+      "locations": [
+        {
+          "location_id": "Location 1",
+          "appearance": "红色砖墙建筑旁的空地",
+          "anchors": []
+        },
+        {
+          "location_id": "Location 2",
+          "appearance": "高速公路",
+          "anchors": []
+        }
+      ],
+      "initial_state": [
+        {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "unknown",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            1
+          ]
+        },
+        {
+          "subject": "Subject 2",
+          "family": "state",
+          "predicate_or_axis": "object_condition",
+          "object_or_value": "stationary parked beside a building",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            1
+          ],
+          "evidence": "observed"
+        }
+      ],
+      "shots": [
+        {
+          "shot_id": "s01",
+          "location_id": "Location 1",
+          "present_subjects": [
+            "Subject 1",
+            "Subject 2"
+          ],
+          "frame_count": 153,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "A person is operating an orange Turf Tiger vehicle on a concrete pathway adjacent to a long red-bricked building. The individual is wearing an orange and yellow safety vest with 'LEADER' written on the back, and a red cap. The pathway runs alongside a building with a series of rectangular windows. In front of the mower, a silver Volkswagen Jetta MK6 is parked, featuring red-rimmed wheels and a customized license plate. The person on the vehicle appears to be holding a device or control, possibly operating or pausing to capture information about the vehicle. A sign on the building reads 'YOUTH's annual HAUNTED HOUSE.' Text on the visual mentions a fitment gallery for MK6 Jetta and a website, encouraging viewers to visit for more details. The environment suggests the area is part of a commercial or industrial locale, with paved streets, utility poles, and additional buildings in the vicinity. The sequence showcases an interaction or focus on the Volkswagen car, possibly related to vehicle modification or customization.",
+          "visible_entities": [
+            "Subject 1",
+            "Subject 2"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        },
+        {
+          "shot_id": "s02",
+          "location_id": "Location 2",
+          "present_subjects": [
+            "Subject 2"
+          ],
+          "frame_count": 153,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "A silver Volkswagen Jetta is driving steadily along a highway. The car is customized with red rims and has a low suspension, giving it a sporty appearance. Yellow fog lights enhance its front end, and a custom license plate reads 'DUBDUP'. As the car moves, it retains a consistent distance from the concrete barrier that separates the lanes, indicating it is traveling in the middle lane. On the opposite side, a couple of dark-colored SUVs can be seen traveling in the opposite direction. In one scene, a road sign indicating directions to 'Lawrence University' and 'Appleton International Airport' is visible, suggesting the location may be in Wisconsin, USA. The car and surroundings are clearly visible in daylight, highlighting the shiny finish of the vehicle and the lush greenery along the sides of the road.",
+          "visible_entities": [
+            "Subject 2"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "e1",
+          "shot_id": "s02",
+          "on_screen": "unknown",
+          "before": {
+            "subject": "Subject 2",
+            "family": "state",
+            "predicate_or_axis": "object_condition",
+            "object_or_value": "stationary parked beside a building",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "after": {
+            "subject": "Subject 2",
+            "family": "state",
+            "predicate_or_axis": "object_condition",
+            "object_or_value": "driving on a highway",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "ci_vid:train:000063854",
+    "event_log": {
+      "schema": "event_log_v3",
+      "subjects": [
+        {
+          "subject_id": "Subject 1",
+          "kind": "person",
+          "appearance": "Man wearing a pink shower cap, black t-shirt, and purple shorts"
+        },
+        {
+          "subject_id": "Subject 2",
+          "kind": "person",
+          "appearance": "Man wearing a blue shower cap, glasses, blue bathrobe, and purple shorts"
+        },
+        {
+          "subject_id": "Subject 3",
+          "kind": "person",
+          "appearance": "Man wearing a light green shower cap, green bathrobe, and purple shorts"
+        },
+        {
+          "subject_id": "Subject 4",
+          "kind": "object",
+          "appearance": "Blue round plastic basin"
+        }
+      ],
+      "locations": [
+        {
+          "location_id": "Location 1",
+          "appearance": "室内",
+          "anchors": []
+        }
+      ],
+      "initial_state": [
+        {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "unknown",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            4
+          ]
+        },
+        {
+          "subject": "Subject 2",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "unknown",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            4
+          ]
+        },
+        {
+          "subject": "Subject 3",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "unknown",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            4
+          ]
+        },
+        {
+          "subject": "Subject 4",
+          "family": "state",
+          "predicate_or_axis": "object_condition",
+          "object_or_value": "unknown",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            4
+          ]
+        }
+      ],
+      "shots": [
+        {
+          "shot_id": "s01",
+          "location_id": "Location 1",
+          "present_subjects": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4"
+          ],
+          "frame_count": 49,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "In a vividly designed room, two individuals are engaged in a light-hearted shaving activity. The person on the left, wearing glasses, a blue robe, and what appear to be purple boxer shorts, is humorously lifting their leg and shaving. The shaving foam covers significant portions of their skin, hinting at a playful and informal setting, possibly for a comedic skit or tutorial-related content. The activity appears casual and possibly recreational, as suggested by the relaxed postures and non-conventional attire, such as the other person sporting a bright green robe and a tropical shirt. The presence of shaving cream indicates a focus on grooming or personal care, though the context suggests an undertone of parody or satire.",
+          "visible_entities": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        },
+        {
+          "shot_id": "s02",
+          "location_id": "Location 1",
+          "present_subjects": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ],
+          "frame_count": 21,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "A person is seen wearing a light blue bathrobe, sitting and raising one leg while applying shaving cream to it. They are holding a pink razor in their right hand, appearing to shave their leg. Another person wearing a salmon pink bathrobe and head covering is seen on the left side, while a third person in a darker robe and green head covering is on the right side, leaning over. The person shaving has shaving cream applied from just above the knee down to the ankle, with some cream in hand, suggesting they are in the midst of shaving their leg. This setting appears to depict a humorous or casual beauty or grooming activity involving multiple people.",
+          "visible_entities": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        },
+        {
+          "shot_id": "s03",
+          "location_id": "Location 1",
+          "present_subjects": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ],
+          "frame_count": 25,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "A person dressed in a pink robe is seated and engaged in the action of shaving the leg with a pink razor. The individual's raised leg is covered with a layer of white shaving cream or foam, indicating the shaving process. Another person is partially visible, wearing a blue robe, sitting close by. The video seems to capture a grooming-related activity, focusing on hair removal from the leg. The action takes place in a bright setting which seems relaxed and casual, with both individuals appearing to be participating in a routine, possibly in a home environment or a makeshift spa-like setting.",
+          "visible_entities": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        },
+        {
+          "shot_id": "s04",
+          "location_id": "Location 1",
+          "present_subjects": [
+            "Subject 1"
+          ],
+          "frame_count": 21,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "A person is shaving their leg, which is covered in shaving cream. The individual is wearing purple briefs with a dinosaur pattern on the waistband and appears to be in a bathroom setting, seated on a white stool or chair. The action of shaving is methodical, as the person uses a razor to remove the hair and shaving cream from their leg, revealing smooth skin. This short video clip likely serves an instructional or personal care demonstration purpose, focusing on the technique of shaving legs. There is no visible motion or significant action other than the shaving process itself, which is performed carefully and deliberately.",
+          "visible_entities": [
+            "Subject 1"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        },
+        {
+          "shot_id": "s05",
+          "location_id": "Location 1",
+          "present_subjects": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4"
+          ],
+          "frame_count": 21,
+          "shot_size": "unknown",
+          "camera_angle": "unknown",
+          "action": "Three individuals are seated on chairs around a small inflatable pool filled with a white, foamy liquid. They are engaged in what appears to be a self-care or spa activity focused on their feet. Each person wears a bathing cap, with colors varying among pink, blue, and green. One individual in black clothing and a pink cap is applying what seems to be lotion or a similar product to their foot. The person in a white shirt and blue cap is resting their hands on their legs, appearing relaxed. The individual in a green robe and green cap is bending over, attending to their foot. Various skincare products are scattered around the sitting area, including bottles and boxes likely containing creams, lotions, or other related items. The atmosphere indicates an informal and casual setting where the individuals are focused on personal grooming routines.",
+          "visible_entities": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4"
+          ],
+          "screen_facts": [],
+          "movement": "unknown"
+        }
+      ],
+      "events": []
+    }
+  }
+]

@@ -1,0 +1,119 @@
+{
+  "key": "cinedance-009622-b0000",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "partial",
+        "appearance": "a person with a hand visible"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a silver coin"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a coin slot on a yellow surface"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a Coca-Cola can"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a vending machine mechanism with yellow arrows and numbers"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a vending machine"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "extreme close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": null,
+            "state": null,
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 1",
+            "state": null
+          },
+          {
+            "name": "Object 2",
+            "state": null
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 inserts Object 1 into Object 2.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "holding",
+            "before": [
+              "Object 1"
+            ],
+            "after": []
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Object 3",
+            "state": null
+          },
+          {
+            "name": "Object 4",
+            "state": null
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Object 3 is pushed out by the mechanism of Object 4.",
+        "changes": [
+          {
+            "name": "Object 3",
+            "what": "state",
+            "before": "stationary",
+            "after": "moving out"
+          }
+        ]
+      }
+    ],
+    "story": {
+      "paragraph": "A person's hand inserts a silver coin into the coin slot of a vending machine. The camera then focuses on the interior mechanism where a Coca-Cola can is pushed out by the machine's dispensing mechanism.",
+      "summary": "A person inserts a coin into a vending machine, dispensing a Coca-Cola can."
+    }
+  },
+  "frame_counts": [
+    45,
+    25
+  ]
+}

@@ -1,0 +1,107 @@
+{
+ "key": "cinedance-014103-b0002",
+ "shots": 2,
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young man with dark red hair and a scar on his forehead",
+    "outfit": "a light green button-up shirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a person wearing a boar mask with blue eyes and a pink snout",
+    "outfit": "a light green button-up shirt"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young man with short blonde hair and glasses",
+    "outfit": "a light green button-up shirt"
+   }
+  ],
+  "objects": [],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "an outdoor area with trees and a wooden fence"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "animation_2d",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking to the side",
+      "state": "sweating, surprised expression"
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking forward",
+      "state": "wide-eyed"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 and Character 2 look surprised and sweat.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "animation_2d",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing with back to camera"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing with back to camera"
+     },
+     {
+      "name": "Character 3",
+      "posture": "jumping and screaming",
+      "state": "tears streaming from eyes, clothes tearing apart"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 3 jumps in front of Character 1 and Character 2, screaming and crying while his clothes tear apart as he moves frantically.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "outfit",
+      "before": "a light green button-up shirt",
+      "after": "torn light green button-up shirt"
+     }
+    ]
+   }
+  ],
+  "story": {
+   "paragraph": "A young man with dark red hair and a person wearing a boar mask look surprised and sweat. Then, a young man with blonde hair and glasses jumps in front of them, screaming and crying while his clothes tear apart as he moves frantically.",
+   "summary": "Two characters look surprised as a third character jumps in front of them, screaming and tearing his clothes."
+  }
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {},
+ "source": "block-contract-v17-quick-check-20261013/answers/base/cinedance-014103-b0002.json"
+}

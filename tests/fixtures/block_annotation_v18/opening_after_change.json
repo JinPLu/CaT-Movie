@@ -1,0 +1,1179 @@
+{
+ "source": "主服务器 source-pipeline-20261011/final/block-annotations.jsonl，2026-10-16 修补规则改动之前的台账原样剪出；每条一个块，case 标出触发的那一类，shot 为镜号",
+ "rows": [
+  {
+   "case": "state",
+   "key": "cinedance-008884-b0000",
+   "shot": 1,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young woman with dark hair tied back and bangs",
+      "outfit": "a white fuzzy sweater with a pink collar"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young woman with shoulder-length dark hair and bangs",
+      "outfit": "a brown school uniform blazer over a white shirt and tie"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young woman with short dark hair",
+      "outfit": "a brown school uniform blazer over a white shirt and tie"
+     },
+     {
+      "name": "Character 4",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young man with short dark hair",
+      "outfit": "a navy blue school uniform blazer over a white shirt and tie"
+     },
+     {
+      "name": "Character 5",
+      "kind": "person",
+      "visibility": "partial",
+      "appearance": "a man with long dark hair",
+      "outfit": "a dark jacket over a white shirt"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a wooden door with a rectangular glass window"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a wooden desk"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "an open book"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a white pillow or cushion"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a wall calendar or chart"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a classroom with wooden doors, desks, and educational posters on the walls"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "peeking through the doorway",
+        "state": "looking into the room"
+       },
+       {
+        "name": "Object 1",
+        "state": "partially open"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 slowly opens a wooden door and peeks into the room through the glass window and the opening door.",
+      "changes": [
+       {
+        "name": "Object 1",
+        "what": "state",
+        "before": "closed",
+        "after": "partially open"
+       }
+      ]
+     },
+     {
+      "shot": 2,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "pan"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "walking into the classroom"
+       },
+       {
+        "name": "Character 2",
+        "posture": "sitting at a desk, looking down"
+       },
+       {
+        "name": "Character 3",
+        "posture": "sitting at a desk, looking down"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sitting at a desk, resting his head on his hand"
+       },
+       {
+        "name": "Character 5",
+        "posture": "sitting at a desk in the foreground"
+       },
+       {
+        "name": "Object 2",
+        "state": "occupied by students"
+       },
+       {
+        "name": "Object 3",
+        "state": "open on a desk"
+       },
+       {
+        "name": "Object 4",
+        "state": "on a desk in the background"
+       },
+       {
+        "name": "Object 5",
+        "state": "hanging on the wall"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 walks into the classroom where Character 2, Character 3, and Character 4 are sitting at their desks looking at books or resting. The camera pans right to reveal Character 5 in the foreground as Character 1 walks to the back of the room.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "peeking through the doorway",
+        "after": "walking into the classroom"
+       }
+      ]
+     }
+    ],
+    "story": {
+     "paragraph": "A young woman in a white fuzzy sweater with a pink collar slowly opens a wooden door with a glass window and peeks into a classroom. She then walks into the room where several students in school uniforms are seated at their desks. Some students are looking down at open books, while others are resting their heads. As she walks to the back of the classroom, the view shifts to show more students seated at their desks.",
+     "summary": "A young woman opens a classroom door and walks inside where students are seated at their desks studying or resting."
+    }
+   }
+  },
+  {
+   "case": "holding",
+   "key": "cinedance-009299-b0003",
+   "shot": 1,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young man with short dark hair",
+      "outfit": "a dark jacket"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a car gear shift lever"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a car center console with buttons and knobs"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "the interior of a car at night"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting in the driver's seat",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 moves the gear shift lever with his hand.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1",
+        "what": "state",
+        "before": "stationary",
+        "after": "moved"
+       }
+      ]
+     },
+     {
+      "shot": 2,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1"
+       }
+      ],
+      "activity": "talking_only",
+      "action": "Character 1 looks forward with a serious expression.",
+      "changes": []
+     }
+    ],
+    "story": {
+     "paragraph": "Inside a car at night, a young man in a dark jacket shifts the gear lever. He then looks forward with a serious expression.",
+     "summary": "A young man shifts gears inside a car and looks forward."
+    }
+   }
+  },
+  {
+   "case": "noop",
+   "key": "cinedance-010182-b0001",
+   "shot": 4,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with short blond hair and a fair complexion",
+      "outfit": "a dark t-shirt"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with short brown hair and a fair complexion",
+      "outfit": "a dark suit jacket, a light-colored shirt, and a dark tie"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a green mug"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "an indoor room with window blinds and a glass-paneled wall or door"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "state": "looking down and slightly to the side, with a serious or contemplative expression"
+       }
+      ],
+      "activity": "talking_only",
+      "action": "A man with blond hair looks down and to the side with a serious expression.",
+      "changes": []
+     },
+     {
+      "shot": 2,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "state": "looking down, then looking up slightly"
+       },
+       {
+        "name": "Object 1",
+        "state": "being held"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "A man in a suit looks down, then lifts a green mug to his mouth and drinks from it.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 1"
+        ]
+       }
+      ]
+     },
+     {
+      "shot": 3,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "state": "looking to the side and speaking"
+       }
+      ],
+      "activity": "talking_only",
+      "action": "The blond man looks to the side and speaks.",
+      "changes": []
+     },
+     {
+      "shot": 4,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "state": "looking at Character 2"
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "state": "drinking from the mug, then lowering it and looking down"
+       },
+       {
+        "name": "Object 1",
+        "state": "being held by Character 2"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "The man in the suit drinks from the green mug while the blond man stands nearby watching him. The man in the suit lowers the mug, looks down, and stands quietly.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "holding",
+        "before": [
+         "Object 1"
+        ],
+        "after": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "drinking from the mug",
+        "after": "looking down"
+       }
+      ]
+     }
+    ],
+    "story": {
+     "paragraph": "A blond man in a dark t-shirt stands in a dimly lit room, looking down with a serious expression. The scene cuts to a man in a dark suit and tie who looks down before lifting a green mug to drink. The blond man then speaks while looking to the side. Finally, a wider shot shows both men standing together; the man in the suit drinks from his mug while the blond man watches him, then the man in the suit lowers the mug and looks down.",
+     "summary": "Two men stand in a dimly lit room, one drinking from a green mug while the other watches and speaks."
+    }
+   }
+  },
+  {
+   "case": "posture",
+   "key": "cinedance-011612-b0003",
+   "shot": 1,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young man with short dark hair",
+      "outfit": "a dark blue kimono with a white undergarment"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a white envelope with black text"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a black tray with a blue cloth"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a low black table"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a stack of papers or books"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a dark, crumpled object, possibly a bag or cloth"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a traditional Japanese room with tatami mats and wooden sliding doors"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "high angle shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "entering the frame from the top left",
+        "state": "partial visibility (back and shoulder)"
+       },
+       {
+        "name": "Object 1",
+        "state": "resting on Object 2"
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 moves into the frame, partially obscuring the view of the envelope and tray.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "outside the frame",
+        "after": "entering the frame from the top left"
+       }
+      ]
+     },
+     {
+      "shot": 2,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at a low table"
+       },
+       {
+        "name": "Object 3",
+        "state": "holding papers and Object 5"
+       },
+       {
+        "name": "Object 4",
+        "state": "stacked on a small table to the left"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 sits at the low table, looking down at papers and a dark object, then looks up and forward.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "entering the frame",
+        "after": "sitting at the low table"
+       },
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "looking down",
+        "after": "looking up and forward"
+       }
+      ]
+     }
+    ],
+    "story": {
+     "paragraph": "A white envelope with black text rests on a black tray with a blue cloth on a tatami floor. A young man in a dark blue kimono enters the frame. The scene cuts to him sitting at a low black table in a traditional Japanese room. He looks down at papers and a dark object on the table, then looks up and forward. A stack of papers is visible on a small table to his left.",
+     "summary": "A young man in traditional clothing enters a room and sits at a low table, looking at documents before looking up."
+    }
+   }
+  },
+  {
+   "case": "chain",
+   "key": "cinedance-012376-b0000",
+   "shot": 1,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with long dark hair",
+      "outfit": "a light blue cardigan over a white top and white skirt"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a black remote control"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a smartphone"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a brown sofa"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a coffee table"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a kitchen counter with appliances"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a dimly lit living room and kitchen area at night"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting on a sofa",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 2",
+        "state": "on the coffee table"
+       },
+       {
+        "name": "Object 3"
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 5"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 sits on the sofa holding a remote, points it forward, puts it down, and then picks up a smartphone from the coffee table.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [
+         "Object 1"
+        ],
+        "after": []
+       },
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 2"
+        ]
+       }
+      ]
+     },
+     {
+      "shot": 2,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting on the sofa",
+        "holding": [
+         "Object 2"
+        ]
+       },
+       {
+        "name": "Object 2",
+        "state": "screen on"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 looks down at the smartphone in her hands.",
+      "changes": []
+     },
+     {
+      "shot": 3,
+      "picture_type": "screen_or_slides",
+      "on_screen_text": "burned_subtitles",
+      "camera": {
+       "shot_size": "extreme close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Object 2",
+        "state": "displaying a text message"
+       }
+      ],
+      "activity": "no_human_activity",
+      "action": "The smartphone screen displays a text message in Japanese with Chinese subtitles overlaid.",
+      "changes": []
+     }
+    ],
+    "story": {
+     "paragraph": "A woman sits on a sofa in a dimly lit living room, holding a remote control. She points the remote, puts it down on the sofa, and picks up a smartphone from the coffee table. She looks at the phone screen, which displays a text message.",
+     "summary": "A woman sitting in a living room puts down a remote and checks a text message on her smartphone."
+    }
+   }
+  },
+  {
+   "case": "outfit",
+   "key": "film-003315-b0000",
+   "shot": 1,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with shoulder-length brown hair and a slim build",
+      "outfit": "a peach dress"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "an older man with thinning hair and a medium build",
+      "outfit": "a dark suit, light shirt, and tie"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a red salon chair with a wooden frame"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "two silver hair drying machines mounted on stands"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a shelving unit with various bottles and boxes"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a counter with various bottles, jars, and salon tools"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a beige apron"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "white curtains"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a dimly lit hair salon with tiled walls, salon chairs, and drying machines"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 5"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 2"
+       },
+       {
+        "name": "Object 3"
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 6"
+       },
+       {
+        "name": "Object 5"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Character 1 takes off her beige apron and places it on the red salon chair, then walks over to the counter and stands there while Character 2 watches her from behind.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "outfit",
+        "before": "a peach dress and a beige apron",
+        "after": "a peach dress"
+       },
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [
+         "Object 5"
+        ],
+        "after": []
+       },
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing near the shelves",
+        "after": "standing at the counter"
+       }
+      ]
+     },
+     {
+      "shot": 2,
+      "picture_type": "live_action",
+      "on_screen_text": "none",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2"
+       }
+      ],
+      "activity": "talking_only",
+      "action": "Character 2 stands still and looks forward with a serious expression.",
+      "changes": []
+     }
+    ],
+    "story": {
+     "paragraph": "In a dimly lit hair salon, a woman in a peach dress removes her beige apron and sets it on a red salon chair. She then walks over to a counter filled with bottles and tools. An older man in a dark suit stands behind her, watching her movements. The camera then cuts to a close-up of the man's face as he looks forward with a serious expression.",
+     "summary": "A woman takes off her apron and walks to a counter in a hair salon while a man in a suit watches her, followed by a close-up of the man's face."
+    }
+   }
+  },
+  {
+   "case": "no_before",
+   "key": "cinedance-009190-b0000",
+   "shot": 2,
+   "annotation": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a boy with short purple hair",
+      "outfit": "a dark jacket and blue scarf"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a girl with short dark hair and a pink dress",
+      "outfit": "a pink dress"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with dark hair in a ponytail",
+      "outfit": "a light blue jacket"
+     },
+     {
+      "name": "Character 4",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark hair and a white shirt",
+      "outfit": "a white shirt and grey pants"
+     },
+     {
+      "name": "Character 5",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark spiky hair",
+      "outfit": "a white shirt"
+     },
+     {
+      "name": "Character 6",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with teal hair",
+      "outfit": "an orange dress"
+     },
+     {
+      "name": "Character 7",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a girl with dark hair and an orange hat",
+      "outfit": "a red shirt and blue overalls"
+     },
+     {
+      "name": "Character 8",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with glasses and dark hair",
+      "outfit": "a teal shirt and red vest"
+     },
+     {
+      "name": "Character 9",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark hair and a green vest",
+      "outfit": "a white shirt and green vest"
+     },
+     {
+      "name": "Character 10",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a boy with black spiky hair",
+      "outfit": "a blue shirt and yellow pants"
+     },
+     {
+      "name": "Character 11",
+      "kind": "animal",
+      "visibility": "clear",
+      "appearance": "a large brown monkey-like creature"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a red convertible car with 'CAPSULE' written on the front"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a blue briefcase"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a large green sack"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a large grey sack"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a plain light green background"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "picture_type": "animation_2d",
+      "on_screen_text": "large_text_or_picture_in_picture",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting in the driver's seat of Object 1"
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing beside Object 1"
+       },
+       {
+        "name": "Character 3",
+        "posture": "standing beside Object 1"
+       },
+       {
+        "name": "Character 4",
+        "posture": "standing beside Object 1"
+       },
+       {
+        "name": "Character 5",
+        "posture": "leaning on Object 1"
+       },
+       {
+        "name": "Character 6",
+        "posture": "standing beside Object 1",
+        "holding": [
+         "Object 2"
+        ]
+       },
+       {
+        "name": "Character 7",
+        "posture": "standing beside Object 1"
+       },
+       {
+        "name": "Character 8",
+        "posture": "standing beside Object 1"
+       },
+       {
+        "name": "Character 9",
+        "posture": "standing beside Object 1",
+        "holding": [
+         "Object 4"
+        ]
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 2"
+       },
+       {
+        "name": "Object 3"
+       },
+       {
+        "name": "Object 4"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "Characters gather around and get into Object 1, with some carrying sacks and a briefcase.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 3",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 4",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 5",
+        "what": "posture",
+        "before": "leaning on Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 6",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 7",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 8",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       },
+       {
+        "name": "Character 9",
+        "what": "posture",
+        "before": "standing beside Object 1",
+        "after": "sitting in Object 1"
+       }
+      ]
+     },
+     {
+      "shot": 2,
+      "picture_type": "animation_2d",
+      "on_screen_text": "large_text_or_picture_in_picture",
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 2",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 3",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 5",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 6",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 7",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 8",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 9",
+        "posture": "sitting in Object 1"
+       },
+       {
+        "name": "Character 10",
+        "posture": "standing on top of Character 11"
+       },
+       {
+        "name": "Character 11",
+        "posture": "replacing the front of Object 1"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "activity": "action_or_state_change",
+      "action": "The scene transitions to a title card where Character 11 replaces the front of Object 1, and Character 10 stands on top of Character 11, with all other characters gathered around.",
+      "changes": [
+       {
+        "name": "Object 1",
+        "what": "state",
+        "before": "a red convertible car",
+        "after": "a red convertible car with a monkey face on the front"
+       },
+       {
+        "name": "Character 10",
+        "what": "posture",
+        "before": null,
+        "after": "standing on top of Character 11"
+       },
+       {
+        "name": "Character 11",
+        "what": "posture",
+        "before": null,
+        "after": "replacing the front of Object 1"
+       }
+      ]
+     }
+    ],
+    "story": {
+     "paragraph": "A group of people gather around a red convertible car against a plain background. They all get into the car, some carrying bags and a briefcase. The scene then transitions to a title card where the front of the car is replaced by a large monkey face, and a boy stands on top of the monkey while the rest of the group poses around them.",
+     "summary": "A group of people get into a red car, which then transforms into a title card featuring a large monkey and a boy standing on it."
+    }
+   }
+  }
+ ]
+}

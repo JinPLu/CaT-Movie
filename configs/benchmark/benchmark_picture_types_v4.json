@@ -1,0 +1,1733 @@
+{
+ "description": "每个 benchmark 故事逐镜的画面类型，取自建集时同一份第 18 版标注（benchmark-rebuild-20261024/annotations.jsonl 的 annotation.shots[].picture_type），镜数与 benchmark_storyboards_v4 逐故事一致。请求与给定分镜表原来都不带画风；开发集请求里写明画风，计划写入时按此逐镜填 picture_type，渲染器文字随之编出画风句。",
+ "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-rebuild-20261024/annotations.jsonl",
+ "stories": {
+  "cinedance-008935-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-009077-b0004-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-009261-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-009613-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-009829-b0000-shot02": {
+   "split": "test",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-010094-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-010094-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-010142-b0004-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-010673-b0001-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-010691-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-010863-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-010942-b0000-shot03": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-011050-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-011121-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-011398-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-011471-b0000-shot04": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-011581-b0002-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-011901-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-012125-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-012125-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-012429-b0002-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-012473-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-012520-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-013491-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-013628-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-013630-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014083-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "cinedance-014083-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "cinedance-014127-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014481-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014536-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-014600-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014617-b0002-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014752-b0001-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014826-b0004-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014842-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014842-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014847-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-014970-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-015067-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-015291-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-015369-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-015622-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-015642-b0002-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-015832-b0000-shot05": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-015962-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-015962-b0003-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-016244-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-016337-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-016627-b0003-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-016955-b0003-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d",
+    "animation_2d"
+   ]
+  },
+  "cinedance-017275-b0001-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-017367-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "cinedance-017890-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000122-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000122-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000122-b0004-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000123-b0001-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000123-b0002-shot03": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000124-b0000-shot05": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000127-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000128-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000129-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000193-b0001-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000237-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-000238-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-001591-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001593-b0005-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001594-b0006-shot04": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001595-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001596-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001596-b0004-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001596-b0006-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-001698-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-002570-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003540-b0004-shot04": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003551-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003551-b0002-shot05": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003552-b0003-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003553-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003553-b0001-shot03": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003553-b0007-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003556-b0005-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003994-b0002-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003995-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-003995-b0001-shot06": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004060-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004063-b0000-shot04": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004063-b0001-shot03": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004064-b0000-shot06": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004064-b0003-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004064-b0008-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004393-b0001-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004402-b0002-shot02": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004403-b0002-shot06": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004441-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004445-b0002-shot07": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004445-b0003-shot05": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004446-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-004446-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-005223-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-005223-b0001-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-005225-b0002-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-005226-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-005227-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-005228-b0000-shot10": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-007248-b0001-shot02": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-007250-b0000-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-007250-b0001-shot01": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-007250-b0004-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-007250-b0005-shot02": {
+   "split": "dev",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-007998-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-007998-b0006-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008000-b0010-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008001-b0002-shot02": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008001-b0014-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008002-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008003-b0005-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008004-b0002-shot01": {
+   "split": "test",
+   "picture_types": [
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game",
+    "animation_3d_or_game"
+   ]
+  },
+  "film-008392-b0003-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-019288-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  },
+  "film-019290-b0000-shot01": {
+   "split": "test",
+   "picture_types": [
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action",
+    "live_action"
+   ]
+  }
+ }
+}

@@ -1,0 +1,33 @@
+# 俯视布局图试点的 Qwen3.8-27B 视频输入服务：
+# 单卡 TP=1，每请求至多 6 段视频（一镜一段），同时 24 个请求（实测 8 个时合计约 115 token/秒、KV 缓存只用到 24%）。视频按模型卡「Video Input」的用法：服务端以
+# --media-io-kwargs '{"video":{"num_frames":-1}}' 读全部帧，由处理器按请求里的 mm_processor_kwargs（fps=2）取帧。
+# 思考与否由请求的 chat_template_kwargs 决定（不设服务端默认），采样参数由客户端按模型卡 Best Practices 给。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.8-27B
+host: "127.0.0.1"
+port: 8191
+tensor_parallel_size: 1
+max_model_len: 65536
+gpu_memory_utilization: 0.92
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.8-27B"
+  - "--max-num-seqs"
+  - "24"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--mm-processor-cache-gb"
+  - "0"
+  - "--limit-mm-per-prompt"
+  - '{"image":0,"video":6}'
+  - "--media-io-kwargs"
+  - '{"video":{"num_frames":-1}}'
+  - "--allowed-local-media-path"
+  - "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/topdown-layout-canvas-20261010"
+  - "--reasoning-parser"
+  - "qwen3"
+  - "--enforce-eager"
+ld_library_path: ""
+omp_num_threads: 4

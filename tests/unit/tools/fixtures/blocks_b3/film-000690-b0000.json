@@ -1,0 +1,316 @@
+{
+ "key": "film-000690-b0000",
+ "shots": 9,
+ "answer": {
+  "video": {
+   "picture_type": "animation_3d_or_game",
+   "on_screen_text": "none",
+   "summary": "An orange cat watches a dog in a cage, then runs away as two men in suits enter a room filled with boxes and take the dog out of the cage."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "an orange cat",
+    "outfit": null
+   },
+   {
+    "name": "Character 2",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a small tan dog with a spiked collar",
+    "outfit": null
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man in a black suit",
+    "outfit": "a black suit with a white shirt and cravat"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with thinning hair in a dark suit",
+    "outfit": "a dark suit with a light blue shirt and grey tie"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a black wire dog cage"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a door with a presidential seal"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a makeup mirror with lights"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "cardboard boxes"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a small silver device"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a room with wooden floors, boxes, and a cage"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "a kitchen area with a table and stove"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "An orange cat looks at a dog inside a black wire cage.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing near the cage"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing inside the cage"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "The orange cat closes its eyes and then opens them wide.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking through the bars of the cage"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "A door with a presidential seal opens and a man in a suit enters.",
+    "present": [
+     {
+      "name": "Object 2",
+      "state": "opening"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Object 2",
+      "what": "state",
+      "before": "closed",
+      "after": "open"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "activity": "action_or_state_change",
+    "action": "The orange cat turns and runs away from the cage as the man enters.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "running away"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing inside the cage"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Two men in suits walk into a room filled with boxes. One man kneels down next to the cage with the dog.",
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "kneeling next to the cage"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing behind Character 3"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing inside the cage"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "The orange cat peeks from behind a doorway in a kitchen area, looking concerned.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "peeking from behind a doorway"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "The man in the suit opens the cage and takes the dog out, petting it.",
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "kneeling"
+     },
+     {
+      "name": "Character 2",
+      "posture": "being taken out of the cage"
+     },
+     {
+      "name": "Object 1",
+      "state": "open"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Object 1",
+      "what": "state",
+      "before": "closed",
+      "after": "open"
+     },
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "inside the cage",
+      "after": "standing on the floor"
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "The two men stand and talk. One man holds up a small silver device.",
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 5",
+      "holding": [
+       "Character 3"
+      ]
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "The two men stand with the dog in the room full of boxes.",
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing on the floor"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "changes": []
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {}
+}

@@ -1,0 +1,407 @@
+{
+ "key": "film-008600-b0012",
+ "shots": 12,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "burned_subtitles",
+   "summary": "A documentary clip shows a rainy day at a farm where various animals, including goats, cows, and alpacas, are kept in a barn, with a person spreading straw for them."
+  },
+  "characters": [
+   {
+    "name": "Person 1",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a person wearing dark green clothing",
+    "outfit": "dark green jacket and trousers"
+   },
+   {
+    "name": "Goat 1",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a brown goat with a yellow ear tag"
+   },
+   {
+    "name": "Cow 1",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a brown cow with a yellow ear tag"
+   },
+   {
+    "name": "Lamb 1",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a white and black lamb"
+   },
+   {
+    "name": "Alpaca 1",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a light brown baby alpaca"
+   },
+   {
+    "name": "Alpaca 2",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a dark brown adult alpaca"
+   },
+   {
+    "name": "Alpaca 3",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a white adult alpaca"
+   },
+   {
+    "name": "Alpaca 4",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a white baby alpaca"
+   },
+   {
+    "name": "Alpaca 5",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a dark brown baby alpaca"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Puddle",
+    "appearance": "a puddle of water on the ground"
+   },
+   {
+    "name": "Barn",
+    "appearance": "a barn with wooden fences and metal bars"
+   },
+   {
+    "name": "Straw",
+    "appearance": "yellow straw"
+   },
+   {
+    "name": "Wheelbarrow",
+    "appearance": "a blue wheelbarrow"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a farm exterior with a puddle and wooden fence"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "the interior of a barn with metal pens and straw bedding"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "low angle shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "activity": "no_human_activity",
+    "action": "Rain falls into a puddle on the ground outside a barn.",
+    "present": [
+     {
+      "name": "Puddle",
+      "state": "wet, raindrops falling into it"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "no_human_activity",
+    "action": "A view down a row of metal pens inside a barn filled with straw.",
+    "present": [
+     {
+      "name": "Barn",
+      "state": "filled with straw"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A brown goat with a yellow ear tag looks over the metal bars of its pen.",
+    "present": [
+     {
+      "name": "Goat 1",
+      "posture": "looking over the metal bars"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A brown cow licks a white and black lamb resting on the straw.",
+    "present": [
+     {
+      "name": "Cow 1",
+      "posture": "lying down, licking"
+     },
+     {
+      "name": "Lamb 1",
+      "posture": "lying on the straw"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "A person throws straw from a blue wheelbarrow into a pen.",
+    "present": [
+     {
+      "name": "Person 1",
+      "posture": "standing, throwing straw",
+      "holding": [
+       "Straw"
+      ]
+     },
+     {
+      "name": "Straw",
+      "state": "being thrown"
+     },
+     {
+      "name": "Wheelbarrow",
+      "state": "blue"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Straw",
+      "what": "state",
+      "before": "in the wheelbarrow",
+      "after": "being thrown into the pen"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A light brown baby alpaca stands among other alpacas in the barn.",
+    "present": [
+     {
+      "name": "Alpaca 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 3",
+      "posture": "standing"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A close-up of the light brown baby alpaca looking around.",
+    "present": [
+     {
+      "name": "Alpaca 1",
+      "posture": "looking around"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A group of alpacas, including adults and babies, stand together in a pen.",
+    "present": [
+     {
+      "name": "Alpaca 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 3",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 4",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 5",
+      "posture": "standing"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A close-up of a dark brown baby alpaca's face with straw hanging from its mouth.",
+    "present": [
+     {
+      "name": "Alpaca 5",
+      "state": "straw hanging from mouth"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 10,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A light brown baby alpaca stands next to a white adult alpaca.",
+    "present": [
+     {
+      "name": "Alpaca 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 3",
+      "posture": "standing"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 11,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "A dark brown baby alpaca nurses from its mother.",
+    "present": [
+     {
+      "name": "Alpaca 5",
+      "posture": "nursing"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 12,
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "A person throws a large amount of straw into the pen, covering the alpacas.",
+    "present": [
+     {
+      "name": "Person 1",
+      "posture": "standing, throwing straw"
+     },
+     {
+      "name": "Straw",
+      "state": "being thrown"
+     },
+     {
+      "name": "Alpaca 3",
+      "posture": "standing"
+     },
+     {
+      "name": "Alpaca 5",
+      "posture": "standing"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Straw",
+      "what": "state",
+      "before": "in the person's hands",
+      "after": "falling onto the alpacas"
+     }
+    ]
+   }
+  ]
+ },
+ "expected_block_errors": [
+  "objects entry 'Puddle'",
+  "objects entry 'Barn'",
+  "objects entry 'Straw'",
+  "objects entry 'Wheelbarrow'"
+ ],
+ "expected_shot_errors": {
+  "1": [
+   "shot 1 present 'Puddle'"
+  ],
+  "2": [
+   "shot 2 present 'Barn'"
+  ],
+  "5": [
+   "shot 5 holding of Character 1",
+   "shot 5 present 'Straw'",
+   "shot 5 present 'Wheelbarrow'",
+   "shot 5 change"
+  ],
+  "12": [
+   "shot 12 present 'Straw'",
+   "shot 12 change"
+  ]
+ }
+}

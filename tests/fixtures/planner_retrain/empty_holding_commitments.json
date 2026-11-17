@@ -1,0 +1,1296 @@
+{
+  "source": "planner-retrain-20261106/rows-weighted/train-weighted.jsonl original target; production request header migrated from its original duration/fps",
+  "rows": {
+    "cinedance-009067-b0003/paragraph/0:7": {
+      "sample_id": "cinedance-009067-b0003/paragraph/0:7",
+      "case_id": "story_block_v1:cinedance:0034e0b4-7c3c-8585-8e05-bd3f96d3010d:<scene3>:block0002:0011-0017",
+      "block_key": "cinedance-009067-b0003",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0034e0b4-7c3c-8585-8e05-bd3f96d3010d.mp4",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 23.6875 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nIn a brightly lit hospital reception area, a man in a red shirt and black vest leans over a desk to talk to a woman with short black hair sitting at a computer. He sits down, and she hands him a clipboard with papers. They exchange a few words, and he makes a finger heart gesture while smiling. The man then stands up, takes the clipboard, and walks away. The woman watches him leave, smiles, and then picks up the landline telephone to answer a call.",
+      "shot_span": [
+        0,
+        7
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with short black hair",
+            "outfit": "a pink cardigan over a white top, a blue face mask pulled down under her chin, an ID badge"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with shoulder-length dark hair",
+            "outfit": "a pink cardigan over a white top, a light blue face mask"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short black hair",
+            "outfit": "a red long-sleeved shirt under a black vest with patches"
+          },
+          {
+            "name": "Character 4",
+            "kind": "group",
+            "visibility": "distant",
+            "appearance": "various people in medical attire and casual clothes"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a computer monitor"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a keyboard"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a stack of brown folders"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a clipboard with papers"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a pen"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a landline telephone"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "a desk"
+          },
+          {
+            "name": "Object 8",
+            "appearance": "chairs"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a brightly lit hospital or clinic reception area with desks, computers, and people in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at a desk",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "leaning on a desk",
+                "holding": []
+              },
+              {
+                "name": "Character 4"
+              },
+              {
+                "name": "Object 1",
+                "state": "on"
+              },
+              {
+                "name": "Object 2"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 7"
+              },
+              {
+                "name": "Object 8"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 3"
+              },
+              {
+                "subject": "Character 3",
+                "relation": "in_front_of",
+                "object": "Character 1"
+              }
+            ],
+            "action": "Character 3 leans over a desk talking to Character 1, who is sitting at a computer. Character 2 sits next to Character 1. Character 3 then sits down.",
+            "changes": [
+              {
+                "name": "Character 3",
+                "what": "posture",
+                "before": "leaning on a desk",
+                "after": "sitting at a desk"
+              }
+            ],
+            "frame_count": 109
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at a desk",
+                "holding": []
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 3"
+              }
+            ],
+            "action": "Character 1 hands a clipboard to Character 3, who takes it and looks at it.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 4"
+                ]
+              }
+            ],
+            "frame_count": 65
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "over-the-shoulder shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 3"
+              }
+            ],
+            "action": "Character 3 points at the clipboard while talking to Character 1. Character 1 smiles and holds a pen.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [
+                  "Object 4"
+                ],
+                "after": [
+                  "Object 5"
+                ]
+              }
+            ],
+            "frame_count": 21
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "action": "Character 1 smiles and holds the pen near her face while looking at Character 3.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "over-the-shoulder shot",
+              "movement": "static"
+            },
+            "composition": "symmetrical composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 3"
+              }
+            ],
+            "action": "Character 3 makes a finger heart gesture and smiles at Character 1.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": [
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting at a desk",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing up from a desk",
+                "holding": [
+                  "Object 4"
+                ]
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 7"
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 3"
+              }
+            ],
+            "action": "Character 3 stands up, holds the clipboard, and walks away from the desk. Character 1 watches him go and then turns back to her computer.",
+            "changes": [
+              {
+                "name": "Character 3",
+                "what": "posture",
+                "before": "sitting at a desk",
+                "after": "walking away"
+              }
+            ],
+            "frame_count": 25
+          },
+          {
+            "shot": 7,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "left-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a desk",
+                "holding": []
+              },
+              {
+                "name": "Object 5"
+              },
+              {
+                "name": "Object 6"
+              }
+            ],
+            "action": "Character 1 smiles, looks down at her desk, and then picks up the telephone receiver to answer a call.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [
+                  "Object 5"
+                ],
+                "after": [
+                  "Object 6"
+                ]
+              }
+            ],
+            "ending_sides": [
+              {
+                "name": "Character 1",
+                "side": "center"
+              }
+            ],
+            "frame_count": 101
+          }
+        ]
+      }
+    },
+    "cinedance-016920-b0005/shot/0:10": {
+      "sample_id": "cinedance-016920-b0005/shot/0:10",
+      "case_id": "story_block_v1:cinedance:08a5034a-18c3-8d79-bccb-0d2182dd3249:<scene1>:block0002:0016-0027",
+      "block_key": "cinedance-016920-b0005",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0004/08a5034a-18c3-8d79-bccb-0d2182dd3249.mp4",
+      "split": "train",
+      "tier": "shot",
+      "script": "Production requirements: approximately 21.125 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nSUBJECTS\n- Character 1 (person): a man with reddish-brown wavy hair and a lean build, wearing a dark grey long-sleeved shirt\n- Character 2 (person): a man with short dark hair and a medium build, wearing a light blue button-down shirt, dark tie, and dark trousers\n- Character 3 (person): a man with short grey hair and a medium build, wearing a light grey checkered shirt and dark tie\n- Character 4 (person): a man with dark hair and a medium build, wearing a plaid shirt and dark vest\n- Character 5 (group): several people working at consoles in the background, wearing various casual and business casual clothing\n- Object 1 (object): a headset with a microphone\n- Object 2 (object): a large control console with multiple screens and buttons\n- Object 3 (object): a radar screen displaying flight paths and data\n- Object 4 (object): a pen\n- Object 5 (object): a notepad\n- Object 6 (object): a control stick\n- Object 7 (object): buttons on console\n- Object 8 (object): headset\n- Object 9 (object): control stick\n- Object 10 (object): an American flag\nLOCATIONS\n- Location 1: a busy air traffic control room with multiple control consoles, radar screens, and data displays\nSHOTS\ns01: Close-up shot. Character 1 speaks while looking forward, wearing a headset, as Character 2 stands behind him with arms crossed.\ns02: Medium shot. Character 3 writes on a notepad while looking at a radar screen at a control console.\ns03: Close-up shot. Character 1 continues speaking into his headset while looking forward.\ns04: Medium shot. Character 1 sits at a console looking at a radar screen while Character 2 stands beside him watching.\ns05: Close-up shot. Character 1 speaks into his headset, looking slightly to the side.\ns06: Medium shot. Character 1 looks at his console and reaches out to press buttons, while Character 4 operates his own console next to him.\ns07: Close-up shot. Character 1 speaks and smiles slightly while looking at his screen.\ns08: Medium shot, over-the-shoulder shot. Character 1 adjusts his headset and looks at the radar screen displaying flight paths.\ns09: Medium shot. Character 1 looks at his console and speaks, while Character 4 reaches out to press buttons on his console.\ns10: Wide shot. A wide view of the control room shows multiple people working at their consoles, with Character 2 standing behind Character 1.",
+      "shot_span": [
+        0,
+        10
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with reddish-brown wavy hair and a lean build",
+            "outfit": "a dark grey long-sleeved shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair and a medium build",
+            "outfit": "a light blue button-down shirt, dark tie, and dark trousers"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short grey hair and a medium build",
+            "outfit": "a light grey checkered shirt and dark tie"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair and a medium build",
+            "outfit": "a plaid shirt and dark vest"
+          },
+          {
+            "name": "Character 5",
+            "kind": "group",
+            "visibility": "partial",
+            "appearance": "several people working at consoles in the background",
+            "outfit": "various casual and business casual clothing"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a headset with a microphone"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a large control console with multiple screens and buttons"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a radar screen displaying flight paths and data"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a pen"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a notepad"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a control stick"
+          },
+          {
+            "name": "Object 7",
+            "appearance": "buttons on console"
+          },
+          {
+            "name": "Object 8",
+            "appearance": "headset"
+          },
+          {
+            "name": "Object 9",
+            "appearance": "control stick"
+          },
+          {
+            "name": "Object 10",
+            "appearance": "an American flag"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a busy air traffic control room with multiple control consoles, radar screens, and data displays"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1",
+                "holding": []
+              },
+              {
+                "name": "Object 1",
+                "state": "worn by Character 1"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 speaks while looking forward, wearing a headset, as Character 2 stands behind him with arms crossed.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "sitting at a console",
+                "holding": [
+                  "Object 4",
+                  "Object 5"
+                ]
+              },
+              {
+                "name": "Object 2",
+                "state": "being used by Character 3"
+              },
+              {
+                "name": "Object 3",
+                "state": "displaying radar data"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 5"
+              }
+            ],
+            "action": "Character 3 writes on a notepad while looking at a radar screen at a control console.",
+            "changes": [],
+            "frame_count": 13
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1",
+                "holding": []
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 continues speaking into his headset while looking forward.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a console",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing next to Character 1",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting at another console in the background",
+                "holding": []
+              },
+              {
+                "name": "Object 2",
+                "state": "in front of Character 1"
+              },
+              {
+                "name": "Object 3",
+                "state": "displaying radar data in front of Character 1"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 3"
+              },
+              {
+                "subject": "Character 2",
+                "relation": "in_front_of",
+                "object": "Character 1"
+              }
+            ],
+            "action": "Character 1 sits at a console looking at a radar screen while Character 2 stands beside him watching.",
+            "changes": [],
+            "frame_count": 13
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1",
+                "holding": []
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 speaks into his headset, looking slightly to the side.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "left-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a console",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1",
+                "holding": []
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting at the next console",
+                "holding": [
+                  "Object 6"
+                ]
+              },
+              {
+                "name": "Object 2",
+                "state": "being used by Character 1 and Character 4"
+              },
+              {
+                "name": "Object 6"
+              },
+              {
+                "name": "Object 7"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 4"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 looks at his console and reaches out to press buttons, while Character 4 operates his own console next to him.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 7"
+                ]
+              }
+            ],
+            "frame_count": 61
+          },
+          {
+            "shot": 7,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1",
+                "holding": []
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "in_front_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 1 speaks and smiles slightly while looking at his screen.",
+            "changes": [],
+            "frame_count": 37
+          },
+          {
+            "shot": 8,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "over-the-shoulder shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a console",
+                "holding": []
+              },
+              {
+                "name": "Object 2",
+                "state": "in front of Character 1"
+              },
+              {
+                "name": "Object 3",
+                "state": "displaying radar data"
+              },
+              {
+                "name": "Object 8"
+              }
+            ],
+            "action": "Character 1 adjusts his headset and looks at the radar screen displaying flight paths.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 8"
+                ]
+              }
+            ],
+            "frame_count": 33
+          },
+          {
+            "shot": 9,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "left-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a console",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1 with arms crossed",
+                "holding": []
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting at the next console",
+                "holding": [
+                  "Object 6"
+                ]
+              },
+              {
+                "name": "Character 5",
+                "posture": "working at consoles in the background",
+                "holding": []
+              },
+              {
+                "name": "Object 6"
+              },
+              {
+                "name": "Object 9"
+              },
+              {
+                "name": "Object 7"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 4"
+              }
+            ],
+            "action": "Character 1 looks at his console and speaks, while Character 4 reaches out to press buttons on his console.",
+            "changes": [
+              {
+                "name": "Character 4",
+                "what": "holding",
+                "before": [
+                  "Object 9"
+                ],
+                "after": [
+                  "Object 7"
+                ]
+              }
+            ],
+            "frame_count": 61
+          },
+          {
+            "shot": 10,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "right-heavy composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting at a console on the right",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing behind Character 1",
+                "holding": []
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting at a console in the middle",
+                "holding": []
+              },
+              {
+                "name": "Character 5",
+                "posture": "working at various consoles",
+                "holding": []
+              },
+              {
+                "name": "Object 2",
+                "state": "lining the walls"
+              },
+              {
+                "name": "Object 10",
+                "state": "hanging in the background"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 4",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              }
+            ],
+            "action": "A wide view of the control room shows multiple people working at their consoles, with Character 2 standing behind Character 1.",
+            "changes": [],
+            "frame_count": 37
+          }
+        ]
+      }
+    },
+    "film-008506-b0005/paragraph/0:3": {
+      "sample_id": "film-008506-b0005/paragraph/0:3",
+      "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_010/You_Don't_Mess_With_the_Zohan_(2008)_-_The_Coco_Package_Scene_(8_10)_|_Movieclips:scene000:0041-0043",
+      "block_key": "film-008506-b0005",
+      "film_key": "cinepile_t2v:you don t mess with the zohan",
+      "split": "train",
+      "tier": "paragraph",
+      "script": "Production requirements: approximately 9.9375 seconds total; 16 fps; at most 225 frames per shot (14.0625 seconds).\n\nUser request:\nIn a brightly lit salon, a man in a striped tank top hands a bundle of cash to a woman in a white shirt. He then turns and hands the money to a man in a grey suit holding a briefcase. The man in the suit looks down at the cash in his hands, appearing confused before looking up.",
+      "shot_span": [
+        0,
+        3
+      ],
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long dark hair, wearing a cap",
+            "outfit": "a white shirt and jeans"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with a beard and medium-length dark hair",
+            "outfit": "a red and blue striped tank top and grey sweatpants"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short brown hair",
+            "outfit": "a grey suit and tie"
+          },
+          {
+            "name": "Character 4",
+            "kind": "group",
+            "visibility": "partial",
+            "appearance": "several women sitting in chairs",
+            "outfit": "casual clothing"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a bundle of cash"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a black briefcase"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a wooden table"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a floral arrangement"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a mirror"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "shelves with bottles"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a brightly lit salon or shop with mirrors, shelves, and chairs"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "symmetrical composition",
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting"
+              },
+              {
+                "name": "Object 3",
+                "state": "holding Object 4"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 1",
+                "relation": "left_of",
+                "object": "Character 2"
+              }
+            ],
+            "action": "Character 2 hands Object 1 to Character 1.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "holding",
+                "before": [
+                  "Object 1"
+                ],
+                "after": []
+              },
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "what": "state",
+                "after": "empty-handed"
+              }
+            ],
+            "frame_count": 49
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "pan"
+            },
+            "composition": "balanced composition",
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "standing",
+                "holding": []
+              },
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "relations": [
+              {
+                "subject": "Character 3",
+                "relation": "left_of",
+                "object": "Character 2"
+              },
+              {
+                "subject": "Character 2",
+                "relation": "left_of",
+                "object": "Character 1"
+              },
+              {
+                "subject": "Character 2",
+                "relation": "in_front_of",
+                "object": "Character 1"
+              }
+            ],
+            "action": "Character 2 turns and hands Object 1 to Character 3.",
+            "changes": [
+              {
+                "name": "Character 3",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 1"
+                ]
+              }
+            ],
+            "frame_count": 21
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "composition": "center composition",
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "standing",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "Character 3 looks down at Object 1 and then looks up with a confused expression.",
+            "changes": [
+              {
+                "name": "Character 3",
+                "what": "state",
+                "before": "neutral",
+                "after": "confused"
+              }
+            ],
+            "frame_count": 89
+          }
+        ]
+      }
+    }
+  }
+}

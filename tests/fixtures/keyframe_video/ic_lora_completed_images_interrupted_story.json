@@ -1,0 +1,140 @@
+{
+  "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/ic-lora-test92-20261027",
+  "story_id": "cinedance-009077-b0004-shot01",
+  "prepared": {
+    "story_id": "cinedance-009077-b0004-shot01",
+    "panel_size": [
+      832,
+      480
+    ],
+    "shots": [
+      {
+        "tagged": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C1], is sitting behind the judge's bench, wearing a black and maroon judge's robe over a white shirt and grey tie. A black leather chair, behind [C1]. A microphone on a stand, in front of [C1]. A laptop or monitor, in front of [C1].",
+        "expanded": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, a middle-aged man with thinning dark hair and a clean-shaven face , is sitting behind the judge's bench, wearing a black and maroon judge's robe over a white shirt and grey tie. A black leather chair, behind a middle-aged man with thinning dark hair and a clean-shaven face . A microphone on a stand, in front of a middle-aged man with thinning dark hair and a clean-shaven face . A laptop or monitor, in front of a middle-aged man with thinning dark hair and a clean-shaven face .",
+        "characters": [
+          "[C1]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Close-up shot, eye-level shot, static. The middle-aged man with thinning dark hair and a clean-shaven face is sitting behind the judge's bench. The middle-aged man with thinning dark hair and a clean-shaven face is wearing a black and maroon judge's robe over a white shirt and grey tie. The black leather chair is behind the middle-aged man with thinning dark hair and a clean-shaven face. The microphone on a stand is in front of the middle-aged man with thinning dark hair and a clean-shaven face. The laptop or monitor is in front of the middle-aged man with thinning dark hair and a clean-shaven face. A judge speaks from behind his bench.",
+        "frames": 13
+      },
+      {
+        "tagged": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C2], is sitting in the courtroom, wearing a white collared shirt.",
+        "expanded": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, a woman with shoulder-length brown hair and a slim build , is sitting in the courtroom, wearing a white collared shirt.",
+        "characters": [
+          "[C2]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Close-up shot, eye-level shot, static. The woman with shoulder-length brown hair and a slim build is sitting in the courtroom. The woman with shoulder-length brown hair and a slim build is wearing a white collared shirt. A woman in a white shirt looks around and listens.",
+        "frames": 41
+      },
+      {
+        "tagged": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C2], is sitting in the courtroom, wearing a white collared shirt. [C3], is standing near the door, wearing a black suit, white shirt, and striped tie. [C5], is standing behind the door, wearing a light blue uniform shirt. A wooden door, behind [C3].",
+        "expanded": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, a woman with shoulder-length brown hair and a slim build , is sitting in the courtroom, wearing a white collared shirt. a man with short dark hair and a slim build , is standing near the door, wearing a black suit, white shirt, and striped tie. a man wearing a black cap with a gold emblem , is standing behind the door, wearing a light blue uniform shirt. A wooden door, behind a man with short dark hair and a slim build .",
+        "characters": [
+          "[C2]",
+          "[C3]",
+          "[C5]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Medium shot, eye-level shot, static. The woman with shoulder-length brown hair and a slim build is sitting in the courtroom. The woman with shoulder-length brown hair and a slim build is wearing a white collared shirt. The man with short dark hair and a slim build is standing near the door. The man with short dark hair and a slim build is wearing a black suit, white shirt, and striped tie. The man wearing a black cap with a gold emblem is standing behind the door. The man is wearing a light blue uniform shirt. The wooden door is behind the man with short dark hair and a slim build. A man in a suit stands near a door as a guard opens it and another man enters. By the end of the shot, the wooden door is open.",
+        "frames": 41
+      },
+      {
+        "tagged": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C3], is standing near the door, wearing a black suit, white shirt, and striped tie. [C4], is entering through the door, wearing a grey button-down shirt and dark pants. [C5], is standing behind the door, wearing a light blue uniform shirt. A wooden door, open.",
+        "expanded": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, a man with short dark hair and a slim build , is standing near the door, wearing a black suit, white shirt, and striped tie. a young man with dark hair covering his forehead and a slim build , is entering through the door, wearing a grey button-down shirt and dark pants. a man wearing a black cap with a gold emblem , is standing behind the door, wearing a light blue uniform shirt. A wooden door, open.",
+        "characters": [
+          "[C3]",
+          "[C4]",
+          "[C5]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Medium shot, eye-level shot, static. The man with short dark hair and a slim build is standing near the door. The man with short dark hair and a slim build is wearing a black suit, white shirt, and striped tie. The young man with dark hair covering his forehead and a slim build is entering through the door. The young man with dark hair covering his forehead and a slim build is wearing a grey button-down shirt and dark pants. The man wearing a black cap with a gold emblem is standing behind the door. The man is wearing a light blue uniform shirt. The wooden door is open. A young man in a grey shirt walks through the open door into the courtroom.",
+        "frames": 25
+      },
+      {
+        "tagged": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C6], is sitting in the audience/jury area, wearing formal business attire and judicial robes.",
+        "expanded": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, a panel of judges and a jury or audience members , is sitting in the audience/jury area, wearing formal business attire and judicial robes.",
+        "characters": [
+          "[C6]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Medium shot, eye-level shot, static. The panel of judges and a jury or audience members is sitting in the audience/jury area. The panel of judges and a jury or audience members is wearing formal business attire and judicial robes. A panel of people in formal attire sit and watch the proceedings.",
+        "frames": 17
+      },
+      {
+        "tagged": "Wide shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C1], is sitting at the judge's bench, wearing a black and maroon judge's robe over a white shirt and grey tie. [C2], is sitting at a table, wearing a white collared shirt. [C3], is standing on the right side, wearing a black suit, white shirt, and striped tie. [C4], is standing on the right side, wearing a grey button-down shirt and dark pants. [C5], is standing near the door, wearing a light blue uniform shirt. [C6], is sitting in the audience, wearing formal business attire and judicial robes.",
+        "expanded": "Wide shot. In a courtroom with wooden paneling, benches, and a judge's bench, a middle-aged man with thinning dark hair and a clean-shaven face , is sitting at the judge's bench, wearing a black and maroon judge's robe over a white shirt and grey tie. a woman with shoulder-length brown hair and a slim build , is sitting at a table, wearing a white collared shirt. a man with short dark hair and a slim build , is standing on the right side, wearing a black suit, white shirt, and striped tie. a young man with dark hair covering his forehead and a slim build , is standing on the right side, wearing a grey button-down shirt and dark pants. a man wearing a black cap with a gold emblem , is standing near the door, wearing a light blue uniform shirt. a panel of judges and a jury or audience members , is sitting in the audience, wearing formal business attire and judicial robes.",
+        "characters": [
+          "[C1]",
+          "[C2]",
+          "[C3]",
+          "[C4]",
+          "[C5]",
+          "[C6]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Wide shot, eye-level shot, static. The middle-aged man with thinning dark hair and a clean-shaven face is sitting at the judge's bench. The middle-aged man with thinning dark hair and a clean-shaven face is wearing a black and maroon judge's robe over a white shirt and grey tie. The woman with shoulder-length brown hair and a slim build is sitting at a table. The woman with shoulder-length brown hair and a slim build is wearing a white collared shirt. The man with short dark hair and a slim build is standing on the right side. The man with short dark hair and a slim build is wearing a black suit, white shirt, and striped tie. The young man with dark hair covering his forehead and a slim build is standing on the right side. The young man with dark hair covering his forehead and a slim build is wearing a grey button-down shirt and dark pants. The man wearing a black cap with a gold emblem is standing near the door. The man is wearing a light blue uniform shirt. The panel of judges and a jury or audience members is sitting in the audience. The panel of judges and a jury or audience members is wearing formal business attire and judicial robes. A wide view of the courtroom shows the judge, lawyers, defendant, and audience.",
+        "frames": 89
+      },
+      {
+        "tagged": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C4], is standing, wearing a grey button-down shirt and dark pants. [C5], is standing behind him, wearing a light blue uniform shirt.",
+        "expanded": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, a young man with dark hair covering his forehead and a slim build , is standing, wearing a grey button-down shirt and dark pants. a man wearing a black cap with a gold emblem , is standing behind him, wearing a light blue uniform shirt.",
+        "characters": [
+          "[C4]",
+          "[C5]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Close-up shot, eye-level shot, static. The young man with dark hair covering his forehead and a slim build is standing. The young man with dark hair covering his forehead and a slim build is wearing a grey button-down shirt and dark pants. The man wearing a black cap with a gold emblem is standing behind him. The man is wearing a light blue uniform shirt. The young man in the grey shirt stands with a guard behind him, looking forward.",
+        "frames": 37
+      },
+      {
+        "tagged": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C2], is sitting, wearing a white collared shirt. [C3], is sitting behind her, wearing a black suit, white shirt, and striped tie.",
+        "expanded": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, a woman with shoulder-length brown hair and a slim build , is sitting, wearing a white collared shirt. a man with short dark hair and a slim build , is sitting behind her, wearing a black suit, white shirt, and striped tie.",
+        "characters": [
+          "[C2]",
+          "[C3]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Medium shot, eye-level shot, static. The woman with shoulder-length brown hair and a slim build is sitting. The woman with shoulder-length brown hair and a slim build is wearing a white collared shirt. The man with short dark hair and a slim build is sitting behind her. The man with short dark hair and a slim build is wearing a black suit, white shirt, and striped tie. The woman in white looks to the side while a man in a suit watches from behind her.",
+        "frames": 25
+      },
+      {
+        "tagged": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C4], is standing, wearing a grey button-down shirt and dark pants.",
+        "expanded": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, a young man with dark hair covering his forehead and a slim build , is standing, wearing a grey button-down shirt and dark pants.",
+        "characters": [
+          "[C4]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Close-up shot, eye-level shot, static. The young man with dark hair covering his forehead and a slim build is standing. The young man with dark hair covering his forehead and a slim build is wearing a grey button-down shirt and dark pants. The young man in the grey shirt looks around the courtroom.",
+        "frames": 13
+      },
+      {
+        "tagged": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C6], is sitting at the bench, wearing formal business attire and judicial robes. [C4], is walking towards his seat, wearing a grey button-down shirt and dark pants.",
+        "expanded": "Medium shot. In a courtroom with wooden paneling, benches, and a judge's bench, a panel of judges and a jury or audience members , is sitting at the bench, wearing formal business attire and judicial robes. a young man with dark hair covering his forehead and a slim build , is walking towards his seat, wearing a grey button-down shirt and dark pants.",
+        "characters": [
+          "[C4]",
+          "[C6]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Medium shot, eye-level shot, static. The panel of judges and a jury or audience members is sitting at the bench. The panel of judges and a jury or audience members is wearing formal business attire and judicial robes. The young man with dark hair covering his forehead and a slim build is walking towards his seat. The young man with dark hair covering his forehead and a slim build is wearing a grey button-down shirt and dark pants. The judges watch as the young man walks to his designated seat. By the end of the shot, for the young man with dark hair covering his forehead and a slim build, the sitting is down.",
+        "frames": 45
+      },
+      {
+        "tagged": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C2], is sitting, wearing a white collared shirt. [C4], is sitting in front of her, wearing a grey button-down shirt and dark pants.",
+        "expanded": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, a woman with shoulder-length brown hair and a slim build , is sitting, wearing a white collared shirt. a young man with dark hair covering his forehead and a slim build , is sitting in front of her, wearing a grey button-down shirt and dark pants.",
+        "characters": [
+          "[C2]",
+          "[C4]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Close-up shot, eye-level shot, static. The woman with shoulder-length brown hair and a slim build is sitting. The woman with shoulder-length brown hair and a slim build is wearing a white collared shirt. The young man with dark hair covering his forehead and a slim build is sitting in front of her. The young man with dark hair covering his forehead and a slim build is wearing a grey button-down shirt and dark pants. The woman in white looks at the young man who is now seated.",
+        "frames": 53
+      },
+      {
+        "tagged": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, [C2], is sitting, wearing a white collared shirt.",
+        "expanded": "Close-up shot. In a courtroom with wooden paneling, benches, and a judge's bench, a woman with shoulder-length brown hair and a slim build , is sitting, wearing a white collared shirt.",
+        "characters": [
+          "[C2]"
+        ],
+        "video_prompt": "The setting is a courtroom with wooden paneling, benches, and a judge's bench. Close-up shot, eye-level shot, static. The woman with shoulder-length brown hair and a slim build is sitting. The woman with shoulder-length brown hair and a slim build is wearing a white collared shirt. The woman in white continues to look at the young man with a serious expression.",
+        "frames": 181
+      }
+    ]
+  },
+  "image_generation": {
+    "status": "completed",
+    "started_at": "2026-10-27T10:43:17.909006+00:00",
+    "finished_at": "2026-10-27T10:47:10.997309+00:00",
+    "upstream_commit": "966e00a826da91512fc473705bd09183f3946b21"
+  }
+}

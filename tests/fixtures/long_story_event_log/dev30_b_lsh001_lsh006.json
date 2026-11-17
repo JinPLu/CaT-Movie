@@ -1,0 +1,253 @@
+{
+ "source": "主服务器 outputs/experiments/long-evaluation-preflight-20261007T001000Z/inputs/ab_pairs30.json（long_story_ab_reviewed_draft_v1）",
+ "pairs": [
+  {
+   "story_id": "lsh-001",
+   "context_b": {
+    "story_prompt": "A sequence of shots alternating between a heavyset man in a yellow jacket and a bald man in a grey suit, who interacts with a short adult man in a matching suit.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "Heavyset man with a round face, yellow jacket, green suspenders and white polo shirt."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "A bald man with a thin face, wearing a grey, high-collared suit."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "attributes": "Short adult man with a shaved head, wearing a grey suit."
+     },
+     {
+      "subject_id": "Subject 4",
+      "kind": "object",
+      "attributes": "Small red-and-silver cylindrical container."
+     }
+    ],
+    "locations": [
+     {
+      "location_id": "Location 1",
+      "attributes": "A dimly lit room with a blueish background, featuring wall-mounted light fixtures."
+     },
+     {
+      "location_id": "Location 2",
+      "attributes": "A room with a high-tech aesthetic, featuring a large wall of illuminated panels and lights in the background."
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "A medium close-up of Subject 1 in Location 1. The camera is at eye level. Subject 1's facial expression changes from a scowl to a wide, open-mouthed shout, then back to a scowl. At the start, Subject 1 is wearing the checkered cap. Then Subject 1 takes off his checkered cap and lowers it out of frame.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 37
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "A medium shot in Location 2. Subject 3 stands before Subject 2, who is kneeling. Subject 3 holds Subject 4 up towards Subject 2. Subject 2 takes the bottle, looks at it, and then embraces Subject 3.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 3",
+       "Subject 4"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 65
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "A medium close-up of Subject 1 in Location 1. The camera is at eye level. Subject 1 is speaking, with his mouth moving and his expression shifting from neutral to surprised.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 21
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "Medium close-up in Location 2. Subject 2 embraces Subject 3, looks down, then looks forward with a serious expression.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 3",
+       "Subject 4"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 45
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "A medium close-up of Subject 1 in Location 1. The camera is at eye level. Subject 1 speaks with a range of expressions, from a frown to a more open, questioning look.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 97
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "Medium close-up of Subject 2 in Location 2, looking forward and moving his mouth with a serious expression.",
+      "present_subjects": [
+       "Subject 2",
+       "Subject 4"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 53
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 1,
+    "prior": "wearing the checkered cap",
+    "post": "bareheaded",
+    "action": "takes off his checkered cap and lowers it out of frame"
+   }
+  },
+  {
+   "story_id": "lsh-006",
+   "context_b": {
+    "story_prompt": "A tense, low-lit conversation unfolds between a woman and a man in a dark room, punctuated by a brief cut to a third man in a different location.",
+    "subjects": [
+     {
+      "subject_id": "Subject 1",
+      "kind": "person",
+      "attributes": "A woman with shoulder-length, wavy light-brown hair, wearing red lipstick and a dark top."
+     },
+     {
+      "subject_id": "Subject 2",
+      "kind": "person",
+      "attributes": "A man with short, dark hair, wearing a dark jacket over a lighter collared shirt."
+     },
+     {
+      "subject_id": "Subject 3",
+      "kind": "person",
+      "attributes": "A man with short, light-brown hair and a light beard, wearing a dark top."
+     }
+    ],
+    "locations": [
+     {
+      "attributes": "A dark interior space, possibly a room or a vehicle, with a blue-lit screen visible in the background.",
+      "location_id": "Location 1"
+     },
+     {
+      "attributes": "A dimly lit area with a slanted, textured ceiling or wall in the background.",
+      "location_id": "Location 2"
+     }
+    ],
+    "shots": [
+     {
+      "shot_id": "s01",
+      "prompt": "A close-up shot of Subject 1 from a slightly low angle. She is looking off-camera to the right, her mouth open as if speaking, and her expression is animated.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 25
+     },
+     {
+      "shot_id": "s02",
+      "prompt": "A close-up shot of Subject 2 from a slightly high angle. He is looking off-camera to the left, his expression serious and his mouth slightly open.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 41
+     },
+     {
+      "shot_id": "s03",
+      "prompt": "A close-up shot of Subject 1 from a slightly low angle. She is looking off-camera to the right, a slight smile on her face.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 25
+     },
+     {
+      "shot_id": "s04",
+      "prompt": "An extreme close-up of Subject 2's face from a high angle. He is looking down, his eyes closed for a moment before opening them.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 89
+     },
+     {
+      "shot_id": "s05",
+      "prompt": "A close-up shot of Subject 1 from a slightly low angle. She is looking off-camera to the right with a neutral expression.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 33
+     },
+     {
+      "shot_id": "s06",
+      "prompt": "A medium close-up of Subject 1 from a low angle. She is looking off-camera to the right, her expression shifting from neutral to one of distress, with her mouth open as if shouting or crying out. At the start, Subject 1 is not wearing sunglasses. Then Subject 1 takes dark sunglasses from below frame and puts them on.",
+      "present_subjects": [
+       "Subject 1"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 29
+     },
+     {
+      "shot_id": "s07",
+      "prompt": "A close-up shot of Subject 2 from a slightly high angle. He is looking off-camera to the left, his expression serious and his mouth moving as if speaking.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 57
+     },
+     {
+      "shot_id": "s08",
+      "prompt": "A medium shot showing Subject 1 on the left and Subject 2 on the right. Subject 1 is speaking, then Subject 2 turns his head to look at her.",
+      "present_subjects": [
+       "Subject 1",
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 93
+     },
+     {
+      "shot_id": "s09",
+      "prompt": "A close-up shot of Subject 2 from a slightly high angle. He is looking off-camera to the left with a serious expression.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 17
+     },
+     {
+      "shot_id": "s10",
+      "prompt": "A medium close-up of Subject 3 from a low angle. He is looking off-camera to the right, his mouth open as if speaking.",
+      "present_subjects": [
+       "Subject 3"
+      ],
+      "location_id": "Location 2",
+      "frame_count": 33
+     },
+     {
+      "shot_id": "s11",
+      "prompt": "A close-up shot of Subject 2 from a slightly high angle. He is looking down, then lifts his head to look off-camera to the left.",
+      "present_subjects": [
+       "Subject 2"
+      ],
+      "location_id": "Location 1",
+      "frame_count": 73
+     }
+    ]
+   },
+   "change": {
+    "subject_id": "Subject 1",
+    "event_shot": 6,
+    "prior": "not wearing sunglasses",
+    "post": "wearing dark sunglasses",
+    "action": "takes dark sunglasses from below frame and puts them on"
+   }
+  }
+ ]
+}

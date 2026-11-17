@@ -1,0 +1,47 @@
+{
+ "zeroshot_evidence_unknown": {
+  "answer": "full:cine250k:cine250k:307252701_17/s01/paragraph",
+  "fact": {
+   "subject": "Subject 1",
+   "family": "screen",
+   "predicate_or_axis": "gaze",
+   "object_or_value": "unknown",
+   "scope": "screen@2",
+   "shot_span": [
+    2,
+    2
+   ],
+   "evidence": "unknown"
+  }
+ },
+ "zeroshot_evidence_observed": {
+  "answer": "full:cine250k:cine250k:272807034_37/s01/shot",
+  "fact": {
+   "subject": "Subject 1",
+   "family": "screen",
+   "predicate_or_axis": "orientation",
+   "object_or_value": "unknown",
+   "scope": "screen@0",
+   "shot_span": [
+    0,
+    0
+   ],
+   "evidence": "observed"
+  }
+ },
+ "sft_evidence_observed": {
+  "answer": "ci_vid:train:000137429/s01/shot",
+  "fact": {
+   "subject": "Subject 4",
+   "family": "screen",
+   "predicate_or_axis": "gaze",
+   "object_or_value": "unknown",
+   "scope": "screen@1",
+   "shot_span": [
+    1,
+    1
+   ],
+   "evidence": "observed"
+  }
+ }
+}

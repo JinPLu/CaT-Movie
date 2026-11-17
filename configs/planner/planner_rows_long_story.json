@@ -1,0 +1,7 @@
+{
+  "min_all_shots": 6,
+  "fraction_two_to_short": 0.3,
+  "fraction_one": 0.1,
+  "seed": 42,
+  "val_rows_per_tier": 128
+}

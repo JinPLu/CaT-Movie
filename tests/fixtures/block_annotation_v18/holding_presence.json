@@ -1,0 +1,1895 @@
+[
+  {
+    "key": "cinedance-014838-b0004",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "an orange fruit with a green leaf on top, thin black stick legs and arms, white cartoon gloves, and black shoes",
+          "outfit": "a necklace made of human teeth"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a white garlic bulb with a single sprout on top, thin black stick legs and arms, white cartoon gloves, and black shoes",
+          "outfit": "none"
+        },
+        {
+          "name": "Character 3",
+          "kind": "group",
+          "visibility": "clear",
+          "appearance": "three hot dogs with thin black stick legs and arms, white cartoon gloves, and black shoes",
+          "outfit": "none"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a necklace made of human teeth"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "an outdoor plaza at night with tiled ground, palm trees, and buildings in the background"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing with back to the camera",
+              "state": "turning around"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing facing Character 1",
+              "state": "gesturing"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing behind Character 2"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 turns around to face Character 2, revealing a necklace of teeth.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "posture",
+              "before": "back to the camera",
+              "after": "facing the camera"
+            }
+          ]
+        },
+        {
+          "shot": 2,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "state": "smiling, holding the tooth necklace"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 smiles and adjusts the tooth necklace around his neck.",
+          "changes": []
+        },
+        {
+          "shot": 3,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing and gesturing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing and looking at Character 1"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing and looking down"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 talks and gestures to Character 2, who looks unimpressed, while the hot dogs look down sadly.",
+          "changes": []
+        },
+        {
+          "shot": 4,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "standing",
+              "state": "talking and gesturing"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 2 talks and gestures with his hands.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "state": "smiling"
+            },
+            {
+              "name": "Object 1",
+              "state": "being held by Character 2"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 2 holds up a single tooth from the necklace, and Character 1 smiles at it.",
+          "changes": [
+            {
+              "name": "Object 1",
+              "what": "holding",
+              "before": [
+                "Character 1"
+              ],
+              "after": [
+                "Character 2"
+              ]
+            }
+          ]
+        }
+      ],
+      "story": {
+        "paragraph": "An orange character with a tooth necklace turns around to face a garlic character in an outdoor plaza at night. The orange character smiles and adjusts his necklace while talking to the garlic character, who looks unimpressed. The garlic character then speaks and gestures, eventually holding up a single tooth from the necklace, which makes the orange character smile.",
+        "summary": "An orange character shows off a tooth necklace to a garlic character and some hot dogs in a plaza at night."
+      }
+    },
+    "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"an orange fruit with a green leaf on top, thin black stick legs and arms, white cartoon gloves, and black shoes\",\n      \"outfit\": \"a necklace made of human teeth\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a white garlic bulb with a single sprout on top, thin black stick legs and arms, white cartoon gloves, and black shoes\",\n      \"outfit\": \"none\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"group\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"three hot dogs with thin black stick legs and arms, white cartoon gloves, and black shoes\",\n      \"outfit\": \"none\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a necklace made of human teeth\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"an outdoor plaza at night with tiled ground, palm trees, and buildings in the background\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing with back to the camera\",\n          \"state\": \"turning around\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing facing Character 1\",\n          \"state\": \"gesturing\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing behind Character 2\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"Character 1 turns around to face Character 2, revealing a necklace of teeth.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 1\",\n          \"what\": \"posture\",\n          \"before\": \"back to the camera\",\n          \"after\": \"facing the camera\"\n        }\n      ]\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing\",\n          \"state\": \"smiling, holding the tooth necklace\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 smiles and adjusts the tooth necklace around his neck.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing and gesturing\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing and looking at Character 1\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing and looking down\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 talks and gestures to Character 2, who looks unimpressed, while the hot dogs look down sadly.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing\",\n          \"state\": \"talking and gesturing\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 talks and gestures with his hands.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing\",\n          \"state\": \"smiling\"\n        },\n        {\n          \"name\": \"Object 1\",\n          \"state\": \"being held by Character 2\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"Character 2 holds up a single tooth from the necklace, and Character 1 smiles at it.\",\n      \"changes\": [\n        {\n          \"name\": \"Object 1\",\n          \"what\": \"holding\",\n          \"before\": [\n            \"Character 1\"\n          ],\n          \"after\": [\n            \"Character 2\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"An orange character with a tooth necklace turns around to face a garlic character in an outdoor plaza at night. The orange character smiles and adjusts his necklace while talking to the garlic character, who looks unimpressed. The garlic character then speaks and gestures, eventually holding up a single tooth from the necklace, which makes the orange character smile.\",\n    \"summary\": \"An orange character shows off a tooth necklace to a garlic character and some hot dogs in a plaza at night.\"\n  }\n}"
+  },
+  {
+    "key": "film-007745-b0003",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "an older man with short grey hair, wearing glasses and a clean-shaven face",
+          "outfit": "a light blue button-down shirt and a red patterned tie"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short dark hair, stubble, and a lean build",
+          "outfit": "a black v-neck sweater over a white t-shirt"
+        },
+        {
+          "name": "Character 3",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a beige stuffed cat puppet with green eyes, a red nose, and whiskers"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a dark wooden cabinet or hutch with glass doors and shelves"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a striped armchair"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a blue upholstered armchair with a floral pillow"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a wooden side table or cabinet"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a room with warm lighting, featuring wooden furniture, a cabinet, and armchairs"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting",
+              "holding": [
+                "Character 3"
+              ]
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing on its hind legs"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 holds a stuffed cat puppet and looks at it while sitting in a room.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "sitting in a striped armchair"
+            },
+            {
+              "name": "Character 1",
+              "posture": "sitting, partially visible in the foreground"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing on its hind legs"
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 3"
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 2 sits in an armchair looking at the puppet held by Character 1, who is now partially visible in the foreground.",
+          "changes": []
+        },
+        {
+          "shot": 3,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting",
+              "holding": [
+                "Character 3"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting, partially visible in profile"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 smiles and looks towards Character 2 while holding the puppet.",
+          "changes": []
+        },
+        {
+          "shot": 4,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "looking at the puppet"
+            },
+            {
+              "name": "Character 3",
+              "posture": "partially visible on the right"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 2 looks intently at the puppet with a slight smile.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3"
+            }
+          ],
+          "activity": "no_human_activity",
+          "action": "The stuffed cat puppet is shown in a close-up, with its mouth moving slightly as if speaking.",
+          "changes": [
+            {
+              "name": "Character 3",
+              "what": "state",
+              "before": "mouth closed",
+              "after": "mouth slightly open"
+            }
+          ]
+        },
+        {
+          "shot": 6,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "looking at the puppet"
+            },
+            {
+              "name": "Character 3",
+              "posture": "partially visible on the right"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 2 continues to look at the puppet, his expression serious.",
+          "changes": []
+        }
+      ],
+      "story": {
+        "paragraph": "An older man with glasses holds a stuffed cat puppet in a warmly lit room. He sits across from a man with dark hair and stubble, who watches the puppet intently. The older man smiles and looks at the younger man, while the puppet's mouth moves slightly as if it is speaking. The younger man maintains a serious, focused gaze on the puppet throughout the interaction.",
+        "summary": "An older man holds a stuffed cat puppet and interacts with a younger man in a living room setting."
+      }
+    },
+    "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"an older man with short grey hair, wearing glasses and a clean-shaven face\",\n      \"outfit\": \"a light blue button-down shirt and a red patterned tie\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with short dark hair, stubble, and a lean build\",\n      \"outfit\": \"a black v-neck sweater over a white t-shirt\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"animal\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a beige stuffed cat puppet with green eyes, a red nose, and whiskers\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a dark wooden cabinet or hutch with glass doors and shelves\"\n    },\n    {\n      \"name\": \"Object 2\",\n      \"appearance\": \"a striped armchair\"\n    },\n    {\n      \"name\": \"Object 3\",\n      \"appearance\": \"a blue upholstered armchair with a floral pillow\"\n    },\n    {\n      \"name\": \"Object 4\",\n      \"appearance\": \"a wooden side table or cabinet\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"a room with warm lighting, featuring wooden furniture, a cabinet, and armchairs\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Character 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing on its hind legs\"\n        },\n        {\n          \"name\": \"Object 1\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 holds a stuffed cat puppet and looks at it while sitting in a room.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in a striped armchair\"\n        },\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting, partially visible in the foreground\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing on its hind legs\"\n        },\n        {\n          \"name\": \"Object 2\"\n        },\n        {\n          \"name\": \"Object 3\"\n        },\n        {\n          \"name\": \"Object 4\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 sits in an armchair looking at the puppet held by Character 1, who is now partially visible in the foreground.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Character 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting, partially visible in profile\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 smiles and looks towards Character 2 while holding the puppet.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"looking at the puppet\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"partially visible on the right\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 looks intently at the puppet with a slight smile.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\"\n        }\n      ],\n      \"activity\": \"no_human_activity\",\n      \"action\": \"The stuffed cat puppet is shown in a close-up, with its mouth moving slightly as if speaking.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 3\",\n          \"what\": \"state\",\n          \"before\": \"mouth closed\",\n          \"after\": \"mouth slightly open\"\n        }\n      ]\n    },\n    {\n      \"shot\": 6,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"looking at the puppet\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"partially visible on the right\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 continues to look at the puppet, his expression serious.\",\n      \"changes\": []\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"An older man with glasses holds a stuffed cat puppet in a warmly lit room. He sits across from a man with dark hair and stubble, who watches the puppet intently. The older man smiles and looks at the younger man, while the puppet's mouth moves slightly as if it is speaking. The younger man maintains a serious, focused gaze on the puppet throughout the interaction.\",\n    \"summary\": \"An older man holds a stuffed cat puppet and interacts with a younger man in a living room setting.\"\n  }\n}"
+  },
+  {
+    "key": "film-008711-b0016",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short dark hair and a muscular build",
+          "outfit": "a white and orange space suit with 'LIGHTYEAR' and '15' on the chest"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young man with dark skin and short dark hair tied back",
+          "outfit": "a brown and metallic space suit"
+        },
+        {
+          "name": "Character 3",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a small orange and white kitten with a blue collar"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with dark hair, a beard, and a lean build",
+          "outfit": "a grey and orange space suit with 'ZAP' on the shoulder"
+        },
+        {
+          "name": "Character 5",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "an older man with short grey hair and a heavy build",
+          "outfit": "a bulky metallic space suit with 'STEEL' on the chest"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a futuristic vehicle or rover"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a rearview mirror"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "vehicle controls"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a small device"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a barren, rocky landscape with tall, thin trees and reddish soil"
+        },
+        {
+          "name": "Location 2",
+          "appearance": "the interior of a futuristic vehicle with windows showing the outside landscape"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Object 1",
+              "posture": "driving across the landscape"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "A futuristic vehicle drives across a barren, rocky landscape with tall, thin trees.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "driving the vehicle",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting in the passenger seat",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 3",
+              "posture": "sitting on Character 2's lap"
+            },
+            {
+              "name": "Character 4",
+              "posture": "sitting in the back seat"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting in the back seat"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Inside the vehicle, Character 1 drives while Character 2 holds a kitten and looks out the window. Character 4 and Character 5 sit in the back.",
+          "changes": []
+        },
+        {
+          "shot": 3,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "sitting in the passenger seat"
+            },
+            {
+              "name": "Character 1",
+              "posture": "driving"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 2 looks at Character 1 and smiles while talking.",
+          "changes": []
+        },
+        {
+          "shot": 4,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "over-the-shoulder shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "sitting in the passenger seat",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 1",
+              "posture": "driving"
+            },
+            {
+              "name": "Character 3",
+              "posture": "sitting on Character 2's lap"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 2 looks at Character 1 with a surprised expression while holding the kitten.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "sitting in the passenger seat"
+            },
+            {
+              "name": "Character 1",
+              "posture": "driving"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 looks at Character 2 and speaks while driving.",
+          "changes": []
+        },
+        {
+          "shot": 6,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "driving",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting in the passenger seat",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 4",
+              "posture": "sitting in the back seat"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting in the back seat"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 raises a hand while speaking. Character 2 points at Character 1 and responds.",
+          "changes": []
+        },
+        {
+          "shot": 7,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "driving",
+              "state": "looking in the rearview mirror"
+            },
+            {
+              "name": "Object 2"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 looks into the rearview mirror with a serious expression.",
+          "changes": []
+        },
+        {
+          "shot": 8,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 5",
+              "posture": "sitting in the back seat",
+              "holding": [
+                "Object 4"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "leaning forward"
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 5 speaks and gestures with his hand while holding a small device. Character 2 leans forward with a wide-eyed, excited expression.",
+          "changes": []
+        },
+        {
+          "shot": 9,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "driving",
+              "state": "looking in the rearview mirror with a surprised expression"
+            },
+            {
+              "name": "Object 2"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 looks in the rearview mirror and his eyes widen in surprise.",
+          "changes": []
+        },
+        {
+          "shot": 10,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 4",
+              "posture": "sitting in the back seat"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 4 speaks animatedly, gesturing with his hands.",
+          "changes": []
+        },
+        {
+          "shot": 11,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 5",
+              "posture": "sitting in the back seat"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 5 speaks and looks towards the front of the vehicle.",
+          "changes": []
+        },
+        {
+          "shot": 12,
+          "picture_type": "animation_3d_or_game",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "driving"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting in the passenger seat",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 4",
+              "posture": "sitting in the back seat"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting in the back seat"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The group continues their conversation inside the moving vehicle.",
+          "changes": []
+        }
+      ],
+      "story": {
+        "paragraph": "A futuristic vehicle drives across a barren, rocky landscape with tall, thin trees. Inside, a man in a white and orange space suit drives while a young man in a brown suit holds a small kitten. They are joined by a bearded man and an older, heavy-set man in the back seat. The passengers engage in an animated conversation, with the older man gesturing excitedly and the bearded man speaking expressively. The driver checks the rearview mirror, reacting with surprise to something happening behind them, before the group continues their discussion.",
+        "summary": "A group of people and a kitten ride in a futuristic vehicle across a barren landscape, having an animated conversation while the driver checks the rearview mirror."
+      }
+    },
+    "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with short dark hair and a muscular build\",\n      \"outfit\": \"a white and orange space suit with 'LIGHTYEAR' and '15' on the chest\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a young man with dark skin and short dark hair tied back\",\n      \"outfit\": \"a brown and metallic space suit\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"animal\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a small orange and white kitten with a blue collar\"\n    },\n    {\n      \"name\": \"Character 4\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with dark hair, a beard, and a lean build\",\n      \"outfit\": \"a grey and orange space suit with 'ZAP' on the shoulder\"\n    },\n    {\n      \"name\": \"Character 5\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"an older man with short grey hair and a heavy build\",\n      \"outfit\": \"a bulky metallic space suit with 'STEEL' on the chest\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a futuristic vehicle or rover\"\n    },\n    {\n      \"name\": \"Object 2\",\n      \"appearance\": \"a rearview mirror\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"a barren, rocky landscape with tall, thin trees and reddish soil\"\n    },\n    {\n      \"name\": \"Location 2\",\n      \"appearance\": \"the interior of a futuristic vehicle with windows showing the outside landscape\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"wide shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Object 1\",\n          \"posture\": \"driving across the landscape\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"A futuristic vehicle drives across a barren, rocky landscape with tall, thin trees.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving the vehicle\",\n          \"holding\": [\n            \"vehicle controls\"\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in the passenger seat\",\n          \"holding\": [\n            \"Object 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"sitting on Character 2's lap\"\n        },\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting in the back seat\"\n        },\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting in the back seat\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Inside the vehicle, Character 1 drives while Character 2 holds a kitten and looks out the window. Character 4 and Character 5 sit in the back.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in the passenger seat\"\n        },\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 looks at Character 1 and smiles while talking.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"over-the-shoulder shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in the passenger seat\",\n          \"holding\": [\n            \"Object 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"sitting on Character 2's lap\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 looks at Character 1 with a surprised expression while holding the kitten.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in the passenger seat\"\n        },\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 looks at Character 2 and speaks while driving.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 6,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\",\n          \"holding\": [\n            \"vehicle controls\"\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in the passenger seat\",\n          \"holding\": [\n            \"Object 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting in the back seat\"\n        },\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting in the back seat\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 raises a hand while speaking. Character 2 points at Character 1 and responds.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 7,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\",\n          \"state\": \"looking in the rearview mirror\"\n        },\n        {\n          \"name\": \"Object 2\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 looks into the rearview mirror with a serious expression.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 8,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting in the back seat\",\n          \"holding\": [\n            \"a small device\"\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"leaning forward\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 5 speaks and gestures with his hand while holding a small device. Character 2 leans forward with a wide-eyed, excited expression.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 9,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\",\n          \"state\": \"looking in the rearview mirror with a surprised expression\"\n        },\n        {\n          \"name\": \"Object 2\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 looks in the rearview mirror and his eyes widen in surprise.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 10,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting in the back seat\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 4 speaks animatedly, gesturing with his hands.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 11,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting in the back seat\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 5 speaks and looks towards the front of the vehicle.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 12,\n      \"picture_type\": \"animation_3d_or_game\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"driving\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting in the passenger seat\",\n          \"holding\": [\n            \"Object 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting in the back seat\"\n        },\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting in the back seat\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The group continues their conversation inside the moving vehicle.\",\n      \"changes\": []\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"A futuristic vehicle drives across a barren, rocky landscape with tall, thin trees. Inside, a man in a white and orange space suit drives while a young man in a brown suit holds a small kitten. They are joined by a bearded man and an older, heavy-set man in the back seat. The passengers engage in an animated conversation, with the older man gesturing excitedly and the bearded man speaking expressively. The driver checks the rearview mirror, reacting with surprise to something happening behind them, before the group continues their discussion.\",\n    \"summary\": \"A group of people and a kitten ride in a futuristic vehicle across a barren landscape, having an animated conversation while the driver checks the rearview mirror.\"\n  }\n}"
+  },
+  {
+    "key": "film-004788-b0000",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with long blonde hair",
+          "outfit": "a pink shirt and dark shorts"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with medium blonde hair",
+          "outfit": "a dark patterned shirt and light pants"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "an older woman with short brown hair",
+          "outfit": "a patterned short-sleeve shirt and shorts"
+        },
+        {
+          "name": "Character 4",
+          "kind": "group",
+          "visibility": "clear",
+          "appearance": "a litter of light-colored puppies"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a wooden pen with wire mesh"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a dark bag with a strap"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a stuffed toy"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a wicker basket"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a covered porch or patio area with a wooden floor and white pillars"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 4",
+              "posture": "looking over a wooden fence"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "no_human_activity",
+          "action": "Puppies look over a wooden fence.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "low angle shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 2"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "jumping up at the fence"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "A woman holding a bag jumps over a wooden fence into a pen of puppies, followed by a man and an older woman.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "posture",
+              "before": "standing outside",
+              "after": "jumping over"
+            }
+          ]
+        },
+        {
+          "shot": 3,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "handheld"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "landing and moving forward"
+            },
+            {
+              "name": "Character 2",
+              "posture": "walking"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "The woman lands inside the pen and moves forward while the man walks behind her.",
+          "changes": []
+        },
+        {
+          "shot": 4,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting on the floor"
+            },
+            {
+              "name": "Character 4",
+              "posture": "licking and jumping on the woman"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "The woman sits on the floor and is greeted by puppies licking her face and body.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting on the floor"
+            },
+            {
+              "name": "Character 2",
+              "posture": "crouching down"
+            },
+            {
+              "name": "Character 4",
+              "posture": "playing around the people"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "The man crouches down next to the woman, and they both interact with the puppies.",
+          "changes": [
+            {
+              "name": "Character 2",
+              "what": "posture",
+              "before": "standing",
+              "after": "crouching"
+            }
+          ]
+        },
+        {
+          "shot": 6,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "bending down and then standing up"
+            },
+            {
+              "name": "Object 3",
+              "state": "being picked up"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "The older woman bends down to pick up a stuffed toy from the floor.",
+          "changes": [
+            {
+              "name": "Character 3",
+              "what": "posture",
+              "before": "standing",
+              "after": "bending down"
+            },
+            {
+              "name": "Character 3",
+              "what": "holding",
+              "before": [],
+              "after": [
+                "Object 3"
+              ]
+            }
+          ]
+        },
+        {
+          "shot": 7,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting",
+              "holding": [
+                "Character 4"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The woman holds a puppy and talks to the man.",
+          "changes": []
+        },
+        {
+          "shot": 8,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The man smiles and talks.",
+          "changes": []
+        },
+        {
+          "shot": 9,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The older woman stands and talks, gesturing with her hands.",
+          "changes": []
+        },
+        {
+          "shot": 10,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The woman and the man talk to each other.",
+          "changes": []
+        },
+        {
+          "shot": 11,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting",
+              "holding": [
+                "Character 4"
+              ]
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The man holds a puppy and talks to the woman while the puppy licks his face.",
+          "changes": []
+        }
+      ],
+      "story": {
+        "paragraph": "A litter of light-colored puppies look over a wooden fence on a covered porch. A woman in a pink shirt and dark shorts jumps over the fence into the pen, carrying a bag, followed by a man in a patterned shirt and an older woman in a patterned shirt. The woman sits on the floor and is immediately greeted by the puppies, who lick her face and body. The man crouches down next to her, and they both interact with the puppies. The older woman picks up a stuffed toy from the floor and talks to them. The woman holds a puppy and talks to the man, who smiles and responds. The older woman gestures while speaking. The man then holds a puppy that licks his face as he continues talking to the woman.",
+        "summary": "A woman jumps into a pen of puppies on a porch, joins a man and an older woman, and they all interact with the puppies and talk."
+      }
+    },
+    "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with long blonde hair\",\n      \"outfit\": \"a pink shirt and dark shorts\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with medium blonde hair\",\n      \"outfit\": \"a dark patterned shirt and light pants\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"an older woman with short brown hair\",\n      \"outfit\": \"a patterned short-sleeve shirt and shorts\"\n    },\n    {\n      \"name\": \"Character 4\",\n      \"kind\": \"group\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a litter of light-colored puppies\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a wooden pen with wire mesh\"\n    },\n    {\n      \"name\": \"Object 2\",\n      \"appearance\": \"a dark bag with a strap\"\n    },\n    {\n      \"name\": \"Object 3\",\n      \"appearance\": \"a stuffed toy\"\n    },\n    {\n      \"name\": \"Object 4\",\n      \"appearance\": \"a wicker basket\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"a covered porch or patio area with a wooden floor and white pillars\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"looking over a wooden fence\"\n        },\n        {\n          \"name\": \"Object 1\"\n        }\n      ],\n      \"activity\": \"no_human_activity\",\n      \"action\": \"Puppies look over a wooden fence.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium wide shot\",\n        \"angle\": \"low angle shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing\",\n          \"holding\": [\n            \"Object 2\"\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        },\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"jumping up at the fence\"\n        },\n        {\n          \"name\": \"Object 1\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"A woman holding a bag jumps over a wooden fence into a pen of puppies, followed by a man and an older woman.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 1\",\n          \"what\": \"posture\",\n          \"before\": \"standing outside\",\n          \"after\": \"jumping over\"\n        }\n      ]\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"handheld\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"landing and moving forward\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"walking\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"The woman lands inside the pen and moves forward while the man walks behind her.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting on the floor\"\n        },\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"licking and jumping on the woman\"\n        },\n        {\n          \"name\": \"Object 3\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"The woman sits on the floor and is greeted by puppies licking her face and body.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium wide shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting on the floor\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"crouching down\"\n        },\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"playing around the people\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"The man crouches down next to the woman, and they both interact with the puppies.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 2\",\n          \"what\": \"posture\",\n          \"before\": \"standing\",\n          \"after\": \"crouching\"\n        }\n      ]\n    },\n    {\n      \"shot\": 6,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"bending down and then standing up\"\n        },\n        {\n          \"name\": \"Object 3\",\n          \"state\": \"being picked up\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"The older woman bends down to pick up a stuffed toy from the floor.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 3\",\n          \"what\": \"posture\",\n          \"before\": \"standing\",\n          \"after\": \"bending down\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"what\": \"holding\",\n          \"before\": [],\n          \"after\": [\n            \"Object 3\"\n          ]\n        }\n      ]\n    },\n    {\n      \"shot\": 7,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Character 4\"\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The woman holds a puppy and talks to the man.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 8,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The man smiles and talks.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 9,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The older woman stands and talks, gesturing with her hands.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 10,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The woman and the man talk to each other.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 11,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Character 4\"\n          ]\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The man holds a puppy and talks to the woman while the puppy licks his face.\",\n      \"changes\": []\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"A litter of light-colored puppies look over a wooden fence on a covered porch. A woman in a pink shirt and dark shorts jumps over the fence into the pen, carrying a bag, followed by a man in a patterned shirt and an older woman in a patterned shirt. The woman sits on the floor and is immediately greeted by the puppies, who lick her face and body. The man crouches down next to her, and they both interact with the puppies. The older woman picks up a stuffed toy from the floor and talks to them. The woman holds a puppy and talks to the man, who smiles and responds. The older woman gestures while speaking. The man then holds a puppy that licks his face as he continues talking to the woman.\",\n    \"summary\": \"A woman jumps into a pen of puppies on a porch, joins a man and an older woman, and they all interact with the puppies and talk.\"\n  }\n}"
+  },
+  {
+    "key": "film-006759-b0008",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with a beard and short dark hair",
+          "outfit": "a black leather jacket and a blue shirt"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young man with short dark hair",
+          "outfit": "a green jacket"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with dark hair and glasses",
+          "outfit": "a dark top"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with short hair and blood on her face",
+          "outfit": "a light blue denim jacket"
+        },
+        {
+          "name": "Character 5",
+          "kind": "group",
+          "visibility": "partial",
+          "appearance": "people on a subway train",
+          "outfit": "various casual clothing"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a black walkie-talkie"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a black handgun"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a subway train interior with metal poles and seats"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "the interior of a subway train"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "extreme close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A bearded man speaks into a walkie-talkie.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "standing, holding a pole"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A young man holds onto a pole on the subway train.",
+          "changes": []
+        },
+        {
+          "shot": 3,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A woman with glasses looks around the subway train.",
+          "changes": []
+        },
+        {
+          "shot": 4,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            }
+          ],
+          "activity": "talking_only",
+          "action": "The bearded man continues speaking into the walkie-talkie.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 4",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A woman with blood on her face looks forward.",
+          "changes": []
+        },
+        {
+          "shot": 6,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 5",
+              "posture": "sitting and standing"
+            }
+          ],
+          "activity": "no_human_activity",
+          "action": "Passengers are seen sitting and standing in the subway car.",
+          "changes": []
+        },
+        {
+          "shot": 7,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 4",
+              "posture": "sitting"
+            },
+            {
+              "name": "Object 2",
+              "holding": []
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "A gun is pointed at the woman with blood on her face.",
+          "changes": [
+            {
+              "name": "Object 2",
+              "what": "holding",
+              "before": [],
+              "after": [
+                "Character 5"
+              ]
+            }
+          ]
+        }
+      ],
+      "story": {
+        "paragraph": "A bearded man speaks into a walkie-talkie inside a subway train. The scene cuts to various passengers, including a young man holding a pole, a woman with glasses, and a woman with blood on her face. The bearded man continues to speak into his radio. The camera shows a wider view of the subway car with passengers sitting and standing. Finally, a gun is pointed at the woman with blood on her face.",
+        "summary": "A man speaks into a walkie-talkie on a subway train while passengers look on, ending with a gun being pointed at an injured woman."
+      }
+    },
+    "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with a beard and short dark hair\",\n      \"outfit\": \"a black leather jacket and a blue shirt\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a young man with short dark hair\",\n      \"outfit\": \"a green jacket\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with dark hair and glasses\",\n      \"outfit\": \"a dark top\"\n    },\n    {\n      \"name\": \"Character 4\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with short hair and blood on her face\",\n      \"outfit\": \"a light blue denim jacket\"\n    },\n    {\n      \"name\": \"Character 5\",\n      \"kind\": \"group\",\n      \"visibility\": \"partial\",\n      \"appearance\": \"people on a subway train\",\n      \"outfit\": \"various casual clothing\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a black walkie-talkie\"\n    },\n    {\n      \"name\": \"Object 2\",\n      \"appearance\": \"a black handgun\"\n    },\n    {\n      \"name\": \"Object 3\",\n      \"appearance\": \"a subway train interior with metal poles and seats\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"the interior of a subway train\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"extreme close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing\",\n          \"holding\": [\n            \"Object 1\"\n          ]\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A bearded man speaks into a walkie-talkie.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing, holding a pole\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A young man holds onto a pole on the subway train.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A woman with glasses looks around the subway train.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing\",\n          \"holding\": [\n            \"Object 1\"\n          ]\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"The bearded man continues speaking into the walkie-talkie.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A woman with blood on her face looks forward.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 6,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium wide shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting and standing\"\n        }\n      ],\n      \"activity\": \"no_human_activity\",\n      \"action\": \"Passengers are seen sitting and standing in the subway car.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 7,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 2\",\n          \"holding\": [\n            \"Character 5\"\n          ]\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"A gun is pointed at the woman with blood on her face.\",\n      \"changes\": [\n        {\n          \"name\": \"Object 2\",\n          \"what\": \"holding\",\n          \"before\": [],\n          \"after\": [\n            \"Character 5\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"A bearded man speaks into a walkie-talkie inside a subway train. The scene cuts to various passengers, including a young man holding a pole, a woman with glasses, and a woman with blood on her face. The bearded man continues to speak into his radio. The camera shows a wider view of the subway car with passengers sitting and standing. Finally, a gun is pointed at the woman with blood on her face.\",\n    \"summary\": \"A man speaks into a walkie-talkie on a subway train while passengers look on, ending with a gun being pointed at an injured woman.\"\n  }\n}"
+  },
+  {
+    "key": "film-019030-b0000",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with blonde hair tied back",
+          "outfit": "a pink polo shirt and jeans"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with curly dark hair",
+          "outfit": "a white t-shirt with a graphic and jeans"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short hair and a beard",
+          "outfit": "a striped polo shirt"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with long dark hair",
+          "outfit": "a black top"
+        },
+        {
+          "name": "Character 5",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a pregnant woman with reddish hair",
+          "outfit": "a purple long-sleeved top"
+        },
+        {
+          "name": "Character 6",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with short brown hair and glasses",
+          "outfit": "a light green jacket"
+        },
+        {
+          "name": "Character 7",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short dark hair",
+          "outfit": "a white doctor's coat, a dark shirt, and a tie"
+        },
+        {
+          "name": "Character 8",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with dark hair tied back",
+          "outfit": "floral scrubs"
+        },
+        {
+          "name": "Character 9",
+          "kind": "group",
+          "visibility": "clear",
+          "appearance": "various people waiting in a room",
+          "outfit": "casual clothing"
+        },
+        {
+          "name": "Character 10",
+          "kind": "group",
+          "visibility": "clear",
+          "appearance": "multiple babies and toddlers",
+          "outfit": "baby clothes"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a colorful toy drum"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a baby car seat"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a book"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a medical examination table"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a hospital gown"
+        },
+        {
+          "name": "Object 6",
+          "appearance": "a stethoscope"
+        },
+        {
+          "name": "Object 7",
+          "appearance": "a clipboard"
+        },
+        {
+          "name": "Object 8",
+          "appearance": "an ultrasound machine"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a waiting room with chairs, framed pictures on the walls, and a plant"
+        },
+        {
+          "name": "Location 2",
+          "appearance": "a medical examination room with an exam table, medical equipment, and framed pictures"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 3",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 6",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 9",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 10",
+              "posture": "sitting or being held"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A group of people, including pregnant women and parents with babies, wait in a room.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 3",
+              "posture": "sitting",
+              "holding": [
+                "Object 1"
+              ]
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 3 plays with a toy drum while sitting next to Character 2.",
+          "changes": []
+        },
+        {
+          "shot": 3,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 4",
+              "posture": "sitting",
+              "holding": [
+                "Character 10"
+              ]
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A woman holds two babies in her lap.",
+          "changes": []
+        },
+        {
+          "shot": 4,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 and Character 2 sit side by side looking forward.",
+          "changes": []
+        },
+        {
+          "shot": 5,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 5",
+              "posture": "sitting",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 6",
+              "posture": "sitting",
+              "holding": [
+                "Character 10"
+              ]
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A pregnant woman reads a book while another woman holds a baby.",
+          "changes": []
+        },
+        {
+          "shot": 6,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1 and Character 2 continue to sit and look forward.",
+          "changes": []
+        },
+        {
+          "shot": 7,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 10",
+              "posture": "being held"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A baby in a striped outfit looks around and points a finger.",
+          "changes": []
+        },
+        {
+          "shot": 8,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 8",
+              "posture": "walking",
+              "holding": [
+                "Object 7"
+              ]
+            },
+            {
+              "name": "Character 1",
+              "posture": "sitting"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "A woman in scrubs walks into the room holding a clipboard.",
+          "changes": []
+        },
+        {
+          "shot": 9,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing up and walking"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing up and walking"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "Character 1 and Character 2 stand up and walk out of the waiting room.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "posture",
+              "before": "sitting",
+              "after": "walking"
+            },
+            {
+              "name": "Character 2",
+              "what": "posture",
+              "before": "sitting",
+              "after": "walking"
+            }
+          ]
+        },
+        {
+          "shot": 10,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting on the edge of the exam table",
+              "outfit": "a hospital gown"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "Character 1, now in a hospital gown, sits on the exam table while Character 2 stands beside her.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "outfit",
+              "before": "a pink polo shirt and jeans",
+              "after": "a hospital gown"
+            }
+          ]
+        },
+        {
+          "shot": 11,
+          "picture_type": "live_action",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "tracking"
+          },
+          "present": [
+            {
+              "name": "Character 7",
+              "posture": "walking in",
+              "holding": [
+                "Object 6"
+              ]
+            },
+            {
+              "name": "Character 1",
+              "posture": "sitting",
+              "outfit": "a hospital gown"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            }
+          ],
+          "activity": "action_or_state_change",
+          "action": "A doctor walks into the examination room, approaches the couple, and begins to talk to them.",
+          "changes": [
+            {
+              "name": "Character 7",
+              "what": "posture",
+              "before": "outside the room",
+              "after": "standing in the room"
+            }
+          ]
+        }
+      ],
+      "story": {
+        "paragraph": "A group of people, including pregnant women and parents with babies, wait in a room. A man plays with a toy drum, and a woman holds two babies. A pregnant woman reads a book while another woman holds a baby. A woman in scrubs walks into the room with a clipboard. A couple stands up and leaves the waiting room. In an examination room, the woman is now wearing a hospital gown and sitting on the exam table while the man stands beside her. A doctor walks into the room carrying a stethoscope and begins to talk to the couple.",
+        "summary": "A couple waits in a crowded room with other parents and pregnant women before going into an examination room where a doctor greets them."
+      }
+    },
+    "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with blonde hair tied back\",\n      \"outfit\": \"a pink polo shirt and jeans\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with curly dark hair\",\n      \"outfit\": \"a white t-shirt with a graphic and jeans\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with short hair and a beard\",\n      \"outfit\": \"a striped polo shirt\"\n    },\n    {\n      \"name\": \"Character 4\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with long dark hair\",\n      \"outfit\": \"a black top\"\n    },\n    {\n      \"name\": \"Character 5\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a pregnant woman with reddish hair\",\n      \"outfit\": \"a purple long-sleeved top\"\n    },\n    {\n      \"name\": \"Character 6\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with short brown hair and glasses\",\n      \"outfit\": \"a light green jacket\"\n    },\n    {\n      \"name\": \"Character 7\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with short dark hair\",\n      \"outfit\": \"a white doctor's coat, a dark shirt, and a tie\"\n    },\n    {\n      \"name\": \"Character 8\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with dark hair tied back\",\n      \"outfit\": \"floral scrubs\"\n    },\n    {\n      \"name\": \"Character 9\",\n      \"kind\": \"group\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"various people waiting in a room\",\n      \"outfit\": \"casual clothing\"\n    },\n    {\n      \"name\": \"Character 10\",\n      \"kind\": \"group\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"multiple babies and toddlers\",\n      \"outfit\": \"baby clothes\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a colorful toy drum\"\n    },\n    {\n      \"name\": \"Object 2\",\n      \"appearance\": \"a baby car seat\"\n    },\n    {\n      \"name\": \"Object 3\",\n      \"appearance\": \"a book\"\n    },\n    {\n      \"name\": \"Object 4\",\n      \"appearance\": \"a medical examination table\"\n    },\n    {\n      \"name\": \"Object 5\",\n      \"appearance\": \"a hospital gown\"\n    },\n    {\n      \"name\": \"Object 6\",\n      \"appearance\": \"a stethoscope\"\n    },\n    {\n      \"name\": \"Object 7\",\n      \"appearance\": \"a clipboard\"\n    },\n    {\n      \"name\": \"Object 8\",\n      \"appearance\": \"an ultrasound machine\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"a waiting room with chairs, framed pictures on the walls, and a plant\"\n    },\n    {\n      \"name\": \"Location 2\",\n      \"appearance\": \"a medical examination room with an exam table, medical equipment, and framed pictures\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"wide shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 6\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 9\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 10\",\n          \"posture\": \"sitting or being held\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A group of people, including pregnant women and parents with babies, wait in a room.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Object 1\"\n          ]\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 3 plays with a toy drum while sitting next to Character 2.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 4\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Character 10\"\n          ]\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A woman holds two babies in her lap.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 and Character 2 sit side by side looking forward.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 5\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Object 3\"\n          ]\n        },\n        {\n          \"name\": \"Character 6\",\n          \"posture\": \"sitting\",\n          \"holding\": [\n            \"Character 10\"\n          ]\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A pregnant woman reads a book while another woman holds a baby.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 6,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 and Character 2 continue to sit and look forward.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 7,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 10\",\n          \"posture\": \"being held\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"A baby in a striped outfit looks around and points a finger.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 8,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 8\",\n          \"posture\": \"walking\",\n          \"holding\": [\n            \"Object 7\"\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"A woman in scrubs walks into the room holding a clipboard.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 9,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"standing up and walking\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing up and walking\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"Character 1 and Character 2 stand up and walk out of the waiting room.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 1\",\n          \"what\": \"posture\",\n          \"before\": \"sitting\",\n          \"after\": \"walking\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"what\": \"posture\",\n          \"before\": \"sitting\",\n          \"after\": \"walking\"\n        }\n      ]\n    },\n    {\n      \"shot\": 10,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting on the edge of the exam table\",\n          \"outfit\": \"a hospital gown\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1, now in a hospital gown, sits on the exam table while Character 2 stands beside her.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 1\",\n          \"what\": \"outfit\",\n          \"before\": \"a pink polo shirt and jeans\",\n          \"after\": \"a hospital gown\"\n        }\n      ]\n    },\n    {\n      \"shot\": 11,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"tracking\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 7\",\n          \"posture\": \"walking in\",\n          \"holding\": [\n            \"Object 6\"\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"standing\"\n        }\n      ],\n      \"activity\": \"action_or_state_change\",\n      \"action\": \"A doctor walks into the examination room, approaches the couple, and begins to talk to them.\",\n      \"changes\": [\n        {\n          \"name\": \"Character 7\",\n          \"what\": \"posture\",\n          \"before\": \"outside the room\",\n          \"after\": \"standing in the room\"\n        }\n      ]\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"A group of people, including pregnant women and parents with babies, wait in a room. A man plays with a toy drum, and a woman holds two babies. A pregnant woman reads a book while another woman holds a baby. A woman in scrubs walks into the room with a clipboard. A couple stands up and leaves the waiting room. In an examination room, the woman is now wearing a hospital gown and sitting on the exam table while the man stands beside her. A doctor walks into the room carrying a stethoscope and begins to talk to the couple.\",\n    \"summary\": \"A couple waits in a crowded room with other parents and pregnant women before going into an examination room where a doctor greets them.\"\n  }\n}"
+  }
+]

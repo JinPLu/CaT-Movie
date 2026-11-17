@@ -1,0 +1,23 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "base_url": "https://openrouter.ai/api/v1",
+  "temperature": 0,
+  "max_tokens": 2048,
+  "timeout_seconds": 180,
+  "request_options": {
+    "reasoning": {
+      "effort": "minimal"
+    },
+    "provider": {
+      "only": [
+        "google-ai-studio"
+      ],
+      "allow_fallbacks": false
+    }
+  },
+  "input_usd_per_mtok": "0.75",
+  "output_usd_per_mtok": "3.75",
+  "budget_hard_cap_usd": "4.50",
+  "precall_prompt_tokens": 4000,
+  "precall_completion_tokens": 1500
+}

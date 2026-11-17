@@ -1,0 +1,28 @@
+# 空间标注第二版试点的 Qwen3.8-27B 图像输入服务：
+# 服务参数沿用 vllm_qwen38_27b_topdown_video.yaml（单卡 TP=1、同时 24 个请求、qwen3 思考解析），只把多模态上限换成
+# 每请求 3 张图（一镜的首帧、中帧、末帧）。思考与否、思考强度、采样参数都由请求按模型卡给，不设服务端默认。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.8-27B
+host: "127.0.0.1"
+port: 8193
+tensor_parallel_size: 1
+max_model_len: 65536
+gpu_memory_utilization: 0.92
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.8-27B"
+  - "--max-num-seqs"
+  - "24"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--mm-processor-cache-gb"
+  - "0"
+  - "--limit-mm-per-prompt"
+  - '{"image":3,"video":0}'
+  - "--reasoning-parser"
+  - "qwen3"
+  - "--enforce-eager"
+ld_library_path: ""
+omp_num_threads: 4

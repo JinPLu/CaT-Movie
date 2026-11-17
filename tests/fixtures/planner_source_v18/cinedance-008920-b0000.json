@@ -1,0 +1,283 @@
+{
+  "key": "cinedance-008920-b0000",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a young man with a brown bowl cut and a slim build",
+        "outfit": "a black leather jacket"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short brown hair, blue eyes, and a medium build",
+        "outfit": "a grey jacket over a red zip-up sweater"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a brass outdoor wall lamp"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a porch or entryway with a red brick wall and white pillars"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking to the right, mouth slightly open"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "A young man with a brown bowl cut looks to the right and speaks.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "A man in a grey jacket stands on the porch, smiling and looking to the left.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking to the right, speaking"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The young man continues to look to the right and speak.",
+        "changes": []
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "visibility": "partial"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man in the grey jacket looks at the young man and speaks.",
+        "changes": []
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking to the right"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The young man looks to the right and listens.",
+        "changes": []
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "visibility": "partial"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man in the grey jacket speaks to the young man.",
+        "changes": []
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "turning his head to look forward, then back to the right"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The young man turns his head to look forward with a surprised expression, then looks back to the right and speaks.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "posture",
+            "before": "looking to the right",
+            "after": "turning his head to look forward"
+          }
+        ]
+      },
+      {
+        "shot": 8,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "visibility": "partial"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man in the grey jacket speaks with an expressive face, looking at the young man.",
+        "changes": []
+      },
+      {
+        "shot": 9,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking to the right, speaking"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The young man looks to the right and speaks with a confused expression.",
+        "changes": []
+      },
+      {
+        "shot": 10,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "visibility": "partial"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man in the grey jacket smiles and speaks to the young man.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "A young man with a brown bowl cut stands on a porch with a red brick wall, looking to the side and speaking. A man in a grey jacket and red sweater stands opposite him, smiling and responding. They continue to talk back and forth, with the young man occasionally looking surprised or confused before turning his attention back to the other man. The man in the grey jacket maintains a friendly, expressive demeanor throughout the conversation.",
+      "summary": "A young man and a man in a grey jacket have a conversation on a porch with a red brick wall."
+    }
+  },
+  "frame_counts": [
+    49,
+    85,
+    217,
+    77,
+    57,
+    49,
+    169,
+    101,
+    25,
+    81
+  ]
+}

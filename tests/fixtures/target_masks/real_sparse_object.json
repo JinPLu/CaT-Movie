@@ -1,0 +1,574 @@
+{
+  "origin": "spatial annotation of block cinedance-009332-b0001, after revision",
+  "boundary": "真实Object 2轨迹只有部分时点有mask；其余时点须保留unknown。该夹具不是完整训练成员。",
+  "selected_entities": [
+    "Object 2"
+  ],
+  "source": {
+    "key": "cinedance-009332-b0001",
+    "case_id": "story_block_v1:cinedance:007d3cb3-1dc9-8527-a537-b622ca419903:<scene2>:block0001:0003-0004",
+    "family": "cinedance",
+    "source": "cinedance",
+    "scene": {
+      "schema_version": "scene_window_v1",
+      "window_id": "story_block_v1:cinedance:007d3cb3-1dc9-8527-a537-b622ca419903:<scene2>:block0001:0003-0004",
+      "kind": "block",
+      "scene_id": "cinedance:007d3cb3-1dc9-8527-a537-b622ca419903:<scene2>:block0001",
+      "film_key": null,
+      "source": "cinedance",
+      "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/007d3cb3-1dc9-8527-a537-b622ca419903.mp4",
+      "fps": 24.0,
+      "container_preroll_frames": null,
+      "crop_box": [
+        357,
+        0,
+        1563,
+        696
+      ],
+      "shot_count": 2,
+      "render_frames": 142,
+      "shots": [
+        {
+          "source_shot_index": 3,
+          "start_frame": 346,
+          "end_frame": 455,
+          "seconds": 4.541666666666667,
+          "render_frames": 73,
+          "sid": "cinedance-009332",
+          "scene_id": "cinedance:007d3cb3-1dc9-8527-a537-b622ca419903:<scene2>:block0001",
+          "score_key": "cinedance-009332-e0003",
+          "mean_luma": 67.11166381835938,
+          "min_luma": 66.47950744628906,
+          "max_luma": 68.60388946533203,
+          "dover_technical": -0.050840821117162704,
+          "laion_aesthetic": 5.260611693064372,
+          "scene": "<scene2>",
+          "characters": [
+            "<char1>",
+            "<char5>",
+            "<char6>",
+            "<char7>"
+          ]
+        },
+        {
+          "source_shot_index": 4,
+          "start_frame": 459,
+          "end_frame": 564,
+          "seconds": 4.375,
+          "render_frames": 69,
+          "sid": "cinedance-009332",
+          "scene_id": "cinedance:007d3cb3-1dc9-8527-a537-b622ca419903:<scene2>:block0001",
+          "score_key": "cinedance-009332-e0004",
+          "mean_luma": 74.89391326904297,
+          "min_luma": 73.13776397705078,
+          "max_luma": 76.27740478515625,
+          "dover_technical": -0.04595661535859108,
+          "laion_aesthetic": 4.826465288798015,
+          "scene": "<scene2>",
+          "characters": [
+            "<char1>",
+            "<char2>",
+            "<char3>",
+            "<char5>",
+            "<char6>",
+            "<char7>"
+          ]
+        }
+      ],
+      "cut_version": "story_block_v1",
+      "width": 1920,
+      "height": 696,
+      "video_frame_count": 1895,
+      "active_box": [
+        0,
+        0,
+        1920,
+        696
+      ],
+      "frame_basis": "ffmpeg_sequential_zero_based",
+      "boundary_revision": {
+        "version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "thresholds": {
+          "boundary_threshold": 0.5,
+          "single_threshold": 0.25,
+          "content_threshold": 27.0,
+          "edge_seconds": 0.5,
+          "boundary_guard_frames": 2
+        },
+        "shots": [
+          {
+            "status": "kept",
+            "reasons": [],
+            "revised_segment": [
+              346,
+              455
+            ],
+            "boundary_cuts": [],
+            "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/007d3cb3-1dc9-8527-a537-b622ca419903.mp4",
+            "segment": [
+              344,
+              457
+            ],
+            "rule_version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "boundary_revised_segment": [
+              344,
+              457
+            ]
+          },
+          {
+            "status": "kept",
+            "reasons": [],
+            "revised_segment": [
+              459,
+              564
+            ],
+            "boundary_cuts": [],
+            "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/007d3cb3-1dc9-8527-a537-b622ca419903.mp4",
+            "segment": [
+              457,
+              566
+            ],
+            "rule_version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "boundary_revised_segment": [
+              457,
+              566
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "min_dover_technical": -0.050840821117162704,
+        "min_laion_aesthetic": 4.826465288798015
+      }
+    },
+    "proxy": {
+      "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/sources/cinedance-009332/window-proxy/cinedance-009332-w0001.mp4",
+      "fps": 2,
+      "proxy_width": 832,
+      "proxy_height": 480,
+      "crop_box": [
+        357,
+        0,
+        1563,
+        696
+      ],
+      "shot_timestamps": [
+        {
+          "shot": 0,
+          "start": 0.0,
+          "end": 5.0
+        },
+        {
+          "shot": 1,
+          "start": 5.0,
+          "end": 10.0
+        }
+      ],
+      "proxy_to_source_frames": [
+        {
+          "shot": 0,
+          "source_frame": 346
+        },
+        {
+          "shot": 0,
+          "source_frame": 358
+        },
+        {
+          "shot": 0,
+          "source_frame": 370
+        },
+        {
+          "shot": 0,
+          "source_frame": 382
+        },
+        {
+          "shot": 0,
+          "source_frame": 394
+        },
+        {
+          "shot": 0,
+          "source_frame": 406
+        },
+        {
+          "shot": 0,
+          "source_frame": 418
+        },
+        {
+          "shot": 0,
+          "source_frame": 430
+        },
+        {
+          "shot": 0,
+          "source_frame": 442
+        },
+        {
+          "shot": 0,
+          "source_frame": 454
+        },
+        {
+          "shot": 1,
+          "source_frame": 459
+        },
+        {
+          "shot": 1,
+          "source_frame": 471
+        },
+        {
+          "shot": 1,
+          "source_frame": 483
+        },
+        {
+          "shot": 1,
+          "source_frame": 496
+        },
+        {
+          "shot": 1,
+          "source_frame": 508
+        },
+        {
+          "shot": 1,
+          "source_frame": 520
+        },
+        {
+          "shot": 1,
+          "source_frame": 532
+        },
+        {
+          "shot": 1,
+          "source_frame": 545
+        },
+        {
+          "shot": 1,
+          "source_frame": 557
+        },
+        {
+          "shot": 1,
+          "source_frame": 563
+        }
+      ]
+    },
+    "same_as_window": "cinedance-009332-w0001"
+  },
+  "frames": {
+    "key": "cinedance-009332-b0001",
+    "source": "cinedance",
+    "frame_stride": 4,
+    "train_fps": 16,
+    "annotation_status": "ok",
+    "shots": [
+      {
+        "shot": 1,
+        "id": "s01",
+        "render_frames": 73,
+        "train_frames": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72
+        ],
+        "source_frames": [
+          346,
+          352,
+          358,
+          364,
+          370,
+          376,
+          382,
+          388,
+          394,
+          400,
+          406,
+          412,
+          418,
+          424,
+          430,
+          436,
+          442,
+          448,
+          454
+        ],
+        "frames": 19,
+        "annotation_errors": []
+      },
+      {
+        "shot": 2,
+        "id": "s02",
+        "render_frames": 69,
+        "train_frames": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68
+        ],
+        "source_frames": [
+          459,
+          465,
+          471,
+          477,
+          483,
+          490,
+          496,
+          502,
+          508,
+          514,
+          520,
+          526,
+          532,
+          539,
+          545,
+          551,
+          557,
+          563
+        ],
+        "frames": 18,
+        "annotation_errors": []
+      }
+    ],
+    "frames": 37
+  },
+  "masks": {
+    "schema_version": 2,
+    "width": 832,
+    "height": 480,
+    "rle_format": "COCO compressed, Fortran order",
+    "frame_numbers": "training frame within the shot",
+    "shots": {
+      "s01": {
+        "tracks": {
+          "box-Object_2:2": {
+            "name": "Object 2",
+            "kind": "object",
+            "frames": {
+              "68": {
+                "rle": {
+                  "size": [
+                    480,
+                    832
+                  ],
+                  "counts": "al>1n>2KNYA5e0MU=OWB02O7;^=HYBM2010Lb0c=CcBKNf0]=AaBI4i0X=_ObBL2NM`00Bg0Ln;9[CK10O>0Bg0Ln;_1[CbN1OX=7gBo00oN0KV=7jBo00ROU=W1kBlNR=U1oBkNOGl<^1UCoNS1CROOT;d1fDgNo08W:8jDF0A2N05d0J\\Oi0R;n0QE`N>i0a:b0mDbN1412Oh0m:oNSEg0NJ0B101ON028Ni0o:mNQEd10^N2k1P;KPE6o:]NoDP11d0Q;l1001O0000001O1aMkDQ1U;]11O1fL`ER2a:iMfET2^:eMfEZ2a;O1O0000nNfM^EZ2d;01O0000YOgMgDX2\\;hMaDY2`;iM]DV2f;oMlCJ2W2U<=4I6L4I6nMUCi1P=VNSC4LX1c=dN`Bk0S>C:L7Kk\\k:"
+                },
+                "bbox_xywh": [
+                  31.0,
+                  352.0,
+                  59.0,
+                  128.0
+                ],
+                "area": 4389,
+                "score": 1.0
+              },
+              "64": {
+                "rle": {
+                  "size": [
+                    480,
+                    832
+                  ],
+                  "counts": "Xjg01nS50WlJ010\\>0cA10Oi`02lM7J4L4M2N5F8_NSOmDm0c<0O102M2N3N2M2N2N1O1O1O2M1O2H75L00O0000000001O001O1O1O1O1O1O3M6J1O2N2N5K1O2N1O2N7I4L2N2N3J[U_:"
+                },
+                "bbox_xywh": [
+                  50.0,
+                  359.0,
+                  66.0,
+                  121.0
+                ],
+                "area": 2111,
+                "score": 1.0
+              },
+              "60": {
+                "rle": {
+                  "size": [
+                    480,
+                    832
+                  ],
+                  "counts": "fdk02d>a0^O<A>eNdNeDi1[;WNdDj1X<1000000O100_OXNjCh1U<ZNiCg1V<^NfCb1Z<_NdCb1\\<a0004L0000MfM`CZ2^<5O1002N1O4cM\\CV2j<M2N002N1O3M2N2M2M3L4]OcBSOl=>Weg:"
+                },
+                "bbox_xywh": [
+                  58.0,
+                  392.0,
+                  40.0,
+                  88.0
+                ],
+                "area": 2463,
+                "score": 1.0
+              },
+              "56": {
+                "rle": {
+                  "size": [
+                    480,
+                    832
+                  ],
+                  "counts": "k[h05f>5N2M3M3N2K5M3L4L4L4L4L4N2M3O1N2M3O1O1O10000O100O1O100O1O1O1L4O1N200O1N21N3M2hMYCR2n<H8K4K5L5gN^Bk0o=K5J6J6JnXU3IjkTM0X;0hQ`00TkU5"
+                },
+                "bbox_xywh": [
+                  51.0,
+                  272.0,
+                  370.0,
+                  208.0
+                ],
+                "area": 2413,
+                "score": 1.0
+              },
+              "52": {
+                "rle": {
+                  "size": [
+                    480,
+                    832
+                  ],
+                  "counts": "`W`11>1\\=X1J5L2eB`NT=`16KbBfN`=P1`BQOh=P14D_BZO70e<b0kB^O9070d<a0V101N2O2O1L4J[AMhk10[TN0j>0Wl10fQO0VA0f@1]AOj>0o\\12obN0a?OjQR:"
+                },
+                "bbox_xywh": [
+                  102.0,
+                  405.0,
+                  41.0,
+                  58.0
+                ],
+                "area": 470,
+                "score": 1.0
+              },
+              "72": {
+                "rle": {
+                  "size": [
+                    480,
+                    832
+                  ],
+                  "counts": "ZQ=2n>0UO1oANc02\\=8`BH1NC0Q=>XCKMIHOOOo<a0\\CJLIHM03l<`0UC\\O000b02Mh<S1UCmNj<0XCS1g<nNWCS1i<a01FVCZNn<f1RCZNn<m100N100VCnMe<S2ZCnMf<V2O1N110100OJhMdCW2]<iMdCU2]<lM^CO4a0Lo0b<`NfCR2Z<nMfCS2c<nMUCP2i<3KmM_CS2`<nM^CNOS2e<nM]CS2e<lMZC1OP2g<oMZC1OP2m<O011O1O2N1O2M3N1O5J3M7dNZBOOQ1X>SOlAOON[>Ok`Q;"
+                },
+                "bbox_xywh": [
+                  27.0,
+                  352.0,
+                  50.0,
+                  79.0
+                ],
+                "area": 2871,
+                "score": 1.0
+              }
+            },
+            "origin": "cinedance-009332-b0001/sam_raw/s01/box-000072-000.json",
+            "raw_track": "2"
+          }
+        },
+        "train_frames": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72
+        ],
+        "source_frames": [
+          346,
+          352,
+          358,
+          364,
+          370,
+          376,
+          382,
+          388,
+          394,
+          400,
+          406,
+          412,
+          418,
+          424,
+          430,
+          436,
+          442,
+          448,
+          454
+        ],
+        "annotation_errors": []
+      },
+      "s02": {
+        "tracks": {},
+        "train_frames": [
+          0,
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68
+        ],
+        "source_frames": [
+          459,
+          465,
+          471,
+          477,
+          483,
+          490,
+          496,
+          502,
+          508,
+          514,
+          520,
+          526,
+          532,
+          539,
+          545,
+          551,
+          557,
+          563
+        ],
+        "annotation_errors": []
+      }
+    }
+  }
+}

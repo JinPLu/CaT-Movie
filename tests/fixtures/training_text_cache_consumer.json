@@ -1,0 +1,717 @@
+{
+  "artifact_type": "mspc_real_text_cache_consumer_slice",
+  "source_manifest": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/renderer-native-backbones-20261108/review/training-text-cache/full-run-inputs/manifest.json",
+  "selection": "Original full-run train sample 0, 2 and 54, validation sample 2; all strings, counts and metadata are unedited. Small test cache renumbers only this selection as a self-contained fixture.",
+  "context_payload": "not included; CPU serialization tests create deterministic mathematical tensors, not live T5 N0",
+  "encoding_contract": {
+    "t5_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_5b_native/models_t5_umt5-xxl-enc-bf16.pth",
+    "tokenizer_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_5b_native/google/umt5-xxl",
+    "owner": "WanVideoUnit_PromptEmbedder.encode_prompt",
+    "call_policy": "one original prompt string per tokenizer and T5 call",
+    "add_special_tokens": true,
+    "padding": "max_length",
+    "max_length": 512,
+    "clean": "whitespace",
+    "mask": "original tokenizer attention_mask",
+    "masked_output": "set all tokens at or beyond the actual mask length to zero",
+    "context_shape_per_unique_prompt": [
+      1,
+      512,
+      4096
+    ],
+    "context_dtype": "bfloat16"
+  },
+  "contracts": {
+    "train": {
+      "members_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/entity-numbered-actions/train.jsonl",
+      "sampling_manifest_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/shot-count-weighted-windows/train-sampling.jsonl",
+      "sample_budget": 96000,
+      "tokenizer_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_5b_native/google/umt5-xxl",
+      "media": {
+        "height": 704,
+        "width": 1280,
+        "target_fps": 24.0,
+        "vae_temporal_stride": 4,
+        "max_rgb_frames": 360
+      },
+      "training_seed": 42,
+      "reference_policy": "random_frame",
+      "reference_row_dropout_p": 0.0,
+      "memory_prefix_options": {
+        "frames_max": 10,
+        "dropout_p": 0.2,
+        "reference_offset": {
+          "train": {
+            "dt": [
+              -5,
+              -5
+            ],
+            "dh": [
+              0,
+              0
+            ],
+            "dw": [
+              0,
+              0
+            ]
+          },
+          "inference": [
+            -5,
+            0,
+            0
+          ]
+        },
+        "attention_policy": "routed_self_only_v1",
+        "row_policy": "frame_entities_v1",
+        "attention_window": {
+          "layer_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "timestep_range": [
+            0.0,
+            1000.0
+          ]
+        },
+        "placement": "ordered_slots",
+        "noise": {
+          "train_sigma_max": 0.4,
+          "inference_sigma": 0.0
+        }
+      },
+      "reference_entities": {
+        "labels_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/wan22-720p/shot-count-weighted-windows/train-reference-entities.jsonl"
+      },
+      "omit_target_text": [],
+      "box_dropout_p": 0.5,
+      "picture_type_dropout_p": 0.5,
+      "prompt_compiler_contract": "registered_entity_labels_and_reference_appearance"
+    },
+    "validation": {
+      "members_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/entity-numbered-actions/val.jsonl",
+      "sampling_manifest_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/shot-count-weighted-windows/val-sampling.jsonl",
+      "sample_budget": 256,
+      "tokenizer_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_5b_native/google/umt5-xxl",
+      "media": {
+        "height": 704,
+        "width": 1280,
+        "target_fps": 24.0,
+        "vae_temporal_stride": 4,
+        "max_rgb_frames": 360
+      },
+      "training_seed": 42,
+      "reference_policy": "random_frame",
+      "reference_row_dropout_p": 0.0,
+      "memory_prefix_options": {
+        "frames_max": 10,
+        "dropout_p": 0.2,
+        "reference_offset": {
+          "train": {
+            "dt": [
+              -5,
+              -5
+            ],
+            "dh": [
+              0,
+              0
+            ],
+            "dw": [
+              0,
+              0
+            ]
+          },
+          "inference": [
+            -5,
+            0,
+            0
+          ]
+        },
+        "attention_policy": "routed_self_only_v1",
+        "row_policy": "frame_entities_v1",
+        "attention_window": {
+          "layer_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "timestep_range": [
+            0.0,
+            1000.0
+          ]
+        },
+        "placement": "ordered_slots",
+        "noise": {
+          "train_sigma_max": 0.4,
+          "inference_sigma": 0.0
+        }
+      },
+      "reference_entities": {
+        "labels_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/two-backbone-training-preparation-20261108/inputs/wan22-720p/shot-count-weighted-windows/val-reference-entities.jsonl"
+      },
+      "omit_target_text": [],
+      "box_dropout_p": 0.5,
+      "picture_type_dropout_p": 0.5,
+      "prompt_compiler_contract": "registered_entity_labels_and_reference_appearance"
+    }
+  },
+  "outer_autocast": {
+    "enabled": true,
+    "dtype": "bfloat16"
+  },
+  "samples": [
+    {
+      "split": "train",
+      "sample_index": 0,
+      "context_rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "metadata": {
+        "sample_index": 0,
+        "flow_draw_seed": 7046749829104002048,
+        "reference_text_dropped": false,
+        "layout_text_dropped": true,
+        "picture_type_text_dropped": true,
+        "reference_group_dropped": true,
+        "actual_token_counts": [
+          97,
+          98,
+          117,
+          180
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_003/Daddy's_Home_(2015)_-_Sperm_Envy_Scene_(4_10)_|_Movieclips:scene000:0041-0049",
+        "epoch": 0,
+        "span": [
+          2,
+          6
+        ],
+        "references": [],
+        "reference_offset": null,
+        "target_reference_slots": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "opening_conflicts": [],
+        "token_counts": [
+          97,
+          98,
+          117,
+          180
+        ],
+        "reference_visible_ids": [],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      }
+    },
+    {
+      "split": "train",
+      "sample_index": 2,
+      "context_rows": [
+        7,
+        7,
+        8,
+        8,
+        9,
+        10,
+        11
+      ],
+      "metadata": {
+        "sample_index": 2,
+        "flow_draw_seed": 7170155559372401664,
+        "reference_text_dropped": false,
+        "layout_text_dropped": false,
+        "picture_type_text_dropped": false,
+        "reference_group_dropped": false,
+        "actual_token_counts": [
+          15,
+          15,
+          50,
+          50,
+          41,
+          99,
+          171
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_008/Strays_(2023)_-_Bug_Saves_a_Little_Girl_Scene_|_Movieclips:scene000:0007-0015",
+        "epoch": 0,
+        "span": [
+          1,
+          4
+        ],
+        "references": [
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "reference_offset": [
+          -5,
+          0,
+          0
+        ],
+        "target_reference_slots": [
+          [],
+          [
+            {
+              "index": 1,
+              "entities": []
+            },
+            {
+              "index": 3,
+              "entities": [
+                "Character 2"
+              ]
+            },
+            {
+              "index": 4,
+              "entities": [
+                "Character 2"
+              ]
+            }
+          ],
+          [
+            {
+              "index": 1,
+              "entities": []
+            },
+            {
+              "index": 2,
+              "entities": []
+            },
+            {
+              "index": 3,
+              "entities": [
+                "Character 1",
+                "Character 2"
+              ]
+            },
+            {
+              "index": 4,
+              "entities": [
+                "Character 1",
+                "Character 2"
+              ]
+            }
+          ]
+        ],
+        "opening_conflicts": [
+          {
+            "name": "Character 2",
+            "field": "state",
+            "source": "shots[2].present[0].state",
+            "value": "looking down then looking up",
+            "before_source": "shots[2].changes[0].before",
+            "before": "looking down"
+          }
+        ],
+        "token_counts": [
+          15,
+          15,
+          50,
+          50,
+          41,
+          99,
+          171
+        ],
+        "reference_visible_ids": [
+          [],
+          [],
+          [
+            "Character 1",
+            "Character 2"
+          ],
+          [
+            "Character 1",
+            "Character 2"
+          ]
+        ],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      }
+    },
+    {
+      "split": "train",
+      "sample_index": 54,
+      "context_rows": [
+        233
+      ],
+      "metadata": {
+        "sample_index": 54,
+        "flow_draw_seed": 8997201747421168640,
+        "reference_text_dropped": false,
+        "layout_text_dropped": true,
+        "picture_type_text_dropped": true,
+        "reference_group_dropped": true,
+        "actual_token_counts": [
+          156
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_009/The_Fast_and_the_Furious_(2001)_-_10_Seconds_or_Less_Scene_(4_10)_|_Movieclips:scene000:0012-0021",
+        "epoch": 0,
+        "span": [
+          8,
+          9
+        ],
+        "references": [],
+        "reference_offset": null,
+        "target_reference_slots": [
+          []
+        ],
+        "opening_conflicts": [],
+        "token_counts": [
+          156
+        ],
+        "reference_visible_ids": [],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      }
+    },
+    {
+      "split": "validation",
+      "sample_index": 2,
+      "context_rows": [
+        228457,
+        228458,
+        228457,
+        228459,
+        228460,
+        228461
+      ],
+      "metadata": {
+        "sample_index": 2,
+        "flow_draw_seed": 7170155559372401664,
+        "reference_text_dropped": false,
+        "layout_text_dropped": false,
+        "picture_type_text_dropped": false,
+        "reference_group_dropped": false,
+        "actual_token_counts": [
+          52,
+          31,
+          52,
+          103,
+          96,
+          79
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_005/Nighthawks_(1981)_-_Killing_Hostages_Scene_(7_10)_|_Movieclips:scene000:0032-0041",
+        "epoch": 0,
+        "span": [
+          6,
+          9
+        ],
+        "references": [
+          [
+            5,
+            16
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            10,
+            8
+          ]
+        ],
+        "reference_offset": [
+          -5,
+          0,
+          0
+        ],
+        "target_reference_slots": [
+          [
+            {
+              "index": 1,
+              "entities": [
+                "Character 3"
+              ]
+            },
+            {
+              "index": 2,
+              "entities": []
+            },
+            {
+              "index": 3,
+              "entities": [
+                "Character 3"
+              ]
+            }
+          ],
+          [
+            {
+              "index": 2,
+              "entities": []
+            }
+          ],
+          [
+            {
+              "index": 2,
+              "entities": []
+            }
+          ]
+        ],
+        "opening_conflicts": [],
+        "token_counts": [
+          52,
+          31,
+          52,
+          103,
+          96,
+          79
+        ],
+        "reference_visible_ids": [
+          [
+            "Character 3"
+          ],
+          [
+            "Character 1"
+          ],
+          [
+            "Character 3"
+          ]
+        ],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "row_id": 0,
+      "prompt": "Character 3: man with dark slicked-back hair and a medium build, wearing white doctor's coat over a light purple shirt, purple tie. Setting: Location 2, doctor's office with a sink, a chair, and a window with blinds. Close-up shot, low angle shot. In Location 2, Character 3 sits, talking. Character 3, a doctor, looks up and speaks while sitting in the office.",
+      "token_count": 97,
+      "first_use": {
+        "split": "train",
+        "sample_index": 0,
+        "prompt_position": 0
+      }
+    },
+    {
+      "row_id": 1,
+      "prompt": "Character 1: man with dark hair tied back, a goatee, and a medium build, wearing blue and black plaid shirt over a black t-shirt. Setting: Location 1, room with a large black and white abstract painting on the wall. Medium close-up shot. In Location 1, Character 1 stands, talking. Character 1, the man with dark hair tied back, a goatee, speaks and smiles slightly.",
+      "token_count": 98,
+      "first_use": {
+        "split": "train",
+        "sample_index": 0,
+        "prompt_position": 1
+      }
+    },
+    {
+      "row_id": 2,
+      "prompt": "Character 2: man with short brown hair and a medium build, wearing light grey button-down shirt. Character 4: woman with long wavy brown hair and a slim build, wearing red top. Setting: Location 2, doctor's office with a sink, a chair, and a window with blinds. Medium close-up shot. In Location 2, Character 4 stands, smiling. Character 2 stands. Character 4, the woman with long wavy brown hair, smiles and looks at Character 2, who looks down.",
+      "token_count": 117,
+      "first_use": {
+        "split": "train",
+        "sample_index": 0,
+        "prompt_position": 2
+      }
+    },
+    {
+      "row_id": 3,
+      "prompt": "Character 2: man with short brown hair and a medium build, wearing light grey button-down shirt. Character 3: man with dark slicked-back hair and a medium build, wearing white doctor's coat over a light purple shirt, purple tie. Character 4: woman with long wavy brown hair and a slim build, wearing red top. Object 2: green plastic container. Object 3: black chair. Setting: Location 2, doctor's office with a sink, a chair, and a window with blinds. Medium shot. In Location 2, Character 3 holds Object 2. Character 2 and Character 4 stand. Object 3 is empty. Character 3, the man with dark slicked-back hair, sits by the sink holding a green container and speaks to Character 2 and Character 4.",
+      "token_count": 180,
+      "first_use": {
+        "split": "train",
+        "sample_index": 0,
+        "prompt_position": 3
+      }
+    },
+    {
+      "row_id": 7,
+      "prompt": "Reference still from another shot of this story; not the current shot.",
+      "token_count": 15,
+      "first_use": {
+        "split": "train",
+        "sample_index": 2,
+        "prompt_position": 0
+      }
+    },
+    {
+      "row_id": 8,
+      "prompt": "Reference still from another shot of this story; not the current shot. Visible identities: Character 1: young girl with dark braided hair and a slim build; Character 2: small black and white dog with pointed ears.",
+      "token_count": 50,
+      "first_use": {
+        "split": "train",
+        "sample_index": 2,
+        "prompt_position": 2
+      }
+    },
+    {
+      "row_id": 9,
+      "prompt": "Setting: wooded area with trees, bushes, and rocks. Live-action footage. Medium wide shot. A static shot shows a clearing in the woods with trees and grass.",
+      "token_count": 41,
+      "first_use": {
+        "split": "train",
+        "sample_index": 2,
+        "prompt_position": 4
+      }
+    },
+    {
+      "row_id": 10,
+      "prompt": "Character 2: small black and white dog with pointed ears. Setting: wooded area with trees, bushes, and rocks. Live-action footage. Medium shot, left-heavy composition. Character 2 is looking down. A small black and Character 2, the small black and white dog with pointed ears, stands on a large grey rock, looking down and then looking up. By the end of the shot, Character 2 is looking up.",
+      "token_count": 99,
+      "first_use": {
+        "split": "train",
+        "sample_index": 2,
+        "prompt_position": 5
+      }
+    },
+    {
+      "row_id": 11,
+      "prompt": "Character 1: young girl with dark braided hair and a slim build, wearing green scout vest with patches, a yellow neckerchief, a tan shirt, khaki shorts. Character 2: small black and white dog with pointed ears. Setting: wooded area with trees, bushes, and rocks. Live-action footage. Medium shot, right-heavy composition. Character 2 stands on a large grey rock, looking to the right. Character 1 is walking out from behind bushes. Character 2, the small black and white dog with pointed ears, stands on the rock looking right as Character 1, the young girl with dark braided hair, walks out from behind the bushes. By the end of the shot, Character 2 is in the center of the frame.",
+      "token_count": 171,
+      "first_use": {
+        "split": "train",
+        "sample_index": 2,
+        "prompt_position": 6
+      }
+    },
+    {
+      "row_id": 233,
+      "prompt": "Character 1: man with wavy blond hair and a lean build, wearing grey t-shirt. Character 2: bald man with a muscular build, wearing dark blue short-sleeved button-up shirt. Object 5: black car with its hood open. Object 7: garage door. Setting: cluttered garage or workshop with trophies, books, tools, and cars. Wide shot. Character 1 sits. Character 2 stands. Object 5 is parked in the garage. Object 7 is open. Character 1 and Character 2, both men, walk out of the garage through the open door. By the end of the shot, Character 1 is walking out; Character 2 is walking out.",
+      "token_count": 156,
+      "first_use": {
+        "split": "train",
+        "sample_index": 54,
+        "prompt_position": 0
+      }
+    },
+    {
+      "row_id": 228457,
+      "prompt": "Reference still from another shot of this story; not the current shot. Visible identities: Character 3: man with dark hair, a beard, and a black cap with 'A.T.A.C.' written on it.",
+      "token_count": 52,
+      "first_use": {
+        "split": "validation",
+        "sample_index": 2,
+        "prompt_position": 0
+      }
+    },
+    {
+      "row_id": 228458,
+      "prompt": "Reference still from another shot of this story; not the current shot. Visible identities: Character 1: crowd of people inside a tram.",
+      "token_count": 31,
+      "first_use": {
+        "split": "validation",
+        "sample_index": 2,
+        "prompt_position": 1
+      }
+    },
+    {
+      "row_id": 228459,
+      "prompt": "Character 3: man with dark hair, a beard, and a black cap with 'A.T.A.C.' written on it, wearing black uniform and headset. Setting: Location 2, outside in the sky above a city. Live-action footage. Close-up shot, center composition. In Location 2, Character 3 sits in the helicopter. Character 3, the man with dark hair, in the helicopter speaks into his headset microphone.",
+      "token_count": 103,
+      "first_use": {
+        "split": "validation",
+        "sample_index": 2,
+        "prompt_position": 3
+      }
+    },
+    {
+      "row_id": 228460,
+      "prompt": "Character 4: man with dark skin, a mustache, and a black cap with 'A.T.A.C.' written on it, wearing black uniform. Setting: Location 2, outside in the sky above a city. Live-action footage. Close-up shot, left-heavy composition. In Location 2, Character 4 is looking down. Character 4, the man with dark skin, looks down thoughtfully.",
+      "token_count": 96,
+      "first_use": {
+        "split": "validation",
+        "sample_index": 2,
+        "prompt_position": 4
+      }
+    },
+    {
+      "row_id": 228461,
+      "prompt": "Character 5: man with blonde hair, wearing dark shirt. Setting: Location 2, outside in the sky above a city. Live-action footage. Close-up shot, left-heavy composition. In Location 2, Character 5 is looking out a window. Character 5, the man with blonde hair, looks out a window with a serious expression.",
+      "token_count": 79,
+      "first_use": {
+        "split": "validation",
+        "sample_index": 2,
+        "prompt_position": 5
+      }
+    }
+  ],
+  "legacy_context_rows": {
+    "train/0": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "train/54": [
+      89
+    ],
+    "validation/2": [
+      81544,
+      81545,
+      81544,
+      81546,
+      81547,
+      81548
+    ]
+  }
+}

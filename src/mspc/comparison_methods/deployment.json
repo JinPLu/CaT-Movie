@@ -1,0 +1,78 @@
+{
+  "surface": "baige_sm80",
+  "scope": "只读核验路径、权重分片、源码版本与解释器包元数据；不申请GPU，不加载模型，不证明画面正常。",
+  "methods": [
+    {
+      "method": "wan",
+      "config": "configs/wan.json",
+      "section": null,
+      "python": "${MSPC_SHARED_ROOT}/env/wan22_fun_sm80_cu128/bin/python",
+      "pythonpath": [],
+      "source_record": "project",
+      "upstream_revision": null,
+      "extra_asset_keys": [],
+      "supporting_assets": {}
+    },
+    {
+      "method": "multishotmaster",
+      "config": "configs/multishotmaster.json",
+      "section": null,
+      "python": "${MSPC_SHARED_ROOT}/env/wan22_fun_sm80_cu128/bin/python",
+      "pythonpath": [],
+      "source_record": "git",
+      "upstream_revision": "1df812dda262639e4a3ca6e4a1da9000b0a8e124",
+      "extra_asset_keys": [],
+      "supporting_assets": {}
+    },
+    {
+      "method": "holocine",
+      "config": "configs/holocine.json",
+      "section": null,
+      "python": "${MSPC_SHARED_ROOT}/env/holocine_inference_sm80/bin/python",
+      "pythonpath": [],
+      "source_record": "git",
+      "upstream_revision": "0a7630ba448e13ddc7b872638b578e5618208c45",
+      "extra_asset_keys": [],
+      "supporting_assets": {}
+    },
+    {
+      "method": "storymem",
+      "config": "configs/storymem.json",
+      "section": null,
+      "python": "${MSPC_SHARED_ROOT}/env/storymem_inference_sm80/bin/python",
+      "pythonpath": [],
+      "source_record": "git",
+      "upstream_revision": "052c68d2627a22a95f79dbb4d3376cc30c96f1a3",
+      "extra_asset_keys": [],
+      "supporting_assets": {
+        "hps_backbone": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/Qwen2-VL-7B-Instruct"
+      }
+    },
+    {
+      "method": "storydiffusion",
+      "config": "configs/storydiffusion.json",
+      "section": "storydiffusion",
+      "python": "${MSPC_SHARED_ROOT}/env/storymem_inference_sm80/bin/python",
+      "pythonpath": [],
+      "source_record": "SOURCE.json",
+      "upstream_revision": "8de45e424887766fdd84dc917436ff8605f00149",
+      "extra_asset_keys": [],
+      "supporting_assets": {}
+    },
+    {
+      "method": "ic_lora",
+      "config": "configs/ic_lora.json",
+      "section": "ic_lora",
+      "python": "${MSPC_SHARED_ROOT}/env/storymem_inference_sm80/bin/python",
+      "pythonpath": [
+        "${MSPC_SHARED_ROOT}/env/ic_lora_dependencies"
+      ],
+      "source_record": "SOURCE.json",
+      "upstream_revision": "966e00a826da91512fc473705bd09183f3946b21",
+      "extra_asset_keys": [
+        "lora"
+      ],
+      "supporting_assets": {}
+    }
+  ]
+}

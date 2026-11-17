@@ -1,0 +1,512 @@
+diff --git a/unified_dataset.py b/unified_dataset.py
+index 669d4d3..5ba970c 100644
+--- a/unified_dataset.py
++++ b/unified_dataset.py
+@@ -1,134 +1,400 @@
+-from .operators import *
+-import torch, json, pandas
++"""Shared multi-shot dataset and manifest utilities."""
++
++from __future__ import annotations
++
+ import ast
+-import decord
+-import torchvision.transforms as transforms
+-import numpy as np
+-from copy import deepcopy
+-import random
++from concurrent.futures import ThreadPoolExecutor
++import time
++from typing import Any
+ 
+-class UnifiedDataset(torch.utils.data.Dataset):
+-    def __init__(
+-        self,
+-        max_pixels,
+-        height,
+-        width,
+-        height_division_factor,
+-        width_division_factor,
+-        time_division_factor,
+-        metadata_path=None,
+-        repeat=1,
+-    ):
+-        self.metadata_path = metadata_path
+-        self.repeat = repeat
+-        self.data = []
+-        self.cached_data = []
+-        self.load_from_cache = False     
+-        
+-        self.load_metadata(metadata_path)
++import pandas as pd
++import torch
+ 
+-        self.max_pixels = max_pixels
+-        self.height = height
+-        self.width = width
+-        self.height_division_factor = height_division_factor
+-        self.width_division_factor = width_division_factor
+-        self.time_division_factor = time_division_factor
++from mspc.data.frame_planner import (
++    FRAME_POLICY_FPS_AWARE_TARGET_FPS,
++    FpsAwareTargetFpsPlanner,
++    validate_shot_groups,
++)
++from mspc.data.metadata import (
++    filter_metadata_files,
++    require_non_empty_string,
++)
++from mspc.data.strict_json import load_strict_json_file
+ 
+-        self.transform_centercrop = transforms.CenterCrop((self.height, self.width))
+-    
++PROMPT_FORMAT_CAPTION_JSON_V1 = "caption_json_v1"
++SUPPORTED_PROMPT_FORMATS = frozenset(
++    {
++        PROMPT_FORMAT_CAPTION_JSON_V1,
++    }
++)
++MULTISHOT_CSV_SCHEMA = "multishot_csv_v1"
++
++
++def parse_shot_groups(value: Any, data_path: str) -> list[list[int]]:
++    parsed = ast.literal_eval(value) if isinstance(value, str) else value
++    validate_shot_groups(parsed, data_path)
++    return [list(group) for group in parsed]
+ 
+-    def default_video_operator(
+-        self,
+-        base_path,
+-        max_read_frame_index
+-    ):
+-        vr = decord.VideoReader(base_path)
+-        
+-        video_height = vr[0].shape[0]  
+-        video_width = vr[0].shape[1]   
+ 
+-        read_h, read_w = self.get_read_height_width(video_width, video_height)
++def caption_fields(caption_path: str, shot_count: int) -> tuple[str, list[str]]:
++    caption = load_strict_json_file(caption_path, label=f"caption {caption_path}")
++    if not isinstance(caption, dict):
++        raise ValueError(f"{caption_path}: caption JSON must be an object")
++    expected_keys = {"global_caption", *(f"shot{index}" for index in range(shot_count))}
++    missing_keys = sorted(expected_keys - set(caption))
++    unknown_keys = sorted(set(caption) - expected_keys)
++    if missing_keys:
++        raise ValueError(f"{caption_path}: missing caption fields: {', '.join(missing_keys)}")
++    if unknown_keys:
++        raise ValueError(f"{caption_path}: unknown caption fields: {', '.join(unknown_keys)}")
++    if "global_caption" not in caption:
++        raise ValueError(f"{caption_path}: missing global_caption")
++    global_caption = require_non_empty_string(caption["global_caption"], f"{caption_path}: global_caption")
++    if global_caption != global_caption.strip():
++        raise ValueError(f"{caption_path}: global_caption must not contain surrounding whitespace")
++    shot_prompts: list[str] = []
++    for shot_index in range(shot_count):
++        shot_key = f"shot{shot_index}"
++        if shot_key not in caption:
++            raise ValueError(f"{caption_path}: missing {shot_key}")
++        shot_prompt = require_non_empty_string(caption[shot_key], f"{caption_path}: {shot_key}")
++        if shot_prompt != shot_prompt.strip():
++            raise ValueError(f"{caption_path}: {shot_key} must not contain surrounding whitespace")
++        shot_prompts.append(shot_prompt)
++    return global_caption, shot_prompts
+ 
+-        ctx = decord.cpu(0)
+-        reader = decord.VideoReader(base_path, ctx=ctx, height=read_h, width=read_w)
+ 
+-        frames = reader.get_batch(list(range(max_read_frame_index)))        
+-        frames_tensor = torch.from_numpy(frames.asnumpy()).permute(3, 0, 1, 2)     
++def validate_prompt_format(prompt_format: str) -> str:
++    if prompt_format not in SUPPORTED_PROMPT_FORMATS:
++        raise ValueError(
++            f"unsupported prompt_format={prompt_format}; expected one of {sorted(SUPPORTED_PROMPT_FORMATS)}"
++        )
++    return prompt_format
+ 
+-        frames_tensor = self.transform_centercrop(frames_tensor)
+-        frames_tensor = frames_tensor / 255 * 2 - 1         
+-        return frames_tensor
+-    
+-    def get_read_height_width(self, video_width, video_height):
+-        target_height, target_width = self.height, self.width    
+-        scale = max(target_width / video_width, target_height / video_height)   
+-        read_h, read_w = round(video_height * scale), round(video_width * scale)
+-        return read_h, read_w
+-            
+-        
+-    def search_for_cached_data_files(self, path):
+-        for file_name in os.listdir(path):
+-            subpath = os.path.join(path, file_name)
+-            if os.path.isdir(subpath):
+-                self.search_for_cached_data_files(subpath)
+-            elif subpath.endswith(".pth"):
+-                self.cached_data.append(subpath)
+-    
+ 
+-    def load_metadata(self, metadata_path):
+-        metadata = pandas.read_csv(metadata_path)
+-        self.data = [metadata.iloc[i].to_dict() for i in range(len(metadata))]
++def build_prompt_from_fields(story_prompt: str, shot_prompt: str, *, prompt_format: str) -> str:
++    validate_prompt_format(prompt_format)
++    if prompt_format == PROMPT_FORMAT_CAPTION_JSON_V1:
++        return f"Story: {story_prompt} Now: {shot_prompt}"
++    raise AssertionError(f"unhandled prompt_format={prompt_format}")
+ 
+-    def rgb_to_latent_shot_groups_list(self, shot_groups_list):
+-        latent_shot_group_list = deepcopy(shot_groups_list)
+ 
+-        for shot_index, shot_group in enumerate(shot_groups_list):
+-            shot_start_frame, shot_end_frame = shot_group
+-            now_shot_frame_num = shot_end_frame - shot_start_frame
++def build_prompts_from_fields(
++    story_prompt: str,
++    shot_prompts: list[str],
++    *,
++    prompt_format: str,
++) -> list[str]:
++    return [
++        build_prompt_from_fields(story_prompt, shot_prompt, prompt_format=prompt_format)
++        for shot_prompt in shot_prompts
++    ]
+ 
+-            if shot_start_frame == 0:
+-                shot_latent_start_frame = 0
+-            else:
+-                shot_latent_start_frame = latent_shot_group_list[shot_index - 1][-1]
+ 
+-            shot_latent_end_frame = 1 + (max(0, now_shot_frame_num - 1)) // 4 + shot_latent_start_frame
+-            latent_shot_group_list[shot_index] = [shot_latent_start_frame, shot_latent_end_frame]
++def build_prompts(
++    caption_path: str,
++    shot_count: int,
++    *,
++    prompt_format: str,
++) -> list[str]:
++    global_caption, shot_prompts = caption_fields(caption_path, shot_count)
++    return build_prompts_from_fields(global_caption, shot_prompts, prompt_format=prompt_format)
+ 
+-        return latent_shot_group_list
+ 
++def read_video_metadata(path: str) -> dict[str, int | float]:
++    import decord
+ 
+-    def __getitem__(self, data_id):
++    reader = decord.VideoReader(path, ctx=decord.cpu(0))
++    source_num_frames = len(reader)
++    if source_num_frames <= 0:
++        raise ValueError(f"{path}: video has no frames")
++    source_fps = reader.get_avg_fps()
++    if source_fps <= 0:
++        raise ValueError(f"{path}: video fps must be positive")
++    return {
++        "source_fps": float(source_fps),
++        "source_num_frames": int(source_num_frames),
++    }
+ 
+-        read_data = {}
+-        data = self.data[data_id % len(self.data)].copy()
+ 
+-        shot_groups_list = ast.literal_eval(data["shot_groups"])
+-        read_data["shot_groups"] = shot_groups_list
+-        read_data["latent_shot_groups"] = self.rgb_to_latent_shot_groups_list(shot_groups_list)
++def get_read_height_width(
++    *,
++    video_width: int,
++    video_height: int,
++    target_width: int,
++    target_height: int,
++) -> tuple[int, int]:
++    scale = max(target_width / video_width, target_height / video_height)
++    return round(video_height * scale), round(video_width * scale)
+ 
+ 
+-        max_read_frame_index = shot_groups_list[-1][-1]
++def read_video_frames(
++    *,
++    path: str,
++    frame_indices: list[int],
++    target_height: int,
++    target_width: int,
++    transform_centercrop: Any,
++) -> torch.Tensor:
++    import decord
+ 
+-        read_data["video"] = self.default_video_operator(data["multishot_video"], max_read_frame_index)    
++    first_reader = decord.VideoReader(path)
++    video_height = first_reader[0].shape[0]
++    video_width = first_reader[0].shape[1]
++    read_h, read_w = get_read_height_width(
++        video_width=video_width,
++        video_height=video_height,
++        target_width=target_width,
++        target_height=target_height,
++    )
++    reader = decord.VideoReader(path, ctx=decord.cpu(0), height=read_h, width=read_w)
++    frames = reader.get_batch(frame_indices)
++    tensor = torch.from_numpy(frames.asnumpy()).permute(3, 0, 1, 2)
++    tensor = transform_centercrop(tensor)
++    return tensor / 255 * 2 - 1
+ 
+-        with open(data["gemini_caption"]) as user_file:
+-            caption_dict = json.load(user_file)
+-            num_shots = len(caption_dict.keys()) - 1     
+-            global_caption = f"Story: {caption_dict['global_caption']} "    
+ 
+-            now_multishot_video_caption_list = []
+-            for count in range(num_shots):
+-                now_shot_caption = global_caption + f"Now: {caption_dict[f'shot{count}']}"
+-                now_multishot_video_caption_list.append(now_shot_caption)
++def dataset_timing_fields(
++    *,
++    frame_plan: dict[str, Any],
++    frame_policy: str,
++    video_decode_seconds: float,
++    caption_seconds: float,
++    total_seconds: float,
++) -> dict[str, Any]:
++    return {
++        "dataset_video_decode": video_decode_seconds,
++        "dataset_caption": caption_seconds,
++        "dataset_total": total_seconds,
++        "source_rgb_frames": frame_plan["source_rgb_frames"],
++        "train_rgb_frames": frame_plan["train_rgb_frames"],
++        "train_latent_frames": frame_plan["train_latent_frames"],
++        "shot_count": len(frame_plan["shot_groups"]),
++        "frame_policy": frame_policy,
++        "max_rgb_frames": frame_plan["max_rgb_frames"],
++        "vae_temporal_stride": frame_plan["vae_temporal_stride"],
++        "source_fps": frame_plan["source_fps"],
++        "source_num_frames": frame_plan["source_num_frames"],
++        "source_duration_sec": frame_plan["source_duration_sec"],
++        "target_fps": frame_plan["target_fps"],
++        "effective_train_fps": frame_plan["effective_train_fps"],
++        "rgb_was_scaled": frame_plan["rgb_was_scaled"],
++    }
+ 
+-        read_data["prompt"] = now_multishot_video_caption_list
+-        read_data["data_path"] = data["multishot_video"]
+ 
+-        return read_data 
++def row_string(row: dict[str, Any], column: str, label: str) -> str:
++    value = row[column]
++    if not isinstance(value, str) or pd.isna(value):
++        raise ValueError(f"{label} must be a non-empty string")
++    result = require_non_empty_string(value, label)
++    if result != result.strip():
++        raise ValueError(f"{label} must not contain surrounding whitespace")
++    return result
+ 
+-    def __len__(self):
+-        if self.load_from_cache:
+-            return len(self.cached_data) * self.repeat
++
++class MultishotCsvDataset(torch.utils.data.Dataset):
++    def __init__(
++        self,
++        *,
++        metadata_path: str,
++        repeat: int,
++        height: int,
++        width: int,
++        frame_policy: str,
++        max_rgb_frames: int,
++        target_fps: float,
++        vae_temporal_stride: int,
++        metadata_filter: dict[str, Any],
++        schema: str,
++        prompt_format: str,
++        video_column: str,
++        caption_column: str,
++        shot_groups_column: str,
++        case_id_column: str | None,
++        case_id_prefix: str,
++        dataset_use_label: str,
++        allowed_use_column: str | None,
++        required_allowed_use: str | None,
++    ):
++        if type(repeat) is not int or repeat <= 0:
++            raise ValueError("repeat must be a positive int")
++        if type(height) is not int or height <= 0:
++            raise ValueError("height must be a positive int")
++        if type(width) is not int or width <= 0:
++            raise ValueError("width must be a positive int")
++        if frame_policy != FRAME_POLICY_FPS_AWARE_TARGET_FPS:
++            raise ValueError(
++                f"unsupported frame_policy={frame_policy}; expected {FRAME_POLICY_FPS_AWARE_TARGET_FPS}"
++            )
++        if schema != MULTISHOT_CSV_SCHEMA:
++            raise ValueError(f"unsupported dataset schema={schema}; expected {MULTISHOT_CSV_SCHEMA}")
++        validate_prompt_format(prompt_format)
++        self.metadata_path = require_non_empty_string(metadata_path, "metadata_path")
++        if self.metadata_path != self.metadata_path.strip():
++            raise ValueError("metadata_path must not contain surrounding whitespace")
++        self.repeat = repeat
++        self.height = height
++        self.width = width
++        self.frame_policy = frame_policy
++        self.schema = schema
++        self.prompt_format = prompt_format
++        self.video_column = require_non_empty_string(video_column, "video_column")
++        self.caption_column = require_non_empty_string(caption_column, "caption_column")
++        self.shot_groups_column = require_non_empty_string(shot_groups_column, "shot_groups_column")
++        self.case_id_column = (
++            require_non_empty_string(case_id_column, "case_id_column")
++            if case_id_column is not None
++            else None
++        )
++        self.case_id_prefix = require_non_empty_string(case_id_prefix, "case_id_prefix")
++        self.dataset_use_label = require_non_empty_string(dataset_use_label, "dataset_use_label")
++        self.allowed_use_column = (
++            require_non_empty_string(allowed_use_column, "allowed_use_column")
++            if allowed_use_column is not None
++            else None
++        )
++        if required_allowed_use is not None and self.allowed_use_column is None:
++            raise ValueError("required_allowed_use requires allowed_use_column")
++        self.required_allowed_use = (
++            require_non_empty_string(required_allowed_use, "required_allowed_use")
++            if required_allowed_use is not None
++            else None
++        )
++        self.frame_planner = FpsAwareTargetFpsPlanner(
++            max_rgb_frames=max_rgb_frames,
++            target_fps=target_fps,
++            vae_temporal_stride=vae_temporal_stride,
++        )
++        import torchvision.transforms as transforms
++
++        self.transform_centercrop = transforms.CenterCrop((self.height, self.width))
++        self.metadata_filter = metadata_filter
++        self.metadata_summary: dict[str, Any] = {}
++        self.data = self._load_metadata()
++
++    def _load_metadata(self) -> list[dict[str, Any]]:
++        metadata = pd.read_csv(self.metadata_path)
++        extra_columns = [self.shot_groups_column]
++        if self.case_id_column is not None:
++            extra_columns.append(self.case_id_column)
++        if self.allowed_use_column is not None:
++            extra_columns.append(self.allowed_use_column)
++        summary_extra = {
++            "schema": self.schema,
++            "prompt_format": self.prompt_format,
++            "frame_policy": self.frame_policy,
++            "target_fps": self.frame_planner.target_fps,
++            "max_rgb_frames": self.frame_planner.max_rgb_frames,
++            "vae_temporal_stride": self.frame_planner.vae_temporal_stride,
++            "num_row_preflight_workers": self.metadata_filter["num_row_preflight_workers"],
++        }
++        summary_extra["dataset_use_label"] = self.dataset_use_label
++        summary_extra["allowed_use_column"] = self.allowed_use_column
++        summary_extra["required_allowed_use"] = self.required_allowed_use
++        summary_extra["case_id_column"] = self.case_id_column
++        summary_extra["case_id_prefix"] = self.case_id_prefix
++        filtered, self.metadata_summary = filter_metadata_files(
++            metadata,
++            metadata_path=self.metadata_path,
++            metadata_filter=self.metadata_filter,
++            extra_required_columns=extra_columns,
++            summary_extra=summary_extra,
++        )
++        rows = self._preflight_rows(filtered)
++        self.metadata_summary["preflight_checked_rows"] = len(rows)
++        return rows
++
++    def _preflight_rows(self, filtered: pd.DataFrame) -> list[dict[str, Any]]:
++        seen_case_ids: set[str] = set()
++        source_rows = [filtered.iloc[index].to_dict() for index in range(len(filtered))]
++        num_workers = self.metadata_filter["num_row_preflight_workers"]
++        if num_workers <= 1 or len(source_rows) <= 1:
++            rows = [self._preflight_row(index, row) for index, row in enumerate(source_rows)]
++        else:
++            with ThreadPoolExecutor(max_workers=num_workers) as executor:
++                rows = list(executor.map(lambda item: self._preflight_row(*item), enumerate(source_rows)))
++        for row in rows:
++            case_id = row["_case_id"]
++            if case_id in seen_case_ids:
++                raise ValueError(f"{self.metadata_path}: duplicate case_id={case_id}")
++            seen_case_ids.add(case_id)
++        return rows
++
++    def _preflight_row(self, index: int, row: dict[str, Any]) -> dict[str, Any]:
++        label = f"{self.metadata_path}: row {index}"
++        video_path = row_string(row, self.video_column, f"{label} {self.video_column}")
++        caption_path = row_string(row, self.caption_column, f"{label} {self.caption_column}")
++        if self.case_id_column is None:
++            case_id = f"{self.case_id_prefix}_{index:06d}"
+         else:
+-            return len(self.data) * self.repeat
+-        
+\ No newline at end of file
++            case_id = row_string(row, self.case_id_column, f"{label} {self.case_id_column}")
++
++        row["_dataset_use_label"] = self.dataset_use_label
++        row["_source_allowed_use"] = None
++        if self.allowed_use_column is not None:
++            actual_allowed_use = row_string(row, self.allowed_use_column, f"{label} {self.allowed_use_column}")
++            row["_source_allowed_use"] = actual_allowed_use
++            if self.required_allowed_use is not None and actual_allowed_use != self.required_allowed_use:
++                raise ValueError(
++                    f"{label} {self.allowed_use_column}={actual_allowed_use!r}; "
++                    f"expected {self.required_allowed_use!r}"
++                )
++
++        shot_groups = parse_shot_groups(row[self.shot_groups_column], video_path)
++        caption_fields(caption_path, len(shot_groups))
++        row["_case_id"] = case_id
++        row["_shot_groups"] = shot_groups
++        return row
++
++    def _read_video(self, path: str, frame_indices: list[int]) -> torch.Tensor:
++        return read_video_frames(
++            path=path,
++            frame_indices=frame_indices,
++            target_height=self.height,
++            target_width=self.width,
++            transform_centercrop=self.transform_centercrop,
++        )
++
++    def __getitem__(self, data_id: int) -> dict[str, Any]:
++        item_start = time.perf_counter()
++        row = self.data[data_id % len(self.data)].copy()
++        video_path = row[self.video_column]
++        caption_path = row[self.caption_column]
++        shot_groups = row["_shot_groups"]
++        video_metadata = read_video_metadata(video_path)
++        frame_plan = self.frame_planner.build_frame_plan(
++            shot_groups,
++            video_path,
++            source_fps=video_metadata["source_fps"],
++            source_num_frames=video_metadata["source_num_frames"],
++        )
++
++        video_start = time.perf_counter()
++        video = self._read_video(video_path, frame_plan["frame_indices"])
++        video_end = time.perf_counter()
++        caption_start = time.perf_counter()
++        prompts = build_prompts(caption_path, len(frame_plan["shot_groups"]), prompt_format=self.prompt_format)
++        if len(prompts) != len(frame_plan["latent_shot_groups"]):
++            raise ValueError(f"{caption_path}: prompt count does not match latent_shot_groups")
++
++        sample = {
++            "video": video,
++            "prompt": prompts,
++            "shot_groups": frame_plan["shot_groups"],
++            "latent_shot_groups": frame_plan["latent_shot_groups"],
++            "data_path": video_path,
++            "_dataset_timing": dataset_timing_fields(
++                frame_plan=frame_plan,
++                frame_policy=self.frame_policy,
++                video_decode_seconds=video_end - video_start,
++                caption_seconds=time.perf_counter() - caption_start,
++                total_seconds=time.perf_counter() - item_start,
++            ),
++        }
++        sample["case_id"] = row["_case_id"]
++        sample["dataset_use_label"] = row["_dataset_use_label"]
++        sample["source_allowed_use"] = row["_source_allowed_use"]
++        return sample
++
++    def __len__(self) -> int:
++        return len(self.data) * self.repeat

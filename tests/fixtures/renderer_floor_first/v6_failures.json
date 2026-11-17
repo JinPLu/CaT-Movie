@@ -1,0 +1,24 @@
+{
+  "source": "renderer-floor-revised-20261008/annotation/first/attempts/floor-0000-B/raw.json",
+  "unknown_fact_pointer": "/facts/22/fact",
+  "unknown_fact": {
+    "subject": "Subject 2",
+    "family": "screen",
+    "predicate_or_axis": "gaze",
+    "object_or_value": "unknown",
+    "scope": "screen@1",
+    "shot_span": [
+      1,
+      1
+    ],
+    "evidence": "observed"
+  },
+  "table_pointer": "/shots/0/entity_table/0",
+  "table_row": {
+    "subject": "Subject 1",
+    "costume": "striped shirt",
+    "body": "seated",
+    "held_objects": "Subject 4, Subject 5"
+  },
+  "costume_facts": []
+}

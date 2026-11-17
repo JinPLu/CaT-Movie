@@ -1,0 +1,842 @@
+{
+ "raw_storyboard": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "appearance": "a man with dark hair and glasses",
+    "outfit": "a dark suit, a light shirt, and a striped tie"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "appearance": "a man with a shaved head and a mustache",
+    "outfit": "a light grey suit, a blue shirt, and a grey tie"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "appearance": "a woman with long blonde hair",
+    "outfit": "a dark top"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a piece of paper"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a grey jacket"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a dark bookshelf"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a desk lamp"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a dark desk"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a laptop"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "a folder"
+   },
+   {
+    "name": "Object 8",
+    "appearance": "an office chair"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "an office with a desk, bookshelf, and computer monitors"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting at the desk",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting behind Character 1"
+     }
+    ],
+    "action": "Character 1 sits at a desk looking at a piece of paper while Character 3 sits behind him.",
+    "changes": [],
+    "references": [],
+    "frame_count": 64
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing near Character 1"
+     }
+    ],
+    "action": "Character 2 stands near Character 1, who is holding a piece of paper.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 1
+     },
+     {
+      "name": "Character 2",
+      "shot": 1
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 1 talks to Character 2 while holding the paper.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 2
+     },
+     {
+      "name": "Character 2",
+      "shot": 2
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "walking towards the desk",
+      "state": "with a grey jacket on his arms",
+      "holding": [
+       "Object 2"
+      ]
+     }
+    ],
+    "action": "Character 2 walks towards the desk while taking off his grey jacket.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "outfit",
+      "before": "a light grey suit, a blue shirt, and a grey tie",
+      "after": "a blue shirt, and a grey tie"
+     },
+     {
+      "name": "Character 2",
+      "what": "holding",
+      "before": [
+       "Object 2"
+      ],
+      "after": []
+     },
+     {
+      "name": "Character 2",
+      "what": "state",
+      "after": "with a grey jacket in his hand"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 2",
+      "shot": 3
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 7"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "walking to the desk chair",
+      "state": "with a grey jacket in his hand"
+     }
+    ],
+    "action": "Character 1 stands holding a folder while Character 2 walks to the desk chair.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 3
+     },
+     {
+      "name": "Character 2",
+      "shot": 4
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting at the desk",
+      "holding": [
+       "Object 6"
+      ]
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing nearby",
+      "holding": [
+       "Object 7"
+      ]
+     }
+    ],
+    "action": "Character 2 sits at the desk and opens a laptop while Character 1 stands nearby holding a folder.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "walking to the desk chair",
+      "after": "sitting at the desk"
+     },
+     {
+      "name": "Character 2",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Object 6"
+      ]
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 5
+     },
+     {
+      "name": "Character 2",
+      "shot": 5
+     }
+    ],
+    "frame_count": 64
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 7"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "sitting at the desk"
+     }
+    ],
+    "action": "Character 1 talks to Character 2, who is sitting at the desk.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 6
+     },
+     {
+      "name": "Character 2",
+      "shot": 6
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking away from the desk",
+      "holding": [
+       "Object 7"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "seated at the desk"
+     }
+    ],
+    "action": "Character 1 walks away from the desk while Character 2 remains seated.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing",
+      "after": "walking away from the desk"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 7
+     },
+     {
+      "name": "Character 2",
+      "shot": 7
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing in the doorway",
+      "holding": [
+       "Object 7"
+      ]
+     }
+    ],
+    "action": "Character 1 stands in the doorway and talks.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "walking away from the desk",
+      "after": "standing in the doorway"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 8
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting at the desk"
+     }
+    ],
+    "action": "Character 2 sits at the desk and looks towards the doorway.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 2",
+      "shot": 8
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 11,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing in the doorway",
+      "holding": [
+       "Object 7"
+      ]
+     }
+    ],
+    "action": "Character 1 stands in the doorway and talks.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 9
+     }
+    ],
+    "frame_count": 40
+   },
+   {
+    "shot": 12,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting at the desk"
+     }
+    ],
+    "action": "Character 2 sits at the desk and looks towards the doorway.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 2",
+      "shot": 10
+     }
+    ],
+    "frame_count": 40
+   }
+  ],
+  "layouts": [
+   {
+    "shot": 1,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 3",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.45,
+         0.3,
+         0.6,
+         0.8
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.6,
+         0.4,
+         0.8,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.6,
+         0.4,
+         0.8,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "entities": [
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.4,
+         0.7,
+         0.9
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 2",
+      "far": "Object 5"
+     }
+    ]
+   },
+   {
+    "shot": 5,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.6,
+         0.4,
+         0.8,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "entities": [
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.5,
+         0.6,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.7,
+         0.4,
+         0.9,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 7,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.6,
+         0.4,
+         0.8,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.2,
+         0.4,
+         0.4,
+         0.9
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.5,
+         0.7,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 9,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.3,
+         0.6,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 10,
+    "entities": [
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.5,
+         0.6,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 11,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.3,
+         0.6,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 12,
+    "entities": [
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.5,
+         0.6,
+         0.9
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "error": [
+  "layouts.3",
+  "  Value error, front_of names must be entities in the same shot layout [type=value_error, input_value={'shot': 4, 'entities': [...2', 'far': 'Object 5'}]}, input_type=dict]"
+ ]
+}

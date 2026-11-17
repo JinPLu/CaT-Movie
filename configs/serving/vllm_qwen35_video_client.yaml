@@ -1,0 +1,26 @@
+# 在 vLLM OpenAI 兼容 API 上请求「本地视频 + 文本」— 与官方「Video Input」一致：
+# https://modelscope.cn/models/Qwen/Qwen3.5-35B-A3B
+# https://huggingface.co/Qwen/Qwen3.5-35B-A3B/blob/main/README.md
+#
+# 运行前必须由任务现场提供并验证外部 vLLM 服务；仓库不再维护未受检的 serve launcher。
+#
+# api_model_id：须与 vLLM 实际注册的模型名一致；本地路径作 model_tag 时通常填「与启动时相同的 model_path 字符串」。
+
+openai_base_url: "http://127.0.0.1:8000/v1"
+openai_api_key: "EMPTY"
+# pass2专用 Qwen3.5-9B 实例，请在 serve 时确认实际 model path
+api_model_id: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.5-9B
+video_path: ${MSPC_SHARED_ROOT}/OoVMetric/workplace/outputs/v4/wan22_a14b/B_event1_short_lar_01_pan_wan22_a14b_1.mp4
+prompt: "用一两句话描述这段视频里主要发生了什么，以及镜头是否在运动。"
+max_tokens: 512
+temperature: 0.7
+top_p: 0.8
+presence_penalty: 1.5
+# 对应官方示例 extra_body.top_k
+top_k: 20
+# 对应官方示例 extra_body.chat_template_kwargs.enable_thinking
+enable_thinking: false
+# 对应官方示例 extra_body.mm_processor_kwargs（视频采样等）
+video_mm_processor_kwargs:
+  fps: 2
+  do_sample_frames: true

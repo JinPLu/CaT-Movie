@@ -1,0 +1,23 @@
+{
+  "benchmark_config": "configs/eval/st_bench.json",
+  "seed": 42,
+  "registry": {
+    "model": "google/gemini-3.8-flash",
+    "prices": {"input_usd_per_mtok": "0.75", "output_usd_per_mtok": "3.75"},
+    "request_options": {"reasoning": {"effort": "low"},
+                        "provider": {"only": ["google-ai-studio"], "allow_fallbacks": false, "require_parameters": true}},
+    "temperature": 0.0,
+    "max_tokens": 8192,
+    "precall_prompt_tokens": 4096
+  },
+  "methods": {
+    "native_wan_5b_unipc": {"settings": "configs/infer/wan_ti2v_5b_official_sampler.json"},
+    "official_multishotmaster_1_3b": {"settings": "src/mspc/comparison_methods/configs/multishotmaster.json"},
+    "official_holocine_14b_full": {"settings": "src/mspc/comparison_methods/configs/holocine.json"},
+    "official_storymem_14b": {"settings": "src/mspc/comparison_methods/configs/storymem.json"},
+    "storydiffusion_wan_a14b": {"settings": "src/mspc/comparison_methods/configs/storydiffusion.json",
+                                "python_path": []},
+    "ic_lora_wan_a14b": {"settings": "src/mspc/comparison_methods/configs/ic_lora.json",
+                         "python_path": ["${MSPC_SHARED_ROOT}/env/ic_lora_dependencies"]}
+  }
+}

@@ -1,0 +1,340 @@
+{
+ "key": "film-004095-b0008",
+ "shots": 7,
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with blonde hair",
+    "outfit": "a pink cardigan, a light green bra, and a grey skirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with brown hair",
+    "outfit": "a black suit"
+   },
+   {
+    "name": "Character 3",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a naked baby",
+    "outfit": "none"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with glasses, a mustache, and a grey suit",
+    "outfit": "a grey suit, a striped shirt, and a bow tie"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man in a brown suit",
+    "outfit": "a brown suit, a blue shirt, and a striped tie"
+   },
+   {
+    "name": "Character 6",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with white hair in a grey suit",
+    "outfit": "a grey suit"
+   },
+   {
+    "name": "Character 7",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a woman with dark hair",
+    "outfit": "a black top"
+   },
+   {
+    "name": "Character 8",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair in a suit",
+    "outfit": "a dark suit"
+   },
+   {
+    "name": "Character 9",
+    "kind": "person",
+    "visibility": "distant",
+    "appearance": "a group of people in the audience",
+    "outfit": "business attire"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a wooden door"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a television screen on the wall"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a large wooden conference table"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a black folder on the table"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a white tissue"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a sign that says 'PAUER PHARMACEUTICALS'"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a conference room with wooden walls and doors"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing with hands raised",
+      "state": "cardigan falling off"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing on the table"
+     },
+     {
+      "name": "Object 1",
+      "state": "closed"
+     },
+     {
+      "name": "Object 2",
+      "state": "on"
+     },
+     {
+      "name": "Object 3",
+      "state": "present"
+     },
+     {
+      "name": "Object 4",
+      "state": "on the table"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 stands with hands raised as her cardigan falls off, revealing a bra. Character 3 is standing on the table in front of her.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "state",
+      "before": "wearing a pink cardigan",
+      "after": "cardigan falling off"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "walking away"
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "state": "wearing a grey skirt and black shoes"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "state": "wearing a grey skirt and black heels"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 3 walks away from the table while the legs of Character 1 and Character 2 are visible.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing, adjusting her bra",
+      "state": "cardigan torn"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 turns and adjusts her torn cardigan and bra.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "facing forward",
+      "after": "turning to the side"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing, pointing"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing, wiping his face"
+     },
+     {
+      "name": "Character 6",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 7",
+      "posture": "sitting"
+     },
+     {
+      "name": "Character 8",
+      "posture": "sitting"
+     },
+     {
+      "name": "Character 9",
+      "posture": "sitting"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A group of people in the room react with shock. Character 4 points, and Character 5 wipes his face with a tissue.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing, looking at Character 5"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing, facing Character 2"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 looks at Character 5, who is wiping his face with a tissue.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "over-the-shoulder shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing with arms crossed"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing, holding a tissue"
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing in the foreground, out of focus"
+     },
+     {
+      "name": "Object 6",
+      "state": "visible in the background"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 and Character 5 talk while Character 5 holds a tissue to his face. Character 1 is visible in the foreground.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "screen_or_slides",
+    "on_screen_text": "large_text_or_picture_in_picture",
+    "place": "none",
+    "camera": {
+     "shot_size": "none",
+     "angle": "none",
+     "movement": "none"
+    },
+    "present": [],
+    "activity": "no_human_activity",
+    "action": "A screen shows a grid of video thumbnails and a movie poster, with text 'to watch related movie clips'.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "In a conference room, a woman in a pink cardigan and grey skirt stands with her hands raised as her cardigan falls off, revealing a bra. A naked baby is seen standing on the table before walking away. The woman adjusts her torn clothing. The people in the room, including a man in a grey suit and a bald man in a brown suit, react with shock. The bald man wipes his face with a tissue. A woman in a black suit talks to the bald man while he holds the tissue. The scene ends with a screen showing related movie clips.",
+   "summary": "A woman's cardigan falls off in a conference room, shocking the people present, including a man who wipes his face with a tissue while talking to a woman in a black suit."
+  }
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "7": [
+   "shot 7 place/camera/activity/action",
+   "shot 7 camera.shot_size",
+   "shot 7 camera.angle",
+   "shot 7 camera.movement"
+  ]
+ },
+ "source": "block-contract-v17-quick-check-20261013/answers/base/film-004095-b0008.json"
+}

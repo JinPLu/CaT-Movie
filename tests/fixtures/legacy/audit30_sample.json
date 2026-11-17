@@ -1,0 +1,18 @@
+{
+  "artifact_type": "mspc_legacy_audit30_fixture",
+  "claim_boundary": "legacy_unscreened_not_frozen_benchmark",
+  "cases": [
+    {
+      "case_id": "fixture_audit30_01",
+      "story_prompt": "A garden story.",
+      "shots": [
+        {"caption": "Sam picks a red apple from the tree."},
+        {"caption": "Sam holds the red apple while walking to the bench."},
+        {"caption": "The red apple rests on the bench as Sam sits down."},
+        {"caption": "Sam bites the red apple on the bench."},
+        {"caption": "Half of the red apple remains on the bench."}
+      ],
+      "generator": "shotstream"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+ "key": "cinedance-015811-b0000",
+ "shots": 3,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "A group of men are sitting and talking on a boat near a beach, then two of them walk to the edge and look out at the water."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with curly brown hair, wearing a black headband",
+    "outfit": "a grey button-down shirt and dark pants"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair and a beard, wearing a cap",
+    "outfit": "a patterned shirt"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair, wearing a black cap and sunglasses",
+    "outfit": "a plaid shirt over a blue t-shirt"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark curly hair",
+    "outfit": "a green hoodie"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair",
+    "outfit": "a tie-dye shirt"
+   },
+   {
+    "name": "Character 6",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a man with dark hair",
+    "outfit": "a dark jacket"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a wooden boat with a yellow cabin"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "palm trees"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a beach with a boat docked near the shore"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "activity": "talking_only",
+    "action": "A group of men sit on a boat talking and gesturing.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting"
+     },
+     {
+      "name": "Character 2",
+      "posture": "sitting"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting",
+      "holding": [
+       "a bottle"
+      ]
+     },
+     {
+      "name": "Character 5",
+      "posture": "sitting"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 stands up from the boat and walks to the edge, where he puts his arm around Character 6.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking then standing"
+     },
+     {
+      "name": "Character 6",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1",
+      "state": "docked on the beach"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "sitting",
+      "after": "standing"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 and Character 4 look out at the water from the edge of the boat.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing"
+     }
+    ],
+    "changes": []
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "1": [
+   "shot 1 holding of Character 3"
+  ]
+ }
+}

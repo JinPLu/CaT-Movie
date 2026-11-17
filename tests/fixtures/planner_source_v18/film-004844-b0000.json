@@ -1,0 +1,365 @@
+{
+  "key": "film-004844-b0000",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with short blonde wavy hair",
+        "outfit": "a sleeveless beige dress"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short brown hair and a clean-shaven face",
+        "outfit": "a dark suit jacket over a black shirt"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short dark hair",
+        "outfit": "a maroon tuxedo jacket with a black bow tie"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a silver robot"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a pink birthday cake with lit candles"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a dining table"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a champagne glass"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a bar counter"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "an elegant dining room with columns and draped curtains"
+      },
+      {
+        "name": "Location 2",
+        "appearance": "a bar area with a decorative wall and bottles"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting at the dining table"
+          },
+          {
+            "name": "Character 2",
+            "posture": "sitting at the dining table"
+          },
+          {
+            "name": "Object 1",
+            "posture": "standing",
+            "holding": [
+              "Object 2"
+            ]
+          },
+          {
+            "name": "Object 3"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A silver robot brings a pink birthday cake with lit candles to a table where a woman and a man are sitting.",
+        "changes": [
+          {
+            "name": "Object 1",
+            "what": "holding",
+            "before": [
+              "Object 2"
+            ],
+            "after": []
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "sitting"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man smiles and talks to the woman.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman smiles, then blows out the candles on the cake.",
+        "changes": [
+          {
+            "name": "Object 2",
+            "what": "state",
+            "before": "lit candles",
+            "after": "extinguished candles"
+          }
+        ]
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Object 4",
+            "state": "filled with liquid"
+          },
+          {
+            "name": "Object 5"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A hand places two champagne glasses on the bar counter.",
+        "changes": [
+          {
+            "name": "Object 4",
+            "what": "state",
+            "before": "not on counter",
+            "after": "on counter"
+          }
+        ]
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing at the bar",
+            "holding": []
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing at the bar"
+          },
+          {
+            "name": "Character 3",
+            "posture": "standing behind the bar",
+            "holding": [
+              "Object 4"
+            ]
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman and the man take champagne glasses from the bartender.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "holding",
+            "before": [],
+            "after": [
+              "Object 4"
+            ]
+          },
+          {
+            "name": "Character 3",
+            "what": "holding",
+            "before": [
+              "Object 4"
+            ],
+            "after": []
+          }
+        ]
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The bartender looks at the woman and speaks.",
+        "changes": []
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 4"
+            ]
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The woman looks down and speaks.",
+        "changes": []
+      },
+      {
+        "shot": 8,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 4"
+            ]
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The woman touches the man's face while they talk to the bartender.",
+        "changes": []
+      },
+      {
+        "shot": 9,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The bartender smiles and watches the couple.",
+        "changes": []
+      },
+      {
+        "shot": 10,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "The man looks at the bartender and speaks.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "In an elegant dining room, a silver robot brings a pink birthday cake with lit candles to a table where a woman in a beige dress and a man in a dark suit are seated. The man speaks to the woman, who then blows out the candles. The scene shifts to a bar area where the couple is served champagne glasses by a bartender in a maroon tuxedo. The woman touches the man's face as they converse with the bartender, who smiles and watches them.",
+      "summary": "A couple celebrates a birthday with a cake brought by a robot, then moves to a bar where they drink champagne and talk to a bartender."
+    }
+  },
+  "shot_count": 10
+}

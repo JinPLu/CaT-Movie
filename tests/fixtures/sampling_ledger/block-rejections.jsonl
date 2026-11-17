@@ -1,0 +1,4 @@
+{"sid": "cinedance-008890", "scene_id": "cinedance:0001f664-8ec2-8fe8-b726-0acd09439364:<scene1>:block0000", "source_shot_index": 12, "reason": "block_below_min_seconds", "reasons": ["block_below_min_seconds"]}
+{"sid": "cinedance-008892", "scene_id": "cinedance:00020b9b-a90a-8d61-9386-b4b3f2a1e61c:<scene2>:block0001", "source_shot_index": 5, "reason": "block_below_min_seconds", "reasons": ["block_below_min_seconds"]}
+{"sid": "cinedance-008923", "scene_id": "cinedance:000a9b14-a7a3-8f61-8f72-56f7888fc35a:<scene2>:block0001", "source_shot_index": 4, "reason": "source_flags", "reasons": ["below_laion_aesthetic"]}
+{"sid": "cinedance-008923", "scene_id": "cinedance:000a9b14-a7a3-8f61-8f72-56f7888fc35a:<scene2>:block0001", "source_shot_index": 5, "reason": "source_flags", "reasons": ["below_laion_aesthetic"]}

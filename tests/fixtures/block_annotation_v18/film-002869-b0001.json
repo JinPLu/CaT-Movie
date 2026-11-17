@@ -1,0 +1,252 @@
+{
+ "source": "真实块标注 balanced-slice/block-annotations.jsonl，key=film-002869-b0001；未经改写",
+ "annotation": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "an older man with dark hair",
+    "outfit": "a plaid shirt over a white undershirt and denim overalls"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with reddish-brown hair",
+    "outfit": "a blue denim shirt"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a beige cap"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a glass display case"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a wooden door with a window"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a large window with multiple panes"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "wooden wall paneling"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a bulletin board"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "white kitchen cabinets"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a room with wooden walls, large windows, and a door"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "An older man stands in a room and talks while gesturing with his hands.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 6"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "A woman stands and talks to the man.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The man continues talking and looking at the woman.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman smiles and listens to the man.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man puts a beige cap on his head and smiles.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "no hat",
+      "after": "wearing a beige cap"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman smiles, looks down, and then looks back up at the man.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "outfit": "a plaid shirt over a white undershirt, denim overalls, and a beige cap"
+     },
+     {
+      "name": "Object 2"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The man, now wearing the cap, smiles and looks away.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 7"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman looks surprised and speaks.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "An older man in a plaid shirt and overalls stands in a room with wooden walls and large windows, talking and gesturing. A woman with reddish-brown hair in a denim shirt stands opposite him, listening and smiling. The man puts on a beige cap and smiles back at her. The woman looks down and smiles, then looks back up. The man, now wearing the cap, looks away smiling. The woman then looks surprised and speaks.",
+   "summary": "An older man and a woman have a conversation in a room with wooden walls, during which the man puts on a cap and the woman reacts with surprise."
+  }
+ }
+}

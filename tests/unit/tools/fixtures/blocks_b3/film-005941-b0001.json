@@ -1,0 +1,299 @@
+{
+ "key": "film-005941-b0001",
+ "shots": 6,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "A teacher sits at his desk in a classroom talking to a student, who replies while sitting at her desk."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with long dark hair and a medium build",
+    "outfit": "a black jacket and a light-colored shirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young girl with long dark hair",
+    "outfit": "a white shirt, a striped bow tie, and a dark cardigan"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a person with short dark hair",
+    "outfit": "a dark blue sweater over a white shirt"
+   },
+   {
+    "name": "Character 4",
+    "kind": "group",
+    "visibility": "clear",
+    "appearance": "several students sitting at desks in a classroom"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a wooden teacher's desk"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a green chalkboard"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a globe"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a mug"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a poster"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "student desks and chairs"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "a book"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a classroom with a chalkboard, teacher's desk, and student desks"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 sits at his desk and gestures with his hands while talking.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting behind the teacher's desk",
+      "state": "gesturing with hands"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting at a desk"
+     },
+     {
+      "name": "Object 1",
+      "state": "cluttered with items"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 sits at her desk, holding a pencil, and speaks.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting at a desk",
+      "holding": [
+       "a pencil"
+      ]
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting at desks"
+     },
+     {
+      "name": "Object 6"
+     },
+     {
+      "name": "Object 7"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 sits at his desk and listens.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting behind the teacher's desk"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting at a desk"
+     },
+     {
+      "name": "Object 1"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 speaks and smiles.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting at a desk"
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting at desks"
+     },
+     {
+      "name": "Object 6"
+     },
+     {
+      "name": "Object 7"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 leans forward slightly at his desk.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting behind the teacher's desk, leaning forward"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting at a desk"
+     },
+     {
+      "name": "Object 1"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "sitting behind the teacher's desk",
+      "after": "sitting behind the teacher's desk, leaning forward"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 2 looks at the teacher and smiles.",
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting at a desk",
+      "state": "smiling"
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting at desks"
+     },
+     {
+      "name": "Object 6"
+     },
+     {
+      "name": "Object 7"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "state",
+      "before": "neutral",
+      "after": "smiling"
+     }
+    ]
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "2": [
+   "shot 2 holding of Character 2"
+  ]
+ }
+}

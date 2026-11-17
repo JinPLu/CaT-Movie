@@ -1,0 +1,1939 @@
+{
+ "story_id": "cinedance-010673-b0001-shot01",
+ "source": "main-server outputs/experiments/planner-v3-plans-20261024/benchmark-dev-shots/inputs/plans/<planner>/shots/seed-42; question bank benchmark-test-expansion-continuation-20261026/questions.reviewed.json",
+ "records": {
+  "public_qwen": {
+   "status": "completed",
+   "structure_status": "valid",
+   "finish_reason": "stop",
+   "raw_storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "a woman with long dark hair",
+      "outfit": "a grey sweatshirt and grey sweatpants"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "a man with dark hair, a beard, and glasses",
+      "outfit": "a brown long-sleeve shirt and grey sweatpants"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "appearance": "a young child with dark hair",
+      "outfit": "sleepwear"
+     },
+     {
+      "name": "Character 4",
+      "kind": "person",
+      "appearance": "a young child with dark hair",
+      "outfit": "sleepwear"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a pink toothbrush"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a framed picture of a green landscape with clouds"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a plaid pillow"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a bed with blue star-patterned blankets"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a white microwave"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a white electric kettle"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "a jar with a red lid"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "a table with a patterned tablecloth"
+     },
+     {
+      "name": "Object 9",
+      "appearance": "a frosted glass door"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a small apartment interior with a bathroom area and a living/sleeping area"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       }
+      ],
+      "action": "Character 1 brushes her teeth while looking at Character 2.",
+      "changes": [],
+      "frame_count": 40
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 3"
+        ]
+       }
+      ],
+      "action": "Character 2 talks to Character 1 while holding a pillow.",
+      "changes": [],
+      "frame_count": 40
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "bending down out of frame",
+        "holding": []
+       }
+      ],
+      "action": "Character 2 bends down out of frame while Character 1 continues brushing her teeth.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "bending down out of frame"
+       }
+      ],
+      "frame_count": 40
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": null,
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "walking away",
+        "holding": [
+         "Object 3"
+        ]
+       }
+      ],
+      "action": "Character 2 walks away through a doorway carrying a pillow.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "bending down out of frame",
+        "after": "walking away through the doorway"
+       }
+      ],
+      "frame_count": 40
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "action": "Character 1 stands and brushes her teeth in the doorway.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "standing in the doorway"
+       }
+      ],
+      "frame_count": 40
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping"
+       }
+      ],
+      "action": "A view into the living area shows two children sleeping in a bed.",
+      "changes": [],
+      "frame_count": 40
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping"
+       }
+      ],
+      "action": "Two children are shown sleeping closely together in a bed with star-patterned blankets.",
+      "changes": [],
+      "frame_count": 40
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "action": "Character 1 continues brushing her teeth and looks to the side with a surprised expression.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "neutral expression",
+        "after": "with a surprised expression"
+       }
+      ],
+      "frame_count": 40
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Object 2",
+        "posture": "hanging on the wall"
+       }
+      ],
+      "action": "A framed picture of a green landscape hangs on the wall.",
+      "changes": [],
+      "frame_count": 40
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "action": "Character 1 looks at the picture on the wall with a confused expression while brushing her teeth.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "with a surprised expression",
+        "after": "with a confused expression"
+       }
+      ],
+      "frame_count": 40
+     }
+    ]
+   },
+   "compilation": {
+    "holding_presence_added": [
+     {
+      "shot": 1,
+      "names": [
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 2,
+      "names": [
+       "Object 1",
+       "Object 3"
+      ]
+     },
+     {
+      "shot": 3,
+      "names": [
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 4,
+      "names": [
+       "Object 1",
+       "Object 3"
+      ]
+     },
+     {
+      "shot": 5,
+      "names": [
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 8,
+      "names": [
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 10,
+      "names": [
+       "Object 1"
+      ]
+     }
+    ],
+    "opening_aligned_with_changes": [
+     {
+      "rule": "开镜值取变化前",
+      "name": "Character 2",
+      "what": "posture",
+      "value": "bending down out of frame",
+      "to": "standing",
+      "shot": 3
+     },
+     {
+      "rule": "开镜值取变化前",
+      "name": "Character 1",
+      "what": "posture",
+      "value": "standing in the doorway",
+      "to": "standing",
+      "shot": 5
+     }
+    ],
+    "proposed_frame_counts": [
+     40,
+     40,
+     40,
+     40,
+     40,
+     40,
+     40,
+     40,
+     40,
+     40
+    ],
+    "compiled_frame_counts": [
+     85,
+     81,
+     81,
+     81,
+     81,
+     81,
+     81,
+     81,
+     81,
+     81
+    ],
+    "requested_frames": 814.0,
+    "compiled_total_frames": 814,
+    "timing_source": "model_pacing",
+    "target_seconds": 50.875,
+    "fps": 16
+   },
+   "storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "a woman with long dark hair",
+      "outfit": "a grey sweatshirt and grey sweatpants"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "a man with dark hair, a beard, and glasses",
+      "outfit": "a brown long-sleeve shirt and grey sweatpants"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "appearance": "a young child with dark hair",
+      "outfit": "sleepwear"
+     },
+     {
+      "name": "Character 4",
+      "kind": "person",
+      "appearance": "a young child with dark hair",
+      "outfit": "sleepwear"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a pink toothbrush"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a framed picture of a green landscape with clouds"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a plaid pillow"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a bed with blue star-patterned blankets"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a white microwave"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a white electric kettle"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "a jar with a red lid"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "a table with a patterned tablecloth"
+     },
+     {
+      "name": "Object 9",
+      "appearance": "a frosted glass door"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a small apartment interior with a bathroom area and a living/sleeping area"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 brushes her teeth while looking at Character 2.",
+      "changes": [],
+      "frame_count": 85
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 talks to Character 1 while holding a pillow.",
+      "changes": [],
+      "frame_count": 81
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 2 bends down out of frame while Character 1 continues brushing her teeth.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "bending down out of frame"
+       }
+      ],
+      "frame_count": 81
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": null,
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "walking away",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 walks away through a doorway carrying a pillow.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "bending down out of frame",
+        "after": "walking away through the doorway"
+       }
+      ],
+      "frame_count": 81
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 stands and brushes her teeth in the doorway.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "standing in the doorway"
+       }
+      ],
+      "frame_count": 81
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping"
+       }
+      ],
+      "action": "A view into the living area shows two children sleeping in a bed.",
+      "changes": [],
+      "frame_count": 81
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping"
+       }
+      ],
+      "action": "Two children are shown sleeping closely together in a bed with star-patterned blankets.",
+      "changes": [],
+      "frame_count": 81
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 continues brushing her teeth and looks to the side with a surprised expression.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "neutral expression",
+        "after": "with a surprised expression"
+       }
+      ],
+      "frame_count": 81
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Object 2",
+        "posture": "hanging on the wall"
+       }
+      ],
+      "action": "A framed picture of a green landscape hangs on the wall.",
+      "changes": [],
+      "frame_count": 81
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": null,
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 looks at the picture on the wall with a confused expression while brushing her teeth.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "with a surprised expression",
+        "after": "with a confused expression"
+       }
+      ],
+      "frame_count": 81
+     }
+    ]
+   }
+  },
+  "sft_qwen": {
+   "status": "completed",
+   "structure_status": "valid",
+   "finish_reason": "stop",
+   "raw_storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with long dark hair, wearing a pink hair clip",
+      "outfit": "a grey sweatshirt and grey sweatpants"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark hair, a beard, and glasses",
+      "outfit": "a brown long-sleeve shirt and grey sweatpants"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young child with dark hair sleeping",
+      "outfit": "sleepwear"
+     },
+     {
+      "name": "Character 4",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young child with dark hair sleeping",
+      "outfit": "sleepwear"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a pink toothbrush"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a framed picture of a green landscape with clouds"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a plaid pillow"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a bed with blue star-patterned blankets"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a white microwave"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a white electric kettle"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "a jar with a red lid"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "a table with a patterned tablecloth"
+     },
+     {
+      "name": "Object 9",
+      "appearance": "a frosted glass door"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a small apartment interior with a bathroom area and a living/sleeping area"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 brushes her teeth while looking at Character 2.",
+      "changes": [],
+      "frame_count": 41
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing"
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 talks to Character 1 while holding a pillow.",
+      "changes": [],
+      "frame_count": 105
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 2 bends down out of frame while Character 1 continues brushing her teeth.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "bending down"
+       }
+      ],
+      "frame_count": 89
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway"
+       },
+       {
+        "name": "Character 2",
+        "posture": "walking away through the doorway",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 5",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 6",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 7",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 8",
+        "state": "in the foreground"
+       },
+       {
+        "name": "Object 9",
+        "state": "closed"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 walks away through a doorway carrying a pillow.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "bending down",
+        "after": "walking away"
+       }
+      ],
+      "frame_count": 49
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 5",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 6",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 7",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 8",
+        "state": "in the foreground"
+       },
+       {
+        "name": "Object 9",
+        "state": "closed"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 stands and brushes her teeth in the doorway.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping in bed"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping in bed"
+       },
+       {
+        "name": "Object 4",
+        "state": "made"
+       }
+      ],
+      "action": "A view into the living area shows two children sleeping in a bed.",
+      "changes": [],
+      "frame_count": 53
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Object 4",
+        "state": "made"
+       }
+      ],
+      "action": "Two children are shown sleeping closely together in a bed with star-patterned blankets.",
+      "changes": [],
+      "frame_count": 109
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 continues brushing her teeth and looks to the side with a surprised expression.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Object 2",
+        "state": "hanging on the wall"
+       }
+      ],
+      "action": "A framed picture of a green landscape hangs on the wall.",
+      "changes": [],
+      "frame_count": 65
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 2",
+        "state": "hanging on the wall"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 looks at the picture on the wall with a confused expression while brushing her teeth.",
+      "changes": [],
+      "frame_count": 113
+     }
+    ]
+   },
+   "compilation": {
+    "holding_presence_added": [],
+    "opening_aligned_with_changes": [],
+    "proposed_frame_counts": [
+     41,
+     105,
+     89,
+     49,
+     101,
+     53,
+     109,
+     101,
+     65,
+     113
+    ],
+    "compiled_frame_counts": [
+     41,
+     101,
+     89,
+     49,
+     101,
+     53,
+     105,
+     101,
+     65,
+     109
+    ],
+    "requested_frames": 814.0,
+    "compiled_total_frames": 814,
+    "timing_source": "model_pacing",
+    "target_seconds": 50.875,
+    "fps": 16
+   },
+   "storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with long dark hair, wearing a pink hair clip",
+      "outfit": "a grey sweatshirt and grey sweatpants"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark hair, a beard, and glasses",
+      "outfit": "a brown long-sleeve shirt and grey sweatpants"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young child with dark hair sleeping",
+      "outfit": "sleepwear"
+     },
+     {
+      "name": "Character 4",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young child with dark hair sleeping",
+      "outfit": "sleepwear"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a pink toothbrush"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a framed picture of a green landscape with clouds"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a plaid pillow"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a bed with blue star-patterned blankets"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a white microwave"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a white electric kettle"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "a jar with a red lid"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "a table with a patterned tablecloth"
+     },
+     {
+      "name": "Object 9",
+      "appearance": "a frosted glass door"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a small apartment interior with a bathroom area and a living/sleeping area"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 brushes her teeth while looking at Character 2.",
+      "changes": [],
+      "frame_count": 41
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing"
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 talks to Character 1 while holding a pillow.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 2 bends down out of frame while Character 1 continues brushing her teeth.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "bending down"
+       }
+      ],
+      "frame_count": 89
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway"
+       },
+       {
+        "name": "Character 2",
+        "posture": "walking away through the doorway",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 5",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 6",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 7",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 8",
+        "state": "in the foreground"
+       },
+       {
+        "name": "Object 9",
+        "state": "closed"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 walks away through a doorway carrying a pillow.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "bending down",
+        "after": "walking away"
+       }
+      ],
+      "frame_count": 49
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in the doorway",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 5",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 6",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 7",
+        "state": "on a counter"
+       },
+       {
+        "name": "Object 8",
+        "state": "in the foreground"
+       },
+       {
+        "name": "Object 9",
+        "state": "closed"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 stands and brushes her teeth in the doorway.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping in bed"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping in bed"
+       },
+       {
+        "name": "Object 4",
+        "state": "made"
+       }
+      ],
+      "action": "A view into the living area shows two children sleeping in a bed.",
+      "changes": [],
+      "frame_count": 53
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Character 4",
+        "posture": "sleeping"
+       },
+       {
+        "name": "Object 4",
+        "state": "made"
+       }
+      ],
+      "action": "Two children are shown sleeping closely together in a bed with star-patterned blankets.",
+      "changes": [],
+      "frame_count": 105
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 continues brushing her teeth and looks to the side with a surprised expression.",
+      "changes": [],
+      "frame_count": 101
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Object 2",
+        "state": "hanging on the wall"
+       }
+      ],
+      "action": "A framed picture of a green landscape hangs on the wall.",
+      "changes": [],
+      "frame_count": 65
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 2",
+        "state": "hanging on the wall"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 looks at the picture on the wall with a confused expression while brushing her teeth.",
+      "changes": [],
+      "frame_count": 109
+     }
+    ]
+   }
+  }
+ },
+ "checkpoints": {
+  "source": "question_bank",
+  "requirements": [
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q01",
+    "dimension": "event",
+    "shot": 1,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 1 brush her teeth?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q02",
+    "dimension": "event",
+    "shot": 2,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 2 hold Object 3?",
+    "depends_on": [
+     "Character 2",
+     "Object 3"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q03",
+    "dimension": "event",
+    "shot": 3,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 2 bend down out of frame?",
+    "depends_on": [
+     "Character 2"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q04",
+    "dimension": "state",
+    "shot": 3,
+    "reference_shot": null,
+    "anchor": "end",
+    "question": "Is Character 2 out of frame?",
+    "depends_on": [
+     "Character 2"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q05",
+    "dimension": "event",
+    "shot": 3,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 1 brush her teeth?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q06",
+    "dimension": "event",
+    "shot": 4,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 2 carry Object 3 away through a doorway?",
+    "depends_on": [
+     "Character 2",
+     "Object 3"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q07",
+    "dimension": "state",
+    "shot": 4,
+    "reference_shot": null,
+    "anchor": "end",
+    "question": "Is Character 2 beyond the doorway?",
+    "depends_on": [
+     "Character 2"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q08",
+    "dimension": "event",
+    "shot": 5,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 1 brush her teeth?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q09",
+    "dimension": "event",
+    "shot": 8,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 1 brush her teeth?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q10",
+    "dimension": "event",
+    "shot": 10,
+    "reference_shot": null,
+    "anchor": "during",
+    "question": "Does Character 1 brush her teeth?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q11",
+    "dimension": "character",
+    "shot": 2,
+    "reference_shot": 1,
+    "anchor": "during",
+    "question": "Is Character 1 at {shot 2} the same person as at {shot 1}?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q12",
+    "dimension": "character",
+    "shot": 10,
+    "reference_shot": 1,
+    "anchor": "during",
+    "question": "Is Character 1 at {shot 10} the same person as at {shot 1}?",
+    "depends_on": [
+     "Character 1"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q13",
+    "dimension": "character",
+    "shot": 2,
+    "reference_shot": 1,
+    "anchor": "during",
+    "question": "Is Character 2 at {shot 2} the same person as at {shot 1}?",
+    "depends_on": [
+     "Character 2"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q14",
+    "dimension": "character",
+    "shot": 4,
+    "reference_shot": 1,
+    "anchor": "during",
+    "question": "Is Character 2 at {shot 4} the same person as at {shot 1}?",
+    "depends_on": [
+     "Character 2"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q15",
+    "dimension": "object",
+    "shot": 4,
+    "reference_shot": 2,
+    "anchor": "during",
+    "question": "Is Object 3 at {shot 4} the same object as at {shot 2}?",
+    "depends_on": [
+     "Object 3"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q16",
+    "dimension": "character",
+    "shot": 7,
+    "reference_shot": 6,
+    "anchor": "during",
+    "question": "Is Character 3 at {shot 7} the same person as at {shot 6}?",
+    "depends_on": [
+     "Character 3"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q17",
+    "dimension": "character",
+    "shot": 7,
+    "reference_shot": 6,
+    "anchor": "during",
+    "question": "Is Character 4 at {shot 7} the same person as at {shot 6}?",
+    "depends_on": [
+     "Character 4"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q18",
+    "dimension": "object",
+    "shot": 7,
+    "reference_shot": 6,
+    "anchor": "during",
+    "question": "Is Object 4 at {shot 7} the same object as at {shot 6}?",
+    "depends_on": [
+     "Object 4"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q19",
+    "dimension": "object",
+    "shot": 10,
+    "reference_shot": 9,
+    "anchor": "during",
+    "question": "Is Object 2 at {shot 10} the same object as at {shot 9}?",
+    "depends_on": [
+     "Object 2"
+    ]
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q20",
+    "dimension": "place",
+    "shot": 2,
+    "reference_shot": 1,
+    "anchor": "during",
+    "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+    "depends_on": []
+   },
+   {
+    "requirement_id": "cinedance-010673-b0001-shot01/q21",
+    "dimension": "place",
+    "shot": 10,
+    "reference_shot": 1,
+    "anchor": "during",
+    "question": "Are {shot 10} and {shot 1} in the same place (Location 1)?",
+    "depends_on": []
+   }
+  ],
+  "presence": [
+   {
+    "shot": 1,
+    "present": [
+     "Character 1",
+     "Character 2"
+    ]
+   },
+   {
+    "shot": 2,
+    "present": [
+     "Character 1",
+     "Character 2",
+     "Object 3"
+    ]
+   },
+   {
+    "shot": 3,
+    "present": [
+     "Character 1",
+     "Character 2"
+    ]
+   },
+   {
+    "shot": 4,
+    "present": [
+     "Character 2",
+     "Object 3"
+    ]
+   },
+   {
+    "shot": 5,
+    "present": [
+     "Character 1"
+    ]
+   },
+   {
+    "shot": 6,
+    "present": [
+     "Character 3",
+     "Character 4",
+     "Object 4"
+    ]
+   },
+   {
+    "shot": 7,
+    "present": [
+     "Character 3",
+     "Character 4",
+     "Object 4"
+    ]
+   },
+   {
+    "shot": 8,
+    "present": [
+     "Character 1"
+    ]
+   },
+   {
+    "shot": 9,
+    "present": [
+     "Object 2"
+    ]
+   },
+   {
+    "shot": 10,
+    "present": [
+     "Character 1",
+     "Object 2"
+    ]
+   }
+  ]
+ }
+}

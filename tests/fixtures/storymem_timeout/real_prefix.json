@@ -1,0 +1,636 @@
+{
+  "provenance": "2026-10-28 Slurm 1292433 TIMEOUT; film-008002-b0002-shot01 original inputs and first five recorded segments; output root replaced with <OUTPUT>.",
+  "inputs": {
+    "task": {
+      "method": "official_storymem_14b",
+      "story_id": "film-008002-b0002-shot01",
+      "input_tier": "shots",
+      "seed": 42,
+      "story_request": "SUBJECTS\n- Character 1 (person): a pink female troll with tall pink hair, wearing a blue flower crown and a blue dress with white flowers, wearing a blue dress with white flowers and a blue flower crown\n- Character 2 (person): a yellow female troll with tall orange hair and an orange top, wearing an orange top\n- Character 3 (person): a purple troll with tall purple hair, three eyes, and a purple outfit, wearing a purple outfit\n- Character 4 (person): a light blue female troll with tall pink hair and a pink bow, wearing a blue outfit with a pink bow\n- Character 5 (person): a yellow male troll with tall blue hair, green overalls, and a green nose, wearing blue shorts and green suspenders\n- Character 6 (person): a red female troll with tall teal hair, a yellow nose, and a teal top, wearing a teal top\n- Character 7 (person): a small green troll with tall blue hair\n- Character 8 (group): a group of trolls sitting in a circle, wearing various colors\n- Object 1 (object): a yellow pot or bucket\nLOCATIONS\n- Location 1: a colorful room with a fuzzy, multi-colored floor and purple walls\nSHOTS\ns01: Medium shot. A group of trolls sit on a colorful floor, looking surprised.\ns02: Close-up shot. Character 1 talks to Character 2, who looks upset.\ns03: Medium shot. Character 3 looks down and talks, then looks up with a worried expression.\ns04: Close-up shot. Character 1 and Character 2 talk to each other.\ns05: Medium shot. Character 6 talks to Character 5, who then looks at Character 7, who looks sad.\ns06: Close-up shot. Character 1 talks to Character 2, leaning in close.\ns07: Medium wide shot. Character 1 stands in the center of a circle of sitting trolls and talks to them.\ns08: Close-up shot. Character 7 appears on top of Character 1's head, wearing a yellow pot.",
+      "target_seconds": 29.0,
+      "fps": 16,
+      "expected_shot_count": 8,
+      "expected_cut_times_seconds": null,
+      "video_path": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/video.mp4",
+      "generation_record_path": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/generation.json"
+    },
+    "plan": "<OUTPUT>/inputs/plans/public_qwen/shots/seed-42/film-008002-b0002-shot01.json",
+    "settings": {
+      "family": "storymem",
+      "planner": "public_qwen",
+      "upstream": "${MSPC_SHARED_ROOT}/Github/StoryMem",
+      "weights": {
+        "t2v": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_t2v_a14b",
+        "m2v": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_i2v_a14b",
+        "tokenizer": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_t2v_a14b/google/umt5-xxl",
+        "low_noise_lora": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/StoryMem/Wan2.2-MI2V-A14B/backbone_low_noise.safetensors",
+        "high_noise_lora": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/StoryMem/Wan2.2-MI2V-A14B/backbone_high_noise.safetensors",
+        "clip": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/CLIP/ViT-B-32.pt",
+        "hps": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/HPSv3/HPSv3.safetensors",
+        "hps_config": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/HPSv3/HPSv3_7B.local.yaml"
+      },
+      "lora_rank": 128,
+      "runtime": {
+        "devices": 1,
+        "t5_cpu": true,
+        "convert_model_dtype": true,
+        "offload_model": true
+      },
+      "memory": {
+        "max_frames": 10,
+        "fixed_first_frames": 3
+      },
+      "sampling": {
+        "height": 480,
+        "width": 832,
+        "num_inference_steps": 40,
+        "cfg_scale": 3.5,
+        "t2v_shift": 12.0,
+        "m2v_shift": 4.0,
+        "solver": "unipc",
+        "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+      },
+      "limits": {
+        "max_shots": 1,
+        "max_frames": 225,
+        "max_tokens": 512
+      },
+      "seed_stride": 1,
+      "ffmpeg": "ffmpeg",
+      "ffprobe": "ffprobe"
+    },
+    "storyboard": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a pink female troll with tall pink hair, wearing a blue flower crown and a blue dress with white flowers",
+          "outfit": "a blue dress with white flowers and a blue flower crown"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a yellow female troll with tall orange hair and an orange top",
+          "outfit": "an orange top"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a purple troll with tall purple hair, three eyes, and a purple outfit",
+          "outfit": "a purple outfit"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a light blue female troll with tall pink hair and a pink bow",
+          "outfit": "a blue outfit with a pink bow"
+        },
+        {
+          "name": "Character 5",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a yellow male troll with tall blue hair, green overalls, and a green nose",
+          "outfit": "blue shorts and green suspenders"
+        },
+        {
+          "name": "Character 6",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a red female troll with tall teal hair, a yellow nose, and a teal top",
+          "outfit": "a teal top"
+        },
+        {
+          "name": "Character 7",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a small green troll with tall blue hair",
+          "outfit": "none"
+        },
+        {
+          "name": "Character 8",
+          "kind": "group",
+          "visibility": "partial",
+          "appearance": "a group of trolls sitting in a circle",
+          "outfit": "various colors"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a yellow pot or bucket"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a colorful room with a fuzzy, multi-colored floor and purple walls"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "sitting on the floor, hands near face"
+            },
+            {
+              "name": "Character 4",
+              "posture": "sitting on the floor"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting on the floor"
+            },
+            {
+              "name": "Character 6",
+              "posture": "sitting on the floor"
+            }
+          ],
+          "action": "A group of trolls sit on a colorful floor, looking surprised.",
+          "changes": [],
+          "frame_count": 13
+        },
+        {
+          "shot": 2,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing, looking at Character 2"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing, looking at Character 1"
+            }
+          ],
+          "action": "Character 1 talks to Character 2, who looks upset.",
+          "changes": [],
+          "frame_count": 41
+        },
+        {
+          "shot": 3,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "sitting on the floor, looking down"
+            },
+            {
+              "name": "Character 4",
+              "posture": "sitting on the floor"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting on the floor"
+            }
+          ],
+          "action": "Character 3 looks down and talks, then looks up with a worried expression.",
+          "changes": [
+            {
+              "name": "Character 3",
+              "what": "state",
+              "before": "looking down",
+              "after": "looking up with a worried expression"
+            }
+          ],
+          "frame_count": 49
+        },
+        {
+          "shot": 4,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing, looking at Character 2"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing, looking at Character 1"
+            }
+          ],
+          "action": "Character 1 and Character 2 talk to each other.",
+          "changes": [],
+          "frame_count": 49
+        },
+        {
+          "shot": 5,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 6",
+              "posture": "sitting on the floor, talking"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting on the floor, listening"
+            },
+            {
+              "name": "Character 7",
+              "posture": "sitting on the floor, looking sad"
+            }
+          ],
+          "action": "Character 6 talks to Character 5, who then looks at Character 7, who looks sad.",
+          "changes": [],
+          "frame_count": 121
+        },
+        {
+          "shot": 6,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing, talking to Character 2"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing, listening to Character 1"
+            }
+          ],
+          "action": "Character 1 talks to Character 2, leaning in close.",
+          "changes": [],
+          "frame_count": 69
+        },
+        {
+          "shot": 7,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing in the center, talking to the group"
+            },
+            {
+              "name": "Character 3",
+              "posture": "sitting on the floor, facing Character 1"
+            },
+            {
+              "name": "Character 4",
+              "posture": "sitting on the floor, facing Character 1"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting on the floor, facing Character 1"
+            },
+            {
+              "name": "Character 6",
+              "posture": "sitting on the floor, facing Character 1"
+            },
+            {
+              "name": "Character 8",
+              "posture": "sitting on the floor, facing Character 1"
+            }
+          ],
+          "action": "Character 1 stands in the center of a circle of sitting trolls and talks to them.",
+          "changes": [],
+          "frame_count": 57
+        },
+        {
+          "shot": 8,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 7",
+              "posture": "standing on Character 1's head, wearing Object 1"
+            }
+          ],
+          "action": "Character 7 appears on top of Character 1's head, wearing a yellow pot.",
+          "changes": [
+            {
+              "name": "Character 7",
+              "what": "posture",
+              "before": "sitting on the floor",
+              "after": "standing on Character 1's head"
+            },
+            {
+              "name": "Character 7",
+              "what": "outfit",
+              "before": "none",
+              "after": "wearing a yellow pot on head"
+            }
+          ],
+          "frame_count": 65
+        }
+      ]
+    },
+    "segments": [
+      {
+        "start_shot": 0,
+        "end_shot": 1,
+        "frame_counts": [
+          13
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium shot, eye-level shot, static. The purple troll with tall purple hair, three eyes, and a purple outfit is sitting on the floor, hands near face. The purple troll with tall purple hair, three eyes, and a purple outfit is wearing a purple outfit. The light blue female troll with tall pink hair and a pink bow is sitting on the floor. The light blue female troll with tall pink hair and a pink bow is wearing a blue outfit with a pink bow. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The red female troll with tall teal hair, a yellow nose, and a teal top is sitting on the floor. The red female troll with tall teal hair, a yellow nose, and a teal top is wearing a teal top. A group of trolls sit on a colorful floor, looking surprised."
+        ],
+        "num_frames": 13,
+        "token_counts": [
+          236
+        ]
+      },
+      {
+        "start_shot": 1,
+        "end_shot": 2,
+        "frame_counts": [
+          41
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Close-up shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing, looking at the yellow female troll with tall orange hair and an orange top. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The yellow female troll with tall orange hair and an orange top is standing, looking at the pink female troll with tall pink hair. The yellow female troll with tall orange hair and an orange top is wearing an orange top. The pink female troll with tall pink hair talks to the yellow female troll with tall orange hair and an orange top, who looks upset."
+        ],
+        "num_frames": 41,
+        "token_counts": [
+          166
+        ]
+      },
+      {
+        "start_shot": 2,
+        "end_shot": 3,
+        "frame_counts": [
+          49
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium shot, eye-level shot, static. The purple troll with tall purple hair, three eyes, and a purple outfit is sitting on the floor, with the looking down. The purple troll with tall purple hair, three eyes, and a purple outfit is wearing a purple outfit. The light blue female troll with tall pink hair and a pink bow is sitting on the floor. The light blue female troll with tall pink hair and a pink bow is wearing a blue outfit with a pink bow. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The purple troll with tall purple hair, three eyes, and a purple outfit looks down and talks, then looks up with a worried expression. By the end of the shot, the purple troll with tall purple hair, three eyes, and a purple outfit is looking up with a worried expression."
+        ],
+        "num_frames": 49,
+        "token_counts": [
+          228
+        ]
+      },
+      {
+        "start_shot": 3,
+        "end_shot": 4,
+        "frame_counts": [
+          49
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Close-up shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing, looking at the yellow female troll with tall orange hair and an orange top. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The yellow female troll with tall orange hair and an orange top is standing, looking at the pink female troll with tall pink hair. The yellow female troll with tall orange hair and an orange top is wearing an orange top. The pink female troll with tall pink hair and the yellow female troll with tall orange hair and an orange top talk to each other."
+        ],
+        "num_frames": 49,
+        "token_counts": [
+          164
+        ]
+      },
+      {
+        "start_shot": 4,
+        "end_shot": 5,
+        "frame_counts": [
+          121
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium shot, eye-level shot, static. The red female troll with tall teal hair, a yellow nose, and a teal top is sitting on the floor, talking. The red female troll with tall teal hair, a yellow nose, and a teal top is wearing a teal top. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor, listening. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The small green troll with tall blue hair is sitting on the floor, looking sad. The small green troll with tall blue hair is wearing none. The red female troll with tall teal hair, a yellow nose, and a teal top talks to the yellow male troll with tall blue hair, green overalls, and a green nose, who then looks at the small green troll with tall blue hair, who looks sad."
+        ],
+        "num_frames": 121,
+        "token_counts": [
+          225
+        ]
+      },
+      {
+        "start_shot": 5,
+        "end_shot": 6,
+        "frame_counts": [
+          69
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Close-up shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing, talking to the yellow female troll with tall orange hair and an orange top. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The yellow female troll with tall orange hair and an orange top is standing, listening to the pink female troll with tall pink hair. The yellow female troll with tall orange hair and an orange top is wearing an orange top. The pink female troll with tall pink hair talks to the yellow female troll with tall orange hair and an orange top, leaning in close."
+        ],
+        "num_frames": 69,
+        "token_counts": [
+          167
+        ]
+      },
+      {
+        "start_shot": 6,
+        "end_shot": 7,
+        "frame_counts": [
+          57
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium wide shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing in the center, talking to the group. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The purple troll with tall purple hair, three eyes, and a purple outfit is sitting on the floor, facing the pink female troll with tall pink hair. The purple troll with tall purple hair, three eyes, and a purple outfit is wearing a purple outfit. The light blue female troll with tall pink hair and a pink bow is sitting on the floor, facing the pink female troll with tall pink hair. The light blue female troll with tall pink hair and a pink bow is wearing a blue outfit with a pink bow. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor, facing the pink female troll with tall pink hair. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The red female troll with tall teal hair, a yellow nose, and a teal top is sitting on the floor, facing the pink female troll with tall pink hair. The red female troll with tall teal hair, a yellow nose, and a teal top is wearing a teal top. The group of trolls sitting in a circle is sitting on the floor, facing the pink female troll with tall pink hair. The group of trolls sitting in a circle is wearing various colors. The pink female troll with tall pink hair stands in the center of a circle of sitting trolls and talks to them."
+        ],
+        "num_frames": 57,
+        "token_counts": [
+          377
+        ]
+      },
+      {
+        "start_shot": 7,
+        "end_shot": 8,
+        "frame_counts": [
+          65
+        ],
+        "prompts": [
+          "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Close-up shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The small green troll with tall blue hair is standing on the head of the pink female troll with tall pink hair, wearing the yellow pot or bucket. The small green troll with tall blue hair is wearing none. The small green troll with tall blue hair appears on top of the head of the pink female troll with tall pink hair, wearing a yellow pot. By the end of the shot, the small green troll with tall blue hair is standing on the head of the pink female troll with tall pink hair. By the end of the shot, the small green troll with tall blue hair wears a yellow pot on head."
+        ],
+        "num_frames": 65,
+        "token_counts": [
+          203
+        ]
+      }
+    ],
+    "runtime": {
+      "upstream": "${MSPC_SHARED_ROOT}/Github/StoryMem",
+      "revision": "052c68d2627a22a95f79dbb4d3376cc30c96f1a3",
+      "wan": "${MSPC_SHARED_ROOT}/Github/StoryMem/wan/modules/tokenizers.py"
+    }
+  },
+  "segments": [
+    {
+      "start_shot": 0,
+      "end_shot": 1,
+      "frame_counts": [
+        13
+      ],
+      "prompts": [
+        "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium shot, eye-level shot, static. The purple troll with tall purple hair, three eyes, and a purple outfit is sitting on the floor, hands near face. The purple troll with tall purple hair, three eyes, and a purple outfit is wearing a purple outfit. The light blue female troll with tall pink hair and a pink bow is sitting on the floor. The light blue female troll with tall pink hair and a pink bow is wearing a blue outfit with a pink bow. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The red female troll with tall teal hair, a yellow nose, and a teal top is sitting on the floor. The red female troll with tall teal hair, a yellow nose, and a teal top is wearing a teal top. A group of trolls sit on a colorful floor, looking surprised."
+      ],
+      "num_frames": 13,
+      "token_counts": [
+        236
+      ],
+      "seed": 42,
+      "output": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0001.mp4",
+      "memory_files": [],
+      "keyframes": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0001_keyframe0.jpg"
+      ],
+      "seconds": 403.42228350415826
+    },
+    {
+      "start_shot": 1,
+      "end_shot": 2,
+      "frame_counts": [
+        41
+      ],
+      "prompts": [
+        "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Close-up shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing, looking at the yellow female troll with tall orange hair and an orange top. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The yellow female troll with tall orange hair and an orange top is standing, looking at the pink female troll with tall pink hair. The yellow female troll with tall orange hair and an orange top is wearing an orange top. The pink female troll with tall pink hair talks to the yellow female troll with tall orange hair and an orange top, who looks upset."
+      ],
+      "num_frames": 41,
+      "token_counts": [
+        166
+      ],
+      "seed": 43,
+      "output": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0002.mp4",
+      "memory_files": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0001_keyframe0.jpg"
+      ],
+      "keyframes": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0002_keyframe0.jpg"
+      ],
+      "seconds": 548.7311140075326
+    },
+    {
+      "start_shot": 2,
+      "end_shot": 3,
+      "frame_counts": [
+        49
+      ],
+      "prompts": [
+        "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium shot, eye-level shot, static. The purple troll with tall purple hair, three eyes, and a purple outfit is sitting on the floor, with the looking down. The purple troll with tall purple hair, three eyes, and a purple outfit is wearing a purple outfit. The light blue female troll with tall pink hair and a pink bow is sitting on the floor. The light blue female troll with tall pink hair and a pink bow is wearing a blue outfit with a pink bow. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The purple troll with tall purple hair, three eyes, and a purple outfit looks down and talks, then looks up with a worried expression. By the end of the shot, the purple troll with tall purple hair, three eyes, and a purple outfit is looking up with a worried expression."
+      ],
+      "num_frames": 49,
+      "token_counts": [
+        228
+      ],
+      "seed": 44,
+      "output": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0003.mp4",
+      "memory_files": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0001_keyframe0.jpg",
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0002_keyframe0.jpg"
+      ],
+      "keyframes": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0003_keyframe0.jpg"
+      ],
+      "seconds": 685.2486599721014
+    },
+    {
+      "start_shot": 3,
+      "end_shot": 4,
+      "frame_counts": [
+        49
+      ],
+      "prompts": [
+        "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Close-up shot, eye-level shot, static. The pink female troll with tall pink hair wearing a blue flower crown and a blue dress with white flowers is standing, looking at the yellow female troll with tall orange hair and an orange top. The pink female troll with tall pink hair is wearing a blue dress with white flowers and a blue flower crown. The yellow female troll with tall orange hair and an orange top is standing, looking at the pink female troll with tall pink hair. The yellow female troll with tall orange hair and an orange top is wearing an orange top. The pink female troll with tall pink hair and the yellow female troll with tall orange hair and an orange top talk to each other."
+      ],
+      "num_frames": 49,
+      "token_counts": [
+        164
+      ],
+      "seed": 45,
+      "output": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0004.mp4",
+      "memory_files": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0001_keyframe0.jpg",
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0002_keyframe0.jpg",
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0003_keyframe0.jpg"
+      ],
+      "keyframes": [],
+      "seconds": 734.5647666789591
+    },
+    {
+      "start_shot": 4,
+      "end_shot": 5,
+      "frame_counts": [
+        121
+      ],
+      "prompts": [
+        "The setting is a colorful room with a fuzzy, multi-colored floor and purple walls. Medium shot, eye-level shot, static. The red female troll with tall teal hair, a yellow nose, and a teal top is sitting on the floor, talking. The red female troll with tall teal hair, a yellow nose, and a teal top is wearing a teal top. The yellow male troll with tall blue hair, green overalls, and a green nose is sitting on the floor, listening. The yellow male troll with tall blue hair, green overalls, and a green nose is wearing blue shorts and green suspenders. The small green troll with tall blue hair is sitting on the floor, looking sad. The small green troll with tall blue hair is wearing none. The red female troll with tall teal hair, a yellow nose, and a teal top talks to the yellow male troll with tall blue hair, green overalls, and a green nose, who then looks at the small green troll with tall blue hair, who looks sad."
+      ],
+      "num_frames": 121,
+      "token_counts": [
+        225
+      ],
+      "seed": 46,
+      "output": "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0005.mp4",
+      "memory_files": [
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0001_keyframe0.jpg",
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0002_keyframe0.jpg",
+        "<OUTPUT>/inference/raw/videos/official_storymem_14b/shots/seed-42/film-008002-b0002-shot01/segments/0003_keyframe0.jpg"
+      ],
+      "keyframes": [],
+      "seconds": 1862.287653837353
+    }
+  ],
+  "generation": {
+    "status": "generation_started",
+    "model_load_seconds": 884.4546939581633
+  },
+  "source_media": [
+    {
+      "frames": 13,
+      "fps": 16,
+      "width": 832,
+      "height": 480
+    },
+    {
+      "frames": 41,
+      "fps": 16,
+      "width": 832,
+      "height": 480
+    },
+    {
+      "frames": 49,
+      "fps": 16,
+      "width": 832,
+      "height": 480
+    },
+    {
+      "frames": 49,
+      "fps": 16,
+      "width": 832,
+      "height": 480
+    },
+    {
+      "frames": 121,
+      "fps": 16,
+      "width": 832,
+      "height": 480
+    }
+  ]
+}

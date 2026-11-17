@@ -1,0 +1,27 @@
+# 空间层定位用的第二个 Qwen3.8-27B 图像输入服务：第二张卡、端口 8194。与 vllm_qwen38_27b_spatial_locate.yaml 只差端口（那份是 8193）。
+# 为什么有两份：run/vllm_serve.py 的端口只从服务配置里读、不接受命令行参数；两个端口就是 configs/data/spatial_layer_v2.json 的 locate.endpoints，
+# 定位按分片序号的奇偶把块分给这两个服务。其余参数见那份的说明。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.8-27B
+host: "127.0.0.1"
+port: 8194
+tensor_parallel_size: 1
+max_model_len: 65536
+gpu_memory_utilization: 0.92
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.8-27B"
+  - "--max-num-seqs"
+  - "48"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--mm-processor-cache-gb"
+  - "0"
+  - "--limit-mm-per-prompt"
+  - '{"image":3,"video":0}'
+  - "--reasoning-parser"
+  - "qwen3"
+ld_library_path: ""
+omp_num_threads: 4

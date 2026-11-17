@@ -1,0 +1,29 @@
+{
+  "methods": {
+    "native_wan_5b": "wan.json",
+    "official_wan_ti2v_5b": "wan_official.json",
+    "official_wan21_t2v_1_3b": "wan21_official.json",
+    "official_multishotmaster_1_3b": "multishotmaster.json",
+    "official_holocine_14b_full": "holocine.json",
+    "official_storymem_14b": "storymem.json"
+  },
+  "sampling": {
+    "enable_thinking": false,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0,
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1.0,
+    "max_tokens": 32768
+  },
+  "planners": {
+    "public_qwen": {
+      "model": "Qwen3.5-9B",
+      "base_url": "http://127.0.0.1:8185/v1",
+      "api_key_env": "BENCHMARK_PLANNER_API_KEY",
+      "timeout_seconds": 600,
+      "provenance": "${BENCHMARK_PUBLIC_SERVICE_RECORD}"
+    }
+  }
+}

@@ -1,0 +1,455 @@
+{
+ "source": "outputs/experiments/layout-baseline-dev30/plans/film-000127-b0000-shot01.json (layouts dropped), compiled by the planner pipeline before 2026-10-30",
+ "plan": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a shaved head, mustache, and medium build",
+    "outfit": "a grey suit, a pink shirt, and a purple tie"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with long dark hair and a slim build",
+    "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a large bed with a patterned bedspread"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a doorway"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a table with lit candles and glasses"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a pink shirt"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a pair of dark trousers"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "white underwear"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a hotel room or bedroom with warm lighting, patterned curtains, and a large bed"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "a grey suit, a pink shirt, and a purple tie",
+      "posture": "walking through a doorway"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "standing in the room"
+     },
+     {
+      "name": "Object 1",
+      "state": "made with a patterned bedspread"
+     },
+     {
+      "name": "Object 2",
+      "state": "open"
+     }
+    ],
+    "action": "Character 1 walks through a doorway into a bedroom where Character 2 is standing in lingerie.",
+    "changes": [],
+    "references": [],
+    "frame_count": 93
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "a grey suit, a pink shirt, and a purple tie",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 1 looks surprised.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 21
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "a grey suit, a pink shirt, and a purple tie",
+      "posture": "standing near a table with candles"
+     },
+     {
+      "name": "Object 3",
+      "state": "lit candles on the table"
+     }
+    ],
+    "action": "Character 1 takes off his grey suit jacket and tie, now only wearing a pink shirt and dark trousers, while standing near a table with lit candles.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "a grey suit, a pink shirt, and a purple tie",
+      "after": "a pink shirt and dark trousers"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 2
+     }
+    ],
+    "frame_count": 105
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "a pink shirt and dark trousers",
+      "posture": "standing facing Character 2"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "standing facing Character 1"
+     }
+    ],
+    "action": "Character 1 and Character 2 stand facing each other near the bed.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 3
+     },
+     {
+      "name": "Character 2",
+      "shot": 1
+     }
+    ],
+    "frame_count": 77
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "a pink shirt and dark trousers",
+      "posture": "standing by the bed"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "standing by the bed"
+     },
+     {
+      "name": "Object 1",
+      "state": "made with a patterned bedspread"
+     }
+    ],
+    "action": "Character 2 helps Character 1 take off his pink shirt, leaving him shirtless in dark trousers.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "a pink shirt and dark trousers",
+      "after": "shirtless and dark trousers"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 4
+     },
+     {
+      "name": "Character 2",
+      "shot": 4
+     },
+     {
+      "name": "Object 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 125
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "shirtless and dark trousers",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "standing behind Character 1"
+     },
+     {
+      "name": "Object 3",
+      "state": "lit candles on the table"
+     }
+    ],
+    "action": "Character 2 stands behind the shirtless Character 1, leaning in close to him near the table with candles.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 5
+     },
+     {
+      "name": "Character 2",
+      "shot": 5
+     },
+     {
+      "name": "Object 3",
+      "shot": 3
+     }
+    ],
+    "frame_count": 109
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "shirtless and dark trousers",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "leaning over Character 1"
+     }
+    ],
+    "action": "Character 2 leans in and speaks to Character 1 from behind.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 6
+     },
+     {
+      "name": "Character 2",
+      "shot": 6
+     }
+    ],
+    "frame_count": 157
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "shirtless and dark trousers",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "standing next to Character 1"
+     }
+    ],
+    "action": "Character 1 is now standing shirtless in white underwear.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "shirtless and dark trousers",
+      "after": "shirtless and white underwear"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 7
+     },
+     {
+      "name": "Character 2",
+      "shot": 7
+     }
+    ],
+    "frame_count": 13
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "shirtless and white underwear",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "standing in front of Character 1"
+     }
+    ],
+    "action": "Character 2 stands in front of Character 1, looking at him and speaking.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 8
+     },
+     {
+      "name": "Character 2",
+      "shot": 8
+     }
+    ],
+    "frame_count": 133
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "outfit": "shirtless and white underwear",
+      "posture": "sitting down"
+     },
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "kneeling on the floor"
+     }
+    ],
+    "action": "Character 1 sits down while Character 2 kneels on the floor looking up at him.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing",
+      "after": "sitting"
+     },
+     {
+      "name": "Character 2",
+      "what": "posture",
+      "before": "standing",
+      "after": "kneeling"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 9
+     },
+     {
+      "name": "Character 2",
+      "shot": 9
+     }
+    ],
+    "frame_count": 33
+   },
+   {
+    "shot": 11,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "outfit": "a black leather lingerie set with spikes, long black gloves, and thigh-high black boots",
+      "posture": "kneeling on the floor"
+     }
+    ],
+    "action": "Character 2 looks up and speaks.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 2",
+      "shot": 10
+     }
+    ],
+    "frame_count": 45
+   }
+  ]
+ }
+}

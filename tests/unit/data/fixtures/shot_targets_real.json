@@ -1,0 +1,2393 @@
+{
+ "provenance": "主服务器 source-pipeline-20261011：final/blocks.jsonl、首批 scene_manifest.csv 与缓存清单的真实行（2026-10-13 取）",
+ "cases": [
+  {
+   "name": "cinedance_later_in_window",
+   "block": {
+    "key": "cinedance-018637-b0000",
+    "source": "cinedance",
+    "scene": {
+     "schema_version": "scene_window_v1",
+     "window_id": "story_block_v1:cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001:0001-0002",
+     "kind": "block",
+     "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+     "film_key": null,
+     "source": "cinedance",
+     "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4",
+     "fps": 24.0,
+     "container_preroll_frames": null,
+     "crop_box": [
+      215,
+      0,
+      1705,
+      860
+     ],
+     "shot_count": 2,
+     "render_frames": 274,
+     "shots": [
+      {
+       "source_shot_index": 1,
+       "start_frame": 528,
+       "end_frame": 614,
+       "seconds": 3.5833333333333335,
+       "render_frames": 57,
+       "sid": "cinedance-018637",
+       "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+       "score_key": "cinedance-018637-e0000",
+       "mean_luma": 21.76226043701172,
+       "min_luma": 21.558460235595703,
+       "max_luma": 21.86989402770996,
+       "dover_technical": -0.12891189754009247,
+       "laion_aesthetic": 5.183419068654378,
+       "scene": "<scene2>",
+       "characters": []
+      },
+      {
+       "source_shot_index": 2,
+       "start_frame": 618,
+       "end_frame": 943,
+       "seconds": 13.541666666666666,
+       "render_frames": 217,
+       "sid": "cinedance-018637",
+       "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+       "score_key": "cinedance-018637-e0001",
+       "mean_luma": 23.95022964477539,
+       "min_luma": 23.668851852416992,
+       "max_luma": 24.126375198364258,
+       "dover_technical": -0.11854539811611176,
+       "laion_aesthetic": 5.04612922668457,
+       "scene": "<scene2>",
+       "characters": [
+        "<char1>"
+       ]
+      }
+     ],
+     "cut_version": "story_block_v1",
+     "width": 1920,
+     "height": 860,
+     "video_frame_count": 2240,
+     "active_box": [
+      0,
+      0,
+      1920,
+      860
+     ],
+     "frame_basis": "ffmpeg_sequential_zero_based",
+     "boundary_revision": {
+      "version": "shot_gate_v2_full_guarded_single",
+      "coordinate": "ffmpeg_sequential",
+      "boundary_guard_frames": 2,
+      "thresholds": {
+       "boundary_threshold": 0.5,
+       "single_threshold": 0.25,
+       "content_threshold": 27.0,
+       "edge_seconds": 0.5,
+       "boundary_guard_frames": 2
+      },
+      "shots": [
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         528,
+         614
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4",
+        "segment": [
+         526,
+         616
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         526,
+         616
+        ]
+       },
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         618,
+         943
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4",
+        "segment": [
+         616,
+         945
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         616,
+         945
+        ]
+       }
+      ]
+     },
+     "quality": {
+      "min_dover_technical": -0.12891189754009247,
+      "min_laion_aesthetic": 5.04612922668457
+     }
+    }
+   },
+   "position": 1,
+   "case_id": "cinedance-018637/cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001:2",
+   "first_batch": {
+    "window_shot": 1,
+    "manifest_row": {
+     "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001:train:0001-0002",
+     "mapping_schema": "scene_window_v1",
+     "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4",
+     "source_fps": "24.0",
+     "source_num_frames": "2240",
+     "source_width": "1920",
+     "source_height": "860",
+     "source_shot_segments": "[[528,614],[618,943]]",
+     "source_frame_indices_by_shot": "[[528,530,531,533,534,536,537,539,540,542,543,545,546,548,549,551,552,554,555,557,558,560,561,563,564,566,567,569,570,572,574,575,577,578,580,581,583,584,586,587,589,590,592,593,595,596,598,599,601,602,604,605,607,608,610,611,613],[618,620,621,622,624,626,627,628,630,632,633,634,636,638,639,640,642,644,645,646,648,650,651,652,654,656,657,658,660,662,663,664,666,668,669,670,672,674,675,676,678,680,681,682,684,686,687,688,690,692,693,694,696,698,699,700,702,704,705,706,708,710,711,712,714,716,717,718,720,722,723,724,726,728,729,730,732,734,735,736,738,740,741,742,744,746,747,748,750,752,753,754,756,758,759,760,762,764,765,766,768,770,771,772,774,776,777,778,780,782,783,784,786,788,789,790,792,794,795,796,798,800,801,802,804,806,807,808,810,812,813,814,816,818,819,820,822,824,825,826,828,830,831,832,834,836,837,838,840,842,843,844,846,848,849,850,852,854,855,856,858,860,861,862,864,866,867,868,870,872,873,874,876,878,879,880,882,884,885,886,888,890,891,892,894,896,897,898,900,902,903,904,906,908,909,910,912,914,915,916,918,920,921,922,924,926,927,928,930,932,933,934,936,938,939,940,942]]",
+     "shot_groups": "[[0,57],[57,274]]",
+     "active_box": "[0,0,1920,860]",
+     "train_crop_box": "[215,0,1705,860]",
+     "film_key": "",
+     "source": "cinedance",
+     "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+     "container_preroll_frames": "",
+     "window_key": "cinedance-018637-w0000",
+     "shot_count": "2",
+     "render_frames": "274",
+     "shot_laion_aesthetic": "[5.1834,5.0461]",
+     "shot_dover_technical": "[-0.12891,-0.11855]",
+     "min_laion_aesthetic": "5.0461",
+     "min_dover_technical": "-0.12891"
+    },
+    "record": {
+     "cache_file": "latents/source_pipeline_v1:scene_1to5_v3_short:cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001:train:0001-0002.safetensors",
+     "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001:train:0001-0002",
+     "height": 480,
+     "index": 7021,
+     "input_latents_shape": [
+      1,
+      48,
+      70,
+      30,
+      52
+     ],
+     "latent_shot_groups": [
+      [
+       0,
+       15
+      ],
+      [
+       15,
+       70
+      ]
+     ],
+     "num_frames": 274,
+     "provenance": {
+      "cache_version": "scene_targets_v1",
+      "context": null,
+      "encoding": {
+       "dtype": "bfloat16",
+       "implementation_revision": "69f094f0a64f32b9a596774ddf96ecbf7826e60f",
+       "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+       "tile_size": [
+        30,
+        52
+       ],
+       "tile_stride": [
+        15,
+        26
+       ],
+       "tiled": false
+      },
+      "media": {
+       "files": [
+        {
+         "bytes": 33539535,
+         "mtime_ns": 1791715765619189304,
+         "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4",
+         "source_fps": 24.0,
+         "source_height": 860,
+         "source_num_frames": 2240,
+         "source_width": 1920
+        }
+       ],
+       "preprocessing": {
+        "decoder": "ffmpeg-sequential",
+        "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+        "frame_basis": "ffmpeg_sequential_zero_based",
+        "pillow_version": "12.3.0",
+        "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+        "preroll_added": 0,
+        "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+        "spatial": [
+         {
+          "active_box": [
+           0,
+           0,
+           1920,
+           860
+          ],
+          "coordinate_system": "pixel_edges",
+          "crop_box_resized": [
+           0,
+           0,
+           832,
+           480
+          ],
+          "output_size": [
+           832,
+           480
+          ],
+          "resize_size": [
+           832,
+           480
+          ],
+          "source_size": [
+           1920,
+           860
+          ],
+          "source_to_target_matrix": [
+           [
+            0.5583892617449664,
+            0,
+            -120.05369127516778
+           ],
+           [
+            0,
+            0.5581395348837209,
+            -0.0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ],
+          "train_crop_box": [
+           215,
+           0,
+           1705,
+           860
+          ]
+         }
+        ],
+        "torchvision_version": "0.26.0+cu128"
+       },
+       "sampling": {
+        "aligned_rgb_lengths": [
+         57,
+         217
+        ],
+        "duration_weights": [
+         0.20924574209245744,
+         0.7907542579075425
+        ],
+        "effective_train_fps": 16.0,
+        "frame_indices": [
+         528,
+         530,
+         531,
+         533,
+         534,
+         536,
+         537,
+         539,
+         540,
+         542,
+         543,
+         545,
+         546,
+         548,
+         549,
+         551,
+         552,
+         554,
+         555,
+         557,
+         558,
+         560,
+         561,
+         563,
+         564,
+         566,
+         567,
+         569,
+         570,
+         572,
+         574,
+         575,
+         577,
+         578,
+         580,
+         581,
+         583,
+         584,
+         586,
+         587,
+         589,
+         590,
+         592,
+         593,
+         595,
+         596,
+         598,
+         599,
+         601,
+         602,
+         604,
+         605,
+         607,
+         608,
+         610,
+         611,
+         613,
+         618,
+         620,
+         621,
+         622,
+         624,
+         626,
+         627,
+         628,
+         630,
+         632,
+         633,
+         634,
+         636,
+         638,
+         639,
+         640,
+         642,
+         644,
+         645,
+         646,
+         648,
+         650,
+         651,
+         652,
+         654,
+         656,
+         657,
+         658,
+         660,
+         662,
+         663,
+         664,
+         666,
+         668,
+         669,
+         670,
+         672,
+         674,
+         675,
+         676,
+         678,
+         680,
+         681,
+         682,
+         684,
+         686,
+         687,
+         688,
+         690,
+         692,
+         693,
+         694,
+         696,
+         698,
+         699,
+         700,
+         702,
+         704,
+         705,
+         706,
+         708,
+         710,
+         711,
+         712,
+         714,
+         716,
+         717,
+         718,
+         720,
+         722,
+         723,
+         724,
+         726,
+         728,
+         729,
+         730,
+         732,
+         734,
+         735,
+         736,
+         738,
+         740,
+         741,
+         742,
+         744,
+         746,
+         747,
+         748,
+         750,
+         752,
+         753,
+         754,
+         756,
+         758,
+         759,
+         760,
+         762,
+         764,
+         765,
+         766,
+         768,
+         770,
+         771,
+         772,
+         774,
+         776,
+         777,
+         778,
+         780,
+         782,
+         783,
+         784,
+         786,
+         788,
+         789,
+         790,
+         792,
+         794,
+         795,
+         796,
+         798,
+         800,
+         801,
+         802,
+         804,
+         806,
+         807,
+         808,
+         810,
+         812,
+         813,
+         814,
+         816,
+         818,
+         819,
+         820,
+         822,
+         824,
+         825,
+         826,
+         828,
+         830,
+         831,
+         832,
+         834,
+         836,
+         837,
+         838,
+         840,
+         842,
+         843,
+         844,
+         846,
+         848,
+         849,
+         850,
+         852,
+         854,
+         855,
+         856,
+         858,
+         860,
+         861,
+         862,
+         864,
+         866,
+         867,
+         868,
+         870,
+         872,
+         873,
+         874,
+         876,
+         878,
+         879,
+         880,
+         882,
+         884,
+         885,
+         886,
+         888,
+         890,
+         891,
+         892,
+         894,
+         896,
+         897,
+         898,
+         900,
+         902,
+         903,
+         904,
+         906,
+         908,
+         909,
+         910,
+         912,
+         914,
+         915,
+         916,
+         918,
+         920,
+         921,
+         922,
+         924,
+         926,
+         927,
+         928,
+         930,
+         932,
+         933,
+         934,
+         936,
+         938,
+         939,
+         940,
+         942
+        ],
+        "frame_indices_by_shot": [
+         [
+          528,
+          530,
+          531,
+          533,
+          534,
+          536,
+          537,
+          539,
+          540,
+          542,
+          543,
+          545,
+          546,
+          548,
+          549,
+          551,
+          552,
+          554,
+          555,
+          557,
+          558,
+          560,
+          561,
+          563,
+          564,
+          566,
+          567,
+          569,
+          570,
+          572,
+          574,
+          575,
+          577,
+          578,
+          580,
+          581,
+          583,
+          584,
+          586,
+          587,
+          589,
+          590,
+          592,
+          593,
+          595,
+          596,
+          598,
+          599,
+          601,
+          602,
+          604,
+          605,
+          607,
+          608,
+          610,
+          611,
+          613
+         ],
+         [
+          618,
+          620,
+          621,
+          622,
+          624,
+          626,
+          627,
+          628,
+          630,
+          632,
+          633,
+          634,
+          636,
+          638,
+          639,
+          640,
+          642,
+          644,
+          645,
+          646,
+          648,
+          650,
+          651,
+          652,
+          654,
+          656,
+          657,
+          658,
+          660,
+          662,
+          663,
+          664,
+          666,
+          668,
+          669,
+          670,
+          672,
+          674,
+          675,
+          676,
+          678,
+          680,
+          681,
+          682,
+          684,
+          686,
+          687,
+          688,
+          690,
+          692,
+          693,
+          694,
+          696,
+          698,
+          699,
+          700,
+          702,
+          704,
+          705,
+          706,
+          708,
+          710,
+          711,
+          712,
+          714,
+          716,
+          717,
+          718,
+          720,
+          722,
+          723,
+          724,
+          726,
+          728,
+          729,
+          730,
+          732,
+          734,
+          735,
+          736,
+          738,
+          740,
+          741,
+          742,
+          744,
+          746,
+          747,
+          748,
+          750,
+          752,
+          753,
+          754,
+          756,
+          758,
+          759,
+          760,
+          762,
+          764,
+          765,
+          766,
+          768,
+          770,
+          771,
+          772,
+          774,
+          776,
+          777,
+          778,
+          780,
+          782,
+          783,
+          784,
+          786,
+          788,
+          789,
+          790,
+          792,
+          794,
+          795,
+          796,
+          798,
+          800,
+          801,
+          802,
+          804,
+          806,
+          807,
+          808,
+          810,
+          812,
+          813,
+          814,
+          816,
+          818,
+          819,
+          820,
+          822,
+          824,
+          825,
+          826,
+          828,
+          830,
+          831,
+          832,
+          834,
+          836,
+          837,
+          838,
+          840,
+          842,
+          843,
+          844,
+          846,
+          848,
+          849,
+          850,
+          852,
+          854,
+          855,
+          856,
+          858,
+          860,
+          861,
+          862,
+          864,
+          866,
+          867,
+          868,
+          870,
+          872,
+          873,
+          874,
+          876,
+          878,
+          879,
+          880,
+          882,
+          884,
+          885,
+          886,
+          888,
+          890,
+          891,
+          892,
+          894,
+          896,
+          897,
+          898,
+          900,
+          902,
+          903,
+          904,
+          906,
+          908,
+          909,
+          910,
+          912,
+          914,
+          915,
+          916,
+          918,
+          920,
+          921,
+          922,
+          924,
+          926,
+          927,
+          928,
+          930,
+          932,
+          933,
+          934,
+          936,
+          938,
+          939,
+          940,
+          942
+         ]
+        ],
+        "frame_policy": "fps_aware_target_fps",
+        "latent_lengths": [
+         15,
+         55
+        ],
+        "latent_shot_groups": [
+         [
+          0,
+          15
+         ],
+         [
+          15,
+          70
+         ]
+        ],
+        "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+        "max_rgb_frames": 308,
+        "prompt_index_by_shot": [
+         0,
+         1
+        ],
+        "raw_shot_groups": [
+         [
+          528,
+          614
+         ],
+         [
+          618,
+          943
+         ]
+        ],
+        "rgb_was_scaled": false,
+        "shot_durations_sec": [
+         3.5833333333333335,
+         13.541666666666666
+        ],
+        "shot_groups": [
+         [
+          0,
+          57
+         ],
+         [
+          57,
+          274
+         ]
+        ],
+        "source_duration_sec": 17.125,
+        "source_fps": 24.0,
+        "source_fps_by_shot": [
+         24.0,
+         24.0
+        ],
+        "source_num_frames": 2240,
+        "source_num_frames_by_shot": [
+         2240,
+         2240
+        ],
+        "source_rgb_frames": 411,
+        "source_shot_segments": [
+         [
+          528,
+          614
+         ],
+         [
+          618,
+          943
+         ]
+        ],
+        "source_video_paths": [
+         "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4",
+         "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0005/0a757250-277c-82e7-b55f-5f6f40bf7465.mp4"
+        ],
+        "target_duration_sec": 17.125,
+        "target_fps": 16.0,
+        "target_rgb_lengths": [
+         57,
+         217
+        ],
+        "train_latent_frames": 70,
+        "train_rgb_frames": 274,
+        "train_shot_groups": [
+         [
+          0,
+          57
+         ],
+         [
+          57,
+          274
+         ]
+        ],
+        "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+        "vae_padding_frames": [
+         0,
+         0
+        ],
+        "vae_temporal_stride": 4,
+        "vae_truncated_frames": [
+         0,
+         0
+        ]
+       },
+       "scene": {
+        "container_preroll_frames": null,
+        "film_key": null,
+        "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+        "source": "cinedance"
+       },
+       "schema": "scene_window_v1",
+       "source_shot_segments": [
+        [
+         528,
+         614
+        ],
+        [
+         618,
+         943
+        ]
+       ]
+      },
+      "models": {
+       "vae": {
+        "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/first-batch-members/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+        "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+       }
+      },
+      "schema": "wan22_cache_provenance_v1"
+     },
+     "shot_count": 2,
+     "shot_groups": [
+      [
+       0,
+       57
+      ],
+      [
+       57,
+       274
+      ]
+     ],
+     "width": 832
+    },
+    "index_row": {
+     "sid": "cinedance-018637",
+     "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+     "source_shot_index": 2,
+     "origin": "first_batch_window",
+     "file": "latents/source_pipeline_v1:scene_1to5_v3_short:cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001:train:0001-0002.safetensors",
+     "latent_start": 15,
+     "latent_end": 70,
+     "train_frames": 217
+    },
+    "mapping_rows": [
+     {
+      "sid": "cinedance-018637",
+      "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+      "source_shot_index": 1,
+      "window_key": "cinedance-018637-w0000",
+      "window_shot": 0,
+      "block_key": "cinedance-018637-b0000",
+      "block_shot": 0,
+      "score_key": "cinedance-018637-e0000",
+      "excluded_reasons": []
+     },
+     {
+      "sid": "cinedance-018637",
+      "scene_id": "cinedance:0a757250-277c-82e7-b55f-5f6f40bf7465:<scene2>:block0001",
+      "source_shot_index": 2,
+      "window_key": "cinedance-018637-w0000",
+      "window_shot": 1,
+      "block_key": "cinedance-018637-b0000",
+      "block_shot": 1,
+      "score_key": "cinedance-018637-e0001",
+      "excluded_reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "cinepile_first_in_window_slash_scene_id",
+   "block": {
+    "key": "film-005442-b0001",
+    "source": "cinepile_t2v",
+    "scene": {
+     "schema_version": "scene_window_v1",
+     "window_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000:0020-0021",
+     "kind": "block",
+     "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+     "film_key": "cinepile_t2v:scream",
+     "source": "cinepile_t2v",
+     "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4",
+     "fps": 23.976,
+     "container_preroll_frames": 0,
+     "crop_box": [
+      284,
+      30,
+      1636,
+      810
+     ],
+     "shot_count": 2,
+     "render_frames": 78,
+     "shots": [
+      {
+       "source_shot_index": 20,
+       "start_frame": 847,
+       "end_frame": 919,
+       "seconds": 3.0030030030030033,
+       "render_frames": 45,
+       "sid": "film-005442",
+       "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+       "score_key": "film-005442-e0006",
+       "mean_luma": 48.75029373168945,
+       "min_luma": 45.17523193359375,
+       "max_luma": 57.21544647216797,
+       "dover_technical": -0.14499907195568085,
+       "laion_aesthetic": 4.514978249867757
+      },
+      {
+       "source_shot_index": 21,
+       "start_frame": 923,
+       "end_frame": 972,
+       "seconds": 2.0437103770437104,
+       "render_frames": 33,
+       "sid": "film-005442",
+       "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+       "score_key": "film-005442-e0007",
+       "mean_luma": 40.214332580566406,
+       "min_luma": 38.368709564208984,
+       "max_luma": 44.42554473876953,
+       "dover_technical": -0.1188916563987732,
+       "laion_aesthetic": 4.746407985687256
+      }
+     ],
+     "cut_version": "story_block_v1",
+     "width": 1920,
+     "height": 810,
+     "video_frame_count": 3467,
+     "active_box": [
+      0,
+      30,
+      1920,
+      810
+     ],
+     "frame_basis": "ffmpeg_sequential_zero_based",
+     "boundary_revision": {
+      "version": "shot_gate_v2_full_guarded_single",
+      "coordinate": "ffmpeg_sequential",
+      "boundary_guard_frames": 2,
+      "thresholds": {
+       "boundary_threshold": 0.5,
+       "single_threshold": 0.25,
+       "content_threshold": 27.0,
+       "edge_seconds": 0.5,
+       "boundary_guard_frames": 2
+      },
+      "shots": [
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         847,
+         919
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4",
+        "segment": [
+         845,
+         921
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         845,
+         921
+        ]
+       },
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         923,
+         972
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4",
+        "segment": [
+         921,
+         974
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         921,
+         974
+        ]
+       }
+      ]
+     },
+     "quality": {
+      "min_dover_technical": -0.14499907195568085,
+      "min_laion_aesthetic": 4.514978249867757
+     }
+    }
+   },
+   "position": 0,
+   "case_id": "film-005442/cinepile_t2v:video_batch_20250817_133943_007%2FScream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000:20",
+   "first_batch": {
+    "window_shot": 0,
+    "manifest_row": {
+     "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000:train:0020-0021",
+     "mapping_schema": "scene_window_v1",
+     "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4",
+     "source_fps": "23.976",
+     "source_num_frames": "3467",
+     "source_width": "1920",
+     "source_height": "810",
+     "source_shot_segments": "[[847,919],[923,972]]",
+     "source_frame_indices_by_shot": "[[847,849,850,852,853,855,857,858,860,862,863,865,866,868,870,871,873,874,876,878,879,881,883,884,886,887,889,891,892,894,895,897,899,900,902,903,905,907,908,910,912,913,915,916,918],[923,925,926,927,929,931,932,933,935,937,938,939,941,943,944,945,947,949,950,951,953,955,956,957,959,961,962,963,965,967,968,969,971]]",
+     "shot_groups": "[[0,45],[45,78]]",
+     "active_box": "[0,30,1920,810]",
+     "train_crop_box": "[284,30,1636,810]",
+     "film_key": "cinepile_t2v:scream",
+     "source": "cinepile_t2v",
+     "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+     "container_preroll_frames": "0",
+     "window_key": "film-005442-w0001",
+     "shot_count": "2",
+     "render_frames": "78",
+     "shot_laion_aesthetic": "[4.515,4.7464]",
+     "shot_dover_technical": "[-0.145,-0.11889]",
+     "min_laion_aesthetic": "4.515",
+     "min_dover_technical": "-0.145"
+    },
+    "record": {
+     "cache_file": "latents/source_pipeline_v1:scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000:train:0020-0021.safetensors",
+     "case_id": "source_pipeline_v1:scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000:train:0020-0021",
+     "height": 480,
+     "index": 17358,
+     "input_latents_shape": [
+      1,
+      48,
+      21,
+      30,
+      52
+     ],
+     "latent_shot_groups": [
+      [
+       0,
+       12
+      ],
+      [
+       12,
+       21
+      ]
+     ],
+     "num_frames": 78,
+     "provenance": {
+      "cache_version": "scene_targets_v1",
+      "context": null,
+      "encoding": {
+       "dtype": "bfloat16",
+       "implementation_revision": "69f094f0a64f32b9a596774ddf96ecbf7826e60f",
+       "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+       "tile_size": [
+        30,
+        52
+       ],
+       "tile_stride": [
+        15,
+        26
+       ],
+       "tiled": false
+      },
+      "media": {
+       "files": [
+        {
+         "bytes": 76087665,
+         "mtime_ns": 1749664958000000000,
+         "path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4",
+         "source_fps": 23.976,
+         "source_height": 810,
+         "source_num_frames": 3467,
+         "source_width": 1920
+        }
+       ],
+       "preprocessing": {
+        "decoder": "ffmpeg-sequential",
+        "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+        "frame_basis": "ffmpeg_sequential_zero_based",
+        "pillow_version": "12.3.0",
+        "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+        "preroll_added": 0,
+        "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+        "spatial": [
+         {
+          "active_box": [
+           0,
+           30,
+           1920,
+           810
+          ],
+          "coordinate_system": "pixel_edges",
+          "crop_box_resized": [
+           0,
+           0,
+           832,
+           480
+          ],
+          "output_size": [
+           832,
+           480
+          ],
+          "resize_size": [
+           832,
+           480
+          ],
+          "source_size": [
+           1920,
+           810
+          ],
+          "source_to_target_matrix": [
+           [
+            0.6153846153846154,
+            0,
+            -174.76923076923077
+           ],
+           [
+            0,
+            0.6153846153846154,
+            -18.461538461538463
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ],
+          "train_crop_box": [
+           284,
+           30,
+           1636,
+           810
+          ]
+         }
+        ],
+        "torchvision_version": "0.26.0+cu128"
+       },
+       "sampling": {
+        "aligned_rgb_lengths": [
+         45,
+         33
+        ],
+        "duration_weights": [
+         0.5950413223140496,
+         0.4049586776859504
+        ],
+        "effective_train_fps": 15.455603305785123,
+        "frame_indices": [
+         847,
+         849,
+         850,
+         852,
+         853,
+         855,
+         857,
+         858,
+         860,
+         862,
+         863,
+         865,
+         866,
+         868,
+         870,
+         871,
+         873,
+         874,
+         876,
+         878,
+         879,
+         881,
+         883,
+         884,
+         886,
+         887,
+         889,
+         891,
+         892,
+         894,
+         895,
+         897,
+         899,
+         900,
+         902,
+         903,
+         905,
+         907,
+         908,
+         910,
+         912,
+         913,
+         915,
+         916,
+         918,
+         923,
+         925,
+         926,
+         927,
+         929,
+         931,
+         932,
+         933,
+         935,
+         937,
+         938,
+         939,
+         941,
+         943,
+         944,
+         945,
+         947,
+         949,
+         950,
+         951,
+         953,
+         955,
+         956,
+         957,
+         959,
+         961,
+         962,
+         963,
+         965,
+         967,
+         968,
+         969,
+         971
+        ],
+        "frame_indices_by_shot": [
+         [
+          847,
+          849,
+          850,
+          852,
+          853,
+          855,
+          857,
+          858,
+          860,
+          862,
+          863,
+          865,
+          866,
+          868,
+          870,
+          871,
+          873,
+          874,
+          876,
+          878,
+          879,
+          881,
+          883,
+          884,
+          886,
+          887,
+          889,
+          891,
+          892,
+          894,
+          895,
+          897,
+          899,
+          900,
+          902,
+          903,
+          905,
+          907,
+          908,
+          910,
+          912,
+          913,
+          915,
+          916,
+          918
+         ],
+         [
+          923,
+          925,
+          926,
+          927,
+          929,
+          931,
+          932,
+          933,
+          935,
+          937,
+          938,
+          939,
+          941,
+          943,
+          944,
+          945,
+          947,
+          949,
+          950,
+          951,
+          953,
+          955,
+          956,
+          957,
+          959,
+          961,
+          962,
+          963,
+          965,
+          967,
+          968,
+          969,
+          971
+         ]
+        ],
+        "frame_policy": "fps_aware_target_fps",
+        "latent_lengths": [
+         12,
+         9
+        ],
+        "latent_shot_groups": [
+         [
+          0,
+          12
+         ],
+         [
+          12,
+          21
+         ]
+        ],
+        "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+        "max_rgb_frames": 308,
+        "prompt_index_by_shot": [
+         0,
+         1
+        ],
+        "raw_shot_groups": [
+         [
+          847,
+          919
+         ],
+         [
+          923,
+          972
+         ]
+        ],
+        "rgb_was_scaled": false,
+        "shot_durations_sec": [
+         3.0030030030030033,
+         2.0437103770437104
+        ],
+        "shot_groups": [
+         [
+          0,
+          45
+         ],
+         [
+          45,
+          78
+         ]
+        ],
+        "source_duration_sec": 5.046713380046714,
+        "source_fps": 23.976,
+        "source_fps_by_shot": [
+         23.976,
+         23.976
+        ],
+        "source_num_frames": 3467,
+        "source_num_frames_by_shot": [
+         3467,
+         3467
+        ],
+        "source_rgb_frames": 121,
+        "source_shot_segments": [
+         [
+          847,
+          919
+         ],
+         [
+          923,
+          972
+         ]
+        ],
+        "source_video_paths": [
+         "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4",
+         "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips.mp4"
+        ],
+        "target_duration_sec": 5.0625,
+        "target_fps": 16.0,
+        "target_rgb_lengths": [
+         48,
+         33
+        ],
+        "train_latent_frames": 21,
+        "train_rgb_frames": 78,
+        "train_shot_groups": [
+         [
+          0,
+          45
+         ],
+         [
+          45,
+          78
+         ]
+        ],
+        "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+        "vae_padding_frames": [
+         0,
+         0
+        ],
+        "vae_temporal_stride": 4,
+        "vae_truncated_frames": [
+         3,
+         0
+        ]
+       },
+       "scene": {
+        "container_preroll_frames": 0.0,
+        "film_key": "cinepile_t2v:scream",
+        "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+        "source": "cinepile_t2v"
+       },
+       "schema": "scene_window_v1",
+       "source_shot_segments": [
+        [
+         847,
+         919
+        ],
+        [
+         923,
+         972
+        ]
+       ]
+      },
+      "models": {
+       "vae": {
+        "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/first-batch-members/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+        "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+       }
+      },
+      "schema": "wan22_cache_provenance_v1"
+     },
+     "shot_count": 2,
+     "shot_groups": [
+      [
+       0,
+       45
+      ],
+      [
+       45,
+       78
+      ]
+     ],
+     "width": 832
+    },
+    "index_row": {
+     "sid": "film-005442",
+     "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+     "source_shot_index": 20,
+     "origin": "first_batch_window",
+     "file": "latents/source_pipeline_v1:scene_1to5_v3_short:cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000:train:0020-0021.safetensors",
+     "latent_start": 0,
+     "latent_end": 12,
+     "train_frames": 45
+    },
+    "mapping_rows": [
+     {
+      "sid": "film-005442",
+      "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+      "source_shot_index": 20,
+      "window_key": "film-005442-w0001",
+      "window_shot": 0,
+      "block_key": "film-005442-b0001",
+      "block_shot": 0,
+      "score_key": "film-005442-e0006",
+      "excluded_reasons": []
+     },
+     {
+      "sid": "film-005442",
+      "scene_id": "cinepile_t2v:video_batch_20250817_133943_007/Scream_(2022)_-_Fighting_the_Killers_Scene_(9_10)_|_Movieclips:scene000",
+      "source_shot_index": 21,
+      "window_key": "film-005442-w0001",
+      "window_shot": 1,
+      "block_key": "film-005442-b0001",
+      "block_shot": 1,
+      "score_key": "film-005442-e0007",
+      "excluded_reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "moviechat_alone_window_preroll",
+   "block": {
+    "key": "film-008772-b0024",
+    "source": "moviechat_1k",
+    "scene": {
+     "schema_version": "scene_window_v1",
+     "window_id": "story_block_v1:moviechat_1k:S01E1-7:scene006:0165-0165",
+     "kind": "block",
+     "scene_id": "moviechat_1k:S01E1-7:scene006",
+     "film_key": "moviechat_1k:S01E1",
+     "source": "moviechat_1k",
+     "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/S01E1-7.mp4",
+     "fps": 25.0,
+     "container_preroll_frames": 33,
+     "crop_box": [
+      16,
+      0,
+      1264,
+      720
+     ],
+     "shot_count": 1,
+     "render_frames": 37,
+     "shots": [
+      {
+       "source_shot_index": 165,
+       "start_frame": 10780,
+       "end_frame": 10841,
+       "seconds": 2.44,
+       "render_frames": 37,
+       "sid": "film-008772",
+       "scene_id": "moviechat_1k:S01E1-7:scene006",
+       "score_key": "film-008772-e0125",
+       "mean_luma": 31.973806381225586,
+       "min_luma": 28.967670440673828,
+       "max_luma": 33.7608528137207,
+       "dover_technical": -0.10161073505878448,
+       "laion_aesthetic": 4.9071041742960615
+      }
+     ],
+     "cut_version": "story_block_v1",
+     "width": 1280,
+     "height": 720,
+     "video_frame_count": 11252,
+     "active_box": [
+      0,
+      0,
+      1280,
+      720
+     ],
+     "frame_basis": "ffmpeg_sequential_zero_based",
+     "boundary_revision": {
+      "version": "shot_gate_v2_full_guarded_single",
+      "coordinate": "ffmpeg_sequential",
+      "boundary_guard_frames": 2,
+      "thresholds": {
+       "boundary_threshold": 0.5,
+       "single_threshold": 0.25,
+       "content_threshold": 27.0,
+       "edge_seconds": 0.5,
+       "boundary_guard_frames": 2
+      },
+      "shots": [
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         10780,
+         10841
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/S01E1-7.mp4",
+        "segment": [
+         10778,
+         10843
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         10778,
+         10843
+        ]
+       }
+      ]
+     },
+     "quality": {
+      "min_dover_technical": -0.10161073505878448,
+      "min_laion_aesthetic": 4.9071041742960615
+     }
+    }
+   },
+   "position": 0,
+   "case_id": "film-008772/moviechat_1k:S01E1-7:scene006:165",
+   "first_batch": {
+    "window_shot": 0,
+    "manifest_row": {
+     "case_id": "source_pipeline_v1:scene_1to5_v3_short:moviechat_1k:S01E1-7:scene006:train:0165-0165",
+     "mapping_schema": "scene_window_v1",
+     "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/S01E1-7.mp4",
+     "source_fps": "25.0",
+     "source_num_frames": "11252",
+     "source_width": "1280",
+     "source_height": "720",
+     "source_shot_segments": "[[10780,10841]]",
+     "source_frame_indices_by_shot": "[[10780,10782,10783,10785,10787,10788,10790,10792,10793,10795,10797,10798,10800,10802,10803,10805,10807,10808,10810,10812,10813,10815,10817,10818,10820,10822,10823,10825,10827,10828,10830,10832,10833,10835,10837,10838,10840]]",
+     "shot_groups": "[[0,37]]",
+     "active_box": "[0,0,1280,720]",
+     "train_crop_box": "[16,0,1264,720]",
+     "film_key": "moviechat_1k:S01E1",
+     "source": "moviechat_1k",
+     "scene_id": "moviechat_1k:S01E1-7:scene006",
+     "container_preroll_frames": "33",
+     "window_key": "film-008772-w0039",
+     "shot_count": "1",
+     "render_frames": "37",
+     "shot_laion_aesthetic": "[4.9071]",
+     "shot_dover_technical": "[-0.10161]",
+     "min_laion_aesthetic": "4.9071",
+     "min_dover_technical": "-0.10161"
+    },
+    "record": {
+     "cache_file": "latents/source_pipeline_v1:scene_1to5_v3_short:moviechat_1k:S01E1-7:scene006:train:0165-0165.safetensors",
+     "case_id": "source_pipeline_v1:scene_1to5_v3_short:moviechat_1k:S01E1-7:scene006:train:0165-0165",
+     "height": 480,
+     "index": 24215,
+     "input_latents_shape": [
+      1,
+      48,
+      10,
+      30,
+      52
+     ],
+     "latent_shot_groups": null,
+     "num_frames": 37,
+     "provenance": {
+      "cache_version": "scene_targets_v1",
+      "context": null,
+      "encoding": {
+       "dtype": "bfloat16",
+       "implementation_revision": "69f094f0a64f32b9a596774ddf96ecbf7826e60f",
+       "pixel_conversion": "uint8_to_bfloat16_mul_2_over_255_add_minus1",
+       "tile_size": [
+        30,
+        52
+       ],
+       "tile_stride": [
+        15,
+        26
+       ],
+       "tiled": false
+      },
+      "media": {
+       "files": [
+        {
+         "bytes": 413639762,
+         "mtime_ns": 1790707467713080758,
+         "path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/S01E1-7.mp4",
+         "source_fps": 25.0,
+         "source_height": 720,
+         "source_num_frames": 11252,
+         "source_width": 1280
+        }
+       ],
+       "preprocessing": {
+        "decoder": "ffmpeg-sequential",
+        "decoder_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+        "frame_basis": "ffmpeg_sequential_zero_based",
+        "pillow_version": "12.3.0",
+        "pixel_conversion": "uint8_RGB_to_float_minus1_plus1",
+        "preroll_added": 0,
+        "resample": "PIL.Image.resize_RGB_default_BICUBIC",
+        "spatial": [
+         {
+          "active_box": [
+           0,
+           0,
+           1280,
+           720
+          ],
+          "coordinate_system": "pixel_edges",
+          "crop_box_resized": [
+           0,
+           0,
+           832,
+           480
+          ],
+          "output_size": [
+           832,
+           480
+          ],
+          "resize_size": [
+           832,
+           480
+          ],
+          "source_size": [
+           1280,
+           720
+          ],
+          "source_to_target_matrix": [
+           [
+            0.6666666666666666,
+            0,
+            -10.666666666666666
+           ],
+           [
+            0,
+            0.6666666666666666,
+            -0.0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ],
+          "train_crop_box": [
+           16,
+           0,
+           1264,
+           720
+          ]
+         }
+        ],
+        "torchvision_version": "0.26.0+cu128"
+       },
+       "sampling": {
+        "aligned_rgb_lengths": [
+         37
+        ],
+        "duration_weights": [
+         1.0
+        ],
+        "effective_train_fps": 15.163934426229508,
+        "frame_indices": [
+         10780,
+         10782,
+         10783,
+         10785,
+         10787,
+         10788,
+         10790,
+         10792,
+         10793,
+         10795,
+         10797,
+         10798,
+         10800,
+         10802,
+         10803,
+         10805,
+         10807,
+         10808,
+         10810,
+         10812,
+         10813,
+         10815,
+         10817,
+         10818,
+         10820,
+         10822,
+         10823,
+         10825,
+         10827,
+         10828,
+         10830,
+         10832,
+         10833,
+         10835,
+         10837,
+         10838,
+         10840
+        ],
+        "frame_indices_by_shot": [
+         [
+          10780,
+          10782,
+          10783,
+          10785,
+          10787,
+          10788,
+          10790,
+          10792,
+          10793,
+          10795,
+          10797,
+          10798,
+          10800,
+          10802,
+          10803,
+          10805,
+          10807,
+          10808,
+          10810,
+          10812,
+          10813,
+          10815,
+          10817,
+          10818,
+          10820,
+          10822,
+          10823,
+          10825,
+          10827,
+          10828,
+          10830,
+          10832,
+          10833,
+          10835,
+          10837,
+          10838,
+          10840
+         ]
+        ],
+        "frame_policy": "fps_aware_target_fps",
+        "latent_lengths": [
+         10
+        ],
+        "latent_shot_groups": [
+         [
+          0,
+          10
+         ]
+        ],
+        "mapping_kind": "scene_ffmpeg_sequential_clean_v1",
+        "max_rgb_frames": 308,
+        "prompt_index_by_shot": [
+         0
+        ],
+        "raw_shot_groups": [
+         [
+          10780,
+          10841
+         ]
+        ],
+        "rgb_was_scaled": false,
+        "shot_durations_sec": [
+         2.44
+        ],
+        "shot_groups": [
+         [
+          0,
+          37
+         ]
+        ],
+        "source_duration_sec": 2.44,
+        "source_fps": 25.0,
+        "source_fps_by_shot": [
+         25.0
+        ],
+        "source_num_frames": 11252,
+        "source_num_frames_by_shot": [
+         11252
+        ],
+        "source_rgb_frames": 61,
+        "source_shot_segments": [
+         [
+          10780,
+          10841
+         ]
+        ],
+        "source_video_paths": [
+         "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/S01E1-7.mp4"
+        ],
+        "target_duration_sec": 2.4375,
+        "target_fps": 16.0,
+        "target_rgb_lengths": [
+         39
+        ],
+        "train_latent_frames": 10,
+        "train_rgb_frames": 37,
+        "train_shot_groups": [
+         [
+          0,
+          37
+         ]
+        ],
+        "vae_alignment_policy": "revised_boundary_unique_resample_v2",
+        "vae_padding_frames": [
+         0
+        ],
+        "vae_temporal_stride": 4,
+        "vae_truncated_frames": [
+         2
+        ]
+       },
+       "scene": {
+        "container_preroll_frames": 33.0,
+        "film_key": "moviechat_1k:S01E1",
+        "scene_id": "moviechat_1k:S01E1-7:scene006",
+        "source": "moviechat_1k"
+       },
+       "schema": "scene_window_v1",
+       "source_shot_segments": [
+        [
+         10780,
+         10841
+        ]
+       ]
+      },
+      "models": {
+       "vae": {
+        "path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011/first-batch-members/OoVMetric/models_ckpt/wan22_5b_native/Wan2.2_VAE.pth",
+        "revision": "local-wan22_5b_native-Wan2.2_VAE.pth-bytes=2818839170-mtime_ns=1786842945374403346"
+       }
+      },
+      "schema": "wan22_cache_provenance_v1"
+     },
+     "shot_count": 1,
+     "shot_groups": null,
+     "width": 832
+    },
+    "index_row": {
+     "sid": "film-008772",
+     "scene_id": "moviechat_1k:S01E1-7:scene006",
+     "source_shot_index": 165,
+     "origin": "first_batch_window",
+     "file": "latents/source_pipeline_v1:scene_1to5_v3_short:moviechat_1k:S01E1-7:scene006:train:0165-0165.safetensors",
+     "latent_start": 0,
+     "latent_end": 10,
+     "train_frames": 37
+    },
+    "mapping_rows": [
+     {
+      "sid": "film-008772",
+      "scene_id": "moviechat_1k:S01E1-7:scene006",
+      "source_shot_index": 165,
+      "window_key": "film-008772-w0039",
+      "window_shot": 0,
+      "block_key": "film-008772-b0024",
+      "block_shot": 0,
+      "score_key": "film-008772-e0125",
+      "excluded_reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "to_build_shortest",
+   "block": {
+    "key": "film-007067-b0019",
+    "source": "cinepile_t2v",
+    "scene": {
+     "schema_version": "scene_window_v1",
+     "window_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000:0118-0120",
+     "kind": "block",
+     "scene_id": "cinepile_t2v:video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000",
+     "film_key": "cinepile_t2v:the exorcist believer",
+     "source": "cinepile_t2v",
+     "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips.mp4",
+     "fps": 23.976,
+     "container_preroll_frames": 0,
+     "crop_box": [
+      258,
+      0,
+      1662,
+      810
+     ],
+     "shot_count": 3,
+     "render_frames": 47,
+     "shots": [
+      {
+       "source_shot_index": 118,
+       "start_frame": 7167,
+       "end_frame": 7193,
+       "seconds": 1.0844177510844177,
+       "render_frames": 17,
+       "sid": "film-007067",
+       "scene_id": "cinepile_t2v:video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000",
+       "score_key": "film-007067-e0085",
+       "mean_luma": 10.628740310668945,
+       "min_luma": 7.086062431335449,
+       "max_luma": 14.897333145141602,
+       "dover_technical": -0.1925344318151474,
+       "laion_aesthetic": 4.371429920196533
+      },
+      {
+       "source_shot_index": 119,
+       "start_frame": 7207,
+       "end_frame": 7219,
+       "seconds": 0.5005005005005005,
+       "render_frames": 5,
+       "sid": "film-007067",
+       "scene_id": "cinepile_t2v:video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000",
+       "score_key": "film-007067-e0086",
+       "mean_luma": 10.105417251586914,
+       "min_luma": 7.5210490226745605,
+       "max_luma": 12.956636428833008,
+       "dover_technical": -0.20787987112998962,
+       "laion_aesthetic": 4.20294713973999
+      },
+      {
+       "source_shot_index": 120,
+       "start_frame": 7223,
+       "end_frame": 7260,
+       "seconds": 1.5432098765432098,
+       "render_frames": 25,
+       "sid": "film-007067",
+       "scene_id": "cinepile_t2v:video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000",
+       "score_key": "film-007067-e0087",
+       "mean_luma": 11.16280746459961,
+       "min_luma": 10.85886001586914,
+       "max_luma": 11.459457397460938,
+       "dover_technical": -0.17556224763393402,
+       "laion_aesthetic": 5.024022261301677
+      }
+     ],
+     "cut_version": "story_block_v1",
+     "width": 1920,
+     "height": 810,
+     "video_frame_count": 13851,
+     "active_box": [
+      0,
+      0,
+      1920,
+      810
+     ],
+     "frame_basis": "ffmpeg_sequential_zero_based",
+     "boundary_revision": {
+      "version": "shot_gate_v2_full_guarded_single",
+      "coordinate": "ffmpeg_sequential",
+      "boundary_guard_frames": 2,
+      "thresholds": {
+       "boundary_threshold": 0.5,
+       "single_threshold": 0.25,
+       "content_threshold": 27.0,
+       "edge_seconds": 0.5,
+       "boundary_guard_frames": 2
+      },
+      "shots": [
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         7167,
+         7193
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips.mp4",
+        "segment": [
+         7165,
+         7195
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         7165,
+         7195
+        ]
+       },
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         7207,
+         7219
+        ],
+        "boundary_cuts": [
+         7205
+        ],
+        "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips.mp4",
+        "segment": [
+         7195,
+         7221
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         7205,
+         7221
+        ]
+       },
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         7223,
+         7260
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips.mp4",
+        "segment": [
+         7221,
+         7262
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         7221,
+         7262
+        ]
+       }
+      ]
+     },
+     "quality": {
+      "min_dover_technical": -0.20787987112998962,
+      "min_laion_aesthetic": 4.20294713973999
+     }
+    }
+   },
+   "position": 1,
+   "case_id": "film-007067/cinepile_t2v:video_batch_20250817_133943_009%2FThe_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000:119",
+   "first_batch": null,
+   "manifest_row": {
+    "case_id": "film-007067/cinepile_t2v:video_batch_20250817_133943_009%2FThe_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000:119",
+    "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips.mp4",
+    "source_fps": "23.976",
+    "source_num_frames": "13851",
+    "source_width": "1920",
+    "source_height": "810",
+    "source_shot_segments": "[[7207,7219]]",
+    "source_frame_indices_by_shot": "[[7207,7210,7213,7215,7218]]",
+    "shot_groups": "[[0,5]]",
+    "active_box": "[0,0,1920,810]",
+    "train_crop_box": "[258,0,1662,810]",
+    "film_key": "cinepile_t2v:the exorcist believer",
+    "source": "cinepile_t2v",
+    "scene_id": "cinepile_t2v:video_batch_20250817_133943_009/The_Exorcist__Believer_(2023)_-_Terrifying_Final_Exorcism_|_Movieclips:scene000",
+    "container_preroll_frames": "0",
+    "mapping_schema": "scene_window_v1",
+    "sid": "film-007067",
+    "source_shot_index": "119"
+   }
+  },
+  {
+   "name": "to_build_longest",
+   "block": {
+    "key": "cinedance-009438-b0000",
+    "source": "cinedance",
+    "scene": {
+     "schema_version": "scene_window_v1",
+     "window_id": "story_block_v1:cinedance:009bc505-ee41-86a1-a559-a30d75680654:<scene1>:block0000:0000-0000",
+     "kind": "block",
+     "scene_id": "cinedance:009bc505-ee41-86a1-a559-a30d75680654:<scene1>:block0000",
+     "film_key": null,
+     "source": "cinedance",
+     "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/009bc505-ee41-86a1-a559-a30d75680654.mp4",
+     "fps": 29.97002997002997,
+     "container_preroll_frames": null,
+     "crop_box": [
+      73,
+      0,
+      1207,
+      654
+     ],
+     "shot_count": 1,
+     "render_frames": 225,
+     "shots": [
+      {
+       "source_shot_index": 0,
+       "start_frame": 2,
+       "end_frame": 426,
+       "seconds": 14.147466666666666,
+       "render_frames": 225,
+       "sid": "cinedance-009438",
+       "scene_id": "cinedance:009bc505-ee41-86a1-a559-a30d75680654:<scene1>:block0000",
+       "score_key": "cinedance-009438-e0000",
+       "mean_luma": 35.01203918457031,
+       "min_luma": 31.757076263427734,
+       "max_luma": 38.945159912109375,
+       "dover_technical": -0.014642132446169853,
+       "laion_aesthetic": 5.035506248474121,
+       "scene": "<scene1>",
+       "characters": [
+        "<char1>"
+       ]
+      }
+     ],
+     "cut_version": "story_block_v1",
+     "width": 1280,
+     "height": 654,
+     "video_frame_count": 1010,
+     "active_box": [
+      0,
+      0,
+      1280,
+      654
+     ],
+     "frame_basis": "ffmpeg_sequential_zero_based",
+     "boundary_revision": {
+      "version": "shot_gate_v2_full_guarded_single",
+      "coordinate": "ffmpeg_sequential",
+      "boundary_guard_frames": 2,
+      "thresholds": {
+       "boundary_threshold": 0.5,
+       "single_threshold": 0.25,
+       "content_threshold": 27.0,
+       "edge_seconds": 0.5,
+       "boundary_guard_frames": 2
+      },
+      "shots": [
+       {
+        "status": "kept",
+        "reasons": [],
+        "revised_segment": [
+         2,
+         426
+        ],
+        "boundary_cuts": [],
+        "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/009bc505-ee41-86a1-a559-a30d75680654.mp4",
+        "segment": [
+         0,
+         428
+        ],
+        "rule_version": "shot_gate_v2_full_guarded_single",
+        "coordinate": "ffmpeg_sequential",
+        "boundary_guard_frames": 2,
+        "boundary_revised_segment": [
+         0,
+         428
+        ]
+       }
+      ]
+     },
+     "quality": {
+      "min_dover_technical": -0.014642132446169853,
+      "min_laion_aesthetic": 5.035506248474121
+     }
+    }
+   },
+   "position": 0,
+   "case_id": "cinedance-009438/cinedance:009bc505-ee41-86a1-a559-a30d75680654:<scene1>:block0000:0",
+   "first_batch": null,
+   "manifest_row": {
+    "case_id": "cinedance-009438/cinedance:009bc505-ee41-86a1-a559-a30d75680654:<scene1>:block0000:0",
+    "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/009bc505-ee41-86a1-a559-a30d75680654.mp4",
+    "source_fps": "29.97002997002997",
+    "source_num_frames": "1010",
+    "source_width": "1280",
+    "source_height": "654",
+    "source_shot_segments": "[[2,426]]",
+    "source_frame_indices_by_shot": "[[2,4,6,8,10,11,13,15,17,19,21,23,25,27,28,30,32,34,36,38,40,42,44,45,47,49,51,53,55,57,59,61,62,64,66,68,70,72,74,76,78,79,81,83,85,87,89,91,93,95,96,98,100,102,104,106,108,110,112,113,115,117,119,121,123,125,127,129,130,132,134,136,138,140,142,144,146,147,149,151,153,155,157,159,161,163,164,166,168,170,172,174,176,178,180,181,183,185,187,189,191,193,195,197,198,200,202,204,206,208,210,212,214,215,217,219,221,223,225,227,229,230,232,234,236,238,240,242,244,246,247,249,251,253,255,257,259,261,263,264,266,268,270,272,274,276,278,280,281,283,285,287,289,291,293,295,297,298,300,302,304,306,308,310,312,314,315,317,319,321,323,325,327,329,331,332,334,336,338,340,342,344,346,348,349,351,353,355,357,359,361,363,365,366,368,370,372,374,376,378,380,382,383,385,387,389,391,393,395,397,399,400,402,404,406,408,410,412,414,416,417,419,421,423,425]]",
+    "shot_groups": "[[0,225]]",
+    "active_box": "[0,0,1280,654]",
+    "train_crop_box": "[73,0,1207,654]",
+    "film_key": "",
+    "source": "cinedance",
+    "scene_id": "cinedance:009bc505-ee41-86a1-a559-a30d75680654:<scene1>:block0000",
+    "container_preroll_frames": "",
+    "mapping_schema": "scene_window_v1",
+    "sid": "cinedance-009438",
+    "source_shot_index": "0"
+   }
+  }
+ ],
+ "extra_blocks": []
+}

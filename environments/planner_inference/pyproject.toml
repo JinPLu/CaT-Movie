@@ -1,0 +1,35 @@
+[project]
+name = "storyboard-planner-inference"
+version = "0.1.0"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "vllm==0.19.0",
+  "transformers==5.8.0",
+  "torch==2.10.0",
+  "torchvision==0.25.0",
+  "pillow==12.1.1",
+  "pydantic==2.12.5",
+  "lm-format-enforcer==0.11.3",
+  "pytest==8.4.2",
+  "pandas==2.3.3",
+  "ftfy==6.3.1",
+  "imageio[ffmpeg]==2.37.3",
+  "opencv-python-headless==4.13.0.92",
+  "scipy==1.17.1",
+  "pytest-asyncio==1.3.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = [{index = "pytorch-cu128", marker = "sys_platform == 'linux'"}]
+torchvision = [{index = "pytorch-cu128", marker = "sys_platform == 'linux'"}]
+
+# vLLM 0.19 元数据要求 Transformers<5，与27B processor要求5.8冲突。
+# 只在本独立环境显式覆盖；lock成功不代表运行兼容已验收。
+[tool.uv]
+override-dependencies = ["transformers==5.8.0"]
+environments = ["sys_platform == 'linux'"]

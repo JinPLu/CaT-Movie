@@ -1,0 +1,531 @@
+[
+  {
+    "sample_id": "cinedance-010539-b0001/summary/0:3",
+    "case_id": "story_block_v1:cinedance:01d2beb4-0320-8397-8832-213988f14d36:<scene1>:block0000:0002-0004",
+    "block_key": "cinedance-010539-b0001",
+    "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/01d2beb4-0320-8397-8832-213988f14d36.mp4",
+    "split": "train",
+    "tier": "summary",
+    "script": "A person receives a business card and signs a document in a cafeteria, then sits alone by the window.",
+    "shot_span": [
+      0,
+      3
+    ],
+    "storyboard": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "partial",
+          "appearance": "a person with dark hair",
+          "outfit": "a beige long-sleeved top"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "partial",
+          "appearance": "a person with short dark hair",
+          "outfit": "a white shirt"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a white business card with Japanese text"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a white pen"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a document with Japanese text"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a white cup"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a plate of food"
+        },
+        {
+          "name": "Object 6",
+          "appearance": "a glass of water"
+        },
+        {
+          "name": "Object 7",
+          "appearance": "a wooden table"
+        },
+        {
+          "name": "Object 8",
+          "appearance": "a tray"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a cafeteria or dining area with large windows and a city view"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting at a table",
+              "holding": []
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting at a table",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 1",
+              "state": "being handed over"
+            },
+            {
+              "name": "Object 4",
+              "state": "on a tray"
+            },
+            {
+              "name": "Object 5",
+              "state": "on a tray"
+            },
+            {
+              "name": "Object 6",
+              "state": "on a tray"
+            },
+            {
+              "name": "Object 7",
+              "state": "under the tray"
+            },
+            {
+              "name": "Object 8",
+              "state": "on the table"
+            }
+          ],
+          "action": "Character 2 hands a white business card to Character 1, who takes it and holds it with both hands.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "holding",
+              "before": [],
+              "after": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "what": "holding",
+              "before": [
+                "Object 1"
+              ],
+              "after": []
+            }
+          ],
+          "frame_count": 53
+        },
+        {
+          "shot": 2,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "over-the-shoulder shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting at a table",
+              "holding": [
+                "Object 2"
+              ]
+            },
+            {
+              "name": "Object 2",
+              "state": "being used to write"
+            },
+            {
+              "name": "Object 3",
+              "state": "on the table"
+            }
+          ],
+          "action": "Character 1 holds a white pen and writes on a document with Japanese text.",
+          "changes": [],
+          "frame_count": 89
+        },
+        {
+          "shot": 3,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting alone at a table near a window"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting at a table in the foreground"
+            },
+            {
+              "name": "Object 7",
+              "state": "in the room"
+            }
+          ],
+          "action": "Character 1 sits alone at a table near a large window looking out, while Character 2 sits at another table in the foreground.",
+          "changes": [],
+          "frame_count": 57
+        }
+      ]
+    }
+  },
+  {
+    "sample_id": "film-000022-b0004/summary/0:9",
+    "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_001/A_Dog's_Purpose_(2017)_-_I_Found_You!_Scene_(8_10)_|_Movieclips:scene000:0028-0036",
+    "block_key": "film-000022-b0004",
+    "film_key": "cinepile_t2v:a dog s purpose",
+    "split": "train",
+    "tier": "summary",
+    "script": "A man plays with his dog on a farm lawn, then brings the dog a plate of food on the porch where he watches it eat.",
+    "shot_span": [
+      0,
+      9
+    ],
+    "storyboard": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with short dark hair and a medium build",
+          "outfit": "a grey shirt over a white t-shirt and blue jeans"
+        },
+        {
+          "name": "Character 2",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a large golden-brown dog"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "partial",
+          "appearance": "a person in dark clothing",
+          "outfit": "dark clothing"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a white paper plate with food"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "a red tractor"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a white house with green trim"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a red barn"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a wooden rocking chair"
+        },
+        {
+          "name": "Object 6",
+          "appearance": "a wicker chair"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a grassy field near a farm"
+        },
+        {
+          "name": "Location 2",
+          "appearance": "the porch of a white house"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "high angle shot",
+            "movement": "handheld"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "lying on the grass",
+              "state": "wincing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "licking Character 1's face"
+            }
+          ],
+          "action": "A large golden-brown dog licks a man's face while he lies on the grass, wincing.",
+          "changes": [],
+          "frame_count": 25
+        },
+        {
+          "shot": 2,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "lying on the grass"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing over Character 1"
+            }
+          ],
+          "action": "The dog stands over the man lying on the grass.",
+          "changes": [],
+          "frame_count": 21
+        },
+        {
+          "shot": 3,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "high angle shot",
+            "movement": "handheld"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "lying on the grass",
+              "state": "wincing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "licking Character 1's face"
+            }
+          ],
+          "action": "The dog continues to lick the man's face as he lies on the grass.",
+          "changes": [],
+          "frame_count": 25
+        },
+        {
+          "shot": 4,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "extreme wide shot",
+            "angle": "high angle shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "sitting on the grass"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting next to Character 1"
+            },
+            {
+              "name": "Character 3",
+              "posture": "standing near a red tractor"
+            },
+            {
+              "name": "Object 2",
+              "state": "parked"
+            },
+            {
+              "name": "Object 3",
+              "state": "standing"
+            },
+            {
+              "name": "Object 4",
+              "state": "standing"
+            }
+          ],
+          "action": "A wide shot shows a man and a dog sitting on a grassy lawn near a white house and a red barn, with a person standing near a red tractor in the background.",
+          "changes": [],
+          "frame_count": 97
+        },
+        {
+          "shot": 5,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing behind a screen door",
+              "state": "looking out"
+            }
+          ],
+          "action": "The man opens the screen door of the house and steps out onto the porch.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "posture",
+              "before": "standing behind a screen door",
+              "after": "stepping out onto the porch"
+            }
+          ],
+          "frame_count": 53
+        },
+        {
+          "shot": 6,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing on the porch",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting on the porch"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "action": "The man places a paper plate of food on the porch floor for the dog, who then begins to eat.",
+          "changes": [
+            {
+              "name": "Character 1",
+              "what": "holding",
+              "before": [
+                "Object 1"
+              ],
+              "after": []
+            },
+            {
+              "name": "Character 2",
+              "what": "posture",
+              "before": "sitting",
+              "after": "eating from the plate"
+            }
+          ],
+          "frame_count": 117
+        },
+        {
+          "shot": 7,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing by the door",
+              "state": "looking down"
+            }
+          ],
+          "action": "The man leans against the doorframe, looking down at the dog eating.",
+          "changes": [],
+          "frame_count": 45
+        },
+        {
+          "shot": 8,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "high angle shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 2",
+              "posture": "eating from a paper plate"
+            },
+            {
+              "name": "Object 1",
+              "state": "containing food"
+            }
+          ],
+          "action": "A close-up shows the dog eating food from a white paper plate on the wooden porch.",
+          "changes": [],
+          "frame_count": 29
+        },
+        {
+          "shot": 9,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing with arms crossed by the door"
+            },
+            {
+              "name": "Character 2",
+              "posture": "sitting next to the empty plate"
+            },
+            {
+              "name": "Object 1",
+              "state": "containing food"
+            },
+            {
+              "name": "Object 5",
+              "state": "standing on the porch"
+            }
+          ],
+          "action": "The man watches with crossed arms as the dog finishes eating and sits looking up at him.",
+          "changes": [
+            {
+              "name": "Object 1",
+              "what": "state",
+              "before": "containing food",
+              "after": "empty"
+            },
+            {
+              "name": "Character 2",
+              "what": "posture",
+              "before": "eating",
+              "after": "sitting and looking up"
+            }
+          ],
+          "frame_count": 49
+        }
+      ]
+    }
+  }
+]

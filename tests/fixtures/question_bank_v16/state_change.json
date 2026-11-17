@@ -1,0 +1,1832 @@
+{
+ "source": "question-bank-v15-20261112 two stories; answers from event-state-v5-rescore-20261112 test92-official-wan",
+ "bank": {
+  "benchmark": "configs/benchmark/story_requests_v4.json",
+  "storyboards": "configs/benchmark/benchmark_storyboards_v4.json",
+  "request_tier": "shots",
+  "writer": {
+   "model": "gpt-6.1-sol",
+   "reasoning_effort": "high",
+   "workers": 1,
+   "launched_calls": 22,
+   "successful_new_stories": 22,
+   "unsuccessful_new_stories": 0,
+   "not_started_stories": 0,
+   "reused_stories": 100
+  },
+  "questions_from": "mspc.evaluation.question_writer.questions",
+  "completion": {
+   "status": "complete",
+   "planned_stories": 122,
+   "delivered_stories": 122,
+   "missing_story_ids": []
+  },
+  "review": {
+   "status": "complete_textual_review",
+   "new_stories_reviewed_this_run": 22,
+   "raw_catalog": "questions.json",
+   "per_question_files": [
+    "review-first-half.json",
+    "review-second-half.json"
+   ],
+   "corrections": "review-corrections.json",
+   "renumbered_requirements": false,
+   "extraction_sha": "41c4b5d775a44d3fe04d124b3f6ea417e38c49ef",
+   "place_compiler_fix_sha": "8c50471d",
+   "retained_diagnostics": [
+    {
+     "requirement_id": "film-003553-b0000-shot01/q07",
+     "status": "issue",
+     "classification": "rule_boundary_diagnostic",
+     "reason": "请求s11明确指着男人，但是否仅交谈手势而不符合“作用到另一个人”的事件门，属既有抽取粒度边界；保留诊断，不自行删题。"
+    },
+    {
+     "requirement_id": "film-003553-b0001-shot03/q11",
+     "status": "issue",
+     "classification": "observability_diagnostic",
+     "reason": "请求s06明确药放入口内、s08再吞下，镜末口内状态有明确请求依据。闭口后可能难以直接看见只记可观测性诊断；根代理裁定保留，不按未来方法输出难度删题。"
+    },
+    {
+     "requirement_id": "film-004063-b0001-shot03/q03",
+     "status": "issue",
+     "classification": "rule_boundary_diagnostic",
+     "reason": "请求s06明确Character 1整理头发；自触动作是否进入事件量尺属旧边界，本轮保留诊断不独自删。"
+    },
+    {
+     "requirement_id": "film-004446-b0001-shot01/q02",
+     "status": "issue",
+     "reason": "s03明确男孩坐着或跪着，但未要求坐下/跪下过程；静态姿态是否归事件为既有粒度边界，保留题目并单列诊断。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-004446-b0001-shot01/q05",
+     "status": "issue",
+     "reason": "s06明确男孩抬臂向前指；手势是否进入事件门为既有边界，本轮不变更量具。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-004446-b0001-shot01/q06",
+     "status": "issue",
+     "reason": "s07明确男人抬臂向前指；仅保留原请求手势，粒度边界单列。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-005228-b0000-shot10/q02",
+     "status": "issue",
+     "reason": "写字动作直接支持纸有文字；随后折纸可能遮挡文字，保留明确后态，单列可观测性诊断。",
+     "classification": "observability_diagnostic"
+    },
+    {
+     "requirement_id": "film-005228-b0000-shot10/q03",
+     "status": "issue",
+     "reason": "纸s02明确再次出现且未有擦除，按既定appearance保持到s02；文字细节可能难辨只记诊断。",
+     "classification": "observability_diagnostic"
+    },
+    {
+     "requirement_id": "film-005228-b0000-shot10/q04",
+     "status": "issue",
+     "reason": "纸s04明确出现且无新文字改变，保持题符合原规则；折纸/机位可能使文字难见，未据此删题。",
+     "classification": "observability_diagnostic"
+    },
+    {
+     "requirement_id": "film-008001-b0002-shot02/q01",
+     "status": "issue",
+     "reason": "s05明确C4坐在couch上，但未要求坐下过程；静态姿态归事件的既有边界，保留诊断。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-008001-b0002-shot02/q02",
+     "status": "issue",
+     "reason": "s06明确C1坐couch，未要求就座过程；保留姿态事件粒度诊断，不擅改旧量具。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-008001-b0002-shot02/q03",
+     "status": "issue",
+     "reason": "s06明确C4也坐couch，静态谓词边界同上。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-008001-b0002-shot02/q09",
+     "status": "issue",
+     "reason": "s10明确小紫troll站在open ring里，未要求站起过程；只保留既有姿态事件边界诊断。",
+     "classification": "rule_boundary_diagnostic"
+    },
+    {
+     "requirement_id": "film-008004-b0002-shot01/q21",
+     "status": "issue",
+     "reason": "小棕pinkhat生物s10→s11有明确the回指；registry同描述同时登记C3动物/Obj3物体，但本writer仅用Obj3单一别名，无双份要求；类型冲突记诊断不改注册。",
+     "classification": "entity_alias_diagnostic"
+    },
+    {
+     "requirement_id": "film-008004-b0002-shot01/q22",
+     "status": "issue",
+     "reason": "同一小生物末s12对首s10，沿单一Obj3别名链验收；保留重复注册的类型诊断，不要求两只生物。",
+     "classification": "entity_alias_diagnostic"
+    }
+   ]
+  },
+  "source_check": {
+   "dev": {
+    "producer": "mspc.evaluation.question_source_check",
+    "base_bank": "outputs/experiments/benchmark-v4-checklist-rolling-20261028/inputs/questions.reviewed.json",
+    "splits": [
+     "dev"
+    ],
+    "layout": [
+     "outputs/experiments/question-bank-v5-20261028/layout_candidates.dev.json"
+    ],
+    "layout_max_per_story": 6,
+    "runs": [
+     "outputs/experiments/question-bank-v5-20261028/source-check-dev-2"
+    ],
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "corrections": "outputs/experiments/question-bank-v5-20261028/corrections.v5.dev.json"
+   },
+   "test": {
+    "producer": "mspc.evaluation.question_source_check",
+    "base_bank": "outputs/experiments/benchmark-v4-checklist-rolling-20261028/inputs/questions.reviewed.json",
+    "splits": [
+     "test"
+    ],
+    "layout": [
+     "outputs/experiments/question-bank-v5-20261028/layout_candidates.test.json"
+    ],
+    "layout_max_per_story": 6,
+    "runs": [
+     "outputs/experiments/question-bank-v5-20261028/source-check-test"
+    ],
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "corrections": "outputs/experiments/question-bank-v5-20261028/corrections.v5.test.json"
+   }
+  },
+  "coordinator_overrides": [
+   {
+    "requirement_id": "cinedance-014127-b0000-shot01/q05",
+    "verdict": "keep",
+    "reason": "请求第 11 镜「watches the man walk away」：男人在做动作，按请求算在场；该题的离开动作就在第 11 镜，codex 以「已在第 10 镜问过」删除不成立。统筹会话改判保留。"
+   }
+  ],
+  "agent_overrides": [
+   {
+    "requirement_id": "cinedance-008935-b0001-shot01/q07",
+    "verdict": "keep",
+    "reason": "源帧第 6 镜是眼罩少年近景、背景只有红光，看不清是另一登记地点；不满足「源帧清楚显示另一地点」，原题保留。"
+   },
+   {
+    "requirement_id": "film-003994-b0002-shot02/q18",
+    "verdict": "keep",
+    "reason": "该故事请求与源片窗口错开一镜（源片第 1 镜包含请求第 1、2 镜，之后请求第 k 镜对应源片第 k-1 镜；看帧推断），codex 按错位的源帧改地点；逐镜地点按标注与请求一致，原题保留。"
+   },
+   {
+    "requirement_id": "film-003994-b0002-shot02/q19",
+    "verdict": "keep",
+    "reason": "该故事请求与源片窗口错开一镜（源片第 1 镜包含请求第 1、2 镜，之后请求第 k 镜对应源片第 k-1 镜；看帧推断），codex 按错位的源帧改地点；逐镜地点按标注与请求一致，原题保留。"
+   },
+   {
+    "requirement_id": "film-003994-b0002-shot02/q20",
+    "verdict": "keep",
+    "reason": "该故事请求与源片窗口错开一镜（源片第 1 镜包含请求第 1、2 镜，之后请求第 k 镜对应源片第 k-1 镜；看帧推断），codex 按错位的源帧改地点；逐镜地点按标注与请求一致，原题保留。"
+   },
+   {
+    "requirement_id": "film-003994-b0002-shot02/q21",
+    "verdict": "keep",
+    "reason": "该故事请求与源片窗口错开一镜（源片第 1 镜包含请求第 1、2 镜，之后请求第 k 镜对应源片第 k-1 镜；看帧推断），codex 按错位的源帧改地点；逐镜地点按标注与请求一致，原题保留。"
+   }
+  ],
+  "assembled_from": {
+   "dev": "questions.v5.dev.json (frozen 2026-10-28, rows unchanged)",
+   "test": "questions.v5.test.json"
+  },
+  "version": "v15",
+  "built_from": "questions.v5.json (unchanged rows) plus v6 additions",
+  "v6_rules": "题库第 6 版：在已复核的第 5 版上追加两类不计入五项的题和放宽边距后新增的布局题，原有题目、编号与复核结论一概不动。\n\n- 画风一致：每个故事一题，问整片各镜画风是否一致，单列报告。\n- 难反例监测：至多两题，按构造应答 no，判官答 yes 的比例用来监测判官。一题取描述最相近的两个不同人物\n  （各自首次出现的镜），一题取两个不同登记地点（各自首次出现的镜）。方法若把两人画成同一人，答 yes 反映的是\n  成片而不是判官，读数时按方法分开看。\n持物保持题没有追加：请求里能抽出的「持物或位置」结果 175 条中真正问持物的只有约 5 条，其余是位置或暂时\n姿态，追加会混入噪声；变化后保持题少的原因是请求本身写到的外观变化少（122 个故事共 44 条），沿用原规则。\n布局补题（只做放宽边距、只复核新增候选）：`layout_questions_v6.json` 把左右边距\n0.15→0.10、前后对数边距 0.2→0.1 重出候选；与第 5 版候选题面相同的不再复核，新增候选编号接在该故事第 5 版\n候选之后，题目留空送 `question_source_check` 只判布局候选；留下的按候选优先级补进该故事，已有布局题不动，\n合计仍不超过每故事上限。",
+  "v6_added_counts": {
+   "dev/layout": 5,
+   "dev/monitor": 32,
+   "dev/style": 30,
+   "test/layout": 10,
+   "test/monitor": 105,
+   "test/style": 92
+  },
+  "layout_agent_overrides": {
+   "cinedance-014842-b0000-shot01/l01": "10-29 评测线 agent 看拼图：问前后顺序，第 7 镜两人在远处走廊里只占几十像素且框相互重叠，看不出谁离镜头更近；按「关系不清不出题」去掉。codex 判 keep。"
+  },
+  "layout_removed": {
+   "decision": "改名「场景一致性」，只计地点题；布局题直接删掉、不再报",
+   "removed_by": "mspc.evaluation.question_bank_v6 drop-layout",
+   "removed_questions": {
+    "dev": 41,
+    "test": 59
+   },
+   "stories_with_removed_questions": {
+    "dev": 13,
+    "test": 31
+   }
+  },
+  "v10": {
+   "decision": "在场与地点只按请求判、人物一致性加再现比较、物体留大件道具只去本身是地方的、状态按标注变化补题（不补表情与正在做的动作）、事件恢复静态只去重复、景别差异全部保留；难反例不出",
+   "built_by": "mspc.evaluation.question_bank_v6 build-v10",
+   "changes": {
+    "dev/added_annotation_change_state": 8,
+    "dev/added_cut_item": 73,
+    "dev/added_reentry_consistency": 69,
+    "dev/added_request_place": 1,
+    "dev/dropped_by_source_check": 1,
+    "dev/dropped_duplicate_after_source_check": 1,
+    "dev/dropped_duplicate_event": 9,
+    "dev/dropped_hard_negative": 32,
+    "dev/dropped_place_like_object": 1,
+    "dev/dropped_place_not_known_from_request": 5,
+    "test/added_annotation_change_state": 20,
+    "test/added_cut_item": 203,
+    "test/added_reentry_consistency": 220,
+    "test/added_request_place": 9,
+    "test/dropped_by_source_check": 3,
+    "test/dropped_duplicate_event": 39,
+    "test/dropped_hard_negative": 105,
+    "test/dropped_place_like_object": 11,
+    "test/dropped_place_not_known_from_request": 19
+   },
+   "finalized_by": "mspc.evaluation.question_bank_v6 finalize-v10"
+  },
+  "v11": {
+   "from": "v10",
+   "by": "mspc.evaluation.question_bank_v6 event-fixes + presence-fixes",
+   "changes": {
+    "dev/diagnostic": 3,
+    "dev/keep": 21,
+    "dev/result_already_asked": 10,
+    "dev/to_state": 8,
+    "test/diagnostic": 14,
+    "test/keep": 63,
+    "test/result_already_asked": 20,
+    "test/to_state": 19,
+    "dev/presence_drop": 17,
+    "dev/presence_reanchor_added": 3,
+    "test/presence_drop": 26,
+    "test/presence_keep": 2,
+    "test/presence_reanchor_added": 6
+   }
+  },
+  "v13": {
+   "from": "v11",
+   "by": "mspc.evaluation.question_bank_v6 scored-v13",
+   "judge_contract": "v11",
+   "judge_answers_changed": false,
+   "state_reporting": "establishment_and_revisit",
+   "changes": {
+    "dev/add/persistence": 10,
+    "dev/add/persistence_annotation": 5,
+    "dev/drop/movement_or_posture_result": 30,
+    "dev/keep/annotation_change_establishment": 8,
+    "dev/keep/appearance_establishment": 12,
+    "dev/keep/cross_shot_revisit": 10,
+    "dev/keep/holding_establishment": 12,
+    "dev/keep/unchanged": 454,
+    "dev/reclassify_event/event_to_state": 8,
+    "test/add/persistence": 4,
+    "test/add/persistence_annotation": 24,
+    "test/add/persistence_writer_result": 1,
+    "test/drop/movement_or_posture_result": 119,
+    "test/drop/same_shot_result_is_not_a_revisit": 1,
+    "test/keep/annotation_change_establishment": 20,
+    "test/keep/appearance_establishment": 32,
+    "test/keep/cross_shot_revisit": 21,
+    "test/keep/holding_establishment": 23,
+    "test/keep/unchanged": 1527,
+    "test/reclassify_event/event_to_state": 19
+   }
+  },
+  "v14": {
+   "from": "v13",
+   "by": "mspc.evaluation.question_bank_v6 scored-v14",
+   "judge_contract": "v11",
+   "judge_answers_changed": false,
+   "object_rule": "物体列只考两镜请求都要求看到的可移动道具（拿、端、使用、作用于、镜头主体，含交通工具与生物状道具）；家具、建筑与场景固定物、自然景物、成片陈设的同一性等于地点同一性，由场景列按固定结构判，移出物体列；后镜只间接提到的移出。",
+   "changes": {
+    "dev/drop/location_element": 23,
+    "dev/keep/prop_required_in_both_shots": 21,
+    "test/drop/location_element": 76,
+    "test/drop/not_required_in_both_shots": 4,
+    "test/keep/prop_required_in_both_shots": 92
+   }
+  },
+  "v15": {
+   "from": "v14",
+   "by": "mspc.evaluation.question_bank_v6 scored-v15",
+   "judge_contract": "v11",
+   "state_rule": "删去问法本身含糊的状态题：登记描述是“A 或 B”而状态只对其中一种成立、问的部件已由另一件登记物体单独考、或状态在画面上无法判定。依据 11-12 人评分歧逐条裁决。",
+   "changes": {
+    "test/drop/not_judgeable": 3,
+    "test/drop/overlaps_other_object": 2,
+    "test/drop/registry_disjunction": 2
+   }
+  },
+  "stories": {
+   "cinedance-014481-b0000-shot01": {
+    "split": "test",
+    "request": "SUBJECTS\n- Character 1 (person): a man with a beard and short dark hair, wearing a dark jacket over a white shirt\n- Character 2 (person): a bald man with a beard, wearing a dark top\n- Character 3 (person): a man with long wavy hair and a beard, wearing a dark top\n- Character 4 (person): a person wearing a black hooded garment and a black face mask, wearing a black hooded garment\n- Character 5 (person): a woman with dark hair, wearing a purple top and light pants\n- Character 6 (person): a person with dark hair, wearing a light top\n- Object 1 (object): a black steering wheel\n- Object 2 (object): a dark grey SUV\n- Object 3 (object): a grey sedan\n- Object 4 (object): a pharmacy building with a sign reading 'FARMACIA ESQUIVEL'\n- Object 5 (object): a building with a mural and a sign reading 'Aldine BOOKS'\n- Object 6 (object): a street with parked cars and buildings\nLOCATIONS\n- Location 1: the interior of a car\n- Location 2: a street with a pharmacy and a bookstore\nSHOTS\ns01: Close-up shot. Character 1 sits in the driver's seat with his hands on the steering wheel while Character 2 sits in the passenger seat.\ns02: Medium shot. A dark grey SUV is parked on the street in front of a pharmacy while pedestrians walk on the sidewalk.\ns03: Close-up shot. A man with long hair sits in the driver's seat of a car, looking out the window.\ns04: Medium shot. The man with long hair gets into the driver's seat of the parked dark grey SUV.\ns05: Close-up shot. Character 4 puts on a black hood and a black face mask while sitting in the passenger seat.\ns06: Medium close-up shot. Character 4, now fully masked, sits in the passenger seat next to Character 3.\ns07: Medium shot, tracking. The dark grey SUV drives down the street, passing a grey sedan.",
+    "writer_output": {
+     "names": [
+      {
+       "id": "Character 1",
+       "name": "Character 1"
+      },
+      {
+       "id": "Character 2",
+       "name": "Character 2"
+      },
+      {
+       "id": "Character 3",
+       "name": "Character 3"
+      },
+      {
+       "id": "Character 4",
+       "name": "Character 4"
+      },
+      {
+       "id": "Character 5",
+       "name": "Character 5"
+      },
+      {
+       "id": "Character 6",
+       "name": "Character 6"
+      },
+      {
+       "id": "Object 1",
+       "name": "Object 1"
+      },
+      {
+       "id": "Object 2",
+       "name": "Object 2"
+      },
+      {
+       "id": "Object 3",
+       "name": "Object 3"
+      },
+      {
+       "id": "Object 4",
+       "name": "Object 4"
+      },
+      {
+       "id": "Object 5",
+       "name": "Object 5"
+      },
+      {
+       "id": "Object 6",
+       "name": "Object 6"
+      },
+      {
+       "id": "Location 1",
+       "name": "Location 1"
+      },
+      {
+       "id": "Location 2",
+       "name": "Location 2"
+      }
+     ],
+     "shots": [
+      {
+       "shot": 1,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 1"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 2,
+       "present": [
+        "Object 2",
+        "Object 4",
+        "Object 6"
+       ],
+       "location": "Location 2"
+      },
+      {
+       "shot": 3,
+       "present": [
+        "Character 3"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 4,
+       "present": [
+        "Character 3",
+        "Object 2"
+       ],
+       "location": "Location 2"
+      },
+      {
+       "shot": 5,
+       "present": [
+        "Character 4"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 6,
+       "present": [
+        "Character 3",
+        "Character 4"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 7,
+       "present": [
+        "Object 2",
+        "Object 3",
+        "Object 6"
+       ],
+       "location": "Location 2"
+      }
+     ],
+     "actions": [
+      {
+       "shot": 2,
+       "question": "Does Character 5 walk along the sidewalk?",
+       "participants": [
+        "Character 5"
+       ],
+       "result": null
+      },
+      {
+       "shot": 2,
+       "question": "Does Character 6 walk along the sidewalk?",
+       "participants": [
+        "Character 6"
+       ],
+       "result": null
+      },
+      {
+       "shot": 4,
+       "question": "Does Character 3 get into the driver's seat of Object 2?",
+       "participants": [
+        "Character 3",
+        "Object 2"
+       ],
+       "result": {
+        "question": "Is Character 3 now in the driver's seat of Object 2?",
+        "entity": "Character 3",
+        "kind": "holding_or_place"
+       }
+      },
+      {
+       "shot": 5,
+       "question": "Does Character 4 put on a black hood?",
+       "participants": [
+        "Character 4"
+       ],
+       "result": {
+        "question": "Is Character 4 now wearing the black hood over their head?",
+        "entity": "Character 4",
+        "kind": "appearance"
+       }
+      },
+      {
+       "shot": 5,
+       "question": "Does Character 4 put on a black face mask?",
+       "participants": [
+        "Character 4"
+       ],
+       "result": {
+        "question": "Is Character 4's face now covered by the black face mask?",
+        "entity": "Character 4",
+        "kind": "appearance"
+       }
+      },
+      {
+       "shot": 7,
+       "question": "Does Object 2 drive down Object 6 past Object 3?",
+       "participants": [
+        "Object 2",
+        "Object 6",
+        "Object 3"
+       ],
+       "result": null
+      }
+     ]
+    },
+    "requirements": [
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q01",
+      "dimension": "event",
+      "shot": 2,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 5 walk along the sidewalk?",
+      "depends_on": [
+       "Character 5"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q02",
+      "dimension": "event",
+      "shot": 2,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 6 walk along the sidewalk?",
+      "depends_on": [
+       "Character 6"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q03",
+      "dimension": "event",
+      "shot": 4,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 3 get into the driver's seat of Object 2?",
+      "depends_on": [
+       "Character 3",
+       "Object 2"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q05",
+      "dimension": "event",
+      "shot": 5,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 4 put on a black hood?",
+      "depends_on": [
+       "Character 4"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q07",
+      "dimension": "state",
+      "shot": 6,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Is Character 4 now wearing the black hood over their head?",
+      "depends_on": [
+       "Character 4"
+      ],
+      "state_role": "revisit",
+      "source_shot": 5
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q08",
+      "dimension": "event",
+      "shot": 5,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 4 put on a black face mask?",
+      "depends_on": [
+       "Character 4"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q10",
+      "dimension": "state",
+      "shot": 6,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Is Character 4's face now covered by the black face mask?",
+      "depends_on": [
+       "Character 4"
+      ],
+      "state_role": "revisit",
+      "source_shot": 5
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q11",
+      "dimension": "event",
+      "shot": 7,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Object 2 drive down Object 6 past Object 3?",
+      "depends_on": [
+       "Object 2",
+       "Object 6",
+       "Object 3"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q12",
+      "dimension": "object",
+      "shot": 4,
+      "reference_shot": 2,
+      "anchor": "during",
+      "question": "Is Object 2 at {shot 4} the same object as at {shot 2}?",
+      "depends_on": [
+       "Object 2"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q13",
+      "dimension": "object",
+      "shot": 7,
+      "reference_shot": 2,
+      "anchor": "during",
+      "question": "Is Object 2 at {shot 7} the same object as at {shot 2}?",
+      "depends_on": [
+       "Object 2"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q15",
+      "dimension": "character",
+      "shot": 4,
+      "reference_shot": 3,
+      "anchor": "during",
+      "question": "Is Character 3 at {shot 4} the same person as at {shot 3}?",
+      "depends_on": [
+       "Character 3"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q16",
+      "dimension": "character",
+      "shot": 6,
+      "reference_shot": 3,
+      "anchor": "during",
+      "question": "Is Character 3 at {shot 6} the same person as at {shot 3}?",
+      "depends_on": [
+       "Character 3"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q17",
+      "dimension": "character",
+      "shot": 6,
+      "reference_shot": 5,
+      "anchor": "during",
+      "question": "Is Character 4 at {shot 6} the same person as at {shot 5}?",
+      "depends_on": [
+       "Character 4"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q18",
+      "dimension": "place",
+      "shot": 3,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Are {shot 3} and {shot 1} in the same place (Location 1)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q19",
+      "dimension": "place",
+      "shot": 6,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Are {shot 6} and {shot 1} in the same place (Location 1)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q20",
+      "dimension": "place",
+      "shot": 4,
+      "reference_shot": 2,
+      "anchor": "during",
+      "question": "Are {shot 4} and {shot 2} in the same place (Location 2)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q21",
+      "dimension": "place",
+      "shot": 7,
+      "reference_shot": 2,
+      "anchor": "during",
+      "question": "Are {shot 7} and {shot 2} in the same place (Location 2)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/s01",
+      "dimension": "style",
+      "shot": 1,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q06",
+      "dimension": "state",
+      "shot": 5,
+      "reference_shot": null,
+      "anchor": "end",
+      "question": "Is Character 4 now wearing the black hood over their head?",
+      "depends_on": [
+       "Character 4"
+      ],
+      "state_role": "establishment"
+     },
+     {
+      "requirement_id": "cinedance-014481-b0000-shot01/q09",
+      "dimension": "state",
+      "shot": 5,
+      "reference_shot": null,
+      "anchor": "end",
+      "question": "Is Character 4's face now covered by the black face mask?",
+      "depends_on": [
+       "Character 4"
+      ],
+      "state_role": "establishment"
+     }
+    ],
+    "origin": "codex_exec",
+    "v6_added": [
+     "cinedance-014481-b0000-shot01/s01",
+     "cinedance-014481-b0000-shot01/m01",
+     "cinedance-014481-b0000-shot01/m02"
+    ],
+    "writer_output_mentions": {
+     "names": [
+      {
+       "id": "Character 1",
+       "name": "Character 1"
+      },
+      {
+       "id": "Character 2",
+       "name": "Character 2"
+      },
+      {
+       "id": "Character 3",
+       "name": "Character 3"
+      },
+      {
+       "id": "Character 4",
+       "name": "Character 4"
+      },
+      {
+       "id": "Character 5",
+       "name": "Character 5"
+      },
+      {
+       "id": "Character 6",
+       "name": "Character 6"
+      },
+      {
+       "id": "Object 1",
+       "name": "Object 1"
+      },
+      {
+       "id": "Object 2",
+       "name": "Object 2"
+      },
+      {
+       "id": "Object 3",
+       "name": "Object 3"
+      },
+      {
+       "id": "Object 4",
+       "name": "Object 4"
+      },
+      {
+       "id": "Object 5",
+       "name": "Object 5"
+      },
+      {
+       "id": "Object 6",
+       "name": "Object 6"
+      },
+      {
+       "id": "Location 1",
+       "name": "Location 1"
+      },
+      {
+       "id": "Location 2",
+       "name": "Location 2"
+      }
+     ],
+     "shots": [
+      {
+       "shot": 1,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 1"
+       ]
+      },
+      {
+       "shot": 2,
+       "present": [
+        "Character 5",
+        "Character 6",
+        "Object 2",
+        "Object 4",
+        "Object 6"
+       ]
+      },
+      {
+       "shot": 3,
+       "present": [
+        "Character 3"
+       ]
+      },
+      {
+       "shot": 4,
+       "present": [
+        "Character 3",
+        "Object 2"
+       ]
+      },
+      {
+       "shot": 5,
+       "present": [
+        "Character 4"
+       ]
+      },
+      {
+       "shot": 6,
+       "present": [
+        "Character 3",
+        "Character 4"
+       ]
+      },
+      {
+       "shot": 7,
+       "present": [
+        "Object 2",
+        "Object 3",
+        "Object 6"
+       ]
+      }
+     ],
+     "actions": [
+      {
+       "shot": 2,
+       "question": "Does Character 5 walk along the sidewalk?",
+       "participants": [
+        "Character 5"
+       ],
+       "result": null
+      },
+      {
+       "shot": 2,
+       "question": "Does Character 6 walk along the sidewalk?",
+       "participants": [
+        "Character 6"
+       ],
+       "result": null
+      },
+      {
+       "shot": 4,
+       "question": "Does Character 3 get into the driver's seat of Object 2?",
+       "participants": [
+        "Character 3",
+        "Object 2"
+       ],
+       "result": {
+        "question": "Is Character 3 now in the driver's seat of Object 2?",
+        "entity": "Character 3",
+        "kind": "holding_or_place"
+       }
+      },
+      {
+       "shot": 5,
+       "question": "Does Character 4 put on a black hood?",
+       "participants": [
+        "Character 4"
+       ],
+       "result": {
+        "question": "Is Character 4 now wearing the black hood over their head?",
+        "entity": "Character 4",
+        "kind": "appearance"
+       }
+      },
+      {
+       "shot": 5,
+       "question": "Does Character 4 put on a black face mask?",
+       "participants": [
+        "Character 4"
+       ],
+       "result": {
+        "question": "Is Character 4's face now covered by the black face mask?",
+        "entity": "Character 4",
+        "kind": "appearance"
+       }
+      },
+      {
+       "shot": 7,
+       "question": "Does Object 2 drive down Object 6 past Object 3?",
+       "participants": [
+        "Object 2",
+        "Object 6",
+        "Object 3"
+       ],
+       "result": null
+      }
+     ]
+    },
+    "v10_changes": {
+     "cinedance-014481-b0000-shot01/m01": "dropped_hard_negative",
+     "cinedance-014481-b0000-shot01/m02": "dropped_hard_negative",
+     "cinedance-014481-b0000-shot01/q14": "dropped_place_like_object"
+    },
+    "v11_changes": {
+     "cinedance-014481-b0000-shot01/q08": "keep"
+    }
+   },
+   "cinedance-009613-b0001-shot01": {
+    "split": "test",
+    "request": "SUBJECTS\n- Character 1 (person): a man with short dark hair and a heavy build, sweating profusely, wearing a light-colored police uniform shirt with shoulder patches and a badge\n- Character 2 (person): a man with short dark hair, sweating, with a cut on his cheek, wearing a light-colored police uniform shirt\n- Character 3 (person): a man with short dark hair, sweating\n- Object 1 (object): a white canvas shoe with writing on it\n- Object 2 (object): a car interior including seats and a rearview mirror\nLOCATIONS\n- Location 1: the inside of a car at night, driving on a road\nSHOTS\ns01: Medium close-up shot. Character 1 drives the car and looks at Character 2, who is sweating and has a cut on his cheek.\ns02: Medium close-up shot. Character 1 looks down while driving, and Character 2 looks forward.\ns03: Close-up shot. Character 3 is seen in the rearview mirror looking forward.\ns04: Medium close-up shot. Character 1 looks down while driving, and Character 2 looks forward.\ns05: Medium close-up shot. Character 1 looks at Character 2 while driving.\ns06: Medium close-up shot. Character 1 looks down while driving, and Character 2 looks forward.\ns07: Close-up shot. Character 3 is seen in the rearview mirror looking forward.\ns08: Medium close-up shot. Character 1 looks at Character 2 while driving.\ns09: Medium close-up shot. Character 1 looks down and speaks while driving.\ns10: Close-up shot. Character 1 holds a white canvas shoe with writing on it in his hand.\ns11: Medium close-up shot. Character 1 looks down and then at Character 2 while driving.\ns12: Medium close-up shot. Character 1 looks at Character 2 and speaks while driving.",
+    "writer_output": {
+     "names": [
+      {
+       "id": "Character 1",
+       "name": "Character 1"
+      },
+      {
+       "id": "Character 2",
+       "name": "Character 2"
+      },
+      {
+       "id": "Character 3",
+       "name": "Character 3"
+      },
+      {
+       "id": "Object 1",
+       "name": "Object 1"
+      },
+      {
+       "id": "Object 2",
+       "name": "Object 2"
+      },
+      {
+       "id": "Location 1",
+       "name": "Location 1"
+      }
+     ],
+     "shots": [
+      {
+       "shot": 1,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 2,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 3,
+       "present": [
+        "Character 3",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 4,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 5,
+       "present": [
+        "Character 1",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 6,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 7,
+       "present": [
+        "Character 3",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 8,
+       "present": [
+        "Character 1",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 9,
+       "present": [
+        "Character 1",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 10,
+       "present": [
+        "Character 1",
+        "Object 1"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 11,
+       "present": [
+        "Character 1",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      },
+      {
+       "shot": 12,
+       "present": [
+        "Character 1",
+        "Object 2"
+       ],
+       "location": "Location 1"
+      }
+     ],
+     "actions": [
+      {
+       "shot": 1,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 2,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 4,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 5,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 6,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 8,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 9,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 10,
+       "question": "Does Character 1 hold Object 1 in his hand?",
+       "participants": [
+        "Character 1",
+        "Object 1"
+       ],
+       "result": null
+      },
+      {
+       "shot": 11,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 12,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      }
+     ]
+    },
+    "requirements": [
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q01",
+      "dimension": "event",
+      "shot": 1,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 1 drive the car?",
+      "depends_on": [
+       "Character 1",
+       "Object 2"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q08",
+      "dimension": "event",
+      "shot": 10,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 1 hold Object 1 in his hand?",
+      "depends_on": [
+       "Character 1",
+       "Object 1"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q11",
+      "dimension": "character",
+      "shot": 2,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 2} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 1"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q12",
+      "dimension": "character",
+      "shot": 12,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 12} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 1"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q13",
+      "dimension": "character",
+      "shot": 2,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 2 at {shot 2} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 2"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q14",
+      "dimension": "character",
+      "shot": 6,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 2 at {shot 6} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 2"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q17",
+      "dimension": "character",
+      "shot": 7,
+      "reference_shot": 3,
+      "anchor": "during",
+      "question": "Is Character 3 at {shot 7} the same person as at {shot 3}?",
+      "depends_on": [
+       "Character 3"
+      ]
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q18",
+      "dimension": "place",
+      "shot": 2,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q19",
+      "dimension": "place",
+      "shot": 12,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Are {shot 12} and {shot 1} in the same place (Location 1)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/s01",
+      "dimension": "style",
+      "shot": 1,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+      "depends_on": []
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q20",
+      "dimension": "character",
+      "shot": 4,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 4} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 1"
+      ],
+      "family": "reentry_consistency"
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q21",
+      "dimension": "character",
+      "shot": 8,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 8} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 1"
+      ],
+      "family": "reentry_consistency"
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q22",
+      "dimension": "character",
+      "shot": 4,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 2 at {shot 4} the same person as at {shot 1}?",
+      "depends_on": [
+       "Character 2"
+      ],
+      "family": "reentry_consistency"
+     },
+     {
+      "requirement_id": "cinedance-009613-b0001-shot01/q23",
+      "dimension": "state",
+      "shot": 10,
+      "reference_shot": null,
+      "anchor": "end",
+      "question": "Is Character 1 holding Object 1?",
+      "depends_on": [
+       "Character 1",
+       "Object 1"
+      ],
+      "family": "annotation_change",
+      "source_change": "holding",
+      "state_role": "establishment"
+     }
+    ],
+    "origin": "codex_exec",
+    "v6_added": [
+     "cinedance-009613-b0001-shot01/s01",
+     "cinedance-009613-b0001-shot01/m01"
+    ],
+    "writer_output_mentions": {
+     "names": [
+      {
+       "id": "Character 1",
+       "name": "Character 1"
+      },
+      {
+       "id": "Character 2",
+       "name": "Character 2"
+      },
+      {
+       "id": "Character 3",
+       "name": "Character 3"
+      },
+      {
+       "id": "Object 1",
+       "name": "Object 1"
+      },
+      {
+       "id": "Object 2",
+       "name": "Object 2"
+      },
+      {
+       "id": "Location 1",
+       "name": "Location 1"
+      }
+     ],
+     "shots": [
+      {
+       "shot": 1,
+       "present": [
+        "Character 1",
+        "Character 2",
+        "Object 2"
+       ]
+      },
+      {
+       "shot": 2,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      },
+      {
+       "shot": 3,
+       "present": [
+        "Character 3",
+        "Object 2"
+       ]
+      },
+      {
+       "shot": 4,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      },
+      {
+       "shot": 5,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      },
+      {
+       "shot": 6,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      },
+      {
+       "shot": 7,
+       "present": [
+        "Character 3",
+        "Object 2"
+       ]
+      },
+      {
+       "shot": 8,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      },
+      {
+       "shot": 9,
+       "present": [
+        "Character 1"
+       ]
+      },
+      {
+       "shot": 10,
+       "present": [
+        "Character 1",
+        "Object 1"
+       ]
+      },
+      {
+       "shot": 11,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      },
+      {
+       "shot": 12,
+       "present": [
+        "Character 1",
+        "Character 2"
+       ]
+      }
+     ],
+     "actions": [
+      {
+       "shot": 1,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 2,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 4,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 5,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 6,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 8,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 9,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 10,
+       "question": "Does Character 1 hold Object 1 in his hand?",
+       "participants": [
+        "Character 1",
+        "Object 1"
+       ],
+       "result": null
+      },
+      {
+       "shot": 11,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      },
+      {
+       "shot": 12,
+       "question": "Does Character 1 drive the car?",
+       "participants": [
+        "Character 1",
+        "Object 2"
+       ],
+       "result": null
+      }
+     ]
+    },
+    "v10_changes": {
+     "cinedance-009613-b0001-shot01/m01": "dropped_hard_negative",
+     "cinedance-009613-b0001-shot01/q02": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q03": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q04": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q05": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q06": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q07": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q09": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q10": "dropped_duplicate_event",
+     "cinedance-009613-b0001-shot01/q15": "dropped_place_like_object",
+     "cinedance-009613-b0001-shot01/q16": "dropped_place_like_object",
+     "cinedance-009613-b0001-shot01/q20": "added_reentry_consistency",
+     "cinedance-009613-b0001-shot01/q21": "added_reentry_consistency",
+     "cinedance-009613-b0001-shot01/q22": "added_reentry_consistency",
+     "cinedance-009613-b0001-shot01/q23": "added_annotation_change_state"
+    }
+   }
+  }
+ },
+ "cuts": {
+  "from_bank": "v15",
+  "cut_items_from": "mspc.evaluation.question_writer.cut_items",
+  "counts": {
+   "dev/dependents_planned_alike": 90,
+   "dev/dependents_planned_different": 266,
+   "dev/planned_alike": 71,
+   "dev/planned_cuts": 241,
+   "dev/planned_different": 387,
+   "test/dependents_planned_alike": 325,
+   "test/dependents_planned_different": 753,
+   "test/planned_alike": 236,
+   "test/planned_cuts": 674,
+   "test/planned_different": 1097
+  },
+  "v13": {
+   "from": "v11",
+   "premise": "nonadjacent_same_setup_requires_motion_and_two_new_adjacent_cuts"
+  },
+  "planned_difference_gate": {
+   "rule": "only shot pairs whose plan requires a difference (place, shot size >=1 step, angle or cast) carry a cut premise; pairs planned alike set no cut or return question and do not gate their questions",
+   "user": "如果是 A–B–A 回切、计划为同地点/同景别/同角度 这里直接不设这类回归题目，如果没有要求要切镜，一般也不会要求一定要回到原本的构图画面，所以是否切镜都是对的，也不用给其他一致性分数做门控 (2026-11-10)",
+   "derived_from": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v13-judge-revision-20261109/inputs/cut-items.v13.json",
+   "dropped_items": {
+    "dev": 71,
+    "test": 236
+   },
+   "dropped_dependents": {
+    "dev": 90,
+    "test": 325
+   },
+   "kept_items": {
+    "dev": 387,
+    "test": 1097
+   }
+  },
+  "v14": {
+   "from": "v13",
+   "dropped_dependents": 103
+  },
+  "v15": {
+   "from": "v14",
+   "dropped_dependents": 7
+  },
+  "stories": {
+   "cinedance-014481-b0000-shot01": {
+    "split": "test",
+    "items": [
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c01",
+      "shot": 2,
+      "reference_shot": 1,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": true,
+       "size_gap": 2,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c02",
+      "shot": 3,
+      "reference_shot": 1,
+      "planned_cut": false,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 0,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": [
+       "cinedance-014481-b0000-shot01/q18"
+      ]
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c03",
+      "shot": 6,
+      "reference_shot": 1,
+      "planned_cut": false,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": [
+       "cinedance-014481-b0000-shot01/q19"
+      ]
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c04",
+      "shot": 3,
+      "reference_shot": 2,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": true,
+       "size_gap": 2,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c05",
+      "shot": 4,
+      "reference_shot": 2,
+      "planned_cut": false,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 0,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": [
+       "cinedance-014481-b0000-shot01/q12",
+       "cinedance-014481-b0000-shot01/q20"
+      ]
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c07",
+      "shot": 4,
+      "reference_shot": 3,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": true,
+       "size_gap": 2,
+       "angle": false,
+       "cast": false
+      },
+      "dependents": [
+       "cinedance-014481-b0000-shot01/q15"
+      ]
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c08",
+      "shot": 6,
+      "reference_shot": 3,
+      "planned_cut": false,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": false
+      },
+      "dependents": [
+       "cinedance-014481-b0000-shot01/q16"
+      ]
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c09",
+      "shot": 5,
+      "reference_shot": 4,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": true,
+       "size_gap": 2,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c10",
+      "shot": 6,
+      "reference_shot": 5,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": false
+      },
+      "dependents": [
+       "cinedance-014481-b0000-shot01/q07",
+       "cinedance-014481-b0000-shot01/q10",
+       "cinedance-014481-b0000-shot01/q17"
+      ]
+     },
+     {
+      "item_id": "cinedance-014481-b0000-shot01/c11",
+      "shot": 7,
+      "reference_shot": 6,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": true,
+       "size_gap": 1,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     }
+    ]
+   },
+   "cinedance-009613-b0001-shot01": {
+    "split": "test",
+    "items": [
+     {
+      "item_id": "cinedance-009613-b0001-shot01/c03",
+      "shot": 3,
+      "reference_shot": 2,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-009613-b0001-shot01/c04",
+      "shot": 4,
+      "reference_shot": 3,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-009613-b0001-shot01/c05",
+      "shot": 7,
+      "reference_shot": 6,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-009613-b0001-shot01/c06",
+      "shot": 8,
+      "reference_shot": 7,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": true
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-009613-b0001-shot01/c07",
+      "shot": 10,
+      "reference_shot": 9,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": false
+      },
+      "dependents": []
+     },
+     {
+      "item_id": "cinedance-009613-b0001-shot01/c08",
+      "shot": 11,
+      "reference_shot": 10,
+      "planned_cut": true,
+      "planned_difference": {
+       "place": false,
+       "size_gap": 1,
+       "angle": false,
+       "cast": false
+      },
+      "dependents": []
+     }
+    ]
+   }
+  }
+ },
+ "wan22_per_shot_answers": {
+  "cinedance-014481-b0000-shot01/q05": "no",
+  "cinedance-014481-b0000-shot01/q06": "yes",
+  "cinedance-014481-b0000-shot01/q08": "no",
+  "cinedance-014481-b0000-shot01/q09": "yes"
+ }
+}

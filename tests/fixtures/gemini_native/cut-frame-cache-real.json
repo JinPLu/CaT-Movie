@@ -1,0 +1,54 @@
+{
+  "story_id": "cinedance-008935-b0001-shot01",
+  "item": {
+    "item_id": "cinedance-008935-b0001-shot01/c01",
+    "shot": 2,
+    "reference_shot": 1,
+    "planned_cut": true,
+    "planned_difference": {
+      "place": false,
+      "size_gap": 2,
+      "angle": false,
+      "cast": false
+    },
+    "dependents": [
+      "cinedance-008935-b0001-shot01/q02",
+      "cinedance-008935-b0001-shot01/q06"
+    ]
+  },
+  "media": {
+    "shot_frames": [
+      57,
+      89,
+      53,
+      105,
+      33,
+      45
+    ],
+    "probe": {
+      "frames": 382,
+      "fps": 16.0,
+      "duration_seconds": 23.875,
+      "width": 832,
+      "height": 480
+    }
+  },
+  "detected_cut_times_seconds": [
+    3.5625,
+    9.125,
+    12.4375,
+    19.0,
+    21.0625
+  ],
+  "similarity": {
+    "key": "cinedance-008935-b0001-shot01/c01",
+    "corr_mid": 0.1733224520639369,
+    "corr_cut": 0.17639002443286042,
+    "frames": [
+      28,
+      56,
+      60,
+      101
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "corpus_rows": 200,
+  "accepted": 62,
+  "case_id": "ci_vid:train:000000753",
+  "source_path": "outputs/experiments/event-log-compiler-real-slice-20261007/metrics/results.jsonl",
+  "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "person",
+        "appearance": "Short-haired man wearing a blue t-shirt and yellow shorts"
+      },
+      {
+        "subject_id": "Subject 2",
+        "kind": "person",
+        "appearance": "Boy wearing a red hoodie and a red crown headpiece"
+      },
+      {
+        "subject_id": "Subject 3",
+        "kind": "person",
+        "appearance": "Girl wearing a blue sequined dress and a blue crown headpiece"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "厨房",
+        "anchors": []
+      },
+      {
+        "location_id": "Location 2",
+        "appearance": "室内",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "normal state",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          0
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 41,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A man stands in a kitchen with a look of surprise or concern. He is partially covered in what appears to be frost or ice, giving his skin a blue hue. As snowflakes and ice shards appear around him, he seems to react to the cold transformation occurring. His fists are slightly clenched, and his expression shifts to one of disbelief. The kitchen includes elements like white cabinets, a sink with a gold faucet, cups, and a countertop with various items.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 2"
+        ],
+        "frame_count": 29,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A young person is seated on an elaborately designed, red chair, reminiscent of a throne with decorative elements extending from its back, suggesting a regal theme. The individual is wearing a vibrant red sweatshirt featuring the word 'CHILD' prominently displayed in colorful letters, indicative of the Benetton brand. They are holding their head with both hands, fingers interlocked, in a gesture that might suggest contemplation or stress. The white background behind the chair includes curtains that are lightly colored, providing a subtle contrast to the vivid red. The blurred face is not described.",
+        "visible_entities": [
+          "Subject 2"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 3"
+        ],
+        "frame_count": 29,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A person with pigtails is in a kitchen or dining room setting. They are wearing a shiny blue sequined top and a decorative blue accessory resembling a crown. As the video progresses, the person raises a finger, suggesting an expression of having an idea or making a point. Simultaneously, a bright cartoon-style light bulb appears on the screen, emphasizing a moment of realization or creativity. The focus is on the person's interaction with the surroundings and the playful addition of the animated light bulb, which enhances the perception of the theme presented.",
+        "visible_entities": [
+          "Subject 3"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "e1",
+        "shot_id": "s01",
+        "on_screen": "unknown",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "normal state",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            0
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "covered by ice and snow effects",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            2
+          ],
+          "evidence": "observed"
+        }
+      }
+    ]
+  }
+}

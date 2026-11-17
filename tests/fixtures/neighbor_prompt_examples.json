@@ -1,0 +1,1134 @@
+{
+  "source": "neighbor-renderer-dev30-20261020/inputs/stories.json; frozen given plans, not revised supervision",
+  "stories": [
+    {
+      "story_id": "lsh-002-b",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "appearance": "a man with short, graying hair, wearing a dark suit, white shirt, and dark tie"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "appearance": "a man with short, dark hair, wearing a dark suit, white shirt, and dark tie. His face is glistening with sweat"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dark, industrial space, possibly a tunnel or underpass, with a low ceiling and concrete walls. A yellow sign with black text is visible in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1"
+              },
+              {
+                "name": "Character 2",
+                "state": "holding the handgun"
+              }
+            ],
+            "action": "A medium close-up, eye-level shot of Character 1. He is looking slightly off-camera to his left with a serious expression. A hand, belonging to Character 2, enters the frame from the left, holding a silver revolver pointed directly at Character 1's head. The background is dark and out of focus.",
+            "changes": [],
+            "frame_count": 37
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1"
+              },
+              {
+                "name": "Character 2",
+                "state": "holding the handgun"
+              }
+            ],
+            "action": "A reverse medium close-up, over-the-shoulder shot from behind Character 1, focusing on Character 2. Character 2's face is tense and sweaty as he aims the silver revolver at Character 1. The back of Character 1's head is in the foreground, out of focus. At the start, Character 2 is holding the handgun. Then Character 2 opens his gun hand and drops the handgun onto the floor.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "state",
+                "before": "holding the handgun",
+                "after": "empty-handed, handgun released onto the floor"
+              }
+            ],
+            "frame_count": 37
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1"
+              }
+            ],
+            "action": "A close-up, low-angle shot of Character 1. He is now holding a silver revolver, aiming it forward and slightly down. His expression is intense and focused. The background is a dark red wall.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1"
+              },
+              {
+                "name": "Character 2",
+                "state": "empty-handed, handgun released onto the floor"
+              }
+            ],
+            "action": "Wide eye-level two-shot. Character 2 stands on the left, Character 1 on the right amid fog. Character 1 raises his hands.",
+            "changes": [],
+            "frame_count": 53
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1"
+              },
+              {
+                "name": "Character 2",
+                "state": "empty-handed, handgun released onto the floor"
+              }
+            ],
+            "action": "Rapid close-ups alternate Character 1 and Character 2 with tense facial expressions against a dark wall and a yellow sign.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1"
+              }
+            ],
+            "action": "A chaotic, shaky shot. The frame is filled with a bright, blinding flash of light and sparks, indicating an explosion. A figure, presumably Character 1, is seen falling backward through the smoke and debris.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2",
+                "state": "empty-handed, handgun released onto the floor"
+              }
+            ],
+            "action": "Medium close-up of Character 2, with a shocked expression and wide eyes against the yellow sign.",
+            "changes": [],
+            "frame_count": 17
+          }
+        ]
+      }
+    },
+    {
+      "story_id": "lsh-003-b",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "appearance": "a woman with short, dark, curly hair, wearing a white blazer over a white top and a thin gold necklace"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "appearance": "a woman with a short, dark bob haircut, wearing a brown leather jacket over an olive-green t-shirt. She has a small, red cut on her right cheek"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a black semi-automatic handgun"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an interior space with rough-hewn stone or concrete walls. The lighting is low and warm, creating a somber atmosphere. Some out-of-focus foliage is visible in the background"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "not wearing sunglasses"
+              }
+            ],
+            "action": "Medium close-up of Character 1 from a slightly low angle. She faces off-screen right, her mouth moving with a tense expression. At the start, Character 1 is not wearing sunglasses. Then Character 1 takes sunglasses from below frame and puts them on.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "not wearing sunglasses",
+                "after": "wearing dark sunglasses"
+              }
+            ],
+            "frame_count": 37
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A medium close-up shot of Character 2, facing forward. She has a distressed and worried expression, her brow is furrowed, and her mouth is slightly agape. The background is a blurry stone wall.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing dark sunglasses"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "A medium shot of Character 1, who is now holding Object 1 (the handgun) with both hands, pointing it off-screen to her right. Her expression is one of extreme anger and aggression, her mouth open as if shouting. She then lowers the gun and turns her head sharply to her left.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "A medium shot of Character 2. She is looking up and to her left with a fearful expression. A hand holding Object 1 is visible in the foreground, pointing at her. She flinches slightly and then looks down, her expression one of resignation or sadness. A cut is visible on her right cheek.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing dark sunglasses"
+              }
+            ],
+            "action": "Close-up side profile of Character 1 looking over her right shoulder, her mouth open in alarm.",
+            "changes": [],
+            "frame_count": 53
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A close-up shot of Character 2, looking slightly down and to her left. Her expression is pained and she appears to be speaking or gasping. The cut on her cheek is clearly visible.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing dark sunglasses"
+              }
+            ],
+            "action": "Close-up of Character 1 looking over her right shoulder, her mouth open and her body trembling.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 8,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A close-up shot of Character 2, looking down with a somber and defeated expression. Her eyes are glistening, and she appears to be on the verge of tears. The cut on her cheek remains visible.",
+            "changes": [],
+            "frame_count": 25
+          }
+        ]
+      }
+    },
+    {
+      "story_id": "lsh-004-b",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "appearance": "a man with dark hair, a goatee and a small scar on his left cheek, wearing a white high-collared shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "appearance": "a woman with long, wavy brown hair. She is wearing a light-colored, possibly pink or mauve, garment with a low neckline"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a silver-colored handgun held by a hand wearing a black glove"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a small, dark, round object"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an interior room with dark, ornate gold-trimmed wall panels and decorative elements. The lighting is low and warm"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Object 1"
+              }
+            ],
+            "action": "A close-up shot in a dark environment. A hand wearing a black glove holds a silver handgun. The camera is initially out of focus and then sharpens on the gun, which is held steadily.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A close-up shot of a woman's face against a background of ornate gold panels. She looks forward, then brings her hands up to the back of her head, tilts her head back with her eyes closed, and then lowers her hands, looking to the side with a slight smile.",
+            "changes": [],
+            "frame_count": 77
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing the dark vest"
+              }
+            ],
+            "action": "A medium close-up of a man in profile, looking down. He is wearing a white shirt and a dark vest. He slowly lifts his head and turns to look forward with a serious expression.",
+            "changes": [],
+            "frame_count": 57
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A close-up of the woman's face. She turns her head from a profile view to face more forward, her expression shifting from neutral to a slight, knowing smile as she looks down and then up.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing the dark vest"
+              }
+            ],
+            "action": "A medium shot of the man in profile, standing near a frosted glass lamp. He looks down, then turns his head to look forward, a faint smile on his face.",
+            "changes": [],
+            "frame_count": 37
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A close-up of the woman's face. She looks to the side with a subtle, contemplative expression, her gaze steady.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing the dark vest"
+              }
+            ],
+            "action": "A medium shot of the man in profile. He is looking forward, then turns his head slightly, his expression neutral. At the start, Character 1 is wearing the dark vest. Then Character 1 takes off his dark vest, leaving the white shirt visible.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "wearing the dark vest",
+                "after": "dark vest removed, white shirt exposed"
+              }
+            ],
+            "frame_count": 77
+          },
+          {
+            "shot": 8,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "A close-up of the woman's face. She looks to the side, her mouth slightly open as if speaking or reacting, then her expression softens into a slight smile.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 9,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "dark vest removed, white shirt exposed"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "A medium shot of the man in profile. He raises his right hand to his face and brings a small, dark object to his nose, appearing to smell it.",
+            "changes": [],
+            "frame_count": 21
+          }
+        ]
+      }
+    },
+    {
+      "story_id": "lsh-008-b",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "appearance": "a male, short dark hair, wearing a light-colored button-down shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "appearance": "a male, short dark hair, wearing a white t-shirt"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a dark grey muscle car with a rear spoiler"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a white sports car"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an interior of a car, showing the driver's seat and window frame"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a paved two-lane road cutting through a dry, hilly landscape with sparse vegetation"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "not wearing sunglasses"
+              }
+            ],
+            "action": "Medium close-up, eye-level, interior of a car. Character 1 is seated in the driver's seat, looking forward and slightly to the right. The camera is positioned outside the car, looking in through the window. The background is a blurred desert landscape. At the start, Character 1 is not wearing sunglasses. Then Character 1 puts on dark sunglasses while seated in the car.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "not wearing sunglasses",
+                "after": "wearing dark sunglasses"
+              }
+            ],
+            "frame_count": 137
+          },
+          {
+            "shot": 2,
+            "place": "Location 2",
+            "camera": {},
+            "present": [
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "Medium shot, low angle, exterior. Object 1 is driving away from the camera on a desert road. Object 2 enters the frame from the left, overtaking Object 1.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 3,
+            "place": "Location 2",
+            "camera": {},
+            "present": [
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "Close-up, low angle, exterior. The rear bumper of Object 1 is in the foreground. Object 2 is visible in the background, moving from right to left behind Object 1.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 4,
+            "place": "Location 2",
+            "camera": {},
+            "present": [
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "action": "Extreme long shot, high angle, aerial. Object 1 and Object 2 are driving side-by-side on a winding desert road. The cars are moving away from the camera.",
+            "changes": [],
+            "frame_count": 33
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing dark sunglasses"
+              },
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "Medium close-up, eye-level, interior of a car. Character 1 is in the driver's seat, looking forward. The back of Character 2's head is visible in the foreground, out of focus.",
+            "changes": [],
+            "frame_count": 53
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing dark sunglasses"
+              },
+              {
+                "name": "Character 2"
+              }
+            ],
+            "action": "Medium close-up, eye-level, interior of a car. Character 2 is in the driver's seat, looking forward. The back of Character 1's head is visible in the foreground, out of focus.",
+            "changes": [],
+            "frame_count": 25
+          }
+        ]
+      }
+    },
+    {
+      "story_id": "lsh-020-b",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "appearance": "an older seated woman with grey swept-back hair, wearing a black dress"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "appearance": "a man with a mustache, wearing a dark suit and tie"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "appearance": "a bald man wearing a dark suit and tie"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "appearance": "a young man with slicked-back dark hair, wearing a dark suit and tie"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "appearance": "a woman with short dark hair, wearing a dark dress"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "appearance": "a man with short dark hair, wearing a dark suit and tie"
+          },
+          {
+            "name": "Character 7",
+            "kind": "person",
+            "appearance": "a woman with short dark hair, wearing a dark dress"
+          },
+          {
+            "name": "Character 8",
+            "kind": "person",
+            "appearance": "a man with short dark hair, wearing a dark suit and tie"
+          },
+          {
+            "name": "Character 9",
+            "kind": "person",
+            "appearance": "a standing woman with short grey-brown hair and a white apron"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a formal dining room with dark wood paneling, a long table set with white plates and cups, and dim lighting"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a hallway with a staircase, wooden railings, and a coat rack"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "holding a white teacup"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              },
+              {
+                "name": "Character 9"
+              }
+            ],
+            "action": "Medium eye-level shot of the dining table. Character 9 stands behind seated Character 3, Character 1 and Character 2.",
+            "changes": [],
+            "frame_count": 53
+          },
+          {
+            "shot": 2,
+            "place": "Location 2",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 4"
+              },
+              {
+                "name": "Character 5"
+              },
+              {
+                "name": "Character 6"
+              }
+            ],
+            "action": "Medium shot, eye-level, in the hallway. Character 4 walks into the frame from the left. Character 5 walks past him in the foreground, out of focus. Character 4 stops and turns to face Character 6, who is standing near the coat rack. They appear to be talking.",
+            "changes": [],
+            "frame_count": 121
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 6"
+              },
+              {
+                "name": "Character 7"
+              },
+              {
+                "name": "Character 8"
+              }
+            ],
+            "action": "Wide shot, eye-level, in the dining room. A long table is filled with people. Character 6 and Character 7 are seated in the center. Character 8 is seated to their left. They are all looking towards the right of the frame.",
+            "changes": [],
+            "frame_count": 61
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "holding a white teacup"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "Medium shot, eye-level, in the dining room. Character 3, Character 1, and Character 2 are seated at the table. Character 1 is holding a white cup. They are looking towards the right of the frame. At the start, Character 1 is holding a white teacup. Then Character 1 sets her white teacup on the table and withdraws her hand.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "holding a white teacup",
+                "after": "empty-handed with the teacup resting on the table"
+              }
+            ],
+            "frame_count": 41
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 6"
+              },
+              {
+                "name": "Character 7"
+              }
+            ],
+            "action": "Close-up, eye-level, in the dining room. Character 6 is looking down and to the left. Character 7 is seated to his right, looking down.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 4"
+              }
+            ],
+            "action": "Close-up, eye-level, in the dining room. Character 4 is looking down and to the left. He has a slight smile on his face.",
+            "changes": [],
+            "frame_count": 25
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "empty-handed with the teacup resting on the table"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "Medium eye-level dining-room shot. Character 3, Character 1 and Character 2 sit at the table and look towards the right.",
+            "changes": [],
+            "frame_count": 61
+          },
+          {
+            "shot": 8,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "empty-handed with the teacup resting on the table"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "Medium eye-level dining-room shot. Character 3, Character 1 and Character 2 sit at the table and look towards the right.",
+            "changes": [],
+            "frame_count": 49
+          },
+          {
+            "shot": 9,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 7"
+              },
+              {
+                "name": "Character 8"
+              }
+            ],
+            "action": "Medium shot, eye-level, in the dining room. Character 8 and Character 7 are seated at the table. Character 7 has a surprised expression on her face, with her mouth open. She then turns her head to the left.",
+            "changes": [],
+            "frame_count": 69
+          },
+          {
+            "shot": 10,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "empty-handed with the teacup resting on the table"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "Medium eye-level dining-room shot. Character 3, Character 1 and Character 2 sit at the table and look towards the right.",
+            "changes": [],
+            "frame_count": 93
+          },
+          {
+            "shot": 11,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "empty-handed with the teacup resting on the table"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "Medium eye-level dining-room shot. Character 3, Character 1 and Character 2 sit at the table and look towards the right.",
+            "changes": [],
+            "frame_count": 37
+          }
+        ]
+      }
+    },
+    {
+      "story_id": "lsh-028-b",
+      "storyboard": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "appearance": "a man with a goatee, a neck tattoo and a brown jersey over a red shirt"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "appearance": "a white man with short brown hair, wearing a light grey t-shirt with the word 'CREW' on it"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "appearance": "a white man with a goatee, wearing a grey jacket over a grey t-shirt and a blue baseball cap. He has a whistle on a lanyard around his neck"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "appearance": "a white man with short brown hair, wearing a light grey t-shirt, standing slightly behind Character 2"
+          }
+        ],
+        "objects": [],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an outdoor area with a wall covered in green ivy in the background. A white bench or barrier is visible in some shots"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "wearing the blue baseball cap"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium close-up, over-the-shoulder shot from behind Character 3, focusing on Character 1. Character 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall. At the start, Character 1 is wearing the blue baseball cap. Then Character 1 takes off his blue baseball cap.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "state",
+                "before": "wearing the blue baseball cap",
+                "after": "bareheaded"
+              }
+            ],
+            "frame_count": 37
+          },
+          {
+            "shot": 2,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 4"
+              }
+            ],
+            "action": "A medium close-up of Character 2, who is looking off-screen to the right with an angry and intense expression. His brow is furrowed and his mouth is open as if shouting. Character 4 is partially visible in the background, also looking in the same direction with a concerned expression.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 3,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium close-up, over-the-shoulder shot from behind Character 3, focusing on Character 1. Character 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+            "changes": [],
+            "frame_count": 29
+          },
+          {
+            "shot": 4,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 4"
+              }
+            ],
+            "action": "A medium close-up of Character 2, who is looking off-screen to the right with an angry and intense expression. His brow is furrowed and his mouth is open as if shouting. Character 4 is partially visible in the background, also looking in the same direction with a concerned expression.",
+            "changes": [],
+            "frame_count": 53
+          },
+          {
+            "shot": 5,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium close-up, over-the-shoulder shot from behind Character 3, focusing on Character 1. Character 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 6,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 3"
+              },
+              {
+                "name": "Character 4"
+              }
+            ],
+            "action": "A medium shot showing Character 3 on the left, Character 2 and Character 4 in the center, and Character 1 on the right. Character 3 is gesturing with his right hand towards Character 1 while speaking. Character 2 and Character 4 watch the interaction. Character 1 stands with his back partially to the camera, listening.",
+            "changes": [],
+            "frame_count": 45
+          },
+          {
+            "shot": 7,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium close-up, over-the-shoulder shot from behind Character 1, focusing on Character 3. Character 3 is looking towards the right of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+            "changes": [],
+            "frame_count": 21
+          },
+          {
+            "shot": 8,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 2"
+              },
+              {
+                "name": "Character 4"
+              }
+            ],
+            "action": "A medium close-up of Character 2, who is looking off-screen to the right with a serious expression. His mouth is slightly open. Character 4 is partially visible in the background, looking in the same direction with a slight smile.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 9,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium close-up, over-the-shoulder shot from behind Character 3, focusing on Character 1. Character 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+            "changes": [],
+            "frame_count": 17
+          },
+          {
+            "shot": 10,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium shot showing Character 3 on the left and Character 1 on the right. Character 3 is gesturing with his right hand towards Character 1 while speaking. Character 1 stands with his back partially to the camera, listening.",
+            "changes": [],
+            "frame_count": 41
+          },
+          {
+            "shot": 11,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A close-up, over-the-shoulder shot from behind Character 1, focusing on Character 3. Character 3 is looking towards the right of the frame, his mouth moving as if speaking. The camera slowly zooms in on his face.",
+            "changes": [],
+            "frame_count": 149
+          },
+          {
+            "shot": 12,
+            "place": "Location 1",
+            "camera": {},
+            "present": [
+              {
+                "name": "Character 1",
+                "state": "bareheaded"
+              },
+              {
+                "name": "Character 3"
+              }
+            ],
+            "action": "A medium close-up, over-the-shoulder shot from behind Character 3, focusing on Character 1. Character 1 is in profile, looking towards the left of the frame, his mouth moving as if speaking. The background is a soft-focus ivy wall.",
+            "changes": [],
+            "frame_count": 125
+          }
+        ]
+      }
+    }
+  ]
+}

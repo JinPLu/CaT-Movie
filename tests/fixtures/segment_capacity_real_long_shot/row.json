@@ -1,0 +1,41 @@
+{
+  "source_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/moviecuts/raw/slice200.jsonl",
+  "source_row": {
+    "split": "train",
+    "clip_id": "9c0457b1-745d-4ffe-9104-a5c2b227dd24",
+    "labels": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviecuts/raw/moviecuts_mp4/9c0457b1-745d-4ffe-9104-a5c2b227dd24/9c0457b1-745d-4ffe-9104-a5c2b227dd24.mp4",
+    "bytes": 1874769,
+    "native_metadata": {
+      "clip_id": "9c0457b1-745d-4ffe-9104-a5c2b227dd24",
+      "num_frames": 1233,
+      "cut_timestamp": 5.30999999999996,
+      "cut_frame_id": 127,
+      "fps": 23.976023976023978,
+      "width": 455,
+      "height": 256,
+      "sound": true
+    },
+    "decoded_frame_difference": 0,
+    "ok": true,
+    "returncode": 0,
+    "decoded_frames": 1233,
+    "error": ""
+  },
+  "derived_frame_counts": [
+    79,
+    692
+  ],
+  "target_fps": 15
+}

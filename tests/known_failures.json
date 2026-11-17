@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "policy": "strict xfail for exact unresolved node IDs; unexpected passes fail CI until the entry is removed",
+  "entries": []
+}

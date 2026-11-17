@@ -1,0 +1,15 @@
+{
+ "schema_version": 1,
+ "pipeline_config": "configs/data/source_pipeline_v1.json",
+ "annotation_contract": "configs/data/block_annotation_v18.json",
+ "inputs": {
+  "blocks": "final/blocks.jsonl",
+  "block_annotations": "final/block-annotations.jsonl",
+  "eval_exclude_shots": "final/eval-exclude-shots.jsonl",
+  "block_rejections": "final/block-rejections.jsonl",
+  "target_index": null,
+  "reference_frames": null,
+  "spatial_root": "spatial-blocks"
+ },
+ "output_dir": "final/sampling-ledger"
+}

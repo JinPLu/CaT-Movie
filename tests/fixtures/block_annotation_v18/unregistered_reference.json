@@ -1,0 +1,222 @@
+{
+  "key": "cinedance-014187-b0003",
+  "split": "train",
+  "shot": 1,
+  "source": "renderer-quality-20261014/full-pool-tokens/bad-rows.jsonl",
+  "member": {
+    "key": "cinedance-014187-b0003",
+    "split": "train",
+    "annotation": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with a goatee, wearing glasses and a white cap with a green band",
+          "outfit": "a white open shirt over a bare chest"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a girl with short blue hair and freckles",
+          "outfit": "a blue top"
+        },
+        {
+          "name": "Character 3",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a small blue seal-like creature with a pink nose"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a girl with long blonde hair and a large grey hat"
+        },
+        {
+          "name": "Character 5",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a small white creature with green eyes and a fluffy tail"
+        },
+        {
+          "name": "Character 6",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a boy with spiky orange hair"
+        },
+        {
+          "name": "Character 7",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a girl with green hair and a green headband"
+        },
+        {
+          "name": "Character 8",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a boy with dark hair wearing a red and white cap"
+        },
+        {
+          "name": "Character 9",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a large red turtle-like creature with a yellow face and shell markings"
+        },
+        {
+          "name": "Character 10",
+          "kind": "person",
+          "visibility": "partial",
+          "appearance": "a person with dark skin wearing a green shirt with white stripes and white shorts"
+        },
+        {
+          "name": "Character 11",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a boy with dark skin, wearing a red headband and red shorts"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a small blue creature"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "an outdoor area with a large waterfall in the background"
+        },
+        {
+          "name": "Location 2",
+          "appearance": "a town square with a large green and white building with a thatched roof, palm trees, and rocky cliffs in the background"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "picture_type": "animation_2d",
+          "on_screen_text": "none",
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing, holding Object 3"
+            },
+            {
+              "name": "Character 3",
+              "posture": "being held"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 5",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 6",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 7",
+              "posture": "standing"
+            }
+          ],
+          "activity": "talking_only",
+          "action": "A group of people and creatures stand together looking forward with surprised or happy expressions.",
+          "changes": []
+        },
+        {
+          "shot": 2,
+          "picture_type": "animation_2d",
+          "on_screen_text": "none",
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 10",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 1",
+              "posture": "standing in a group"
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing in a group"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing in a group"
+            },
+            {
+              "name": "Character 6",
+              "posture": "standing in a group"
+            },
+            {
+              "name": "Character 7",
+              "posture": "standing in a group"
+            },
+            {
+              "name": "Character 8",
+              "posture": "standing in a group"
+            },
+            {
+              "name": "Character 9",
+              "posture": "lying on its back on the ground"
+            },
+            {
+              "name": "Character 11",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 1",
+              "posture": "standing on the ground"
+            }
+          ],
+          "activity": "no_human_activity",
+          "action": "A large red turtle-like creature lies on its back in a town square while a group of people and another small creature watch from a distance, and a boy stands nearby.",
+          "changes": []
+        }
+      ],
+      "story": {
+        "paragraph": "A group of people and creatures, including a man with glasses, a girl with blue hair holding a small blue creature, a blonde girl, a boy with orange hair, a girl with green hair, and a boy in a red cap, stand together looking forward with various expressions. The scene then shifts to a town square with a large green and white building where a large red turtle-like creature is lying on its back on the ground. The group from the previous scene stands in the background watching, along with a boy in red shorts and a small blue creature standing nearby.",
+        "summary": "A group of people and creatures look on as a large red turtle-like creature lies on its back in a town square."
+      }
+    },
+    "shots": [
+      {
+        "shot": 1,
+        "usable": true,
+        "unusable_reasons": [],
+        "laion_aesthetic": 4.957141081492106,
+        "dover_technical": -0.07149514555931091,
+        "frames": 33
+      },
+      {
+        "shot": 2,
+        "usable": true,
+        "unusable_reasons": [],
+        "laion_aesthetic": 5.037939548492432,
+        "dover_technical": -0.05253784358501434,
+        "frames": 57
+      }
+    ]
+  }
+}

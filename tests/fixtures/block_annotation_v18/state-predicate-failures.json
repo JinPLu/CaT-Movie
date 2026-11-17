@@ -1,0 +1,320 @@
+{
+  "source": "full-pool exact source posture/state pairs, independently reviewed from train-pool-state-conflicts.jsonl; not visual ground truth",
+  "cases": [
+    {
+      "member_key": "cinedance-009937-b0000",
+      "shot_index": 0,
+      "posture": "standing",
+      "state": "then sitting on the ground looking sad",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-010341-b0000",
+      "shot_index": 2,
+      "posture": "lying down",
+      "state": "then sitting up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-010928-b0000",
+      "shot_index": 7,
+      "posture": "sitting at the table",
+      "state": "holding Object 2 and then standing up and walking away",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-011449-b0001",
+      "shot_index": 0,
+      "posture": "lying on the ground",
+      "state": "then sitting up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-011618-b0000",
+      "shot_index": 0,
+      "posture": "sitting on the ground",
+      "state": "then standing up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-012268-b0002",
+      "shot_index": 10,
+      "posture": "standing",
+      "state": "looking at the seated man",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-012597-b0002",
+      "shot_index": 0,
+      "posture": "parked or moving slowly",
+      "state": "driving slowly",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-013467-b0001",
+      "shot_index": 0,
+      "posture": "standing still",
+      "state": "moving arms and legs",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-013467-b0001",
+      "shot_index": 2,
+      "posture": "standing still",
+      "state": "moving arms and legs",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-014810-b0000",
+      "shot_index": 0,
+      "posture": "parked or entering frame",
+      "state": "driving along the circular driveway",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-015271-b0000",
+      "shot_index": 0,
+      "posture": "standing",
+      "state": "then lying on the ground",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "cinedance-017509-b0001",
+      "shot_index": 0,
+      "posture": "lying down",
+      "state": "waking up and standing up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-001210-b0000",
+      "shot_index": 0,
+      "posture": "sitting on the floor",
+      "state": "then stands up and walks",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-001328-b0000",
+      "shot_index": 3,
+      "posture": "standing still",
+      "state": "then walking away",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-001947-b0000",
+      "shot_index": 7,
+      "posture": "sitting in a wheelchair",
+      "state": "getting ready to stand up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-002106-b0001",
+      "shot_index": 5,
+      "posture": "sitting",
+      "state": "then standing up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-002121-b0004",
+      "shot_index": 10,
+      "posture": "sitting at the table",
+      "state": "then stands up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-002784-b0000",
+      "shot_index": 8,
+      "posture": "standing still",
+      "state": "talking then walking away",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-003201-b0000",
+      "shot_index": 0,
+      "posture": "standing still",
+      "state": "hands moving to face",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-004042-b0000",
+      "shot_index": 0,
+      "posture": "sitting still",
+      "state": "moving her arms and upper body",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-004170-b0002",
+      "shot_index": 7,
+      "posture": "standing still",
+      "state": "running hand through hair",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-004609-b0003",
+      "shot_index": 8,
+      "posture": "sitting at the table",
+      "state": "putting on glasses and then standing up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-004856-b0003",
+      "shot_index": 0,
+      "posture": "sitting",
+      "state": "then stands up and turns",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-004886-b0008",
+      "shot_index": 0,
+      "posture": "lying on the floor",
+      "state": "then standing",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-004998-b0001",
+      "shot_index": 8,
+      "posture": "standing and clapping",
+      "state": "some people are sitting down",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-005245-b0002",
+      "shot_index": 0,
+      "posture": "standing still",
+      "state": "moving head and crest",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-005247-b0004",
+      "shot_index": 1,
+      "posture": "standing and moving around",
+      "state": "one gnome is sitting in Object 1",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-005386-b0004",
+      "shot_index": 0,
+      "posture": "sitting or standing still, facing forward",
+      "state": "mouth moving as if speaking",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-005693-b0004",
+      "shot_index": 0,
+      "posture": "standing still",
+      "state": "hair moving wildly",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-006046-b0005",
+      "shot_index": 1,
+      "posture": "standing still",
+      "state": "arms raised and moving",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-006090-b0004",
+      "shot_index": 6,
+      "posture": "sitting still",
+      "state": "looking up and moving its tail",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-006264-b0000",
+      "shot_index": 3,
+      "posture": "parked under the structure",
+      "state": "wipers moving",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-006612-b0005",
+      "shot_index": 0,
+      "posture": "lying on the ground",
+      "state": "a frog sitting on his head",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-006751-b0001",
+      "shot_index": 8,
+      "posture": "sitting",
+      "state": "talking then stands up",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-006981-b0005",
+      "shot_index": 4,
+      "posture": "standing",
+      "state": "then sitting down on the carpet",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-007147-b0001",
+      "shot_index": 6,
+      "posture": "standing still",
+      "state": "moving their necks",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-007877-b0002",
+      "shot_index": 1,
+      "posture": "sitting on a bench",
+      "state": "then stands up and runs",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-007877-b0002",
+      "shot_index": 1,
+      "posture": "sitting on a bench",
+      "state": "then stands up and runs",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-007877-b0002",
+      "shot_index": 1,
+      "posture": "sitting on a bench",
+      "state": "then stands up and runs",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-007920-b0005",
+      "shot_index": 7,
+      "posture": "sitting",
+      "state": "tending to the man lying down",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-008439-b0005",
+      "shot_index": 0,
+      "posture": "standing still",
+      "state": "hair flying",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-008453-b0005",
+      "shot_index": 0,
+      "posture": "lying still",
+      "state": "moving head",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-008589-b0013",
+      "shot_index": 0,
+      "posture": "standing still on the fish",
+      "state": "moving its claws",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-008805-b0002",
+      "shot_index": 1,
+      "posture": "sitting on a white sofa",
+      "state": "looking up at a man standing in front of her",
+      "expected_conflict": false
+    },
+    {
+      "member_key": "film-018909-b0002",
+      "shot_index": 0,
+      "posture": "standing still with hands over mouth",
+      "state": "then running",
+      "expected_conflict": false
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+ "failed": {
+  "source": "test92-joint-routed-two-shot-given-plan-20261105/inference/raw/joint_routed-given_plan-entity_coverage_fill_per_shot-two_shot_segments/film-001595-b0001-shot01/segments/g5.source_grounding_failed.json",
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person"
+   },
+   {
+    "name": "Character 5",
+    "kind": "animal"
+   },
+   {
+    "name": "Character 6",
+    "kind": "person"
+   }
+  ],
+  "references": [
+   [
+    0,
+    32
+   ],
+   [
+    2,
+    14
+   ],
+   [
+    3,
+    12
+   ],
+   [
+    5,
+    10
+   ],
+   [
+    6,
+    10
+   ]
+  ],
+  "raw": "{\n  \"references\": [\n    {\n      \"reference\": 1,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           730,\n           260\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": [\n           500,\n           270\n          ]\n        },\n        {\n          \"name\": \"Character 4\",\n          \"point_2d\": [\n           890,\n           350\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 2,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           300,\n           300\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 3,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           200,\n           400\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": [\n           500,\n           350\n          ]\n        },\n        {\n          \"name\": \"Character 4\",\n          \"point_2d\": [\n           880,\n           380\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 4,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           700,\n           550\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 5,\n      \"characters\": [\n        {\n          \"name\": \"Character 4\",\n          \"point_2d\": [\n           100,\n           100\n          \t,\n          100\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    }\n  ]\n}"
+ },
+ "valid": [
+  {
+   "source": "dev30-style-three-seeds-20261104/inference/raw/joint_routed-given_style-entity_coverage_fill_per_shot-four_shot_segments-seed43/cinedance-015642-b0002-shot01/segments.json#segment2",
+   "characters": [
+    {
+     "name": "Character 1",
+     "kind": "person"
+    },
+    {
+     "name": "Character 2",
+     "kind": "person"
+    },
+    {
+     "name": "Character 3",
+     "kind": "person"
+    },
+    {
+     "name": "Character 4",
+     "kind": "person"
+    },
+    {
+     "name": "Character 5",
+     "kind": "person"
+    },
+    {
+     "name": "Character 6",
+     "kind": "person"
+    },
+    {
+     "name": "Character 7",
+     "kind": "group"
+    }
+   ],
+   "references": [
+    [
+     0,
+     42
+    ],
+    [
+     1,
+     38
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     24
+    ],
+    [
+     5,
+     30
+    ],
+    [
+     6,
+     34
+    ],
+    [
+     7,
+     6
+    ]
+   ],
+   "raw": "{\n  \"references\": [\n    {\n      \"reference\": 1,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           920,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           200,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": [\n           280,\n           520\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 2,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           100,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           200,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": [\n           280,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 4\",\n          \"point_2d\": [\n           500,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 5\",\n          \"point_2d\": [\n           600,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 6\",\n          \"point_2d\": [\n           800,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 7\",\n          \"point_2d\": null\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 3,\n      \"characters\": [\n        {\n          \"name\": \"Character 6\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 4,\n      \"characters\": [\n        {\n          \"name\": \"Character 4\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 5,\n      \"characters\": [\n        {\n          \"name\": \"Character 5\",\n          \"point_2d\": [\n           700,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           100,\n           520\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           200,\n           520\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 6,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 7,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 8,\n      \"characters\": [\n        {\n          \"name\": \"Character 6\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    }\n  ]\n}"
+  },
+  {
+   "source": "dev30-style-three-seeds-20261104/inference/raw/joint_routed-given_style-entity_coverage_fill_per_shot-four_shot_segments-seed43/film-000123-b0001-shot01/segments.json#segment3",
+   "characters": [
+    {
+     "name": "Character 1",
+     "kind": "person"
+    },
+    {
+     "name": "Character 2",
+     "kind": "person"
+    },
+    {
+     "name": "Character 3",
+     "kind": "group"
+    }
+   ],
+   "references": [
+    [
+     0,
+     40
+    ],
+    [
+     1,
+     30
+    ],
+    [
+     2,
+     26
+    ],
+    [
+     3,
+     44
+    ],
+    [
+     4,
+     36
+    ],
+    [
+     5,
+     38
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     8,
+     20
+    ]
+   ],
+   "raw": "{\n  \"references\": [\n    {\n      \"reference\": 1,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           540,\n           460\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": null\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 2,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           380,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": null\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 3,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 4,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           600,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           100,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 5,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           200,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": null\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 6,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 7,\n      \"characters\": [\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           100,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 3\",\n          \"point_2d\": null\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 8,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           600,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           150,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    }\n  ]\n}"
+  },
+  {
+   "source": "dev30-style-three-seeds-20261104/inference/raw/joint_routed-given_style-entity_coverage_fill_per_shot-four_shot_segments-seed43/film-000127-b0000-shot01/segments.json#segment2",
+   "characters": [
+    {
+     "name": "Character 1",
+     "kind": "person"
+    },
+    {
+     "name": "Character 2",
+     "kind": "person"
+    }
+   ],
+   "references": [
+    [
+     0,
+     98
+    ],
+    [
+     1,
+     12
+    ],
+    [
+     2,
+     30
+    ],
+    [
+     3,
+     44
+    ]
+   ],
+   "raw": "{\n  \"references\": [\n    {\n      \"reference\": 1,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           100,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           600,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 2,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           500,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 3,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           300,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           800,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    },\n    {\n      \"reference\": 4,\n      \"characters\": [\n        {\n          \"name\": \"Character 1\",\n          \"point_2d\": [\n           100,\n           500\n          ]\n        },\n        {\n          \"name\": \"Character 2\",\n          \"point_2d\": [\n           600,\n           500\n          ]\n        }\n      ],\n      \"unknown_characters\": []\n    }\n  ]\n}"
+  }
+ ]
+}

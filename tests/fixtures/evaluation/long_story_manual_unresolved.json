@@ -1,0 +1,312 @@
+{
+  "source_artifact": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/long-evaluation-preflight-20261007T001000Z/inputs/ab_pairs30.json",
+  "note": "四个真实审查未定窗的新输入断言投影；人工未定字段直接来自本轮修订产物。",
+  "calls": [
+    {
+      "call_id": "lsh-002-a",
+      "side": "a",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s02",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "empty-handed, handgun released onto the floor",
+          "contrast_state": "holding the handgun",
+          "expected_answer": "no"
+        },
+        {
+          "assertion_id": "state_s07",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s07",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "holding the handgun",
+          "contrast_state": "empty-handed, handgun released onto the floor",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s07"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "event_e1"
+      ]
+    },
+    {
+      "call_id": "lsh-002-b",
+      "side": "b",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s02",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "empty-handed, handgun released onto the floor",
+          "contrast_state": "holding the handgun",
+          "expected_answer": "yes"
+        },
+        {
+          "assertion_id": "state_s07",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s07",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "empty-handed, handgun released onto the floor",
+          "contrast_state": "holding the handgun",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s07"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "event_e1"
+      ]
+    },
+    {
+      "call_id": "lsh-009-a",
+      "side": "a",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s02",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "empty-handed, launcher released",
+          "contrast_state": "holding the handheld launcher",
+          "expected_answer": "no"
+        },
+        {
+          "assertion_id": "state_s05",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s05",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "holding the handheld launcher",
+          "contrast_state": "empty-handed, launcher released",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s05"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "state_s05"
+      ]
+    },
+    {
+      "call_id": "lsh-009-b",
+      "side": "b",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s02",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "empty-handed, launcher released",
+          "contrast_state": "holding the handheld launcher",
+          "expected_answer": "yes"
+        },
+        {
+          "assertion_id": "state_s05",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s05",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "empty-handed, launcher released",
+          "contrast_state": "holding the handheld launcher",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s05"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "state_s05"
+      ]
+    },
+    {
+      "call_id": "lsh-010-a",
+      "side": "a",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s05",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "not wearing glasses",
+          "contrast_state": "wearing black-rimmed glasses",
+          "expected_answer": "no"
+        },
+        {
+          "assertion_id": "state_s07",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s07",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "wearing black-rimmed glasses",
+          "contrast_state": "not wearing glasses",
+          "expected_answer": "yes"
+        },
+        {
+          "assertion_id": "state_s08",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s08",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "wearing black-rimmed glasses",
+          "contrast_state": "not wearing glasses",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s07",
+        "state_s08"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "state_s07",
+        "state_s08"
+      ]
+    },
+    {
+      "call_id": "lsh-010-b",
+      "side": "b",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s05",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "not wearing glasses",
+          "contrast_state": "wearing black-rimmed glasses",
+          "expected_answer": "yes"
+        },
+        {
+          "assertion_id": "state_s07",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s07",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "not wearing glasses",
+          "contrast_state": "wearing black-rimmed glasses",
+          "expected_answer": "yes"
+        },
+        {
+          "assertion_id": "state_s08",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s08",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "not wearing glasses",
+          "contrast_state": "wearing black-rimmed glasses",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s07",
+        "state_s08"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "state_s07",
+        "state_s08"
+      ]
+    },
+    {
+      "call_id": "lsh-031-a",
+      "side": "a",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s05",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "wearing dark sunglasses",
+          "contrast_state": "not wearing sunglasses",
+          "expected_answer": "no"
+        },
+        {
+          "assertion_id": "state_s08",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s08",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "not wearing sunglasses",
+          "contrast_state": "wearing dark sunglasses",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s08"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "event_e1"
+      ]
+    },
+    {
+      "call_id": "lsh-031-b",
+      "side": "b",
+      "assertions": [
+        {
+          "assertion_id": "event_e1",
+          "kind": "in_shot_event_execution",
+          "subject_id": "Subject 2",
+          "check_shot": "s05",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "wearing dark sunglasses",
+          "contrast_state": "not wearing sunglasses",
+          "expected_answer": "yes"
+        },
+        {
+          "assertion_id": "state_s08",
+          "kind": "post_event_state",
+          "subject_id": "Subject 2",
+          "check_shot": "s08",
+          "reference_shot": null,
+          "event_id": "injected_e1",
+          "state": "wearing dark sunglasses",
+          "contrast_state": "not wearing sunglasses",
+          "expected_answer": "yes"
+        }
+      ],
+      "changed_assertion_ids": [
+        "event_e1",
+        "state_s08"
+      ],
+      "manual_unresolved_assertion_ids": [
+        "event_e1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "names",
+    "shots",
+    "actions"
+  ],
+  "properties": {
+    "names": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "shot",
+          "present"
+        ],
+        "properties": {
+          "shot": {
+            "type": "integer"
+          },
+          "present": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "shot",
+          "question",
+          "participants",
+          "result"
+        ],
+        "properties": {
+          "shot": {
+            "type": "integer"
+          },
+          "question": {
+            "type": "string"
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "result": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "question",
+                  "entity",
+                  "kind"
+                ],
+                "properties": {
+                  "question": {
+                    "type": "string"
+                  },
+                  "entity": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "appearance",
+                      "holding_or_place"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

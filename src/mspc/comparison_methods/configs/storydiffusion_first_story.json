@@ -1,0 +1,33 @@
+{
+  "story_id": "film-000122-b0000-shot01",
+  "seed": 42,
+  "image_method": "storydiffusion",
+  "video_method": "storydiffusion_wan_a14b",
+  "given_plan_source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/official-wan-ti2v-5b-20261027-source/configs/benchmark/benchmark_storyboards_v4.json",
+  "output_root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/storydiffusion-first-story-20261027",
+  "ffmpeg": "${MSPC_SHARED_ROOT}/env/bin/ffmpeg",
+  "ffprobe": "${MSPC_SHARED_ROOT}/env/ffmpeg7/bin/ffprobe",
+  "storydiffusion": {
+    "upstream": "${MSPC_SHARED_ROOT}/comparison_methods/StoryDiffusion",
+    "weights": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/sdxl_base_1_0",
+    "steps": 35,
+    "cfg": 5.0,
+    "sa32": 0.5,
+    "sa64": 0.5,
+    "width": 832,
+    "height": 480,
+    "negative_prompt": "",
+    "gpu_limit_seconds": 43200
+  },
+  "wan_i2v": {
+    "upstream": "${MSPC_SHARED_ROOT}/comparison_methods/StoryMem",
+    "weights": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_i2v_a14b",
+    "steps": 40,
+    "cfg": [3.5, 3.5],
+    "shift": 5.0,
+    "width": 832,
+    "height": 480,
+    "max_area": 399361,
+    "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+  }
+}

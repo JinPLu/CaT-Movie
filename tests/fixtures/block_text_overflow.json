@@ -1,0 +1,3211 @@
+[
+  {
+    "source": "renderer-quality-20261014/cpu-validation/target-token-overflow.json",
+    "member": {
+      "key": "cinedance-014187-b0004",
+      "split": "train",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a small blue koala-like creature with a large black nose and white cheek patches",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 2",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a small brown log-like creature with a face",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young boy with dark hair and a red and white cap",
+            "outfit": "a blue t-shirt with white sleeves"
+          },
+          {
+            "name": "Character 4",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a yellow mouse-like creature with red cheeks and long ears",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 5",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a small owl-like creature wrapped in a dark grey and blue cloak",
+            "outfit": "a dark grey and blue cloak"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with white hair and a green shirt with blue fish patterns",
+            "outfit": "a green shirt with blue fish patterns and white shorts"
+          },
+          {
+            "name": "Character 7",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark skin, a white lab coat, and a white cap with a rainbow logo",
+            "outfit": "a white lab coat and a white cap with a rainbow logo"
+          },
+          {
+            "name": "Character 8",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with blue hair and a blue dress with wave patterns",
+            "outfit": "a blue dress with wave patterns"
+          },
+          {
+            "name": "Character 9",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long blonde hair and a large grey hat",
+            "outfit": "a white dress and a large grey hat"
+          },
+          {
+            "name": "Character 10",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a young boy with orange hair",
+            "outfit": "a white shirt and brown pants"
+          },
+          {
+            "name": "Character 11",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with green hair in pigtails and a grey dress",
+            "outfit": "a grey dress"
+          },
+          {
+            "name": "Character 12",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark skin and red hair",
+            "outfit": "red shorts and a necklace"
+          },
+          {
+            "name": "Character 13",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a blue seal-like creature",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 14",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a white and blue sheep-like creature",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 15",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a white and yellow round creature",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 16",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a green and white plant-like creature",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 17",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a pink and white creature with large eyes and leaf-like ears",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 18",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a brown and green creature with a large leaf on its head",
+            "outfit": "none"
+          },
+          {
+            "name": "Character 19",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a small red creature with a purple face",
+            "outfit": "none"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a brown log-like creature"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a reddish-brown dirt ground"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "an outdoor area with rocky cliffs, palm trees, and a grassy field"
+          },
+          {
+            "name": "Location 3",
+            "appearance": "a wooden floor and wall"
+          },
+          {
+            "name": "Location 4",
+            "appearance": "an outdoor area in front of a large green building with white trim and arched windows"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "high angle shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "lying on the ground",
+                "state": "sleeping, hugging Object 1"
+              },
+              {
+                "name": "Object 1",
+                "state": "being hugged by Character 1"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "A small blue koala-like creature sleeps on the reddish-brown ground while hugging a small brown log-like creature.",
+            "changes": []
+          },
+          {
+            "shot": 2,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 2",
+            "camera": {
+              "shot_size": "medium close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "standing",
+                "state": "thinking, then pointing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting on Character 3's shoulder",
+                "state": "looking surprised"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "A young boy in a blue shirt and red cap thinks with his hand on his chin, then points forward while a yellow mouse-like creature on his shoulder looks surprised.",
+            "changes": [
+              {
+                "name": "Character 3",
+                "what": "posture",
+                "before": "thinking with hand on chin",
+                "after": "pointing forward"
+              }
+            ]
+          },
+          {
+            "shot": 3,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 3",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 5",
+                "posture": "standing",
+                "state": "smiling with eyes closed and blushing"
+              }
+            ],
+            "activity": "no_human_activity",
+            "action": "A small owl-like creature wrapped in a dark cloak smiles with its eyes closed and blushes.",
+            "changes": []
+          },
+          {
+            "shot": 4,
+            "picture_type": "animation_2d",
+            "on_screen_text": "none",
+            "place": "Location 4",
+            "camera": {
+              "shot_size": "wide shot",
+              "angle": "eye-level shot",
+              "movement": "pull out"
+            },
+            "present": [
+              {
+                "name": "Character 6",
+                "posture": "standing",
+                "state": "punching the air, then revealing a creature on its back"
+              },
+              {
+                "name": "Character 7",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 8",
+                "posture": "standing",
+                "holding": [
+                  "Character 13"
+                ]
+              },
+              {
+                "name": "Character 9",
+                "posture": "standing",
+                "holding": [
+                  "Character 14"
+                ]
+              },
+              {
+                "name": "Character 10",
+                "posture": "standing",
+                "holding": [
+                  "Character 15"
+                ]
+              },
+              {
+                "name": "Character 11",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 3",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting on Character 3's shoulder"
+              },
+              {
+                "name": "Character 12",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 16",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 17",
+                "posture": "standing"
+              },
+              {
+                "name": "Character 18",
+                "posture": "standing",
+                "state": "raising its arms"
+              },
+              {
+                "name": "Character 19",
+                "posture": "standing on the railing"
+              },
+              {
+                "name": "Character 1",
+                "posture": "lying on the ground",
+                "state": "sleeping, hugging Object 1"
+              },
+              {
+                "name": "Character 13"
+              },
+              {
+                "name": "Character 14"
+              },
+              {
+                "name": "Character 15"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "A group of people and creatures stand in front of a green building. A man with white hair punches the air, revealing a creature on his back. The camera pulls back to show the entire group, including a boy in a red cap, a yellow mouse on his shoulder, and a blue koala sleeping on the ground in the foreground.",
+            "changes": [
+              {
+                "name": "Character 6",
+                "what": "state",
+                "before": "punching the air",
+                "after": "revealing a creature on its back"
+              },
+              {
+                "name": "Character 18",
+                "what": "posture",
+                "before": "standing",
+                "after": "raising its arms"
+              }
+            ]
+          }
+        ],
+        "story": {
+          "paragraph": "A small blue koala-like creature sleeps on the ground while hugging a brown log-like creature. A young boy in a blue shirt and red cap thinks and then points forward, accompanied by a yellow mouse-like creature on his shoulder. A small owl-like creature in a dark cloak smiles and blushes. Finally, a large group of people and various creatures gather in front of a green building. A man with white hair punches the air, revealing a creature on his back, as the camera pulls back to show the whole group with the sleeping koala in the foreground.",
+          "summary": "A sleeping koala is shown, followed by a boy thinking and pointing, a smiling owl creature, and finally a large group of people and creatures gathering in front of a building."
+        }
+      },
+      "shots": [
+        {
+          "shot": 1,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 4.593386173248291,
+          "dover_technical": -0.046415675431489944
+        },
+        {
+          "shot": 2,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 5.160268465677897,
+          "dover_technical": -0.09034419059753418
+        },
+        {
+          "shot": 3,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 4.953070004781087,
+          "dover_technical": -0.06459495425224304
+        },
+        {
+          "shot": 4,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 4.844061374664307,
+          "dover_technical": -0.07765043526887894
+        }
+      ]
+    },
+    "position": 3,
+    "kind": "long_target_prompt",
+    "measured_token_counts": [
+      {
+        "target": 106
+      },
+      {
+        "target": 147
+      },
+      {
+        "target": 80
+      },
+      {
+        "target": 595
+      }
+    ],
+    "tokenizer": "wan22_5b_native/google/umt5-xxl; vendored HuggingfaceTokenizer(seq_len=None, clean=whitespace, add_special_tokens=True)",
+    "reference_role_measurement": {
+      "text": "Reference still from another shot of this story; not the current shot.",
+      "umt5_tokens": 15,
+      "tokenizer_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_5b_native/google/umt5-xxl",
+      "measurement": "load_umt5_token_counter in the actual cluster training environment; add_special_tokens=True, seq_len=None; CPU measurement by throughput_audit, 2026-11-01 Asia/Taipei"
+    }
+  },
+  {
+    "source": "renderer-quality-20261014/cpu-validation/reference-token-overflow.json",
+    "member": {
+      "key": "film-006485-b0000",
+      "split": "train",
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with blonde wavy hair",
+            "outfit": "a white dress"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 7",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 8",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 9",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 10",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 11",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 12",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 13",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 14",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 15",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 16",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 17",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 18",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 19",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 20",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 21",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 22",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 23",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 24",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 25",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 26",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 27",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 28",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 29",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 30",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 31",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 32",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 33",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 34",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 35",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 36",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 37",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 38",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 39",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 40",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 41",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 42",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 43",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 44",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 45",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 46",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 47",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 48",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 49",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 50",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 51",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 52",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 53",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 54",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 55",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 56",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 57",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 58",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 59",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 60",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 61",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 62",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 63",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 64",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 65",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 66",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 67",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 68",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 69",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 70",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 71",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 72",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 73",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 74",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 75",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 76",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 77",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 78",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 79",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 80",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 81",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 82",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 83",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 84",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 85",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 86",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 87",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 88",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 89",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 90",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 91",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 92",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 93",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 94",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 95",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 96",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 97",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 98",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 99",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 100",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 101",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 102",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 103",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 104",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 105",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 106",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 107",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 108",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 109",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 110",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 111",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 112",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 113",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 114",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 115",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 116",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 117",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 118",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 119",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 120",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 121",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 122",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 123",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 124",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 125",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 126",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 127",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 128",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 129",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 130",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 131",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 132",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 133",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 134",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 135",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 136",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 137",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 138",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 139",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 140",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 141",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 142",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 143",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 144",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 145",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 146",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 147",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 148",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 149",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 150",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 151",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 152",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 153",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 154",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 155",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 156",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 157",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 158",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 159",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 160",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 161",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 162",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 163",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 164",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 165",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 166",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 167",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 168",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 169",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 170",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 171",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 172",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 173",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 174",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 175",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 176",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 177",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 178",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 179",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 180",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 181",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 182",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 183",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 184",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 185",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 186",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 187",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 188",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 189",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 190",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 191",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 192",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 193",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 194",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 195",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 196",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 197",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 198",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 199",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          },
+          {
+            "name": "Character 200",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with dark hair",
+            "outfit": "a black tuxedo"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a silver tray with glasses"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a glass of champagne"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a wicker chair"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "a small wooden table"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an outdoor or semi-outdoor lounge area with palm trees, wicker furniture, and guests in formal wear"
+          }
+        ],
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "tracking"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "walking and then sitting down",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 4",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 5",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 6",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 7",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 8",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 9",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 10",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 11",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 12",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 13",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 14",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 15",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 16",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 17",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 18",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 19",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 20",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 21",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 22",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 23",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 24",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 25",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 26",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 27",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 28",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 29",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 30",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 31",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 32",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 33",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 34",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 35",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 36",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 37",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 38",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 39",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 40",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 41",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 42",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 43",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 44",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 45",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 46",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 47",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 48",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 49",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 50",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 51",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 52",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 53",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 54",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 55",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 56",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 57",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 58",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 59",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 60",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 61",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 62",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 63",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 64",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 65",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 66",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 67",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 68",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 69",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 70",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 71",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 72",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 73",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 74",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 75",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 76",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 77",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 78",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 79",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 80",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 81",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 82",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 83",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 84",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 85",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 86",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 87",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 88",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 89",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 90",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 91",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 92",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 93",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 94",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 95",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 96",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 97",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 98",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 99",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 100",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 101",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 102",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 103",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 104",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 105",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 106",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 107",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 108",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 109",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 110",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 111",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 112",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 113",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 114",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 115",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 116",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 117",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 118",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 119",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 120",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 121",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 122",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 123",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 124",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 125",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 126",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 127",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 128",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 129",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 130",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 131",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 132",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 133",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 134",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 135",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 136",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 137",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 138",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 139",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 140",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 141",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 142",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 143",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 144",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 145",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 146",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 147",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 148",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 149",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 150",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 151",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 152",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 153",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 154",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 155",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 156",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 157",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 158",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 159",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 160",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 161",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 162",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 163",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 164",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 165",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 166",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 167",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 168",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 169",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 170",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 171",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 172",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 173",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 174",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 175",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 176",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 177",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 178",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 179",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 180",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 181",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 182",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 183",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 184",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 185",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 186",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 187",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 188",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 189",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 190",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 191",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 192",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 193",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 194",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 195",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 196",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 197",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 198",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 199",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Character 200",
+                "posture": "walking",
+                "holding": []
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 3"
+              },
+              {
+                "name": "Object 4"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "A woman in a white dress and several men in tuxedos walk into a lounge area and sit down on wicker chairs around a small table. A waiter in a white uniform and red fez brings a silver tray of champagne glasses.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "posture",
+                "before": "walking",
+                "after": "sitting"
+              },
+              {
+                "name": "Character 2",
+                "what": "posture",
+                "before": "walking",
+                "after": "sitting"
+              },
+              {
+                "name": "Character 3",
+                "what": "posture",
+                "before": "walking",
+                "after": "sitting"
+              },
+              {
+                "name": "Character 4",
+                "what": "posture",
+                "before": "walking",
+                "after": "sitting"
+              },
+              {
+                "name": "Character 5",
+                "what": "posture",
+                "before": "walking",
+                "after": "sitting"
+              }
+            ]
+          },
+          {
+            "shot": 2,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 3",
+                "posture": "sitting",
+                "holding": []
+              }
+            ],
+            "activity": "talking_only",
+            "action": "A man in a tuxedo looks around and speaks.",
+            "changes": []
+          },
+          {
+            "shot": 3,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 4",
+                "posture": "sitting",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "A man in a tuxedo sits holding a glass of champagne and looks at the others.",
+            "changes": []
+          },
+          {
+            "shot": 4,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "sitting",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "activity": "talking_only",
+            "action": "A man and a woman sit together, talking and smiling while holding champagne glasses.",
+            "changes": []
+          },
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium wide shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 2",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 3",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Character 4",
+                "posture": "sitting",
+                "holding": []
+              },
+              {
+                "name": "Object 1"
+              },
+              {
+                "name": "Object 4"
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The group raises their champagne glasses for a toast.",
+            "changes": [
+              {
+                "name": "Character 1",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 3",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 4",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Object 2"
+                ]
+              }
+            ]
+          },
+          {
+            "shot": 6,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 2",
+                "posture": "sitting",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Character 1",
+                "posture": "sitting",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The man and woman drink from their champagne glasses.",
+            "changes": []
+          },
+          {
+            "shot": 7,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 4",
+                "posture": "sitting",
+                "holding": [
+                  "Object 2"
+                ]
+              },
+              {
+                "name": "Object 2"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "A man in a tuxedo drinks from his champagne glass.",
+            "changes": []
+          }
+        ],
+        "story": {
+          "paragraph": "A woman in a white dress and several men in tuxedos walk into a lounge area with palm trees and wicker furniture. They sit down around a small table as a waiter brings a silver tray of champagne glasses. The group raises their glasses for a toast, and then they all drink from their glasses while talking and smiling.",
+          "summary": "A woman and several men in tuxedos gather in a lounge, toast with champagne, and drink together."
+        }
+      },
+      "shots": [
+        {
+          "shot": 1,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 4.574935118357341,
+          "dover_technical": -0.0878065675497055
+        },
+        {
+          "shot": 2,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 4.9758124351501465,
+          "dover_technical": -0.04838722571730614
+        },
+        {
+          "shot": 3,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 5.31576665242513,
+          "dover_technical": -0.07740902900695801
+        },
+        {
+          "shot": 4,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 5.129717508951823,
+          "dover_technical": -0.10186225175857544
+        },
+        {
+          "shot": 5,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 5.029328187306722,
+          "dover_technical": -0.10654211789369583
+        },
+        {
+          "shot": 6,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 5.112837950388591,
+          "dover_technical": -0.11797929555177689
+        },
+        {
+          "shot": 7,
+          "usable": true,
+          "unusable_reasons": [],
+          "laion_aesthetic": 5.207069555918376,
+          "dover_technical": -0.07971923798322678
+        }
+      ]
+    },
+    "position": 0,
+    "kind": "long_entity_registry",
+    "measured_token_counts": [
+      {
+        "target": 4412
+      },
+      {
+        "target": 63
+      },
+      {
+        "target": 74
+      },
+      {
+        "target": 97
+      },
+      {
+        "target": 163
+      },
+      {
+        "target": 90
+      },
+      {
+        "target": 67
+      }
+    ],
+    "tokenizer": "wan22_5b_native/google/umt5-xxl; vendored HuggingfaceTokenizer(seq_len=None, clean=whitespace, add_special_tokens=True)",
+    "reference_role_measurement": {
+      "text": "Reference still from another shot of this story; not the current shot.",
+      "umt5_tokens": 15,
+      "tokenizer_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_5b_native/google/umt5-xxl",
+      "measurement": "load_umt5_token_counter in the actual cluster training environment; add_special_tokens=True, seq_len=None; CPU measurement by throughput_audit, 2026-11-01 Asia/Taipei"
+    }
+  }
+]

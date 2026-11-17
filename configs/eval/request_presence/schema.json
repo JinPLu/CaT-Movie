@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["shots"],
+  "properties": {
+    "shots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["shot", "on_screen", "location", "evidence"],
+        "properties": {
+          "shot": {"type": "integer"},
+          "on_screen": {"type": "array", "items": {"type": "string"}},
+          "location": {"type": ["string", "null"]},
+          "evidence": {"type": "string"}
+        }
+      }
+    }
+  }
+}

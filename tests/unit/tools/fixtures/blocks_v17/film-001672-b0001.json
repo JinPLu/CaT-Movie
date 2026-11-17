@@ -1,0 +1,266 @@
+{
+ "key": "film-001672-b0001",
+ "shots": 10,
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair",
+    "outfit": "an orange patterned shirt and white pants"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair",
+    "outfit": "a light blue shirt, khaki pants, and a flower lei"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair",
+    "outfit": "a black t-shirt, dark pants, and a flower lei"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with long dark hair",
+    "outfit": "a floral top and blue jeans"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a hanging wicker chair with a cushion"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a black leather jacket"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a wooden side table"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a lamp"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a room with wooden floors, wooden walls, and a hanging chair"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing with hands on hips"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 and Character 2 stand in a room and talk.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 looks at Character 2 and speaks.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 speaks to Character 1.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 speaks and smiles.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing",
+      "holding": [
+       "Object 2"
+      ]
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 3 enters the room and speaks to Character 1.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 and Character 3 talk.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing",
+      "holding": [
+       "Object 2"
+      ]
+     },
+     {
+      "name": "Character 4",
+      "posture": "walking"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 4 walks into the room past Character 3 and Character 1.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 1 and Character 3 continue talking.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "Two men, one in an orange shirt and the other in a blue shirt with a lei, stand in a room talking. A third man in a black shirt and lei enters the room holding a leather jacket and speaks to the man in the orange shirt. A woman in a floral top then walks past them into the room.",
+   "summary": "Two men talk in a room until a third man enters and speaks to one of them, followed by a woman walking into the room."
+  }
+ },
+ "expected_block_errors": [
+  "shots: expected 1..10"
+ ],
+ "expected_shot_errors": {},
+ "source": "block-contract-v17-quick-check-20261013/answers/base/film-001672-b0001.json"
+}

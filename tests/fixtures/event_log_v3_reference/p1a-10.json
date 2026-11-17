@@ -1,0 +1,4090 @@
+{
+  "reference": {
+    "schema_version": "state_layer_v2_gpt_reference_v1",
+    "window_id": "p1a-10",
+    "case_id": "ci_vid:train:000054834",
+    "split": "holdout",
+    "diagnostic_layer": "包含、支撑、附着",
+    "reviewer": "gpt-6.1-sol，当前会话直接视觉观察",
+    "independence": {
+      "p1b_candidate_outputs_read": false,
+      "historical_excerpt_exposed_during_inventory": true,
+      "historical_excerpt_caveat": "片源清点一次工具输出含历史缺货标注片段，之后逐窗参照只读帧；不声称完全双盲。",
+      "native_subtitles_used": false,
+      "paid_api_calls": 0,
+      "selection_commit": "b3633228"
+    },
+    "status": "reference_with_explicit_gaps",
+    "window": {
+      "schema_version": "state_facts_v2",
+      "window_id": "p1a-10",
+      "entities": [
+        {
+          "id": "Subject 1",
+          "kind": "person",
+          "static_appearance": "动画深肤色女孩，双侧蓬松短发"
+        },
+        {
+          "id": "Subject 2",
+          "kind": "person",
+          "static_appearance": "动画长褐卷发女孩"
+        },
+        {
+          "id": "Subject 3",
+          "kind": "person",
+          "static_appearance": "动画红发女孩"
+        },
+        {
+          "id": "Subject 4",
+          "kind": "person",
+          "static_appearance": "动画浅黄色头发女孩"
+        },
+        {
+          "id": "Subject 5",
+          "kind": "person",
+          "static_appearance": "动画浅褐短发女孩"
+        },
+        {
+          "id": "Subject 6",
+          "kind": "person",
+          "static_appearance": "动画深紫卷发女孩"
+        },
+        {
+          "id": "Subject 7",
+          "kind": "animal",
+          "static_appearance": "动画浅蓝象"
+        },
+        {
+          "id": "Subject 8",
+          "kind": "object",
+          "static_appearance": "棕色木梯"
+        },
+        {
+          "id": "Subject 9",
+          "kind": "object",
+          "static_appearance": "敞口纸箱"
+        }
+      ],
+      "locations": [
+        {
+          "id": "Location 1",
+          "description": "同窗画面场景（具体地理身份未知）",
+          "anchors": [
+            {
+              "id": "Location 1/Anchor 1",
+              "description": "楼梯",
+              "front_definition": null
+            },
+            {
+              "id": "Location 1/Anchor 2",
+              "description": "书架",
+              "front_definition": null
+            },
+            {
+              "id": "Location 1/Anchor 3",
+              "description": "木墙",
+              "front_definition": null
+            }
+          ]
+        }
+      ],
+      "shots": [
+        {
+          "index": 0,
+          "location": "Location 1",
+          "present": [
+            "Subject 1"
+          ]
+        },
+        {
+          "index": 1,
+          "location": "Location 1",
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ]
+        },
+        {
+          "index": 2,
+          "location": "Location 1",
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ]
+        },
+        {
+          "index": 3,
+          "location": "Location 1",
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 5",
+            "Subject 9"
+          ]
+        },
+        {
+          "index": 4,
+          "location": "Location 1",
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4",
+            "Subject 5",
+            "Subject 6",
+            "Subject 7",
+            "Subject 8"
+          ]
+        }
+      ],
+      "sampled_frames": [
+        {
+          "id": "p1a-10-s0-10",
+          "shot": 0,
+          "proxy_frame_index": 1,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1"
+          ]
+        },
+        {
+          "id": "p1a-10-s0-40",
+          "shot": 0,
+          "proxy_frame_index": 6,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s0-70",
+          "shot": 0,
+          "proxy_frame_index": 11,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s0-90",
+          "shot": 0,
+          "proxy_frame_index": 15,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1"
+          ]
+        },
+        {
+          "id": "p1a-10-s1-10",
+          "shot": 1,
+          "proxy_frame_index": 5,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s1-40",
+          "shot": 1,
+          "proxy_frame_index": 22,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s1-70",
+          "shot": 1,
+          "proxy_frame_index": 39,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s1-90",
+          "shot": 1,
+          "proxy_frame_index": 50,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ]
+        },
+        {
+          "id": "p1a-10-s2-10",
+          "shot": 2,
+          "proxy_frame_index": 1,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ]
+        },
+        {
+          "id": "p1a-10-s2-40",
+          "shot": 2,
+          "proxy_frame_index": 7,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s2-70",
+          "shot": 2,
+          "proxy_frame_index": 13,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s2-90",
+          "shot": 2,
+          "proxy_frame_index": 17,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s3-10",
+          "shot": 3,
+          "proxy_frame_index": 7,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 3",
+            "Subject 9"
+          ]
+        },
+        {
+          "id": "p1a-10-s3-40",
+          "shot": 3,
+          "proxy_frame_index": 28,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s3-70",
+          "shot": 3,
+          "proxy_frame_index": 49,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s3-90",
+          "shot": 3,
+          "proxy_frame_index": 63,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 5"
+          ]
+        },
+        {
+          "id": "p1a-10-s4-10",
+          "shot": 4,
+          "proxy_frame_index": 4,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s4-40",
+          "shot": 4,
+          "proxy_frame_index": 17,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s4-70",
+          "shot": 4,
+          "proxy_frame_index": 30,
+          "width": 640,
+          "height": 360,
+          "present": []
+        },
+        {
+          "id": "p1a-10-s4-90",
+          "shot": 4,
+          "proxy_frame_index": 39,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4",
+            "Subject 5",
+            "Subject 6",
+            "Subject 7",
+            "Subject 8"
+          ]
+        }
+      ],
+      "keyframes": [
+        {
+          "id": "p1a-10-s0-10",
+          "shot": 0,
+          "proxy_frame_index": 1,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1"
+          ],
+          "phase": "before"
+        },
+        {
+          "id": "p1a-10-s0-90",
+          "shot": 0,
+          "proxy_frame_index": 15,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1"
+          ],
+          "phase": "after"
+        },
+        {
+          "id": "p1a-10-s1-90",
+          "shot": 1,
+          "proxy_frame_index": 50,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3"
+          ],
+          "phase": "after"
+        },
+        {
+          "id": "p1a-10-s2-90",
+          "shot": 2,
+          "proxy_frame_index": 17,
+          "width": 640,
+          "height": 360,
+          "present": [],
+          "phase": "after"
+        },
+        {
+          "id": "p1a-10-s3-90",
+          "shot": 3,
+          "proxy_frame_index": 63,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 5"
+          ],
+          "phase": "after"
+        },
+        {
+          "id": "p1a-10-s4-90",
+          "shot": 4,
+          "proxy_frame_index": 39,
+          "width": 640,
+          "height": 360,
+          "present": [
+            "Subject 1",
+            "Subject 2",
+            "Subject 3",
+            "Subject 4",
+            "Subject 5",
+            "Subject 6",
+            "Subject 7",
+            "Subject 8"
+          ],
+          "phase": "after"
+        }
+      ],
+      "records": [
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              190,
+              430,
+              665,
+              975
+            ],
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "away",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              410,
+              195,
+              605,
+              935
+            ],
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "toward camera",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              205,
+              180,
+              485,
+              940
+            ],
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "toward camera",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              535,
+              235,
+              785,
+              950
+            ],
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "toward camera",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              805,
+              355,
+              1000,
+              950
+            ],
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              345,
+              90,
+              600,
+              845
+            ],
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              645,
+              400,
+              810,
+              940
+            ],
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              725,
+              700,
+              900,
+              990
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              205,
+              20,
+              580,
+              870
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              690,
+              450,
+              845,
+              705
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              580,
+              640,
+              715,
+              990
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              520,
+              730,
+              705,
+              1000
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              650,
+              470,
+              755,
+              720
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              0,
+              90,
+              335,
+              1000
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "left",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 8",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              175,
+              495,
+              510,
+              1000
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 8",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 8",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              230,
+              95,
+              685,
+              1000
+            ],
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-10",
+          "evidence_frames": [
+            "p1a-10-s0-10"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-10",
+          "evidence_frames": [
+            "p1a-10-s0-10"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-10",
+          "evidence_frames": [
+            "p1a-10-s0-10"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-10",
+          "evidence_frames": [
+            "p1a-10-s0-10"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "unknown"
+          },
+          "registration": "not_applicable",
+          "frame_id": "p1a-10-s0-10",
+          "evidence_frames": [
+            "p1a-10-s0-10"
+          ],
+          "coverage": null,
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "黄橙帽、橙色上衣、米白长裤",
+            "scope": "scene",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s0-10",
+            "p1a-10-s0-40",
+            "p1a-10-s0-70",
+            "p1a-10-s0-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "黄橙帽、橙色上衣、米白长裤",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s1-10",
+            "p1a-10-s1-40",
+            "p1a-10-s1-70",
+            "p1a-10-s1-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "蓝白点帽、浅蓝上衣、蓝长裤",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s1-10",
+            "p1a-10-s1-40",
+            "p1a-10-s1-70",
+            "p1a-10-s1-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "粉色花帽、粉紫上衣和裙装",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s1-10",
+            "p1a-10-s1-40",
+            "p1a-10-s1-70",
+            "p1a-10-s1-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "黄橙帽、橙色上衣、米白长裤",
+            "scope": "scene",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s3-10",
+            "p1a-10-s3-40",
+            "p1a-10-s3-70",
+            "p1a-10-s3-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "蓝白点帽、浅蓝上衣、蓝长裤",
+            "scope": "scene",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s3-10",
+            "p1a-10-s3-40",
+            "p1a-10-s3-70",
+            "p1a-10-s3-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "蓝色帽、绿色外套、蓝裤",
+            "scope": "scene",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s3-10",
+            "p1a-10-s3-40",
+            "p1a-10-s3-70",
+            "p1a-10-s3-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "黄橙帽、橙色上衣、米白长裤",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s4-10",
+            "p1a-10-s4-40",
+            "p1a-10-s4-70",
+            "p1a-10-s4-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "蓝白点帽、浅蓝上衣、蓝长裤",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s4-10",
+            "p1a-10-s4-40",
+            "p1a-10-s4-70",
+            "p1a-10-s4-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 3",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "粉色花帽、粉紫上衣和裙装",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s4-10",
+            "p1a-10-s4-40",
+            "p1a-10-s4-70",
+            "p1a-10-s4-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 4",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "浅紫帽、浅紫上衣、蓝裤",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s4-10",
+            "p1a-10-s4-40",
+            "p1a-10-s4-70",
+            "p1a-10-s4-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 5",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "蓝色帽、绿色外套、蓝裤",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s4-10",
+            "p1a-10-s4-40",
+            "p1a-10-s4-70",
+            "p1a-10-s4-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 6",
+            "family": "state",
+            "predicate_or_axis": "costume",
+            "object_or_value": "紫蓝帽、深粉上衣",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": null,
+          "evidence_frames": [
+            "p1a-10-s4-10",
+            "p1a-10-s4-40",
+            "p1a-10-s4-70",
+            "p1a-10-s4-90"
+          ],
+          "coverage": "衣着外观",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "body",
+            "object_or_value": "坐倒在地板",
+            "scope": "scene",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": "身体状态",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "relation",
+            "predicate_or_axis": "next to",
+            "object_or_value": "Subject 2",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": "包含与位置",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "relation",
+            "predicate_or_axis": "next to",
+            "object_or_value": "Subject 3",
+            "scope": "scene",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s1-90",
+          "evidence_frames": [
+            "p1a-10-s1-90"
+          ],
+          "coverage": "包含与位置",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "relation",
+            "predicate_or_axis": "at",
+            "object_or_value": "Location 1/Anchor 2",
+            "scope": "scene",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s3-90",
+          "evidence_frames": [
+            "p1a-10-s3-90"
+          ],
+          "coverage": "包含与位置",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "relation",
+            "predicate_or_axis": "next to",
+            "object_or_value": "Subject 7",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": "包含与位置",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 2",
+            "family": "relation",
+            "predicate_or_axis": "touches",
+            "object_or_value": "Subject 8",
+            "scope": "scene",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s4-90",
+          "evidence_frames": [
+            "p1a-10-s4-90"
+          ],
+          "coverage": "占有与接触",
+          "source": "GPT直接看帧；未用候选输出或原生字幕"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "body",
+            "object_or_value": "站立",
+            "scope": "scene",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s0-10",
+          "evidence_frames": [
+            "p1a-10-s0-10"
+          ],
+          "coverage": "身体状态",
+          "source": "GPT直接看关键帧的事件端点"
+        },
+        {
+          "fact": {
+            "subject": "Subject 1",
+            "family": "state",
+            "predicate_or_axis": "body",
+            "object_or_value": "坐倒",
+            "scope": "scene",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          "registration": "registered",
+          "frame_id": "p1a-10-s0-90",
+          "evidence_frames": [
+            "p1a-10-s0-90"
+          ],
+          "coverage": "身体状态",
+          "source": "GPT直接看关键帧的事件端点"
+        }
+      ]
+    },
+    "events": [
+      {
+        "id": "p1a-10-event-1",
+        "shot": 0,
+        "subject": "Subject 1",
+        "before": {
+          "frame_id": "p1a-10-s0-10",
+          "facts": [
+            {
+              "subject": "Subject 1",
+              "family": "state",
+              "predicate_or_axis": "body",
+              "object_or_value": "站立",
+              "scope": "scene",
+              "shot_span": [
+                0,
+                0
+              ],
+              "evidence": "observed"
+            }
+          ],
+          "description": "站立",
+          "status": "observed"
+        },
+        "after": {
+          "frame_id": "p1a-10-s0-90",
+          "facts": [
+            {
+              "subject": "Subject 1",
+              "family": "state",
+              "predicate_or_axis": "body",
+              "object_or_value": "坐倒",
+              "scope": "scene",
+              "shot_span": [
+                0,
+                0
+              ],
+              "evidence": "observed"
+            }
+          ],
+          "description": "坐倒",
+          "status": "observed"
+        },
+        "on_screen": true,
+        "evidence_frames": [
+          "p1a-10-s0-10",
+          "p1a-10-s0-40",
+          "p1a-10-s0-70",
+          "p1a-10-s0-90"
+        ],
+        "ambiguous_fields": []
+      }
+    ],
+    "undecidable": [
+      {
+        "id": "p1a-10-issue-1",
+        "kind": "visual_or_identity",
+        "message": "S2大红心图形遮住人物；不将遮挡改写成实体消失。",
+        "shot": null,
+        "subject": null,
+        "axis": null
+      },
+      {
+        "id": "p1a-10-issue-2",
+        "kind": "visual_or_identity",
+        "message": "S3前半有红发女孩及纸箱，镜末已不在所选关键帧；纸箱当镜出现但镜末框不可判。",
+        "shot": null,
+        "subject": null,
+        "axis": null
+      },
+      {
+        "id": "p1a-10-issue-3",
+        "kind": "visual_or_identity",
+        "message": "S4蓝象的手与女孩方盒有接触，是否递交未见明确前后持有人改变。",
+        "shot": null,
+        "subject": null,
+        "axis": null
+      },
+      {
+        "id": "p1a-10-issue-4",
+        "kind": "visual_or_identity",
+        "message": "原始关键帧确认S4蓝衣女孩接触的是木梯，不是小方盒；草稿持盒关系删除。",
+        "shot": null,
+        "subject": null,
+        "axis": null
+      }
+    ],
+    "anchor_entity_links": {},
+    "uncertain_cross_shot_bindings": [],
+    "presence_scope": "仅稳定可辨实体登记；未绑定背景群体及瞬间出画实体详见undecidable，不声称全量覆盖",
+    "bbox_convention": "可见部分xyxy；含原代理黑边；不补遮挡部分；0–1000；GPT手工估框，需独立复核",
+    "validation_errors": [],
+    "media": {
+      "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/state-layer-v2-pilot-20261007/inputs/videos/p1a-10.mp4",
+      "contact_sheet": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/state-layer-v2-pilot-20261007/review/contact-sheets/p1a-10.jpg",
+      "keyframe_ids": [
+        "p1a-10-s0-10",
+        "p1a-10-s0-90",
+        "p1a-10-s1-90",
+        "p1a-10-s2-90",
+        "p1a-10-s3-90",
+        "p1a-10-s4-90"
+      ],
+      "key_sheet": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/state-layer-v2-pilot-20261007/review/key-sheets/p1a-10.jpg",
+      "bbox_sheet": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/state-layer-v2-pilot-20261007/review/bbox-sheets/p1a-10.jpg",
+      "full_contact_sheet": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/state-layer-v2-pilot-20261007/review/full-contact-sheets/p1a-10.jpg"
+    },
+    "frozen_at": "2026-10-07T03:31:18.925521+00:00",
+    "validation_code_commit": "eaa71813cc4349dc9fb44e6c5199371e6695ad3f"
+  },
+  "event_log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "person",
+        "appearance": "动画深肤色女孩，双侧蓬松短发"
+      },
+      {
+        "subject_id": "Subject 2",
+        "kind": "person",
+        "appearance": "动画长褐卷发女孩"
+      },
+      {
+        "subject_id": "Subject 3",
+        "kind": "person",
+        "appearance": "动画红发女孩"
+      },
+      {
+        "subject_id": "Subject 4",
+        "kind": "person",
+        "appearance": "动画浅黄色头发女孩"
+      },
+      {
+        "subject_id": "Subject 5",
+        "kind": "person",
+        "appearance": "动画浅褐短发女孩"
+      },
+      {
+        "subject_id": "Subject 6",
+        "kind": "person",
+        "appearance": "动画深紫卷发女孩"
+      },
+      {
+        "subject_id": "Subject 7",
+        "kind": "animal",
+        "appearance": "动画浅蓝象"
+      },
+      {
+        "subject_id": "Subject 8",
+        "kind": "object",
+        "appearance": "棕色木梯"
+      },
+      {
+        "subject_id": "Subject 9",
+        "kind": "object",
+        "appearance": "敞口纸箱"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "the scene shown in this window; geographical identity unknown",
+        "anchors": [
+          {
+            "id": "Location 1/Anchor 1",
+            "description": "楼梯",
+            "front_definition": null
+          },
+          {
+            "id": "Location 1/Anchor 2",
+            "description": "书架",
+            "front_definition": null
+          },
+          {
+            "id": "Location 1/Anchor 3",
+            "description": "木墙",
+            "front_definition": null
+          }
+        ]
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a yellow-orange hat, orange top and off-white trousers",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          0
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a yellow-orange hat, orange top and off-white trousers",
+        "scope": "scene",
+        "shot_span": [
+          1,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a blue hat with white spots, light blue top and blue trousers",
+        "scope": "scene",
+        "shot_span": [
+          1,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a pink floral hat and pink-purple top and skirt",
+        "scope": "scene",
+        "shot_span": [
+          1,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a yellow-orange hat, orange top and off-white trousers",
+        "scope": "scene",
+        "shot_span": [
+          3,
+          3
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a blue hat with white spots, light blue top and blue trousers",
+        "scope": "scene",
+        "shot_span": [
+          3,
+          3
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 5",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a blue hat, green coat and blue trousers",
+        "scope": "scene",
+        "shot_span": [
+          3,
+          3
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a yellow-orange hat, orange top and off-white trousers",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a blue hat with white spots, light blue top and blue trousers",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a pink floral hat and pink-purple top and skirt",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 4",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a light purple hat and top with blue trousers",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 5",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a blue hat, green coat and blue trousers",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 6",
+        "family": "state",
+        "predicate_or_axis": "costume",
+        "object_or_value": "a purple-blue hat and dark pink top",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 1",
+        "family": "relation",
+        "predicate_or_axis": "next to",
+        "object_or_value": "Subject 2",
+        "scope": "scene",
+        "shot_span": [
+          1,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 1",
+        "family": "relation",
+        "predicate_or_axis": "next to",
+        "object_or_value": "Subject 3",
+        "scope": "scene",
+        "shot_span": [
+          1,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "relation",
+        "predicate_or_axis": "at",
+        "object_or_value": "Location 1/Anchor 2",
+        "scope": "scene",
+        "shot_span": [
+          3,
+          3
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "relation",
+        "predicate_or_axis": "next to",
+        "object_or_value": "Subject 7",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "relation",
+        "predicate_or_axis": "touches",
+        "object_or_value": "Subject 8",
+        "scope": "scene",
+        "shot_span": [
+          4,
+          4
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "standing",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          0
+        ],
+        "evidence": "observed"
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              190,
+              430,
+              665,
+              975
+            ],
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "away",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@0",
+            "shot_span": [
+              0,
+              0
+            ]
+          }
+        ],
+        "frame_count": 17,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "unknown",
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "visible_entities": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "screen_facts": [
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              410,
+              195,
+              605,
+              935
+            ],
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "toward camera",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ]
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              205,
+              180,
+              485,
+              940
+            ],
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "toward camera",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ]
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              535,
+              235,
+              785,
+              950
+            ],
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "toward camera",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@1",
+            "shot_span": [
+              1,
+              1
+            ]
+          }
+        ],
+        "frame_count": 56,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "unknown",
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "visible_entities": [],
+        "screen_facts": [],
+        "frame_count": 19,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "unknown",
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s04",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3",
+          "Subject 5",
+          "Subject 9"
+        ],
+        "visible_entities": [
+          "Location 1/Anchor 2",
+          "Subject 1",
+          "Subject 2",
+          "Subject 5"
+        ],
+        "screen_facts": [
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              805,
+              355,
+              1000,
+              950
+            ],
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              345,
+              90,
+              600,
+              845
+            ],
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              645,
+              400,
+              810,
+              940
+            ],
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@3",
+            "shot_span": [
+              3,
+              3
+            ]
+          }
+        ],
+        "frame_count": 71,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "unknown",
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s05",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3",
+          "Subject 4",
+          "Subject 5",
+          "Subject 6",
+          "Subject 7",
+          "Subject 8"
+        ],
+        "visible_entities": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3",
+          "Subject 4",
+          "Subject 5",
+          "Subject 6",
+          "Subject 7",
+          "Subject 8"
+        ],
+        "screen_facts": [
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              725,
+              700,
+              900,
+              990
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 1",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              205,
+              20,
+              580,
+              870
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 2",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              690,
+              450,
+              845,
+              705
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 3",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              580,
+              640,
+              715,
+              990
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 4",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              520,
+              730,
+              705,
+              1000
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 5",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              650,
+              470,
+              755,
+              720
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "right",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "background",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 6",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              0,
+              90,
+              335,
+              1000
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "left",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "orientation",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 7",
+            "family": "screen",
+            "predicate_or_axis": "gaze",
+            "object_or_value": "unknown",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ]
+          },
+          {
+            "subject": "Subject 8",
+            "family": "screen",
+            "predicate_or_axis": "bbox",
+            "object_or_value": [
+              175,
+              495,
+              510,
+              1000
+            ],
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 8",
+            "family": "screen",
+            "predicate_or_axis": "horizontal",
+            "object_or_value": "center",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          },
+          {
+            "subject": "Subject 8",
+            "family": "screen",
+            "predicate_or_axis": "depth",
+            "object_or_value": "foreground",
+            "scope": "screen@4",
+            "shot_span": [
+              4,
+              4
+            ],
+            "evidence": "observed"
+          }
+        ],
+        "frame_count": 44,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "unknown",
+        "movement": "unknown"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "e1",
+        "shot_id": "s01",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "standing",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            0
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "slumped down",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            0
+          ],
+          "evidence": "observed"
+        },
+        "on_screen": true
+      }
+    ]
+  }
+}

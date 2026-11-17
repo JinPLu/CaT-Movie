@@ -1,0 +1,1028 @@
+{
+ "raw_storyboard": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "appearance": "a young man with short black hair and a slim build",
+    "outfit": "a blue and white varsity jacket"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "appearance": "a young man with short black hair and a slim build",
+    "outfit": "a grey long-sleeve shirt"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a dartboard"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a red dart"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a yellow dart"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a bar counter"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "hanging lights"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a dimly lit bar or pub with neon signs and dartboards"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing in the background",
+      "holding": []
+     },
+     {
+      "name": "Object 1",
+      "state": "on the wall"
+     },
+     {
+      "name": "Object 4",
+      "state": "in front of them"
+     },
+     {
+      "name": "Object 5",
+      "state": "above them"
+     }
+    ],
+    "action": "Character 1 and Character 2 stand in a bar, talking and smiling at each other.",
+    "changes": [],
+    "references": [],
+    "frame_count": 64
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1 gestures towards himself while talking to Character 2.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 1
+     },
+     {
+      "name": "Character 2",
+      "shot": 1
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "over-the-shoulder shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 2 smiles and laughs while looking at Character 1.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 2
+     },
+     {
+      "name": "Character 2",
+      "shot": 2
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1 looks down and then back up at Character 2.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 3
+     },
+     {
+      "name": "Character 2",
+      "shot": 3
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 2"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Object 1",
+      "state": "behind them"
+     }
+    ],
+    "action": "Character 1 holds a red dart and talks to Character 2 in front of a dartboard.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 4
+     },
+     {
+      "name": "Character 2",
+      "shot": 4
+     },
+     {
+      "name": "Object 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 2"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1 and Character 2 continue their conversation, smiling.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 5
+     },
+     {
+      "name": "Character 2",
+      "shot": 5
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 2"
+      ]
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1 raises his hand as if to throw something, then they both look forward.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 6
+     },
+     {
+      "name": "Character 2",
+      "shot": 6
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "extreme close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 1",
+      "state": "on the wall"
+     },
+     {
+      "name": "Object 2",
+      "state": "embedded in the bullseye"
+     }
+    ],
+    "action": "A red dart lands in the bullseye of the dartboard.",
+    "changes": [
+     {
+      "name": "Object 2",
+      "what": "state",
+      "before": "in Character 1's hand",
+      "after": "embedded in the bullseye"
+     }
+    ],
+    "references": [
+     {
+      "name": "Object 1",
+      "shot": 5
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1 and Character 2 smile and talk after the successful throw.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "holding",
+      "before": [
+       "Object 2"
+      ],
+      "after": []
+     },
+     {
+      "name": "Character 1",
+      "what": "state",
+      "after": "empty-handed"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 7
+     },
+     {
+      "name": "Character 2",
+      "shot": 7
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "over-the-shoulder shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": []
+     }
+    ],
+    "action": "Character 1 puts his arm around Character 2's shoulder.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 9
+     },
+     {
+      "name": "Character 2",
+      "shot": 9
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 11,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 3"
+      ]
+     },
+     {
+      "name": "Object 1",
+      "state": "behind them"
+     }
+    ],
+    "action": "Character 2 holds a yellow dart and prepares to throw it while Character 1 watches with arms crossed.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 10
+     },
+     {
+      "name": "Character 2",
+      "shot": 10
+     },
+     {
+      "name": "Object 1",
+      "shot": 8
+     }
+    ],
+    "frame_count": 32
+   },
+   {
+    "shot": 12,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "extreme close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 1",
+      "state": "on the wall"
+     },
+     {
+      "name": "Object 2",
+      "state": "embedded in the bullseye"
+     },
+     {
+      "name": "Object 3",
+      "state": "embedded next to Object 2"
+     }
+    ],
+    "action": "A yellow dart lands next to the red dart in the bullseye of the dartboard.",
+    "changes": [
+     {
+      "name": "Object 3",
+      "what": "state",
+      "before": "in Character 2's hand",
+      "after": "embedded next to Object 2"
+     }
+    ],
+    "references": [
+     {
+      "name": "Object 1",
+      "shot": 11
+     },
+     {
+      "name": "Object 2",
+      "shot": 8
+     }
+    ],
+    "frame_count": 32
+   }
+  ],
+  "layouts": [
+   {
+    "shot": 1,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.2,
+         0.4,
+         0.45,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.55,
+         0.4,
+         0.8,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 4",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.0,
+         0.6,
+         1.0,
+         0.95
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 1",
+      "far": "Object 4"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.3,
+         0.7,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.7,
+         0.3,
+         0.9,
+         0.95
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.6,
+         0.3,
+         0.95,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.1,
+         0.3,
+         0.5,
+         0.95
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 2",
+      "far": "Character 1"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.3,
+         0.7,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.7,
+         0.3,
+         0.9,
+         0.95
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 5,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.4,
+         0.7,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.0,
+         0.5,
+         0.3
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 1",
+      "far": "Object 1"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.3,
+         0.7,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.7,
+         0.3,
+         0.9,
+         0.95
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 7,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.4,
+         0.5,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.4,
+         0.7,
+         0.95
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "entities": [
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.4,
+         0.6,
+         0.6
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.48,
+         0.48,
+         0.52,
+         0.52
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 9,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.3,
+         0.3,
+         0.7,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.7,
+         0.3,
+         0.9,
+         0.95
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "shot": 10,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.3,
+         0.95,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.05,
+         0.3,
+         0.5,
+         0.95
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 1",
+      "far": "Character 2"
+     }
+    ]
+   },
+   {
+    "shot": 11,
+    "entities": [
+     {
+      "name": "Character 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.2,
+         0.4,
+         0.4,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Character 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.6,
+         0.4,
+         0.8,
+         0.95
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.0,
+         0.6,
+         0.3
+        ]
+       }
+      ]
+     }
+    ],
+    "front_of": [
+     {
+      "near": "Character 1",
+      "far": "Object 1"
+     }
+    ]
+   },
+   {
+    "shot": 12,
+    "entities": [
+     {
+      "name": "Object 1",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.4,
+         0.4,
+         0.6,
+         0.6
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 2",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.48,
+         0.48,
+         0.52,
+         0.52
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Object 3",
+      "anchors": [
+       {
+        "time": 0.0,
+        "visibility": "visible",
+        "box": [
+         0.5,
+         0.48,
+         0.55,
+         0.52
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "error": [
+  "layouts.4.entities.2.anchors.0",
+  "  Value error, visible anchors require a positive normalized xyxy box [type=value_error, input_value={'time': 0.0, 'visibility...': [0.5, 0.0, 0.5, 0.3]}, input_type=dict]"
+ ]
+}

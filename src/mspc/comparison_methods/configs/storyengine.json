@@ -1,0 +1,66 @@
+{
+  "story_id": "cinedance-014847-b0000-shot01",
+  "seed": 42,
+  "raw_request_source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-questions-20261024/inputs/requests.json",
+  "output_root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/keyframe-planning-development-pilot-20261025",
+  "ffmpeg": "${MSPC_SHARED_ROOT}/env/bin/ffmpeg",
+  "ffprobe": "${MSPC_SHARED_ROOT}/env/ffmpeg7/bin/ffprobe",
+  "native_wan_config": "src/mspc/comparison_methods/configs/video_models.json",
+  "native_wan_method": "native_wan_5b",
+  "storyengine": {
+    "upstream": "${MSPC_SHARED_ROOT}/comparison_methods/StoryEngine",
+    "api_limit_usd": 30.0,
+    "gpu_limit_seconds": 10800,
+    "max_output_tokens": 32768,
+    "model_discovery": {
+      "planner": "model_get",
+      "judge": "model_list",
+      "image": "model_get"
+    },
+    "provider_endpoints": {
+      "planner": "https://api.openai-proxy.org/v1",
+      "image": "https://api.openai-proxy.org/v1",
+      "judge": "https://cf.api.fan/v1beta"
+    },
+    "provider_models": {
+      "planner": "gpt-5.5-2026-04-23",
+      "judge": "gemini-3.6-flash",
+      "image": "gpt-image-2"
+    },
+    "maximum_call_reserve_usd": {
+      "planner": 2.0,
+      "judge": 0.5,
+      "image": 1.0
+    },
+    "token_rates_usd_per_million": {
+      "planner": {
+        "input": 5.0,
+        "output": 30.0
+      },
+      "judge": {
+        "input": 0.75,
+        "output": 3.75
+      },
+      "image": {
+        "text_input": 2.5,
+        "image_input": 4.0,
+        "output": 15.0
+      }
+    },
+    "credential_files": {
+      "planner": "${MSPC_SHARED_ROOT}/OoVMetric/resource/closeai_api_key.txt",
+      "judge": "${MSPC_SHARED_ROOT}/OoVMetric/resource/packyapi_api_key.txt",
+      "image": "${MSPC_SHARED_ROOT}/OoVMetric/resource/closeai_api_key.txt"
+    },
+    "logical_image_resolutions": [
+      {
+        "width": 832,
+        "height": 480
+      },
+      {
+        "width": 1536,
+        "height": 768
+      }
+    ]
+  }
+}

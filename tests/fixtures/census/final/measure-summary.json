@@ -1,0 +1,36 @@
+{
+ "cinedance": {
+  "sources": 9802,
+  "frames": 11613238,
+  "shots": 118565,
+  "sources_full_frame": 9433,
+  "frame_count_mismatch": 0,
+  "shot:resolution_below_minimum": 10750,
+  "shot:eligible": 89050,
+  "shot:shot_gate": 9209,
+  "shot:shorter_than_min_seconds": 6410,
+  "shot:shot_over_frame_cap": 2166,
+  "shot:below_min_brightness": 761,
+  "shot:above_max_brightness": 219
+ },
+ "film": {
+  "sources": 9733,
+  "frames": 35169748,
+  "shots": 353507,
+  "sources_full_frame": 7791,
+  "frame_count_mismatch": 0,
+  "shot:eligible": 291066,
+  "shot:end_card": 3501,
+  "shot:below_min_brightness": 7863,
+  "shot:shot_gate": 31180,
+  "shot:shot_over_frame_cap": 9762,
+  "shot:end_card+shot_gate": 691,
+  "shot:frozen+below_min_brightness": 125,
+  "shot:resolution_below_minimum": 9167,
+  "shot:above_max_brightness": 99,
+  "shot:frozen": 46,
+  "shot:frozen+end_card": 3,
+  "shot:end_card+below_min_brightness": 3,
+  "shot:frozen+above_max_brightness": 1
+ }
+}

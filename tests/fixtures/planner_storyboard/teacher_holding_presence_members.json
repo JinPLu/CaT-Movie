@@ -1,0 +1,1215 @@
+{
+  "source": "/tmp/storyboard-cpu-migration/balanced-slice/members",
+  "rows": [
+    {
+      "member": {
+        "schema_version": 1,
+        "key": "film-019407-b0012",
+        "case_id": "story_block_v1:moviechat_1k:OKJ-12:scene008:0052-0055",
+        "source": "moviechat_1k",
+        "family": "film",
+        "film_key": "moviechat_1k:OKJ",
+        "split": "train",
+        "annotation": {
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with short blonde hair and a flower in her hair",
+              "outfit": "a light pink dress with a green belt"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a young woman with short dark hair",
+              "outfit": "a light pink traditional outfit"
+            },
+            {
+              "name": "Character 3",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a person with dark hair and sunglasses",
+              "outfit": "a red top and beige shorts"
+            },
+            {
+              "name": "Character 4",
+              "kind": "group",
+              "visibility": "clear",
+              "appearance": "a large crowd of people, many wearing pink and holding flags"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a black microphone"
+            },
+            {
+              "name": "Object 2",
+              "appearance": "a small green card with a logo"
+            },
+            {
+              "name": "Object 3",
+              "appearance": "a large green pedestal with a hollow center"
+            },
+            {
+              "name": "Object 4",
+              "appearance": "white flags with green logos"
+            },
+            {
+              "name": "Object 5",
+              "appearance": "a backdrop with green and pink abstract designs"
+            },
+            {
+              "name": "Object 6",
+              "appearance": "a cup"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "a city street filled with a crowd, with a stage set up"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "picture_type": "live_action",
+              "on_screen_text": "none",
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "wide shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on a stage, facing the crowd",
+                  "state": "back to the camera"
+                },
+                {
+                  "name": "Character 4",
+                  "posture": "standing in the street, holding flags"
+                },
+                {
+                  "name": "Object 4"
+                }
+              ],
+              "activity": "talking_only",
+              "action": "Character 1 stands on a stage facing a large crowd in the street holding white flags with green logos.",
+              "changes": []
+            },
+            {
+              "shot": 2,
+              "picture_type": "live_action",
+              "on_screen_text": "none",
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on the stage",
+                  "holding": [
+                    "Object 1",
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 3",
+                  "posture": "lying on top of Object 3",
+                  "holding": [
+                    "Object 6"
+                  ]
+                },
+                {
+                  "name": "Object 3",
+                  "state": "closed"
+                },
+                {
+                  "name": "Object 6"
+                }
+              ],
+              "activity": "talking_only",
+              "action": "Character 1 speaks into Object 1 while holding Object 2, while Character 3 lies on top of Object 3 behind her.",
+              "changes": []
+            },
+            {
+              "shot": 3,
+              "picture_type": "live_action",
+              "on_screen_text": "none",
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on the stage",
+                  "holding": [
+                    "Object 1",
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 4",
+                  "posture": "standing in the street, cheering and raising their hands"
+                }
+              ],
+              "activity": "talking_only",
+              "action": "Character 1 turns to face the camera and speaks into Object 1 as the crowd behind her cheers and raises their hands.",
+              "changes": []
+            },
+            {
+              "shot": 4,
+              "picture_type": "live_action",
+              "on_screen_text": "none",
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium wide shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on the stage, gesturing with her hand",
+                  "holding": [
+                    "Object 1",
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "posture": "standing inside Object 3, then walking out"
+                },
+                {
+                  "name": "Character 3",
+                  "posture": "lying on top of Object 3"
+                },
+                {
+                  "name": "Object 3",
+                  "state": "closed"
+                }
+              ],
+              "activity": "action_or_state_change",
+              "action": "Character 1 gestures towards Object 3, and Character 2 walks out from inside it while Character 3 remains lying on top.",
+              "changes": [
+                {
+                  "name": "Character 1",
+                  "what": "holding",
+                  "before": [
+                    "Object 1",
+                    "Object 2"
+                  ],
+                  "after": [
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "what": "posture",
+                  "before": "standing inside Object 3",
+                  "after": "walking out of Object 3"
+                },
+                {
+                  "name": "Object 3",
+                  "what": "state",
+                  "before": "closed",
+                  "after": "open"
+                }
+              ]
+            }
+          ],
+          "story": {
+            "paragraph": "A woman with blonde hair stands on a stage in a city street, facing a large crowd holding flags. She speaks into a microphone while holding a card, with a person lying on a green pedestal behind her. She turns to address the camera as the crowd cheers. Then, she gestures to the pedestal, and a young woman steps out from inside it.",
+            "summary": "A woman speaks to a crowd on a stage and introduces a young woman who emerges from a green pedestal."
+          }
+        },
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "story_block_v1:moviechat_1k:OKJ-12:scene008:0052-0055",
+          "kind": "block",
+          "scene_id": "moviechat_1k:OKJ-12:scene008",
+          "film_key": "moviechat_1k:OKJ",
+          "source": "moviechat_1k",
+          "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/OKJ-12.mp4",
+          "fps": 25.0,
+          "container_preroll_frames": 0,
+          "crop_box": [
+            16,
+            0,
+            1264,
+            720
+          ],
+          "shot_count": 4,
+          "render_frames": 216,
+          "cut_version": "story_block_v1",
+          "width": 1280,
+          "height": 720,
+          "video_frame_count": 11250,
+          "active_box": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "status": "kept",
+                "reasons": [],
+                "revised_segment": [
+                  9620,
+                  9683
+                ],
+                "boundary_cuts": [],
+                "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/OKJ-12.mp4",
+                "segment": [
+                  9618,
+                  9685
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_guard_frames": 2,
+                "boundary_revised_segment": [
+                  9618,
+                  9685
+                ]
+              },
+              {
+                "status": "kept",
+                "reasons": [],
+                "revised_segment": [
+                  9687,
+                  9763
+                ],
+                "boundary_cuts": [],
+                "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/OKJ-12.mp4",
+                "segment": [
+                  9685,
+                  9765
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_guard_frames": 2,
+                "boundary_revised_segment": [
+                  9685,
+                  9765
+                ]
+              },
+              {
+                "status": "kept",
+                "reasons": [],
+                "revised_segment": [
+                  9767,
+                  9871
+                ],
+                "boundary_cuts": [],
+                "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/OKJ-12.mp4",
+                "segment": [
+                  9765,
+                  9873
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_guard_frames": 2,
+                "boundary_revised_segment": [
+                  9765,
+                  9873
+                ]
+              },
+              {
+                "status": "kept",
+                "reasons": [],
+                "revised_segment": [
+                  9875,
+                  9978
+                ],
+                "boundary_cuts": [],
+                "video": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/OKJ-12.mp4",
+                "segment": [
+                  9873,
+                  9980
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_guard_frames": 2,
+                "boundary_revised_segment": [
+                  9873,
+                  9980
+                ]
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.06187285855412483,
+            "min_laion_aesthetic": 5.074636618296306
+          }
+        },
+        "shots": [
+          {
+            "source_shot_index": 52,
+            "start_frame": 9620,
+            "end_frame": 9683,
+            "seconds": 2.52,
+            "render_frames": 37,
+            "sid": "film-019407",
+            "scene_id": "moviechat_1k:OKJ-12:scene008",
+            "score_key": "film-019407-e0040",
+            "mean_luma": 83.21311950683594,
+            "min_luma": 82.5805892944336,
+            "max_luma": 84.01191711425781,
+            "dover_technical": -0.06187285855412483,
+            "laion_aesthetic": 5.074636618296306,
+            "block_key": "film-019407-b0012",
+            "shot": 1,
+            "source": "moviechat_1k",
+            "family": "film",
+            "frames": 37,
+            "aesthetic": 5.074636618296306,
+            "sharpness": -0.06187285855412483,
+            "usable": true,
+            "unusable_reasons": [],
+            "marks": [],
+            "eval_excluded": false,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "activity": "talking_only",
+            "shot_size": "wide shot",
+            "angle": "eye-level shot",
+            "movement": "static",
+            "place": "Location 1",
+            "place_appearance": "a city street filled with a crowd, with a stage set up",
+            "present_people": 1,
+            "present_clear_people": 1,
+            "present_objects": 1,
+            "other_outfit_worn": false,
+            "outfit_change": false,
+            "changes": 0,
+            "answer_origin": "as_returned",
+            "repair_rules": [],
+            "deleted_paths": [],
+            "target_latents": null,
+            "reference_frames": null,
+            "has_depth": null,
+            "has_masks": null
+          },
+          {
+            "source_shot_index": 53,
+            "start_frame": 9687,
+            "end_frame": 9763,
+            "seconds": 3.04,
+            "render_frames": 49,
+            "sid": "film-019407",
+            "scene_id": "moviechat_1k:OKJ-12:scene008",
+            "score_key": "film-019407-e0041",
+            "mean_luma": 76.7784652709961,
+            "min_luma": 75.97875213623047,
+            "max_luma": 78.3043212890625,
+            "dover_technical": -0.02052079513669014,
+            "laion_aesthetic": 5.2087828318278,
+            "block_key": "film-019407-b0012",
+            "shot": 2,
+            "source": "moviechat_1k",
+            "family": "film",
+            "frames": 49,
+            "aesthetic": 5.2087828318278,
+            "sharpness": -0.02052079513669014,
+            "usable": true,
+            "unusable_reasons": [],
+            "marks": [],
+            "eval_excluded": false,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "activity": "talking_only",
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static",
+            "place": "Location 1",
+            "place_appearance": "a city street filled with a crowd, with a stage set up",
+            "present_people": 2,
+            "present_clear_people": 2,
+            "present_objects": 2,
+            "other_outfit_worn": false,
+            "outfit_change": false,
+            "changes": 0,
+            "answer_origin": "program_edited",
+            "repair_rules": [
+              "持物补登记"
+            ],
+            "deleted_paths": [],
+            "target_latents": null,
+            "reference_frames": null,
+            "has_depth": null,
+            "has_masks": null
+          },
+          {
+            "source_shot_index": 54,
+            "start_frame": 9767,
+            "end_frame": 9871,
+            "seconds": 4.16,
+            "render_frames": 65,
+            "sid": "film-019407",
+            "scene_id": "moviechat_1k:OKJ-12:scene008",
+            "score_key": "film-019407-e0042",
+            "mean_luma": 83.34107208251953,
+            "min_luma": 78.41132354736328,
+            "max_luma": 89.92513275146484,
+            "dover_technical": -0.01647353731095791,
+            "laion_aesthetic": 5.223247528076172,
+            "block_key": "film-019407-b0012",
+            "shot": 3,
+            "source": "moviechat_1k",
+            "family": "film",
+            "frames": 65,
+            "aesthetic": 5.223247528076172,
+            "sharpness": -0.01647353731095791,
+            "usable": true,
+            "unusable_reasons": [],
+            "marks": [],
+            "eval_excluded": false,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "activity": "talking_only",
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static",
+            "place": "Location 1",
+            "place_appearance": "a city street filled with a crowd, with a stage set up",
+            "present_people": 1,
+            "present_clear_people": 1,
+            "present_objects": 0,
+            "other_outfit_worn": false,
+            "outfit_change": false,
+            "changes": 0,
+            "answer_origin": "as_returned",
+            "repair_rules": [],
+            "deleted_paths": [],
+            "target_latents": null,
+            "reference_frames": null,
+            "has_depth": null,
+            "has_masks": null
+          },
+          {
+            "source_shot_index": 55,
+            "start_frame": 9875,
+            "end_frame": 9978,
+            "seconds": 4.12,
+            "render_frames": 65,
+            "sid": "film-019407",
+            "scene_id": "moviechat_1k:OKJ-12:scene008",
+            "score_key": "film-019407-e0043",
+            "mean_luma": 67.4824447631836,
+            "min_luma": 54.83789825439453,
+            "max_luma": 75.99539184570312,
+            "dover_technical": -0.0422992967069149,
+            "laion_aesthetic": 5.180111885070801,
+            "block_key": "film-019407-b0012",
+            "shot": 4,
+            "source": "moviechat_1k",
+            "family": "film",
+            "frames": 65,
+            "aesthetic": 5.180111885070801,
+            "sharpness": -0.0422992967069149,
+            "usable": true,
+            "unusable_reasons": [],
+            "marks": [],
+            "eval_excluded": false,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "activity": "action_or_state_change",
+            "shot_size": "medium wide shot",
+            "angle": "eye-level shot",
+            "movement": "static",
+            "place": "Location 1",
+            "place_appearance": "a city street filled with a crowd, with a stage set up",
+            "present_people": 3,
+            "present_clear_people": 3,
+            "present_objects": 1,
+            "other_outfit_worn": false,
+            "outfit_change": false,
+            "changes": 3,
+            "answer_origin": "as_returned",
+            "repair_rules": [],
+            "deleted_paths": [],
+            "target_latents": null,
+            "reference_frames": null,
+            "has_depth": null,
+            "has_masks": null
+          }
+        ]
+      },
+      "previous_example": {
+        "sample_id": "film-019407-b0012/paragraph/0:4",
+        "case_id": "story_block_v1:moviechat_1k:OKJ-12:scene008:0052-0055",
+        "block_key": "film-019407-b0012",
+        "film_key": "moviechat_1k:OKJ",
+        "split": "train",
+        "tier": "paragraph",
+        "script": "A woman with blonde hair stands on a stage in a city street, facing a large crowd holding flags. She speaks into a microphone while holding a card, with a person lying on a green pedestal behind her. She turns to address the camera as the crowd cheers. Then, she gestures to the pedestal, and a young woman steps out from inside it.",
+        "shot_span": [
+          0,
+          4
+        ],
+        "storyboard": {
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with short blonde hair and a flower in her hair",
+              "outfit": "a light pink dress with a green belt"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a young woman with short dark hair",
+              "outfit": "a light pink traditional outfit"
+            },
+            {
+              "name": "Character 3",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a person with dark hair and sunglasses",
+              "outfit": "a red top and beige shorts"
+            },
+            {
+              "name": "Character 4",
+              "kind": "group",
+              "visibility": "clear",
+              "appearance": "a large crowd of people, many wearing pink and holding flags"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a black microphone"
+            },
+            {
+              "name": "Object 2",
+              "appearance": "a small green card with a logo"
+            },
+            {
+              "name": "Object 3",
+              "appearance": "a large green pedestal with a hollow center"
+            },
+            {
+              "name": "Object 4",
+              "appearance": "white flags with green logos"
+            },
+            {
+              "name": "Object 5",
+              "appearance": "a backdrop with green and pink abstract designs"
+            },
+            {
+              "name": "Object 6",
+              "appearance": "a cup"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "a city street filled with a crowd, with a stage set up"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "wide shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on a stage, facing the crowd",
+                  "state": "back to the camera"
+                },
+                {
+                  "name": "Character 4",
+                  "posture": "standing in the street, holding flags"
+                },
+                {
+                  "name": "Object 4"
+                }
+              ],
+              "action": "Character 1 stands on a stage facing a large crowd in the street holding white flags with green logos.",
+              "changes": [],
+              "frame_count": 37
+            },
+            {
+              "shot": 2,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on the stage",
+                  "holding": [
+                    "Object 1",
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 3",
+                  "posture": "lying on top of Object 3",
+                  "holding": [
+                    "Object 6"
+                  ]
+                },
+                {
+                  "name": "Object 3",
+                  "state": "closed"
+                },
+                {
+                  "name": "Object 6"
+                }
+              ],
+              "action": "Character 1 speaks into Object 1 while holding Object 2, while Character 3 lies on top of Object 3 behind her.",
+              "changes": [],
+              "frame_count": 49
+            },
+            {
+              "shot": 3,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on the stage",
+                  "holding": [
+                    "Object 1",
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 4",
+                  "posture": "standing in the street, cheering and raising their hands"
+                }
+              ],
+              "action": "Character 1 turns to face the camera and speaks into Object 1 as the crowd behind her cheers and raises their hands.",
+              "changes": [],
+              "frame_count": 65
+            },
+            {
+              "shot": 4,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium wide shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "standing on the stage, gesturing with her hand",
+                  "holding": [
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "posture": "standing inside Object 3, then walking out"
+                },
+                {
+                  "name": "Character 3",
+                  "posture": "lying on top of Object 3"
+                },
+                {
+                  "name": "Object 3",
+                  "state": "open"
+                }
+              ],
+              "action": "Character 1 gestures towards Object 3, and Character 2 walks out from inside it while Character 3 remains lying on top.",
+              "changes": [
+                {
+                  "name": "Character 1",
+                  "what": "holding",
+                  "before": [
+                    "Object 1",
+                    "Object 2"
+                  ],
+                  "after": [
+                    "Object 2"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "what": "posture",
+                  "before": "standing inside Object 3",
+                  "after": "walking out of Object 3"
+                },
+                {
+                  "name": "Object 3",
+                  "what": "state",
+                  "before": "closed",
+                  "after": "open"
+                }
+              ],
+              "frame_count": 65
+            }
+          ]
+        }
+      }
+    },
+    {
+      "member": {
+        "schema_version": 1,
+        "key": "cinedance-008940-b0001",
+        "case_id": "story_block_v1:cinedance:00117ba0-5834-8b1a-ad01-a36a0f3b98bb:<scene2>:block0001:0001-0002",
+        "source": "cinedance",
+        "family": "cinedance",
+        "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00117ba0-5834-8b1a-ad01-a36a0f3b98bb.mp4",
+        "split": "train",
+        "annotation": {
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with dark hair pulled back",
+              "outfit": "a green sari"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with dark hair pulled back",
+              "outfit": "a dark blazer over a white shirt"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a wooden desk"
+            },
+            {
+              "name": "Object 2",
+              "appearance": "a framed emblem on the wall"
+            },
+            {
+              "name": "Object 3",
+              "appearance": "a small Indian flag on the desk"
+            },
+            {
+              "name": "Object 4",
+              "appearance": "a desk lamp"
+            },
+            {
+              "name": "Object 5",
+              "appearance": "a folder or document"
+            },
+            {
+              "name": "Object 6",
+              "appearance": "a chair"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "an office with patterned wallpaper and a large emblem on the wall"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "picture_type": "live_action",
+              "on_screen_text": "burned_subtitles",
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "medium shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "sitting at the desk"
+                },
+                {
+                  "name": "Character 2",
+                  "posture": "walking towards the desk",
+                  "holding": [
+                    "Object 5"
+                  ]
+                },
+                {
+                  "name": "Object 1",
+                  "state": "on the desk"
+                },
+                {
+                  "name": "Object 2",
+                  "state": "on the wall"
+                },
+                {
+                  "name": "Object 3",
+                  "state": "on the desk"
+                },
+                {
+                  "name": "Object 4",
+                  "state": "on the desk"
+                },
+                {
+                  "name": "Object 5"
+                },
+                {
+                  "name": "Object 6",
+                  "state": "Character 1 is sitting on it"
+                }
+              ],
+              "activity": "action_or_state_change",
+              "action": "Character 1 sits at the desk while Character 2 walks in and hands her a folder.",
+              "changes": [
+                {
+                  "name": "Character 2",
+                  "what": "holding",
+                  "before": [
+                    "Object 5"
+                  ],
+                  "after": []
+                },
+                {
+                  "name": "Character 1",
+                  "what": "holding",
+                  "before": [],
+                  "after": [
+                    "Object 5"
+                  ]
+                }
+              ]
+            },
+            {
+              "shot": 2,
+              "picture_type": "live_action",
+              "on_screen_text": "none",
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "sitting at the desk",
+                  "holding": [
+                    "Object 5"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "posture": "standing behind Character 1"
+                }
+              ],
+              "activity": "talking_only",
+              "action": "Character 1 looks down at the folder while Character 2 stands behind her.",
+              "changes": []
+            }
+          ],
+          "story": {
+            "paragraph": "A woman in a green sari sits at a desk in an office with a large emblem on the wall. Another woman in a dark blazer walks in and hands her a folder. The woman at the desk takes the folder and looks down at it while the other woman stands behind her.",
+            "summary": "A woman in an office receives a folder from an assistant and looks at it."
+          }
+        },
+        "scene": {
+          "schema_version": "scene_window_v1",
+          "window_id": "story_block_v1:cinedance:00117ba0-5834-8b1a-ad01-a36a0f3b98bb:<scene2>:block0001:0001-0002",
+          "kind": "block",
+          "scene_id": "cinedance:00117ba0-5834-8b1a-ad01-a36a0f3b98bb:<scene2>:block0001",
+          "film_key": null,
+          "source": "cinedance",
+          "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00117ba0-5834-8b1a-ad01-a36a0f3b98bb.mp4",
+          "fps": 24.0,
+          "container_preroll_frames": null,
+          "crop_box": [
+            346,
+            2,
+            1574,
+            710
+          ],
+          "shot_count": 2,
+          "render_frames": 206,
+          "cut_version": "story_block_v1",
+          "width": 1920,
+          "height": 710,
+          "video_frame_count": 416,
+          "active_box": [
+            0,
+            2,
+            1920,
+            710
+          ],
+          "frame_basis": "ffmpeg_sequential_zero_based",
+          "boundary_revision": {
+            "version": "shot_gate_v2_full_guarded_single",
+            "coordinate": "ffmpeg_sequential",
+            "boundary_guard_frames": 2,
+            "thresholds": {
+              "boundary_threshold": 0.5,
+              "single_threshold": 0.25,
+              "content_threshold": 27.0,
+              "edge_seconds": 0.5,
+              "boundary_guard_frames": 2
+            },
+            "shots": [
+              {
+                "status": "kept",
+                "reasons": [],
+                "revised_segment": [
+                  94,
+                  310
+                ],
+                "boundary_cuts": [],
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00117ba0-5834-8b1a-ad01-a36a0f3b98bb.mp4",
+                "segment": [
+                  92,
+                  312
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_guard_frames": 2,
+                "boundary_revised_segment": [
+                  92,
+                  312
+                ]
+              },
+              {
+                "status": "kept",
+                "reasons": [],
+                "revised_segment": [
+                  314,
+                  414
+                ],
+                "boundary_cuts": [],
+                "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00117ba0-5834-8b1a-ad01-a36a0f3b98bb.mp4",
+                "segment": [
+                  312,
+                  416
+                ],
+                "rule_version": "shot_gate_v2_full_guarded_single",
+                "coordinate": "ffmpeg_sequential",
+                "boundary_guard_frames": 2,
+                "boundary_revised_segment": [
+                  312,
+                  416
+                ]
+              }
+            ]
+          },
+          "quality": {
+            "min_dover_technical": -0.05372125655412674,
+            "min_laion_aesthetic": 5.403306166330974
+          }
+        },
+        "shots": [
+          {
+            "source_shot_index": 1,
+            "start_frame": 94,
+            "end_frame": 310,
+            "seconds": 9.0,
+            "render_frames": 141,
+            "sid": "cinedance-008940",
+            "scene_id": "cinedance:00117ba0-5834-8b1a-ad01-a36a0f3b98bb:<scene2>:block0001",
+            "score_key": "cinedance-008940-e0001",
+            "mean_luma": 51.32608413696289,
+            "min_luma": 37.632728576660156,
+            "max_luma": 55.72048568725586,
+            "dover_technical": -0.05372125655412674,
+            "laion_aesthetic": 5.403306166330974,
+            "scene": "<scene2>",
+            "characters": [
+              "<char1>",
+              "<char2>"
+            ],
+            "block_key": "cinedance-008940-b0001",
+            "shot": 1,
+            "source": "cinedance",
+            "family": "cinedance",
+            "frames": 141,
+            "aesthetic": 5.403306166330974,
+            "sharpness": -0.05372125655412674,
+            "usable": false,
+            "unusable_reasons": [
+              "烧录字幕"
+            ],
+            "marks": [],
+            "eval_excluded": false,
+            "picture_type": "live_action",
+            "on_screen_text": "burned_subtitles",
+            "activity": "action_or_state_change",
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static",
+            "place": "Location 1",
+            "place_appearance": "an office with patterned wallpaper and a large emblem on the wall",
+            "present_people": 2,
+            "present_clear_people": 2,
+            "present_objects": 6,
+            "other_outfit_worn": false,
+            "outfit_change": false,
+            "changes": 2,
+            "answer_origin": "as_returned",
+            "repair_rules": [],
+            "deleted_paths": [],
+            "target_latents": null,
+            "reference_frames": null,
+            "has_depth": null,
+            "has_masks": null
+          },
+          {
+            "source_shot_index": 2,
+            "start_frame": 314,
+            "end_frame": 414,
+            "seconds": 4.166666666666667,
+            "render_frames": 65,
+            "sid": "cinedance-008940",
+            "scene_id": "cinedance:00117ba0-5834-8b1a-ad01-a36a0f3b98bb:<scene2>:block0001",
+            "score_key": "cinedance-008940-e0002",
+            "mean_luma": 54.22265625,
+            "min_luma": 52.46794128417969,
+            "max_luma": 55.20859909057617,
+            "dover_technical": -0.04800286144018173,
+            "laion_aesthetic": 5.893426100413005,
+            "scene": "<scene2>",
+            "characters": [
+              "<char1>",
+              "<char2>"
+            ],
+            "block_key": "cinedance-008940-b0001",
+            "shot": 2,
+            "source": "cinedance",
+            "family": "cinedance",
+            "frames": 65,
+            "aesthetic": 5.893426100413005,
+            "sharpness": -0.04800286144018173,
+            "usable": true,
+            "unusable_reasons": [],
+            "marks": [],
+            "eval_excluded": false,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "activity": "talking_only",
+            "shot_size": "close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static",
+            "place": "Location 1",
+            "place_appearance": "an office with patterned wallpaper and a large emblem on the wall",
+            "present_people": 2,
+            "present_clear_people": 2,
+            "present_objects": 0,
+            "other_outfit_worn": false,
+            "outfit_change": false,
+            "changes": 0,
+            "answer_origin": "as_returned",
+            "repair_rules": [],
+            "deleted_paths": [],
+            "target_latents": null,
+            "reference_frames": null,
+            "has_depth": null,
+            "has_masks": null
+          }
+        ]
+      },
+      "previous_example": {
+        "sample_id": "cinedance-008940-b0001/shot/1:2",
+        "case_id": "story_block_v1:cinedance:00117ba0-5834-8b1a-ad01-a36a0f3b98bb:<scene2>:block0001:0001-0002",
+        "block_key": "cinedance-008940-b0001",
+        "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00117ba0-5834-8b1a-ad01-a36a0f3b98bb.mp4",
+        "split": "train",
+        "tier": "shot",
+        "script": "SUBJECTS\n- Character 1 (person): a woman with dark hair pulled back, wearing a green sari\n- Character 2 (person): a woman with dark hair pulled back, wearing a dark blazer over a white shirt\n- Object 1 (object): a folder or document\nLOCATIONS\n- Location 1: an office with patterned wallpaper and a large emblem on the wall\nSHOTS\ns01: Close-up shot. Character 1 looks down at the folder while Character 2 stands behind her.",
+        "shot_span": [
+          1,
+          2
+        ],
+        "storyboard": {
+          "characters": [
+            {
+              "name": "Character 1",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with dark hair pulled back",
+              "outfit": "a green sari"
+            },
+            {
+              "name": "Character 2",
+              "kind": "person",
+              "visibility": "clear",
+              "appearance": "a woman with dark hair pulled back",
+              "outfit": "a dark blazer over a white shirt"
+            }
+          ],
+          "objects": [
+            {
+              "name": "Object 1",
+              "appearance": "a folder or document"
+            }
+          ],
+          "places": [
+            {
+              "name": "Location 1",
+              "appearance": "an office with patterned wallpaper and a large emblem on the wall"
+            }
+          ],
+          "shots": [
+            {
+              "shot": 1,
+              "place": "Location 1",
+              "camera": {
+                "shot_size": "close-up shot",
+                "angle": "eye-level shot",
+                "movement": "static"
+              },
+              "present": [
+                {
+                  "name": "Character 1",
+                  "posture": "sitting at the desk",
+                  "holding": [
+                    "Object 1"
+                  ]
+                },
+                {
+                  "name": "Character 2",
+                  "posture": "standing behind Character 1"
+                }
+              ],
+              "action": "Character 1 looks down at the folder while Character 2 stands behind her.",
+              "changes": [],
+              "frame_count": 65
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

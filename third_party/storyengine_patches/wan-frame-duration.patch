@@ -1,0 +1,11 @@
+--- a/story_engine/workflow.py
++++ b/story_engine/workflow.py
+@@ -3302,6 +3302,7 @@
+     ) -> AssemblyResult:
+         selected = tuple(_required_artifact(_selected_candidate(item)) for item in videos)
+-        duration = float(sum(shot.duration for shot in story_plan.ordered_shots))
+         fps = self.request.generation_requirements.delivery_requirements.video_fps
++        # Local Wan exports fps * requested integer seconds + one frame per shot.
++        duration = float(sum(shot.duration for shot in story_plan.ordered_shots)) + len(videos) / fps
+         name = "assembly"
+         key = self._key(

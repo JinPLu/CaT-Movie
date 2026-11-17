@@ -1,0 +1,31 @@
+{
+  "backend": "vllm",
+  "schema_version": "event_log_v3",
+  "max_output_tokens": 32768,
+  "timeout_seconds": 1200,
+  "concurrency": 4,
+  "expected_benchmark_cases": 20,
+  "response_format": "json_schema",
+  "seed": 42,
+  "image_quota": 8,
+  "image_max_pixels": 262144,
+  "modes": [
+    "script_only",
+    "script_true_history",
+    "script_generated_history"
+  ],
+  "enable_thinking": true,
+  "reasoning_effort": null,
+  "chat_template_kwargs": {},
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0,
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1
+  },
+  "model": "Qwen3.5-9B",
+  "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "revision_evidence": "MODEL_DEPENDENCY_REBUILD.md download sidecar; actual serving identity requires probe"
+}

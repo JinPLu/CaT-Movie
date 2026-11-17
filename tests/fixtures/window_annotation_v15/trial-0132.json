@@ -1,0 +1,203 @@
+{
+ "source": "qwen3.7-flash 开思考在官方接口上对试标窗 trial-0132 的真实返回（2026-10-12，合同 window_annotation_v15_unified_20261012）",
+ "annotation": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "Two men walk through a forest, one carrying a large hand saw, and encounter another man trying to drag a dead cow out of a stream."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with long dark hair, a beard, and a medium build"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with reddish-blond hair, a beard, and a heavy build"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark curly hair and a medium build"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a wide-brimmed brown hat"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a dark backpack with a rolled mat attached"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a large two-man hand saw"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a dead brown and white cow"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a rope or strap attached to the cow"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a dense green forest with a small stream"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 1 and Character 2 walk through the forest, with Character 2 holding a large hand saw.",
+    "present": [
+     {
+      "name": "Character 1",
+      "clothing": "a grey coat and a brown hat",
+      "posture": "walking through the forest",
+      "state": "carrying a backpack",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "clothing": "a brown coat",
+      "posture": "walking behind Character 1",
+      "holding": [
+       "Object 3"
+      ]
+     },
+     {
+      "name": "Object 1",
+      "state": "on Character 1's head"
+     },
+     {
+      "name": "Object 2",
+      "state": "on Character 1's back"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 3 struggles to drag a dead cow out of a stream in the forest.",
+    "present": [
+     {
+      "name": "Character 3",
+      "clothing": "a light shirt and dark overalls",
+      "posture": "standing in the stream, pulling",
+      "holding": [
+       "Object 5"
+      ]
+     },
+     {
+      "name": "Object 4",
+      "state": "lying in the stream"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Object 4",
+      "what": "state",
+      "before": "lying still in the stream",
+      "after": "being pulled through the water"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "talking_only",
+    "action": "Character 1 and Character 2 stop and look at something off-screen, with Character 2 holding the saw.",
+    "present": [
+     {
+      "name": "Character 1",
+      "clothing": "a grey coat and a brown hat",
+      "posture": "standing and gesturing",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "clothing": "a brown coat",
+      "posture": "standing",
+      "holding": [
+       "Object 3"
+      ]
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "activity": "action_or_state_change",
+    "action": "Character 3 continues to pull the dead cow through the stream using a rope.",
+    "present": [
+     {
+      "name": "Character 3",
+      "clothing": "a light shirt and dark overalls",
+      "posture": "leaning back, pulling",
+      "holding": [
+       "Object 5"
+      ]
+     },
+     {
+      "name": "Object 4",
+      "state": "being dragged through the water"
+     },
+     {
+      "name": "Object 5"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Object 4",
+      "what": "state",
+      "before": "lying in the stream",
+      "after": "being dragged through the water"
+     }
+    ]
+   }
+  ]
+ }
+}

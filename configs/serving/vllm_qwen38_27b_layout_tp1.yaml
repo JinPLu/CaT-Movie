@@ -1,0 +1,29 @@
+# 跨镜布局判别的 Qwen3.8-27B 标注服务：
+# 单卡 TP=1（另一张卡跑 SAM 3.1 / DINOv2 / MoGe-2），非思考，每请求至多 8 张图；任务结束停服释放租约。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.8-27B
+host: "127.0.0.1"
+port: 8189
+tensor_parallel_size: 1
+max_model_len: 32768
+gpu_memory_utilization: 0.92
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.8-27B"
+  - "--max-num-seqs"
+  - "8"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--mm-processor-cache-gb"
+  - "0"
+  - "--default-chat-template-kwargs"
+  - '{"enable_thinking":false}'
+  - "--limit-mm-per-prompt"
+  - '{"image":8,"video":0}'
+  - "--reasoning-parser"
+  - "qwen3"
+  - "--enforce-eager"
+ld_library_path: ""
+omp_num_threads: 4

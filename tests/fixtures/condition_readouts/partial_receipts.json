@@ -1,0 +1,722 @@
+{
+  "source": "real first-frame communication 2026-10-28 HTTP 400 and adjacent rated/pending stories; planning failure from existing condition-readouts fixture",
+  "films": {
+    "cinedance-010673-b0001-shot01": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0001/01f10b15-74ac-86d4-8c17-716c00696c38.mp4",
+    "film-004402-b0002-shot02": "cinepile_t2v:kinky boots",
+    "film-004403-b0002-shot06": "cinepile_t2v:kinky boots",
+    "cinedance-014083-b0001-shot01": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0003/0592a105-faab-8d9f-a32b-2b34b620104b.mp4"
+  },
+  "prepared": {
+    "stories": [
+      {
+        "story_id": "cinedance-010673-b0001-shot01",
+        "generation": {
+          "status": "completed",
+          "error": null,
+          "source_directory": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/renderer-ladder-official-sampler-dev30-20261027/inference/raw/videos/first_frame_communication_5b/shots/seed-42/cinedance-010673-b0001-shot01"
+        },
+        "requirements": [
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q01",
+            "dimension": "event",
+            "shot": 1,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 brush her teeth?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q02",
+            "dimension": "event",
+            "shot": 2,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 hold Object 3?",
+            "depends_on": [
+              "Character 2",
+              "Object 3"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q03",
+            "dimension": "event",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 bend down out of frame?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q04",
+            "dimension": "state",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Character 2 out of frame?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q05",
+            "dimension": "event",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 brush her teeth?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q06",
+            "dimension": "event",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 carry Object 3 away through a doorway?",
+            "depends_on": [
+              "Character 2",
+              "Object 3"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q07",
+            "dimension": "state",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Character 2 beyond the doorway?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q08",
+            "dimension": "event",
+            "shot": 5,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 brush her teeth?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q09",
+            "dimension": "event",
+            "shot": 8,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 brush her teeth?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q10",
+            "dimension": "event",
+            "shot": 10,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 brush her teeth?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q11",
+            "dimension": "character",
+            "shot": 3,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q12",
+            "dimension": "character",
+            "shot": 10,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 10} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q13",
+            "dimension": "character",
+            "shot": 3,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 3} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q14",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 4} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q15",
+            "dimension": "object",
+            "shot": 4,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Object 3 at {shot 4} the same object as at {shot 2}?",
+            "depends_on": [
+              "Object 3"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q16",
+            "dimension": "character",
+            "shot": 7,
+            "reference_shot": 6,
+            "anchor": "during",
+            "question": "Is Character 3 at {shot 7} the same person as at {shot 6}?",
+            "depends_on": [
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q17",
+            "dimension": "character",
+            "shot": 7,
+            "reference_shot": 6,
+            "anchor": "during",
+            "question": "Is Character 4 at {shot 7} the same person as at {shot 6}?",
+            "depends_on": [
+              "Character 4"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q18",
+            "dimension": "object",
+            "shot": 7,
+            "reference_shot": 6,
+            "anchor": "during",
+            "question": "Is Object 4 at {shot 7} the same object as at {shot 6}?",
+            "depends_on": [
+              "Object 4"
+            ]
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q20",
+            "dimension": "place",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q21",
+            "dimension": "place",
+            "shot": 10,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 10} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          }
+        ]
+      },
+      {
+        "story_id": "film-004402-b0002-shot02",
+        "generation": {
+          "status": "completed",
+          "error": null,
+          "source_directory": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/renderer-ladder-official-sampler-dev30-20261027/inference/raw/videos/first_frame_communication_5b/shots/seed-42/film-004402-b0002-shot02"
+        },
+        "requirements": [
+          {
+            "requirement_id": "film-004402-b0002-shot02/q01",
+            "dimension": "event",
+            "shot": 1,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 hold Object 1?",
+            "depends_on": [
+              "Character 1",
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q02",
+            "dimension": "event",
+            "shot": 3,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 hold Object 1?",
+            "depends_on": [
+              "Character 1",
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q03",
+            "dimension": "event",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 hold up Object 1?",
+            "depends_on": [
+              "Character 2",
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q04",
+            "dimension": "state",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Object 1 held up by Character 2?",
+            "depends_on": [
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q05",
+            "dimension": "event",
+            "shot": 6,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 duck down under Object 2?",
+            "depends_on": [
+              "Character 2",
+              "Object 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q06",
+            "dimension": "state",
+            "shot": 6,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Character 2 under Object 2?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q07",
+            "dimension": "character",
+            "shot": 3,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q08",
+            "dimension": "character",
+            "shot": 5,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 5} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q09",
+            "dimension": "object",
+            "shot": 3,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Object 1 at {shot 3} the same object as at {shot 1}?",
+            "depends_on": [
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q10",
+            "dimension": "object",
+            "shot": 4,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Object 1 at {shot 4} the same object as at {shot 1}?",
+            "depends_on": [
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q11",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 4} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q12",
+            "dimension": "character",
+            "shot": 7,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 7} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q13",
+            "dimension": "character",
+            "shot": 7,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 3 at {shot 7} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 3"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q14",
+            "dimension": "object",
+            "shot": 7,
+            "reference_shot": 6,
+            "anchor": "during",
+            "question": "Is Object 2 at {shot 7} the same object as at {shot 6}?",
+            "depends_on": [
+              "Object 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q15",
+            "dimension": "place",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          },
+          {
+            "requirement_id": "film-004402-b0002-shot02/q16",
+            "dimension": "place",
+            "shot": 7,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 7} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          }
+        ]
+      },
+      {
+        "story_id": "film-004403-b0002-shot06",
+        "generation": {
+          "status": "completed",
+          "error": null,
+          "source_directory": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/renderer-ladder-official-sampler-dev30-20261027/inference/raw/videos/first_frame_communication_5b/shots/seed-42/film-004403-b0002-shot06"
+        },
+        "requirements": [
+          {
+            "requirement_id": "film-004403-b0002-shot06/q01",
+            "dimension": "event",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 1 step onto Object 1?",
+            "depends_on": [
+              "Character 1",
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q02",
+            "dimension": "state",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "end",
+            "question": "Is Character 1 on Object 1?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q03",
+            "dimension": "event",
+            "shot": 4,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 reach out to hold Character 1's hand?",
+            "depends_on": [
+              "Character 2",
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q04",
+            "dimension": "event",
+            "shot": 5,
+            "reference_shot": null,
+            "anchor": "during",
+            "question": "Does Character 2 hold Character 1's hand?",
+            "depends_on": [
+              "Character 2",
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q05",
+            "dimension": "character",
+            "shot": 3,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q06",
+            "dimension": "character",
+            "shot": 5,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Is Character 1 at {shot 5} the same person as at {shot 1}?",
+            "depends_on": [
+              "Character 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q07",
+            "dimension": "character",
+            "shot": 4,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 4} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q08",
+            "dimension": "character",
+            "shot": 6,
+            "reference_shot": 2,
+            "anchor": "during",
+            "question": "Is Character 2 at {shot 6} the same person as at {shot 2}?",
+            "depends_on": [
+              "Character 2"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q09",
+            "dimension": "object",
+            "shot": 5,
+            "reference_shot": 4,
+            "anchor": "during",
+            "question": "Is Object 1 at {shot 5} the same object as at {shot 4}?",
+            "depends_on": [
+              "Object 1"
+            ]
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q10",
+            "dimension": "place",
+            "shot": 2,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          },
+          {
+            "requirement_id": "film-004403-b0002-shot06/q11",
+            "dimension": "place",
+            "shot": 6,
+            "reference_shot": 1,
+            "anchor": "during",
+            "question": "Are {shot 6} and {shot 1} in the same place (Location 1)?",
+            "depends_on": []
+          }
+        ]
+      }
+    ],
+    "unavailable_stories": [
+      {
+        "story_id": "cinedance-014083-b0001-shot01",
+        "generation": {
+          "status": "planning_failed"
+        },
+        "requirements": []
+      }
+    ]
+  },
+  "records": [
+    {
+      "story_id": "cinedance-010673-b0001-shot01",
+      "status": "rated",
+      "text": "{\n  \"answers\": [\n    {\"question\": 1, \"answer\": \"yes\", \"reason\": \"Character 1 is seen brushing her teeth with a pink toothbrush.\", \"time\": \"0:01\"},\n    {\"question\": 2, \"answer\": \"yes\", \"reason\": \"Character 2 is holding the plaid pillow (Object 3).\", \"time\": \"0:05\"},\n    {\"question\": 3, \"answer\": \"yes\", \"reason\": \"Character 2 bends down downwards out of the frame.\", \"time\": \"0:17\"},\n    {\"question\": 4, \"answer\": \"yes\", \"reason\": \"Character 2 has bent down and is fully out of frame at the end of the shot.\", \"time\": \"0:21\"},\n    {\"question\": 5, \"answer\": \"yes\", \"reason\": \"Character 1 brushes her teeth with a toothbrush.\", \"time\": \"0:18\"},\n    {\"question\": 6, \"answer\": \"yes\", \"reason\": \"Character 2 walks away through the doorway holding the plaid pillow.\", \"time\": \"0:25\"},\n    {\"question\": 7, \"answer\": \"yes\", \"reason\": \"Character 2 is beyond the doorway walking away at the end of the shot.\", \"time\": \"0:26\"},\n    {\"question\": 8, \"answer\": \"yes\", \"reason\": \"Character 1 brushes her teeth while standing in the doorway.\", \"time\": \"0:29\"},\n    {\"question\": 9, \"answer\": \"yes\", \"reason\": \"Character 1 brushes her teeth.\", \"time\": \"0:40\"},\n    {\"question\": 10, \"answer\": \"yes\", \"reason\": \"Character 1 has the toothbrush in her mouth and removes it.\", \"time\": \"0:48\"},\n    {\"question\": 11, \"answer\": \"no\", \"reason\": \"The actress portraying Character 1 changes to a different person.\", \"time\": \"0:16\"},\n    {\"question\": 12, \"answer\": \"no\", \"reason\": \"The actress portraying Character 1 changes again to a different person.\", \"time\": \"0:48\"},\n    {\"question\": 13, \"answer\": \"yes\", \"reason\": \"Character 2 is the same man wearing the same brown shirt and glasses.\", \"time\": \"0:16\"},\n    {\"question\": 14, \"answer\": \"yes\", \"reason\": \"Character 2 is the same man wearing the same brown shirt and glasses.\", \"time\": \"0:23\"},\n    {\"question\": 15, \"answer\": \"yes\", \"reason\": \"Object 3 is the same plaid pillow.\", \"time\": \"0:23\"},\n    {\"question\": 16, \"answer\": \"yes\", \"reason\": \"Character 3 is the same child sleeping in the bed.\", \"time\": \"0:36\"},\n    {\"question\": 17, \"answer\": \"yes\", \"reason\": \"Character 4 is the same child sleeping next to Character 3.\", \"time\": \"0:36\"},\n    {\"question\": 18, \"answer\": \"yes\", \"reason\": \"Object 4 is the same bed with the same blue star bedding.\", \"time\": \"0:36\"},\n    {\"question\": 19, \"answer\": \"yes\", \"reason\": \"Both shots take place inside the same apartment hallway/bathroom area.\", \"time\": \"0:05\"},\n    {\"question\": 20, \"answer\": \"yes\", \"reason\": \"Both shots take place within the same apartment setting.\", \"time\": \"0:49\"}\n  ]\n}",
+      "result": {
+        "answers": [
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q01",
+            "question": 1,
+            "answer": "yes",
+            "reason": "Character 1 is seen brushing her teeth with a pink toothbrush.",
+            "time": "0:01"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q02",
+            "question": 2,
+            "answer": "yes",
+            "reason": "Character 2 is holding the plaid pillow (Object 3).",
+            "time": "0:05"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q03",
+            "question": 3,
+            "answer": "yes",
+            "reason": "Character 2 bends down downwards out of the frame.",
+            "time": "0:17"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q04",
+            "question": 4,
+            "answer": "yes",
+            "reason": "Character 2 has bent down and is fully out of frame at the end of the shot.",
+            "time": "0:21"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q05",
+            "question": 5,
+            "answer": "yes",
+            "reason": "Character 1 brushes her teeth with a toothbrush.",
+            "time": "0:18"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q06",
+            "question": 6,
+            "answer": "yes",
+            "reason": "Character 2 walks away through the doorway holding the plaid pillow.",
+            "time": "0:25"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q07",
+            "question": 7,
+            "answer": "yes",
+            "reason": "Character 2 is beyond the doorway walking away at the end of the shot.",
+            "time": "0:26"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q08",
+            "question": 8,
+            "answer": "yes",
+            "reason": "Character 1 brushes her teeth while standing in the doorway.",
+            "time": "0:29"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q09",
+            "question": 9,
+            "answer": "yes",
+            "reason": "Character 1 brushes her teeth.",
+            "time": "0:40"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q10",
+            "question": 10,
+            "answer": "yes",
+            "reason": "Character 1 has the toothbrush in her mouth and removes it.",
+            "time": "0:48"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q11",
+            "question": 11,
+            "answer": "no",
+            "reason": "The actress portraying Character 1 changes to a different person.",
+            "time": "0:16"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q12",
+            "question": 12,
+            "answer": "no",
+            "reason": "The actress portraying Character 1 changes again to a different person.",
+            "time": "0:48"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q13",
+            "question": 13,
+            "answer": "yes",
+            "reason": "Character 2 is the same man wearing the same brown shirt and glasses.",
+            "time": "0:16"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q14",
+            "question": 14,
+            "answer": "yes",
+            "reason": "Character 2 is the same man wearing the same brown shirt and glasses.",
+            "time": "0:23"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q15",
+            "question": 15,
+            "answer": "yes",
+            "reason": "Object 3 is the same plaid pillow.",
+            "time": "0:23"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q16",
+            "question": 16,
+            "answer": "yes",
+            "reason": "Character 3 is the same child sleeping in the bed.",
+            "time": "0:36"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q17",
+            "question": 17,
+            "answer": "yes",
+            "reason": "Character 4 is the same child sleeping next to Character 3.",
+            "time": "0:36"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q18",
+            "question": 18,
+            "answer": "yes",
+            "reason": "Object 4 is the same bed with the same blue star bedding.",
+            "time": "0:36"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q20",
+            "question": 19,
+            "answer": "yes",
+            "reason": "Both shots take place inside the same apartment hallway/bathroom area.",
+            "time": "0:05"
+          },
+          {
+            "requirement_id": "cinedance-010673-b0001-shot01/q21",
+            "question": 20,
+            "answer": "yes",
+            "reason": "Both shots take place within the same apartment setting.",
+            "time": "0:49"
+          }
+        ]
+      }
+    },
+    {
+      "story_id": "film-004402-b0002-shot02",
+      "status": "request_failed",
+      "status_code": 400
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "story_id": "cinedance-009700-b0002",
+  "tier": "shots",
+  "source": {
+    "checkpoints": "outputs/experiments/planner-storyboard-form-20261113/holdout/fidelity/checkpoints-holdout.json",
+    "receipt": "outputs/experiments/planner-storyboard-form-20261113/holdout/fidelity/calls-v23/holdout-v23-s42/shots/compiled/cinedance-009700-b0002.json"
+  },
+  "requirements": [
+    {
+      "requirement_id": "e01",
+      "dimension": "event",
+      "order": 1,
+      "question": "Does Character 2 walk past Character 3?",
+      "doer": "Character 2",
+      "receiver": null
+    },
+    {
+      "requirement_id": "e01r",
+      "dimension": "state",
+      "order": 1,
+      "question": "Is Character 2 past Character 3?",
+      "doer": "Character 2",
+      "receiver": null
+    },
+    {
+      "requirement_id": "e02",
+      "dimension": "event",
+      "order": 2,
+      "question": "Does Character 2 open the back door of the pink van?",
+      "doer": "Character 2",
+      "receiver": "the back door of the pink van"
+    },
+    {
+      "requirement_id": "e02r",
+      "dimension": "state",
+      "order": 2,
+      "question": "Is the back door of the pink van open?",
+      "doer": "Character 2",
+      "receiver": null
+    }
+  ],
+  "answer": {
+    "checkpoints": [
+      {
+        "id": "e01",
+        "status": "stated",
+        "shot": 5,
+        "roles": "correct"
+      },
+      {
+        "id": "e01r",
+        "status": "stated",
+        "shot": 5,
+        "roles": "not_applicable"
+      },
+      {
+        "id": "e02",
+        "status": "stated",
+        "shot": 5,
+        "roles": "correct"
+      },
+      {
+        "id": "e02r",
+        "status": "stated",
+        "shot": 5,
+        "roles": "not_applicable"
+      }
+    ],
+    "contradictions": []
+  }
+}

@@ -1,0 +1,269 @@
+{
+ "key": "film-019237-b0008",
+ "shots": 8,
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair and a lean build",
+    "outfit": "a dark jacket"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a man with short dark hair",
+    "outfit": "a dark jacket"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a beard and short dark hair",
+    "outfit": "a red jacket, black beanie, and dark pants"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a digital display screen with targeting reticles and text"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a headset with a microphone"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a joystick controller"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a white unmanned aerial vehicle drone"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a backpack"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a dark interior room with digital screens"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "a snowy mountainous landscape with pine trees"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "screen_or_slides",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 1",
+      "state": "displaying a snowy landscape with targeting data"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A digital screen displays a targeting interface over a snowy landscape.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking forward",
+      "holding": []
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking forward",
+      "holding": []
+     },
+     {
+      "name": "Object 2",
+      "state": "worn by Character 1 and Character 2"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Two men wearing headsets look forward intently in a dark room.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting",
+      "holding": [
+       "Object 3"
+      ]
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A man's hand grips and operates a joystick controller.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "animation_3d_or_game",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "aerial shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Object 4",
+      "posture": "flying through the air"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A white drone flies through a snowy, mountainous environment.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "walking uphill",
+      "holding": [],
+      "outfit": "a red jacket, black beanie, and dark pants"
+     },
+     {
+      "name": "Object 5",
+      "state": "worn by Character 3"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A man in a red jacket and backpack struggles to walk uphill through heavy snow.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "walking uphill",
+      "holding": [],
+      "outfit": "a red jacket, black beanie, and dark pants"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man in the red jacket continues walking through the heavy snow, looking down.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "taking off jacket",
+      "holding": [],
+      "outfit": "a dark green jacket, black beanie, and dark pants"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man takes off his red jacket to reveal a dark green jacket underneath.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "outfit",
+      "before": "a red jacket, black beanie, and dark pants",
+      "after": "a dark green jacket, black beanie, and dark pants"
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "kneeling in the snow",
+      "holding": [],
+      "outfit": "a dark green jacket, black beanie, and dark pants"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man kneels down in the snow, looking at the ground.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "walking uphill",
+      "after": "kneeling in the snow"
+     }
+    ]
+   }
+  ],
+  "story": {
+   "paragraph": "A digital screen displays a targeting interface over a snowy landscape. Inside a dark room, two men wearing headsets look forward intently while one operates a joystick controller. Outside, a white drone flies through a snowy, mountainous environment. A man in a red jacket and backpack struggles to walk uphill through heavy snow. He takes off the red jacket to reveal a dark green jacket underneath and then kneels down in the snow.",
+   "summary": "Men in a dark room operate a drone targeting system while a man in a red jacket hikes through a snowy mountain and kneels in the snow."
+  }
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {},
+ "source": "block-contract-v17-quick-check-20261013/answers/base/film-019237-b0008.json"
+}

@@ -1,0 +1,414 @@
+{
+  "source": "200-shot720-readiness panel and actual frozen training members; one same-source shot from each CineDance/CinePile/MovieChat",
+  "cases": [
+    {
+      "key": "panel-000",
+      "case_id": "story_block_v1:cinedance:008dbbfb-c5e8-850b-b9a2-61df9685c20a:<scene1>:block0000:0003-0009",
+      "scene": {
+        "film_key": null,
+        "source": "cinedance",
+        "source_video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/008dbbfb-c5e8-850b-b9a2-61df9685c20a.mp4",
+        "fps": 23.976023976023978,
+        "container_preroll_frames": null,
+        "crop_box": [
+          173,
+          0,
+          1747,
+          908
+        ],
+        "width": 1920,
+        "height": 908,
+        "video_frame_count": 1230,
+        "active_box": [
+          0,
+          0,
+          1920,
+          908
+        ],
+        "boundary_revision": {
+          "coordinate": "ffmpeg_sequential",
+          "boundary_guard_frames": 2,
+          "shots": [
+            {
+              "revised_segment": [
+                892,
+                922
+              ]
+            }
+          ]
+        },
+        "shots": [
+          {
+            "source_shot_index": 3,
+            "start_frame": 892,
+            "end_frame": 922,
+            "render_frames": 17,
+            "sid": "cinedance-009397",
+            "scene_id": "cinedance:008dbbfb-c5e8-850b-b9a2-61df9685c20a:<scene1>:block0000",
+            "shot": 1,
+            "frames": 17,
+            "usable": true
+          }
+        ]
+      },
+      "position": 0,
+      "expected_frames": {
+        "16": [
+          892,
+          894,
+          896,
+          897,
+          899,
+          901,
+          903,
+          905,
+          906,
+          908,
+          910,
+          912,
+          914,
+          916,
+          917,
+          919,
+          921
+        ],
+        "24": [
+          892,
+          893,
+          894,
+          895,
+          896,
+          897,
+          898,
+          899,
+          900,
+          901,
+          902,
+          903,
+          904,
+          905,
+          906,
+          908,
+          909,
+          910,
+          911,
+          912,
+          913,
+          914,
+          915,
+          916,
+          917,
+          918,
+          919,
+          920,
+          921
+        ]
+      },
+      "expected_crop_boxes": {
+        "480x832": [
+          173,
+          0,
+          1747,
+          908
+        ],
+        "704x1280": [
+          180,
+          25,
+          1740,
+          883
+        ]
+      },
+      "original_position": 0
+    },
+    {
+      "key": "panel-028",
+      "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_001/Along_Came_Polly_(9_10)_Movie_CLIP_-_Sandy's_Big_Speech_(2004)_HD:scene000:0018-0025",
+      "scene": {
+        "film_key": "cinepile_t2v:along came polly",
+        "source": "cinepile_t2v",
+        "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/cinepile_t2v/raw_videos/video_batch_20250817_133943_001/Along_Came_Polly_(9_10)_Movie_CLIP_-_Sandy's_Big_Speech_(2004)_HD.mp4",
+        "fps": 23.976,
+        "container_preroll_frames": 0,
+        "crop_box": [
+          122,
+          0,
+          1158,
+          598
+        ],
+        "width": 1280,
+        "height": 598,
+        "video_frame_count": 2652,
+        "active_box": [
+          0,
+          0,
+          1280,
+          598
+        ],
+        "boundary_revision": {
+          "coordinate": "ffmpeg_sequential",
+          "boundary_guard_frames": 2,
+          "shots": [
+            {
+              "revised_segment": [
+                1638,
+                1682
+              ]
+            }
+          ]
+        },
+        "shots": [
+          {
+            "source_shot_index": 20,
+            "start_frame": 1638,
+            "end_frame": 1682,
+            "render_frames": 29,
+            "sid": "film-000254",
+            "scene_id": "cinepile_t2v:video_batch_20250817_133943_001/Along_Came_Polly_(9_10)_Movie_CLIP_-_Sandy's_Big_Speech_(2004)_HD:scene000",
+            "shot": 3,
+            "frames": 29,
+            "usable": true
+          }
+        ]
+      },
+      "position": 0,
+      "expected_frames": {
+        "16": [
+          1638,
+          1640,
+          1641,
+          1643,
+          1644,
+          1646,
+          1647,
+          1649,
+          1650,
+          1652,
+          1653,
+          1655,
+          1656,
+          1658,
+          1660,
+          1661,
+          1663,
+          1664,
+          1666,
+          1667,
+          1669,
+          1670,
+          1672,
+          1673,
+          1675,
+          1676,
+          1678,
+          1679,
+          1681
+        ],
+        "24": [
+          1638,
+          1639,
+          1640,
+          1641,
+          1642,
+          1643,
+          1644,
+          1646,
+          1647,
+          1648,
+          1649,
+          1650,
+          1651,
+          1652,
+          1653,
+          1654,
+          1655,
+          1656,
+          1657,
+          1658,
+          1660,
+          1661,
+          1662,
+          1663,
+          1664,
+          1665,
+          1666,
+          1667,
+          1668,
+          1669,
+          1670,
+          1671,
+          1672,
+          1673,
+          1675,
+          1676,
+          1677,
+          1678,
+          1679,
+          1680,
+          1681
+        ]
+      },
+      "expected_crop_boxes": {
+        "480x832": [
+          122,
+          0,
+          1158,
+          598
+        ],
+        "704x1280": [
+          140,
+          24,
+          1140,
+          574
+        ]
+      },
+      "original_position": 2
+    },
+    {
+      "key": "panel-049",
+      "case_id": "story_block_v1:moviechat_1k:LYA-13:scene005:0045-0053",
+      "scene": {
+        "film_key": "moviechat_1k:LYA",
+        "source": "moviechat_1k",
+        "source_video_path": "${MSPC_SHARED_ROOT}/OoVMetric/resource/moviechat_1k/train/raw_videos/LYA-13.mp4",
+        "fps": 25.0,
+        "container_preroll_frames": 0,
+        "crop_box": [
+          16,
+          0,
+          1264,
+          720
+        ],
+        "width": 1280,
+        "height": 720,
+        "video_frame_count": 11251,
+        "active_box": [
+          0,
+          0,
+          1280,
+          720
+        ],
+        "boundary_revision": {
+          "coordinate": "ffmpeg_sequential",
+          "boundary_guard_frames": 2,
+          "shots": [
+            {
+              "revised_segment": [
+                4555,
+                4602
+              ]
+            }
+          ]
+        },
+        "shots": [
+          {
+            "source_shot_index": 53,
+            "start_frame": 4555,
+            "end_frame": 4602,
+            "render_frames": 29,
+            "sid": "film-008706",
+            "scene_id": "moviechat_1k:LYA-13:scene005",
+            "shot": 9,
+            "frames": 29,
+            "usable": true
+          }
+        ]
+      },
+      "position": 0,
+      "expected_frames": {
+        "16": [
+          4555,
+          4557,
+          4558,
+          4560,
+          4562,
+          4563,
+          4565,
+          4567,
+          4568,
+          4570,
+          4571,
+          4573,
+          4575,
+          4576,
+          4578,
+          4580,
+          4581,
+          4583,
+          4585,
+          4586,
+          4588,
+          4589,
+          4591,
+          4593,
+          4594,
+          4596,
+          4598,
+          4599,
+          4601
+        ],
+        "24": [
+          4555,
+          4556,
+          4557,
+          4558,
+          4559,
+          4560,
+          4561,
+          4562,
+          4563,
+          4564,
+          4565,
+          4567,
+          4568,
+          4569,
+          4570,
+          4571,
+          4572,
+          4573,
+          4574,
+          4575,
+          4576,
+          4577,
+          4578,
+          4579,
+          4580,
+          4581,
+          4582,
+          4583,
+          4584,
+          4585,
+          4586,
+          4587,
+          4588,
+          4589,
+          4591,
+          4592,
+          4593,
+          4594,
+          4595,
+          4596,
+          4597,
+          4598,
+          4599,
+          4600,
+          4601
+        ]
+      },
+      "expected_crop_boxes": {
+        "480x832": [
+          16,
+          0,
+          1264,
+          720
+        ],
+        "704x1280": [
+          20,
+          19,
+          1260,
+          701
+        ]
+      },
+      "original_position": 8
+    }
+  ]
+}

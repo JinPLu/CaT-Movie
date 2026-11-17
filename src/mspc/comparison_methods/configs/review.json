@@ -1,0 +1,141 @@
+{
+  "stories": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/comparison-video-acceptance-20261026/inputs/stories.json",
+  "decisions": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/comparison-video-acceptance-20261026/review/human-decisions.jsonl",
+  "methods": [
+    {
+      "id": "native_wan_5b",
+      "label": "Wan2.2 5B 本地栈"
+    },
+    {
+      "id": "official_wan_ti2v_5b",
+      "label": "Wan2.2 TI2V-5B 官方"
+    },
+    {
+      "id": "official_multishotmaster_1_3b",
+      "label": "MultiShotMaster 1.3B"
+    },
+    {
+      "id": "official_holocine_14b_full",
+      "label": "HoloCine 14B"
+    },
+    {
+      "id": "official_storymem_14b",
+      "label": "StoryMem 14B"
+    },
+    {
+      "id": "storydiffusion_wan_a14b",
+      "label": "StoryDiffusion + Wan"
+    },
+    {
+      "id": "ic_lora_wan_a14b",
+      "label": "IC-LoRA + Wan"
+    }
+  ],
+  "development_stories": [
+    "cinedance-014847-b0000-shot01"
+  ],
+  "sources": [
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/test/inference/raw/videos/native_wan_5b/shots/seed-42",
+      "method": "native_wan_5b",
+      "split": "test",
+      "note": "原测试 63；原始输入、配置和分段随视频保存。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/test/inference/raw/videos/official_multishotmaster_1_3b/shots/seed-42",
+      "method": "official_multishotmaster_1_3b",
+      "split": "test",
+      "note": "原测试 63；原始输入、配置和分段随视频保存。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/msm-holding-adaptation-recovery-20261026/test/inference/raw/videos/official_multishotmaster_1_3b/shots/seed-42",
+      "method": "official_multishotmaster_1_3b",
+      "split": "test",
+      "note": "修复持物文字适配后的固定重跑；旧失败记录仍可查。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/neighbor-deploy-20261024/holocine-test63/inference/raw/videos/official_holocine_14b_full/shots/seed-42",
+      "method": "official_holocine_14b_full",
+      "split": "test",
+      "note": "原测试 63；固定官方 full-attention 配置；训练集群生成、主服务器交付副本。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/neighbor-deploy-20261024/storymem-test63/inference/raw/videos/official_storymem_14b/shots/seed-42",
+      "method": "official_storymem_14b",
+      "split": "test",
+      "note": "原测试 63；原生本故事历史选帧；训练集群生成、主服务器交付副本。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/official-wan-ti2v-5b-20261027/inference/raw/videos/official_wan_ti2v_5b/shots/seed-42",
+      "method": "official_wan_ti2v_5b",
+      "split": "test",
+      "note": "旧源码目录被训练补丁加入 shot_rpe，加载失败；只作为失败尝试保留。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/official-wan-ti2v-5b-clean-source-20261027/inference/raw/videos/official_wan_ti2v_5b/shots/seed-42",
+      "method": "official_wan_ti2v_5b",
+      "split": "test",
+      "note": "官方 Wan2.2 原样源码 1ea34ff：1280×704、24fps、UniPC、50步、CFG 5、shift 5，不开提示扩写；镜长由 16fps 换算为 4n+1。首故事，92 部等看片后放量。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/storydiffusion-first-story-20261027/inference/raw/videos/storydiffusion_wan_a14b",
+      "method": "storydiffusion_wan_a14b",
+      "split": "test",
+      "note": "修正版首故事：DDIM 35步与角色 bank，Wan2.2 I2V-A14B 40步。第3、5镜给定计划文字相同，官方逐图重设同一 seed，两张关键帧逐字节相同。92 部等看片后放量。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/ic-lora-first-story-20261027/inference/raw/videos/ic_lora_wan_a14b",
+      "method": "ic_lora_wan_a14b",
+      "split": "test",
+      "note": "修正版首故事：两个 encoder 共用完整三格 caption（CLIP 在 77 截断，T5 完整），Wan2.2 I2V-A14B 40步。92 部等看片后放量。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/wan/inference/raw/videos/native_wan_5b/shots/seed-42",
+      "method": "native_wan_5b",
+      "split": "test",
+      "note": "新增测试 29；固定 v4 请求与计划；短段碎片问题尚待核查。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/msm/inference/raw/videos/official_multishotmaster_1_3b/shots/seed-42",
+      "method": "official_multishotmaster_1_3b",
+      "split": "test",
+      "note": "新增测试 29；固定 v4 请求、计划与 seed42；按原生分段生成。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/holocine/inference/raw/videos/official_holocine_14b_full/shots/seed-42",
+      "method": "official_holocine_14b_full",
+      "split": "test",
+      "note": "新增测试 29；固定 v4 请求、计划与 seed42；按原生分段生成。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/storymem/inference/raw/videos/official_storymem_14b/shots/seed-42",
+      "method": "official_storymem_14b",
+      "split": "test",
+      "note": "新增测试 29；固定 v4 请求、计划与 seed42；按原生分段生成。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/dev/inference/raw/videos/native_wan_5b/shots/seed-42",
+      "method": "native_wan_5b",
+      "split": "dev",
+      "note": "既有开发集原片；与测试集分开查看。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/benchmark-v3-baselines-20261024/dev/inference/raw/videos/official_multishotmaster_1_3b/shots/seed-42",
+      "method": "official_multishotmaster_1_3b",
+      "split": "dev",
+      "note": "既有开发集原片；与测试集分开查看。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/keyframe-planning-development-pilot-20261025/inference/raw/videos/storydiffusion_wan_a14b",
+      "method": "storydiffusion_wan_a14b",
+      "split": "dev",
+      "note": "旧 Euler 配置单例；不代表已改 DDIM 的修正版。"
+    },
+    {
+      "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/keyframe-planning-development-pilot-20261025/inference/raw/videos/ic_lora_wan_a14b",
+      "method": "ic_lora_wan_a14b",
+      "split": "dev",
+      "note": "旧拆分 caption 配置单例；不代表已改官方完整 caption 的修正版。"
+    }
+  ]
+}

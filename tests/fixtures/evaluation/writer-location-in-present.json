@@ -1,0 +1,368 @@
+{
+  "story_id": "film-001596-b0004-shot01",
+  "board": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short brown hair, a large nose, and a slim build",
+        "outfit": "a white shirt and a white cap"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with spiky blonde hair, a large nose, and a heavy build",
+        "outfit": "a black tank top with a brain graphic and blue jeans"
+      },
+      {
+        "name": "Character 3",
+        "kind": "animal",
+        "visibility": "clear",
+        "appearance": "a small monkey with brown fur and large eyes"
+      },
+      {
+        "name": "Character 4",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a young woman with blonde hair in a ponytail, green eyes, and glasses"
+      },
+      {
+        "name": "Character 5",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a large man with a dark beard, wearing a police uniform"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a large video camera"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a giant animated cheeseburger with legs, resembling a creature"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a large red leaf"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a lush, colorful jungle with large plants and purple flowers"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Character 2",
+            "posture": "peeking from behind Object 3"
+          },
+          {
+            "name": "Character 3",
+            "posture": "hanging onto Character 2"
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "action": "Character 1 holds a video camera and looks shocked alongside Character 2 and Character 3, who are peeking from behind a large red leaf.",
+        "changes": [],
+        "frame_count": 65
+      },
+      {
+        "shot": 2,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "walking towards Object 2"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing near Object 2"
+          },
+          {
+            "name": "Character 5",
+            "posture": "crouching near Object 2"
+          },
+          {
+            "name": "Object 2",
+            "state": "standing with legs"
+          }
+        ],
+        "action": "Character 2 walks towards a giant animated cheeseburger, Object 2, while Character 4 and Character 5 observe it in a colorful jungle.",
+        "changes": [],
+        "frame_count": 117
+      },
+      {
+        "shot": 3,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing near Object 2"
+          },
+          {
+            "name": "Object 2",
+            "state": "with many small red eyes on the bun"
+          }
+        ],
+        "action": "Character 2 looks at the top of Object 2, revealing numerous small red eyes embedded in the sesame seed bun.",
+        "changes": [],
+        "frame_count": 37
+      },
+      {
+        "shot": 4,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 2",
+            "state": "falling over and revealing french fries as legs"
+          }
+        ],
+        "action": "Object 2 falls onto its side, revealing that its legs are actually french fries, and Character 2 pushes against it.",
+        "changes": [
+          {
+            "name": "Object 2",
+            "what": "state",
+            "before": "standing",
+            "after": "fallen on its side"
+          }
+        ],
+        "frame_count": 181
+      },
+      {
+        "shot": 5,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 5",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing"
+          }
+        ],
+        "action": "Character 5 and Character 4 look at Object 2 with shocked and concerned expressions.",
+        "changes": [],
+        "frame_count": 57
+      },
+      {
+        "shot": 6,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing"
+          },
+          {
+            "name": "Character 5",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 2",
+            "state": "fallen on its side"
+          },
+          {
+            "name": "Object 3",
+            "state": "covered in webs and debris"
+          }
+        ],
+        "action": "The group stands around the fallen cheeseburger creature in a web-filled clearing.",
+        "changes": [],
+        "frame_count": 17
+      }
+    ]
+  },
+  "writer_output": {
+    "names": [
+      {
+        "id": "Character 1",
+        "name": "Character 1"
+      },
+      {
+        "id": "Character 2",
+        "name": "Character 2"
+      },
+      {
+        "id": "Character 3",
+        "name": "Character 3"
+      },
+      {
+        "id": "Character 4",
+        "name": "Character 4"
+      },
+      {
+        "id": "Character 5",
+        "name": "Character 5"
+      },
+      {
+        "id": "Object 1",
+        "name": "Object 1"
+      },
+      {
+        "id": "Object 2",
+        "name": "Object 2"
+      },
+      {
+        "id": "Object 3",
+        "name": "Object 3"
+      },
+      {
+        "id": "Location 1",
+        "name": "Location 1"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "present": [
+          "Character 1",
+          "Character 2",
+          "Character 3",
+          "Object 1",
+          "Object 3"
+        ]
+      },
+      {
+        "shot": 2,
+        "present": [
+          "Character 2",
+          "Character 4",
+          "Character 5",
+          "Object 2",
+          "Location 1"
+        ]
+      },
+      {
+        "shot": 3,
+        "present": [
+          "Character 2",
+          "Object 2"
+        ]
+      },
+      {
+        "shot": 4,
+        "present": [
+          "Character 2",
+          "Object 2"
+        ]
+      },
+      {
+        "shot": 5,
+        "present": [
+          "Character 5",
+          "Character 4",
+          "Object 2"
+        ]
+      },
+      {
+        "shot": 6,
+        "present": [
+          "Character 2",
+          "Character 4",
+          "Character 5",
+          "Object 2"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "shot": 1,
+        "question": "Does Character 1 hold Object 1?",
+        "participants": [
+          "Character 1",
+          "Object 1"
+        ],
+        "result": null
+      },
+      {
+        "shot": 2,
+        "question": "Does Character 2 walk towards Object 2?",
+        "participants": [
+          "Character 2",
+          "Object 2"
+        ],
+        "result": null
+      },
+      {
+        "shot": 4,
+        "question": "Does Object 2 fall onto its side?",
+        "participants": [
+          "Object 2"
+        ],
+        "result": {
+          "question": "Is Object 2 lying on its side?",
+          "entity": "Object 2",
+          "kind": "holding_or_place"
+        }
+      },
+      {
+        "shot": 4,
+        "question": "Does Character 2 push against Object 2?",
+        "participants": [
+          "Character 2",
+          "Object 2"
+        ],
+        "result": null
+      }
+    ]
+  }
+}

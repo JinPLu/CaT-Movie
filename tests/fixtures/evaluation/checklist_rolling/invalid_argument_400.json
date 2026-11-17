@@ -1,0 +1,48 @@
+{
+  "method": "first_frame_communication_5b",
+  "input_tier": "shots",
+  "seed": 42,
+  "story_id": "film-004402-b0002-shot02",
+  "part": null,
+  "requirement_ids": [
+    "film-004402-b0002-shot02/q01",
+    "film-004402-b0002-shot02/q02",
+    "film-004402-b0002-shot02/q03",
+    "film-004402-b0002-shot02/q04",
+    "film-004402-b0002-shot02/q05",
+    "film-004402-b0002-shot02/q06",
+    "film-004402-b0002-shot02/q07",
+    "film-004402-b0002-shot02/q08",
+    "film-004402-b0002-shot02/q09",
+    "film-004402-b0002-shot02/q10",
+    "film-004402-b0002-shot02/q11",
+    "film-004402-b0002-shot02/q12",
+    "film-004402-b0002-shot02/q13",
+    "film-004402-b0002-shot02/q14",
+    "film-004402-b0002-shot02/q15",
+    "film-004402-b0002-shot02/q16"
+  ],
+  "phase": "first-read",
+  "status": "request_failed",
+  "started_at": "2026-10-28T11:03:11.753438+00:00",
+  "cost_usd": null,
+  "duration_seconds": 23.1875,
+  "request_body_bytes": 13598409,
+  "video_bytes": 10195872,
+  "raw_response": null,
+  "error": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'provider_name': 'Google AI Studio', 'is_byok': False, 'provider_error_code': '400'}}, 'user_[redacted]': 'user_[redacted]'}",
+  "seconds": 11.152301834023092,
+  "exception_chain": [
+    {
+      "type": "openai.BadRequestError",
+      "message": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'provider_name': 'Google AI Studio', 'is_byok': False, 'provider_error_code': '400'}}, 'user_[redacted]': 'user_[redacted]'}"
+    },
+    {
+      "type": "httpx.HTTPStatusError",
+      "message": "Client error '400 Bad Request' for url 'https://openrouter.ai/api/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  ],
+  "http_request_id": null,
+  "status_code": 400,
+  "finished_at": "2026-10-28T11:03:22.918356+00:00"
+}

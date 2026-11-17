@@ -1,0 +1,1 @@
+{"state": "succeeded", "stage": "assemble", "key": "film-006483-b0011", "products": ["instance_depth.json", "instances.json", "masks.json"], "seconds": 0.14374080300331116, "output_bytes": 56274, "model_load_seconds": 0.0, "completed_at": "2026-10-13T00:02:03.272070+00:00"}

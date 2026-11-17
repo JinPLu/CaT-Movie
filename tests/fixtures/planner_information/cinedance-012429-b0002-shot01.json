@@ -1,0 +1,652 @@
+{
+ "source": "configs/benchmark/benchmark_storyboards_v4.json dev story cinedance-012429-b0002-shot01; plan = public Qwen3.5-9B zero-shot, prompt v12, greedy (planner-call-settings-recheck-20261106/nothink_greedy_1)",
+ "request": "SUBJECTS\n- Character 1 (person): a man with short brown hair and a slim build, wearing a grey suit jacket and a pink shirt\n- Character 2 (person): a man with short dark hair and a medium build, wearing a light blue police uniform\n- Character 3 (person): a woman with shoulder-length dark hair and a slim build, wearing a red tank top\n- Character 4 (person): a man with a shaved head and a medium build, wearing a light blue police uniform\n- Character 5 (person): a man with a shaved head and a heavy build, wearing a tan police uniform with a black tie\n- Object 1 (object): a white ceramic mug\n- Object 2 (object): a wooden desk\n- Object 3 (object): a wooden chair\n- Object 4 (object): a wooden cabinet\n- Object 5 (object): a microwave\n- Object 6 (object): a flag\nLOCATIONS\n- Location 1: a small room with wooden walls, a desk, a cabinet, and a microwave\nSHOTS\ns01: Medium wide shot. Character 2 hands Object 1 to Character 3, then walks back to the cabinet.\ns02: Close-up shot. Character 5 speaks while looking around.\ns03: Close-up shot. Character 1 looks down and listens.\ns04: Medium close-up shot. Character 4 speaks while looking down.\ns05: Medium close-up shot. Character 2 stands and holds Object 1 while looking at Character 5.\ns06: Close-up shot. Character 5 continues to speak.\ns07: Close-up shot. Character 3 looks down at Object 1 in her hands.\ns08: Close-up shot. Character 5 speaks and turns his head.\ns09: Medium wide shot. Character 5 walks past the group while Character 4 stands up.\ns10: Medium close-up shot. Character 2 stands holding Object 1 and looks forward.",
+ "reference": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short brown hair and a slim build",
+    "outfit": "a grey suit jacket and a pink shirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair and a medium build",
+    "outfit": "a light blue police uniform"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with shoulder-length dark hair and a slim build",
+    "outfit": "a red tank top"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a shaved head and a medium build",
+    "outfit": "a light blue police uniform"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a shaved head and a heavy build",
+    "outfit": "a tan police uniform with a black tie"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a white ceramic mug"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a wooden desk"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a wooden chair"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a wooden cabinet"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a microwave"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a flag"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a small room with wooden walls, a desk, a cabinet, and a microwave"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing by the door"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing near the cabinet",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting on a chair",
+      "holding": []
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting on a chair"
+     },
+     {
+      "name": "Object 1",
+      "state": "in Character 2's hand"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     },
+     {
+      "name": "Object 5"
+     },
+     {
+      "name": "Object 6"
+     }
+    ],
+    "action": "Character 2 hands Object 1 to Character 3, then walks back to the cabinet.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "holding",
+      "before": [
+       "Object 1"
+      ],
+      "after": []
+     },
+     {
+      "name": "Character 3",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Object 1"
+      ]
+     }
+    ],
+    "frame_count": 117
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 speaks while looking around.",
+    "changes": [],
+    "frame_count": 45
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 1 looks down and listens.",
+    "changes": [],
+    "frame_count": 21
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "sitting"
+     }
+    ],
+    "action": "Character 4 speaks while looking down.",
+    "changes": [],
+    "frame_count": 21
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 2 stands and holds Object 1 while looking at Character 5.",
+    "changes": [],
+    "frame_count": 17
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 continues to speak.",
+    "changes": [],
+    "frame_count": 25
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "sitting",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 3 looks down at Object 1 in her hands.",
+    "changes": [],
+    "frame_count": 13
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 speaks and turns his head.",
+    "changes": [],
+    "frame_count": 29
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "walking"
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 4",
+      "posture": "sitting"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 5 walks past the group while Character 4 stands up.",
+    "changes": [
+     {
+      "name": "Character 4",
+      "what": "posture",
+      "before": "sitting",
+      "after": "standing"
+     }
+    ],
+    "frame_count": 17
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 2 stands holding Object 1 and looks forward.",
+    "changes": [],
+    "frame_count": 13
+   }
+  ]
+ },
+ "plan": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "appearance": "a man with short brown hair and a slim build",
+    "outfit": "a grey suit jacket and a pink shirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "appearance": "a man with short dark hair and a medium build",
+    "outfit": "a light blue police uniform"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "appearance": "a woman with shoulder-length dark hair and a slim build",
+    "outfit": "a red tank top"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "appearance": "a man with a shaved head and a medium build",
+    "outfit": "a light blue police uniform"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "appearance": "a man with a shaved head and a heavy build",
+    "outfit": "a tan police uniform with a black tie"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a white ceramic mug"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a wooden desk"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a wooden chair"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a wooden cabinet"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a microwave"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a flag"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a small room with wooden walls, a desk, a cabinet, and a microwave"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 2 hands Object 1 to Character 3, then walks back to the cabinet.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "holding",
+      "before": [
+       "Object 1"
+      ],
+      "after": []
+     },
+     {
+      "name": "Character 2",
+      "what": "state",
+      "after": "empty-handed"
+     },
+     {
+      "name": "Character 3",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "Object 1"
+      ]
+     }
+    ],
+    "frame_count": 53
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 speaks while looking around.",
+    "changes": [],
+    "frame_count": 29
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 1 looks down and listens.",
+    "changes": [],
+    "frame_count": 29
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 4 speaks while looking down.",
+    "changes": [],
+    "frame_count": 29
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 2 stands and holds Object 1 while looking at Character 5.",
+    "changes": [],
+    "frame_count": 25
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 continues to speak.",
+    "changes": [],
+    "frame_count": 25
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 3 looks down at Object 1 in her hands.",
+    "changes": [],
+    "frame_count": 25
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 speaks and turns his head.",
+    "changes": [],
+    "frame_count": 25
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing"
+     }
+    ],
+    "action": "Character 5 walks past the group while Character 4 stands up.",
+    "changes": [
+     {
+      "name": "Character 4",
+      "what": "posture",
+      "before": "standing",
+      "after": "standing up"
+     }
+    ],
+    "frame_count": 53
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "Character 2 stands holding Object 1 and looks forward.",
+    "changes": [],
+    "frame_count": 25
+   }
+  ]
+ }
+}

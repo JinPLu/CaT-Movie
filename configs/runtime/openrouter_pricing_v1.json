@@ -1,0 +1,9 @@
+{
+  "schema_version": "mspc_openrouter_pricing_v1",
+  "platform": "openrouter",
+  "currency": "USD",
+  "hard_cap_usd": "70.00",
+  "api_key_file": "${MSPC_SHARED_ROOT}/OoVMetric/resource/openrouter_api_key.txt",
+  "base_url": "https://openrouter.ai/api/v1",
+  "model": "google/gemini-3.7-flash"
+}

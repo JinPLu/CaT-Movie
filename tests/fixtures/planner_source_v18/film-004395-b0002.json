@@ -1,0 +1,440 @@
+{
+  "key": "film-004395-b0002",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with dark curly hair and a mustache",
+        "outfit": "a red jacket over a pink shirt"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with dark hair and a leather jacket",
+        "outfit": "a black leather jacket and jeans"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with blonde hair and a beige jacket",
+        "outfit": "a beige jacket and a patterned shirt"
+      },
+      {
+        "name": "Character 4",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "an older man with grey hair and a black leather jacket",
+        "outfit": "a black leather jacket over a clerical collar shirt"
+      },
+      {
+        "name": "Character 5",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with dark hair and a grey suit",
+        "outfit": "a grey suit with a white shirt"
+      },
+      {
+        "name": "Character 6",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with a mustache and a grey suit",
+        "outfit": "a grey suit"
+      },
+      {
+        "name": "Character 7",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with brown hair and a red jacket",
+        "outfit": "a red jacket"
+      },
+      {
+        "name": "Character 8",
+        "kind": "group",
+        "visibility": "partial",
+        "appearance": "several men standing around"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a long wooden bat"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a dark green luxury car"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a large ring with a yellow stone"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a bowling ball return machine"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "bowling balls"
+      },
+      {
+        "name": "Object 6",
+        "appearance": "Object 3 stone"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a parking lot outside a bowling alley at night"
+      },
+      {
+        "name": "Location 2",
+        "appearance": "the interior of a bowling alley"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing in front of the car",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Character 1",
+            "posture": "sitting in the car"
+          },
+          {
+            "name": "Character 3",
+            "posture": "standing near the car"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing in the background"
+          },
+          {
+            "name": "Character 5",
+            "posture": "standing in the background"
+          },
+          {
+            "name": "Character 7",
+            "posture": "standing near the car"
+          },
+          {
+            "name": "Character 8",
+            "posture": "standing around"
+          },
+          {
+            "name": "Object 2",
+            "state": "parked"
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 2 holds a bat in front of a luxury car while several men stand around it. Character 1 is inside the car.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting in the car",
+            "state": "looking around nervously"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 looks around nervously from inside the car.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "driving the car"
+          },
+          {
+            "name": "Character 2",
+            "posture": "walking away"
+          },
+          {
+            "name": "Character 3",
+            "posture": "being grabbed by Character 6"
+          },
+          {
+            "name": "Object 2",
+            "state": "parked"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The car drives away while Character 3 is grabbed and pulled away by other men.",
+        "changes": [
+          {
+            "name": "Object 2",
+            "what": "state",
+            "before": "parked",
+            "after": "driving away"
+          }
+        ]
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing",
+            "state": "looking shocked"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 3 looks around with a shocked expression.",
+        "changes": []
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "being held"
+          },
+          {
+            "name": "Character 4",
+            "posture": "standing and talking"
+          },
+          {
+            "name": "Character 5",
+            "posture": "standing and talking"
+          },
+          {
+            "name": "Character 6",
+            "posture": "holding Character 3"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 is held by Character 6 while Character 4 and Character 5 talk to him.",
+        "changes": []
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "extreme close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 5",
+            "posture": "holding up his hand"
+          },
+          {
+            "name": "Object 3",
+            "state": "on Character 5's finger"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A close-up shows a large ring with a yellow stone on a man's finger.",
+        "changes": []
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 4",
+            "posture": "taking the ring"
+          },
+          {
+            "name": "Character 5",
+            "posture": "holding out his hand"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 4 takes the ring from Character 5's hand.",
+        "changes": []
+      },
+      {
+        "shot": 8,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "being choked"
+          },
+          {
+            "name": "Character 6",
+            "posture": "choking Character 3"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 6 chokes Character 3 from behind.",
+        "changes": []
+      },
+      {
+        "shot": 9,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 4",
+            "posture": "eating the stone from the ring"
+          },
+          {
+            "name": "Character 3",
+            "posture": "being dragged away"
+          },
+          {
+            "name": "Object 6"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 4 pops the stone from the ring into his mouth and swallows it, then the men drag Character 3 away.",
+        "changes": [
+          {
+            "name": "Character 4",
+            "what": "holding",
+            "before": [],
+            "after": [
+              "Object 6"
+            ]
+          }
+        ]
+      },
+      {
+        "shot": 10,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "being dragged into the bowling alley"
+          },
+          {
+            "name": "Character 6",
+            "posture": "dragging Character 3"
+          },
+          {
+            "name": "Character 2",
+            "posture": "dragging Character 3"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "The men drag Character 3 into the bowling alley and throw him towards the bowling ball return.",
+        "changes": []
+      },
+      {
+        "shot": 11,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Object 4",
+            "state": "open"
+          }
+        ],
+        "activity": "no_human_activity",
+        "action": "A close-up of the bowling ball return machine shows the opening where balls come out.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "A group of men surround a luxury car in a parking lot outside a bowling alley at night. One man inside the car looks nervous as the car drives away, leaving another man behind. The man left behind is grabbed by the group. They confront him, and one older man takes a large ring with a yellow stone from another man's finger. The older man pops the stone out of the ring and swallows it while the group chokes and drags the man away. They drag him into the bowling alley and throw him towards the bowling ball return machine.",
+      "summary": "A group of men confront a man outside a bowling alley, steal a ring stone, swallow it, and drag him inside the bowling alley."
+    }
+  },
+  "frame_counts": [
+    61,
+    53,
+    57,
+    37,
+    97,
+    37,
+    17,
+    29,
+    129,
+    153,
+    33
+  ]
+}

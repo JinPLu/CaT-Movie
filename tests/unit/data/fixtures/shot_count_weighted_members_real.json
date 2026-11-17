@@ -1,0 +1,176 @@
+{
+  "source": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/full-pool-training-inputs-20261028/renderer/inputs/train.jsonl",
+  "scope": "真实冻结全池训练成员；只保留源时间和身份元数据，无合成媒体",
+  "examples": {
+    "five_or_more_short_shots": {
+      "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0007-0013",
+      "span": [
+        0,
+        5
+      ]
+    },
+    "long_complete_singleton": {
+      "case_id": "story_block_v1:cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000:0000-0004",
+      "span": [
+        2,
+        3
+      ]
+    }
+  },
+  "members": [
+    {
+      "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0007-0013",
+      "key": "cinedance-008882-b0001",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+      "source": "cinedance",
+      "scene": {
+        "fps": 23.976023976023978
+      },
+      "shots": [
+        {
+          "frames": 17,
+          "render_frames": 17,
+          "usable": true,
+          "start_frame": 411,
+          "end_frame": 439,
+          "seconds": 1.1678333333333333,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 7
+        },
+        {
+          "frames": 29,
+          "render_frames": 29,
+          "usable": true,
+          "start_frame": 443,
+          "end_frame": 486,
+          "seconds": 1.7934583333333332,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 8
+        },
+        {
+          "frames": 25,
+          "render_frames": 25,
+          "usable": true,
+          "start_frame": 490,
+          "end_frame": 527,
+          "seconds": 1.5432083333333333,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 9
+        },
+        {
+          "frames": 17,
+          "render_frames": 17,
+          "usable": true,
+          "start_frame": 531,
+          "end_frame": 561,
+          "seconds": 1.25125,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 10
+        },
+        {
+          "frames": 33,
+          "render_frames": 33,
+          "usable": true,
+          "start_frame": 565,
+          "end_frame": 614,
+          "seconds": 2.043708333333333,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 11
+        },
+        {
+          "frames": 21,
+          "render_frames": 21,
+          "usable": true,
+          "start_frame": 618,
+          "end_frame": 653,
+          "seconds": 1.4597916666666666,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 12
+        },
+        {
+          "frames": 13,
+          "render_frames": 13,
+          "usable": true,
+          "start_frame": 657,
+          "end_frame": 677,
+          "seconds": 0.8341666666666666,
+          "sid": "cinedance-008882",
+          "scene_id": "cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000",
+          "source_shot_index": 13
+        }
+      ]
+    },
+    {
+      "case_id": "story_block_v1:cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000:0000-0004",
+      "key": "cinedance-008885-b0000",
+      "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/0001235a-57c7-83fb-b84a-3f7cb4ddf999.mp4",
+      "source": "cinedance",
+      "scene": {
+        "fps": 30.0
+      },
+      "shots": [
+        {
+          "frames": 37,
+          "render_frames": 37,
+          "usable": true,
+          "start_frame": 2,
+          "end_frame": 71,
+          "seconds": 2.3,
+          "sid": "cinedance-008885",
+          "scene_id": "cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000",
+          "source_shot_index": 0
+        },
+        {
+          "frames": 61,
+          "render_frames": 61,
+          "usable": true,
+          "start_frame": 75,
+          "end_frame": 191,
+          "seconds": 3.8666666666666667,
+          "sid": "cinedance-008885",
+          "scene_id": "cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000",
+          "source_shot_index": 1
+        },
+        {
+          "frames": 141,
+          "render_frames": 141,
+          "usable": true,
+          "start_frame": 195,
+          "end_frame": 462,
+          "seconds": 8.9,
+          "sid": "cinedance-008885",
+          "scene_id": "cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000",
+          "source_shot_index": 2
+        },
+        {
+          "frames": 97,
+          "render_frames": 97,
+          "usable": true,
+          "start_frame": 466,
+          "end_frame": 649,
+          "seconds": 6.1,
+          "sid": "cinedance-008885",
+          "scene_id": "cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000",
+          "source_shot_index": 3
+        },
+        {
+          "frames": 105,
+          "render_frames": 105,
+          "usable": true,
+          "start_frame": 653,
+          "end_frame": 852,
+          "seconds": 6.633333333333334,
+          "sid": "cinedance-008885",
+          "scene_id": "cinedance:0001235a-57c7-83fb-b84a-3f7cb4ddf999:<scene1>:block0000",
+          "source_shot_index": 4
+        }
+      ]
+    }
+  ]
+}

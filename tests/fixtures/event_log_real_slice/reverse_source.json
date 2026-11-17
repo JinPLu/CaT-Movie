@@ -1,0 +1,87 @@
+{
+  "case_id": "ci_vid:train:000007564",
+  "annotation": {
+    "scene": "一名金发跳水运动员在泳池边完成跳水动作，随后镜头切换至泳池中其他角色游泳的场景。",
+    "subjects": [
+      {
+        "id": "s1",
+        "kind": "person",
+        "desc": "金发女性，扎着侧马尾，身穿蓝绿色连体泳衣",
+        "desc_en": "blonde woman with a side ponytail wearing a teal one-piece swimsuit",
+        "visible_in": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": "s2",
+        "kind": "person",
+        "desc": "红发女性，身穿粉色泳衣",
+        "desc_en": "red-haired woman wearing a pink swimsuit",
+        "visible_in": [
+          2
+        ]
+      },
+      {
+        "id": "s3",
+        "kind": "person",
+        "desc": "灰发男性，身穿蓝色泳裤",
+        "desc_en": "grey-haired man wearing blue swim trunks",
+        "visible_in": [
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "index": 0,
+        "present": [
+          "s1"
+        ],
+        "camera": "高角度俯拍，固定机位",
+        "location": "室内跳水馆",
+        "present_tense": "金发女子站在跳板末端，准备起跳。"
+      },
+      {
+        "index": 1,
+        "present": [
+          "s1"
+        ],
+        "camera": "仰视跟拍，随后切至水面视角",
+        "location": "室内跳水馆",
+        "present_tense": "金发女子在空中完成翻腾动作并跃入水中。"
+      },
+      {
+        "index": 2,
+        "present": [
+          "s1",
+          "s2",
+          "s3"
+        ],
+        "camera": "中景平视，固定机位",
+        "location": "室内泳池",
+        "present_tense": "金发女子站在水中，红发女性和灰发男性在旁边的泳道里游泳。"
+      }
+    ],
+    "state_deltas": [
+      {
+        "subject": "s1",
+        "shot": 1,
+        "before": "站在跳板上",
+        "after": "跃入水中",
+        "cause": "in_story_event"
+      }
+    ]
+  },
+  "captions": [
+    "The video depicts an animated scene at a swimming pool area indoors. A character, possibly a female athlete with blue and pink detailed attire, is preparing to dive from a springboard into the swimming pool below. The character's skin is white, and she has shell-like textures on her legs. As the action unfolds, the athlete bends her knees and pushes off from the diving board, launching into a dive. She is surrounded by numerous spectators seated and standing around the pool, watching the event attentively. The pool is rectangular with clear, light blue water, and its surroundings have arched designs on the walls. This scene seems to be part of an animated sports or action video, capturing a brief moment of high energy and focus on the athlete's diving skills.",
+    "A dynamic sequence features an animated character performing a gymnastic move in an indoor pool setting. The character, with bright yellow hair tied into two high ponytails, sports a black and light blue leotard, emphasizing her athletic physique. She is captured mid-air in a somersault, showcasing her acrobatic skills and flexibility. As she spins, a group of onlookers in colorful attire is seated on wooden bleachers in the background, watching her performance attentively. Some characters seem animated with excitement as they stand and cheer. The gymnast descends into a pool with a splash, creating a burst of water in the turquoise pool. This scene highlights a moment of athletic excellence and the enthusiastic response of the audience, all captured in vibrant animation style.",
+    "The video features a vibrant animated scene in a swimming pool area. Initially, a ghostly female character with long, wavy blue hair and a shimmering blue complexion is seated next to another individual with long blonde hair tied in a ponytail. The ghostly character is wearing an outfit with a detailed scaly texture that resembles that of a mermaid. In the subsequent moments, there is a shift to two individuals engaged in a swimming competition in the pool. One character has fiery orange hair and is energetically swimming freestyle. The individual exhibits determination and speed as they propel through the water, leaving a trail of splashes. Accompanying this character is another swimmer with blurred facial features, following closely behind or attempting to catch up."
+  ],
+  "frame_counts": [
+    21,
+    21,
+    45
+  ]
+}

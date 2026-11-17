@@ -1,0 +1,57 @@
+{
+ "split": "test",
+ "layers": {
+  "visible_change": {
+   "cases": {
+    "cinedance-010094-b0000-shot01": [
+     {
+      "entity": "Character 1",
+      "what": "holding",
+      "change_shot": 2,
+      "return_shot": 3,
+      "earlier_shots": [
+       1
+      ],
+      "reference_crosses_segment": true
+     }
+    ],
+    "cinedance-010094-b0001-shot01": [
+     {
+      "entity": "Character 1",
+      "what": "holding",
+      "change_shot": 2,
+      "return_shot": 3,
+      "earlier_shots": [
+       1
+      ],
+      "reference_crosses_segment": false
+     }
+    ],
+    "cinedance-012125-b0000-shot01": [
+     {
+      "entity": "Character 1",
+      "what": "holding",
+      "change_shot": 2,
+      "return_shot": 3,
+      "earlier_shots": [
+       1
+      ],
+      "reference_crosses_segment": true
+     }
+    ],
+    "cinedance-012125-b0001-shot01": [
+     {
+      "entity": "Character 1",
+      "what": "holding",
+      "change_shot": 2,
+      "return_shot": 3,
+      "earlier_shots": [
+       1
+      ],
+      "reference_crosses_segment": false
+     }
+    ]
+   }
+  }
+ }
+}

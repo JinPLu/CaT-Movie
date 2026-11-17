@@ -1,0 +1,104 @@
+{
+  "schema_version": 18,
+  "kind": "block_annotation",
+  "contract": "block_annotation_v18_20261013",
+  "basis": "第 17 版的结构与栏不变，改四处写法，各有读数依据。①编号写死：第 17 版写「Give each one a name」，动物纪录片里模型按物种起名（正式试标 50 块里 3 块，全是同一部纪录片：Baboon 1、Zebra Herd、Savanna），是提示词有歧义。改成说明这是固定编号，并在一镜示例里加了一只动物。②人物登记的范围：主要人物逐个登记，其余并成人群条目（kind 为 group）。正式试标同一块标三遍，人多的场面登记 15、10、11 人；人群写法参照 MultiShotMaster，分割仍逐个做。取代第 15 版起的「看到的都逐个记」。③摇镜不分方向：旧标注全量里 pan right 对 pan left 约 11.6 倍，正式试标抽到的 30 个摇镜全写向右。④不是连续画面的镜省掉场所与镜头栏：第 17 版没有给「没有」的写法，模型写成字符串 none。其余取值定义、示例与调用同第 17 版。",
+  "call": {
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen3.7-flash",
+    "enable_thinking": true,
+    "video_fps": 2,
+    "message_layout": "一条 user 消息：视频在前，随后是 prompt，再空一行接各镜时间（每行 Shot N: 起–止 s）；不设 system",
+    "response_format": {
+      "type": "json_object"
+    },
+    "stream": true,
+    "sampling": "不传温度等采样参数，用服务端默认",
+    "max_tokens": "不设",
+    "video_transport": "实时：Base64（官方建议小于 7 MB 的文件内嵌）；批量：OSS 签名地址"
+  },
+  "prompt": "You will watch a short video and write structured notes about it. The notes are used to train a video-generation model. The video is one scene made of one or more shots; a shot is one continuous piece of footage between two cuts. The time range of every shot is listed at the end.\n\nWork in three steps, in this order: first list who and what is in the scene, then describe every shot, then tell the whole scene once.\n\nWrite only what you can see. If you cannot tell something, leave it out; do not guess. Do not use subtitles, titles, or what you know about the film or its actors. Do not say where things are in the frame (left, right, foreground, background) or which way people face; that is measured separately. Use short, plain English. Answer with one JSON object with the keys \"characters\", \"objects\", \"places\", \"shots\" and \"story\", and nothing else.\n\n## Step 1. characters, objects, places: who and what is in the scene\nNumber them in the order they first appear. Every entry of characters is labelled \"Character 1\", \"Character 2\", ... whether it is a person, an animal or a group; every object is \"Object 1\", \"Object 2\", ...; every place is \"Location 1\", \"Location 2\", ... These labels are fixed codes, not names you choose: a baboon is \"Character 3\", never \"Baboon 1\"; a savanna is \"Location 1\", never \"Savanna\". What it is goes into appearance. Write the label in the \"name\" field and use it everywhere else. The same person, animal, thing or place keeps its label in every shot. If you are not sure that two appearances are the same one, give them different labels.\n- characters: the people and animals the scene is about, one entry each: those who act, speak or are clearly shown. Everyone else goes into one entry per group, with kind \"group\": passers-by, an audience, people in the background, a herd, a row of soldiers. Describe a group by what it is, such as \"guests at the other tables\".\n  kind: \"person\", \"animal\" or \"group\".\n  visibility: \"clear\" (a visible face or a distinctive whole figure), \"partial\" (only hands, feet, a back or other parts) or \"distant\" (always too small or too far away to tell apart).\n  appearance: what stays the same for the whole video, such as hair, build, skin tone, age, beard and face. Leave out what they wear, pose, expression and anything temporary.\n  outfit: what they wear in this scene, such as \"a navy sweater and jeans\". Leave it out if you cannot see what they wear, and for animals that wear nothing.\n- objects: every thing you can clearly see and identify: things people hold or use, furniture, vehicles, doors, windows and so on. Clothes that someone is wearing belong to that character's outfit, not here.\n  appearance: what kind of thing it is, with its colour, material and shape. Leave out its momentary state, such as open, full or broken.\n- places: each room or site. Two shots show the same place if they show the same room or site, even from a different camera position.\n  appearance: what the place looks like.\n\n## Visible result wording\nWrite current visible results affirmatively. In present.state, present.posture, and the before/after strings of state or posture changes, use a lowercase complement that can follow \"is\", with no subject, copula, or final period: \"bareheaded\", \"with her hair loose and uncovered\", \"empty-handed\", \"in a plain white T-shirt\", or \"with a fresh cut on her cheek\". These examples specify form, not facts to add.\nDo not describe a result by naming an absent or removed item with \"without\", \"removed\", \"no longer\", \"not wearing\", \"not holding\", or \"no\". Describe the visible hair, exposed body part, empty hands, or clothes actually worn instead. A full sentence such as \"her short curly reddish-brown hair is uncovered\" is not a state complement; use \"with her short curly reddish-brown hair uncovered\" only when that appearance is supported.\nThe restriction concerns result descriptions, not actions: \"Character 1 takes off the headband\" must retain the acted-on item. Keep names of items that remain visibly present, including a removed item now held in a hand or lying on a table. Preserve positive injuries and damage, such as \"with a fresh cut on her cheek\".\nKeep stable appearance in appearance and default clothes in outfit. Outfit values remain lowercase clothing noun phrases, such as \"a plain white T-shirt\", not \"in a plain white T-shirt\". Record a changed outfit in full in every affected later shot; put uncovered hair or body parts in state. Never erase an item still worn in the opening state or hide a temporary accessory in stable appearance.\npresent describes the opening; changes.before must match that opening and changes.after the visible ending. Use the same result wording in later openings while it remains true. Holding before/after remain arrays of entity names. Do not infer empty hands, bare skin, loose hair, or replacement clothes from an absence phrase alone. If the source does not establish the visible result, route it for source review rather than guessing.\n\nWhen a holding change ends with an empty array, also provide an explicit state change for that entity describing the visible result, for example \"empty-handed\" for a person or \"with its mouth empty\" when that is what an animal visibly shows. Do not infer the body part from the holding array; the renderer will use this supplied state and will not generate a sentence naming the released item. Keep the release action and the released item at its visible destination in their own fields.\n\n## Step 2. shots: one entry per shot, in order\n- shot: its number, starting at 1.\n- picture_type: what kind of picture this shot is. One of:\n  \"live_action\": filmed with a camera in the real world.\n  \"animation_2d\": drawn or flat cartoon animation.\n  \"animation_3d_or_game\": computer-generated 3D animation, video-game footage, stop-motion or puppet animation, or a rendered visualisation.\n  \"screen_or_slides\": a screen recording, a still image, or a page of text or graphics rather than moving footage.\n- on_screen_text: text or graphics laid over the picture in this shot. Text that belongs to the filmed scene, such as a shop sign or a phone screen, does not count. One of:\n  \"none\": nothing is laid over the picture.\n  \"corner_logo_or_watermark\": only a small logo, watermark, score bug or short label, in a corner or for a moment.\n  \"burned_subtitles\": subtitle or caption lines are burned into the picture for most of the shot.\n  \"large_text_or_picture_in_picture\": large text blocks, a title card, a decorative frame, a split screen or picture-in-picture cover a substantial part of the picture for most of the shot.\n- place: a location label. Leave place and camera out for a shot that is not footage of a scene, such as a title card or a page of text.\n- camera: leave out any part you cannot tell.\n  shot_size: \"extreme close-up shot\", \"close-up shot\", \"medium close-up shot\", \"medium shot\", \"medium wide shot\", \"wide shot\" or \"extreme wide shot\".\n  angle: \"eye-level shot\", \"high angle shot\", \"low angle shot\", \"overhead shot\", \"over-the-shoulder shot\", \"dutch angle shot\" or \"aerial shot\".\n  movement: \"static\", \"pan\", \"tilt up\", \"tilt down\", \"push in\", \"pull out\", \"tracking\" or \"handheld\".\n- present: every character and object visible in this shot, each as it looks when it first appears in the shot. A hand, a back or another part of a character counts: list that character.\n  name\n  posture (characters): body position and where they are, such as \"sitting at the dining table\" or \"standing in the doorway\".\n  state: anything temporary you can see, such as \"sweating\", \"with a bandaged arm\", \"open\", \"full of water\" or \"lying on the table\".\n  holding (characters): names of the objects in their hands.\n  outfit (characters): only when what they wear in this shot differs from their outfit in step 1, for example a coat taken off or a hat put on; then write everything they wear now, and keep writing it in every later shot until they wear their step-1 outfit again. Leave it out otherwise.\n- activity: what the people or animals in this shot do. One of:\n  \"action_or_state_change\": someone visibly does something with their body or with an object, or something visibly changes: picks up, puts down, puts on, opens, pours, cuts, hands over, sits down, stands up, walks somewhere, enters, leaves, hugs, hits, dances, plays a sport, cooks.\n  \"talking_only\": people only talk, sing, pose, look around or gesture; nothing else happens.\n  \"no_human_activity\": nobody acts: scenery, empty rooms, objects or vehicles on their own.\n- action: one sentence saying what happens in this shot. Refer to characters, objects and places by their names and do not repeat their appearance.\n- changes: what becomes different during this shot. One entry per change: name (a character or object listed in present); what (\"outfit\", \"posture\", \"state\" or \"holding\"); before; after. For \"holding\", before and after are lists of object names. Write [] if nothing changes.\n\n## Step 3. story: tell the whole scene once\n- paragraph: a few sentences telling what happens from the first shot to the last, as one continuous story. Tell only things you wrote down in step 2. Do not mention shots, cuts or the camera. Refer to each person by a few words, such as \"the grey-haired woman\", not by their name.\n- summary: one sentence saying who does what and where. Refer to people the same way as in paragraph.\n\n## Example with two shots\n{\"characters\": [{\"name\": \"Character 1\", \"kind\": \"person\", \"visibility\": \"clear\", \"appearance\": \"an elderly woman with short grey hair and a slim build\", \"outfit\": \"a navy sweater\"}, {\"name\": \"Character 2\", \"kind\": \"person\", \"visibility\": \"clear\", \"appearance\": \"a tall person with long brown hair\", \"outfit\": \"a long grey coat\"}], \"objects\": [{\"name\": \"Object 1\", \"appearance\": \"a white ceramic mug\"}, {\"name\": \"Object 2\", \"appearance\": \"a brown leather suitcase\"}, {\"name\": \"Object 3\", \"appearance\": \"a wooden dining table\"}, {\"name\": \"Object 4\", \"appearance\": \"a glass back door\"}], \"places\": [{\"name\": \"Location 1\", \"appearance\": \"a small kitchen with wooden cabinets\"}], \"shots\": [{\"shot\": 1, \"picture_type\": \"live_action\", \"on_screen_text\": \"none\", \"place\": \"Location 1\", \"camera\": {\"shot_size\": \"medium shot\", \"angle\": \"eye-level shot\", \"movement\": \"static\"}, \"present\": [{\"name\": \"Character 1\", \"posture\": \"sitting at the dining table\"}, {\"name\": \"Character 2\", \"posture\": \"walking in through the back door\", \"state\": \"with wet hair\", \"holding\": [\"Object 2\"]}, {\"name\": \"Object 1\", \"state\": \"full of tea, standing on the table\"}, {\"name\": \"Object 2\"}, {\"name\": \"Object 3\"}, {\"name\": \"Object 4\", \"state\": \"open\"}], \"activity\": \"action_or_state_change\", \"action\": \"Character 1 lifts Object 1 from Object 3 and drinks while Character 2 comes in through Object 4 carrying Object 2.\", \"changes\": [{\"name\": \"Character 1\", \"what\": \"holding\", \"before\": [], \"after\": [\"Object 1\"]}]}, {\"shot\": 2, \"picture_type\": \"live_action\", \"on_screen_text\": \"none\", \"place\": \"Location 1\", \"camera\": {\"shot_size\": \"close-up shot\", \"angle\": \"eye-level shot\", \"movement\": \"static\"}, \"present\": [{\"name\": \"Character 1\", \"posture\": \"sitting at the dining table\", \"holding\": [\"Object 1\"]}, {\"name\": \"Character 2\", \"posture\": \"standing by the dining table\", \"outfit\": \"a white shirt and dark trousers\"}, {\"name\": \"Object 1\", \"state\": \"empty\"}, {\"name\": \"Object 3\"}], \"activity\": \"talking_only\", \"action\": \"Character 1 looks up and speaks to Character 2, who has taken off the coat.\", \"changes\": []}], \"story\": {\"paragraph\": \"An elderly woman sits at a wooden table in a small kitchen and lifts a mug of tea to drink. A tall person with wet hair comes in through the glass back door carrying a leather suitcase. Later the tall person, now in a white shirt and dark trousers, stands by the table while the woman looks up and talks.\", \"summary\": \"An elderly woman drinks tea in a kitchen as a tall person comes in from outside with a suitcase.\"}}\n\n## Example with one shot\n{\"characters\": [{\"name\": \"Character 1\", \"kind\": \"person\", \"visibility\": \"clear\", \"appearance\": \"a young man with curly dark hair and a lean build\", \"outfit\": \"a grey hoodie and black shorts\"}, {\"name\": \"Character 2\", \"kind\": \"animal\", \"visibility\": \"clear\", \"appearance\": \"a small brown dog\"}, {\"name\": \"Character 3\", \"kind\": \"group\", \"visibility\": \"distant\", \"appearance\": \"joggers on the path\"}], \"objects\": [{\"name\": \"Object 1\", \"appearance\": \"a green wooden bench\"}], \"places\": [{\"name\": \"Location 1\", \"appearance\": \"a tree-lined park path\"}], \"shots\": [{\"shot\": 1, \"picture_type\": \"live_action\", \"on_screen_text\": \"corner_logo_or_watermark\", \"place\": \"Location 1\", \"camera\": {\"shot_size\": \"medium wide shot\", \"angle\": \"eye-level shot\", \"movement\": \"static\"}, \"present\": [{\"name\": \"Character 1\", \"posture\": \"sitting on the bench, bent over his shoe\"}, {\"name\": \"Character 2\", \"posture\": \"lying under the bench\"}, {\"name\": \"Character 3\", \"posture\": \"running along the path\"}, {\"name\": \"Object 1\"}], \"activity\": \"action_or_state_change\", \"action\": \"Character 1 bends forward on Object 1, ties the laces of one shoe, then sits up and looks down the path as Character 3 runs past.\", \"changes\": [{\"name\": \"Character 1\", \"what\": \"posture\", \"before\": \"bent forward over his shoe\", \"after\": \"sitting upright on the bench\"}]}], \"story\": {\"paragraph\": \"A young man sits on a green bench beside a park path with a small brown dog lying under it. He bends forward and ties the laces of one shoe, then sits up and looks down the path as a group of joggers runs past.\", \"summary\": \"A young man ties his shoelaces on a park bench while joggers pass behind him.\"}}\n",
+  "labels": {
+    "kind": [
+      "person",
+      "animal",
+      "group"
+    ],
+    "visibility": [
+      "clear",
+      "partial",
+      "distant"
+    ],
+    "picture_type": [
+      "live_action",
+      "animation_2d",
+      "animation_3d_or_game",
+      "screen_or_slides"
+    ],
+    "on_screen_text": [
+      "none",
+      "corner_logo_or_watermark",
+      "burned_subtitles",
+      "large_text_or_picture_in_picture"
+    ],
+    "shot_size": [
+      "extreme close-up shot",
+      "close-up shot",
+      "medium close-up shot",
+      "medium shot",
+      "medium wide shot",
+      "wide shot",
+      "extreme wide shot"
+    ],
+    "angle": [
+      "eye-level shot",
+      "high angle shot",
+      "low angle shot",
+      "overhead shot",
+      "over-the-shoulder shot",
+      "dutch angle shot",
+      "aerial shot"
+    ],
+    "movement": [
+      "static",
+      "pan",
+      "tilt up",
+      "tilt down",
+      "push in",
+      "pull out",
+      "tracking",
+      "handheld"
+    ],
+    "activity": [
+      "action_or_state_change",
+      "talking_only",
+      "no_human_activity"
+    ],
+    "change_what": [
+      "outfit",
+      "posture",
+      "state",
+      "holding"
+    ]
+  },
+  "shot_filter": [
+    {
+      "name": "不是连续拍摄的画面",
+      "when": "picture_type == screen_or_slides"
+    },
+    {
+      "name": "烧录字幕",
+      "when": "on_screen_text == burned_subtitles"
+    },
+    {
+      "name": "大面积文字或画中画",
+      "when": "on_screen_text == large_text_or_picture_in_picture"
+    }
+  ],
+  "shot_mark": [
+    {
+      "name": "有角标或水印",
+      "when": "on_screen_text == corner_logo_or_watermark"
+    }
+  ]
+}

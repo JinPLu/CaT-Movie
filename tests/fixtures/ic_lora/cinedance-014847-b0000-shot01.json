@@ -1,0 +1,140 @@
+{
+  "story_id": "cinedance-014847-b0000-shot01",
+  "split": "dev",
+  "fps": 16,
+  "characters": {
+    "[C1]": "a woman with long wavy brown hair and a slim build",
+    "[C2]": "a man with short dark hair and a lean build"
+  },
+  "reference_indices": {
+    "[C1]": [
+      0
+    ],
+    "[C2]": [
+      1
+    ]
+  },
+  "shots": [
+    {
+      "tagged": "Close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C1], is standing, wearing a grey sweater, looking forward.",
+      "expanded": "Close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a woman with long wavy brown hair and a slim build , is standing, wearing a grey sweater, looking forward.",
+      "characters": [
+        "[C1]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Close-up shot, eye-level shot, static. The woman with long wavy brown hair and a slim build is standing. The woman with long wavy brown hair and a slim build is wearing a grey sweater. The woman with long wavy brown hair and a slim build is looking forward. A woman with long wavy brown hair looks forward and speaks.",
+      "frames": 53
+    },
+    {
+      "tagged": "Medium shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C2], is standing, wearing a maroon shirt, looking to the side.",
+      "expanded": "Medium shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a man with short dark hair and a lean build , is standing, wearing a maroon shirt, looking to the side.",
+      "characters": [
+        "[C2]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Medium shot, eye-level shot, static. The man with short dark hair and a lean build is standing. The man with short dark hair and a lean build is wearing a maroon shirt. The man with short dark hair and a lean build is looking to the side. A man in a maroon shirt looks down a corridor with pipes on the ceiling.",
+      "frames": 45
+    },
+    {
+      "tagged": "Medium close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C2], is standing, wearing a maroon shirt, looking up. [C1], is standing, wearing a grey sweater, in the background.",
+      "expanded": "Medium close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a man with short dark hair and a lean build , is standing, wearing a maroon shirt, looking up. a woman with long wavy brown hair and a slim build , is standing, wearing a grey sweater, in the background.",
+      "characters": [
+        "[C1]",
+        "[C2]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Medium close-up shot, eye-level shot, static. The man with short dark hair and a lean build is standing. The man with short dark hair and a lean build is wearing a maroon shirt. The man with short dark hair and a lean build is looking up. The woman with long wavy brown hair and a slim build is standing. The woman with long wavy brown hair and a slim build is wearing a grey sweater. The woman with long wavy brown hair and a slim build is in the background. The man looks up while the woman stands behind him.",
+      "frames": 69
+    },
+    {
+      "tagged": "Close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C1], is standing, wearing a grey sweater, looking forward.",
+      "expanded": "Close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a woman with long wavy brown hair and a slim build , is standing, wearing a grey sweater, looking forward.",
+      "characters": [
+        "[C1]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Close-up shot, eye-level shot, static. The woman with long wavy brown hair and a slim build is standing. The woman with long wavy brown hair and a slim build is wearing a grey sweater. The woman with long wavy brown hair and a slim build is looking forward. The woman looks forward with a concerned expression.",
+      "frames": 21
+    },
+    {
+      "tagged": "Medium shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C2], is standing, wearing a maroon shirt, looking up at the ceiling.",
+      "expanded": "Medium shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a man with short dark hair and a lean build , is standing, wearing a maroon shirt, looking up at the ceiling.",
+      "characters": [
+        "[C2]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Medium shot, eye-level shot, static. The man with short dark hair and a lean build is standing. The man with short dark hair and a lean build is wearing a maroon shirt. The man with short dark hair and a lean build is looking up at the ceiling. The man looks up at the pipes on the ceiling.",
+      "frames": 33
+    },
+    {
+      "tagged": "Close-up shot, low angle shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C2], is standing, wearing a maroon shirt, looking up.",
+      "expanded": "Close-up shot, low angle shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a man with short dark hair and a lean build , is standing, wearing a maroon shirt, looking up.",
+      "characters": [
+        "[C2]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Close-up shot, low angle shot, static. The man with short dark hair and a lean build is standing. The man with short dark hair and a lean build is wearing a maroon shirt. The man with short dark hair and a lean build is looking up. A close-up shows the man looking up with a focused expression.",
+      "frames": 49
+    },
+    {
+      "tagged": "Medium shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C1], is standing behind a desk, wearing a grey sweater, looking forward. A laptop computer, open on the desk. A wall-mounted control panel with blue and red lights, mounted on the wall.",
+      "expanded": "Medium shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a woman with long wavy brown hair and a slim build , is standing behind a desk, wearing a grey sweater, looking forward. A laptop computer, open on the desk. A wall-mounted control panel with blue and red lights, mounted on the wall.",
+      "characters": [
+        "[C1]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Medium shot, eye-level shot, static. The woman with long wavy brown hair and a slim build is standing behind a desk. The woman with long wavy brown hair and a slim build is wearing a grey sweater. The woman with long wavy brown hair and a slim build is looking forward. The laptop computer is open on the desk. The wall-mounted control panel with blue and red lights is mounted on the wall. The woman stands behind a desk with a laptop and looks forward.",
+      "frames": 13
+    },
+    {
+      "tagged": "Medium close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C2], is standing, wearing a maroon shirt, looking to the side. [C1], is standing in the background, wearing a grey sweater.",
+      "expanded": "Medium close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a man with short dark hair and a lean build , is standing, wearing a maroon shirt, looking to the side. a woman with long wavy brown hair and a slim build , is standing in the background, wearing a grey sweater.",
+      "characters": [
+        "[C1]",
+        "[C2]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Medium close-up shot, eye-level shot, static. The man with short dark hair and a lean build is standing. The man with short dark hair and a lean build is wearing a maroon shirt. The man with short dark hair and a lean build is looking to the side. The woman with long wavy brown hair and a slim build is standing in the background. The woman with long wavy brown hair and a slim build is wearing a grey sweater. The man looks to the side while the woman stands in the background.",
+      "frames": 13
+    },
+    {
+      "tagged": "Close-up shot. A dimly lit room with concrete walls, ceiling pipes, and control panels. Four white pipes with valves on a concrete wall, mounted on the wall.",
+      "expanded": "Close-up shot. A dimly lit room with concrete walls, ceiling pipes, and control panels. Four white pipes with valves on a concrete wall, mounted on the wall.",
+      "characters": [],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Close-up shot, eye-level shot, static. Four white pipes with valves on a concrete wall is mounted on the wall. Four white pipes with valves are shown mounted on a concrete wall.",
+      "frames": 21
+    },
+    {
+      "tagged": "Medium close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, [C2], is standing, wearing a maroon shirt, reaching out. [C1], is standing in the background, wearing a grey sweater.",
+      "expanded": "Medium close-up shot. In a dimly lit room with concrete walls, ceiling pipes, and control panels, a man with short dark hair and a lean build , is standing, wearing a maroon shirt, reaching out. a woman with long wavy brown hair and a slim build , is standing in the background, wearing a grey sweater.",
+      "characters": [
+        "[C1]",
+        "[C2]"
+      ],
+      "video_prompt": "The setting is a dimly lit room with concrete walls, ceiling pipes, and control panels. Medium close-up shot, eye-level shot, static. The man with short dark hair and a lean build is standing. The man with short dark hair and a lean build is wearing a maroon shirt. The man with short dark hair and a lean build is reaching out. The woman with long wavy brown hair and a slim build is standing in the background. The woman with long wavy brown hair and a slim build is wearing a grey sweater. The man reaches out towards the wall pipes while the woman watches from behind. By the end of the shot, the man with short dark hair and a lean build is reaching out.",
+      "frames": 33
+    }
+  ],
+  "token_audit": {
+    "clip_token_counts": [
+      [
+        47,
+        46,
+        71,
+        47,
+        47,
+        50,
+        75,
+        72,
+        38,
+        70
+      ],
+      [
+        47,
+        46,
+        71,
+        47,
+        47,
+        50,
+        75,
+        72,
+        38,
+        70
+      ]
+    ],
+    "clip_limit": 77,
+    "accepted": true
+  }
+}

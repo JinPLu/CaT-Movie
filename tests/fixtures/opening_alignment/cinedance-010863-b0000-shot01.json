@@ -1,0 +1,407 @@
+{
+ "source": "outputs/experiments/layout-baseline-dev30/plans/cinedance-010863-b0000-shot01.json (layouts dropped), compiled by the planner pipeline before 2026-10-30",
+ "plan": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with blonde hair styled in an updo with pink earrings",
+    "outfit": "a blue and white dress with ruffles"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a mustache, greyish-brown hair, and a stern expression",
+    "outfit": "a blue coat with light blue trim and a white cravat"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with brown hair in an updo with a purple bow and blue eyes",
+    "outfit": "a light green dress with white ruffles"
+   },
+   {
+    "name": "Character 4",
+    "kind": "group",
+    "visibility": "clear",
+    "appearance": "several women with various hair colors and styles, wearing matching blue and white dresses with white ruffled caps",
+    "outfit": "blue and white dresses with white ruffled caps"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a large double door with gold trim and a crest above it"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a chandelier with purple crystals"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "statues on pedestals"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a grand room with blue patterned walls, wooden floors, and large doors"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing with her back to the camera"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing in a row facing Character 1"
+     },
+     {
+      "name": "Object 1",
+      "state": "closed"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "action": "A group of women in blue and white dresses stand facing a large set of double doors in a grand room.",
+    "changes": [],
+    "references": [],
+    "frame_count": 29
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing in the crowd"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing next to Character 2"
+     },
+     {
+      "name": "Character 4",
+      "posture": "standing around them"
+     }
+    ],
+    "action": "A man with a mustache and a woman in a green dress stand among a crowd, looking towards the left.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 4",
+      "shot": 1
+     }
+    ],
+    "frame_count": 25
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "walking forward"
+     }
+    ],
+    "action": "A blonde woman in a blue and white dress walks forward with her eyes closed.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 65
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "over-the-shoulder shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing with her back to the camera"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing and looking at Character 1"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing next to Character 2"
+     }
+    ],
+    "action": "The blonde woman stands before the man and the woman in green, who look at her with concern.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 3
+     },
+     {
+      "name": "Character 2",
+      "shot": 2
+     },
+     {
+      "name": "Character 3",
+      "shot": 2
+     }
+    ],
+    "frame_count": 65
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "looking down with her eyes closed"
+     }
+    ],
+    "action": "The blonde woman keeps her eyes closed and then opens them, looking sad.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "state",
+      "before": "eyes closed",
+      "after": "eyes open, looking sad"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 4
+     }
+    ],
+    "frame_count": 85
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "looking shocked"
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking shocked"
+     }
+    ],
+    "action": "The woman in green and the man with the mustache look shocked, with their hands near their faces.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 3",
+      "shot": 4
+     },
+     {
+      "name": "Character 2",
+      "shot": 4
+     }
+    ],
+    "frame_count": 45
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "high angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "kneeling"
+     },
+     {
+      "name": "Character 3",
+      "posture": "kneeling"
+     },
+     {
+      "name": "Character 4",
+      "posture": "kneeling"
+     }
+    ],
+    "action": "The blonde woman stands while the man, the woman in green, and the group of women in blue kneel before her.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 5
+     },
+     {
+      "name": "Character 2",
+      "shot": 6
+     },
+     {
+      "name": "Character 3",
+      "shot": 6
+     },
+     {
+      "name": "Character 4",
+      "shot": 2
+     }
+    ],
+    "frame_count": 57
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "looking shocked"
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking shocked"
+     }
+    ],
+    "action": "The woman in green and the man with the mustache continue to look shocked while kneeling.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 3",
+      "shot": 7
+     },
+     {
+      "name": "Character 2",
+      "shot": 7
+     }
+    ],
+    "frame_count": 37
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     }
+    ],
+    "action": "The blonde woman opens her eyes, looks forward, and then covers her mouth with her hand as if crying.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "state",
+      "before": "eyes closed",
+      "after": "covering her mouth with her hand"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 7
+     }
+    ],
+    "frame_count": 53
+   },
+   {
+    "shot": 10,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "crying with hands on her face"
+     },
+     {
+      "name": "Character 2",
+      "posture": "looking concerned"
+     },
+     {
+      "name": "Character 4",
+      "posture": "looking concerned"
+     }
+    ],
+    "action": "The woman in green covers her face with her hands and cries, while the man and the group look on with concern.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "state",
+      "before": "looking shocked",
+      "after": "crying with hands on face"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 3",
+      "shot": 8
+     },
+     {
+      "name": "Character 2",
+      "shot": 8
+     },
+     {
+      "name": "Character 4",
+      "shot": 7
+     }
+    ],
+    "frame_count": 37
+   }
+  ]
+ }
+}

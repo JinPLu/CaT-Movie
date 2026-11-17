@@ -1,0 +1,258 @@
+{
+ "key": "film-018940-b0001",
+ "shots": 8,
+ "source": "block-contract-v17-quick-check-20261013/answers/clarified-1/film-018940-b0001.json",
+ "contract": "block_annotation_v17",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man with a medium build",
+    "outfit": "a dark jacket and dark pants"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a person wearing a helmet and dark clothing",
+    "outfit": "a black leather jacket and helmet"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with glasses and short dark hair",
+    "outfit": "a dark jacket"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a handgun"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a black car with headlights on"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a motorcycle with a sidecar"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a building with large red banners and columns"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a street with streetlights and other cars"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a city street at night with a large building featuring red banners"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "holding": [
+       "Object 1"
+      ]
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 aims a handgun forward.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 2",
+      "state": "driving towards Character 1"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 stands on the street as a black car with headlights on drives towards him.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "driving a motorcycle"
+     },
+     {
+      "name": "Object 3",
+      "state": "moving through traffic"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 drives a motorcycle with a sidecar through city traffic at night.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "driving a motorcycle"
+     },
+     {
+      "name": "Object 3",
+      "state": "drifting around a corner"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The motorcycle with a sidecar drifts around a corner on the city street.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Object 2",
+      "state": "driving fast"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A black car drives fast down the city street.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Object 2",
+      "state": "driving with headlights on"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A black car drives down the street with its headlights on.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "driving a motorcycle"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting in the sidecar"
+     },
+     {
+      "name": "Object 3",
+      "state": "moving along a barrier"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 2 drives the motorcycle with Character 3 sitting in the sidecar along a barrier.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "sitting",
+      "state": "putting on goggles"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 3 puts on a pair of goggles while riding in the sidecar.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "holding",
+      "before": [],
+      "after": [
+       "goggles"
+      ]
+     }
+    ]
+   }
+  ],
+  "story": {
+   "paragraph": "A bald man stands on a city street at night and aims a handgun at an approaching black car. Meanwhile, a person in a helmet and leather jacket drives a motorcycle with a sidecar through the city traffic. The motorcycle drifts around a corner, followed by the black car speeding down the street. In the sidecar, a man with glasses puts on a pair of goggles as they ride along a barrier.",
+   "summary": "A bald man aims a gun at a speeding car while a motorcycle with a sidecar carrying a man with glasses navigates the city streets at night."
+  }
+ }
+}

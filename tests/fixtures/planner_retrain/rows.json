@@ -1,0 +1,493 @@
+{
+ "source": "planner-retrain-20261106 slice200 pools (full-pool-training-inputs-20261028 members with layouts, contract v12)",
+ "shot": {
+  "sample_id": "cinedance-008882-b0000/shot/0:5",
+  "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0000-0006",
+  "block_key": "cinedance-008882-b0000",
+  "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+  "split": "train",
+  "tier": "shot",
+  "script": "Production requirements: approximately 10.8125 seconds total; 16 fps.\n\nUser request:\nSUBJECTS\n- Character 1 (person): a man with short, curly, dark hair with some grey, medium build, wearing a beige and blue plaid sweater with a high collar and dark trousers\n- Character 2 (person): a person with a slim build, wearing a black leather jacket, black hood, black cap, black sunglasses, black face covering, black gloves, and dark sneakers\n- Object 1 (object): a bookshelf filled with books\n- Object 2 (object): a chandelier\n- Object 3 (object): a floor lamp\n- Object 4 (object): a golf putter\n- Object 5 (object): white golf balls\n- Object 6 (object): a green putting mat with a wooden border\n- Object 7 (object): a wooden desk\nLOCATIONS\n- Location 1: a room with wooden paneling, bookshelves, a desk, and a chandelier\nSHOTS\ns01: Medium shot, low angle shot. Character 1 stands in a room holding a golf putter, looking down.\ns02: Close-up shot. Character 1 hits a golf ball with the putter on a green mat, and another person's foot steps on a golf ball.\ns03: Medium close-up shot. Character 1 looks up with a surprised expression as Character 2 stands in front of him.\ns04: Medium shot. Character 2 walks past Character 1 in a room with wooden paneling and a desk.\ns05: Medium close-up shot. Character 1 watches Character 2 walk away.",
+  "shot_span": [
+   0,
+   5
+  ],
+  "storyboard": {
+   "characters": [
+    {
+     "name": "Character 1",
+     "kind": "person",
+     "visibility": "clear",
+     "appearance": "a man with short, curly, dark hair with some grey, medium build",
+     "outfit": "a beige and blue plaid sweater with a high collar and dark trousers"
+    },
+    {
+     "name": "Character 2",
+     "kind": "person",
+     "visibility": "clear",
+     "appearance": "a person with a slim build",
+     "outfit": "a black leather jacket, black hood, black cap, black sunglasses, black face covering, black gloves, and dark sneakers"
+    }
+   ],
+   "objects": [
+    {
+     "name": "Object 1",
+     "appearance": "a bookshelf filled with books"
+    },
+    {
+     "name": "Object 2",
+     "appearance": "a chandelier"
+    },
+    {
+     "name": "Object 3",
+     "appearance": "a floor lamp"
+    },
+    {
+     "name": "Object 4",
+     "appearance": "a golf putter"
+    },
+    {
+     "name": "Object 5",
+     "appearance": "white golf balls"
+    },
+    {
+     "name": "Object 6",
+     "appearance": "a green putting mat with a wooden border"
+    },
+    {
+     "name": "Object 7",
+     "appearance": "a wooden desk"
+    }
+   ],
+   "places": [
+    {
+     "name": "Location 1",
+     "appearance": "a room with wooden paneling, bookshelves, a desk, and a chandelier"
+    }
+   ],
+   "shots": [
+    {
+     "shot": 1,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium shot",
+      "angle": "low angle shot",
+      "movement": "static"
+     },
+     "composition": "center composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "standing, holding a putter",
+       "holding": [
+        "Object 4"
+       ]
+      },
+      {
+       "name": "Object 1",
+       "state": "filled with books"
+      },
+      {
+       "name": "Object 2",
+       "state": "lit"
+      },
+      {
+       "name": "Object 3",
+       "state": "lit"
+      },
+      {
+       "name": "Object 4"
+      }
+     ],
+     "action": "Character 1 stands in a room holding a golf putter, looking down.",
+     "changes": [],
+     "frame_count": 41
+    },
+    {
+     "shot": 2,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "close-up shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "right-heavy composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "standing",
+       "state": "feet visible in black shoes"
+      },
+      {
+       "name": "Object 4",
+       "state": "hitting a golf ball"
+      },
+      {
+       "name": "Object 5",
+       "state": "rolling on the mat"
+      },
+      {
+       "name": "Object 6"
+      }
+     ],
+     "action": "Character 1 hits a golf ball with the putter on a green mat, and another person's foot steps on a golf ball.",
+     "changes": [
+      {
+       "name": "Object 5",
+       "what": "state",
+       "before": "stationary",
+       "after": "rolling"
+      }
+     ],
+     "frame_count": 37
+    },
+    {
+     "shot": 3,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium close-up shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "balanced composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "looking up and to the side",
+       "state": "surprised expression"
+      },
+      {
+       "name": "Character 2",
+       "posture": "standing in front of Character 1",
+       "state": "partially visible"
+      }
+     ],
+     "relations": [
+      {
+       "subject": "Character 1",
+       "relation": "left_of",
+       "object": "Character 2"
+      },
+      {
+       "subject": "Character 2",
+       "relation": "in_front_of",
+       "object": "Character 1"
+      }
+     ],
+     "action": "Character 1 looks up with a surprised expression as Character 2 stands in front of him.",
+     "changes": [],
+     "ending_sides": [
+      {
+       "name": "Character 2",
+       "side": "left"
+      }
+     ],
+     "frame_count": 37
+    },
+    {
+     "shot": 4,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "right-heavy composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "standing, looking at Character 2"
+      },
+      {
+       "name": "Character 2",
+       "posture": "walking past Character 1"
+      },
+      {
+       "name": "Object 7",
+       "state": "in the foreground"
+      }
+     ],
+     "relations": [
+      {
+       "subject": "Character 1",
+       "relation": "left_of",
+       "object": "Character 2"
+      },
+      {
+       "subject": "Character 2",
+       "relation": "in_front_of",
+       "object": "Character 1"
+      }
+     ],
+     "action": "Character 2 walks past Character 1 in a room with wooden paneling and a desk.",
+     "changes": [
+      {
+       "name": "Character 2",
+       "what": "posture",
+       "before": "standing",
+       "after": "walking"
+      }
+     ],
+     "frame_count": 29
+    },
+    {
+     "shot": 5,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium close-up shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "center composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "standing, looking at Character 2"
+      },
+      {
+       "name": "Character 2",
+       "posture": "walking away",
+       "state": "partially visible"
+      }
+     ],
+     "action": "Character 1 watches Character 2 walk away.",
+     "changes": [],
+     "frame_count": 29
+    }
+   ]
+  }
+ },
+ "summary": {
+  "sample_id": "cinedance-008882-b0002/summary/0:4",
+  "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0015-0018",
+  "block_key": "cinedance-008882-b0002",
+  "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+  "split": "train",
+  "tier": "summary",
+  "script": "Production requirements: approximately 6 seconds total; 16 fps.\n\nUser request:\nA person in black clothing enters a library, approaches a painting, and examines it with a tool while another person watches.",
+  "shot_span": [
+   0,
+   4
+  ],
+  "storyboard": {
+   "characters": [
+    {
+     "name": "Character 1",
+     "kind": "person",
+     "visibility": "clear",
+     "appearance": "a person with a slim build, wearing a black hooded jacket, black pants, and a black cap",
+     "outfit": "a black leather jacket, black pants, black shoes with white soles, a black hood, a black cap, and black gloves"
+    },
+    {
+     "name": "Character 2",
+     "kind": "person",
+     "visibility": "clear",
+     "appearance": "a person with short, curly dark hair and a medium build",
+     "outfit": "a beige sweater with a blue and brown plaid pattern on the front, dark trousers"
+    }
+   ],
+   "objects": [
+    {
+     "name": "Object 1",
+     "appearance": "a large framed painting depicting a group of people in historical clothing"
+    },
+    {
+     "name": "Object 2",
+     "appearance": "a black backpack"
+    },
+    {
+     "name": "Object 3",
+     "appearance": "a small silver tool or knife"
+    },
+    {
+     "name": "Object 4",
+     "appearance": "wooden bookshelves filled with books"
+    },
+    {
+     "name": "Object 5",
+     "appearance": "a large wooden desk"
+    },
+    {
+     "name": "Object 6",
+     "appearance": "a red rug"
+    },
+    {
+     "name": "Object 7",
+     "appearance": "a wooden bench"
+    },
+    {
+     "name": "Object 8",
+     "appearance": "a leather armchair"
+    },
+    {
+     "name": "Object 9",
+     "appearance": "large windows with sheer curtains"
+    },
+    {
+     "name": "Object 10",
+     "appearance": "wooden wall paneling"
+    }
+   ],
+   "places": [
+    {
+     "name": "Location 1",
+     "appearance": "a library or study with wooden bookshelves, a large desk, and large windows"
+    }
+   ],
+   "shots": [
+    {
+     "shot": 1,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "wide shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "balanced composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "walking towards the left side of the room",
+       "holding": [
+        "Object 2"
+       ]
+      },
+      {
+       "name": "Character 2",
+       "posture": "standing and watching Character 1"
+      },
+      {
+       "name": "Object 1",
+       "state": "hanging on the wall"
+      },
+      {
+       "name": "Object 4"
+      },
+      {
+       "name": "Object 5"
+      },
+      {
+       "name": "Object 6"
+      },
+      {
+       "name": "Object 7"
+      },
+      {
+       "name": "Object 8"
+      },
+      {
+       "name": "Object 9"
+      },
+      {
+       "name": "Object 10"
+      },
+      {
+       "name": "Object 2"
+      }
+     ],
+     "relations": [
+      {
+       "subject": "Character 1",
+       "relation": "left_of",
+       "object": "Character 2"
+      }
+     ],
+     "action": "Character 1 walks across the library towards a large painting while Character 2 watches.",
+     "changes": [
+      {
+       "name": "Character 1",
+       "what": "posture",
+       "before": "walking towards the left",
+       "after": "standing in front of the painting"
+      }
+     ],
+     "frame_count": 21
+    },
+    {
+     "shot": 2,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "right-heavy composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "standing in front of the painting",
+       "holding": [
+        "Object 3"
+       ]
+      },
+      {
+       "name": "Object 1"
+      },
+      {
+       "name": "Object 3"
+      }
+     ],
+     "action": "Character 1 looks at the painting and holds a small tool near it.",
+     "changes": [],
+     "frame_count": 25
+    },
+    {
+     "shot": 3,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium close-up shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "center composition",
+     "present": [
+      {
+       "name": "Character 2",
+       "posture": "standing and looking at Character 1"
+      }
+     ],
+     "action": "Character 2 looks at Character 1 with a concerned expression.",
+     "changes": [],
+     "frame_count": 25
+    },
+    {
+     "shot": 4,
+     "picture_type": "live_action",
+     "place": "Location 1",
+     "camera": {
+      "shot_size": "medium close-up shot",
+      "angle": "eye-level shot",
+      "movement": "static"
+     },
+     "composition": "right-heavy composition",
+     "present": [
+      {
+       "name": "Character 1",
+       "posture": "standing in front of the painting",
+       "holding": [
+        "Object 3"
+       ]
+      },
+      {
+       "name": "Object 1"
+      },
+      {
+       "name": "Object 3"
+      }
+     ],
+     "action": "Character 1 continues to examine the painting with the tool in hand.",
+     "changes": [],
+     "frame_count": 25
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+  "methods": {
+    "official_multishotmaster_1_3b": {
+      "authorized": true,
+      "queue": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/inputs/msm-queue.json",
+      "cap_gpu_hours": 22,
+      "prior_gpu_hours": 0.364284,
+      "story_limit_seconds": 10800,
+      "max_workers": 6
+    },
+    "official_holocine_14b_full": {
+      "authorized": true,
+      "queue": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/inputs/holocine-queue.json",
+      "cap_gpu_hours": 90,
+      "prior_gpu_hours": 0,
+      "story_limit_seconds": 36000,
+      "max_workers": 6
+    },
+    "official_storymem_14b": {
+      "authorized": true,
+      "queue": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/baseline-test92-extension-20261026/inputs/storymem-queue.json",
+      "cap_gpu_hours": 120,
+      "prior_gpu_hours": 0,
+      "story_limit_seconds": 36000,
+      "max_workers": 6
+    }
+  }
+}

@@ -1,0 +1,36 @@
+# Preferred paper-grade local MSPC scorer target.
+#
+# This model is larger than Qwen3-VL-8B and should be used for issue mining
+# once the local serving stack is validated. If this config fails because the
+# active vLLM/Transformers stack does not recognize qwen3_5, use the 8B config
+# as a smoke/fallback service and upgrade the serving env separately.
+
+vllm_executable: ${MSPC_SHARED_ROOT}/env/qwen35_vlm/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.5-35B-A3B
+host: "127.0.0.1"
+port: 8000
+tensor_parallel_size: 8
+max_model_len: 65536
+gpu_memory_utilization: 0.90
+dtype: auto
+trust_remote_code: true
+allowed_local_media_path: ${MSPC_SHARED_ROOT}
+reasoning_parser: qwen3
+media_io_kwargs:
+  video:
+    num_frames: -1
+mm_processor_kwargs:
+  fps: 2
+  do_sample_frames: true
+hf_token_file: ${MSPC_SHARED_ROOT}/OoVMetric/resource/huggingface_token.txt
+proxy_env_file: null
+extra_cli_args:
+  # Avoid torch compile/profiling path that failed with FakeTensorMode patching
+  # in the current vLLM/Torch environment.
+  - "--enforce-eager"
+  - "--served-model-name"
+  - "qwen35-35b-local"
+  - "--default-chat-template-kwargs"
+  - '{"enable_thinking": false}'
+  - "--limit-mm-per-prompt"
+  - '{"image": 1, "video": 1}'

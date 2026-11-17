@@ -1,0 +1,235 @@
+{
+  "characters": [
+    {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "A heavyset man with a round face, wearing a yellow jacket, green suspenders, and a white polo shirt.",
+      "outfit": "yellow jacket, green suspenders, white polo shirt, checkered cap"
+    },
+    {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "A bald man with a thin face.",
+      "outfit": "grey high-collared suit"
+    },
+    {
+      "name": "Character 3",
+      "kind": "person",
+      "appearance": "A short adult man with a shaved head.",
+      "outfit": "grey suit"
+    }
+  ],
+  "objects": [
+    {
+      "name": "Object 1",
+      "appearance": "A small red-and-silver cylindrical container."
+    }
+  ],
+  "places": [
+    {
+      "name": "Location 1",
+      "appearance": "A dimly lit room with a blueish background featuring wall-mounted light fixtures."
+    },
+    {
+      "name": "Location 2",
+      "appearance": "A room with a high-tech aesthetic featuring a large wall of illuminated panels and lights in the background."
+    }
+  ],
+  "shots": [
+    {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "medium close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 1",
+          "holding": []
+        }
+      ],
+      "action": "Subject 1's facial expression changes from a scowl to a wide, open-mouthed shout, then back to a scowl.",
+      "changes": [
+        {
+          "name": "Character 1",
+          "what": "posture",
+          "before": "scowling",
+          "after": "shouting"
+        },
+        {
+          "name": "Character 1",
+          "what": "posture",
+          "before": "shouting",
+          "after": "scowling"
+        }
+      ],
+      "frame_count": 65
+    },
+    {
+      "shot": 2,
+      "place": "Location 2",
+      "camera": {
+        "shot_size": "medium shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 2",
+          "posture": "kneeling"
+        },
+        {
+          "name": "Character 3",
+          "holding": [
+            "Object 1"
+          ]
+        },
+        {
+          "name": "Object 1",
+          "state": "held by Character 3"
+        }
+      ],
+      "action": "Subject 3 holds Object 1 up towards Subject 2. Subject 2 takes the bottle, looks at it, and then embraces Subject 3.",
+      "changes": [
+        {
+          "name": "Character 3",
+          "what": "holding",
+          "before": [
+            "Object 1"
+          ],
+          "after": []
+        },
+        {
+          "name": "Object 1",
+          "what": "state",
+          "before": "held by Character 3",
+          "after": "held by Character 2"
+        },
+        {
+          "name": "Character 2",
+          "what": "holding",
+          "before": [],
+          "after": [
+            "Object 1"
+          ]
+        },
+        {
+          "name": "Character 2",
+          "what": "posture",
+          "before": "kneeling",
+          "after": "standing"
+        },
+        {
+          "name": "Character 2",
+          "what": "posture",
+          "before": "standing",
+          "after": "embracing Character 3"
+        }
+      ],
+      "frame_count": 89
+    },
+    {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "medium close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 1",
+          "holding": []
+        }
+      ],
+      "action": "Subject 1 is speaking, with his mouth moving and his expression shifting from neutral to surprised.",
+      "changes": [
+        {
+          "name": "Character 1",
+          "what": "posture",
+          "before": "neutral",
+          "after": "surprised"
+        }
+      ],
+      "frame_count": 45
+    },
+    {
+      "shot": 4,
+      "place": "Location 2",
+      "camera": {
+        "shot_size": "medium close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 2",
+          "holding": [
+            "Object 1"
+          ]
+        },
+        {
+          "name": "Character 3",
+          "posture": "being embraced by Character 2"
+        }
+      ],
+      "action": "Subject 2 embraces Subject 3, looks down, then looks forward with a serious expression.",
+      "changes": [
+        {
+          "name": "Character 2",
+          "what": "posture",
+          "before": "looking down",
+          "after": "looking forward"
+        }
+      ],
+      "frame_count": 41
+    },
+    {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "medium close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 1",
+          "holding": []
+        }
+      ],
+      "action": "Subject 1 speaks with a range of expressions, from a frown to a more open, questioning look.",
+      "changes": [
+        {
+          "name": "Character 1",
+          "what": "posture",
+          "before": "frowning",
+          "after": "questioning"
+        }
+      ],
+      "frame_count": 41
+    },
+    {
+      "shot": 6,
+      "place": "Location 2",
+      "camera": {
+        "shot_size": "medium close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 2",
+          "holding": [
+            "Object 1"
+          ]
+        }
+      ],
+      "action": "Subject 2 looks forward and moves his mouth with a serious expression.",
+      "changes": [],
+      "frame_count": 197
+    }
+  ]
+}

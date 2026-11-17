@@ -1,0 +1,42 @@
+diff --git a/bernini/models/modeling_qwen2_5_vl.py b/bernini/models/modeling_qwen2_5_vl.py
+index badd64c..bcab2c0 100644
+--- a/bernini/models/modeling_qwen2_5_vl.py
++++ b/bernini/models/modeling_qwen2_5_vl.py
+@@ -47,2 +47,3 @@ from dataclasses import dataclass
+ from functools import partial
++from packaging import version
+ from types import SimpleNamespace
+@@ -75,2 +76,4 @@ from transformers.utils import (
+ )
++from transformers.utils import get_torch_version
++from transformers.utils.import_utils import is_torch_less_or_equal
+ from transformers.modeling_flash_attention_utils import fa_peft_integration_check, _upad_input, _pad_input
+@@ -1107,10 +1110,25 @@ class Qwen2_5_VLFlashAttention2(Qwen2_5_VLAttention):
+         if use_flex_attn and self.flex_attention is None:
++            flex_attention_kernel_options = getattr(
++                self.config, "flex_attention_kernel_options", None
++            )
++            if flex_attention_kernel_options is not None and not isinstance(
++                flex_attention_kernel_options, dict
++            ):
++                raise TypeError("flex_attention_kernel_options must be a dict")
++            flex_attention_impl = (
++                partial(
++                    flex_attention,
++                    kernel_options=flex_attention_kernel_options,
++                )
++                if flex_attention_kernel_options is not None
++                else flex_attention
++            )
+             if is_torch_less_or_equal("2.5.1", accept_dev=True):
+-                self.flex_attention = torch.compile(flex_attention, dynamic=False)
++                self.flex_attention = torch.compile(flex_attention_impl, dynamic=False)
+             elif version.parse(get_torch_version()).base_version == "2.6.0":
+                 self.flex_attention = torch.compile(
+-                    flex_attention, dynamic=False, mode="max-autotune-no-cudagraphs"
++                    flex_attention_impl, dynamic=False, mode="max-autotune-no-cudagraphs"
+                 )
+             else:
+-                self.flex_attention = torch.compile(flex_attention)
++                self.flex_attention = torch.compile(flex_attention_impl)
+ 

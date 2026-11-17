@@ -1,0 +1,218 @@
+{
+  "sample_id": "cinedance-008882-b0001/summary/0:7",
+  "case_id": "story_block_v1:cinedance:00009275-7fbc-897d-8107-dab37140fde4:<scene1>:block0000:0007-0013",
+  "block_key": "cinedance-008882-b0001",
+  "film_key": "${MSPC_SHARED_ROOT}/Storyboard/outputs/datasets/cinedance_01/video/part0000/00009275-7fbc-897d-8107-dab37140fde4.mp4",
+  "split": "train",
+  "tier": "summary",
+  "script": "A man in black clothing and sunglasses points at a surprised man holding a smartphone in a room with wooden furniture.",
+  "shot_span": [
+    0,
+    7
+  ],
+  "storyboard": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a young man with dark hair",
+        "outfit": "a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a middle-aged man with short, curly dark hair",
+        "outfit": "a beige and blue plaid sweater vest over a beige long-sleeve shirt"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a black smartphone"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a wooden bookshelf filled with books"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a chandelier"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a wooden cabinet or door"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a lamp"
+      },
+      {
+        "name": "Object 6",
+        "appearance": "curtains"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "an indoor room with wooden furniture, bookshelves, and curtains"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses, and black gloves"
+          }
+        ],
+        "action": "Character 1 stands with a serious expression, looking slightly downward.",
+        "changes": [],
+        "frame_count": 17
+      },
+      {
+        "shot": 2,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": []
+          },
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "action": "Character 1 points a gloved finger at Character 2, who looks surprised while holding a smartphone.",
+        "changes": [],
+        "frame_count": 29
+      },
+      {
+        "shot": 3,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+          }
+        ],
+        "action": "Character 1 looks to the side with a serious expression.",
+        "changes": [],
+        "frame_count": 25
+      },
+      {
+        "shot": 4,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "action": "Character 2 looks up with a confused and slightly worried expression.",
+        "changes": [],
+        "frame_count": 17
+      },
+      {
+        "shot": 5,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+          }
+        ],
+        "action": "Character 1 turns their head slightly, maintaining a serious expression.",
+        "changes": [],
+        "frame_count": 33
+      },
+      {
+        "shot": 6,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "wearing a black leather jacket, black hoodie, black cap, black sunglasses"
+          }
+        ],
+        "action": "Character 1 looks to the side, showing their profile.",
+        "changes": [],
+        "frame_count": 21
+      },
+      {
+        "shot": 7,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "action": "Character 2 continues to look confused and concerned.",
+        "changes": [],
+        "frame_count": 13
+      }
+    ]
+  }
+}

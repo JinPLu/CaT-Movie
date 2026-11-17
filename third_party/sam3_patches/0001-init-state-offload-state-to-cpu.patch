@@ -1,0 +1,119 @@
+# 0001-init-state-offload-state-to-cpu.patch
+#
+# 上游仓库:   https://github.com/facebookresearch/sam3.git
+# 基线 commit: 660a5e9 ("Fix B001: Replace bare except with except Exception")
+# 生成日期:   2026-08-29
+# 落地位置:   .runtime/upstreams/sam3（第三方只读溯源目录，由 .gitignore:21 的
+#             `.runtime/` 整体排除，仓库 SHA 覆盖不到，故以本 patch 文件记录代码身份差异）
+#
+# 为什么需要:
+#   Sam3BasePredictor.start_session()（sam3/model/sam3_base_predictor.py:55-60,
+#   119-130）无条件把 offload_state_to_cpu（默认 False，来自
+#   request.get("offload_state_to_cpu", False)）塞进 init_kwargs 并转发给
+#   self.model.init_state(**init_kwargs)。但 version='sam3.1' 走的
+#   Sam3MultiplexTracking / Sam3MultiplexTrackingProd /
+#   Sam3MultiplexTrackingWithInteractivity 三个 init_state（改动前分别在
+#   sam3/model/sam3_multiplex_tracking.py:207 / 1837 / 2219 起）都没有这个形参，
+#   于是每一次真实 start_session() 都 100% 复现
+#   `TypeError: Sam3MultiplexTrackingWithInteractivity.init_state() got an
+#   unexpected keyword argument 'offload_state_to_cpu'`。
+#
+#   上游 main 分支自 SAM 3.1 发布（2026-03-27）起该两个文件只有 linter/Pyre 提交，
+#   没有修复；换 commit 解决不了。产品化的 sam3_multiplex_tracking.py 与它的 demo
+#   孪生版 sam3/model/video_tracking_multiplex_demo.py 相比，明显是重构时丢了这个
+#   形参——demo 版 init_state()（第 59-115 行起）把 offload_state_to_cpu 存进
+#   inference_state 并据此在 True/False 两支各建一个 storage_device
+#   （torch.device("cpu") / torch.device("cuda")），后续 sam3_tracking_predictor.py
+#   多处（如 :1094,1098,1100,1147,1149）用 inference_state["storage_device"] 做
+#   .to(storage_device) 搬运。
+#
+#   本 patch 补形参但不照搬 demo 版的 storage_device 分支：产品化的
+#   Sam3MultiplexTracking 这条类层级里，除了本次新增的这几行，没有任何地方读取
+#   inference_state["storage_device"]（已用
+#   `grep -rn storage_device sam3/model/` 核实，命中只在
+#   sam3_tracking_predictor.py 与 video_tracking_multiplex_demo.py，multiplex 产品
+#   路径里的每个 tensor 都无条件建在 inference_state["device"]=cuda 上）。因此
+#   offload_state_to_cpu=True 在这条路径下没有真实实现可接，静默接受会发明一个
+#   未经验证的行为；改为接收该形参、存进 inference_state 供内省，并在 True 时
+#   显式 raise NotImplementedError，把响亮的 TypeError 换成同样响亮但准确的
+#   NotImplementedError，不吞成安静的行为差异。当前调用方
+#   src/mspc/data/grounding/sam3_backend.py 从不传 offload_state_to_cpu，
+#   start_session 端默认 False，因此这条 NotImplementedError 分支不会在现有调用
+#   路径上触发。
+#
+#   Sam3MultiplexTrackingProd.init_state 与
+#   Sam3MultiplexTrackingWithInteractivity.init_state 都只是把参数透传给
+#   super().init_state(...)，同步补上形参与透传即可，不需要各自处理 True 分支。
+#
+# 应用方式（重建 env/sam3_sm80 或任何新 clone 后都要重新执行一次，
+# .runtime/ 不受版本控制，clone 不会带着这个改动）:
+#   cd .runtime/upstreams/sam3
+#   git apply ../../../third_party/sam3_patches/0001-init-state-offload-state-to-cpu.patch
+#
+diff --git a/sam3/model/sam3_multiplex_tracking.py b/sam3/model/sam3_multiplex_tracking.py
+index 1b6ce7d..36ad55d 100644
+--- a/sam3/model/sam3_multiplex_tracking.py
++++ b/sam3/model/sam3_multiplex_tracking.py
+@@ -208,6 +208,7 @@ class Sam3MultiplexTracking(Sam3MultiplexBase):
+         self,
+         resource_path,
+         offload_video_to_cpu=False,
++        offload_state_to_cpu=False,
+         async_loading_frames=False,
+         use_torchcodec=False,
+         use_cv2=False,
+@@ -233,6 +234,22 @@ class Sam3MultiplexTracking(Sam3MultiplexBase):
+         inference_state["image_size"] = self.image_size
+         inference_state["num_frames"] = len(images)
+         inference_state["device"] = torch.device("cuda")
++        # NOTE(sam3_patch 0001): unlike sam3_tracking_predictor.py and the demo-only
++        # video_tracking_multiplex_demo.py, this multiplex state has no separate
++        # "storage_device" concept -- every tensor lives on `inference_state["device"]`
++        # (cuda) unconditionally, and nothing downstream in this class hierarchy reads
++        # a storage_device. So we cannot silently honor offload_state_to_cpu=True here
++        # without inventing unverified CPU-offload behavior; we only accept the kwarg
++        # (so callers that pass the base predictor's default don't hit a TypeError) and
++        # fail loudly if a caller actually asks for the offload.
++        inference_state["offload_state_to_cpu"] = offload_state_to_cpu
++        if offload_state_to_cpu:
++            raise NotImplementedError(
++                "Sam3MultiplexTracking.init_state: offload_state_to_cpu=True is not "
++                "implemented -- this state has no storage_device split (see "
++                "video_tracking_multiplex_demo.py for the demo-only implementation "
++                "that supports it). Call with offload_state_to_cpu=False."
++            )
+         inference_state["orig_height"] = orig_height
+         inference_state["orig_width"] = orig_width
+         inference_state["constants"] = {}
+@@ -1837,6 +1854,7 @@ class Sam3MultiplexTrackingProd(Sam3MultiplexTracking):
+         self,
+         resource_path,
+         offload_video_to_cpu=False,
++        offload_state_to_cpu=False,
+         async_loading_frames=False,
+         use_torchcodec=False,
+         use_cv2=False,
+@@ -1845,6 +1863,7 @@ class Sam3MultiplexTrackingProd(Sam3MultiplexTracking):
+         inference_state = super().init_state(
+             resource_path=resource_path,
+             offload_video_to_cpu=offload_video_to_cpu,
++            offload_state_to_cpu=offload_state_to_cpu,
+             async_loading_frames=async_loading_frames,
+             use_torchcodec=use_torchcodec,
+             use_cv2=use_cv2,
+@@ -2219,6 +2238,7 @@ class Sam3MultiplexTrackingWithInteractivity(Sam3MultiplexTracking):
+         self,
+         resource_path,
+         offload_video_to_cpu=False,
++        offload_state_to_cpu=False,
+         async_loading_frames=False,
+         use_torchcodec=False,
+         use_cv2=False,
+@@ -2227,6 +2247,7 @@ class Sam3MultiplexTrackingWithInteractivity(Sam3MultiplexTracking):
+         inference_state = super().init_state(
+             resource_path=resource_path,
+             offload_video_to_cpu=offload_video_to_cpu,
++            offload_state_to_cpu=offload_state_to_cpu,
+             async_loading_frames=async_loading_frames,
+             use_torchcodec=use_torchcodec,
+             use_cv2=use_cv2,

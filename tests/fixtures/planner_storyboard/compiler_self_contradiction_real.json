@@ -1,0 +1,674 @@
+{
+ "source": "公共 Qwen3.5-9B v15 逐镜档 seed42 原答（planner-rows-dev30-20261112/records/public-qwen-maintained），11-12 gpt-6.1-sol 判官在编译后文字里判出与请求矛盾",
+ "rows": {
+  "cinedance-016627-b0003-shot01": {
+   "shot": 8,
+   "why": "请求「Character 1 sits in the back of a vehicle while Character 2 drives」；原答在场写 sitting/driving，变化写 standing→sitting、walking→driving，旧规则开镜成「Character 1 stands. Character 2 is walking.」",
+   "request_shot": "s08: Close-up shot. Character 1 sits in the back of a vehicle while Character 2 drives and looks ahead.",
+   "raw_storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "a young man with dark hair with blonde tips and a slim build",
+      "outfit": "a dark grey jacket and a dark turtleneck"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "a young man with a slim build",
+      "outfit": "a silver and black jacket, black pants, and a black cap with '5-8' on it"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a large black rectangular case with white text and symbols"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a grey door with a frosted glass window"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a vehicle interior with seats and windows"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a grey, metallic corridor or room with a frosted glass door"
+     },
+     {
+      "name": "Location 2",
+      "appearance": "the interior of a moving vehicle"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Object 2",
+        "state": "closed"
+       }
+      ],
+      "action": "A grey door with a frosted glass window opens, revealing smoke.",
+      "changes": [
+       {
+        "name": "Object 2",
+        "what": "state",
+        "before": "closed",
+        "after": "open"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "walking",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 2",
+        "state": "open",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "in_front_of",
+        "object": "Object 2"
+       }
+      ],
+      "action": "Character 2, wearing a silver and black jacket and a black cap, walks through the open door carrying a large black case amidst smoke.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "absent",
+        "after": "walking through the door"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 looks at Character 2 as Character 2 removes his face covering.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "outfit",
+        "before": "wearing a black cap",
+        "after": "without the black cap"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 takes the large black case from Character 2.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Character 2",
+        "what": "holding",
+        "before": [
+         "Object 1"
+        ],
+        "after": []
+       },
+       {
+        "name": "Character 2",
+        "what": "state",
+        "after": "empty-handed"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 2",
+        "relation": "left_of",
+        "object": "Character 1"
+       }
+      ],
+      "action": "Character 2 looks at Character 1 and speaks.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "walking",
+        "holding": []
+       }
+      ],
+      "action": "Character 2 turns and walks away down the corridor.",
+      "changes": [
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "standing",
+        "after": "walking away"
+       }
+      ],
+      "ending_sides": [
+       {
+        "name": "Character 2",
+        "side": "right"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "walking",
+        "holding": []
+       }
+      ],
+      "action": "Character 2 continues walking away down the corridor.",
+      "changes": [],
+      "ending_sides": [
+       {
+        "name": "Character 2",
+        "side": "right"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 8,
+      "place": "Location 2",
+      "camera": {
+       "shot_size": "close-up shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "driving",
+        "holding": []
+       }
+      ],
+      "action": "Character 1 sits in the back of a vehicle while Character 2 drives and looks ahead.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "sitting"
+       },
+       {
+        "name": "Character 2",
+        "what": "posture",
+        "before": "walking",
+        "after": "driving"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 9,
+      "place": "Location 2",
+      "camera": {
+       "shot_size": "close-up shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": []
+       }
+      ],
+      "action": "Character 1 closes his eyes and then opens them, looking around.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "eyes closed",
+        "after": "eyes open"
+       }
+      ],
+      "frame_count": 64
+     },
+     {
+      "shot": 10,
+      "place": "Location 2",
+      "camera": {
+       "shot_size": "medium shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": []
+       },
+       {
+        "name": "Character 2",
+        "posture": "driving",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "left_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 1 turns to look back at Character 2, who is driving the vehicle.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "looking forward",
+        "after": "turning to look back"
+       }
+      ],
+      "frame_count": 64
+     }
+    ]
+   }
+  },
+  "cinedance-014847-b0000-shot01": {
+   "shot": 3,
+   "why": "请求「the woman stands behind him」；原答 Character 1 姿态 standing behind Character 2，关系却写 Character 1 in_front_of Character 2，编译出「stands behind Character 2 in front of Character 2」",
+   "request_shot": "s03: Medium close-up shot. The man looks up while the woman stands behind him.",
+   "raw_storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "appearance": "a woman with long wavy brown hair and a slim build",
+      "outfit": "a grey sweater"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "appearance": "a man with short dark hair and a lean build",
+      "outfit": "a maroon shirt"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a laptop computer"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a wall-mounted control panel with blue and red lights"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "white pipes running along the ceiling"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "four white pipes with valves on a concrete wall"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a dimly lit room with concrete walls, ceiling pipes, and control panels"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "Character 1, the woman in the grey sweater, looks forward and speaks.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "Character 2, the man in the maroon shirt, looks down a corridor with Object 3 visible on the ceiling.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing behind Character 2",
+        "holding": []
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "in_front_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 2 looks up while Character 1 stands directly behind him.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "Character 1, the woman in the grey sweater, looks forward with a concerned expression.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "Character 2, the man in the maroon shirt, looks up at Object 3 on the ceiling.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "low angle shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       }
+      ],
+      "action": "A low-angle close-up shows Character 2 looking up with a focused expression.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing behind a desk",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "action": "Character 1, the woman in the grey sweater, stands behind a desk holding Object 1 and looks forward.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing in the background",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "relations": [
+       {
+        "subject": "Character 1",
+        "relation": "in_front_of",
+        "object": "Character 2"
+       }
+      ],
+      "action": "Character 2 looks to the side while Character 1 stands in the background holding Object 1.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "center composition",
+      "present": [
+       {
+        "name": "Object 4",
+        "state": "mounted on a concrete wall"
+       }
+      ],
+      "action": "Four white pipes with valves are shown mounted on a concrete wall.",
+      "changes": [],
+      "frame_count": 64
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "composition": "balanced composition",
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing",
+        "holding": []
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing behind Character 2",
+        "holding": [
+         "Object 1"
+        ]
+       }
+      ],
+      "action": "Character 2 reaches out towards Object 4 while Character 1 watches from behind.",
+      "changes": [],
+      "frame_count": 64
+     }
+    ]
+   }
+  }
+ }
+}

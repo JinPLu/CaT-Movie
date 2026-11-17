@@ -1,0 +1,133 @@
+{
+  "call": {
+    "call_id": "ci_vid:train:000121390-single",
+    "story_id": "ci_vid:train:000121390",
+    "side": "single",
+    "assertions": [
+      {
+        "assertion_id": "ci_vid:train:000121390:s4:e0:3",
+        "kind": "post_event_state",
+        "subject_id": "s4",
+        "check_shot": "s04",
+        "reference_shot": null,
+        "event_id": "event_shot_2",
+        "state": "被男子抓起",
+        "contrast_state": "静止放置在甲板上",
+        "expected_answer": "yes"
+      }
+    ],
+    "evidence": [
+      {
+        "assertion_id": "ci_vid:train:000121390:s4:e0:3",
+        "kind": "post_event_state",
+        "frames": [
+          {
+            "shot_id": "s04",
+            "frame_index": 227,
+            "shot_frame_index": 4,
+            "position": 0.05,
+            "role": "state"
+          },
+          {
+            "shot_id": "s04",
+            "frame_index": 248,
+            "shot_frame_index": 25,
+            "position": 0.35,
+            "role": "state"
+          },
+          {
+            "shot_id": "s04",
+            "frame_index": 259,
+            "shot_frame_index": 36,
+            "position": 0.5,
+            "role": "state"
+          },
+          {
+            "shot_id": "s04",
+            "frame_index": 270,
+            "shot_frame_index": 47,
+            "position": 0.65,
+            "role": "state"
+          },
+          {
+            "shot_id": "s04",
+            "frame_index": 291,
+            "shot_frame_index": 68,
+            "position": 0.95,
+            "role": "state"
+          }
+        ]
+      }
+    ],
+    "changed_assertion_ids": [],
+    "manual_unresolved_assertion_ids": []
+  },
+  "raw": {
+    "call_id": "ci_vid:train:000121390-single",
+    "status": "received",
+    "raw_text": "{\n \"ci_vid:train:000121390:s4:e0:3\": {\n  \"holds\": true,\n  \"evidence\": \"In Image 2, the orange lifebuoy sits on the deck as the man reaches for it, and by Image 3 and Image 4, it is lifted and held in his hands.\",\n  \"sufficient_evidence\": true,\n  \"before_frame\": 2,\n  \"after_frame\": 3\n }\n}",
+    "usage": {
+      "prompt_tokens": 6954,
+      "completion_tokens": 113,
+      "total_tokens": 7067
+    },
+    "cost_usd": "0.0056",
+    "served": {
+      "provider": "Google AI Studio",
+      "service_tier": "default",
+      "reported_cost_usd": "0.00563925",
+      "reasoning_tokens": 0,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+      }
+    }
+  },
+  "config": {
+    "schema_version": "mspc_long_script_assertions_judge_v1",
+    "paper_cell": "script_state_bench_v1_assertion_buckets",
+    "provider": "openrouter",
+    "model": "google/gemini-3.8-flash",
+    "model_role": "script_assertions",
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "input_modality": "images",
+    "temperature": 0.0,
+    "max_tokens": 32768,
+    "request_timeout_seconds": 300,
+    "request_options": {
+      "reasoning": {
+        "effort": "minimal"
+      },
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      }
+    },
+    "input_usd_per_mtok": "0.75",
+    "output_usd_per_mtok": "3.75",
+    "budget_hard_cap_usd": "10.00",
+    "precall_prompt_tokens": 60000,
+    "precall_completion_tokens": 10000,
+    "frame_max_side": 448,
+    "estimated_image_tokens_low": 258,
+    "estimated_image_tokens_high": 1032,
+    "estimated_output_tokens_per_assertion": 64,
+    "cost_note": "沿用已入库 Gemini 3.8 Flash AI Studio 单价 $0.75/$3.75 per million tokens；图token区间与每题64输出token仅预算推断。prepare会计算每窗实际帧数与题数；本轮不调用。",
+    "min_tokens_per_frame": 128
+  },
+  "source": "true-keyframe-bandwidth-20261008/judge-state/truth: original paid response 2026-10-07, ci_vid:train:000121390",
+  "request_failure_response": {
+    "call_id": "ci_vid:train:000299110-single",
+    "status": "request_failed",
+    "raw_text": null,
+    "usage": {},
+    "cost_usd": null,
+    "served": {},
+    "error": "usage.prompt_tokens must be a non-negative int",
+    "billing_note": "未收到用量，不能推断零费用；此call禁止自动重发。"
+  }
+}

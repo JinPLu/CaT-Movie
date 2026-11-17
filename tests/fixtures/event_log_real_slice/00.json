@@ -1,0 +1,240 @@
+{
+  "case_id": "ci_vid:train:000018781",
+  "pool_index": 8334,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "person",
+        "appearance": "male athlete in yellow jacket and black pants"
+      },
+      {
+        "subject_id": "Subject 2",
+        "kind": "person",
+        "appearance": "male official in black suit"
+      },
+      {
+        "subject_id": "Subject 3",
+        "kind": "person",
+        "appearance": "female official in black abaya with blue scarf"
+      },
+      {
+        "subject_id": "Subject 4",
+        "kind": "object",
+        "appearance": "silver medal"
+      },
+      {
+        "subject_id": "Subject 5",
+        "kind": "object",
+        "appearance": "bouquet of white flowers"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "体育场颁奖台",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "no medal around neck",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          0
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 4",
+        "family": "state",
+        "predicate_or_axis": "object_condition",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 5",
+        "family": "state",
+        "predicate_or_axis": "object_condition",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3",
+          "Subject 4",
+          "Subject 5"
+        ],
+        "frame_count": 153,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A medal ceremony unfolds during an athletics event. A man wearing a yellow jacket receives a medal from a well-dressed individual. The recipient, likely an athlete, stands on a podium while another person in black attire presents a bouquet, adding a celebratory touch. As the medal is placed around his neck, an attendant stands by in traditional white attire. Another athlete, possibly from a different team, is seen on the podium. In the final moments, the individual who presented the medal embraces the medalist in a congratulatory hug, indicating camaraderie and achievement.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3",
+          "Subject 4",
+          "Subject 5"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 3",
+          "Subject 4",
+          "Subject 5"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "During the segment at the IPC Athletics World Championships in Doha 2015, an individual in a yellow Brazil team jacket, identifiable by the sewn emblem of the Brazilian Paralympic Committee, stands prominently. The person proudly displays a silver medal and a bouquet of flowers, suggestive of a celebratory moment following an event or competition. Nearby, others in traditional and formal attire are present, contributing to the ceremonial nature of the occurrence. The focal point is the athlete’s display of achievement, signifying triumph and recognition amidst an official sports setting. Additionally, the video captures another person holding a blue and black object, possibly part of the award presentation process.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 3",
+          "Subject 4",
+          "Subject 5"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 4",
+          "Subject 5"
+        ],
+        "frame_count": 93,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A male athlete, identified as Alan Fonteles Cardoso Oliveira from Brazil, is seen holding a bouquet of flowers and a silver medal for the Men's 200m T44 event. He is wearing a yellow jacket with green and blue stripes, which is typical of Brazil's national sports uniform. The bouquet contains white flowers with red accents, and is decorated with a red ribbon. In his other hand, he proudly holds the silver medal, which is suspended by a maroon ribbon. The text on the screen in English states his name, country of representation, the event, and the medal he has achieved. The presence of the Paralympic logo on the medal and the screen indicates that this is an event from the Paralympic Games. The athlete appears to be acknowledging the audience or judges by lifting both the bouquet and medal in the air. Throughout the time, he remains standing at what appears to be an outdoor sports venue, likely on a podium or some place designated for receiving medals. As time progresses, he lowers his gaze towards the medal, potentially reflecting on his achievement.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 4",
+          "Subject 5"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "e1",
+        "shot_id": "s01",
+        "on_screen": "unknown",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "no medal around neck",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            0
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "silver medal hanging around neck",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            2
+          ],
+          "evidence": "observed"
+        }
+      },
+      {
+        "event_id": "e2",
+        "shot_id": "s01",
+        "on_screen": "unknown",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "not holding a bouquet",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            0
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "holding a bouquet of flowers",
+          "scope": "scene",
+          "shot_span": [
+            0,
+            2
+          ],
+          "evidence": "observed"
+        }
+      }
+    ]
+  },
+  "observed_issues": [
+    {
+      "rule": 4,
+      "path": "e2",
+      "message": "duplicate same-shot subject/property event"
+    },
+    {
+      "rule": 2,
+      "path": "e2",
+      "message": "prior 'not holding a bouquet' != opening value 'no medal around neck'"
+    }
+  ],
+  "compiled_segments": null
+}

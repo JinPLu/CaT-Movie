@@ -1,0 +1,15 @@
+{
+  "upstream": "${MSPC_SHARED_ROOT}/comparison_methods/StoryMem",
+  "video": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/neighbor-deploy-20261024/storymem-test63/inference/raw/videos/official_storymem_14b/shots/seed-42/cinedance-015369-b0000-shot01/segments/0001.mp4",
+  "output": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/comparison-full-generation-20261027/review/storymem-first-memory",
+  "weights": {
+    "t2v": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_t2v_a14b",
+    "m2v": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_i2v_a14b",
+    "tokenizer": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/wan22_t2v_a14b/google/umt5-xxl",
+    "low_noise_lora": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/StoryMem/Wan2.2-MI2V-A14B/backbone_low_noise.safetensors",
+    "high_noise_lora": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/StoryMem/Wan2.2-MI2V-A14B/backbone_high_noise.safetensors",
+    "clip": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/CLIP/ViT-B-32.pt",
+    "hps": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/HPSv3/HPSv3.safetensors",
+    "hps_config": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/storymem/HPSv3/HPSv3_7B.local.yaml"
+  }
+}

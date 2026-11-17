@@ -1,0 +1,203 @@
+{
+  "case_id": "ci_vid:train:000007564",
+  "pool_index": 3420,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "person",
+        "appearance": "blonde woman with a side ponytail wearing a teal one-piece swimsuit"
+      },
+      {
+        "subject_id": "Subject 2",
+        "kind": "person",
+        "appearance": "red-haired woman wearing a pink swimsuit"
+      },
+      {
+        "subject_id": "Subject 3",
+        "kind": "person",
+        "appearance": "grey-haired man wearing blue swim trunks"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "室内跳水馆",
+        "anchors": []
+      },
+      {
+        "location_id": "Location 2",
+        "appearance": "室内泳池",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "standing on a springboard",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          1
+        ],
+        "evidence": "observed"
+      },
+      {
+        "subject": "Subject 2",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      },
+      {
+        "subject": "Subject 3",
+        "family": "state",
+        "predicate_or_axis": "body",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video depicts an animated scene at a swimming pool area indoors. A character, possibly a female athlete with blue and pink detailed attire, is preparing to dive from a springboard into the swimming pool below. The character's skin is white, and she has shell-like textures on her legs. As the action unfolds, the athlete bends her knees and pushes off from the diving board, launching into a dive. She is surrounded by numerous spectators seated and standing around the pool, watching the event attentively. The pool is rectangular with clear, light blue water, and its surroundings have arched designs on the walls. This scene seems to be part of an animated sports or action video, capturing a brief moment of high energy and focus on the athlete's diving skills.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "A dynamic sequence features an animated character performing a gymnastic move in an indoor pool setting. The character, with bright yellow hair tied into two high ponytails, sports a black and light blue leotard, emphasizing her athletic physique. She is captured mid-air in a somersault, showcasing her acrobatic skills and flexibility. As she spins, a group of onlookers in colorful attire is seated on wooden bleachers in the background, watching her performance attentively. Some characters seem animated with excitement as they stand and cheer. The gymnast descends into a pool with a splash, creating a burst of water in the turquoise pool. This scene highlights a moment of athletic excellence and the enthusiastic response of the audience, all captured in vibrant animation style.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "frame_count": 45,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video features a vibrant animated scene in a swimming pool area. Initially, a ghostly female character with long, wavy blue hair and a shimmering blue complexion is seated next to another individual with long blonde hair tied in a ponytail. The ghostly character is wearing an outfit with a detailed scaly texture that resembles that of a mermaid. In the subsequent moments, there is a shift to two individuals engaged in a swimming competition in the pool. One character has fiery orange hair and is energetically swimming freestyle. The individual exhibits determination and speed as they propel through the water, leaving a trail of splashes. Accompanying this character is another swimmer with blurred facial features, following closely behind or attempting to catch up.",
+        "visible_entities": [
+          "Subject 1",
+          "Subject 2",
+          "Subject 3"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "e1",
+        "shot_id": "s02",
+        "on_screen": "unknown",
+        "before": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "standing on a springboard",
+          "scope": "scene",
+          "shot_span": [
+            1,
+            1
+          ],
+          "evidence": "observed"
+        },
+        "after": {
+          "subject": "Subject 1",
+          "family": "state",
+          "predicate_or_axis": "body",
+          "object_or_value": "jumping into the water",
+          "scope": "scene",
+          "shot_span": [
+            1,
+            2
+          ],
+          "evidence": "observed"
+        }
+      }
+    ]
+  },
+  "observed_issues": [],
+  "compiled_segments": [
+    {
+      "segment_id": "g1",
+      "reference_shot_ids": [],
+      "reference_rows": [],
+      "target_rows": [
+        "The video depicts an animated scene at a swimming pool area indoors. A character, possibly a female athlete with blue and pink detailed attire, is preparing to dive from a springboard into the swimming pool below. The character's skin is white, and she has shell-like textures on her legs. As the action unfolds, the athlete bends her knees and pushes off from the diving board, launching into a dive. She is surrounded by numerous spectators seated and standing around the pool, watching the event attentively. The pool is rectangular with clear, light blue water, and its surroundings have arched designs on the walls. This scene seems to be part of an animated sports or action video, capturing a brief moment of high energy and focus on the athlete's diving skills. Design: Subject 1: blonde woman with a side ponytail wearing a teal one-piece swimsuit; Location 1: 室内跳水馆. State: Subject 1 is standing on a springboard."
+      ],
+      "token_counts": [
+        225
+      ]
+    },
+    {
+      "segment_id": "g2",
+      "reference_shot_ids": [
+        "s01"
+      ],
+      "reference_rows": [
+        "Reference still from an earlier shot of this story; not the current shot. Reference 1, the last frame of shot 1. Design: Subject 1: blonde woman with a side ponytail wearing a teal one-piece swimsuit; Location 1: 室内跳水馆. State: Subject 1 is standing on a springboard."
+      ],
+      "target_rows": [
+        "A dynamic sequence features an animated character performing a gymnastic move in an indoor pool setting. The character, with bright yellow hair tied into two high ponytails, sports a black and light blue leotard, emphasizing her athletic physique. She is captured mid-air in a somersault, showcasing her acrobatic skills and flexibility. As she spins, a group of onlookers in colorful attire is seated on wooden bleachers in the background, watching her performance attentively. Some characters seem animated with excitement as they stand and cheer. The gymnast descends into a pool with a splash, creating a burst of water in the turquoise pool. This scene highlights a moment of athletic excellence and the enthusiastic response of the audience, all captured in vibrant animation style. Design: Subject 1: blonde woman with a side ponytail wearing a teal one-piece swimsuit; Location 1: 室内跳水馆. State: Subject 1 is jumping into the water. Reference 1 is the last frame of shot 1; take Subject 1 and Location 1 from it; since then Subject 1 is jumping into the water."
+      ],
+      "token_counts": [
+        74,
+        250
+      ]
+    },
+    {
+      "segment_id": "g3",
+      "reference_shot_ids": [
+        "s02"
+      ],
+      "reference_rows": [
+        "Reference still from an earlier shot of this story; not the current shot. Reference 1, the last frame of shot 2. Design: Subject 1: blonde woman with a side ponytail wearing a teal one-piece swimsuit; Location 1: 室内跳水馆. State: Subject 1 is jumping into the water."
+      ],
+      "target_rows": [
+        "The video features a vibrant animated scene in a swimming pool area. Initially, a ghostly female character with long, wavy blue hair and a shimmering blue complexion is seated next to another individual with long blonde hair tied in a ponytail. The ghostly character is wearing an outfit with a detailed scaly texture that resembles that of a mermaid. In the subsequent moments, there is a shift to two individuals engaged in a swimming competition in the pool. One character has fiery orange hair and is energetically swimming freestyle. The individual exhibits determination and speed as they propel through the water, leaving a trail of splashes. Accompanying this character is another swimmer with blurred facial features, following closely behind or attempting to catch up. Design: Subject 1: blonde woman with a side ponytail wearing a teal one-piece swimsuit; Subject 2: red-haired woman wearing a pink swimsuit; Subject 3: grey-haired man wearing blue swim trunks; Location 2: 室内泳池. State: Subject 1 is jumping into the water. Reference 1 is the last frame of shot 2; take Subject 1 from it; nothing about them has changed since."
+      ],
+      "token_counts": [
+        74,
+        265
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+ "source": "outputs/experiments/layout-baseline-dev30/plans/cinedance-013630-b0000-shot01.json (layouts dropped), compiled by the planner pipeline before 2026-10-30",
+ "plan": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young woman with shoulder-length dark hair",
+    "outfit": "a beige fleece jacket, a dark green hoodie, and dark jeans"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a dark wooden door with a silver handle and peephole"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a light wooden vanity table with drawers"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a round stool with wooden legs"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "an orange round ottoman"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a small white round table"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a coat rack with hanging clothes"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a room with textured beige walls, wooden trim, and a dark wooden door"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 1"
+     }
+    ],
+    "action": "A dark wooden door is closed.",
+    "changes": [],
+    "references": [],
+    "frame_count": 17
+   },
+   {
+    "shot": 2,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "entering through the door"
+     },
+     {
+      "name": "Object 1",
+      "state": "closed"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     },
+     {
+      "name": "Object 5"
+     },
+     {
+      "name": "Object 6"
+     }
+    ],
+    "action": "Character 1 enters the room through the door.",
+    "changes": [
+     {
+      "name": "Object 1",
+      "what": "state",
+      "before": "closed",
+      "after": "open"
+     },
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "outside",
+      "after": "standing in the doorway"
+     }
+    ],
+    "references": [
+     {
+      "name": "Object 1",
+      "shot": 1
+     }
+    ],
+    "frame_count": 33
+   },
+   {
+    "shot": 3,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "action": "Character 1 looks around the room with a slightly confused or surprised expression.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 2
+     }
+    ],
+    "frame_count": 33
+   },
+   {
+    "shot": 4,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Object 1",
+      "state": "closed"
+     }
+    ],
+    "action": "Character 1 leans back against the closed door, looking exhausted.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing",
+      "after": "leaning back against the door"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 3
+     },
+     {
+      "name": "Object 1",
+      "shot": 2
+     }
+    ],
+    "frame_count": 29
+   },
+   {
+    "shot": 5,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "action": "Character 1 makes a face, rolling her eyes and puffing her cheeks.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 4
+     }
+    ],
+    "frame_count": 25
+   },
+   {
+    "shot": 6,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing up straight"
+     },
+     {
+      "name": "Object 1",
+      "state": "closed"
+     }
+    ],
+    "action": "Character 1 stands up straight and looks around the room again.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "leaning back",
+      "after": "standing straight"
+     }
+    ],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 5
+     },
+     {
+      "name": "Object 1",
+      "shot": 4
+     }
+    ],
+    "frame_count": 25
+   },
+   {
+    "shot": 7,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "action": "Character 1 looks to the side and speaks.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 6
+     }
+    ],
+    "frame_count": 29
+   },
+   {
+    "shot": 8,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "action": "Character 1 looks down and smiles slightly.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 7
+     }
+    ],
+    "frame_count": 25
+   },
+   {
+    "shot": 9,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     }
+    ],
+    "action": "Character 1 continues to look down with a soft expression.",
+    "changes": [],
+    "references": [
+     {
+      "name": "Character 1",
+      "shot": 8
+     }
+    ],
+    "frame_count": 17
+   }
+  ]
+ }
+}

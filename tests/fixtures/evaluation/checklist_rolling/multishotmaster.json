@@ -1,0 +1,49 @@
+{
+ "story_id": "film-007998-b0006-shot01",
+ "generation_status": "completed",
+ "video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/msm-holding-adaptation-recovery-20261026/test/inference/raw/videos/official_multishotmaster_1_3b/shots/seed-42/film-007998-b0006-shot01/video.mp4",
+ "video_bytes": 5942884,
+ "segments_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/msm-holding-adaptation-recovery-20261026/test/inference/raw/videos/official_multishotmaster_1_3b/shots/seed-42/film-007998-b0006-shot01/segments.json",
+ "segments": [
+  {
+   "start_shot": 0,
+   "end_shot": 4,
+   "frame_counts": [
+    141,
+    65,
+    37,
+    13
+   ],
+   "num_frames": 256
+  },
+  {
+   "start_shot": 4,
+   "end_shot": 9,
+   "frame_counts": [
+    53,
+    41,
+    21,
+    21,
+    17
+   ],
+   "num_frames": 153
+  },
+  {
+   "start_shot": 9,
+   "end_shot": 12,
+   "frame_counts": [
+    29,
+    33,
+    41
+   ],
+   "num_frames": 103
+  }
+ ],
+ "probe": {
+  "frames": 512,
+  "fps": 16.0,
+  "duration_seconds": 32.0,
+  "width": 832,
+  "height": 480
+ }
+}

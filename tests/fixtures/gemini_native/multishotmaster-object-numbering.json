@@ -1,0 +1,73 @@
+{
+ "source_key": "test92-multishotmaster|cinedance-015067-b0001-shot01|1-3",
+ "questions": [
+  {
+   "requirement_id": "cinedance-015067-b0001-shot01/q08",
+   "dimension": "character",
+   "shot": 3,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+   "depends_on": [
+    "Character 1"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-015067-b0001-shot01/q10",
+   "dimension": "object",
+   "shot": 3,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Is Object 1 at {shot 3} the same object as at {shot 1}?",
+   "depends_on": [
+    "Object 1"
+   ]
+  },
+  {
+   "requirement_id": "cinedance-015067-b0001-shot01/q12",
+   "dimension": "object",
+   "shot": 3,
+   "reference_shot": 1,
+   "anchor": "during",
+   "question": "Is Object 3 at {shot 3} the same object as at {shot 1}?",
+   "depends_on": [
+    "Object 3"
+   ]
+  }
+ ],
+ "response": {
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"characters\": [\n    {\n      \"id\": 1,\n      \"face\": \"same\",\n      \"hair\": \"same\",\n      \"build\": \"same\",\n      \"clothing\": \"same\",\n      \"same_person\": \"yes\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"id\": 1,\n      \"shape\": \"same\",\n      \"color_texture\": \"same\",\n      \"details\": \"same\",\n      \"same_object\": \"yes\"\n    },\n    {\n      \"id\": 3,\n      \"shape\": \"not visible\",\n      \"color_texture\": \"not visible\",\n      \"details\": \"not visible\",\n      \"same_object\": \"no\"\n    }\n  ],\n  \"locations\": []\n}",
+       "thoughtSignature": "EmkKZwFpFH0T8h5UP92iKSs21qUBHYQTSVlyuIQixdrFOQ7ypMEVn03VOxCTjXuXA/n6VTTIxs5dJYeGxWD2wV6b4oVIrqqiDaU5ILdGHTGEDThqv9wcLcA854PL29vjSMiPYAsXV99U0KQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finishReason": "STOP",
+    "index": 0
+   }
+  ],
+  "usageMetadata": {
+   "promptTokenCount": 2722,
+   "candidatesTokenCount": 186,
+   "totalTokenCount": 2908,
+   "promptTokensDetails": [
+    {
+     "modality": "IMAGE",
+     "tokenCount": 2108
+    },
+    {
+     "modality": "TEXT",
+     "tokenCount": 614
+    }
+   ],
+   "serviceTier": "SERVICE_TIER_STANDARD"
+  },
+  "modelVersion": "gemini-3.8-flash",
+  "responseId": "aynuavXMMfq0_PUPpKeT6AQ"
+ }
+}

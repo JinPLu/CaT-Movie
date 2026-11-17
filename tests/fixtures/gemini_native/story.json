@@ -1,0 +1,479 @@
+{
+  "split": "dev",
+  "request": "SUBJECTS\n- Character 1 (person): a young man with short black hair and a slim build, wearing a blue and white varsity jacket\n- Character 2 (person): a young man with short black hair and a slim build, wearing a grey long-sleeve shirt\n- Character 3 (group): people in the background\n- Object 1 (object): a dartboard\n- Object 2 (object): a red dart\n- Object 3 (object): a yellow dart\n- Object 4 (object): a bar counter\n- Object 5 (object): hanging lights\nLOCATIONS\n- Location 1: a dimly lit bar or pub with neon signs and dartboards\nSHOTS\ns01: Medium shot. Character 1 and Character 2 stand in a bar, talking and smiling at each other.\ns02: Close-up shot. Character 1 gestures towards himself while talking to Character 2.\ns03: Close-up shot, over-the-shoulder shot. Character 2 smiles and laughs while looking at Character 1.\ns04: Close-up shot. Character 1 looks down and then back up at Character 2.\ns05: Medium shot. Character 1 holds a red dart and talks to Character 2 in front of a dartboard.\ns06: Close-up shot. Character 1 and Character 2 continue their conversation, smiling.\ns07: Medium shot. Character 1 raises his hand as if to throw something, then they both look forward.\ns08: Extreme close-up shot. A red dart lands in the bullseye of the dartboard.\ns09: Close-up shot. Character 1 and Character 2 smile and talk after the successful throw.\ns10: Close-up shot, over-the-shoulder shot. Character 1 puts his arm around Character 2's shoulder.\ns11: Medium shot. Character 2 holds a yellow dart and prepares to throw it while Character 1 watches with arms crossed.\ns12: Extreme close-up shot. A yellow dart lands next to the red dart in the bullseye of the dartboard.",
+  "writer_output": {
+    "names": [
+      {
+        "id": "Character 1",
+        "name": "Character 1"
+      },
+      {
+        "id": "Character 2",
+        "name": "Character 2"
+      },
+      {
+        "id": "Character 3",
+        "name": "Character 3"
+      },
+      {
+        "id": "Object 1",
+        "name": "Object 1"
+      },
+      {
+        "id": "Object 2",
+        "name": "Object 2"
+      },
+      {
+        "id": "Object 3",
+        "name": "Object 3"
+      },
+      {
+        "id": "Object 4",
+        "name": "Object 4"
+      },
+      {
+        "id": "Object 5",
+        "name": "Object 5"
+      },
+      {
+        "id": "Location 1",
+        "name": "Location 1"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 2,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 3,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 4,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 5,
+        "present": [
+          "Character 1",
+          "Character 2",
+          "Object 1",
+          "Object 2"
+        ]
+      },
+      {
+        "shot": 6,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 7,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 8,
+        "present": [
+          "Object 1",
+          "Object 2"
+        ]
+      },
+      {
+        "shot": 9,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 10,
+        "present": [
+          "Character 1",
+          "Character 2"
+        ]
+      },
+      {
+        "shot": 11,
+        "present": [
+          "Character 1",
+          "Character 2",
+          "Object 3"
+        ]
+      },
+      {
+        "shot": 12,
+        "present": [
+          "Object 1",
+          "Object 2",
+          "Object 3"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "shot": 5,
+        "question": "Does Character 1 hold Object 2?",
+        "participants": [
+          "Character 1",
+          "Object 2"
+        ],
+        "result": null
+      },
+      {
+        "shot": 8,
+        "question": "Does Object 2 land in the bullseye of Object 1?",
+        "participants": [
+          "Object 2",
+          "Object 1"
+        ],
+        "result": {
+          "question": "Is Object 2 in the bullseye of Object 1?",
+          "entity": "Object 2",
+          "kind": "holding_or_place"
+        }
+      },
+      {
+        "shot": 10,
+        "question": "Does Character 1 put his arm around Character 2's shoulder?",
+        "participants": [
+          "Character 1",
+          "Character 2"
+        ],
+        "result": {
+          "question": "Is Character 1's arm around Character 2's shoulder?",
+          "entity": "Character 1",
+          "kind": "holding_or_place"
+        }
+      },
+      {
+        "shot": 11,
+        "question": "Does Character 2 hold Object 3 ready to throw it?",
+        "participants": [
+          "Character 2",
+          "Object 3"
+        ],
+        "result": null
+      },
+      {
+        "shot": 12,
+        "question": "Does Object 3 land next to Object 2 in the bullseye of Object 1?",
+        "participants": [
+          "Object 3",
+          "Object 2",
+          "Object 1"
+        ],
+        "result": {
+          "question": "Is Object 3 next to Object 2 in the bullseye of Object 1?",
+          "entity": "Object 3",
+          "kind": "holding_or_place"
+        }
+      }
+    ]
+  },
+  "requirements": [
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q01",
+      "dimension": "event",
+      "shot": 5,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 1 hold Object 2?",
+      "depends_on": [
+        "Character 1",
+        "Object 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q02",
+      "dimension": "event",
+      "shot": 8,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Object 2 land in the bullseye of Object 1?",
+      "depends_on": [
+        "Object 2",
+        "Object 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q03",
+      "dimension": "state",
+      "shot": 8,
+      "reference_shot": null,
+      "anchor": "end",
+      "question": "Is Object 2 in the bullseye of Object 1?",
+      "depends_on": [
+        "Object 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q04",
+      "dimension": "event",
+      "shot": 10,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 1 put his arm around Character 2's shoulder?",
+      "depends_on": [
+        "Character 1",
+        "Character 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q05",
+      "dimension": "state",
+      "shot": 10,
+      "reference_shot": null,
+      "anchor": "end",
+      "question": "Is Character 1's arm around Character 2's shoulder?",
+      "depends_on": [
+        "Character 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q06",
+      "dimension": "event",
+      "shot": 11,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Character 2 hold Object 3 ready to throw it?",
+      "depends_on": [
+        "Character 2",
+        "Object 3"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q07",
+      "dimension": "event",
+      "shot": 12,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Does Object 3 land next to Object 2 in the bullseye of Object 1?",
+      "depends_on": [
+        "Object 3",
+        "Object 2",
+        "Object 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q08",
+      "dimension": "state",
+      "shot": 12,
+      "reference_shot": null,
+      "anchor": "end",
+      "question": "Is Object 3 next to Object 2 in the bullseye of Object 1?",
+      "depends_on": [
+        "Object 3"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q09",
+      "dimension": "character",
+      "shot": 2,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 2} the same person as at {shot 1}?",
+      "depends_on": [
+        "Character 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q10",
+      "dimension": "character",
+      "shot": 11,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 11} the same person as at {shot 1}?",
+      "depends_on": [
+        "Character 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q11",
+      "dimension": "character",
+      "shot": 3,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 2 at {shot 3} the same person as at {shot 1}?",
+      "depends_on": [
+        "Character 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q12",
+      "dimension": "character",
+      "shot": 11,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 2 at {shot 11} the same person as at {shot 1}?",
+      "depends_on": [
+        "Character 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q13",
+      "dimension": "object",
+      "shot": 8,
+      "reference_shot": 5,
+      "anchor": "during",
+      "question": "Is Object 1 at {shot 8} the same object as at {shot 5}?",
+      "depends_on": [
+        "Object 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q14",
+      "dimension": "object",
+      "shot": 12,
+      "reference_shot": 5,
+      "anchor": "during",
+      "question": "Is Object 1 at {shot 12} the same object as at {shot 5}?",
+      "depends_on": [
+        "Object 1"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q15",
+      "dimension": "object",
+      "shot": 8,
+      "reference_shot": 5,
+      "anchor": "during",
+      "question": "Is Object 2 at {shot 8} the same object as at {shot 5}?",
+      "depends_on": [
+        "Object 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q16",
+      "dimension": "object",
+      "shot": 12,
+      "reference_shot": 5,
+      "anchor": "during",
+      "question": "Is Object 2 at {shot 12} the same object as at {shot 5}?",
+      "depends_on": [
+        "Object 2"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q17",
+      "dimension": "object",
+      "shot": 12,
+      "reference_shot": 11,
+      "anchor": "during",
+      "question": "Is Object 3 at {shot 12} the same object as at {shot 11}?",
+      "depends_on": [
+        "Object 3"
+      ]
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q18",
+      "dimension": "place",
+      "shot": 2,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+      "depends_on": []
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q19",
+      "dimension": "place",
+      "shot": 12,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Are {shot 12} and {shot 1} in the same place (Location 1)?",
+      "depends_on": []
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/s01",
+      "dimension": "style",
+      "shot": 1,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+      "depends_on": []
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q20",
+      "dimension": "character",
+      "shot": 9,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 1 at {shot 9} the same person as at {shot 1}?",
+      "depends_on": [
+        "Character 1"
+      ],
+      "family": "reentry_consistency"
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q21",
+      "dimension": "character",
+      "shot": 9,
+      "reference_shot": 1,
+      "anchor": "during",
+      "question": "Is Character 2 at {shot 9} the same person as at {shot 1}?",
+      "depends_on": [
+        "Character 2"
+      ],
+      "family": "reentry_consistency"
+    },
+    {
+      "requirement_id": "cinedance-011901-b0000-shot01/q22",
+      "dimension": "state",
+      "shot": 11,
+      "reference_shot": null,
+      "anchor": "during",
+      "question": "Is Character 2 holding Object 3?",
+      "depends_on": [
+        "Character 2",
+        "Object 3"
+      ],
+      "family": "annotation_change",
+      "source_change": "holding"
+    }
+  ],
+  "origin": "reused_dev",
+  "v6_added": [
+    "cinedance-011901-b0000-shot01/s01",
+    "cinedance-011901-b0000-shot01/m01"
+  ],
+  "v10_changes": {
+    "cinedance-011901-b0000-shot01/m01": "dropped_hard_negative",
+    "cinedance-011901-b0000-shot01/q20": "added_reentry_consistency",
+    "cinedance-011901-b0000-shot01/q21": "added_reentry_consistency",
+    "cinedance-011901-b0000-shot01/q22": "added_annotation_change_state"
+  },
+  "shot_seconds": [
+    4.8125,
+    2.3125,
+    1.8125,
+    1.8125,
+    3.8125,
+    3.3125,
+    1.8125,
+    1.8125,
+    1.5625,
+    1.8125,
+    1.8125,
+    1.5625
+  ]
+}

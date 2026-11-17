@@ -1,0 +1,346 @@
+{
+  "key": "cinedance-008887-b0002",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with long brown hair",
+        "outfit": "a pink ribbed top"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short blond hair",
+        "outfit": "a dark suit and tie"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a bald man with a beard",
+        "outfit": "a dark jacket and dark shirt"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a laptop"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a white teacup and saucer"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a spoon"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a lamp with a round base"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a computer monitor"
+      },
+      {
+        "name": "Object 6",
+        "appearance": "a window"
+      },
+      {
+        "name": "Object 7",
+        "appearance": "a palm tree"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a room with lamps and a laptop"
+      },
+      {
+        "name": "Location 2",
+        "appearance": "a room with a large window overlooking the sea and mountains"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 sits in front of a laptop and talks.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 2",
+            "holding": []
+          },
+          {
+            "name": "Object 4"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 2 sits holding a teacup and spoon, looking away.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 5"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 sits at a desk with a laptop and monitor, gesturing with her hand and talking.",
+        "changes": []
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "sitting"
+          },
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 2"
+          },
+          {
+            "name": "Object 6"
+          },
+          {
+            "name": "Object 7"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 2 sits holding a teacup while Character 3 stands by a large window looking out at the sea and mountains.",
+        "changes": []
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 5"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 looks up and talks.",
+        "changes": []
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 6"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 stands by the window and looks back into the room.",
+        "changes": []
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 5"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 looks up and talks.",
+        "changes": []
+      },
+      {
+        "shot": 8,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 6"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 looks back into the room.",
+        "changes": []
+      },
+      {
+        "shot": 9,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting"
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 5"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 talks.",
+        "changes": []
+      },
+      {
+        "shot": 10,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 6"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 3 looks back into the room.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "A woman sits in a room with a laptop and talks. A man in a suit sits holding a teacup. The woman gestures while talking at her desk. The man in the suit is then seen sitting in another room with a large window, while a bald man stands by the window looking out at the sea. The woman continues to talk at her desk. The bald man turns to look back into the room. The woman looks up and continues talking. The bald man continues to look back into the room.",
+      "summary": "A woman talks at her desk while a man in a suit sits with a teacup and a bald man stands by a window looking out at the sea."
+    }
+  },
+  "frame_counts": [
+    69,
+    17,
+    69,
+    65,
+    17,
+    21,
+    29,
+    13,
+    13,
+    13
+  ],
+  "raw_answer": "{\n  \"characters\": [\n    {\n      \"name\": \"Character 1\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a woman with long brown hair\",\n      \"outfit\": \"a pink ribbed top\"\n    },\n    {\n      \"name\": \"Character 2\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a man with short blond hair\",\n      \"outfit\": \"a dark suit and tie\"\n    },\n    {\n      \"name\": \"Character 3\",\n      \"kind\": \"person\",\n      \"visibility\": \"clear\",\n      \"appearance\": \"a bald man with a beard\",\n      \"outfit\": \"a dark jacket and dark shirt\"\n    }\n  ],\n  \"objects\": [\n    {\n      \"name\": \"Object 1\",\n      \"appearance\": \"a laptop\"\n    },\n    {\n      \"name\": \"Object 2\",\n      \"appearance\": \"a white teacup and saucer\"\n    },\n    {\n      \"name\": \"Object 3\",\n      \"appearance\": \"a spoon\"\n    },\n    {\n      \"name\": \"Object 4\",\n      \"appearance\": \"a lamp with a round base\"\n    },\n    {\n      \"name\": \"Object 5\",\n      \"appearance\": \"a computer monitor\"\n    },\n    {\n      \"name\": \"Object 6\",\n      \"appearance\": \"a window\"\n    },\n    {\n      \"name\": \"Object 7\",\n      \"appearance\": \"a palm tree\"\n    }\n  ],\n  \"places\": [\n    {\n      \"name\": \"Location 1\",\n      \"appearance\": \"a room with lamps and a laptop\"\n    },\n    {\n      \"name\": \"Location 2\",\n      \"appearance\": \"a room with a large window overlooking the sea and mountains\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"shot\": 1,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 1\"\n        },\n        {\n          \"name\": \"Object 4\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 sits in front of a laptop and talks.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 2,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 2\",\n          \"holding\": [\n            \"Object 3\"\n          ]\n        },\n        {\n          \"name\": \"Object 4\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 sits holding a teacup and spoon, looking away.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 3,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 1\"\n        },\n        {\n          \"name\": \"Object 5\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 sits at a desk with a laptop and monitor, gesturing with her hand and talking.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 4,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"medium shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 2\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        },\n        {\n          \"name\": \"Object 2\"\n        },\n        {\n          \"name\": \"Object 6\"\n        },\n        {\n          \"name\": \"Object 7\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 2 sits holding a teacup while Character 3 stands by a large window looking out at the sea and mountains.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 5,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 1\"\n        },\n        {\n          \"name\": \"Object 5\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 looks up and talks.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 6,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        },\n        {\n          \"name\": \"Object 6\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 3 stands by the window and looks back into the room.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 7,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"medium close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 1\"\n        },\n        {\n          \"name\": \"Object 5\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 looks up and talks.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 8,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        },\n        {\n          \"name\": \"Object 6\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 3 looks back into the room.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 9,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 1\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 1\",\n          \"posture\": \"sitting\"\n        },\n        {\n          \"name\": \"Object 1\"\n        },\n        {\n          \"name\": \"Object 5\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 1 talks.\",\n      \"changes\": []\n    },\n    {\n      \"shot\": 10,\n      \"picture_type\": \"live_action\",\n      \"on_screen_text\": \"none\",\n      \"place\": \"Location 2\",\n      \"camera\": {\n        \"shot_size\": \"close-up shot\",\n        \"angle\": \"eye-level shot\",\n        \"movement\": \"static\"\n      },\n      \"present\": [\n        {\n          \"name\": \"Character 3\",\n          \"posture\": \"standing\"\n        },\n        {\n          \"name\": \"Object 6\"\n        }\n      ],\n      \"activity\": \"talking_only\",\n      \"action\": \"Character 3 looks back into the room.\",\n      \"changes\": []\n    }\n  ],\n  \"story\": {\n    \"paragraph\": \"A woman sits in a room with a laptop and talks. A man in a suit sits holding a teacup. The woman gestures while talking at her desk. The man in the suit is then seen sitting in another room with a large window, while a bald man stands by the window looking out at the sea. The woman continues to talk at her desk. The bald man turns to look back into the room. The woman looks up and continues talking. The bald man continues to look back into the room.\",\n    \"summary\": \"A woman talks at her desk while a man in a suit sits with a teacup and a bald man stands by a window looking out at the sea.\"\n  }\n}"
+}

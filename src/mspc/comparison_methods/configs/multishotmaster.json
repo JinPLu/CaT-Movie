@@ -1,0 +1,39 @@
+{
+  "family": "multishotmaster",
+  "planner": "public_qwen",
+  "upstream": "${MSPC_SHARED_ROOT}/Storyboard/.runtime/upstreams/MultiShotMaster",
+  "weights": {
+    "dit": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/multishotmaster/MultiShotMaster_model_1.3B.safetensors",
+    "t5": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/multishotmaster/models_t5_umt5-xxl-enc-bf16.pth",
+    "vae": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/multishotmaster/Wan2.1_VAE.pth",
+    "tokenizer": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/multishotmaster/umt5-xxl"
+  },
+  "sampling": {
+    "height": 480,
+    "width": 832,
+    "num_inference_steps": 50,
+    "cfg_scale": 5.0,
+    "sigma_shift": 5.0,
+    "video_quality": 5,
+    "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+  },
+  "pipeline": {
+    "tiled": true,
+    "tile_size": [
+      30,
+      52
+    ],
+    "tile_stride": [
+      15,
+      26
+    ]
+  },
+  "limits": {
+    "max_shots": 5,
+    "max_frames": 308,
+    "max_tokens": 512
+  },
+  "seed_stride": 1009,
+  "ffmpeg": "ffmpeg",
+  "ffprobe": "ffprobe"
+}

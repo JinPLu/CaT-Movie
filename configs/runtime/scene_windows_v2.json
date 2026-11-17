@@ -1,0 +1,6 @@
+{
+  "schema_version": "scene_windows_build_v1",
+  "manifest": "${MSPC_SHARED_ROOT}/OoVMetric/resource/scene_manifests/v1/scenes.jsonl",
+  "exclusion": "configs/benchmark/script_state_bench_long_training_exclusion_v2.json",
+  "seed": 20261005
+}

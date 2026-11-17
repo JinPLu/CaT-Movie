@@ -1,0 +1,30 @@
+# 空间层定位用的 Qwen3.8-27B 图像输入服务（tools/data/spatial_layer.py 的 locate 阶段；run/spatial_layer.sh 起它）。
+# 一台两卡机器上每张卡起一个服务：这份给第一张卡、端口 8193；第二张卡用 vllm_qwen38_27b_spatial_locate_second.yaml，两份只差端口（8194）。
+# 为什么有两份：run/vllm_serve.py 的端口只从服务配置里读、不接受命令行参数；两个端口就是 configs/data/spatial_layer_v2.json 的 locate.endpoints，
+# 定位按分片序号的奇偶把块分给这两个服务。
+# 单卡 TP=1，最多同时 48 序列，启用 vLLM 默认 CUDA Graph；qwen3 思考解析。
+# 每请求至多 3 张图（一镜的首帧、中帧、末帧）。思考与否、思考强度、采样参数由请求给，不设服务端默认。
+vllm_executable: ${MSPC_SHARED_ROOT}/env/planner_inference_cu128/bin/vllm
+model_path: ${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/Qwen3.8-27B
+host: "127.0.0.1"
+port: 8193
+tensor_parallel_size: 1
+max_model_len: 65536
+gpu_memory_utilization: 0.92
+dtype: bfloat16
+trust_remote_code: true
+extra_cli_args:
+  - "--served-model-name"
+  - "Qwen3.8-27B"
+  - "--max-num-seqs"
+  - "48"
+  - "--chat-template-content-format"
+  - "openai"
+  - "--mm-processor-cache-gb"
+  - "0"
+  - "--limit-mm-per-prompt"
+  - '{"image":3,"video":0}'
+  - "--reasoning-parser"
+  - "qwen3"
+ld_library_path: ""
+omp_num_threads: 4

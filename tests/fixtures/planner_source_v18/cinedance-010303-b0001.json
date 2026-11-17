@@ -1,0 +1,146 @@
+{
+  "key": "cinedance-010303-b0001",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a young girl with short dark brown hair and bangs",
+        "outfit": "a pink long-sleeved shirt"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "partial",
+        "appearance": "a person with short dark hair",
+        "outfit": "a white shirt"
+      },
+      {
+        "name": "Character 3",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a creature with yellow skin, a large red beak, and a bloodshot yellow eye"
+      }
+    ],
+    "objects": [],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "an indoor setting with a plain wall"
+      },
+      {
+        "name": "Location 2",
+        "appearance": "an outdoor alleyway or narrow street with buildings on either side and an orange sky"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "sitting or standing, holding her head with both hands",
+            "state": "sweating, eyes closed tightly"
+          },
+          {
+            "name": "Character 2",
+            "posture": "leaning in close to Character 1",
+            "state": []
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 holds her head with both hands, eyes squeezed shut and sweating, while Character 2 leans in close to her.",
+        "changes": []
+      },
+      {
+        "shot": 2,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "low angle shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking up, mouth open in surprise or shock"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "Character 1 stands in an outdoor alleyway looking up with a shocked expression as a large shadow falls over her.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "extreme close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "facing forward",
+            "state": "sweating, eyes open with a determined or intense look"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "An extreme close-up shows Character 1's face as she opens her eyes, revealing a determined expression while sweating.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "state",
+            "before": "eyes closed tightly",
+            "after": "eyes open with a determined look"
+          }
+        ]
+      },
+      {
+        "shot": 4,
+        "picture_type": "animation_2d",
+        "on_screen_text": "none",
+        "place": "Location 2",
+        "camera": {
+          "shot_size": "extreme close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 3",
+            "posture": "facing forward",
+            "state": "mouth open, bloodshot eye wide"
+          }
+        ],
+        "activity": "talking_only",
+        "action": "An extreme close-up reveals Character 3, a creature with yellow skin and a large red beak, opening its mouth and staring with a wide, bloodshot eye.",
+        "changes": []
+      }
+    ],
+    "story": {
+      "paragraph": "A young girl with short dark hair holds her head with both hands, sweating with her eyes closed tightly while another person leans close to her. The scene shifts to an outdoor alleyway where the girl looks up in shock as a large shadow falls over her. Back in the initial setting, the girl opens her eyes, revealing a determined expression. Finally, an extreme close-up shows a creature with yellow skin, a large red beak, and a bloodshot eye opening its mouth and staring intensely.",
+      "summary": "A young girl reacts with distress and determination in an indoor setting before looking up in shock in an alleyway, where a creature with a large beak is revealed."
+    }
+  },
+  "frame_counts": [
+    37,
+    33,
+    37,
+    53
+  ]
+}

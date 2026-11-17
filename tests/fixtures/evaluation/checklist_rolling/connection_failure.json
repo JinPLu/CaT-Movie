@@ -1,0 +1,30 @@
+{
+  "method": "official_multishotmaster_1_3b",
+  "story_id": "cinedance-014536-b0002-shot01",
+  "status": "request_failed",
+  "started_at": "2026-10-28T10:01:52.322652+00:00",
+  "cost_usd": null,
+  "error": "Connection error.",
+  "seconds": 1.6884164169896394,
+  "exception_chain": [
+    {
+      "type": "openai.APIConnectionError",
+      "message": "Connection error."
+    },
+    {
+      "type": "httpx.ConnectError",
+      "message": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)"
+    },
+    {
+      "type": "httpcore.ConnectError",
+      "message": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)"
+    },
+    {
+      "type": "ssl.SSLEOFError",
+      "message": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)"
+    }
+  ],
+  "http_request_id": null,
+  "status_code": null,
+  "finished_at": "2026-10-28T10:01:54.014244+00:00"
+}

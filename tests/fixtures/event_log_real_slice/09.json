@@ -1,0 +1,97 @@
+{
+  "case_id": "full:cine250k:cine250k:27433138_42",
+  "pool_index": 182203,
+  "log": {
+    "schema": "event_log_v3",
+    "subjects": [
+      {
+        "subject_id": "Subject 1",
+        "kind": "object",
+        "appearance": "a rocket launching with bright flames"
+      }
+    ],
+    "locations": [
+      {
+        "location_id": "Location 1",
+        "appearance": "发射台",
+        "anchors": []
+      },
+      {
+        "location_id": "Location 2",
+        "appearance": "城市上空",
+        "anchors": []
+      }
+    ],
+    "initial_state": [
+      {
+        "subject": "Subject 1",
+        "family": "state",
+        "predicate_or_axis": "object_condition",
+        "object_or_value": "unknown",
+        "scope": "scene",
+        "shot_span": [
+          0,
+          2
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shot_id": "s01",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 49,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video captures a serene night scene with a long, winding road illuminated by a soft, warm glow. The road stretches into the distance, curving subtly and disappearing into the darkness. The lighting casts a gentle, diffused light that enhances the tranquility of the scene. The road is devoid of any vehicles, and the only discernible features are the occasional lampposts that line the road, their light adding to the overall ambiance. The sky is dark, suggesting it's nighttime, and the absence of any other light sources or man-made structures reinforces the sense of solitude and peace. The video is a beautiful representation of a quiet night on a deserted road, with the focus solely on the road and its gentle, inviting light.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s02",
+        "location_id": "Location 1",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 21,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video captures a serene night scene on a city street. The street is bathed in a warm, golden glow, with the lights from street lamps and buildings casting a soft illumination. The sky is dark, adding to the tranquil ambiance. The camera follows a car as it drives down the street, its headlights piercing the night and creating a sense of movement. The car's silhouette stands out against the illuminated background, and its headlights cast a bright spot on the road ahead. The street is lined with trees and buildings, their details softened by the distance and the nighttime setting. The overall scene is peaceful and quiet, with the only sounds being the soft hum of the car's engine and the distant murmur of city life.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      },
+      {
+        "shot_id": "s03",
+        "location_id": "Location 2",
+        "present_subjects": [
+          "Subject 1"
+        ],
+        "frame_count": 69,
+        "shot_size": "unknown",
+        "camera_angle": "unknown",
+        "action": "The video captures a serene night scene in a city. The camera pans over a large, illuminated building with intricate architectural details, showcasing its grandeur. The building's facade is bathed in a warm, golden light, highlighting its historical and ornate design. The surrounding area is dimly lit, with the city's skyline faintly visible in the distance. The camera's movement is smooth and fluid, providing a sense of tranquility and beauty. The overall atmosphere is one of quiet elegance, with the focus on the architectural marvel of the building.",
+        "visible_entities": [
+          "Subject 1"
+        ],
+        "screen_facts": [],
+        "movement": "unknown"
+      }
+    ],
+    "events": []
+  },
+  "observed_issues": [
+    {
+      "rule": 5,
+      "path": "Subject 1",
+      "message": "state predicate launching in static appearance, found in visual review"
+    }
+  ]
+}

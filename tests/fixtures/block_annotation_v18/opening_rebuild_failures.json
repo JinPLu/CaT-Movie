@@ -1,0 +1,243 @@
+{
+  "source": "source-pipeline-20261011/final/block-annotations.jsonl raw_answer; original registries and one original shot",
+  "rows": [
+    {
+      "key": "film-004284-b0002",
+      "source_shot": 5,
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair in an updo",
+            "outfit": "a white strapless wedding dress and veil"
+          },
+          {
+            "name": "Character 2",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a bald man with a grey beard",
+            "outfit": "a white robe with a gold stole"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short dark hair",
+            "outfit": "a white suit and bow tie"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with short curly dark hair",
+            "outfit": "a white tuxedo with a black bow tie"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with dark hair in an updo",
+            "outfit": "a cream lace dress and pearl necklace"
+          },
+          {
+            "name": "Character 6",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with curly light brown hair",
+            "outfit": "a beige dress with a black band"
+          },
+          {
+            "name": "Character 7",
+            "kind": "group",
+            "visibility": "clear",
+            "appearance": "wedding guests",
+            "outfit": "formal wedding attire"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a small black book"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a bouquet of white flowers"
+          },
+          {
+            "name": "Object 3",
+            "appearance": "a white floral arch"
+          },
+          {
+            "name": "Object 4",
+            "appearance": "white chairs"
+          },
+          {
+            "name": "Object 5",
+            "appearance": "a large white house"
+          },
+          {
+            "name": "Object 6",
+            "appearance": "a body of water"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "an outdoor wedding venue by the water with a white house in the background"
+          }
+        ],
+        "story": {
+          "paragraph": "A bride and groom stand before an officiant at an outdoor wedding ceremony by the water. The camera pans to show the guests watching from behind. A man and a woman in the guest area hold hands and look at each other. The woman then reaches down to hold the hand of another woman sitting next to her, and they exchange a few words. Finally, the three guests stand together watching the ceremony.",
+          "summary": "Guests at an outdoor wedding ceremony hold hands and watch the bride and groom."
+        },
+        "shots": [
+          {
+            "shot": 5,
+            "picture_type": "live_action",
+            "on_screen_text": "corner_logo_or_watermark",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "close-up shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 4",
+                "posture": "standing",
+                "holding": [
+                  "Character 5's hand"
+                ]
+              },
+              {
+                "name": "Character 5",
+                "posture": "standing"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "The man reaches out and takes the woman's hand.",
+            "changes": [
+              {
+                "name": "Character 4",
+                "what": "holding",
+                "before": [],
+                "after": [
+                  "Character 5's hand"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "film-005434-b0001",
+      "source_shot": 1,
+      "annotation": {
+        "characters": [
+          {
+            "name": "Character 1",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with medium-length brown hair and a slim build",
+            "outfit": "a green t-shirt over a white long-sleeve shirt and brown pants"
+          },
+          {
+            "name": "Character 2",
+            "kind": "animal",
+            "visibility": "clear",
+            "appearance": "a brown dog with a blue collar",
+            "outfit": "a white cone hat with red stripes"
+          },
+          {
+            "name": "Character 3",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with long blonde hair",
+            "outfit": "a purple long-sleeve top and purple pants"
+          },
+          {
+            "name": "Character 4",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a man with medium-length blonde hair",
+            "outfit": "a blue jacket over a white t-shirt with a red collar and blue jeans"
+          },
+          {
+            "name": "Character 5",
+            "kind": "person",
+            "visibility": "clear",
+            "appearance": "a woman with short dark hair and glasses",
+            "outfit": "an orange long-sleeve top"
+          }
+        ],
+        "objects": [
+          {
+            "name": "Object 1",
+            "appearance": "a round metallic object with a complex design"
+          },
+          {
+            "name": "Object 2",
+            "appearance": "a small cake with white frosting and a blue candle"
+          }
+        ],
+        "places": [
+          {
+            "name": "Location 1",
+            "appearance": "a dimly lit, rustic room with wooden beams and metal structures"
+          },
+          {
+            "name": "Location 2",
+            "appearance": "a room with various equipment and machinery in the background"
+          }
+        ],
+        "story": {
+          "paragraph": "A man and a brown dog, both covered in white cream, stand in a rustic room. The man is laughing and holding a metallic object, while the dog puts on a cone hat. Three other people walk into the room looking surprised. The man and the dog then walk forward towards the group, still laughing and covered in cream. The group stands watching them, with one woman holding a small cake with a candle.",
+          "summary": "A man and a dog covered in cream laugh and walk towards a surprised group of three people holding a cake in a rustic room."
+        },
+        "shots": [
+          {
+            "shot": 1,
+            "picture_type": "live_action",
+            "on_screen_text": "none",
+            "place": "Location 1",
+            "camera": {
+              "shot_size": "medium shot",
+              "angle": "eye-level shot",
+              "movement": "static"
+            },
+            "present": [
+              {
+                "name": "Character 1",
+                "posture": "standing",
+                "state": "covered in white cream",
+                "holding": [
+                  "Object 1"
+                ]
+              },
+              {
+                "name": "Character 2",
+                "posture": "standing on hind legs",
+                "state": "covered in white cream"
+              }
+            ],
+            "activity": "action_or_state_change",
+            "action": "Character 1 stands laughing while covered in cream, and Character 2 stands on hind legs also covered in cream, then Character 2 puts on a cone hat.",
+            "changes": [
+              {
+                "name": "Character 2",
+                "what": "outfit",
+                "before": [],
+                "after": [
+                  "a white cone hat with red stripes"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+ "key": "film-004095-b0008",
+ "shots": 7,
+ "source": "block-contract-v17-quick-check-20261013/v18-others/answers/r1/film-004095-b0008.json",
+ "contract": "block_annotation_v18",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with blonde hair and a slim build",
+    "outfit": "a pink cardigan, a white bra, and a grey skirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with shoulder-length brown hair",
+    "outfit": "a black suit"
+   },
+   {
+    "name": "Character 3",
+    "kind": "animal",
+    "visibility": "clear",
+    "appearance": "a small naked baby baboon"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark skin, glasses, and a mustache"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man with a grey suit"
+   },
+   {
+    "name": "Character 6",
+    "kind": "group",
+    "visibility": "partial",
+    "appearance": "people in a conference room"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a wooden conference table"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a black folder"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a white handkerchief"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a wall-mounted television screen"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a wooden door"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a company logo sign"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a conference room with wood paneling and a large table"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing with hands raised"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing on the table"
+     },
+     {
+      "name": "Object 1",
+      "state": "on the table"
+     },
+     {
+      "name": "Object 2",
+      "state": "on the table"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 stands with her hands raised as Character 3, a baby baboon, stands on the table in front of her.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 3",
+      "posture": "walking on the floor"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 3 jumps off the table and walks away on the floor while Character 1 and Character 2 watch.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "standing on the table",
+      "after": "walking on the floor"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing and covering her chest"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 turns around and covers her chest with her arms.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing with hands raised",
+      "after": "standing and covering her chest"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing and gesturing"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing and wiping his face"
+     },
+     {
+      "name": "Character 6",
+      "posture": "sitting and standing"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 4 gestures while Character 5 wipes his face with a handkerchief as the group reacts in shock.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing and looking at Character 5"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing and looking at Character 2"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 and Character 5 look at each other.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing in the foreground with arms crossed"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing with arms crossed"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing and wiping his face with Object 3"
+     },
+     {
+      "name": "Object 6",
+      "state": "visible on the wall"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 5 wipes his face with a handkerchief while talking to Character 2, with Character 1 standing in the foreground.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "screen_or_slides",
+    "on_screen_text": "large_text_or_picture_in_picture",
+    "place": "none",
+    "camera": {
+     "shot_size": "none",
+     "angle": "none",
+     "movement": "none"
+    },
+    "present": [],
+    "activity": "no_human_activity",
+    "action": "A screen showing related movie clips and a movie poster appears.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "In a conference room, a woman in a pink cardigan and white bra stands with her hands raised while a baby baboon stands on the table in front of her. The baboon jumps off the table and walks away, causing the woman to turn and cover her chest. A group of people in the room react with shock, with one man wiping his face with a handkerchief. The woman in the black suit talks to the man with the handkerchief while the woman in the bra stands nearby with her arms crossed. Finally, a screen displaying related movie clips and a poster is shown.",
+   "summary": "A woman is caught in a state of undress in a conference room with a baby baboon, causing shock among the attendees before a promotional screen appears."
+  }
+ }
+}

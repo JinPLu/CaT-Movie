@@ -1,0 +1,315 @@
+{
+ "key": "film-006561-b0006",
+ "shots": 9,
+ "source": "source-pipeline-20261011/review/blocks-v17/responses/film-006561-b0006.json",
+ "contract": "block_annotation_v17",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a mustache, light skin, and brown hair",
+    "outfit": "a black mask, a black head covering, and a black tunic with chainmail sleeves"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a balding man with light skin",
+    "outfit": "a gold and red patterned robe"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young woman with long blonde hair and light skin",
+    "outfit": "a long red dress with a white blindfold"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a white blindfold"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a large rock used as a table"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a dark bottle"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "two dark goblets"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "some bread"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "some apples"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "an outdoor grassy area with trees and a rocky hillside"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting",
+      "state": "smiling slightly"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "A man in a black mask and tunic looks slightly to the side and smiles.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "sitting",
+      "state": "laughing loudly"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "A balding man in a gold and red robe laughs loudly.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "The camera pans across a grassy area with trees.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting at a rock table"
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting at a rock table",
+      "state": "blindfolded"
+     },
+     {
+      "name": "Object 2",
+      "state": "used as a table with a bottle, goblets, bread, and apples on it"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     },
+     {
+      "name": "Object 5"
+     },
+     {
+      "name": "Object 6"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A man in black sits at a rock table with a blindfolded woman in a red dress. He reaches out and removes her blindfold.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "state",
+      "before": "blindfolded",
+      "after": "blindfold removed"
+     }
+    ]
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "leaning forward",
+      "state": "looking at the woman"
+     },
+     {
+      "name": "Character 3",
+      "posture": "looking at the man"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The man in black and the woman in red look at each other closely.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "looking down",
+      "state": "looking concerned"
+     },
+     {
+      "name": "Character 1",
+      "posture": "looking at the woman"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman looks down with a concerned expression while the man looks at her.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "looking down"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman continues to look down with a sad or concerned expression.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "looking down"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman looks down, appearing to be thinking or feeling sad.",
+    "changes": []
+   },
+   {
+    "shot": 9,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sitting at the rock table",
+      "holding": [
+       "the woman's hand"
+      ]
+     },
+     {
+      "name": "Character 3",
+      "posture": "sitting at the rock table",
+      "holding": [
+       "the man's hand"
+      ]
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man holds the woman's hand across the rock table. She stands up and walks away from him.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "sitting",
+      "after": "standing and walking away"
+     }
+    ]
+   }
+  ],
+  "story": {
+   "paragraph": "A man in a black mask and tunic smiles while sitting outdoors. Another man in a gold and red robe laughs loudly. The scene shifts to the man in black sitting at a large rock used as a table, with a bottle, goblets, bread, and apples on it. A young woman in a red dress sits opposite him, blindfolded. He reaches out and removes her blindfold. They look at each other closely, and she appears concerned and looks down. Finally, he holds her hand across the table, but she stands up and walks away from him.",
+   "summary": "A masked man removes a blindfold from a woman in a red dress at an outdoor rock table, they share a moment, and then she stands up and walks away."
+  }
+ }
+}

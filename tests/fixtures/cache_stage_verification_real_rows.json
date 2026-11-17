@@ -1,0 +1,142 @@
+{
+  "source_actual_sha": "907d333b69e77df1eb6d155636553e2d2443e913",
+  "scope": "actual original BlockDataset.text output under unchanged physical 3k stage; scheduler fixture, not T5 N0",
+  "rows": [
+    {
+      "split": "train",
+      "sample_index": 0,
+      "metadata": {
+        "sample_index": 0,
+        "flow_draw_seed": 7046749829104002048,
+        "reference_text_dropped": false,
+        "layout_text_dropped": true,
+        "picture_type_text_dropped": true,
+        "reference_group_dropped": true,
+        "actual_token_counts": [
+          97,
+          98,
+          117,
+          180
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_003/Daddy's_Home_(2015)_-_Sperm_Envy_Scene_(4_10)_|_Movieclips:scene000:0041-0049",
+        "epoch": 0,
+        "span": [
+          2,
+          6
+        ],
+        "references": [],
+        "reference_offset": null,
+        "target_reference_slots": [
+          [],
+          [],
+          [],
+          []
+        ],
+        "opening_conflicts": [],
+        "token_counts": [
+          97,
+          98,
+          117,
+          180
+        ],
+        "reference_visible_ids": [],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      },
+      "prompts": [
+        "Character 3: man with dark slicked-back hair and a medium build, wearing white doctor's coat over a light purple shirt, purple tie. Setting: Location 2, doctor's office with a sink, a chair, and a window with blinds. Close-up shot, low angle shot. In Location 2, Character 3 sits, talking. Character 3, a doctor, looks up and speaks while sitting in the office.",
+        "Character 1: man with dark hair tied back, a goatee, and a medium build, wearing blue and black plaid shirt over a black t-shirt. Setting: Location 1, room with a large black and white abstract painting on the wall. Medium close-up shot. In Location 1, Character 1 stands, talking. Character 1, the man with dark hair tied back, a goatee, speaks and smiles slightly.",
+        "Character 2: man with short brown hair and a medium build, wearing light grey button-down shirt. Character 4: woman with long wavy brown hair and a slim build, wearing red top. Setting: Location 2, doctor's office with a sink, a chair, and a window with blinds. Medium close-up shot. In Location 2, Character 4 stands, smiling. Character 2 stands. Character 4, the woman with long wavy brown hair, smiles and looks at Character 2, who looks down.",
+        "Character 2: man with short brown hair and a medium build, wearing light grey button-down shirt. Character 3: man with dark slicked-back hair and a medium build, wearing white doctor's coat over a light purple shirt, purple tie. Character 4: woman with long wavy brown hair and a slim build, wearing red top. Object 2: green plastic container. Object 3: black chair. Setting: Location 2, doctor's office with a sink, a chair, and a window with blinds. Medium shot. In Location 2, Character 3 holds Object 2. Character 2 and Character 4 stand. Object 3 is empty. Character 3, the man with dark slicked-back hair, sits by the sink holding a green container and speaks to Character 2 and Character 4."
+      ]
+    },
+    {
+      "split": "train",
+      "sample_index": 54,
+      "metadata": {
+        "sample_index": 54,
+        "flow_draw_seed": 8997201747421168640,
+        "reference_text_dropped": false,
+        "layout_text_dropped": true,
+        "picture_type_text_dropped": true,
+        "reference_group_dropped": true,
+        "actual_token_counts": [
+          156
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_009/The_Fast_and_the_Furious_(2001)_-_10_Seconds_or_Less_Scene_(4_10)_|_Movieclips:scene000:0012-0021",
+        "epoch": 0,
+        "span": [
+          8,
+          9
+        ],
+        "references": [],
+        "reference_offset": null,
+        "target_reference_slots": [
+          []
+        ],
+        "opening_conflicts": [],
+        "token_counts": [
+          156
+        ],
+        "reference_visible_ids": [],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      },
+      "prompts": [
+        "Character 1: man with wavy blond hair and a lean build, wearing grey t-shirt. Character 2: bald man with a muscular build, wearing dark blue short-sleeved button-up shirt. Object 5: black car with its hood open. Object 7: garage door. Setting: cluttered garage or workshop with trophies, books, tools, and cars. Wide shot. Character 1 sits. Character 2 stands. Object 5 is parked in the garage. Object 7 is open. Character 1 and Character 2, both men, walk out of the garage through the open door. By the end of the shot, Character 1 is walking out; Character 2 is walking out."
+      ]
+    },
+    {
+      "split": "validation",
+      "sample_index": 0,
+      "metadata": {
+        "sample_index": 0,
+        "flow_draw_seed": 7046749829104002048,
+        "reference_text_dropped": false,
+        "layout_text_dropped": true,
+        "picture_type_text_dropped": true,
+        "reference_group_dropped": true,
+        "actual_token_counts": [
+          206,
+          92,
+          93,
+          86,
+          93
+        ],
+        "case_id": "story_block_v1:cinepile_t2v:video_batch_20250817_133943_001/A_Thousand_Words_(2012)_-_Show_Her_That_You_Love_Her_Scene_(9_10)_|_Movieclips:scene000:0000-0008",
+        "epoch": 0,
+        "span": [
+          0,
+          5
+        ],
+        "references": [],
+        "reference_offset": null,
+        "target_reference_slots": [
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "opening_conflicts": [],
+        "token_counts": [
+          206,
+          92,
+          93,
+          86,
+          93
+        ],
+        "reference_visible_ids": [],
+        "reference_point_count": 0,
+        "reference_alignment_cells": 0
+      },
+      "prompts": [
+        "Character 1: man with a shaved head, mustache, and medium build, wearing grey hoodie over a blue shirt. Character 2: man with short dark hair and a lean build, wearing light beige jacket over a white shirt with a scarf. Object 1: wooden dining table. Object 6: Character 2's jacket collar. Setting: diner or restaurant interior with red booth seating and a visible kitchen area in the background. Medium shot. Character 1 sits at the table, leaning forward aggressively, holding Object 6. Character 2 sits at the table, leaning back slightly. Object 1 is has plates and a bottle on it. Character 1, the man with a shaved head, mustache, grabs Character 2 by the collar and shakes him while speaking aggressively, and Character 2, the man with short dark hair, holds Character 1's arm to steady himself.",
+        "Character 1: man with a shaved head, mustache, and medium build, wearing grey hoodie over a blue shirt. Setting: diner or restaurant interior with red booth seating and a visible kitchen area in the background. Close-up shot. Character 1 leans forward, speaking intensely. Character 1, the man with a shaved head, mustache, continues to speak aggressively with an intense facial expression.",
+        "Character 2: man with short dark hair and a lean build, wearing light beige jacket over a white shirt with a scarf. Setting: diner or restaurant interior with red booth seating and a visible kitchen area in the background. Close-up shot. Character 2 is looking down, appearing emotional. Character 2, the man with short dark hair, looks down with tears in his eyes, listening to Character 1.",
+        "Character 1: man with a shaved head, mustache, and medium build, wearing grey hoodie over a blue shirt. Setting: diner or restaurant interior with red booth seating and a visible kitchen area in the background. Close-up shot. Character 1 leans forward, speaking. Character 1, the man with a shaved head, mustache, continues speaking to Character 2.",
+        "Character 2: man with short dark hair and a lean build, wearing light beige jacket over a white shirt with a scarf. Setting: diner or restaurant interior with red booth seating and a visible kitchen area in the background. Close-up shot. Character 2 is looking at Character 1, crying. Character 2, the man with short dark hair, looks at Character 1 with tears streaming down his face."
+      ]
+    }
+  ]
+}

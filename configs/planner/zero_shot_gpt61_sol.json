@@ -1,0 +1,27 @@
+{
+  "backend": "openai",
+  "schema_version": "event_log_v3",
+  "max_output_tokens": 32768,
+  "timeout_seconds": 1200,
+  "concurrency": 1,
+  "expected_benchmark_cases": 20,
+  "response_format": "json_schema",
+  "seed": 42,
+  "image_quota": 8,
+  "image_max_pixels": 262144,
+  "modes": [
+    "script_only",
+    "script_true_history"
+  ],
+  "reasoning_effort": "high",
+  "api_key_env": "OPENAI_API_KEY",
+  "budget_hard_cap_usd": "12.00",
+  "precall_prompt_tokens": 131072,
+  "pricing": {
+    "input_usd_per_mtok": "2.00",
+    "output_usd_per_mtok": "10.00"
+  },
+  "model": "gpt-6.1-sol",
+  "model_revision": null,
+  "revision_evidence": "unversioned alias; returned version remains null unless reported"
+}

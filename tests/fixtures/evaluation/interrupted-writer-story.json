@@ -1,0 +1,445 @@
+{
+  "request": {
+    "story_id": "film-001593-b0005-shot01",
+    "split": "test",
+    "target_seconds": 31.125,
+    "fps": 16,
+    "film_key": "cinepile_t2v:cloudy with a chance of meatballs 2",
+    "content": {
+      "changes": 1,
+      "change_kinds": [
+        "holding"
+      ],
+      "recurring_characters": 7,
+      "recurring_objects": 4,
+      "places": 3,
+      "action_shots": 7,
+      "shots": 10,
+      "seconds": 31.125
+    },
+    "inputs": {
+      "synopsis": {
+        "text": "A boy in a cupcake shop is followed by a scene of a doctor and a cow, then a man in a chicken suit advertises a sushi place on the street before jumping onto a car.",
+        "expected_shot_count": null,
+        "expected_cut_times_seconds": null
+      },
+      "paragraph": {
+        "text": "A young boy in a chef hat stands in a cupcake shop holding whipped cream while a woman talks to him. The scene shifts to a grassy field where a doctor, a nurse, and a woman stand near a cow. Then, a man in a chicken suit walks down a city street holding a large red arrow sign advertising a sushi restaurant. Inside a car, a man, a woman, and another man watch him. The man in the chicken suit dances on the sidewalk, throws his sign up, and then jumps onto the roof of the car.",
+        "expected_shot_count": null,
+        "expected_cut_times_seconds": null
+      },
+      "shots": {
+        "text": "SUBJECTS\n- Character 1 (person): a young boy with dark skin and short hair, wearing a grey puffer jacket with fur trim and a white chef hat\n- Character 2 (person): a heavyset woman with dark hair in a ponytail and glasses, wearing a light green sleeveless top and dark pants\n- Character 3 (person): a man with a large nose and a mustache, wearing a green medical uniform and a head mirror\n- Character 4 (person): a woman with dark skin and an afro, wearing a green medical uniform and a surgical cap\n- Character 5 (person): a woman with blonde hair and glasses, wearing a purple top and khaki shorts\n- Character 6 (animal): a black and white cow\n- Character 7 (person): a man with brown hair, wearing a white shirt\n- Character 8 (person): a man with dark hair and a cap, wearing a blue shirt\n- Character 9 (person): a man in a yellow chicken suit, wearing a yellow chicken suit\n- Object 1 (object): a can of whipped cream\n- Object 2 (object): shelves of colorful cupcakes\n- Object 3 (object): a metal bucket\n- Object 4 (object): a red arrow sign with a fish logo and text 'Chick 'N' Sushi'\n- Object 5 (object): a silver car\n- Object 6 (object): steering wheel\nLOCATIONS\n- Location 1: a cupcake shop with shelves of cupcakes\n- Location 2: a grassy field with a blue sky\n- Location 3: a city street with shops and buildings\nSHOTS\ns01: Medium close-up shot. Character 1 stands in front of shelves of cupcakes holding a can of whipped cream.\ns02: Medium shot. Character 2 stands next to Character 1 in the cupcake shop.\ns03: Close-up shot, low angle shot. Character 3 stands with a head mirror while Character 4 gestures beside him.\ns04: Wide shot. Character 3, Character 4, and Character 5 stand near Character 6 in a grassy field.\ns05: Medium shot, tracking. Character 9 walks down the street holding a large red arrow sign.\ns06: Medium shot. Character 7, Character 5, and Character 8 sit inside Object 5.\ns07: Medium shot. Character 9 dances on the sidewalk holding the red arrow sign.\ns08: Medium close-up shot. Character 7, Character 5, and Character 8 look out from inside Object 5.\ns09: Medium shot. Character 9 stands on the sidewalk holding the red arrow sign and then throws it up.\ns10: Medium shot. Character 9 jumps onto the roof of Object 5.",
+        "expected_shot_count": 10,
+        "expected_cut_times_seconds": null
+      }
+    }
+  },
+  "board": {
+    "story_id": "film-001593-b0005-shot01",
+    "split": "test",
+    "fps": 16,
+    "target_seconds": 31.125,
+    "storyboard": {
+      "characters": [
+        {
+          "name": "Character 1",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a young boy with dark skin and short hair",
+          "outfit": "a grey puffer jacket with fur trim and a white chef hat"
+        },
+        {
+          "name": "Character 2",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a heavyset woman with dark hair in a ponytail and glasses",
+          "outfit": "a light green sleeveless top and dark pants"
+        },
+        {
+          "name": "Character 3",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with a large nose and a mustache",
+          "outfit": "a green medical uniform and a head mirror"
+        },
+        {
+          "name": "Character 4",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with dark skin and an afro",
+          "outfit": "a green medical uniform and a surgical cap"
+        },
+        {
+          "name": "Character 5",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a woman with blonde hair and glasses",
+          "outfit": "a purple top and khaki shorts"
+        },
+        {
+          "name": "Character 6",
+          "kind": "animal",
+          "visibility": "clear",
+          "appearance": "a black and white cow"
+        },
+        {
+          "name": "Character 7",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with brown hair",
+          "outfit": "a white shirt"
+        },
+        {
+          "name": "Character 8",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man with dark hair and a cap",
+          "outfit": "a blue shirt"
+        },
+        {
+          "name": "Character 9",
+          "kind": "person",
+          "visibility": "clear",
+          "appearance": "a man in a yellow chicken suit",
+          "outfit": "a yellow chicken suit"
+        }
+      ],
+      "objects": [
+        {
+          "name": "Object 1",
+          "appearance": "a can of whipped cream"
+        },
+        {
+          "name": "Object 2",
+          "appearance": "shelves of colorful cupcakes"
+        },
+        {
+          "name": "Object 3",
+          "appearance": "a metal bucket"
+        },
+        {
+          "name": "Object 4",
+          "appearance": "a red arrow sign with a fish logo and text 'Chick 'N' Sushi'"
+        },
+        {
+          "name": "Object 5",
+          "appearance": "a silver car"
+        },
+        {
+          "name": "Object 6",
+          "appearance": "steering wheel"
+        }
+      ],
+      "places": [
+        {
+          "name": "Location 1",
+          "appearance": "a cupcake shop with shelves of cupcakes"
+        },
+        {
+          "name": "Location 2",
+          "appearance": "a grassy field with a blue sky"
+        },
+        {
+          "name": "Location 3",
+          "appearance": "a city street with shops and buildings"
+        }
+      ],
+      "shots": [
+        {
+          "shot": 1,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "action": "Character 1 stands in front of shelves of cupcakes holding a can of whipped cream.",
+          "changes": [],
+          "frame_count": 17
+        },
+        {
+          "shot": 2,
+          "place": "Location 1",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 1",
+              "posture": "standing",
+              "holding": [
+                "Object 1"
+              ]
+            },
+            {
+              "name": "Character 2",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 2"
+            },
+            {
+              "name": "Object 1"
+            }
+          ],
+          "action": "Character 2 stands next to Character 1 in the cupcake shop.",
+          "changes": [],
+          "frame_count": 21
+        },
+        {
+          "shot": 3,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "close-up shot",
+            "angle": "low angle shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing"
+            }
+          ],
+          "action": "Character 3 stands with a head mirror while Character 4 gestures beside him.",
+          "changes": [],
+          "frame_count": 97
+        },
+        {
+          "shot": 4,
+          "place": "Location 2",
+          "camera": {
+            "shot_size": "wide shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 3",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 4",
+              "posture": "standing",
+              "holding": [
+                "Object 3"
+              ]
+            },
+            {
+              "name": "Character 5",
+              "posture": "standing"
+            },
+            {
+              "name": "Character 6",
+              "posture": "standing"
+            },
+            {
+              "name": "Object 3"
+            }
+          ],
+          "action": "Character 3, Character 4, and Character 5 stand near Character 6 in a grassy field.",
+          "changes": [],
+          "frame_count": 65
+        },
+        {
+          "shot": 5,
+          "place": "Location 3",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "tracking"
+          },
+          "present": [
+            {
+              "name": "Character 9",
+              "posture": "walking",
+              "holding": [
+                "Object 4"
+              ]
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "action": "Character 9 walks down the street holding a large red arrow sign.",
+          "changes": [],
+          "frame_count": 77
+        },
+        {
+          "shot": 6,
+          "place": "Location 3",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 7",
+              "posture": "sitting in a car"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting in a car",
+              "holding": [
+                "Object 6"
+              ]
+            },
+            {
+              "name": "Character 8",
+              "posture": "sitting in a car"
+            },
+            {
+              "name": "Object 5"
+            },
+            {
+              "name": "Object 6"
+            }
+          ],
+          "action": "Character 7, Character 5, and Character 8 sit inside Object 5.",
+          "changes": [],
+          "frame_count": 13
+        },
+        {
+          "shot": 7,
+          "place": "Location 3",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 9",
+              "posture": "dancing",
+              "holding": [
+                "Object 4"
+              ]
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "action": "Character 9 dances on the sidewalk holding the red arrow sign.",
+          "changes": [],
+          "frame_count": 41
+        },
+        {
+          "shot": 8,
+          "place": "Location 3",
+          "camera": {
+            "shot_size": "medium close-up shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 7",
+              "posture": "sitting in a car"
+            },
+            {
+              "name": "Character 5",
+              "posture": "sitting in a car"
+            },
+            {
+              "name": "Character 8",
+              "posture": "sitting in a car"
+            },
+            {
+              "name": "Object 5"
+            }
+          ],
+          "action": "Character 7, Character 5, and Character 8 look out from inside Object 5.",
+          "changes": [],
+          "frame_count": 41
+        },
+        {
+          "shot": 9,
+          "place": "Location 3",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 9",
+              "posture": "standing",
+              "holding": [
+                "Object 4"
+              ]
+            },
+            {
+              "name": "Object 4"
+            }
+          ],
+          "action": "Character 9 stands on the sidewalk holding the red arrow sign and then throws it up.",
+          "changes": [
+            {
+              "name": "Character 9",
+              "what": "holding",
+              "before": [
+                "Object 4"
+              ],
+              "after": []
+            }
+          ],
+          "frame_count": 93
+        },
+        {
+          "shot": 10,
+          "place": "Location 3",
+          "camera": {
+            "shot_size": "medium shot",
+            "angle": "eye-level shot",
+            "movement": "static"
+          },
+          "present": [
+            {
+              "name": "Character 9",
+              "posture": "jumping onto the car"
+            },
+            {
+              "name": "Object 5"
+            }
+          ],
+          "action": "Character 9 jumps onto the roof of Object 5.",
+          "changes": [],
+          "frame_count": 33
+        }
+      ]
+    },
+    "inputs": {
+      "shots": {
+        "text": "SUBJECTS\n- Character 1 (person): a young boy with dark skin and short hair, wearing a grey puffer jacket with fur trim and a white chef hat\n- Character 2 (person): a heavyset woman with dark hair in a ponytail and glasses, wearing a light green sleeveless top and dark pants\n- Character 3 (person): a man with a large nose and a mustache, wearing a green medical uniform and a head mirror\n- Character 4 (person): a woman with dark skin and an afro, wearing a green medical uniform and a surgical cap\n- Character 5 (person): a woman with blonde hair and glasses, wearing a purple top and khaki shorts\n- Character 6 (animal): a black and white cow\n- Character 7 (person): a man with brown hair, wearing a white shirt\n- Character 8 (person): a man with dark hair and a cap, wearing a blue shirt\n- Character 9 (person): a man in a yellow chicken suit, wearing a yellow chicken suit\n- Object 1 (object): a can of whipped cream\n- Object 2 (object): shelves of colorful cupcakes\n- Object 3 (object): a metal bucket\n- Object 4 (object): a red arrow sign with a fish logo and text 'Chick 'N' Sushi'\n- Object 5 (object): a silver car\n- Object 6 (object): steering wheel\nLOCATIONS\n- Location 1: a cupcake shop with shelves of cupcakes\n- Location 2: a grassy field with a blue sky\n- Location 3: a city street with shops and buildings\nSHOTS\ns01: Medium close-up shot. Character 1 stands in front of shelves of cupcakes holding a can of whipped cream.\ns02: Medium shot. Character 2 stands next to Character 1 in the cupcake shop.\ns03: Close-up shot, low angle shot. Character 3 stands with a head mirror while Character 4 gestures beside him.\ns04: Wide shot. Character 3, Character 4, and Character 5 stand near Character 6 in a grassy field.\ns05: Medium shot, tracking. Character 9 walks down the street holding a large red arrow sign.\ns06: Medium shot. Character 7, Character 5, and Character 8 sit inside Object 5.\ns07: Medium shot. Character 9 dances on the sidewalk holding the red arrow sign.\ns08: Medium close-up shot. Character 7, Character 5, and Character 8 look out from inside Object 5.\ns09: Medium shot. Character 9 stands on the sidewalk holding the red arrow sign and then throws it up.\ns10: Medium shot. Character 9 jumps onto the roof of Object 5.",
+        "expected_shot_count": 10,
+        "expected_cut_times_seconds": null
+      }
+    }
+  },
+  "receipt": {
+    "returncode": 0
+  },
+  "observed_boundary": "HTTP429; supervisor sent SIGTERM, wrapper returned0, structured output absent"
+}

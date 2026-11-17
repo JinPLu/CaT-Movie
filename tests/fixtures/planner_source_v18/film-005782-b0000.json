@@ -1,0 +1,241 @@
+{
+  "key": "film-005782-b0000",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with dark hair, a prominent mustache, and blue eyes",
+        "outfit": "a black turtleneck and black gloves"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a pair of black over-ear headphones"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a holographic display interface with blue text and graphics"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "a robotic arm with a metallic hand"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "a small metallic tray"
+      },
+      {
+        "name": "Object 5",
+        "appearance": "a thin blue wire or cable"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a futuristic, metallic room with blue lighting and holographic interfaces"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "pull out"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 1"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 puts on a pair of black headphones.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "holding",
+            "before": [
+              "Object 1"
+            ],
+            "after": []
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "outfit": "a black turtleneck and black gloves"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1, now wearing the headphones, interacts with a holographic display using his hands.",
+        "changes": []
+      },
+      {
+        "shot": 3,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 2"
+            ]
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 selects a playlist named 'Tunes of Anarchy' on the holographic interface.",
+        "changes": []
+      },
+      {
+        "shot": 4,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium wide shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "holding": [
+              "Object 2"
+            ]
+          },
+          {
+            "name": "Object 3"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 dances and gestures while the holographic display plays music around him.",
+        "changes": []
+      },
+      {
+        "shot": 5,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "angle": "overhead shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "dancing"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "An overhead view shows Character 1 dancing in the center of the room.",
+        "changes": []
+      },
+      {
+        "shot": 6,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing"
+          },
+          {
+            "name": "Object 3"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 makes an 'OK' gesture with his hand while looking at a robotic arm.",
+        "changes": []
+      },
+      {
+        "shot": 7,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "high angle shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Object 3",
+            "holding": [
+              "Object 5"
+            ]
+          },
+          {
+            "name": "Object 4"
+          },
+          {
+            "name": "Object 5"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "A robotic arm places a thin blue wire onto a small metallic tray.",
+        "changes": [
+          {
+            "name": "Object 3",
+            "what": "holding",
+            "before": [
+              "Object 5"
+            ],
+            "after": []
+          }
+        ]
+      }
+    ],
+    "story": {
+      "paragraph": "A man with a prominent mustache puts on a pair of black headphones in a futuristic, metallic room with blue lighting. He interacts with a holographic display interface, selecting a playlist named 'Tunes of Anarchy'. As the music plays, he dances and gestures around the room, viewed from an overhead angle. Afterward, he makes an 'OK' gesture to a robotic arm, which then places a thin blue wire onto a small metallic tray.",
+      "summary": "A man with a mustache puts on headphones, selects music on a holographic display, dances in a futuristic room, and signals a robotic arm to place a wire on a tray."
+    }
+  },
+  "shot_count": 7
+}

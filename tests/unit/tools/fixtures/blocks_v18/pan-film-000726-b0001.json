@@ -1,0 +1,141 @@
+{
+ "key": "film-000726-b0001",
+ "shots": 4,
+ "source": "source-pipeline-20261011/review/blocks-v17/responses/film-000726-b0001.json",
+ "contract": "block_annotation_v17",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair, a mustache, and a goatee",
+    "outfit": "a dark top"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a tall building with a spire"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a modern building with glass windows"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a city skyline with lights reflecting on water"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a sloped roof or ledge"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "an earpiece"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a rooftop at night with a city skyline in the background"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "pan right"
+    },
+    "present": [
+     {
+      "name": "Object 1"
+     },
+     {
+      "name": "Object 2"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "The camera pans right across a dark night sky, revealing the top of a tall building with a spire and another building next to it.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "high angle shot",
+     "movement": "pan right"
+    },
+    "present": [
+     {
+      "name": "Object 3"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "The camera pans right over a sloped roof, showing a city skyline at night with lights reflecting on the water below.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing on the roof",
+      "state": "wearing an earpiece"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The camera pans right to reveal a man with dark hair and facial hair standing on the roof, looking off into the distance while wearing an earpiece.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 1"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "The shot shows the two buildings again at night, with lights visible in the windows and spotlights shining into the sky.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "The video begins with a view of tall buildings at night, panning across their upper structures. The scene shifts to a high angle over a sloped roof, overlooking a city skyline with lights reflecting on the water. The camera then moves to a close-up of a man with dark hair and a goatee standing on the roof, wearing an earpiece and looking out. Finally, the view returns to the buildings, showing their lit windows and spotlights against the night sky.",
+   "summary": "A man with an earpiece stands on a rooftop at night, looking out over a city skyline with tall buildings and lights reflecting on the water."
+  }
+ }
+}

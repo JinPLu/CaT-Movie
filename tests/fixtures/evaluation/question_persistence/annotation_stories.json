@@ -1,0 +1,2650 @@
+{
+ "source": "outputs/experiments/benchmark-v6-checklist-rolling-20261029/inputs/questions.reviewed.json 与 questions.persistence-additions.json（已有题），configs/benchmark/benchmark_storyboards_v4.json（给定分镜表），11-03 原样摘出",
+ "stories": {
+  "film-001594-b0006-shot04": {
+   "writer_output": {
+    "names": [
+     {
+      "id": "Character 1",
+      "name": "Character 1"
+     },
+     {
+      "id": "Character 2",
+      "name": "Character 2"
+     },
+     {
+      "id": "Character 3",
+      "name": "Character 3"
+     },
+     {
+      "id": "Character 4",
+      "name": "Character 4"
+     },
+     {
+      "id": "Character 5",
+      "name": "Character 5"
+     },
+     {
+      "id": "Object 1",
+      "name": "Object 1"
+     },
+     {
+      "id": "Object 2",
+      "name": "Object 2"
+     },
+     {
+      "id": "Object 3",
+      "name": "Object 3"
+     },
+     {
+      "id": "Object 4",
+      "name": "Object 4"
+     },
+     {
+      "id": "Object 5",
+      "name": "Object 5"
+     },
+     {
+      "id": "Object 6",
+      "name": "Object 6"
+     },
+     {
+      "id": "Location 1",
+      "name": "Location 1"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "present": [
+       "Character 4",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 2,
+      "present": [
+       "Character 1",
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 3,
+      "present": [
+       "Character 3",
+       "Object 3"
+      ]
+     },
+     {
+      "shot": 4,
+      "present": [
+       "Character 3",
+       "Character 5",
+       "Object 1",
+       "Object 3"
+      ]
+     },
+     {
+      "shot": 5,
+      "present": [
+       "Character 3",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 6,
+      "present": [
+       "Object 1",
+       "Object 5",
+       "Object 6"
+      ]
+     },
+     {
+      "shot": 7,
+      "present": [
+       "Character 3",
+       "Object 1",
+       "Object 5",
+       "Object 6"
+      ]
+     }
+    ],
+    "actions": [
+     {
+      "shot": 1,
+      "question": "Does Object 1 move through the ocean?",
+      "participants": [
+       "Object 1"
+      ],
+      "result": null
+     },
+     {
+      "shot": 2,
+      "question": "Does Character 1 peek out from a hatch?",
+      "participants": [
+       "Character 1"
+      ],
+      "result": null
+     },
+     {
+      "shot": 2,
+      "question": "Does Character 2 peek out from a hatch?",
+      "participants": [
+       "Character 2"
+      ],
+      "result": null
+     },
+     {
+      "shot": 3,
+      "question": "Does Object 3 land on Character 3's head?",
+      "participants": [
+       "Object 3",
+       "Character 3"
+      ],
+      "result": {
+       "question": "Is Object 3 on Character 3's head?",
+       "entity": "Object 3",
+       "kind": "holding_or_place"
+      }
+     },
+     {
+      "shot": 4,
+      "question": "Does Character 3 put on a hat with lures?",
+      "participants": [
+       "Character 3"
+      ],
+      "result": {
+       "question": "Is Character 3 wearing a hat with lures?",
+       "entity": "Character 3",
+       "kind": "appearance"
+      }
+     },
+     {
+      "shot": 4,
+      "question": "Does Character 3 hold Object 3?",
+      "participants": [
+       "Character 3",
+       "Object 3"
+      ],
+      "result": null
+     },
+     {
+      "shot": 4,
+      "question": "Does Character 3 cast his fishing line?",
+      "participants": [
+       "Character 3"
+      ],
+      "result": null
+     },
+     {
+      "shot": 5,
+      "question": "Does Character 3 sit on the edge of Object 1's roof?",
+      "participants": [
+       "Character 3",
+       "Object 1"
+      ],
+      "result": null
+     },
+     {
+      "shot": 5,
+      "question": "Does Character 3 reel in his fishing line?",
+      "participants": [
+       "Character 3"
+      ],
+      "result": null
+     },
+     {
+      "shot": 6,
+      "question": "Does Object 1 spin in circles?",
+      "participants": [
+       "Object 1"
+      ],
+      "result": null
+     },
+     {
+      "shot": 6,
+      "question": "Does Object 5 emerge from the water?",
+      "participants": [
+       "Object 5"
+      ],
+      "result": {
+       "question": "Is Object 5 above the water?",
+       "entity": "Object 5",
+       "kind": "holding_or_place"
+      }
+     },
+     {
+      "shot": 6,
+      "question": "Does Object 6 emerge from the water?",
+      "participants": [
+       "Object 6"
+      ],
+      "result": {
+       "question": "Is Object 6 above the water?",
+       "entity": "Object 6",
+       "kind": "holding_or_place"
+      }
+     },
+     {
+      "shot": 7,
+      "question": "Does Character 3 lean back on Object 1's roof?",
+      "participants": [
+       "Character 3",
+       "Object 1"
+      ],
+      "result": null
+     },
+     {
+      "shot": 7,
+      "question": "Does Character 3 reel in his fishing line?",
+      "participants": [
+       "Character 3"
+      ],
+      "result": null
+     }
+    ]
+   },
+   "existing": [
+    {
+     "requirement_id": "film-001594-b0006-shot04/q01",
+     "dimension": "event",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Object 1 move through the ocean?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q02",
+     "dimension": "event",
+     "shot": 2,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 peek out from a hatch?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q03",
+     "dimension": "event",
+     "shot": 2,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 2 peek out from a hatch?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q04",
+     "dimension": "event",
+     "shot": 3,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Object 3 land on Character 3's head?",
+     "depends_on": [
+      "Object 3",
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q05",
+     "dimension": "state",
+     "shot": 3,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Object 3 on Character 3's head?",
+     "depends_on": [
+      "Object 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q06",
+     "dimension": "event",
+     "shot": 4,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 put on a hat with lures?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q07",
+     "dimension": "state",
+     "shot": 4,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Character 3 wearing a hat with lures?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q08",
+     "dimension": "state",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Is Character 3 wearing a hat with lures?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q09",
+     "dimension": "state",
+     "shot": 7,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Is Character 3 wearing a hat with lures?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q10",
+     "dimension": "event",
+     "shot": 4,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 hold Object 3?",
+     "depends_on": [
+      "Character 3",
+      "Object 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q11",
+     "dimension": "event",
+     "shot": 4,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 cast his fishing line?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q12",
+     "dimension": "event",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 sit on the edge of Object 1's roof?",
+     "depends_on": [
+      "Character 3",
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q13",
+     "dimension": "event",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 reel in his fishing line?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q14",
+     "dimension": "event",
+     "shot": 6,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Object 1 spin in circles?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q15",
+     "dimension": "event",
+     "shot": 6,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Object 5 emerge from the water?",
+     "depends_on": [
+      "Object 5"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q16",
+     "dimension": "state",
+     "shot": 6,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Object 5 above the water?",
+     "depends_on": [
+      "Object 5"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q17",
+     "dimension": "event",
+     "shot": 6,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Object 6 emerge from the water?",
+     "depends_on": [
+      "Object 6"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q18",
+     "dimension": "state",
+     "shot": 6,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Object 6 above the water?",
+     "depends_on": [
+      "Object 6"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q19",
+     "dimension": "event",
+     "shot": 7,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 lean back on Object 1's roof?",
+     "depends_on": [
+      "Character 3",
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q20",
+     "dimension": "event",
+     "shot": 7,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 3 reel in his fishing line?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q21",
+     "dimension": "object",
+     "shot": 4,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 1 at {shot 4} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q22",
+     "dimension": "object",
+     "shot": 7,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 1 at {shot 7} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q23",
+     "dimension": "character",
+     "shot": 4,
+     "reference_shot": 3,
+     "anchor": "during",
+     "question": "Is Character 3 at {shot 4} the same person as at {shot 3}?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q24",
+     "dimension": "character",
+     "shot": 7,
+     "reference_shot": 3,
+     "anchor": "during",
+     "question": "Is Character 3 at {shot 7} the same person as at {shot 3}?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q25",
+     "dimension": "object",
+     "shot": 4,
+     "reference_shot": 3,
+     "anchor": "during",
+     "question": "Is Object 3 at {shot 4} the same object as at {shot 3}?",
+     "depends_on": [
+      "Object 3"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q26",
+     "dimension": "object",
+     "shot": 7,
+     "reference_shot": 6,
+     "anchor": "during",
+     "question": "Is Object 5 at {shot 7} the same object as at {shot 6}?",
+     "depends_on": [
+      "Object 5"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q27",
+     "dimension": "object",
+     "shot": 7,
+     "reference_shot": 6,
+     "anchor": "during",
+     "question": "Is Object 6 at {shot 7} the same object as at {shot 6}?",
+     "depends_on": [
+      "Object 6"
+     ]
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q28",
+     "dimension": "place",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/q29",
+     "dimension": "place",
+     "shot": 7,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 7} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/s01",
+     "dimension": "style",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-001594-b0006-shot04/m01",
+     "dimension": "monitor",
+     "shot": 3,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 2} the same person as Character 3 at {shot 3}?",
+     "depends_on": []
+    }
+   ],
+   "storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with a large nose, wearing a yellow cheese hat",
+      "outfit": "a white long-sleeved shirt"
+     },
+     {
+      "name": "Character 2",
+      "kind": "animal",
+      "visibility": "clear",
+      "appearance": "a small red strawberry character with a white helmet and green leaves",
+      "outfit": "a white helmet with red stripes"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a large, bald man with a thick dark mustache",
+      "outfit": "a light purple polo shirt"
+     },
+     {
+      "name": "Character 4",
+      "kind": "animal",
+      "visibility": "clear",
+      "appearance": "a grey fish with a red collar and a hook in its mouth",
+      "outfit": "a red collar"
+     },
+     {
+      "name": "Character 5",
+      "kind": "animal",
+      "visibility": "clear",
+      "appearance": "a green pickle character with arms and legs",
+      "outfit": "none"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a purple and blue boat with cactus decorations and graffiti on the side"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a large fishing rod held by a mechanical arm"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a blue mechanical cat fishing lure with a red eye"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a white bucket labeled 'CHUM'"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a large green olive with a red pimento on a straw"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a large, fleshy, textured surface resembling a giant mouth or tongue"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "the open ocean at night under a full moon"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium wide shot",
+       "angle": "eye-level shot",
+       "movement": "tracking"
+      },
+      "present": [
+       {
+        "name": "Character 4",
+        "posture": "hanging from a fishing line"
+       },
+       {
+        "name": "Object 1",
+        "state": "moving through the water"
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "action": "A purple boat moves through the ocean at night with a grey fish hanging from a fishing line attached to a mechanical arm.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "low angle shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "peeking out from a hatch",
+        "state": "giving a thumbs up"
+       },
+       {
+        "name": "Character 2",
+        "posture": "peeking out from a hatch"
+       }
+      ],
+      "action": "A man with a cheese hat and a strawberry character peek out from a hatch and smile.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "low angle shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 3",
+        "state": "landing on Character 3's head"
+       }
+      ],
+      "action": "A large bald man with a mustache looks up as a blue mechanical cat lure lands on his head.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "pull out"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "outfit": "a hat with lures on it",
+        "posture": "standing on the roof of the boat",
+        "holding": []
+       },
+       {
+        "name": "Character 5",
+        "posture": "sitting next to a bucket"
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "The bald man puts on a hat with lures, holds the mechanical cat lure, and casts his fishing line from the roof of the boat while a pickle character watches.",
+      "changes": [
+       {
+        "name": "Character 3",
+        "what": "outfit",
+        "before": "a light purple polo shirt",
+        "after": "a light purple polo shirt and a hat with lures"
+       },
+       {
+        "name": "Character 3",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 3"
+        ]
+       }
+      ],
+      "frame_count": 125
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "outfit": "a light purple polo shirt and a hat with lures",
+        "posture": "standing",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Character 5",
+        "posture": "sitting"
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "The bald man sits on the edge of the boat roof, reeling in his fishing line.",
+      "changes": [
+       {
+        "name": "Character 3",
+        "what": "posture",
+        "before": "standing",
+        "after": "sitting on the edge of the boat roof"
+       }
+      ],
+      "frame_count": 21
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "wide shot",
+       "angle": "low angle shot",
+       "movement": "pan"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "outfit": "a light purple polo shirt and a hat with lures",
+        "posture": "sitting on the boat roof",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 1",
+        "state": "moving through the water"
+       },
+       {
+        "name": "Object 5",
+        "state": "underwater"
+       },
+       {
+        "name": "Object 6",
+        "state": "underwater"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "The boat spins in circles as a giant olive on a straw and a large fleshy surface emerge from the water.",
+      "changes": [
+       {
+        "name": "Object 1",
+        "what": "state",
+        "before": "moving through the water",
+        "after": "spinning in circles"
+       },
+       {
+        "name": "Object 5",
+        "what": "state",
+        "before": "underwater",
+        "after": "emerging from the water"
+       },
+       {
+        "name": "Object 6",
+        "what": "state",
+        "before": "underwater",
+        "after": "rising from the water"
+       }
+      ],
+      "frame_count": 101
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "high angle shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 3",
+        "outfit": "a light purple polo shirt and a hat with lures",
+        "posture": "sitting on the edge of the boat roof",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 5",
+        "state": "emerging from the water"
+       },
+       {
+        "name": "Object 6"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "The bald man leans back on the boat roof, reeling in his line as the giant olive rests on the large fleshy surface.",
+      "changes": [
+       {
+        "name": "Character 3",
+        "what": "posture",
+        "before": "sitting on the edge of the boat roof",
+        "after": "sitting on the boat roof, leaning back"
+       },
+       {
+        "name": "Object 5",
+        "what": "state",
+        "before": "emerging from the water",
+        "after": "resting on the fleshy surface"
+       }
+      ],
+      "frame_count": 45
+     }
+    ]
+   }
+  },
+  "film-019290-b0000-shot01": {
+   "writer_output": {
+    "names": [
+     {
+      "id": "Character 1",
+      "name": "Character 1"
+     },
+     {
+      "id": "Character 2",
+      "name": "Character 2"
+     },
+     {
+      "id": "Object 1",
+      "name": "Object 1"
+     },
+     {
+      "id": "Object 2",
+      "name": "Object 2"
+     },
+     {
+      "id": "Location 1",
+      "name": "Location 1"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "present": [
+       "Character 1",
+       "Object 1",
+       "Object 2"
+      ]
+     },
+     {
+      "shot": 2,
+      "present": [
+       "Character 1",
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 3,
+      "present": [
+       "Character 1",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 4,
+      "present": [
+       "Character 1",
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 5,
+      "present": [
+       "Character 1",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 6,
+      "present": [
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 7,
+      "present": [
+       "Character 1"
+      ]
+     }
+    ],
+    "actions": [
+     {
+      "shot": 1,
+      "question": "Does Character 1 adjust Object 2?",
+      "participants": [
+       "Character 1",
+       "Object 2"
+      ],
+      "result": {
+       "question": "Is Object 2 adjusted?",
+       "entity": "Object 2",
+       "kind": "appearance"
+      }
+     }
+    ]
+   },
+   "existing": [
+    {
+     "requirement_id": "film-019290-b0000-shot01/q01",
+     "dimension": "event",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 adjust Object 2?",
+     "depends_on": [
+      "Character 1",
+      "Object 2"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q02",
+     "dimension": "state",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Object 2 adjusted?",
+     "depends_on": [
+      "Object 2"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q03",
+     "dimension": "character",
+     "shot": 3,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q04",
+     "dimension": "character",
+     "shot": 7,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 7} the same person as at {shot 1}?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q05",
+     "dimension": "object",
+     "shot": 3,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 1 at {shot 3} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q06",
+     "dimension": "object",
+     "shot": 5,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 1 at {shot 5} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q07",
+     "dimension": "character",
+     "shot": 4,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 2 at {shot 4} the same person as at {shot 2}?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q08",
+     "dimension": "character",
+     "shot": 6,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 2 at {shot 6} the same person as at {shot 2}?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q09",
+     "dimension": "place",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/q10",
+     "dimension": "place",
+     "shot": 7,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 7} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/s01",
+     "dimension": "style",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-019290-b0000-shot01/m01",
+     "dimension": "monitor",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 1} the same person as Character 2 at {shot 2}?",
+     "depends_on": []
+    }
+   ],
+   "storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with short dark hair, a mustache, and wire-rimmed glasses",
+      "outfit": "a white collared shirt and a patterned tie"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with short dark hair and a slim build",
+      "outfit": "a yellow cardigan over a white top with a necklace"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a wooden mirror with an arched top"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "tie"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a room with a mirror and a lamp"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in front of a mirror",
+        "holding": []
+       },
+       {
+        "name": "Object 1"
+       },
+       {
+        "name": "Object 2"
+       }
+      ],
+      "action": "A man with a mustache and glasses looks at his reflection in a wooden mirror and adjusts his tie.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 2"
+        ]
+       }
+      ],
+      "frame_count": 109
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing and looking at someone",
+        "holding": []
+       }
+      ],
+      "action": "A woman in a yellow cardigan stands and looks at the man, speaking to him.",
+      "changes": [],
+      "frame_count": 45
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in front of a mirror",
+        "holding": []
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "The man continues to look in the mirror and speak.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing and looking at someone",
+        "holding": []
+       }
+      ],
+      "action": "The woman in the yellow cardigan continues to speak to the man.",
+      "changes": [],
+      "frame_count": 33
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in front of a mirror",
+        "holding": []
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "The man looks in the mirror and speaks.",
+      "changes": [],
+      "frame_count": 33
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing and looking at someone",
+        "holding": []
+       }
+      ],
+      "action": "The woman in the yellow cardigan speaks with a surprised expression.",
+      "changes": [],
+      "frame_count": 17
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "over-the-shoulder shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing in front of a mirror",
+        "holding": []
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "The man turns his head slightly while speaking.",
+      "changes": [],
+      "frame_count": 17
+     }
+    ]
+   }
+  },
+  "cinedance-010942-b0000-shot03": {
+   "writer_output": {
+    "names": [
+     {
+      "id": "Character 1",
+      "name": "Character 1"
+     },
+     {
+      "id": "Character 2",
+      "name": "Character 2"
+     },
+     {
+      "id": "Character 3",
+      "name": "Character 3"
+     },
+     {
+      "id": "Character 4",
+      "name": "Character 4"
+     },
+     {
+      "id": "Object 1",
+      "name": "Object 1"
+     },
+     {
+      "id": "Object 2",
+      "name": "Object 2"
+     },
+     {
+      "id": "Object 3",
+      "name": "Object 3"
+     },
+     {
+      "id": "Object 4",
+      "name": "Object 4"
+     },
+     {
+      "id": "Object 5",
+      "name": "Object 5"
+     },
+     {
+      "id": "Object 6",
+      "name": "Object 6"
+     },
+     {
+      "id": "Object 7",
+      "name": "Object 7"
+     },
+     {
+      "id": "Object 8",
+      "name": "Object 8"
+     },
+     {
+      "id": "Location 1",
+      "name": "Location 1"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "present": [
+       "Character 1",
+       "Object 1",
+       "Object 2"
+      ]
+     },
+     {
+      "shot": 2,
+      "present": [
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 3,
+      "present": [
+       "Character 1"
+      ]
+     },
+     {
+      "shot": 4,
+      "present": [
+       "Character 2",
+       "Object 3",
+       "Character 1",
+       "Object 2"
+      ]
+     },
+     {
+      "shot": 5,
+      "present": [
+       "Character 1",
+       "Character 3",
+       "Object 8"
+      ]
+     },
+     {
+      "shot": 6,
+      "present": [
+       "Character 2",
+       "Object 3"
+      ]
+     },
+     {
+      "shot": 7,
+      "present": [
+       "Character 1",
+       "Character 3"
+      ]
+     },
+     {
+      "shot": 8,
+      "present": [
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 9,
+      "present": [
+       "Character 1",
+       "Character 3"
+      ]
+     },
+     {
+      "shot": 10,
+      "present": [
+       "Character 1",
+       "Character 3"
+      ]
+     },
+     {
+      "shot": 11,
+      "present": [
+       "Character 1",
+       "Character 3"
+      ]
+     }
+    ],
+    "actions": [
+     {
+      "shot": 1,
+      "question": "Does Character 1 hold Object 1?",
+      "participants": [
+       "Character 1",
+       "Object 1"
+      ],
+      "result": null
+     },
+     {
+      "shot": 4,
+      "question": "Does Character 2 hold Object 3?",
+      "participants": [
+       "Character 2",
+       "Object 3"
+      ],
+      "result": null
+     },
+     {
+      "shot": 5,
+      "question": "Does Character 1 help Character 3 stand up from the chair?",
+      "participants": [
+       "Character 1",
+       "Character 3"
+      ],
+      "result": {
+       "question": "Is Character 3 now standing out of the chair?",
+       "entity": "Character 3",
+       "kind": "holding_or_place"
+      }
+     },
+     {
+      "shot": 6,
+      "question": "Does Character 2 continue to hold Object 3?",
+      "participants": [
+       "Character 2",
+       "Object 3"
+      ],
+      "result": null
+     },
+     {
+      "shot": 7,
+      "question": "Does Character 1 support Character 3 while she stands?",
+      "participants": [
+       "Character 1",
+       "Character 3"
+      ],
+      "result": null
+     },
+     {
+      "shot": 9,
+      "question": "Does Character 1 help Character 3 walk away?",
+      "participants": [
+       "Character 1",
+       "Character 3"
+      ],
+      "result": {
+       "question": "Has Character 3 moved away from where she was standing?",
+       "entity": "Character 3",
+       "kind": "holding_or_place"
+      }
+     }
+    ]
+   },
+   "existing": [
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q01",
+     "dimension": "event",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 hold Object 1?",
+     "depends_on": [
+      "Character 1",
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q02",
+     "dimension": "event",
+     "shot": 4,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 2 hold Object 3?",
+     "depends_on": [
+      "Character 2",
+      "Object 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q03",
+     "dimension": "event",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 help Character 3 stand up from the chair?",
+     "depends_on": [
+      "Character 1",
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q04",
+     "dimension": "state",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Character 3 now standing out of the chair?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q05",
+     "dimension": "event",
+     "shot": 6,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 2 continue to hold Object 3?",
+     "depends_on": [
+      "Character 2",
+      "Object 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q06",
+     "dimension": "event",
+     "shot": 7,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 support Character 3 while she stands?",
+     "depends_on": [
+      "Character 1",
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q07",
+     "dimension": "event",
+     "shot": 9,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 help Character 3 walk away?",
+     "depends_on": [
+      "Character 1",
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q08",
+     "dimension": "state",
+     "shot": 9,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Has Character 3 moved away from where she was standing?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q09",
+     "dimension": "character",
+     "shot": 3,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q10",
+     "dimension": "character",
+     "shot": 11,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 11} the same person as at {shot 1}?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q11",
+     "dimension": "object",
+     "shot": 4,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 2 at {shot 4} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 2"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q12",
+     "dimension": "character",
+     "shot": 4,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 2 at {shot 4} the same person as at {shot 2}?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q13",
+     "dimension": "character",
+     "shot": 8,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 2 at {shot 8} the same person as at {shot 2}?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q14",
+     "dimension": "object",
+     "shot": 6,
+     "reference_shot": 4,
+     "anchor": "during",
+     "question": "Is Object 3 at {shot 6} the same object as at {shot 4}?",
+     "depends_on": [
+      "Object 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q15",
+     "dimension": "character",
+     "shot": 7,
+     "reference_shot": 5,
+     "anchor": "during",
+     "question": "Is Character 3 at {shot 7} the same person as at {shot 5}?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q16",
+     "dimension": "character",
+     "shot": 11,
+     "reference_shot": 5,
+     "anchor": "during",
+     "question": "Is Character 3 at {shot 11} the same person as at {shot 5}?",
+     "depends_on": [
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q17",
+     "dimension": "place",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 2} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/q18",
+     "dimension": "place",
+     "shot": 11,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 11} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/l01",
+     "dimension": "layout",
+     "shot": 11,
+     "reference_shot": 5,
+     "anchor": "during",
+     "question": "Do Character 1 and Character 3 keep the same left-right order at {shot 11} as at {shot 5} (whoever is on the left at {shot 5} is still on the left)?",
+     "depends_on": [
+      "Character 1",
+      "Character 3"
+     ]
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/s01",
+     "dimension": "style",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "cinedance-010942-b0000-shot03/m01",
+     "dimension": "monitor",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 1} the same person as Character 2 at {shot 2}?",
+     "depends_on": []
+    }
+   ],
+   "storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a middle-aged man with dark messy hair, a beard, and a serious expression",
+      "outfit": "a dark grey button-down shirt"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark hair, a mustache, and a serious expression",
+      "outfit": "a khaki police uniform"
+     },
+     {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with dark hair pulled back",
+      "outfit": "a green saree with a gold border"
+     },
+     {
+      "name": "Character 4",
+      "kind": "group",
+      "visibility": "partial",
+      "appearance": "men in khaki uniforms and other people in the background",
+      "outfit": "khaki uniforms and casual clothes"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a pen"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a wooden desk"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a stack of papers"
+     },
+     {
+      "name": "Object 4",
+      "appearance": "a golden chess piece"
+     },
+     {
+      "name": "Object 5",
+      "appearance": "a bell on a desk"
+     },
+     {
+      "name": "Object 6",
+      "appearance": "a clock on the wall"
+     },
+     {
+      "name": "Object 7",
+      "appearance": "trophies on a shelf"
+     },
+     {
+      "name": "Object 8",
+      "appearance": "metal bars of a cell"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a police station office with wooden furniture, trophies, and a cell area with metal bars"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at a desk",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 2"
+       },
+       {
+        "name": "Character 4",
+        "posture": "standing in the background"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "Character 1 sits at a desk holding a pen and looks forward with a serious expression.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "sitting at a desk"
+       }
+      ],
+      "action": "Character 2 looks to the side with a serious expression.",
+      "changes": [],
+      "frame_count": 17
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting at a desk"
+       }
+      ],
+      "action": "Character 1 looks to the side and then forward.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "sitting at a desk",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 5"
+       },
+       {
+        "name": "Object 6"
+       },
+       {
+        "name": "Object 7"
+       },
+       {
+        "name": "Character 1",
+        "posture": "standing in front of the desk"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 holds a stack of papers and looks at Character 1, who is now standing in front of the desk.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing and helping Character 3 stand up"
+       },
+       {
+        "name": "Character 3",
+        "posture": "sitting and then standing up"
+       },
+       {
+        "name": "Character 4",
+        "posture": "standing in the background"
+       },
+       {
+        "name": "Object 8"
+       }
+      ],
+      "action": "Character 1 helps Character 3 stand up from a chair near the metal bars.",
+      "changes": [
+       {
+        "name": "Character 3",
+        "what": "posture",
+        "before": "sitting",
+        "after": "standing"
+       }
+      ],
+      "frame_count": 37
+     },
+     {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "sitting at a desk",
+        "holding": [
+         "Object 3"
+        ]
+       },
+       {
+        "name": "Object 4"
+       },
+       {
+        "name": "Object 5"
+       },
+       {
+        "name": "Object 6"
+       },
+       {
+        "name": "Object 7"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "Character 2 continues to hold the papers and look forward.",
+      "changes": [],
+      "frame_count": 17
+     },
+     {
+      "shot": 7,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing and supporting Character 3"
+       },
+       {
+        "name": "Character 3",
+        "posture": "standing and leaning on Character 1",
+        "state": "neutral"
+       },
+       {
+        "name": "Character 4",
+        "posture": "standing in the background"
+       }
+      ],
+      "action": "Character 1 supports Character 3 as she stands and begins to cry.",
+      "changes": [
+       {
+        "name": "Character 3",
+        "what": "state",
+        "before": "neutral",
+        "after": "crying"
+       }
+      ],
+      "frame_count": 45
+     },
+     {
+      "shot": 8,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "sitting at a desk"
+       }
+      ],
+      "action": "Character 2 looks to the side.",
+      "changes": [],
+      "frame_count": 17
+     },
+     {
+      "shot": 9,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "walking and supporting Character 3"
+       },
+       {
+        "name": "Character 3",
+        "posture": "walking and leaning on Character 1",
+        "state": "crying"
+       },
+       {
+        "name": "Character 4",
+        "posture": "walking in the background"
+       }
+      ],
+      "action": "Character 1 helps Character 3 walk away while she continues to cry.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "posture",
+        "before": "standing",
+        "after": "walking"
+       },
+       {
+        "name": "Character 3",
+        "what": "posture",
+        "before": "standing",
+        "after": "walking"
+       }
+      ],
+      "frame_count": 145
+     },
+     {
+      "shot": 10,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "state": "neutral"
+       },
+       {
+        "name": "Character 3",
+        "posture": "standing next to Character 1",
+        "state": "crying"
+       }
+      ],
+      "action": "Character 1 and Character 3 stand close together, both looking distressed and crying.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "state",
+        "before": "neutral",
+        "after": "crying"
+       }
+      ],
+      "frame_count": 37
+     },
+     {
+      "shot": 11,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "standing",
+        "state": "crying"
+       },
+       {
+        "name": "Character 3",
+        "posture": "standing next to Character 1",
+        "state": "crying"
+       }
+      ],
+      "action": "Character 1 looks forward with tears in his eyes while Character 3 looks down.",
+      "changes": [],
+      "frame_count": 29
+     }
+    ]
+   }
+  },
+  "film-000193-b0001-shot01": {
+   "writer_output": {
+    "names": [
+     {
+      "id": "Character 1",
+      "name": "Character 1"
+     },
+     {
+      "id": "Character 2",
+      "name": "Character 2"
+     },
+     {
+      "id": "Object 1",
+      "name": "Object 1"
+     },
+     {
+      "id": "Object 2",
+      "name": "Object 2"
+     },
+     {
+      "id": "Object 3",
+      "name": "Object 3"
+     },
+     {
+      "id": "Location 1",
+      "name": "Location 1"
+     },
+     {
+      "id": "Location 2",
+      "name": "Location 2"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "present": [
+       "Character 1",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 2,
+      "present": [
+       "Character 2",
+       "Object 3"
+      ]
+     },
+     {
+      "shot": 3,
+      "present": [
+       "Character 1",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 4,
+      "present": [
+       "Character 2"
+      ]
+     },
+     {
+      "shot": 5,
+      "present": [
+       "Character 1",
+       "Object 1"
+      ]
+     },
+     {
+      "shot": 6,
+      "present": [
+       "Character 2"
+      ]
+     }
+    ],
+    "actions": [
+     {
+      "shot": 1,
+      "question": "Does Character 1 pick up Object 1?",
+      "participants": [
+       "Character 1",
+       "Object 1"
+      ],
+      "result": {
+       "question": "Is Object 1 held by Character 1?",
+       "entity": "Object 1",
+       "kind": "holding_or_place"
+      }
+     },
+     {
+      "shot": 5,
+      "question": "Does Character 1 move Object 1 away from his ear?",
+      "participants": [
+       "Character 1",
+       "Object 1"
+      ],
+      "result": {
+       "question": "Is Object 1 away from Character 1's ear?",
+       "entity": "Object 1",
+       "kind": "holding_or_place"
+      }
+     }
+    ]
+   },
+   "existing": [
+    {
+     "requirement_id": "film-000193-b0001-shot01/q01",
+     "dimension": "event",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 pick up Object 1?",
+     "depends_on": [
+      "Character 1",
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q02",
+     "dimension": "state",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Object 1 held by Character 1?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q03",
+     "dimension": "event",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Does Character 1 move Object 1 away from his ear?",
+     "depends_on": [
+      "Character 1",
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q04",
+     "dimension": "state",
+     "shot": 5,
+     "reference_shot": null,
+     "anchor": "end",
+     "question": "Is Object 1 away from Character 1's ear?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q05",
+     "dimension": "character",
+     "shot": 3,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 3} the same person as at {shot 1}?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q06",
+     "dimension": "character",
+     "shot": 5,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 5} the same person as at {shot 1}?",
+     "depends_on": [
+      "Character 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q07",
+     "dimension": "object",
+     "shot": 3,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 1 at {shot 3} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q08",
+     "dimension": "object",
+     "shot": 5,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Object 1 at {shot 5} the same object as at {shot 1}?",
+     "depends_on": [
+      "Object 1"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q09",
+     "dimension": "character",
+     "shot": 4,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 2 at {shot 4} the same person as at {shot 2}?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q10",
+     "dimension": "character",
+     "shot": 6,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Is Character 2 at {shot 6} the same person as at {shot 2}?",
+     "depends_on": [
+      "Character 2"
+     ]
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q11",
+     "dimension": "place",
+     "shot": 3,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 3} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q12",
+     "dimension": "place",
+     "shot": 5,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 5} and {shot 1} in the same place (Location 1)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q13",
+     "dimension": "place",
+     "shot": 4,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Are {shot 4} and {shot 2} in the same place (Location 2)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q14",
+     "dimension": "place",
+     "shot": 6,
+     "reference_shot": 2,
+     "anchor": "during",
+     "question": "Are {shot 6} and {shot 2} in the same place (Location 2)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/s01",
+     "dimension": "style",
+     "shot": 1,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Do all shots of this video keep one consistent visual style (for example all live action, or all the same animation style)?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/m01",
+     "dimension": "monitor",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Is Character 1 at {shot 1} the same person as Character 2 at {shot 2}?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/m02",
+     "dimension": "monitor",
+     "shot": 2,
+     "reference_shot": 1,
+     "anchor": "during",
+     "question": "Are {shot 2} and {shot 1} in the same place?",
+     "depends_on": []
+    },
+    {
+     "requirement_id": "film-000193-b0001-shot01/q15",
+     "dimension": "state",
+     "shot": 3,
+     "reference_shot": null,
+     "anchor": "during",
+     "question": "Is Object 1 held by Character 1?",
+     "depends_on": [
+      "Object 1"
+     ],
+     "family": "persistence",
+     "source_shot": 1
+    }
+   ],
+   "storyboard": {
+    "characters": [
+     {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a man with dark curly hair and a lean build",
+      "outfit": "a light-colored jacket over a dark shirt"
+     },
+     {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with blonde shoulder-length hair and bangs",
+      "outfit": "a yellow long-sleeved shirt"
+     }
+    ],
+    "objects": [
+     {
+      "name": "Object 1",
+      "appearance": "a light blue telephone receiver"
+     },
+     {
+      "name": "Object 2",
+      "appearance": "a wooden headboard"
+     },
+     {
+      "name": "Object 3",
+      "appearance": "a white door with a gold doorknob"
+     }
+    ],
+    "places": [
+     {
+      "name": "Location 1",
+      "appearance": "a dimly lit room with a plain wall and a wooden headboard"
+     },
+     {
+      "name": "Location 2",
+      "appearance": "a room with a white door"
+     }
+    ],
+    "shots": [
+     {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": []
+       },
+       {
+        "name": "Object 2"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "A man sits and smiles, then picks up a light blue telephone receiver.",
+      "changes": [
+       {
+        "name": "Character 1",
+        "what": "holding",
+        "before": [],
+        "after": [
+         "Object 1"
+        ]
+       }
+      ],
+      "frame_count": 197
+     },
+     {
+      "shot": 2,
+      "place": "Location 2",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "A woman stands in front of a white door and speaks.",
+      "changes": [],
+      "frame_count": 29
+     },
+     {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 2"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "The man listens on the telephone.",
+      "changes": [],
+      "frame_count": 13
+     },
+     {
+      "shot": 4,
+      "place": "Location 2",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "The woman continues to speak and smile.",
+      "changes": [],
+      "frame_count": 41
+     },
+     {
+      "shot": 5,
+      "place": "Location 1",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 1",
+        "posture": "sitting",
+        "holding": [
+         "Object 1"
+        ]
+       },
+       {
+        "name": "Object 2"
+       },
+       {
+        "name": "Object 1"
+       }
+      ],
+      "action": "The man takes the telephone receiver away from his ear.",
+      "changes": [],
+      "frame_count": 37
+     },
+     {
+      "shot": 6,
+      "place": "Location 2",
+      "camera": {
+       "shot_size": "medium close-up shot",
+       "angle": "eye-level shot",
+       "movement": "static"
+      },
+      "present": [
+       {
+        "name": "Character 2",
+        "posture": "standing"
+       },
+       {
+        "name": "Object 3"
+       }
+      ],
+      "action": "The woman laughs.",
+      "changes": [],
+      "frame_count": 33
+     }
+    ]
+   }
+  }
+ }
+}

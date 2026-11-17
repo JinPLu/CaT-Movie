@@ -1,0 +1,6 @@
+# 在线SAM RLE解码的隔离addon；原训练Python3.10、NumPy2.2.6保持不变。
+# 作为constraints读取，仅安装pycocotools：
+# python -m pip install --no-deps --only-binary=:all: --target <addon目录> \
+#   -c requirements-py310.txt pycocotools==2.0.11
+numpy==2.2.6
+pycocotools==2.0.11

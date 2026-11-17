@@ -1,0 +1,46 @@
+{
+ "story_id": "cinedance-014481-b0000-shot01",
+ "generation_status": "completed",
+ "video_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/neighbor-deploy-20261024/holocine-test63/inference/raw/videos/official_holocine_14b_full/shots/seed-42/cinedance-014481-b0000-shot01/video.mp4",
+ "video_bytes": 1924333,
+ "segments_path": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/neighbor-deploy-20261024/holocine-test63/inference/raw/videos/official_holocine_14b_full/shots/seed-42/cinedance-014481-b0000-shot01/segments.json",
+ "segments": [
+  {
+   "start_shot": 0,
+   "end_shot": 3,
+   "frame_counts": [
+    45,
+    145,
+    49
+   ],
+   "num_frames": 241,
+   "shot_cut_frames": [
+    45,
+    189
+   ]
+  },
+  {
+   "start_shot": 3,
+   "end_shot": 7,
+   "frame_counts": [
+    69,
+    17,
+    13,
+    89
+   ],
+   "num_frames": 189,
+   "shot_cut_frames": [
+    69,
+    85,
+    97
+   ]
+  }
+ ],
+ "probe": {
+  "frames": 430,
+  "fps": 16.0,
+  "duration_seconds": 26.875,
+  "width": 832,
+  "height": 480
+ }
+}

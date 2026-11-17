@@ -1,0 +1,21 @@
+{
+  "ffprobe": "${MSPC_SHARED_ROOT}/env/ffmpeg7/bin/ffprobe",
+  "non_vlm": {
+    "device": "cuda",
+    "ffmpeg": "${MSPC_SHARED_ROOT}/env/bin/ffmpeg",
+    "cut_threshold": 0.5,
+    "resource_root": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/renderer_qualification/public_metrics_v1",
+    "weights": {
+      "clip": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/renderer_qualification/public_metrics_v1/vbench/clip/ViT-L-14.pt",
+      "aesthetic": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/entitybench/vbench_cache/aesthetic_model/emb_reader/sa_0_4_vit_l_14_linear.pth",
+      "musiq": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/renderer_qualification/public_metrics_v1/vbench/hub/checkpoints/musiq_spaq_ckpt-358bb6af.pth",
+      "amt": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/entitybench/vbench_cache/amt_model/amt-s.pth",
+      "raft": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/entitybench/vbench_cache/raft_model/models/raft-things.pth"
+    }
+  },
+  "judge": {
+    "config": "configs/eval/story_ratings.json",
+    "prompt": "configs/eval/story_ratings_prompt.txt",
+    "response_format": "configs/eval/story_ratings_response.json"
+  }
+}

@@ -1,0 +1,340 @@
+{
+ "key": "film-004095-b0008",
+ "shots": 7,
+ "source": "block-contract-v17-quick-check-20261013/answers/clarified-2/film-004095-b0008.json",
+ "contract": "block_annotation_v17",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with blonde hair",
+    "outfit": "a pink cardigan, a light green bra, and a grey skirt"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with brown hair",
+    "outfit": "a black suit"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a naked baby",
+    "outfit": "nothing"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with glasses and a mustache",
+    "outfit": "a grey suit and a bow tie"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a bald man",
+    "outfit": "a brown suit and a striped tie"
+   },
+   {
+    "name": "Character 6",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with dark hair",
+    "outfit": "a dark suit"
+   },
+   {
+    "name": "Character 7",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a person with white hair",
+    "outfit": "unknown"
+   },
+   {
+    "name": "Character 8",
+    "kind": "person",
+    "visibility": "distant",
+    "appearance": "a woman in a white dress",
+    "outfit": "a white dress"
+   },
+   {
+    "name": "Character 9",
+    "kind": "person",
+    "visibility": "distant",
+    "appearance": "a man in a light blue shirt",
+    "outfit": "a light blue shirt"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a wooden door"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a television screen"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a large wooden table"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a black folder"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a white tissue"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a logo on the wall"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "an office or conference room with wooden walls and a large table"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing with hands raised",
+      "state": "cardigan falling off",
+      "outfit": "a pink cardigan, a light green bra, and a grey skirt"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing and watching"
+     },
+     {
+      "name": "Character 3",
+      "posture": "standing in front of Character 1"
+     },
+     {
+      "name": "Object 1",
+      "state": "closed"
+     },
+     {
+      "name": "Object 2",
+      "state": "on"
+     },
+     {
+      "name": "Object 3",
+      "state": "with items on it"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 stands with her hands raised as her cardigan falls off, revealing her bra, while a naked baby stands in front of her.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "outfit",
+      "before": "a pink cardigan, a light green bra, and a grey skirt",
+      "after": "a pink cardigan falling off, a light green bra, and a grey skirt"
+     }
+    ]
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "low angle shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "walking away"
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The naked baby walks away from the table while the women stand nearby.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "standing",
+      "after": "walking away"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "turning around and crossing her arms",
+      "outfit": "a pink cardigan, a light green bra, and a grey skirt"
+     },
+     {
+      "name": "Object 1"
+     },
+     {
+      "name": "Object 2"
+     },
+     {
+      "name": "Object 3"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "Character 1 turns around, flips her hair, and crosses her arms over her chest.",
+    "changes": [
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing with hands raised",
+      "after": "turning around and crossing her arms"
+     }
+    ]
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "pan right"
+    },
+    "present": [
+     {
+      "name": "Character 4",
+      "posture": "standing and gesturing"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing and wiping his face"
+     },
+     {
+      "name": "Character 6",
+      "posture": "sitting"
+     },
+     {
+      "name": "Character 8",
+      "posture": "standing in the background"
+     },
+     {
+      "name": "Character 9",
+      "posture": "standing in the background"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A man in a grey suit gestures while another man in a brown suit wipes his face with a tissue, causing people to react in shock.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "standing and looking"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing and talking"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 2 looks at Character 5, who is wiping his face with a tissue and talking to her.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing in the foreground",
+      "outfit": "a pink cardigan, a light green bra, and a grey skirt"
+     },
+     {
+      "name": "Character 2",
+      "posture": "standing with arms crossed"
+     },
+     {
+      "name": "Character 5",
+      "posture": "standing and holding a tissue"
+     },
+     {
+      "name": "Object 6",
+      "state": "visible on the wall"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Character 5 continues talking to Character 2 while holding a tissue to his face, with Character 1 standing in the foreground.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "screen_or_slides",
+    "on_screen_text": "large_text_or_picture_in_picture",
+    "place": "none",
+    "camera": {
+     "shot_size": "none",
+     "angle": "none",
+     "movement": "none"
+    },
+    "present": [],
+    "activity": "no_human_activity",
+    "action": "A screen displaying a movie poster and various thumbnails from other clips is shown.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "In an office conference room, a woman with blonde hair stands with her hands raised as her cardigan falls off, revealing her bra. A naked baby stands in front of her and then walks away. The woman turns around, flips her hair, and crosses her arms. In the room, a man in a grey suit gestures while another man in a brown suit wipes his face with a tissue, causing a reaction from the people present. The man in the brown suit then talks to a woman in a black suit while wiping his face, with the blonde woman standing in the foreground. Finally, a screen displaying a movie poster and thumbnails appears.",
+   "summary": "A woman's cardigan falls off in a conference room while a baby walks away, causing shock among the people in the room, followed by a conversation between a man and a woman."
+  }
+ }
+}

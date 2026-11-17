@@ -1,0 +1,155 @@
+{
+  "schema_version": "renderer_qualification_public_metrics_config_v1",
+  "profile_note": "v3 reports twelve columns in this fixed order: VBench-aes | VBench-img | ViCLIP | Identity | Scene | Cut-Count | Cut-Timing | State | NC-Scene | NC-Subject | NC-Action | NC-Spatial. v1 five columns, v2 six columns and v3 twelve columns are mutually exclusive contracts and are never differenced against each other. The last five columns are produced by the judge line (MSVBench state axis, MSM narrative coherence); the torch backend owns the first seven.",
+  "resource_root": "resource/renderer_public_metrics",
+  "pair_manifest": null,
+  "backend": "mspc.evaluation.renderer_qualification_official_backend:score_metric",
+  "model_batch": {
+    "detector_frame_batch_size": 16,
+    "dino_crop_batch_size": 32,
+    "viclip_shot_batch_size": 8
+  },
+  "metrics": [
+    {
+      "metric_id": "vbench_aesthetic_quality",
+      "label": "VBench aesthetic quality (LAION aesthetic predictor, per shot clip)",
+      "direction": "higher",
+      "unit": "score",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": false
+    },
+    {
+      "metric_id": "vbench_imaging_quality",
+      "label": "VBench imaging quality (MUSIQ, per shot clip)",
+      "direction": "higher",
+      "unit": "score",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": false
+    },
+    {
+      "metric_id": "viclip_text_alignment",
+      "label": "Shot-level ViCLIP Text Alignment",
+      "direction": "higher",
+      "unit": "cosine_similarity",
+      "range": [-1.0, 1.0],
+      "allow_not_applicable": false
+    },
+    {
+      "metric_id": "dinov2_character_identity",
+      "label": "Cross-shot Character Identity (Grounding DINO query -> SAM -> DINOv2)",
+      "direction": "higher",
+      "unit": "cosine_similarity",
+      "range": [-1.0, 1.0],
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "dinov2_scene_consistency",
+      "label": "Cross-shot Scene Consistency (characters masked out, DINOv2)",
+      "direction": "higher",
+      "unit": "cosine_similarity",
+      "range": [-1.0, 1.0],
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "transition_count_error",
+      "label": "Shot-boundary count error (TransNetV2)",
+      "direction": "lower",
+      "unit": "count",
+      "range": null,
+      "allow_not_applicable": false
+    },
+    {
+      "metric_id": "matched_transition_timing_mae",
+      "label": "Matched shot-boundary timing MAE (TransNetV2, frames)",
+      "direction": "lower",
+      "unit": "frames",
+      "range": null,
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "state_shift_persistence",
+      "label": "MSVBench StateShiftPersistence",
+      "direction": "higher",
+      "unit": "score",
+      "range": [1.0, 5.0],
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "narrative_coherence_scene",
+      "label": "MSM Narrative Coherence: scene",
+      "direction": "higher",
+      "unit": "ratio",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "narrative_coherence_subject",
+      "label": "MSM Narrative Coherence: subject",
+      "direction": "higher",
+      "unit": "ratio",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "narrative_coherence_action",
+      "label": "MSM Narrative Coherence: action",
+      "direction": "higher",
+      "unit": "ratio",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": true
+    },
+    {
+      "metric_id": "narrative_coherence_spatial",
+      "label": "MSM Narrative Coherence: spatial",
+      "direction": "higher",
+      "unit": "ratio",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": true
+    }
+  ],
+  "roi_detector": {
+    "note": "Grounding DINO replaces YOLO11x as the box source from v3; SAM, the character canvas and the scene background are unchanged. The main-table detector contract stays in code (renderer_qualification_official_backend.FROZEN_PUBLIC_ROI_DETECTOR); frozen_public_metric_profile only restates those numbers and loading fails on any drift. box_threshold 0.25 / text_threshold 0.20 are this project's pre-registered values, not values copied from an external benchmark.",
+    "profiles": {
+      "public_metrics_v3_gdino": {
+        "box_threshold": 0.25,
+        "text_threshold": 0.20,
+        "min_mask_area_ratio": null
+      },
+      "gated_v1": {
+        "box_threshold": 0.4,
+        "text_threshold": 0.20,
+        "min_mask_area_ratio": 0.005
+      }
+    },
+    "frozen_public_metric_profile": "public_metrics_v3_gdino",
+    "metric_profiles": {
+      "dinov2_character_consistency_gated": "gated_v1"
+    }
+  },
+  "diagnostic_metrics": [
+    {
+      "metric_id": "identity_pairs_scored",
+      "label": "Identity units that passed the all-six-keyframes-detected rule",
+      "direction": "neutral",
+      "unit": "count",
+      "range": null,
+      "allow_not_applicable": false
+    },
+    {
+      "metric_id": "identity_pairs_total",
+      "label": "Adjacent shot pairs times declared characters (arm-independent)",
+      "direction": "neutral",
+      "unit": "count",
+      "range": null,
+      "allow_not_applicable": false
+    },
+    {
+      "metric_id": "identity_cases_scored",
+      "label": "1 when this story produced an identity score, 0 when it did not",
+      "direction": "neutral",
+      "unit": "indicator",
+      "range": [0.0, 1.0],
+      "allow_not_applicable": false
+    }
+  ]
+}

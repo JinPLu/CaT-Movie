@@ -1,0 +1,164 @@
+{
+  "case_id": "story_block_v1:cinedance:0061e2e7-4f09-8ca7-a815-7186f3fccc5d:<scene2>:block0011:0011-0011",
+  "source": "full-pool-training-inputs-20261028/renderer/inputs/train.jsonl",
+  "annotation": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a young man with dark, slightly messy hair and a slim build",
+        "outfit": "a dark blue or black button-down shirt"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a dark-colored mobile phone"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a textured, reddish-brown wall or partition"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a rooftop or balcony at night with a blurred city skyline with colorful lights in the background"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "picture_type": "live_action",
+        "on_screen_text": "none",
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "leaning against a wall, looking down",
+            "state": "sad or contemplative",
+            "holding": [
+              "Object 1"
+            ]
+          },
+          {
+            "name": "Object 1"
+          },
+          {
+            "name": "Object 2"
+          }
+        ],
+        "activity": "action_or_state_change",
+        "action": "Character 1 holds Object 1 to his ear, then lowers it and rubs his face, appearing distressed while leaning against Object 2.",
+        "changes": [
+          {
+            "name": "Character 1",
+            "what": "holding",
+            "before": [
+              "Object 1"
+            ],
+            "after": []
+          },
+          {
+            "name": "Character 1",
+            "what": "state",
+            "before": "holding phone to ear",
+            "after": "rubbing face"
+          }
+        ]
+      }
+    ],
+    "story": {
+      "paragraph": "A young man with dark hair is seen in a close-up shot at night, leaning against a textured wall with a blurred city skyline behind him. He is holding a mobile phone to his ear, listening or talking. After a moment, he lowers the phone and rubs his face with his hand, appearing distressed or tired.",
+      "summary": "A young man leans against a wall at night with a city skyline behind him, lowers a mobile phone from his ear, and rubs his face in distress."
+    },
+    "layouts": [
+      {
+        "shot": 1,
+        "entities": [
+          {
+            "name": "Character 1",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.0,
+                  0.07,
+                  0.9,
+                  1.0
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.0,
+                  0.08,
+                  0.87,
+                  1.0
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 1",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.39,
+                  0.47,
+                  0.5,
+                  0.91
+                ]
+              },
+              {
+                "time": 0.08,
+                "visibility": "visible",
+                "box": [
+                  0.41,
+                  0.5,
+                  0.54,
+                  0.94
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Object 2",
+            "anchors": [
+              {
+                "time": 0.0,
+                "visibility": "visible",
+                "box": [
+                  0.0,
+                  0.43,
+                  0.12,
+                  1.0
+                ]
+              },
+              {
+                "time": 1.0,
+                "visibility": "visible",
+                "box": [
+                  0.0,
+                  0.46,
+                  0.11,
+                  1.0
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

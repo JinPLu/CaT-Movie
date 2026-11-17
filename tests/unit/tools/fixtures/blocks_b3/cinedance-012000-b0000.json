@@ -1,0 +1,78 @@
+{
+ "key": "cinedance-012000-b0000",
+ "shots": 1,
+ "answer": {
+  "video": {
+   "picture_type": "live_action",
+   "on_screen_text": "none",
+   "summary": "A woman in a suit stands next to a large stack of papers with a marker on top, looking concerned."
+  },
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with long blonde hair and a slim build",
+    "outfit": "a grey suit jacket and white shirt"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a large stack of white papers"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a black permanent marker with a red cap"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "an indoor setting with blurred background lights"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "tilt up"
+    },
+    "activity": "action_or_state_change",
+    "action": "The camera tilts up from a stack of papers with a marker on it to reveal a woman in a suit standing next to them, looking off to the side with a concerned expression.",
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing",
+      "state": "looking concerned"
+     },
+     {
+      "name": "Object 1",
+      "state": "stacked on a surface"
+     },
+     {
+      "name": "Object 2",
+      "state": "resting on top of the papers"
+     }
+    ],
+    "changes": [
+     {
+      "name": "Camera",
+      "what": "angle",
+      "before": "focused on the papers",
+      "after": "focused on the woman's face"
+     }
+    ]
+   }
+  ]
+ },
+ "expected_block_errors": [],
+ "expected_shot_errors": {
+  "1": [
+   "shot 1 change"
+  ]
+ }
+}

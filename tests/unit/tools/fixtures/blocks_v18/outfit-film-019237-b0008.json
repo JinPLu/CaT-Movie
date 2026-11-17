@@ -1,0 +1,261 @@
+{
+ "key": "film-019237-b0008",
+ "shots": 8,
+ "source": "block-contract-v17-quick-check-20261013/v18-others/answers/r1/film-019237-b0008.json",
+ "contract": "block_annotation_v18",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair",
+    "outfit": "a dark jacket and a headset"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with short dark hair",
+    "outfit": "a dark jacket and a headset"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a man with a beard",
+    "outfit": "a red jacket, black hat, and a backpack"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a screen with a targeting interface"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a joystick controller"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a drone"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a red jacket"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a black hat"
+   },
+   {
+    "name": "Object 6",
+    "appearance": "a backpack"
+   },
+   {
+    "name": "Object 7",
+    "appearance": "a dark green jacket"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "a dark room with screens"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "a snowy mountain range"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "screen_or_slides",
+    "on_screen_text": "large_text_or_picture_in_picture",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 1"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A screen displays a targeting interface with coordinates and a crosshair over a snowy landscape.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     },
+     {
+      "name": "Character 2"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "Two men wearing headsets look forward in a dark room.",
+    "changes": []
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1"
+     },
+     {
+      "name": "Object 2"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A hand grips and moves a joystick controller.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "high angle shot",
+     "movement": "tracking"
+    },
+    "present": [
+     {
+      "name": "Object 3"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A drone flies over a snowy mountain range in foggy weather.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "present": [
+     {
+      "name": "Character 3"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A man in a red jacket and backpack walks through heavy snow in a mountainous area.",
+    "changes": []
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "present": [
+     {
+      "name": "Character 3"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man continues walking through the snow, looking down.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "present": [
+     {
+      "name": "Character 3"
+     },
+     {
+      "name": "Object 7"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man takes off his red jacket, revealing a dark green jacket underneath.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "outfit",
+      "before": "a red jacket, black hat, and a backpack",
+      "after": "a dark green jacket, black hat, and a backpack"
+     }
+    ]
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "handheld"
+    },
+    "present": [
+     {
+      "name": "Character 3"
+     },
+     {
+      "name": "Object 4"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The man drops the red jacket onto the snow and continues moving forward.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "holding",
+      "before": [],
+      "after": []
+     },
+     {
+      "name": "Object 4",
+      "what": "state",
+      "before": "worn by Character 3",
+      "after": "dropped on the snow"
+     }
+    ]
+   }
+  ],
+  "story": {
+   "paragraph": "A screen displays a targeting interface over a snowy landscape. Two men wearing headsets look forward in a dark room. A hand moves a joystick controller. A drone flies over a snowy mountain range in foggy weather. A man in a red jacket and backpack walks through heavy snow in a mountainous area. He takes off his red jacket, revealing a dark green jacket underneath, and drops it onto the snow while continuing to move forward.",
+   "summary": "Men operate a drone from a dark room while a man walks through a snowy mountain range and removes his red jacket."
+  }
+ }
+}

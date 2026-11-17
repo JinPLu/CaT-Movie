@@ -1,0 +1,83 @@
+{
+ "row": "left",
+ "stories": [
+  {
+   "story_id": "cinedance-010094-b0000-shot01",
+   "generation_status": "completed",
+   "measurement_status": "rated",
+   "scores": {
+    "character": 1.0,
+    "object": 1.0,
+    "scene": 1.0,
+    "event": 0.6666666666666666,
+    "state": 0.5
+   },
+   "joint_all_applicable_pass": false
+  },
+  {
+   "story_id": "cinedance-010094-b0001-shot01",
+   "generation_status": "completed",
+   "measurement_status": "rated",
+   "scores": {
+    "character": 0.75,
+    "object": 1.0,
+    "scene": 1.0,
+    "event": 0.6,
+    "state": 0.8
+   },
+   "joint_all_applicable_pass": false
+  },
+  {
+   "story_id": "cinedance-012125-b0000-shot01",
+   "generation_status": "completed",
+   "measurement_status": "rated",
+   "scores": {
+    "character": 0.8333333333333334,
+    "object": 1.0,
+    "scene": 1.0,
+    "event": 0.5,
+    "state": 0.6666666666666666
+   },
+   "joint_all_applicable_pass": false
+  },
+  {
+   "story_id": "cinedance-012125-b0001-shot01",
+   "generation_status": "completed",
+   "measurement_status": "rated",
+   "scores": {
+    "character": 0.6666666666666666,
+    "object": 0.5,
+    "scene": 1.0,
+    "event": 0.0,
+    "state": 1.0
+   },
+   "joint_all_applicable_pass": false
+  },
+  {
+   "story_id": "cinedance-014083-b0000-shot01",
+   "generation_status": "completed",
+   "measurement_status": "rated",
+   "scores": {
+    "character": 0.7777777777777778,
+    "object": 0.5,
+    "scene": 1.0,
+    "event": 0.38461538461538464,
+    "state": 1.0
+   },
+   "joint_all_applicable_pass": false
+  },
+  {
+   "story_id": "cinedance-014083-b0001-shot01",
+   "generation_status": "planning_failed",
+   "measurement_status": "not_run_generation_unavailable",
+   "scores": {
+    "character": null,
+    "object": null,
+    "scene": null,
+    "event": null,
+    "state": null
+   },
+   "joint_all_applicable_pass": false
+  }
+ ]
+}

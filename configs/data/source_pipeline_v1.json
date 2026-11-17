@@ -1,0 +1,128 @@
+{
+ "root": "${MSPC_SHARED_ROOT}/Storyboard/outputs/experiments/source-pipeline-20261011",
+ "data_root": "${MSPC_SHARED_ROOT}/Storyboard/outputs",
+ "film_config": "configs/runtime/scene_windows_v2.json",
+ "cinedance_seed": 42,
+ "cinedance_packages": [
+  {
+   "name": "part0000",
+   "clips": "datasets/cinedance_01/windows/part0000-run-20261010T203900Z/full-inventory-r2/clips.jsonl",
+   "annotations": "datasets/cinedance_01/probe/annotation/part0000"
+  },
+  {
+   "name": "part0001",
+   "clips": "experiments/pipeline-scale-out-20261011/part0001/inventory/clips.jsonl",
+   "annotations": "datasets/cinedance_01/probe/annotation/part0001"
+  },
+  {
+   "name": "part0002",
+   "clips": "experiments/pipeline-scale-out-20261011/part0002/inventory/clips.jsonl",
+   "annotations": "datasets/cinedance_01/probe/annotation/part0002"
+  },
+  {
+   "name": "part0003",
+   "clips": "experiments/pipeline-scale-out-20261011/part0003/inventory/clips.jsonl",
+   "annotations": "datasets/cinedance_01/probe/annotation/part0003"
+  },
+  {
+   "name": "part0004",
+   "clips": "experiments/pipeline-scale-out-20261011/part0004/inventory/clips.jsonl",
+   "annotations": "datasets/cinedance_01/probe/annotation/part0004"
+  },
+  {
+   "name": "part0005",
+   "clips": "experiments/pipeline-scale-out-20261011/part0005/inventory/clips.jsonl",
+   "annotations": "datasets/cinedance_01/probe/annotation/part0005"
+  }
+ ],
+ "ffmpeg": "${MSPC_SHARED_ROOT}/env/ffmpeg7/bin/ffmpeg",
+ "ffprobe": "${MSPC_SHARED_ROOT}/env/ffmpeg7/bin/ffprobe",
+ "transnet_python": "${MSPC_SHARED_ROOT}/env/renderer_transnet/bin/python",
+ "resource_root": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/renderer_qualification/public_metrics_v1",
+ "batch_windows": 64,
+ "thresholds": {
+  "boundary_threshold": 0.5,
+  "single_threshold": 0.25,
+  "content_threshold": 27.0,
+  "edge_seconds": 0.5,
+  "boundary_guard_frames": 2
+ },
+ "luma_range": [
+  10,
+  210
+ ],
+ "encode_ffmpeg": "${MSPC_SHARED_ROOT}/env/bin/ffmpeg",
+ "proxy_stride": 8,
+ "seed": 0,
+ "decode_workers": 6,
+ "batch_shots": 8,
+ "laion_batch_frames": 24,
+ "prefetch_shots": 16,
+ "dover": {
+  "source_root": "${MSPC_SHARED_ROOT}/Github/DOVER",
+  "weight_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/quality_scorers/dover/DOVER.pth",
+  "eval_yaml": "${MSPC_SHARED_ROOT}/Github/DOVER/dover.yml",
+  "upstream_repository": "https://github.com/VQAssessment/DOVER",
+  "upstream_commit": "f1ddc96215bc7fbcf8f315c65d47905f339c3419",
+  "sampling": {
+   "aesthetic": {
+    "resize": 224,
+    "frames": 32,
+    "interval": 2,
+    "clips": 1
+   },
+   "technical": {
+    "fragments": "7x7",
+    "frames": 32,
+    "interval": 2,
+    "clips": 3
+   },
+   "short_video": "loop_pad"
+  }
+ },
+ "laion": {
+  "repository": "https://github.com/christophschuhmann/improved-aesthetic-predictor",
+  "commit": "6934dd81792f086e613a121dbce43082cb8be85e",
+  "clip_repository": "https://github.com/openai/CLIP",
+  "clip_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+  "clip_source_root": "${MSPC_SHARED_ROOT}/Storyboard/.runtime/upstreams/picture-records-q1/CLIP",
+  "clip_weight_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/renderer_qualification/public_metrics_v1/vbench/clip/ViT-L-14.pt",
+  "head_weight_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/quality_scorers/laion_improved/sac+logos+ava1-l14-linearMSE.pth",
+  "frame_rule": "start, floor((start+end-1)/2), end-1",
+  "temporal_reference": "https://arxiv.org/html/2311.15127v1#S3.SS1"
+ },
+ "cut_version": "source_pipeline_v1",
+ "blocks": {"max_shots": 12, "version": "story_block_v1"},
+ "quality_lines": {
+  "cinepile_t2v": {
+   "laion_aesthetic": 4.0
+  },
+  "moviechat_1k": {
+   "laion_aesthetic": 4.0
+  },
+  "cinedance": {
+   "laion_aesthetic": 4.0
+  }
+ },
+ "min_window_seconds": 2.0,
+ "eval_dedup": {
+  "freeze": "configs/benchmark/script_state_bench_evaluation_freeze_v1_r4.json",
+  "freeze_sources": "configs/benchmark/script_state_bench_long_holdout_v2_candidate_r4.json",
+  "model_name": "facebook/dinov2-base",
+  "model_path": "${MSPC_SHARED_ROOT}/OoVMetric/models_ckpt/entitybench/hf/hub/models--facebook--dinov2-base/snapshots/f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+  "model_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+  "eval_guard_frames": 2,
+  "threshold": 0.8,
+  "near_threshold": 0.7,
+  "decode_workers": 8,
+  "torch_threads": 4,
+  "batch_frames": 96,
+  "prefetch_windows": 32,
+  "seed": 42,
+  "review_hit_pairs": 300,
+  "review_near_per_kind": 30,
+  "exclude_near_band_sources": [
+   "moviechat_1k"
+  ]
+ }
+}

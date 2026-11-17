@@ -1,0 +1,373 @@
+{
+ "key": "film-007241-b0000",
+ "shots": 11,
+ "source": "block-contract-v17-quick-check-20261013/v18-others/answers/r1/film-007241-b0000.json",
+ "contract": "block_annotation_v18",
+ "answer": {
+  "characters": [
+   {
+    "name": "Character 1",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a young boy with short dark hair",
+    "outfit": "a white and black long-sleeved shirt with red stripes on the sleeves"
+   },
+   {
+    "name": "Character 2",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with blonde hair tied back in a ponytail",
+    "outfit": "a black top"
+   },
+   {
+    "name": "Character 3",
+    "kind": "person",
+    "visibility": "clear",
+    "appearance": "a woman with short blonde hair",
+    "outfit": "a dark coat over a grey shirt"
+   },
+   {
+    "name": "Character 4",
+    "kind": "person",
+    "visibility": "distant",
+    "appearance": "a person in a white shirt and dark pants"
+   },
+   {
+    "name": "Character 5",
+    "kind": "person",
+    "visibility": "partial",
+    "appearance": "a person with long dark hair and dark eyes"
+   }
+  ],
+  "objects": [
+   {
+    "name": "Object 1",
+    "appearance": "a silver car"
+   },
+   {
+    "name": "Object 2",
+    "appearance": "a yellow school bus"
+   },
+   {
+    "name": "Object 3",
+    "appearance": "a red house with a white roof and a driveway"
+   },
+   {
+    "name": "Object 4",
+    "appearance": "a hallway with wooden walls and doors"
+   },
+   {
+    "name": "Object 5",
+    "appearance": "a backpack"
+   }
+  ],
+  "places": [
+   {
+    "name": "Location 1",
+    "appearance": "the inside of a car"
+   },
+   {
+    "name": "Location 2",
+    "appearance": "a suburban street with a red house"
+   },
+   {
+    "name": "Location 3",
+    "appearance": "a dimly lit hallway inside a house"
+   }
+  ],
+  "shots": [
+   {
+    "shot": 1,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "medium close-up shot",
+     "angle": "eye-level shot",
+     "movement": "pan"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "sleeping in the back seat of a car"
+     },
+     {
+      "name": "Character 2",
+      "posture": "driving the car"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A young boy sleeps in the back seat of a car while a woman drives.",
+    "changes": []
+   },
+   {
+    "shot": 2,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 1",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 2",
+      "posture": "driving the car",
+      "state": "crying"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "The woman driving the car looks sad and starts crying.",
+    "changes": [
+     {
+      "name": "Character 2",
+      "what": "state",
+      "before": "neutral",
+      "after": "crying"
+     }
+    ]
+   },
+   {
+    "shot": 3,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 1",
+      "posture": "parked in the driveway of a red house"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A silver car is parked in the driveway of a red house.",
+    "changes": []
+   },
+   {
+    "shot": 4,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 2",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Object 2",
+      "posture": "driving down the street"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A yellow school bus drives down a suburban street.",
+    "changes": []
+   },
+   {
+    "shot": 5,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "wide shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "walking down a hallway carrying a backpack and a coat"
+     },
+     {
+      "name": "Object 5",
+      "posture": "on the floor"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "A woman walks down a dimly lit hallway, picks up a coat, and puts it on.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "outfit",
+      "before": "a dark coat over a grey shirt",
+      "after": "a dark coat over a grey shirt, carrying a coat"
+     },
+     {
+      "name": "Object 5",
+      "what": "state",
+      "before": "on the floor",
+      "after": "carried by Character 3"
+     }
+    ]
+   },
+   {
+    "shot": 6,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 1",
+      "posture": "standing in the hallway"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A young boy stands in the hallway looking towards the end of the hall.",
+    "changes": []
+   },
+   {
+    "shot": 7,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "standing in the hallway facing the boy"
+     },
+     {
+      "name": "Character 1",
+      "posture": "standing in the hallway"
+     }
+    ],
+    "activity": "talking_only",
+    "action": "The woman stands in the hallway facing the boy.",
+    "changes": []
+   },
+   {
+    "shot": 8,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "medium shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "hugging the boy"
+     },
+     {
+      "name": "Character 1",
+      "posture": "being hugged by the woman"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The woman and the boy hug each other in the hallway.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "posture",
+      "before": "standing facing the boy",
+      "after": "hugging the boy"
+     },
+     {
+      "name": "Character 1",
+      "what": "posture",
+      "before": "standing in the hallway",
+      "after": "being hugged by the woman"
+     }
+    ]
+   },
+   {
+    "shot": 9,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "hugging the boy",
+      "state": "crying"
+     },
+     {
+      "name": "Character 1",
+      "posture": "being hugged by the woman"
+     },
+     {
+      "name": "Character 4",
+      "posture": "walking down the hallway in the background"
+     }
+    ],
+    "activity": "action_or_state_change",
+    "action": "The woman cries while hugging the boy as a person walks down the hallway in the background.",
+    "changes": [
+     {
+      "name": "Character 3",
+      "what": "state",
+      "before": "neutral",
+      "after": "crying"
+     }
+    ]
+   },
+   {
+    "shot": 10,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 3",
+      "posture": "looking down",
+      "state": "crying"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A close-up shows the woman crying with a sad expression.",
+    "changes": []
+   },
+   {
+    "shot": 11,
+    "picture_type": "live_action",
+    "on_screen_text": "none",
+    "place": "Location 3",
+    "camera": {
+     "shot_size": "close-up shot",
+     "angle": "eye-level shot",
+     "movement": "static"
+    },
+    "present": [
+     {
+      "name": "Character 5",
+      "posture": "standing in the shadows",
+      "state": "hair covering face"
+     }
+    ],
+    "activity": "no_human_activity",
+    "action": "A person with long dark hair stands in the shadows, partially obscured.",
+    "changes": []
+   }
+  ],
+  "story": {
+   "paragraph": "A young boy sleeps in the back seat of a car while a woman drives. The woman begins to cry as she drives past a red house and a school bus. Later, the woman, now with short blonde hair and wearing a dark coat, walks down a dimly lit hallway inside a house. She encounters the young boy in the hallway, and they share a hug. As she cries while hugging him, another person walks down the hallway in the background. The scene ends with a close-up of the crying woman and a glimpse of a shadowy figure with long dark hair.",
+   "summary": "A crying woman drives a car, then hugs a young boy in a hallway while another person walks by and a shadowy figure watches."
+  }
+ }
+}

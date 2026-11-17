@@ -1,0 +1,274 @@
+{
+  "story_id": "cinedance-014847-b0000-shot01",
+  "split": "dev",
+  "fps": 16,
+  "target_seconds": 21.875,
+  "storyboard": {
+    "characters": [
+      {
+        "name": "Character 1",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a woman with long wavy brown hair and a slim build",
+        "outfit": "a grey sweater"
+      },
+      {
+        "name": "Character 2",
+        "kind": "person",
+        "visibility": "clear",
+        "appearance": "a man with short dark hair and a lean build",
+        "outfit": "a maroon shirt"
+      }
+    ],
+    "objects": [
+      {
+        "name": "Object 1",
+        "appearance": "a laptop computer"
+      },
+      {
+        "name": "Object 2",
+        "appearance": "a wall-mounted control panel with blue and red lights"
+      },
+      {
+        "name": "Object 3",
+        "appearance": "white pipes running along the ceiling"
+      },
+      {
+        "name": "Object 4",
+        "appearance": "four white pipes with valves on a concrete wall"
+      }
+    ],
+    "places": [
+      {
+        "name": "Location 1",
+        "appearance": "a dimly lit room with concrete walls, ceiling pipes, and control panels"
+      }
+    ],
+    "shots": [
+      {
+        "shot": 1,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking forward"
+          }
+        ],
+        "action": "A woman with long wavy brown hair looks forward and speaks.",
+        "changes": [],
+        "frame_count": 53
+      },
+      {
+        "shot": 2,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "state": "looking to the side"
+          }
+        ],
+        "action": "A man in a maroon shirt looks down a corridor with pipes on the ceiling.",
+        "changes": [],
+        "frame_count": 45
+      },
+      {
+        "shot": 3,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "state": "looking up"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "in the background"
+          }
+        ],
+        "action": "The man looks up while the woman stands behind him.",
+        "changes": [],
+        "frame_count": 69
+      },
+      {
+        "shot": 4,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing",
+            "state": "looking forward"
+          }
+        ],
+        "action": "The woman looks forward with a concerned expression.",
+        "changes": [],
+        "frame_count": 21
+      },
+      {
+        "shot": 5,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "state": "looking up at the ceiling"
+          }
+        ],
+        "action": "The man looks up at the pipes on the ceiling.",
+        "changes": [],
+        "frame_count": 33
+      },
+      {
+        "shot": 6,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "low angle shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "state": "looking up"
+          }
+        ],
+        "action": "A close-up shows the man looking up with a focused expression.",
+        "changes": [],
+        "frame_count": 49
+      },
+      {
+        "shot": 7,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 1",
+            "posture": "standing behind a desk",
+            "state": "looking forward"
+          },
+          {
+            "name": "Object 1",
+            "posture": "open on the desk"
+          },
+          {
+            "name": "Object 2",
+            "posture": "mounted on the wall"
+          }
+        ],
+        "action": "The woman stands behind a desk with a laptop and looks forward.",
+        "changes": [],
+        "frame_count": 13
+      },
+      {
+        "shot": 8,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "state": "looking to the side"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing in the background"
+          }
+        ],
+        "action": "The man looks to the side while the woman stands in the background.",
+        "changes": [],
+        "frame_count": 13
+      },
+      {
+        "shot": 9,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Object 4",
+            "posture": "mounted on the wall"
+          }
+        ],
+        "action": "Four white pipes with valves are shown mounted on a concrete wall.",
+        "changes": [],
+        "frame_count": 21
+      },
+      {
+        "shot": 10,
+        "place": "Location 1",
+        "camera": {
+          "shot_size": "medium close-up shot",
+          "angle": "eye-level shot",
+          "movement": "static"
+        },
+        "present": [
+          {
+            "name": "Character 2",
+            "posture": "standing",
+            "state": "reaching out"
+          },
+          {
+            "name": "Character 1",
+            "posture": "standing in the background"
+          }
+        ],
+        "action": "The man reaches out towards the wall pipes while the woman watches from behind.",
+        "changes": [
+          {
+            "name": "Character 2",
+            "what": "posture",
+            "before": "standing",
+            "after": "reaching out"
+          }
+        ],
+        "frame_count": 33
+      }
+    ]
+  },
+  "inputs": {
+    "shots": {
+      "text": "SUBJECTS\n- Character 1 (person): a woman with long wavy brown hair and a slim build, wearing a grey sweater\n- Character 2 (person): a man with short dark hair and a lean build, wearing a maroon shirt\n- Object 1 (object): a laptop computer\n- Object 2 (object): a wall-mounted control panel with blue and red lights\n- Object 3 (object): white pipes running along the ceiling\n- Object 4 (object): four white pipes with valves on a concrete wall\nLOCATIONS\n- Location 1: a dimly lit room with concrete walls, ceiling pipes, and control panels\nSHOTS\ns01: Close-up shot. A woman with long wavy brown hair looks forward and speaks.\ns02: Medium shot. A man in a maroon shirt looks down a corridor with pipes on the ceiling.\ns03: Medium close-up shot. The man looks up while the woman stands behind him.\ns04: Close-up shot. The woman looks forward with a concerned expression.\ns05: Medium shot. The man looks up at the pipes on the ceiling.\ns06: Close-up shot, low angle shot. A close-up shows the man looking up with a focused expression.\ns07: Medium shot. The woman stands behind a desk with a laptop and looks forward.\ns08: Medium close-up shot. The man looks to the side while the woman stands in the background.\ns09: Close-up shot. Four white pipes with valves are shown mounted on a concrete wall.\ns10: Medium close-up shot. The man reaches out towards the wall pipes while the woman watches from behind.",
+      "expected_shot_count": 10,
+      "expected_cut_times_seconds": null
+    }
+  }
+}
