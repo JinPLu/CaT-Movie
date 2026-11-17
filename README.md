@@ -135,7 +135,7 @@ CineDance and MovieChat-1K under their own terms.
 
 - Code: Apache-2.0 (`LICENSE`). Third-party components keep their own licenses; see `THIRD_PARTY_NOTICES.md`.
 - Renderer weights, training data, CaT-MBench and its videos: CC BY-NC-SA 4.0, for non-commercial research.
-  The base model Wan2.2-TI2V-5B is Apache-2.0; baseline videos also carry their generators' licenses.
+  The base model Wan2.2-TI2V-5B is Apache-2.0. See the [videos card](https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos) for upstream output terms and third-party rights.
 
 ## Citation
 
