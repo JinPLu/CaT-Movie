@@ -7,7 +7,8 @@
 [Training data](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) ·
 [CaT-MBench](https://huggingface.co/datasets/JinPLU/CaT-MBench) ·
 [CaT-MBench videos](https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos) ·
-Paper: coming soon
+[Judge calibration labels](https://huggingface.co/datasets/JinPLU/CaT-MBench-Author-Labels) ·
+Preprint link pending
 
 A diffusion pass renders a limited duration, so a long movie has to be generated window by window. CaT-Movie
 keeps **C**oherence **a**cross **T**ime with one structured storyboard written before the first frame:
@@ -138,10 +139,15 @@ CineDance and MovieChat-1K under their own terms.
 
 ## Citation
 
+Author affiliation: University of Science and Technology of China.
+
+Jinpeng Lu and Haoyuan Shi contributed equally.
+
 ```bibtex
 @misc{catmovie2026,
-  title  = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
-  author = {To be announced},
-  year   = {2026}
+  title         = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
+  author        = {Jinpeng Lu and Haoyuan Shi and Yuanshen Guan and Jiyuan Xia and Bin Wu and Yinda Chen and Zhiwei Xiong},
+  year          = {2026},
+  url           = {https://jinplu.github.io/CaT-Movie-page/}
 }
 ```
