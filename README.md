@@ -3,12 +3,14 @@
 **Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation**
 
 [Project page](https://jinplu.github.io/CaT-Movie/) ·
+[Hugging Face collection](https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206) ·
 [Renderer weights](https://huggingface.co/JinPLU/CaT-Movie) ·
 [Training data](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) ·
 [CaT-MBench](https://huggingface.co/datasets/JinPLU/CaT-MBench) ·
 [CaT-MBench videos](https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos) ·
-[Judge calibration labels](https://huggingface.co/datasets/JinPLU/CaT-MBench-Author-Labels) ·
-Preprint link pending
+[Judge calibration labels](https://huggingface.co/datasets/JinPLU/CaT-MBench-Author-Labels)
+
+<!-- paper-link -->
 
 A diffusion pass renders a limited duration, so a long movie has to be generated window by window. CaT-Movie
 keeps **C**oherence **a**cross **T**ime with one structured storyboard written before the first frame:
@@ -50,15 +52,20 @@ All scores and every judge answer behind them are in [CaT-MBench](https://huggin
 
 ## Setup
 
+Run the commands below from the repository root. Test-story generation requires Linux with NVIDIA CUDA and system
+FFmpeg, plus the Hugging Face CLI (`hf`) for the downloads.
+
 ```bash
-uv sync --locked
-uv run --locked pytest -q
-export MSPC_SHARED_ROOT=/path/to/workspace   # models, data, outputs
+export MSPC_SHARED_ROOT=/absolute/path/to/workspace
+mkdir -p "$MSPC_SHARED_ROOT"
+uv sync --locked --extra api
+source .venv/bin/activate
+pytest -q
 ```
 
-Configs refer to data, model and output locations as `${MSPC_SHARED_ROOT}/...`. `run/train.sh` and
-`run/precompute.sh` run the interpreter named in the config's `runtime.python`; the separate environments for the
-planner server and the data tools are locked under `environments/`.
+Configs refer to data, model and output locations as `${MSPC_SHARED_ROOT}/...`.
+`run/train.sh` and `run/precompute.sh` use the interpreter named in the config's `runtime.python`.
+The separate planner server and data-tool environments are locked under `environments/`.
 
 Weights go where the configs expect them:
 
@@ -74,15 +81,52 @@ hf download Qwen/Qwen3.8-27B --local-dir "$MSPC_SHARED_ROOT/OoVMetric/models_ckp
 
 ## Generate the test stories with CaT-Movie
 
+Install the planner server into the path used by the serving config. The planner config uses two-way tensor
+parallelism. Choose two available GPUs in `CUDA_VISIBLE_DEVICES`.
+
 ```bash
-# 1. serve the planner
-python run/vllm_serve.py --config configs/serving/vllm_planner_qwen38_27b.yaml --provenance-dir outputs/planner-serving
-# 2. write storyboards from the shot-list requests
+UV_PROJECT_ENVIRONMENT="$MSPC_SHARED_ROOT/env/planner_inference_cu128" \
+  uv sync --project environments/planner_inference --locked --python 3.12
+
+python - <<'PYTHON'
+import os
+from pathlib import Path
+
+import yaml
+
+template = Path("configs/serving/vllm_planner_qwen38_27b.yaml")
+output = Path("outputs/planner-serving.yaml")
+config = yaml.safe_load(template.read_text())
+for field in ("vllm_executable", "model_path"):
+    config[field] = config[field].replace("${MSPC_SHARED_ROOT}", os.environ["MSPC_SHARED_ROOT"])
+output.parent.mkdir(parents=True, exist_ok=True)
+output.write_text(yaml.safe_dump(config, sort_keys=False))
+PYTHON
+
+export CUDA_DEVICE_ORDER=PCI_BUS_ID
+export CUDA_VISIBLE_DEVICES=0,1
+python run/vllm_serve.py --config outputs/planner-serving.yaml \
+  --provenance-dir outputs/planner-serving
+```
+
+The launcher creates `outputs/planner-serving/provenance.json`. It requires a fresh provenance directory on each
+launch. For a rerun, choose a new directory and pass its `provenance.json` to the next command.
+
+In a second terminal, activate the same environment and set `MSPC_SHARED_ROOT` as in Setup. Once the server is
+ready, write the storyboards from the shot-list requests.
+
+```bash
+curl --fail http://127.0.0.1:8188/v1/models
 python tools/run/planner_form_plans.py plan --requests configs/benchmark/story_requests_v4.json --split test \
   --prompt current --sampling thinking-medium --base-url http://127.0.0.1:8188/v1 --model Qwen3.8-27B \
-  --provenance outputs/planner-records/provenance.json --seeds 42 --tiers shots \
+  --provenance outputs/planner-serving/provenance.json --seeds 42 --tiers shots \
   --output outputs/planner-records --workers 4
-# 3. maintain and compile the storyboards, recall frames, and render every story window by window
+```
+
+If the renderer shares the planner's GPUs, stop the planner before rendering. Compile the plans and render the
+stories window by window.
+
+```bash
 python -m mspc.benchmark.layout_baseline write-planner-plans --conditions configs/infer/planner_renderer_test92.json \
   --records outputs/planner-records
 python -m mspc.benchmark.layout_baseline prepare --conditions configs/infer/planner_renderer_test92.json
