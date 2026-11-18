@@ -38,7 +38,7 @@
 
 Existing multi-shot generators face an uncomfortable trade-off: **per-shot** models cut faithfully yet forget entities, **joint window** models drift across window boundaries, and **similarity/recency memory** often copies prior camera framing across cuts. **CaT-Movie** aligns planning, frame recall, and rendering onto a single **structured storyboard**:
 
-- **Global Storyboard Planner (`Qwen3.8-27B` + Prompt Compiler):** Expands `synopsis`, `paragraph`, or `shots` requests into persistent entity registries (`Character N`, `Object N`, `Location N`), per-shot camera/state plans, and compiled prompts $c_k$, carrying attire and held-item updates forward across generation windows (`8 s` training / `7 s` test cap).
+- **Global Storyboard Planner (`Qwen3.8-27B` + Prompt Compiler):** Expands `synopsis`, `paragraph`, or `shots` requests into persistent entity registries (`Character N`, `Object N`, `Location N`), per-shot camera/state plans, and compiled prompts (`c_k`), carrying attire and held-item updates forward across generation windows (`8 s` training / `7 s` test cap).
 - **Storyboard-Indexed Anchor Recall (`plan_selection`):** Queries the storyboard for each returning entity's clearest prior **anchor view** after its latest planned state/attire change (plus location views, up to `10` source shots/window).
 - **Local Window Renderer (`Wan2.2-TI2V-5B`):** Isolates per-shot text via **shot-wise cross-attention** and applies **reference-routed sparse self-attention** (`holocine_first_frame` + `routed_self_only_v1`) over co-generated first latent frames and entity-routed references carrying **identity lines** (`frame_entities_v1`).
 
