@@ -171,16 +171,16 @@ const WOMAN = [{ hair: '#d8b98a', top: '#8c7b74' }, { hair: '#5e3b2c', top: '#6f
 const MAN = [{ top: '#2f7a55' }, { top: '#a3542f' }, { top: '#43618a' }, { top: '#7d6c37' }];
 const PARS = {
   pershot: { groups: [[0], [1], [2], [3], [4], [5]], carry: 'none', render: PLANNED, w: [0, 1, 0, 2, 3, 3], m: [0, 0, 1, 0, 2, 3], wNeq: [0, 1, 0, 1, 1, 1], mNeq: [0, 0, 1, 0, 1, 1],
-    verdict: 'Cuts land, then every shot rebuilds its cast.', who: 'Wan2.2 per shot, the representative of four per-shot pipelines',
+    verdict: 'Executes nearly every planned cut, but rebuilds the cast from scratch in each shot.', who: 'Wan2.2 per shot (representative of four per-shot and keyframe pipelines)',
     metrics: [['0.996', 'cut execution'], ['0.227', 'character consistency'], ['0.497', 'average']], hl: ['Wan2.1, per shot', 'Wan2.2, per shot', 'StoryDiffusion', 'IC-LoRA'] },
   joint: { groups: [[0, 1, 2], [3, 4, 5]], carry: 'nothing', render: PLANNED, w: [0, 0, 0, 1, 1, 1], m: [0, 0, 0, 0, 1, 1], wNeq: [0, 0, 0, 1, 1, 0], mNeq: [0, 0, 0, 0, 1, 1],
-    verdict: 'Cuts are coordinated inside a pass. Identity resets at the seam.', who: 'HoloCine and MultiShotMaster',
+    verdict: 'Coordinates camera cuts within a window, but resets character identity at the window seam.', who: 'HoloCine and MultiShotMaster (62–83% in-window vs. 28–30% cross-window)',
     metrics: [['0.97 / 0.99', 'cut execution'], ['0.52 / 0.54', 'character consistency'], ['0.57 / 0.53', 'average']], hl: ['HoloCine', 'MultiShotMaster'] },
   memory: { groups: [[0], [1], [2], [3], [4], [5]], carry: 'frame', render: ['C', 'A', 'B', 'B', 'C', 'D'], w: [0, 0, 0, 0, 0, 0], m: [0, 0, 0, 0, 0, 0], wNeq: [0, 0, 0, 0, 0, 0], mNeq: [0, 0, 0, 0, 0, 0],
-    verdict: 'Identity survives because the framing comes along with it.', who: 'StoryMem, the most consistent baseline',
+    verdict: 'Preserves character identity, but raw frame recall copies prior framing across planned cuts.', who: 'StoryMem (repeats prior framing at 114 of 674 planned setup changes)',
     metrics: [['0.719', 'cut execution'], ['0.631', 'character consistency'], ['0.527', 'average']], hl: ['StoryMem'] },
   ours: { groups: [[0, 1], [2, 3], [4, 5]], carry: 'storyboard', render: PLANNED, w: [0, 0, 0, 0, 0, 0], m: [0, 0, 0, 0, 0, 0], wNeq: [0, 0, 0, 0, 0, 0], mNeq: [0, 0, 0, 0, 0, 0],
-    verdict: 'Identity from recalled anchor views, framing and state from the text.', who: 'CaT-Movie',
+    verdict: 'Borrows identity from storyboard-indexed anchor views while taking state and framing from text.', who: 'CaT-Movie (matches HoloCine within windows and leads by +22.2 pts across windows)',
     metrics: [['0.974', 'cut execution'], ['0.651', 'character consistency'], ['0.597', 'average']], hl: ['CaT-Movie'] },
 };
 function person(g, cx, cy, s, look, isMan, back) {
@@ -259,7 +259,7 @@ run('paradigms', function paradigms() {
       const bx = (fx[i - 1] + fw + fx[i]) / 2; const same = P.render[i] === P.render[i - 1];
       sv('use', { href: same ? '#i-scissor-x' : '#i-scissor', x: bx - 9, y: top - 19, width: 18, height: 18, class: 'fade-in', style: `animation-delay:${200 + i * 60}ms` }, svg);
     }
-    const carryText = { none: 'each shot is its own pass; nothing crosses', nothing: 'nothing crosses the seam', frame: 'whole earlier frames cross the seam', storyboard: 'storyboard text + entity-routed anchor views cross the seam' }[P.carry];
+    const carryText = { none: 'each shot is generated in isolation · no visual history crosses shot boundaries', nothing: 'multiple shots denoised per pass · no visual history crosses window seams', frame: 'unindexed historical frames cross the seam · identity stays bundled with prior framing and state', storyboard: 'compiled per-shot prompts + entity-routed anchor views cross every window seam' }[P.carry];
     sv('text', { x: W / 2, y: top + stripH + 28, 'text-anchor': 'middle', class: 'svg-text', style: `fill:${p === 'ours' ? '#8aa8ff' : '#868d9d'}` }, svg).textContent = `One film strip = one generation pass · ${carryText}`;
     stage.replaceChildren(svg);
     read.innerHTML = `<div class="verdict fade-in">${esc(P.verdict)}<small>${esc(P.who)} · Table 1, 92 test stories</small></div>` +
@@ -417,7 +417,7 @@ run('method', function method() {
     const hx = {}; let tw = 0, th = 0;
     if (!hist.length) {
       sv('text', { x: 380, y: 96, 'text-anchor': 'middle', style: 'font:600 22px var(--display);fill:#ece8e0' }, rs).textContent = 'First pass: nothing generated yet.';
-      sv('text', { x: 380, y: 122, 'text-anchor': 'middle', class: 'svg-text' }, rs).textContent = 'The renderer opens from text alone; training drops references for 20% of windows to match.';
+      sv('text', { x: 380, y: 122, 'text-anchor': 'middle', class: 'svg-text' }, rs).textContent = 'The renderer opens from text alone, and training drops references for 20% of windows to match.';
     } else {
       tw = Math.min(118, (720 - (hist.length - 1) * 8) / hist.length); th = tw * 0.55;
       const totalW = hist.length * tw + (hist.length - 1) * 8; let x = (760 - totalW) / 2;
@@ -659,7 +659,7 @@ run('mainTable', function mainTable() {
   once(tb, () => { if (RM) return; $$('.bar', tb).forEach((b, i) => { b.style.transform = 'scaleX(0)'; requestAnimationFrame(() => { b.style.transitionDelay = (i % 9) * 40 + 'ms'; b.style.transform = ''; }); }); }, 0.3);
 });
 const T2 = [
-  { name: 'CaT-Movie', v: [0.958, 0.581, 0.585, 0.566, 0.615, 0.571], sig: [] , ours: true },
+  { name: 'CaT-Movie (ref. storyboard)', v: [0.958, 0.581, 0.585, 0.566, 0.615, 0.571], sig: [] , ours: true },
   { g: 'Trained without' },
   { name: 'identity lines', v: [0.942, 0.582, 0.607, 0.557, 0.653, 0.561], sig: [] },
   { name: 'routing', v: [0.923, 0.593, 0.513, 0.595, 0.609, 0.564], sig: [0] },
@@ -667,7 +667,7 @@ const T2 = [
   { g: 'Reference selection' },
   { name: 'recent shots', v: [0.928, 0.488, 0.615, 0.471, 0.598, 0.563], sig: [0, 1, 3] },
   { name: 'CLIP retrieval', v: [0.953, 0.544, 0.538, 0.503, 0.534, 0.537], sig: [5] },
-  { name: '+ first views', v: [0.955, 0.569, 0.547, 0.546, 0.667, 0.566], sig: [] },
+  { name: 'anchor + first views', v: [0.955, 0.569, 0.547, 0.546, 0.667, 0.566], sig: [] },
   { g: 'Storyboard' },
   { name: 'request only', v: [0.955, 0.525, 0.509, 0.546, 0.557, 0.541], sig: [] },
   { name: 'our planner', v: [0.963, 0.579, 0.530, 0.560, 0.708, 0.587], sig: [] },

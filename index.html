@@ -940,36 +940,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="steps">
         <article class="step on" data-step="1">
           <div class="no">01 · Request</div>
-          <h3>Any granularity in, the same storyboard format out.</h3>
-          <p>Requests range from a one-sentence synopsis to a numbered shot list. One prompt tells the planner to preserve stated facts, infer implied presence and event outcomes, and complete open details such as postures. It writes a composition only when the request implies an opening layout.</p>
-          <div class="facts"><span class="fact">The planner keeps <b>every</b> requested event and <b>90–98%</b> of requested outcomes, and invents at most <b>0.07</b> items per plan.</span></div>
+          <h3>Three input granularities, one unified expansion contract.</h3>
+          <p>Requests range from a one-sentence synopsis or a scene paragraph to a numbered shot list. One unified prompt guides frozen Qwen3.8-27B across all granularities along three rules: <b>preserve</b> stated facts, <b>infer</b> implied presence and event consequences, and <b>complete</b> open visual details such as postures.</p>
+          <p>To avoid invented staging, the planner writes an opening composition only when the request implies a spatial layout. Constrained decoding guarantees valid JSON, and any plan that misses a shot list's shot count or provides too few shots for the target duration is queried once more.</p>
+          <div class="facts"><span class="fact">Across 70 stories and three request tiers, the planner retains <b>100%</b> of requested events and <b>90–98%</b> of requested outcomes while inventing at most <b>0.07</b> items per plan.</span></div>
         </article>
         <article class="step" data-step="2">
           <div class="no">02 · Storyboard</div>
-          <h3>An entity registry and a plan for every shot.</h3>
-          <p>The registry gives each recurring character, object and location a fixed identifier and an identity description, plus a default attire per character. Each shot records location, camera, present entities with posture, held items and attire, the action, and within-shot changes with visible final values.</p>
-          <p>Code copies back what a shot list states, carries attire from its latest recorded change, fills unstated held items from the previous shot and compiles one self-contained prompt per shot.</p>
-          <div class="facts"><span class="fact">With code maintenance, a weaker 9B planner's post-change attire accuracy rises from <b>33.6%</b> to <b>47.7%</b>.</span></div>
+          <h3>A global entity registry with deterministic state maintenance.</h3>
+          <p>The storyboard pairs an <b>entity registry</b>, which assigns each recurring character, object, and location a fixed identifier, an appearance description, and default character attire, with a <b>per-shot plan</b> recording location, camera setup, present entities with posture, held items, and attire, the action, and within-shot transitions with visible final values.</p>
+          <p>While the language model identifies when state transitions occur, deterministic code copies back stated shot-list descriptions, propagates each character's attire from its latest recorded change, fills unstated held items from the end of the previous shot, and compiles one self-contained prompt per shot.</p>
+          <div class="facts"><span class="fact">Once an outfit change is recorded, code propagates it accurately in <b>66%</b> of later appearances for both Qwen3.8-27B and non-thinking Qwen3.5-9B, lifting 9B's post-change attire accuracy from <b>33.6%</b> to <b>47.7%</b> (and reaching <b>55.1%</b> with 27B).</span></div>
         </article>
         <article class="step" data-step="3">
           <div class="no">03 · Windows</div>
-          <h3>Shots are packed into generation passes.</h3>
-          <p>Code scales shot durations to the target length and packs consecutive shots greedily into windows under the cap; a longer shot fills a window alone. Each pass is denoised jointly, so the cuts inside it are coordinated.</p>
-          <div class="facts"><span class="fact">Under the 7 s cap, <b>617 of 675</b> entity returns in our test storyboards cross a window boundary.</span></div>
+          <h3>Duration scaling and greedy window packing.</h3>
+          <p>Deterministic code scales the storyboard's suggested shot durations to match the target video length and greedily packs consecutive shots into generation windows under the duration cap (8 s in training, 7 s on test stories), while any single shot exceeding the cap occupies a window alone.</p>
+          <p>All shots within a window are denoised jointly in one pass so within-window camera cuts are coordinated directly, while cross-window continuity is carried by storyboard-indexed references.</p>
+          <div class="facts"><span class="fact">Under the 7 s test window cap, <b>617 of 675</b> entity returns (<b>91.4%</b>) in our test storyboards cross a window boundary.</span></div>
         </article>
         <article class="step" data-step="4">
           <div class="no">04 · Recall</div>
-          <h3>The storyboard decides which generated frames come back.</h3>
-          <p>Recall is a deterministic query on the storyboard, not visual similarity. Each entity keeps its clearest <b>anchor view</b> while its planned appearance holds: views after the latest attire or state change first, then fewer other characters, then a legible shot size, then the earliest shot.</p>
-          <p>A shot reads only the recalled frames that share one of its present entities, so it cannot borrow framing from a frame that shows other people. Pick a pass to see what it recalls.</p>
-          <div class="facts"><span class="fact">Recalling the latest shots instead loses <b>9.3</b> points of character and <b>9.5</b> of scene consistency.</span></div>
+          <h3>Storyboard-indexed anchor views prevent cross-window drift.</h3>
+          <p>Rather than retrieving frames by visual similarity or taking the latest appearance, which chains regeneration errors across windows, recall is a deterministic lexicographic query on the storyboard. Each present entity selects its clearest <b>anchor view</b> from earlier windows: views after its latest recorded attire or state change first, then shots with fewer co-occurring characters, then character-legible shot sizes (close-up, medium close-up, medium), and finally the earliest shot index.</p>
+          <p>Code extracts the source shot's final frame when it records a state or attire change and its middle frame otherwise. Within the window, each target shot reads only the recalled frames that share one of its present entities, preventing shots from borrowing framing from frames depicting other characters.</p>
+          <div class="facts"><span class="fact">Replacing anchor views with recent shots drops character consistency by <b>9.3</b> points and scene consistency by <b>9.5</b> points, losing <b>15.4</b> points when entities return two or more windows later.</span></div>
         </article>
         <article class="step" data-step="5">
           <div class="no">05 · Render</div>
-          <h3>Each shot reads itself, its neighbours' first frames, and its own references.</h3>
-          <p>The renderer is Wan2.2-TI2V-5B fine-tuned without new parameters. <b>Shot-wise cross-attention</b> lets each shot attend only to its own prompt. <b>Reference-routed sparse self-attention</b> lets it attend to its own tokens, the first latent frame of every co-generated shot, and its routed recalled frames, which sit at temporal positions before its first frame.</p>
-          <p>Training pairs whole shots with frames from other shots of the same scene, often under another camera setup, so copying their framing raises the loss. Trained for 3,000 steps on 8 A100 GPUs.</p>
-          <div class="facts"><span class="fact">Without routing, cut execution drops from <b>0.970</b> to <b>0.869</b> where routing would hide frames of absent characters; 32 of the 34 failures copy a framing.</span></div>
+          <h3>Shot-wise cross-attention and reference-routed sparse self-attention.</h3>
+          <p>Each shot is VAE-encoded separately so no latent frame straddles a cut, and Wan2.2-TI2V-5B is fine-tuned across all transformer blocks without new parameters. Under <b>shot-wise cross-attention</b>, each shot attends exclusively to its compiled prompt and each reference frame attends to an identity line naming its source cast and setting. Under <b>reference-routed sparse self-attention</b>, each shot attends to its own tokens, the first latent frame of every co-generated shot, and its routed anchor views placed at RoPE temporal indices five apart before its first frame.</p>
+          <p>Training pairs whole scene shots with frames sampled from other shots of the same scene, often under a different camera setup and augmented with random zoom-crops, so copying reference framing increases the rectified-flow loss. Trained for 3,000 steps on 8 A100 GPUs.</p>
+          <div class="facts"><span class="fact">Removing entity routing drops cut execution from <b>0.970</b> to <b>0.869</b> on cuts where routing hides absent-character frames (32 of 34 failures copy framing). Removing reference identity lines raises setup copying from <b>3.6%</b> to <b>5.0%</b>.</span></div>
         </article>
       </div>
     </div>
@@ -981,10 +983,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow">Videos</p>
     <div class="split">
-      <h2>Eight held-out stories. <em>Four methods</em>, in sync.</h2>
+      <h2>Eight held-out test stories. <em>Four paradigms</em>, in sync.</h2>
       <div class="prose settle">
-        <p class="lead">These are the renders that Table 1 scores, one story from each of eight test films drawn at random. Pick a story, compare all four at once, focus on one, or wipe CaT-Movie against a baseline.</p>
-        <p class="fair">Baselines render the reference storyboard annotated from the film, each in its native prompt format. CaT-Movie renders the storyboard its own planner wrote from the shot-list request, which states less. Each tile counts its own shots.</p>
+        <p class="lead">Watch the exact test-set renders evaluated in Table 1, one story from each of eight test films drawn at random. Compare all four methods simultaneously in a 2×2 grid, focus on a single method, or drag the interactive wipe to inspect CaT-Movie against any baseline.</p>
+        <p class="fair"><b>Evaluation protocol</b>: Baselines render the film-annotated reference storyboard adapted into each method's native prompt format. CaT-Movie renders from the shot-list request, which states less and relies on our planner's storyboard and predicted shot durations. Each video tile tracks its own shot index in real time.</p>
       </div>
     </div>
 
@@ -1007,7 +1009,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="screens" id="screens"><div class="wipe-handle" id="wipeHandle"></div></div>
         <div class="shotbar" id="shotbar" aria-label="Shots"></div>
         <div class="caption-line"><span class="k" id="capK">Shot 1/12</span><span id="capLine"></span></div>
-        <p class="small">Keys: <span class="mono">space</span> play or pause · <span class="mono">← →</span> previous or next shot · <span class="mono">1–4</span> focus a method. Shot boundaries in the bar follow CaT-Movie.</p>
+        <p class="small">Keys: <span class="mono">space</span> play or pause · <span class="mono">← →</span> previous or next shot · <span class="mono">1–4</span> focus a method. Shot boundaries in the timeline bar follow CaT-Movie.</p>
       </div>
     </div>
   </div>
@@ -1019,15 +1021,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p class="eyebrow">CaT-MBench</p>
     <div class="split bench-split">
       <div>
-        <h2>Consistency counts only when the planned <em>cut happens</em>.</h2>
+        <h2>Consistency counts only when the planned <em>cut is executed</em>.</h2>
         <div class="prose settle">
-          <p class="lead">Feature-similarity metrics reward a video that repeats the previous framing. CaT-MBench asks a judge whether each registered entity is the same individual when it returns, and counts that check only across cuts that open the planned new camera setup.</p>
-          <p>A cut counts as executed when TransNetV2 finds it within 0.5 s and the judge sees a new place, shot size, angle or cast. The same test gates every consistency and persistence check between shots the storyboard makes different. A check behind a failed gate fails and stays in the average.</p>
+          <p class="lead">Feature-similarity metrics such as ViCLIP and DINOv2 score cross-shot consistency whether or not a planned cut occurred, rewarding videos that repeat the previous camera framing. <b>CaT-MBench</b> pairs entity-specific binary checks with an explicit <b>cut gate</b>: a returning character, object, or scene is credited as consistent only across cuts that open the planned new camera setup.</p>
+          <p>When the storyboard changes location, shot size, camera angle, or cast between shots, a cut counts as executed only if TransNetV2 detects a boundary within 0.5 s and the Gemini 3.8 Flash judge verifies a new camera setup. Any cross-shot consistency or state-persistence check across an unexecuted cut fails and remains in the story average.</p>
         </div>
         <div class="bench-nums">
-          <div><b class="tnum" data-count="122" data-fmt="int">122</b><span>stories from held-out films, 30 development and 92 test</span></div>
-          <div><b class="tnum" data-count="1012" data-fmt="int">1,012</b><span>binary test questions naming entities by registry identifier</span></div>
-          <div><b class="tnum" data-count="674" data-fmt="int">674</b><span>of 740 planned cuts change place, shot size, angle or cast</span></div>
+          <div><b class="tnum" data-count="122" data-fmt="int">122</b><span>stories from held-out films (30 development and 92 test), each 6–12 shots and up to 60 s</span></div>
+          <div><b class="tnum" data-count="1012" data-fmt="int">1,012</b><span>binary test questions (1,361 total with dev) naming entities by registry identifier</span></div>
+          <div><b class="tnum" data-count="674" data-fmt="int">674</b><span>of 740 planned test cuts require a new location, shot size, camera angle, or cast</span></div>
         </div>
       </div>
       <div class="panel gate settle" id="gate">
@@ -1051,7 +1053,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
         <div class="scores">
           <div class="score-row" id="srOff"><span class="nm">Consistency without cut gate</span><span class="cmp">Joint <span class="v">0.85</span><span class="op">&lt;</span><span class="v win">1.00</span> Memory</span></div>
-          <div class="score-row dim" id="srOn"><span class="nm">CaT-MBench (ours)</span><span class="cmp">Joint <span class="v win">0.85</span><span class="op">&gt;</span><span class="v lose">0.20</span> Memory</span></div>
+          <div class="score-row dim" id="srOn"><span class="nm">CaT-MBench (cut-gated)</span><span class="cmp">Joint <span class="v win">0.85</span><span class="op">&gt;</span><span class="v lose">0.20</span> Memory</span></div>
         </div>
         <div class="gate-legend">
           <span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>inconsistent (judged)</span>
@@ -1064,11 +1066,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="judging" id="judging">
       <div class="panel jqb settle">
         <span class="k">Question bank</span>
-        <h3>Binary questions that name entities by identifier.</h3>
-        <p class="small">GPT-6.1-sol lists the entities, actions and changes of each shot-list request, and a program turns that list into questions.</p>
+        <h3>Binary questions that name entities by registry identifier.</h3>
+        <p class="small">GPT-6.1-sol extracts the entities, actions, and state transitions of each shot-list request, and a deterministic program compiles them into binary verification questions.</p>
         <div class="qtabs" id="qTabs"></div>
         <div class="qcard" id="qCard"></div>
-        <span class="k" style="margin-top:20px">Native input, one adapter per baseline</span>
+        <span class="k" style="margin-top:20px">Native input adaptation · one adapter per baseline</span>
         <div class="adapters" id="adapters"></div>
       </div>
       <div class="panel jv settle">
@@ -1078,38 +1080,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="jnums">
           <div><b class="tnum">1,361</b><span>binary questions · 349 dev + 1,012 test</span></div>
           <div><b class="tnum">995</b><span>planned cuts · 255 dev + 740 test</span></div>
-          <div><b>Visible only</b><span>Yes / No + time + reason; unclear → No</span></div>
+          <div><b>Visible only</b><span>Yes / No + timestamp + reason (unclear → No)</span></div>
         </div>
-        <p class="small" style="margin:10px 0 0">Example frames come from a Wan2.2 render of a benchmark story. The judge receives the whole video, sampled at two frames per second, with each question tied to shot time ranges.</p>
+        <p class="small" style="margin:10px 0 0">Example frames come from a Wan2.2 render of a benchmark story. The judge receives the full video sampled at two frames per second, with each question anchored to shot time ranges.</p>
       </div>
     </div>
 
     <div class="findings">
       <div class="panel finding settle">
-        <span class="fk">Finding 1</span>
-        <h3>Joint generation keeps identity only within a window.</h3>
-        <div class="big tnum">28<small>% / 30% of character checks pass across windows, even 3–10 s apart</small></div>
-        <p>HoloCine and MultiShotMaster execute nearly all planned cuts but keep characters at 0.517 and 0.538. Inside one of their windows the checks pass 62–83% at every gap.</p>
+        <span class="fk">Finding 1 · Cross-Window Drift</span>
+        <h3>Joint generation preserves identity only within a window.</h3>
+        <div class="big tnum">28<small>% / 30% character pass rate across windows, even 3–10 s apart</small></div>
+        <p>HoloCine and MultiShotMaster execute nearly all planned cuts (0.967 and 0.990) but keep characters at only 0.517 and 0.538. Window boundaries rather than elapsed time explain this drop: within a single window their character checks pass at 62–83% across every time gap, whereas across windows they fall to 28% and 30%.</p>
       </div>
       <div class="panel finding settle">
-        <span class="fk">Finding 2</span>
+        <span class="fk">Finding 2 · Copied Framing</span>
         <h3>Memory-based consistency partly comes from copying camera setups.</h3>
-        <div class="big tnum">114<small>of 674 planned setup changes repeat the framing in StoryMem</small></div>
-        <p>The gate fails 15.7% of StoryMem's consistency checks against 0.7% for CaT-Movie. Without the gate StoryMem would lead every method in consistency by 15.3 points or more.</p>
+        <div class="big tnum">114<small>of 674 planned setup changes repeat the prior framing in StoryMem</small></div>
+        <p>StoryMem cuts on time (Cut F1 0.928) but fails the cut gate on 15.7% of its consistency checks, compared with 0.7% for CaT-Movie. Because the judge finds 124 of the 145 checks behind StoryMem's failed gates consistent, omitting the gate would give StoryMem an artificial lead of 15.3 points or more, just as ViCLIP scores StoryMem 8.4 points above the source films.</p>
       </div>
       <div class="panel finding settle">
-        <span class="fk">Finding 3</span>
-        <h3>Independent per-shot generation cuts cleanly but forgets.</h3>
-        <div class="big tnum">0.22<small>character consistency for Wan2.1 per shot, with Cut F1 above 0.99</small></div>
-        <p>Per-shot Wan baselines keep characters at 0.22 and 0.23; keyframe pipelines that animate each keyframe separately reach 0.30 and 0.17.</p>
+        <span class="fk">Finding 3 · Per-Shot Amnesia</span>
+        <h3>Independent per-shot and keyframe pipelines cut cleanly but forget.</h3>
+        <div class="big tnum">0.17–0.30<small>character consistency across four per-shot and keyframe baselines</small></div>
+        <p>Generating each shot independently lets per-shot Wan2.1 and Wan2.2 exceed 0.99 in Cut F1 and Execution, yet character consistency falls to 0.219 and 0.227. Two-stage keyframe pipelines (StoryDiffusion and IC-LoRA paired with Wan2.2-I2V) similarly remain at 0.300 and 0.168 once keyframes are animated separately.</p>
       </div>
     </div>
 
     <div class="panel judge settle">
-      <div><b>κ = 0.70</b><span>Gemini 3.8 Flash judge against reviewed human labels, 557 items</span></div>
-      <div><b>κ = 0.85</b><span>two annotators' pooled blind labels against the same truth</span></div>
-      <div><b>AUC 0.49–0.70</b><span>ViCLIP similarity on the same labels</span></div>
-      <p class="small" style="margin:0;max-width:44ch">The judge is weakest on scenes where a reverse shot reveals an unseen side of the location.</p>
+      <div><b>κ = 0.70</b><span>Gemini 3.8 Flash judge against adjudicated human ground truth on 557 items</span></div>
+      <div><b>κ = 0.85</b><span>two annotators' pooled blind labels against the same adjudicated truth</span></div>
+      <div><b>AUC 0.49–0.70</b><span>ViCLIP frame similarity evaluated on the same human labels</span></div>
+      <p class="small" style="margin:0;max-width:46ch">Human calibration spans seven baselines, blind to model identity and judge outputs. The VLM judge is most conservative on reverse-angle cuts that reveal an unseen side of a location.</p>
     </div>
   </div>
 </section>
@@ -1119,43 +1121,61 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow">Quantitative results</p>
     <div class="split">
-      <h2>The highest average, the most consistent characters, and cuts <em>on time</em>.</h2>
+      <h2>The highest overall score, the most consistent characters, and <em>cuts on schedule</em>.</h2>
       <div class="prose settle">
-        <p class="lead">CaT-Movie is the only method beyond the baseline Pareto frontier. It matches HoloCine within HoloCine's windows and leads it by 22.2 points across them, and it keeps the most requested changes when entities return, with Persist of 0.785.</p>
-        <p class="small">Click a column to sort. Best in red, second in blue, as in the paper. Differences in points are scores × 100; significance uses paired 95% intervals from 10,000 resamples of source films.</p>
+        <p class="lead"><b>CaT-Movie</b> is the only method beyond the baseline Pareto frontier: it executes <b>0.974</b> of planned camera-setup changes (0.985 in transition control) while achieving the highest overall inter-shot consistency of <b>0.593</b>, ranking first on Character (<b>0.651</b>) and second on Scene (<b>0.630</b>) and Object (<b>0.497</b>).</p>
+        <p>It matches HoloCine within HoloCine's own windows and leads it by <b>22.2 points</b> across windows. When entities undergo state changes and later return, CaT-Movie reaches the highest state persistence (<b>0.785 Persist</b>, exceeding StoryMem by 24.0 points and MultiShotMaster by 19.8 points) while lifting its 5B backbone's within-shot <b>Establish</b> from 0.387 to 0.468. Click any column header to sort, with the best result in red and the second-best in blue.</p>
       </div>
     </div>
 
     <div class="tbl-wrap settle" style="margin-top:28px"><table class="data" id="mainTable"></table></div>
-    <div class="tbl-note"><span>Table 1 · 92 test stories. CaT-Movie renders its planner's storyboard from the shot-list request; baselines render the richer reference storyboard.</span><span><span class="best-k">best</span> · <span class="second-k">second</span></span></div>
+    <div class="tbl-note"><span>Table 1 · 92 held-out test stories. CaT-Movie renders its planner's storyboard from the shot-list request, whereas all seven baselines render the richer film-annotated reference storyboard in their native prompt formats. Avg. averages the four aspects.</span><span><span class="best-k">best</span> · <span class="second-k">second</span></span></div>
 
     <div class="two">
       <div class="panel chart-card settle">
-        <div class="chart-title"><h3>Character checks by return time</h3><div class="legend"><span><i style="background:rgba(236,232,224,.9)"></i>&lt;10 s</span><span><i style="background:rgba(236,232,224,.55)"></i>10–20 s</span><span><i style="background:rgba(236,232,224,.28)"></i>≥20 s</span></div></div>
+        <div class="chart-title"><h3>Character consistency by return time</h3><div class="legend"><span><i style="background:rgba(236,232,224,.9)"></i>&lt;10 s</span><span><i style="background:rgba(236,232,224,.55)"></i>10–20 s</span><span><i style="background:rgba(236,232,224,.28)"></i>≥20 s</span></div></div>
         <div id="returnChart"></div>
-        <p class="small">Test stories, pooled per bin of time from first appearance to return, gated as in Table 1, with 95% intervals. Joint generators fall from 58–61% within 10 s to 41–49% later; CaT-Movie holds 61–63% at every return time.</p>
+        <p class="small">92 test stories, pooled by elapsed time from a character's first appearance to its return (cut-gated as in Table 1, with 95% intervals). Joint generators drop from 58–61% within 10 s to 41–49% at longer horizons, whereas CaT-Movie holds 61–63% across every return bin.</p>
       </div>
       <div class="panel chart-card settle">
         <div class="chart-title"><h3>Consistency by window distance</h3><div class="legend"><span><i style="background:var(--ours)"></i>CaT-Movie</span><span><i style="background:var(--grey-a);border-radius:2px"></i>recent-shot recall</span><span><i style="background:var(--cut);border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%)"></i>trained without references</span></div></div>
         <div id="distChart"></div>
-        <p class="small">Development stories, three seeds. Training without references loses 22.6 and 27.7 points one and two or more windows apart; recalling the latest shots loses 15.4 points only two or more windows apart.</p>
+        <p class="small">30 development stories over three seeds, where 84% of consistency pairs span different windows. Training without references loses 22.6 and 27.7 points at 1 and ≥2 windows apart. Recalling recent shots instead of anchor views loses 15.4 points at ≥2 windows apart due to cross-window error chaining.</p>
       </div>
     </div>
 
     <div style="margin-top:56px" class="split">
       <div>
-        <h3 style="font-size:clamp(28px,3vw,40px)">Ablations</h3>
-        <p class="prose">30 development stories, three seeds. Toggle to see each row as a difference from CaT-Movie in points. † marks a significant difference.</p>
+        <h3 style="font-size:clamp(28px,3vw,40px)">Ablation studies</h3>
+        <p class="prose">Evaluated on 30 development stories over three rendering seeds (8 s window cap). To isolate renderer and recall design, the top row and the first two groups render the reference storyboard, while the bottom group compares the shot-list request compiled directly against our planner's storyboard on the same renderer. Toggle to view paired point differences from CaT-Movie († indicates a 95% bootstrap interval excluding zero).</p>
       </div>
       <div style="display:flex;justify-content:flex-end;align-items:end"><div class="seg" id="ablMode"><button class="on" data-m="abs">Scores</button><button data-m="delta">Δ vs CaT-Movie</button></div></div>
     </div>
     <div class="tbl-wrap settle" style="margin-top:16px"><table class="data" id="ablTable" style="min-width:640px"></table></div>
-    <div class="tbl-note"><span>Table 2 · the first group retrains from the base model; the last replaces the reference storyboard with the shot-list request compiled directly or with our planner's storyboard. Avg. also counts Cut F1, Establish and text alignment.</span></div>
+    <div class="tbl-note"><span>Table 2 · 30 development stories, three seeds. The first group retrains the renderer from the base model, the second varies reference selection at inference, and the third varies the storyboard source. Avg. averages all four benchmark aspects (including Cut F1, Establish, and text alignment).</span></div>
+
+    <div class="findings" style="margin-top:20px">
+      <div class="panel finding settle">
+        <span class="fk">Ablation 1 · Renderer &amp; Attention</span>
+        <h3>Routing and identity lines prevent framing copy.</h3>
+        <p>Training <b>without references</b> preserves cut execution (0.966) but collapses character (−29.2 pts) and object (−24.3 pts) consistency. Training <b>without entity routing</b>, so every shot reads all window references, drops cut execution by 3.5 points overall and from <b>0.970 to 0.869</b> on cuts where routing hides absent-character frames (32 of 34 failures copy framing). Training <b>without reference identity lines</b> significantly raises setup copying from <b>3.6% to 5.0%</b>.</p>
+      </div>
+      <div class="panel finding settle">
+        <span class="fk">Ablation 2 · Reference Recall</span>
+        <h3>Anchor views avoid multi-window error chaining.</h3>
+        <p>Keeping the same renderer and reference count, recalling from <b>recent shots</b> instead of querying the storyboard significantly degrades cut execution (−3.0 pts), character consistency (−9.3 pts), and scene consistency (−9.5 pts): at ≥2 windows apart, recent-shot recall pulls from the first-appearance window in only <b>22%</b> of checks versus <b>60%</b> for anchor views. <b>CLIP text-image retrieval</b> lowers the overall average by 3.4 points.</p>
+      </div>
+      <div class="panel finding settle">
+        <span class="fk">Ablation 3 · Storyboard Source</span>
+        <h3>Planner completion and state maintenance lift rendering.</h3>
+        <p>With the renderer fixed, <b>our planner's storyboard</b> outperforms the directly compiled <b>shot-list request</b> across every column (+5.4 pts on Character, +16.0 pts on Establish, +15.1 pts on Persist, +4.6 pts on Avg.). It matches the film-annotated <b>reference storyboard</b> within 0.5 points on Execution and Character while exceeding it by <b>9.3 points on Persist</b> and <b>8.0 points on Establish</b>.</p>
+      </div>
+    </div>
 
     <div style="margin-top:64px" class="split">
       <div>
         <h3 style="font-size:clamp(28px,3vw,40px)">Qualitative comparison</h3>
-        <p class="prose">Police Station, a test story of 11 shots and 29 s that HoloCine generates in three windows. Each frame is the middle of its shot; hover or tap one to play the shot itself. Pins mark characters that CaT-MBench judges inconsistent, with the region enlarged; crossed scissors mark planned cuts where the video keeps the camera setup.</p>
+        <p class="prose">Police Station, a held-out test story of 11 shots and 29 s that HoloCine generates in three windows. Each column shows the middle frame of its shot, and hovering or tapping any frame plays the video clip for that shot. Pins mark characters that CaT-MBench judges inconsistent with a zoomed inset at the bottom right, while crossed scissors mark planned cuts where the video repeats the prior camera setup.</p>
       </div>
       <div style="display:flex;justify-content:flex-end;align-items:end"><button class="ibtn on" id="qualMarks">Hide judge marks</button></div>
     </div>
@@ -1163,21 +1183,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div style="margin-top:64px" class="split">
       <div>
-        <h3 style="font-size:clamp(28px,3vw,40px)">Storyboard planner</h3>
-        <p class="prose">The planner adds completions that agree with the film. On 30 development and 40 unseen stories it keeps every requested event and 90–98% of requested outcomes, and invents at most 0.07 items per plan.</p>
+        <h3 style="font-size:clamp(28px,3vw,40px)">Storyboard planner evaluation</h3>
+        <p class="prose">We evaluate the planner both at the text level across three request granularities (30 development and 40 unseen stories from outside films, two planner seeds, scored by DeepSeek-V4.1-Flash against pre-written checkpoints and the reference storyboard) and at the rendered-video level on the 30 development stories.</p>
       </div>
       <div></div>
     </div>
     <div class="two">
       <div class="panel chart-card settle">
-        <div class="chart-title"><h3>What the text states</h3><div class="legend"><span><i style="background:rgba(236,232,224,.32)"></i>stated by the request</span><span><i style="background:var(--ours)"></i>added by the planner</span></div></div>
+        <div class="chart-title"><h3>Information stated in compiled text</h3><div class="legend"><span><i style="background:rgba(236,232,224,.32)"></i>stated by the request</span><span><i style="background:var(--ours)"></i>added by the planner</span></div></div>
         <div id="planText"></div>
-        <p class="small">Share of the reference storyboard's opening states and held items that the compiled text states, for synopsis, paragraph and shot-list requests, pooled over 70 stories and two planner seeds.</p>
+        <p class="small">Share of the reference storyboard's opening states and held items present in compiled shot prompts across synopsis (Syn), paragraph (Para), and shot-list (Shot) requests, pooled over 70 stories and two planner seeds. Our planner raises stated opening states from 16% / 56% / 48% to 45% / 71% / 73% and held items from 7% / 57% / 31% to 22% / 68% / 51%.</p>
       </div>
       <div class="panel chart-card settle">
-        <div class="chart-title"><h3>Written versus executed</h3><div class="legend"><span><i style="background:var(--ours)"></i>stated and shown</span><span><i style="background:var(--cut)"></i>stated, not shown</span><span><i style="background:transparent;box-shadow:0 0 0 1px var(--line-2) inset"></i>unstated</span></div></div>
+        <div class="chart-title"><h3>Written versus executed state changes</h3><div class="legend"><span><i style="background:var(--ours)"></i>stated and shown</span><span><i style="background:var(--cut)"></i>stated, not shown</span><span><i style="background:transparent;box-shadow:0 0 0 1px var(--line-2) inset"></i>unstated</span></div></div>
         <div id="writExec"></div>
-        <p class="small">State questions of the storyboard ablation on development stories, three seeds, joined with the per-shot text the renderer received. The renderer shows 69% of the changes our planner states.</p>
+        <p class="small">State questions on the 30 development stories (three rendering seeds) joined with the compiled per-shot text fed to the renderer. Our planner states 91% of required changes (versus 88% for the reference storyboard and 75% for the request), and the renderer executes 69% of the changes our planner states (versus 61% and 62%).</p>
       </div>
     </div>
   </div>
@@ -1188,19 +1208,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow">Film storyboard dataset</p>
     <div class="split">
-      <h2>Real films, annotated in the <em>same schema</em> the planner writes.</h2>
+      <h2>358K film shots annotated in the <em>exact schema</em> the planner writes.</h2>
       <div class="prose settle">
-        <p class="lead">No open multi-shot dataset pairs entity registries with per-shot states and camera setups. We split films into shots, grouped consecutive shots of one scene into blocks of up to twelve, and had Qwen3.7-Flash annotate each block in one pass, which keeps identifiers consistent across its shots.</p>
-        <p>Aesthetic, technical and annotation checks drop single shots rather than every window that contains one, which retains 28.1% more usable shots.</p>
+        <p class="lead">Existing multi-shot datasets provide shot captions or subject crops, but none jointly annotate scene-level entity registries, per-shot states, within-shot transitions, and multi-granularity user requests. We split <b>19,535 videos</b> from CineDance, CinePile, and MovieChat into shots, group consecutive shots of one scene into <b>75,461 blocks</b> of up to twelve shots (358,302 shots, 332.8 hours), and annotate each block in a single Qwen3.7-Flash pass so entity identifiers remain consistent across shots.</p>
+        <p>Rather than discarding an entire multi-shot window whenever a single shot fails LAION aesthetic, DOVER technical, or annotation checks, our <b>shot-first curation pipeline</b> drops only the defective shot, retaining <b>290,267 usable shots (+28.1%)</b> and <b>166,550 adjacent trainable pairs (+18.9%)</b> across 67,489 valid blocks (66,573 for training and 916 held out by film, with zero film overlap with CaT-MBench).</p>
       </div>
     </div>
 
     <div class="flow settle">
-      <div><span>Source videos</span><b class="tnum" data-count="19535" data-fmt="int">19,535</b><p>CineDance, CinePile and MovieChat</p></div>
+      <div><span>Source videos</span><b class="tnum" data-count="19535" data-fmt="int">19,535</b><p>CineDance, CinePile, and MovieChat</p></div>
       <div><span>Scene blocks</span><b class="tnum" data-count="75461" data-fmt="int">75,461</b><p>up to twelve consecutive shots each, median four</p></div>
-      <div><span>Shots · hours</span><b class="tnum" data-count="358302" data-fmt="int">358,302</b><p>332.8 hours of film</p></div>
-      <div><span>Usable shots</span><b class="tnum" data-count="290267" data-fmt="int">290,267</b><p>shot-first filtering, against 226,648 window-first</p></div>
-      <div><span>Train · held out</span><b class="tnum" data-count="66573" data-fmt="int">66,573</b><p>blocks for training, 916 held out by film</p></div>
+      <div><span>Shots · hours</span><b class="tnum" data-count="358302" data-fmt="int">358,302</b><p>332.8 hours of narrative film</p></div>
+      <div><span>Usable shots</span><b class="tnum" data-count="290267" data-fmt="int">290,267</b><p>shot-first filtering vs. 226,648 window-first (+28.1%)</p></div>
+      <div><span>Train · held out</span><b class="tnum" data-count="66573" data-fmt="int">66,573</b><p>training blocks · 916 held out by film for evaluation</p></div>
     </div>
 
     <div class="annot-grid">
@@ -1210,42 +1230,42 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div class="data-grid">
       <div class="panel chart-card sun-card settle">
-        <div class="chart-title"><h3>Composition</h3><span class="small">hover a ring segment</span></div>
+        <div class="chart-title"><h3>Dataset &amp; benchmark composition</h3><span class="small">hover any ring segment</span></div>
         <div id="sunburst"></div>
-        <p class="small">Upper half, the training data: 288,083 labelled usable shots by visual style, character recurrence, scene and characters per shot. Lower half, CaT-MBench: 1,361 scored questions by dimension, 1,229 cross-shot checks by recurrence distance, 122 stories by length and 307 annotated changes by type. Grey slivers are shots without a character or with an unclear setting.</p>
+        <p class="small">Upper half (rose), training dataset: 288,083 labelled usable shots broken down by visual style, character recurrence, scene setting, and characters per shot. Lower half (steel blue), CaT-MBench: 1,361 scored binary questions by evaluation dimension, 1,229 cross-shot checks by recurrence distance, 122 stories by shot count, and 307 annotated state transitions by type. Grey slivers mark shots without a character or with an unclear setting.</p>
       </div>
       <div class="data-col">
         <div class="panel chart-card settle">
-          <div class="chart-title"><h3>Source and picture type</h3><span class="small">290,267 usable shots</span></div>
+          <div class="chart-title"><h3>Source corpora and visual style</h3><span class="small">290,267 usable shots</span></div>
           <div id="srcStack"></div>
           <div style="height:12px"></div>
           <div id="typeStack"></div>
         </div>
         <div class="panel chart-card settle">
-          <div class="chart-title"><h3>Registered entities per block</h3><div class="legend"><span><i style="background:var(--grey-d)"></i>0</span><span><i style="background:var(--grey-b)"></i>1</span><span><i style="background:var(--grey-a)"></i>2</span><span><i style="background:var(--ours)"></i>3+</span></div></div>
+          <div class="chart-title"><h3>Registered entities per scene block</h3><div class="legend"><span><i style="background:var(--grey-d)"></i>0</span><span><i style="background:var(--grey-b)"></i>1</span><span><i style="background:var(--grey-a)"></i>2</span><span><i style="background:var(--ours)"></i>3+</span></div></div>
           <div id="entStack"></div>
-          <p class="small">58.3% of the 192,815 registered people appear in two or more shots of their block.</p>
+          <p class="small">58.3% of the 192,815 registered characters recur across two or more shots within their scene block.</p>
         </div>
       </div>
     </div>
     <div class="two">
       <div class="panel chart-card settle">
-        <div class="chart-title"><h3>Block length</h3><span class="small">75,461 scene blocks</span></div>
+        <div class="chart-title"><h3>Scene block length distribution</h3><span class="small">75,461 scene blocks</span></div>
         <div id="blockHist"></div>
       </div>
       <div class="panel chart-card settle">
-        <div class="chart-title"><h3>Curation yield</h3><div class="legend"><span><i style="background:var(--cut);opacity:.6;border-radius:2px"></i>window-first</span><span><i style="background:var(--ours);border-radius:2px"></i>shot-first</span></div></div>
+        <div class="chart-title"><h3>Shot-first vs. window-first curation yield</h3><div class="legend"><span><i style="background:var(--cut);opacity:.6;border-radius:2px"></i>window-first</span><span><i style="background:var(--ours);border-radius:2px"></i>shot-first</span></div></div>
         <div id="yieldChart"></div>
-        <p class="small">Dropping single bad shots instead of every window that contains one keeps 28.1% more usable shots and 18.9% more adjacent trainable pairs.</p>
+        <p class="small">Dropping individual defective shots rather than discarding every multi-shot window that contains one retains 28.1% more usable shots and 18.9% more adjacent trainable shot pairs.</p>
       </div>
     </div>
 
     <div class="schema">
-      <div class="panel"><b>Entity registry</b><span>Fixed identifiers and identity descriptions for characters, objects and locations, with default attire.</span></div>
-      <div class="panel"><b>Per-shot states</b><span>Location, camera, present entities, posture, held items and attire in every shot.</span></div>
-      <div class="panel"><b>State transitions</b><span>Within-shot changes with initial and visible final values.</span></div>
-      <div class="panel"><b>Entity grounding</b><span>Boxes, masks and depth from Qwen3.8-27B, SAM 3.1 and VGGT-Ω.</span></div>
-      <div class="panel"><b>Three request tiers</b><span>A synopsis, a scene paragraph and the compiled shot list for every block.</span></div>
+      <div class="panel"><b>Entity registry</b><span>Fixed identifiers and appearance descriptions for recurring characters, objects, and locations, plus default character attire.</span></div>
+      <div class="panel"><b>Per-shot states</b><span>Location, camera setup (size, angle, movement), present entities, opening posture, held items, and attire in every shot.</span></div>
+      <div class="panel"><b>State transitions</b><span>Within-shot changes recording the target entity, attribute, initial state, and visible final state at shot end.</span></div>
+      <div class="panel"><b>Entity grounding</b><span>Registry-linked bounding boxes from Qwen3.8-27B, tracked instance masks from SAM 3.1, and relative depth from VGGT-Ω.</span></div>
+      <div class="panel"><b>Three request tiers</b><span>A one-sentence synopsis, a scene paragraph, and a compiled shot list paired with every annotated scene block.</span></div>
     </div>
   </div>
 </section>
@@ -1253,9 +1273,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <!-- ================= CITE ================= -->
 <section id="cite">
   <div class="wrap">
-    <p class="eyebrow">Citation</p>
+    <p class="eyebrow">Citation &amp; Open Release</p>
     <h2>Cite CaT-Movie</h2>
-    <p class="prose">Code is on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>; the renderer weights, the training data, CaT-MBench, its videos and judge calibration labels are grouped in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Hugging Face collection</a> (<a href="https://huggingface.co/JinPLU/CaT-Movie">weights</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data">data</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench">benchmark</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos">videos</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench-Author-Labels">judge calibration archive</a>).</p>
+    <p class="prose">Code is available on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>, and all weights, datasets, benchmark files, generated videos, and human calibration labels are organized in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">CaT-Movie Hugging Face Collection</a> (<a href="https://huggingface.co/JinPLU/CaT-Movie">renderer weights</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data">training data</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos">benchmark videos</a>, <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench-Author-Labels">judge calibration labels</a>).</p>
     <div class="bib">
       <pre id="bibText">@misc{catmovie2026,
   title         = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
@@ -1270,7 +1290,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </main>
 
 <footer>
-  <div class="wrap"><span>CaT-Movie · <a href="https://github.com/JinPLu/CaT-Movie">code</a> · <a href="https://huggingface.co/JinPLU/CaT-Movie">weights</a> · <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench</a></span><span>All videos are generated renders of held-out test stories, unedited apart from resizing and re-encoding. Code Apache-2.0; weights, data and benchmark CC BY-NC-SA 4.0.</span></div>
+  <div class="wrap"><span>CaT-Movie · <a href="https://github.com/JinPLu/CaT-Movie">code</a> · <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">collection</a> · <a href="https://huggingface.co/JinPLU/CaT-Movie">weights</a> · <a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data">data</a> · <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench</a></span><span>All videos are generated renders of held-out test stories, unedited apart from resizing and re-encoding. Code under Apache-2.0, and weights, data, and benchmark under CC BY-NC-SA 4.0.</span></div>
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>

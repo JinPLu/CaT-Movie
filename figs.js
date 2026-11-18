@@ -77,13 +77,13 @@ run('overview', function overview() {
   const arrow = (g, d, col = C.mute, flow = true) => sv('path', { d, fill: 'none', stroke: col, 'stroke-width': 1.4, 'marker-end': `url(#${col === C.ours ? 'arrB' : 'arr'})`, class: flow ? 'flow' : '' }, g);
   const srcShots = [...new Set(W4.refs.map(r => r.shot))];
   const STAGES = [
-    ['Request', 'A request at any granularity enters the planner. A frozen Qwen3.8-27B expands it into a structured storyboard in one constrained-decoding pass.'],
-    ['Storyboard', 'The storyboard registers each recurring character, object and location once, then plans every shot: camera, present entities, their states, the action.'],
-    ['Compile', 'Code carries attire and held items forward and compiles a self-contained prompt for every shot, plus an identity line for every recalled frame.'],
-    ['Recall', `For the current window, shots ${A} and ${B}, code queries the storyboard for anchor views in the generated history: shots ${list(srcShots)}, routed by shared entities.`],
-    ['Encode', 'Recalled frames become a clean prefix. Each reading shot sees its own references at temporal positions just before its first latent frame.'],
-    ['Denoise', 'In every block, a shot attends to itself, to the first latent frame of its co-generated shot and to its routed references, and cross-attends only to its own prompt.'],
-    ['Decode', `The window is decoded. Shots ${A} and ${B} join the history that later windows recall from.`],
+    ['Request', 'A story request at any granularity (synopsis, paragraph, or shot list) enters the planner. Frozen Qwen3.8-27B expands it into a structured storyboard S in one constrained-decoding pass, preserving stated facts, inferring consequences, and completing open details.'],
+    ['Storyboard', 'The storyboard S registers each recurring character, object, and location once with a fixed identifier and appearance description, then plans every shot k: location, camera setup, present entities ℰₖ with opening states, action, and within-shot transitions.'],
+    ['Compile', 'Deterministic code propagates recorded attire changes and unstated held items across shots, compiling a self-contained prompt cₖ for every shot and a reference identity line cʳᵉᶠ naming the cast and setting of each recalled frame.'],
+    ['Recall', `For the current window (shots ${A} and ${B}), code queries S for anchor views in the generated history (shots ${list(srcShots)}), prioritizing post-change views, fewer co-occurring characters, character-legible shot sizes, and earliest appearances.`],
+    ['Encode', 'Each shot is VAE-encoded separately so no latent frame spans a cut. Recalled frames enter as clean latents at RoPE temporal indices pₖ − 5, pₖ − 10, … immediately before reading shot k’s first latent frame pₖ.'],
+    ['Denoise', 'In every transformer block, shot k attends to its own tokens Zₖ, the first latent frames Zⱼᶠ of co-generated shots, and its entity-routed references Rₖ, while cross-attending exclusively to its own prompt cₖ.'],
+    ['Decode', `The VAE decoder outputs shots ${A} and ${B}, which join the generated video history so subsequent windows can recall their middle or post-change final frames.`],
   ];
   sv('rect', { x: 16, y: 16, width: 328, height: 690, rx: 16, fill: 'rgba(214,144,187,.045)', stroke: 'rgba(214,144,187,.22)' }, svg);
   sv('rect', { x: 362, y: 172, width: 826, height: 534, rx: 16, fill: 'rgba(138,168,255,.04)', stroke: 'rgba(138,168,255,.2)' }, svg);
@@ -245,12 +245,12 @@ run('overview', function overview() {
 run('judging', function judging() {
   const qTabs = $('#qTabs'); if (!qTabs) return;
   const Q = [
-    ['Character consistency', 'Is C1 at S3 the same person as at S1?', 'Counts only if the cut into S3 opened its planned camera setup.'],
-    ['Object consistency', 'Is O1 at S2 the same object as at S1?', 'Objects are the movable props both shots request.'],
-    ['Scene consistency', 'Are S10 and S1 in the same place (L1)?', 'A reverse shot may show an unseen side of the room; the judge is weakest here.'],
-    ['State establishment', 'Is O1 folded? (S1 end)', 'A requested change must happen in its own shot.'],
-    ['State persistence', 'Is O1 still folded? (S2)', 'The change must still hold when the entity returns.'],
-    ['Cut execution', 'S1 → S2: cut to a new camera setup?', 'TransNetV2 must find the cut within 0.5 s and the judge must see a new place, shot size, angle or cast.'],
+    ['Character consistency', 'Is C1 at S3 the same person as at S1?', 'Counts only when the transition into S3 opens its planned camera setup.'],
+    ['Object consistency', 'Is O1 at S2 the same object as at S1?', 'Evaluates movable props explicitly requested in both shots.'],
+    ['Scene consistency', 'Are S10 and S1 in the same place (L1)?', 'Checks whether the setting matches its first appearance across non-adjacent shots and camera angles.'],
+    ['State establishment', 'Is O1 folded? (S1 end)', 'A requested within-shot state transition must become visible by the end of its shot.'],
+    ['State persistence', 'Is O1 still folded? (S2)', 'The established state must still hold when the entity returns in a later shot.'],
+    ['Cut execution', 'S1 → S2: cut to a new camera setup?', 'TransNetV2 must detect a cut within 0.5 s and the VLM judge must verify a new location, shot size, angle, or cast.'],
   ];
   const story0 = 'C1: dark-haired man, grey suit · O1: piece of paper · L1: wooden kitchen · S01: Medium shot. C1 writes on the paper, folds it, and hands it to C2.';
   const qCard = $('#qCard'); let qi = 0, qHeld = false;
@@ -264,8 +264,8 @@ run('judging', function judging() {
   const strip = $('#jStrip');
   strip.innerHTML = [0, 1, 2].map(r => `<div class="jrow">${FR.slice(r * 4, r * 4 + 4).map(([f, s, t], i) => `<div class="jf" data-i="${r * 4 + i}" style="background-image:url(f/judge/${f}.jpg)"><span>${s} ${t}</span></div>`).join('')}</div>`).join('');
   const EX = [
-    { hi: [[0, 1, 2], [4, 5, 6]], q: 'Is C1 at 0:09–0:12 the same person as at 0:00–0:04?', steps: [['Judge', 'No, face differs; hair, build, clothing match.', 'bad'], ['Gate', 'new camera setup ✓ (frame correlation −0.08)', 'ok'], ['Result', 'the check counts and fails', 'bad']] },
-    { hi: [[2], [3]], q: 'S1 → S2: does the planned cut open a new camera setup?', steps: [['TransNetV2', 'cut detected within 0.5 s ✓', 'ok'], ['Frame correlation', '0.30', 'neu'], ['Judge', 'new camera setup ✓', 'ok'], ['Result', 'cut executed; checks across it are counted', 'ok']] },
+    { hi: [[0, 1, 2], [4, 5, 6]], q: 'Is C1 at 0:09–0:12 the same person as at 0:00–0:04?', steps: [['Judge', 'No, face differs despite matching hair, build, and attire.', 'bad'], ['Gate', 'new camera setup ✓ (frame correlation −0.08)', 'ok'], ['Result', 'gate passed, character check counts and fails', 'bad']] },
+    { hi: [[2], [3]], q: 'S1 → S2: does the planned cut open a new camera setup?', steps: [['TransNetV2', 'cut detected within 0.5 s ✓', 'ok'], ['Frame correlation', '0.30', 'neu'], ['Judge', 'new camera setup ✓', 'ok'], ['Result', 'cut executed, consistency checks across it are counted', 'ok']] },
   ];
   const flow = $('#jFlow'); let ei = 0, eTimer = null, eHeld = false, vis = false, typer = null;
   function setE(i) {
@@ -377,7 +377,7 @@ run('grounding', function grounding() {
     `<div class="gframes">${BOX.map((bx, i) => `<div class="gfr" data-s="${i + 1}"><img src="f/ground/s${i + 1}-rgb.jpg" alt="Shot ${i + 1} of an annotated block" loading="lazy"><img class="lay masks" src="f/ground/s${i + 1}-mask.jpg" alt="" loading="lazy"><img class="lay depth" src="f/ground/s${i + 1}-depth.jpg" alt="" loading="lazy"><svg class="lay boxes" viewBox="0 0 832 480" preserveAspectRatio="none">${bx.map(([n, x, y, w, hh, c]) => `<g data-e="${n}"><rect x="${x + 2}" y="${y + 2}" width="${w - 4}" height="${hh - 4}" fill="none" stroke="${c}" stroke-width="5" pathLength="100"/><rect x="${x + 6}" y="${y + hh - 44}" width="${n.length * 22 + 14}" height="36" rx="4" fill="${c}"/><text x="${x + 13}" y="${y + hh - 17}" style="font:700 24px var(--mono);fill:#081022">${n}</text></g>`).join('')}</svg><span class="gs mono">Shot ${i + 1}</span></div>`).join('')}</div>` +
     `<p class="small" id="gCap"></p>`;
   let li = 1, timer = null, held = false, vis = false;
-  function setL(k) { li = LAYERS.findIndex(l => l[0] === k); host.dataset.layer = k; $$('#gSeg button').forEach(b => b.classList.toggle('on', b.dataset.l === k)); $('#gCap').innerHTML = `<b>${LAYERS[li][1]}</b> · ${LAYERS[li][2]}. ${k === 'depth' ? 'Depth is relative within each shot; lighter is farther.' : k === 'masks' ? 'Character 1 keeps the same colour in shots 1 and 3.' : k === 'boxes' ? 'Boxes use the registry identifiers of the storyboard, so C1 is the same man in shots 1 and 3.' : 'Three consecutive shots of one scene block.'}`; }
+  function setL(k) { li = LAYERS.findIndex(l => l[0] === k); host.dataset.layer = k; $$('#gSeg button').forEach(b => b.classList.toggle('on', b.dataset.l === k)); $('#gCap').innerHTML = `<b>${LAYERS[li][1]}</b> · ${LAYERS[li][2]}. ${k === 'depth' ? 'Depth is estimated within each shot by VGGT-Ω, where lighter pixels are farther.' : k === 'masks' ? 'Character 1 keeps the same instance colour across shots 1 and 3.' : k === 'boxes' ? 'Bounding boxes use the storyboard registry identifiers, linking C1 across shots 1 and 3.' : 'Three consecutive shots from one annotated scene block.'}`; }
   $$('#gSeg button').forEach(b => b.addEventListener('click', () => { held = true; setL(b.dataset.l); }));
   setL('boxes');
   function cycle() { clearTimeout(timer); if (held || !vis || RM) return; timer = setTimeout(() => { setL(LAYERS[(li + 1) % 4][0]); cycle(); }, 2600); }
