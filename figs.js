@@ -48,7 +48,7 @@ run('profile', function profile() {
   const host = $('#profile'); if (!host) return;
   const cols = ['Cut F1', 'Execution', 'Character', 'Object', 'Scene', 'Establish', 'Persist', 'Text alignment', 'Average'];
   const ours = T1.find(r => r.name === 'CaT-Movie');
-  const FAM = { 'Wan2.1, per shot': 'Independent per-shot generation', 'Wan2.2, per shot': 'Independent per-shot generation', StoryMem: 'Memory-augmented, per shot', StoryDiffusion: 'Keyframe pipeline', 'IC-LoRA': 'Keyframe pipeline', MultiShotMaster: 'Joint multi-shot generation', HoloCine: 'Joint multi-shot generation', 'CaT-Movie': 'Storyboard + routed references' };
+  const FAM = { 'Wan2.1, per shot': 'Independent per-shot generation', 'Wan2.2, per shot': 'Independent per-shot generation', StoryMem: 'Memory-augmented, per shot', StoryDiffusion: 'Keyframe pipeline', 'IC-LoRA': 'Keyframe pipeline', MultiShotMaster: 'Joint multi-shot generation', HoloCine: 'Joint multi-shot generation', 'CaT-Movie': 'Planned storyboard, windowed rendering with recalled views' };
   host.innerHTML = `<div class="pf-head"><i id="pfDot"></i><div><b id="pfName"></b><small id="pfFam"></small></div></div><div class="pf-axes"><div><span>Transition control</span><b id="pfTr"></b></div><div><span>Inter-shot consistency</span><b id="pfCo"></b></div></div><div class="pf-rows">${cols.map((c, i) => `<div class="pf-row${i === 8 ? ' avg' : ''}"><span>${c}</span><div class="pf-track"><i class="pf-fill"></i><b class="pf-tick"></b></div><em class="tnum"></em></div>`).join('')}</div><p class="small pf-note">Hover a point to preview it, click to pin. The tick on each bar marks CaT-Movie.</p>`;
   const rows = $$('.pf-row', host); let pinned = 'CaT-Movie';
   function show(name) {
@@ -60,185 +60,6 @@ run('profile', function profile() {
   }
   document.addEventListener('pick', e => { if (e.detail.preview) show(e.detail.name || pinned); else { pinned = e.detail.name; show(pinned); } });
   show('CaT-Movie');
-  once(host, () => { if (RM) return; rows.forEach((row, i) => { const f = $('.pf-fill', row); const w = f.style.width; f.style.transition = 'none'; f.style.width = '0'; requestAnimationFrame(() => requestAnimationFrame(() => { f.style.transition = `width .9s var(--ease) ${i * 60}ms, background .3s`; f.style.width = w; })); }); }, 0.4);
-});
-
-/* =============== 2 · system overview (paper Fig. 2) =============== */
-run('overview', function overview() {
-  const svg = $('#ovSvg'); if (!svg) return;
-  const s = story(STORY); const WI = 3; const W4 = s.windows[WI]; const plan = s.plan; const N = s.spans.ours.length;
-  const A = W4.shots[0], B = W4.shots[1]; const NR = W4.refs.length;
-  const sub = n => String(n).replace(/\d/g, d => '₀₁₂₃₄₅₆₇₈₉'[d]);
-  const list = a => a.length > 1 ? a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1] : String(a[0]);
-  svg.setAttribute('viewBox', '0 0 1200 720');
-  arrowDefs(svg);
-  const st = (el, l) => { el.setAttribute('data-st', l); return el; };
-  const badge = (g, x, y, n) => { const b = sv('g', { class: 'ov-badge' }, g); sv('circle', { cx: x, cy: y, r: 11, fill: C.ours, stroke: C.ink2, 'stroke-width': 3 }, b); T(b, x, y + 4, n, 'font:700 11.5px var(--mono);fill:#081022', 'middle'); return b; };
-  const arrow = (g, d, col = C.mute, flow = true) => sv('path', { d, fill: 'none', stroke: col, 'stroke-width': 1.4, 'marker-end': `url(#${col === C.ours ? 'arrB' : 'arr'})`, class: flow ? 'flow-line' : '' }, g);
-  const srcShots = [...new Set(W4.refs.map(r => r.shot))];
-  const STAGES = [
-    ['Request', 'A story request (synopsis, paragraph, or shot list) is expanded by frozen Qwen3.8-27B into a structured storyboard in a single pass.'],
-    ['Storyboard', 'The storyboard registers each recurring character, object, and place once, then plans every shot with camera setup, present entities, action, and state changes.'],
-    ['Compile', 'Deterministic code propagates attire changes and held items across shots, compiling a self-contained prompt per shot and an identity line per recalled frame.'],
-    ['Recall', `For the current window (shots ${A} and ${B}), code queries the storyboard for anchor views in earlier generated windows (shots ${list(srcShots)}).`],
-    ['Encode', 'Each shot is VAE-encoded separately so no latent frame straddles a cut, and recalled frames are placed at negative RoPE temporal offsets.'],
-    ['Denoise', 'Each shot attends to its own tokens, co-generated first frames, and entity-routed references, while cross-attending only to its own shot prompt.'],
-    ['Decode', `The VAE decoder outputs shots ${A} and ${B}, appending them to the generated history for subsequent windows.`],
-  ];
-  sv('rect', { x: 16, y: 16, width: 328, height: 690, rx: 16, fill: 'rgba(214,144,187,.045)', stroke: 'rgba(214,144,187,.22)' }, svg);
-  sv('rect', { x: 362, y: 172, width: 826, height: 534, rx: 16, fill: 'rgba(138,168,255,.04)', stroke: 'rgba(138,168,255,.2)' }, svg);
-  T(svg, 36, 50, 'Global story planner', DISP(22, '#e9c3da'));
-  T(svg, 382, 204, 'Local window renderer', DISP(22, '#b9cbff'));
-  T(svg, 382, 223, 'Wan2.2-TI2V-5B · fine-tuned without new parameters', MONO(10));
-  /* ---- planner ---- */
-  const g1 = st(sv('g', {}, svg), '1');
-  sv('rect', { x: 34, y: 66, width: 292, height: 108, rx: 10, fill: C.ink, stroke: C.line2 }, g1);
-  T(g1, 50, 88, 'REQUEST · SHOT LIST', MONO(9.5));
-  let yy = 108; wrap(`s${pad(A)} ${s.requests.shots[A - 1]}`, 43).slice(0, 3).forEach(l => { T(g1, 50, yy, l, BODY(12, C.paper)); yy += 16; });
-  T(g1, 50, yy, wrap(`s${pad(B)} ${s.requests.shots[B - 1]}`, 40)[0] + ' …', BODY(12, C.mute));
-  arrow(g1, 'M180 174 V189');
-  pill(g1, 52, 192, 256, 34, 'Input adaptation · Qwen3.8-27B', { icon: 'snow' });
-  badge(g1, 34, 66, 1);
-  const g2 = st(sv('g', {}, svg), '2,4');
-  arrow(g2, 'M180 226 V241');
-  sv('rect', { x: 34, y: 244, width: 292, height: 340, rx: 10, fill: C.ink, stroke: C.line2 }, g2);
-  T(g2, 50, 266, 'STORYBOARD', MONO(9.5));
-  const AVS = {
-    'film-003995-b0001-shot06': { 'Character 1': [1, .68, .40, .26], 'Character 2': [2, .73, .34, .24], 'Character 3': [4, .27, .27, .2], 'Character 4': [4, .43, .72, .16], 'Character 5': [10, .29, .21, .14] },
-    'cinedance-009077-b0004-shot01': { 'Character 1': [1, .30, .30, .26], 'Character 2': [2, .39, .38, .26], 'Character 3': [8, .66, .16, .12], 'Character 4': [9, .60, .32, .24], 'Character 5': [3, .67, .30, .2] },
-  };
-  const AV = AVS[STORY] || {};
-  Object.keys(AV).slice(0, 5).forEach((n, i) => { const [k, fx, fy, cr] = AV[n]; const cx = 70 + i * 55; avatar(g2, frame(STORY, k), cx, 298, 19, fx, fy, cr); T(g2, cx, 333, short(n), MONO(10, C.paper, 600), 'middle'); });
-  const place = (plan.places[0] && plan.places[0].appearance) || '';
-  T(g2, 50, 352, `L1 · ${place.length > 38 ? place.slice(0, 37) + '…' : place}`, BODY(11, C.mute));
-  const rowsK = [A - 1, A, B, B + 1].filter(k => k >= 1 && k <= N).slice(0, 4);
-  rowsK.forEach((k, i) => {
-    const sh = plan.shots[k - 1]; const y = 366 + i * 54; const cur = k === A || k === B;
-    if (cur) sv('rect', { x: 40, y: y - 3, width: 280, height: 50, rx: 7, fill: 'rgba(138,168,255,.1)', stroke: 'rgba(138,168,255,.35)' }, g2);
-    T(g2, 52, y + 19, pad(k), MONO(12.5, cur ? C.ours : C.mute, 600));
-    sh.present.filter(p => AV[p.name]).slice(0, 3).forEach((p, j) => { const [kk, fx, fy, cr] = AV[p.name]; avatar(g2, frame(STORY, kk), 86 + j * 20, y + 13, 8.5, fx, fy, cr); });
-    T(g2, 146, y + 15, camLabel(sh.camera), MONO(9.5, C.paper));
-    T(g2, 146, y + 32, (wrap(sh.action, 31)[0] || '') + (sh.action.length > 31 ? ' …' : ''), BODY(11, C.mute));
-    if (k === A) T(g2, 312, y + 15, 'current window', MONO(8.5, C.ours), 'end');
-  });
-  badge(g2, 34, 244, 2);
-  const g3 = st(sv('g', {}, svg), '3');
-  arrow(g3, 'M180 584 V599');
-  pill(g3, 52, 602, 256, 34, 'Prompt compiler · code', { icon: 'code', stroke: 'rgba(138,168,255,.5)' });
-  arrow(g3, 'M308 619 H352 V696 H1021 V684', C.ours);
-  T(g3, 560, 690, 'per-shot prompts cₖ and identity lines', MONO(9.5, C.ours));
-  T(g3, 180, 660, 'attire and held items carried forward', BODY(11, C.mute), 'middle');
-  T(g3, 180, 676, 'one self-contained prompt per shot', BODY(11, C.mute), 'middle');
-  badge(g3, 52, 602, 3);
-  const gIdx = st(sv('g', {}, svg), '4');
-  arrow(gIdx, 'M326 420 H354 V84 H372', C.ours);
-  T(gIdx, 0, 0, 'frame index', MONO(9.5, C.ours), 'middle').setAttribute('transform', 'translate(348 250) rotate(-90)');
-  /* ---- film strip ---- */
-  T(svg, 378, 32, 'GENERATED HISTORY', MONO(9.5));
-  const gap = 6, tw = (808 - (N - 1) * gap) / N, th = Math.min(41, tw * .56), ty = 62, tx = k => 378 + (k - 1) * (tw + gap);
-  s.windows.forEach((w, wi) => {
-    const a = tx(w.shots[0]), b = tx(w.shots[w.shots.length - 1]) + tw; const cur = wi === WI;
-    sv('path', { d: `M${a} 57 V52 H${b} V57`, fill: 'none', stroke: cur ? C.ours : C.line2 }, svg);
-    const lab = cur ? `Pass ${wi + 1} · current` : (b - a) < 70 ? `P${wi + 1}` : `Pass ${wi + 1}`;
-    T(svg, (a + b) / 2, 47, lab, MONO(9.5, cur ? C.ours : C.mute, cur ? 600 : 500), 'middle');
-  });
-  for (let k = 1; k <= N; k++) {
-    const x = tx(k); const wi = s.windows.findIndex(w => w.shots.includes(k));
-    if (wi < WI) thumb(svg, frame(STORY, k), x, ty, tw, th);
-    else if (wi === WI) {
-      const gk = sv('g', {}, svg);
-      sv('rect', { x, y: ty, width: tw, height: th, rx: 3, fill: C.ink3, stroke: C.ours, 'stroke-dasharray': '3 3' }, gk);
-      sv('rect', { x, y: ty, width: tw, height: th, rx: 3, fill: 'url(#noise)', opacity: .7, class: 'noise-shimmer' }, gk);
-      st(thumb(gk, frame(STORY, k), x, ty, tw, th, { stroke: C.ours, sw: 1.6 }), '7').classList.add('ov-reveal');
-    } else { sv('rect', { x, y: ty, width: tw, height: th, rx: 3, fill: 'none', stroke: C.line2, 'stroke-dasharray': '3 3' }, svg); T(svg, x + tw / 2, ty + th / 2 + 4, 'planned', MONO(8.5), 'middle'); }
-    T(svg, x + 4, ty + 12, k, 'font:600 9.5px var(--mono);fill:#fff;paint-order:stroke;stroke:#000;stroke-width:2.5px');
-  }
-  const gR = st(sv('g', {}, svg), '4');
-  W4.routing.forEach((reads, j) => { const target = W4.shots[j]; reads.forEach((ri, n) => { const sx = tx(W4.refs[ri].shot) + tw / 2, ex = tx(target) + tw / 2 + (n - (reads.length - 1) / 2) * 9; sv('path', { d: `M${sx} ${ty + th} C${sx} ${ty + th + 46}, ${ex} ${ty + th + 46}, ${ex} ${ty + th + 3}`, fill: 'none', stroke: C.ours, 'stroke-width': 1.5, 'marker-end': 'url(#arrB)', class: 'flow-line' }, gR); }); });
-  T(gR, 378, 160, W4.shots.map((k, j) => `shot ${k} ← ${W4.routing[j].map(i => W4.refs[i].shot).join(', ')}`).join('   ·   ') + '   ·   routed by shared entities', MONO(9.5, C.ours));
-  /* ---- renderer: recall + encode ---- */
-  const gF = st(sv('g', {}, svg), '4,5');
-  const rw = Math.min(90, (440 - (NR - 1) * 10) / NR), rh = rw * .55;
-  W4.refs.forEach((r, i) => { const x = 382 + i * (rw + 10); thumb(gF, frame(STORY, r.shot, r.kind), x, 240, rw, rh, { stroke: C.ours, sw: 1.4 }); T(gF, x, 304, `R${i + 1} · shot ${r.shot}`, MONO(10, C.ours, 600)); T(gF, x, 317, r.entities.map(short).join(' ') || 'place', MONO(9)); });
-  badge(gF, 382, 240, 4);
-  const gE = st(sv('g', {}, svg), '5');
-  W4.refs.forEach((r, i) => arrow(gE, `M${382 + i * (rw + 10) + rw / 2} 322 V333`, C.mute, false));
-  pill(gE, 382, 336, NR * (rw + 10) - 10, 28, 'VAE encoder', { icon: 'snow', fill: C.ink2 });
-  badge(gE, 382, 336, 5);
-  const X = t => 476 + (t + 15) * 14.8; const LR = 400, LS = 430, AX = 460;
-  T(gE, 382, LR + 11, 'recalled', MONO(9.5, C.ours)); T(gE, 382, LS + 11, `shots ${A} · ${B}`, MONO(9.5, C.paper)); T(gE, 382, AX + 4, 'RoPE time', MONO(9.5));
-  sv('path', { d: `M${X(-15)} ${AX} H${X(9) + 14}`, stroke: C.line2 }, gE);
-  for (let t = -15; t <= 5; t += 5) { sv('path', { d: `M${X(t) + 7} ${AX} v4`, stroke: C.line2 }, gE); T(gE, X(t) + 7, AX + 16, String(t), MONO(9), 'middle'); }
-  const refTok = W4.refs.map((r, i) => { const g = sv('g', { style: 'transition:transform .7s var(--ease),opacity .5s' }, gE); sv('rect', { x: 0, y: LR, width: 14, height: 14, rx: 3, fill: C.ours }, g); T(g, 7, LR - 4, `R${i + 1}`, MONO(8.5, C.ours, 600), 'middle'); return g; });
-  const shotTok = [];
-  [A, B].forEach((k, j) => { for (let q = 0; q < 5; q++) { const t = j * 5 + q; const g = sv('g', { style: 'cursor:pointer;transition:opacity .4s' }, gE); sv('rect', { x: X(t), y: LS, width: 14, height: 14, rx: 3, fill: q === 0 ? C.holo : '#59627a' }, g); sv('rect', { x: X(t), y: LS, width: 14, height: 14, rx: 3, fill: 'url(#noise)', class: 'tok-noise' }, g); g.addEventListener('pointerenter', () => { held = true; setReader(k); }); shotTok.push({ g, k }); } T(gE, X(j * 5) + 37, LS + 30, `p${sub(k)}`, MONO(9, C.holo), 'middle'); });
-  const readerLab = T(gE, 476, LR - 18, '', MONO(9.5, C.paper));
-  let reader = A, held = false, stage = 1;
-  function setReader(k) {
-    reader = k; const j = W4.shots.indexOf(k); const reads = W4.routing[j]; const p = j * 5;
-    W4.refs.forEach((r, i) => { const n = reads.indexOf(i); const t = n < 0 ? -15 : p - 5 * (reads.length - n); refTok[i].style.transform = `translate(${X(t)}px,0)`; refTok[i].style.opacity = n < 0 ? 0 : 1; });
-    shotTok.forEach(o => o.g.style.opacity = o.k === k ? 1 : .4);
-    readerLab.textContent = `as read by shot ${k}: ${reads.map(i => 'R' + (i + 1)).join(', ')} placed before p${sub(k)}, five apart`;
-  }
-  setReader(A);
-  setInterval(() => { if (!held && stage === 5 && !RM) setReader(reader === A ? B : A); }, 1800);
-  /* ---- renderer: DiT + decode ---- */
-  const gD = st(sv('g', {}, svg), '6');
-  arrow(gD, 'M640 482 V496');
-  [2, 1].forEach(o => sv('rect', { x: 382 + o * 6, y: 500 - o * 6, width: 466, height: 100, rx: 10, fill: C.ink2, stroke: C.line2, opacity: .7 }, gD));
-  sv('rect', { x: 382, y: 500, width: 466, height: 100, rx: 10, fill: C.ink2, stroke: 'rgba(138,168,255,.45)' }, gD);
-  [['Reference-routed sparse self-attention', 'rgba(138,168,255,.16)'], ['Shot-wise cross-attention', 'rgba(216,178,110,.14)'], ['Feed-forward', 'rgba(236,232,224,.06)']].forEach(([n, f], i) => { const y = 508 + i * 30; sv('rect', { x: 392, y, width: 446, height: 25, rx: 6, fill: f }, gD); T(gD, 404, y + 17, n, BODY(12.5, C.paper, 500)); flame(gD, 822, y + 12, .95); });
-  T(gD, 848, 490, '× N blocks', MONO(9.5), 'end');
-  badge(gD, 382, 500, 6);
-  const gO = st(sv('g', {}, svg), '7');
-  arrow(gO, 'M527 600 V613');
-  pill(gO, 382, 616, 290, 28, 'VAE decoder', { icon: 'snow', fill: C.ink2 });
-  arrow(gO, 'M672 630 H686', C.mute, false);
-  [A, B].forEach((k, i) => { const x = 690 + i * 94; thumb(gO, frame(STORY, k), x, 606, 86, 47, { stroke: C.ours, sw: 1.6 }); T(gO, x, 668, `shot ${k}`, MONO(10, C.ours, 600)); });
-  badge(gO, 382, 616, 7);
-  /* ---- conditions: masks ---- */
-  const gM = st(sv('g', {}, svg), '6');
-  T(gM, 870, 240, 'SELF-ATTENTION MASK', MONO(9.5)); T(gM, 1062, 240, 'CROSS-ATTENTION', MONO(9.5));
-  const blocks = []; W4.refs.forEach((r, i) => blocks.push({ t: 'ref', i, u: 1 })); W4.shots.forEach((k, j) => { blocks.push({ t: 'first', j, u: 1 }); blocks.push({ t: 'rest', j, u: 3 }); });
-  const Ub = blocks.reduce((a, b) => a + b.u, 0); let acc = 0; blocks.forEach(b => { b.o = acc; acc += b.u; });
-  const mc = 160 / Ub, mx = 870, my = 260;
-  const allow = (q, k) => { if (q.t === 'ref') return k.t === 'ref' && k.i === q.i ? 'ref' : null; if (k.t === 'ref') return W4.routing[q.j].includes(k.i) ? 'ref' : null; if (k.j === q.j) return 'self'; if (k.t === 'first') return 'first'; return null; };
-  const MC = { self: C.paper, first: C.holo, ref: C.ours };
-  const labs = [...W4.refs.map((r, i) => [`R${i + 1}`, i, 1, true]), ...W4.shots.map((k, j) => [`S${k}`, NR + j * 4, 4, false])];
-  labs.forEach(([n, o, u, isR]) => { if (!isR) T(gM, mx + (o + u / 2) * mc, my - 5, n, MONO(8, C.paper), 'middle'); T(gM, mx - 4, my + (o + u / 2) * mc + 3, n, MONO(8, isR ? C.ours : C.paper), 'end'); });
-  T(gM, mx + NR * mc / 2, my - 5, NR > 1 ? `R1–R${NR}` : 'R1', MONO(8, C.ours), 'middle');
-  blocks.forEach(q => blocks.forEach(k => { const a = allow(q, k); sv('rect', { x: mx + k.o * mc + .5, y: my + q.o * mc + .5, width: k.u * mc - 1, height: q.u * mc - 1, rx: 1.2, fill: a ? MC[a] : C.ink3, 'fill-opacity': a ? (q.t === 'ref' ? .5 : .9) : 1 }, gM); }));
-  const cq = [...W4.refs.map((r, i) => `R${i + 1}`), ...W4.shots.map(k => `S${k}`)], cs = 110 / cq.length;
-  const ck = [...W4.refs.map((r, i) => `cʳ${'¹²³⁴⁵⁶⁷⁸⁹'[i]}`), ...W4.shots.map(k => `c${sub(k)}`)];
-  cq.forEach((q, i) => cq.forEach((k, j) => sv('rect', { x: 1062 + j * cs + .5, y: my + i * cs + .5, width: cs - 1, height: cs - 1, rx: 1.2, fill: i === j ? (i < NR ? C.ours : C.holo) : C.ink3, 'fill-opacity': i === j ? .85 : 1 }, gM)));
-  cq.forEach((q, i) => { T(gM, 1056, my + i * cs + cs / 2 + 3.5, q, MONO(8, i < NR ? C.ours : C.paper), 'end'); T(gM, 1062 + i * cs + cs / 2, my + 110 + 14, ck[i], MONO(8), 'middle'); });
-  [['own shot', C.paper], ['first latent frame of the co-generated shot', C.holo], ['routed recalled frame', C.ours]].forEach(([n, c], i) => { sv('rect', { x: 870, y: 436 + i * 15, width: 10, height: 10, rx: 2, fill: c }, gM); T(gM, 886, 445 + i * 15, n, BODY(11, C.text)); });
-  /* ---- conditions: prompts + umT5 ---- */
-  const gP = st(sv('g', {}, svg), '3,6');
-  [[16, 'cʳᵉᶠ · identity lines'], [8, `c${sub(B)} · shot ${B} prompt`]].forEach(([o, n]) => { sv('rect', { x: 870 + o, y: 552 - o, width: 294, height: 128, rx: 10, fill: C.ink3, stroke: C.line2 }, gP); T(gP, 882 + o, 563 - o, n, MONO(8.5, C.mute)); });
-  sv('rect', { x: 870, y: 552, width: 302, height: 128, rx: 10, fill: C.ink, stroke: 'rgba(138,168,255,.5)' }, gP);
-  T(gP, 884, 572, `c${sub(A)} · shot ${A} prompt`, MONO(9.5, C.ours, 600));
-  wrap(W4.prompts[0], 49).slice(0, 6).forEach((l, i) => T(gP, 884, 589 + i * 14.5, l + (i === 5 ? ' …' : ''), BODY(10.5, i < 2 ? C.paper : C.text)));
-  pill(gP, 870, 488, 302, 30, 'umT5 text encoder', { icon: 'snow', fill: C.ink2 });
-  arrow(gP, 'M1021 534 V521');
-  arrow(gP, 'M870 503 H859 V550 H851', C.holo);
-  /* ---- stage control ---- */
-  const chips = $('#ovStages'); const cap = $('#ovCap'); let timer = null, auto = !RM, visible = false;
-  const playIcon = '<svg viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>', pauseIcon = '<svg viewBox="0 0 14 14"><path d="M3 2h3v10H3zM8 2h3v10H8z" fill="currentColor"/></svg>';
-  STAGES.forEach(([n], i) => { const b = h('button', 'ov-chip', `<span>${i + 1}</span>${n}`); b.addEventListener('click', () => { auto = false; $('#ovPlay').classList.remove('on'); $('#ovPlay').innerHTML = playIcon; setStage(i + 1); }); chips.appendChild(b); });
-  function setStage(n) {
-    stage = n; $$('[data-st]', svg).forEach(el => el.classList.toggle('ov-dim', !el.getAttribute('data-st').split(',').includes(String(n))));
-    $$('.ov-chip', chips).forEach((b, i) => b.classList.toggle('on', i + 1 === n));
-    cap.innerHTML = `<b>${n} · ${STAGES[n - 1][0]}.</b> ${STAGES[n - 1][1]}`;
-    svg.classList.toggle('denoising', n === 6); svg.classList.toggle('decoded', n === 7);
-    if (n !== 5) held = false;
-  }
-  function tick() { clearTimeout(timer); if (!auto || !visible) return; timer = setTimeout(() => { setStage(stage % 7 + 1); tick(); }, 3800); }
-  $('#ovPlay').innerHTML = auto ? pauseIcon : playIcon; $('#ovPlay').classList.toggle('on', auto);
-  $('#ovPlay').addEventListener('click', () => { auto = !auto; $('#ovPlay').innerHTML = auto ? pauseIcon : playIcon; $('#ovPlay').classList.toggle('on', auto); tick(); });
-  $('#ovKicker').textContent = `System overview · ${s.title}, pass ${WI + 1}`;
-  setStage(1);
-  watch($('#overview'), v => { visible = v; tick(); }, 0.3);
 });
 
 /* =============== 3 · CaT-MBench question bank + judging (paper Fig. 3 c, d) =============== */
@@ -267,53 +88,15 @@ run('judging', function judging() {
     { hi: [[0, 1, 2], [4, 5, 6]], q: 'Is C1 at 0:09–0:12 the same person as at 0:00–0:04?', steps: [['Judge', 'No, face differs despite matching hair, build, and attire.', 'bad'], ['Gate', 'new camera setup ✓ (frame correlation −0.08)', 'ok'], ['Result', 'gate passed, character check counts and fails', 'bad']] },
     { hi: [[2], [3]], q: 'S1 → S2: does the planned cut open a new camera setup?', steps: [['TransNetV2', 'cut detected within 0.5 s ✓', 'ok'], ['Frame correlation', '0.30', 'neu'], ['Judge', 'new camera setup ✓', 'ok'], ['Result', 'cut executed, consistency checks across it are counted', 'ok']] },
   ];
-  const flow = $('#jFlow'); let ei = 0, eTimer = null, eHeld = false, vis = false, typer = null;
+  const flow = $('#jFlow');
   function setE(i) {
-    ei = i; $$('#jEx button').forEach((b, j) => b.classList.toggle('on', j === i)); const E = EX[i];
+    $$('#jEx button').forEach((b, j) => b.classList.toggle('on', j === i)); const E = EX[i];
     $$('.jf', strip).forEach(f => { const k = +f.dataset.i; f.classList.remove('a', 'b'); if (E.hi[0].includes(k)) f.classList.add('a'); if (E.hi[1].includes(k)) f.classList.add('b'); });
     flow.innerHTML = `<div class="jq"><span class="mono">ASK</span>${esc(E.q)}</div>` + E.steps.map(([k, v, c], n) => `<div class="jstep ${c}" style="--d:${n}"><span class="mono">${esc(k)}</span><b data-t="${esc(v)}"></b></div>`).join('');
-    clearTimeout(typer); const bs = $$('.jstep b', flow); let n = 0;
-    (function next() { if (n >= bs.length) return; const b = bs[n]; const txt = b.dataset.t; if (RM) { bs.forEach(x => x.textContent = x.dataset.t); return; } let c = 0; b.parentElement.classList.add('on'); (function ty() { c += 2; b.textContent = txt.slice(0, c); if (c < txt.length) typer = setTimeout(ty, 18); else { n++; typer = setTimeout(next, 380); } })(); })();
+    $$('.jstep b', flow).forEach(b => { b.textContent = b.dataset.t; b.parentElement.classList.add('on'); });
   }
-  $$('#jEx button').forEach(b => b.addEventListener('click', () => { eHeld = true; setE(+b.dataset.e); }));
+  $$('#jEx button').forEach(b => b.addEventListener('click', () => setE(+b.dataset.e)));
   setE(0);
-  function cycle() { clearTimeout(eTimer); if (!vis || RM || eHeld) return; eTimer = setTimeout(() => { setE((ei + 1) % EX.length); cycle(); }, 7000); }
-  setInterval(() => { if (vis && !qHeld && !RM) setQ((qi + 1) % Q.length); }, 3500);
-  watch($('#judging'), v => { vis = v; if (v) { setE(ei); cycle(); } else { clearTimeout(eTimer); } }, 0.3);
-});
-
-/* =============== 4 · qualitative comparison (paper Fig. 5) with live shots =============== */
-run('qual', function qual() {
-  const host = $('#qual'); if (!host) return;
-  const sid = 'cinedance-010942-b0000-shot03'; const s = story(sid); const SH = [1, 2, 3, 8];
-  const HEAD = [['Medium close-up', 'The bearded man sits at a desk.'], ['Close-up', 'The officer looks to the side.'], ['Medium close-up', 'The bearded man looks up.'], ['Close-up', 'The officer looks to the side.']];
-  const ROWS = [
-    { m: 'storymem', n: 'StoryMem', col: C.mem, cuts: ['same', 'same'], marks: { 1: [.55, .55, .55, .72], 3: [.49, .55, .49, .66] } },
-    { m: 'multishotmaster', n: 'MultiShotMaster', col: C.msm, cuts: ['new', 'new'], marks: { 2: [.47, .22, .5, .42], 8: [.62, .26, .63, .4] } },
-    { m: 'holocine', n: 'HoloCine', col: C.holo, cuts: ['new', 'new'], marks: { 2: [.5, .2, .5, .42], 8: [.53, .22, .53, .42] } },
-    { m: 'ours', n: 'CaT-Movie', col: C.ours, cuts: ['new', 'new'], marks: {} },
-  ];
-  const zoom = (img, cx, cy) => { const c = 0.3, ch = c * 16 / 9; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
-  host.innerHTML = `<div class="qh"><span></span>${SH.map((k, i) => `<div><b>Shot ${k}</b><em>${HEAD[i][0]}</em><q>${HEAD[i][1]}</q></div>`).join('')}</div>` +
-    ROWS.map(r => `<div class="qr" data-m="${r.m}"><div class="qn" style="color:${r.col}">${r.n}</div><div class="qstrip${r.m === 'ours' ? ' ours' : ''}">${SH.map((k, i) => {
-      const img = `f/qual/${r.m}-s${k}.jpg`; const mk = r.marks[k];
-      return `<div class="qc" data-k="${k}" style="background-image:url(${img})">${mk ? `<span class="pin" style="left:${mk[0] * 100}%;top:${mk[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg></span><span class="zoom" style="${zoom(img, mk[2], mk[3])}"></span>` : ''}<span class="tc mono"></span></div>`;
-    }).join('')}${r.cuts.map((c, i) => `<svg class="qcut" style="left:${(i + 1) * 25}%" viewBox="0 0 24 24"><use href="#${c === 'same' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div></div>`).join('') +
-    `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>inconsistent (judged)</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>same camera setup</span><span class="mono">hover or tap a frame to play its shot</span></div>`;
-  let live = null;
-  function stop() { if (!live) return; live.v.pause(); live.v.remove(); live.cell.classList.remove('playing'); live = null; }
-  function play(cell) {
-    if (live && live.cell === cell) return; stop();
-    const m = cell.closest('.qr').dataset.m; const k = +cell.dataset.k; const [a, b] = s.spans[m][k - 1];
-    const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = `v/${sid}/${m}.mp4#t=${a.toFixed(2)}`; v.className = 'qv';
-    cell.prepend(v); cell.classList.add('playing'); const tc = $('.tc', cell);
-    v.addEventListener('loadedmetadata', () => { v.currentTime = a + 0.02; v.play().catch(() => {}); }, { once: true });
-    v.addEventListener('timeupdate', () => { if (v.currentTime >= b - 0.06) v.currentTime = a + 0.02; tc.textContent = `${(v.currentTime - a).toFixed(1)} / ${(b - a).toFixed(1)} s`; });
-    live = { v, cell };
-  }
-  $$('.qc', host).forEach(c => { c.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') play(c); }); c.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') stop(); }); c.addEventListener('pointerup', e => { if (e.pointerType === 'mouse') { if (!live || live.cell !== c) play(c); return; } if (live && live.cell === c) stop(); else play(c); }); c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (live && live.cell === c) stop(); else play(c); } }); c.tabIndex = 0; });
-  $('#qualMarks').addEventListener('click', e => { const on = host.classList.toggle('nomarks'); e.currentTarget.classList.toggle('on', !on); e.currentTarget.textContent = on ? 'Show judge marks' : 'Hide judge marks'; });
-  once(host, () => { if (RM) return; host.classList.add('reveal'); }, 0.35);
 });
 
 /* =============== 5 · planner text and written vs executed (paper Fig. 7) =============== */
@@ -339,7 +122,6 @@ run('planner', function planner() {
       segs.push({ r1, r2, lab, r, tot, x });
     });
   });
-  once(a, () => { if (RM) return; segs.forEach((sg, i) => { const { r1, r2, lab, r, tot } = sg; r1.setAttribute('y', Y(0)); r1.setAttribute('height', 0); r2.setAttribute('y', Y(0)); r2.setAttribute('height', 0); lab.style.opacity = 0; const t0 = performance.now() + i * 90; (function f(t) { const p = Math.max(0, Math.min(1, (t - t0) / 1300)); const e1 = Math.min(1, p / .5), e2 = Math.max(0, (p - .5) / .5); const ez = x => 1 - Math.pow(1 - x, 3); const v1 = r * ez(e1), v2 = (tot - r) * ez(e2); r1.setAttribute('y', Y(v1)); r1.setAttribute('height', Y(0) - Y(v1)); r2.setAttribute('y', Y(v1 + v2)); r2.setAttribute('height', Y(v1) - Y(v1 + v2)); lab.setAttribute('y', Y(v1 + v2) - 7); lab.style.opacity = e2; if (p < 1) requestAnimationFrame(f); })(performance.now()); }); }, 0.35);
   /* written vs executed */
   const R = [['request_only', 'Request', 170, 79, 49, 42], ['reference', 'Reference', 171, 91, 59, 21], ['planner_27b', 'Our planner', 171, 108, 48, 15]];
   const svg2 = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'State questions shown, stated but not shown, or unstated for three storyboards' }, b);
@@ -361,7 +143,6 @@ run('planner', function planner() {
     const lab3 = T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 5, Math.round(f3 * 100), MONO(13, C.mute, 600), 'middle');
     bars.push({ a1, a2, f1, f2, labs: [lab1, lab2, lab3] });
   });
-  once(b, () => { if (RM) return; bars.forEach(({ a1, a2, f1, f2, labs }, i) => { labs.forEach((l, j) => l.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: 700 + i * 150 + j * 120, fill: 'backwards' })); const t0 = performance.now() + i * 150; (function f(t) { const p = Math.max(0, Math.min(1, (t - t0) / 1000)); const e = 1 - Math.pow(1 - p, 3); a1.setAttribute('y', Y(f1 * e)); a1.setAttribute('height', Y(0) - Y(f1 * e)); a2.setAttribute('y', Y((f1 + f2) * e)); a2.setAttribute('height', Y(f1 * e) - Y((f1 + f2) * e)); if (p < 1) requestAnimationFrame(f); })(performance.now()); }); }, 0.35);
 });
 
 /* =============== 6 · annotation + entity grounding (paper Fig. 3 a, b) =============== */
@@ -376,18 +157,15 @@ run('grounding', function grounding() {
   host.innerHTML = `<div class="gh"><span class="k">Entity grounding</span><div class="seg" id="gSeg">${LAYERS.map(([k, n], i) => `<button data-l="${k}"${i === 1 ? ' class="on"' : ''}>${n}</button>`).join('')}</div></div>` +
     `<div class="gframes">${BOX.map((bx, i) => `<div class="gfr" data-s="${i + 1}"><img src="f/ground/s${i + 1}-rgb.jpg" alt="Shot ${i + 1} of an annotated block" loading="lazy"><img class="lay masks" src="f/ground/s${i + 1}-mask.jpg" alt="" loading="lazy"><img class="lay depth" src="f/ground/s${i + 1}-depth.jpg" alt="" loading="lazy"><svg class="lay boxes" viewBox="0 0 832 480" preserveAspectRatio="none">${bx.map(([n, x, y, w, hh, c]) => `<g data-e="${n}"><rect x="${x + 2}" y="${y + 2}" width="${w - 4}" height="${hh - 4}" fill="none" stroke="${c}" stroke-width="5" pathLength="100"/><rect x="${x + 6}" y="${y + hh - 44}" width="${n.length * 22 + 14}" height="36" rx="4" fill="${c}"/><text x="${x + 13}" y="${y + hh - 17}" style="font:700 24px var(--mono);fill:#081022">${n}</text></g>`).join('')}</svg><span class="gs mono">Shot ${i + 1}</span></div>`).join('')}</div>` +
     `<p class="small" id="gCap"></p>`;
-  let li = 1, timer = null, held = false, vis = false;
+  let li = 1;
   function setL(k) { li = LAYERS.findIndex(l => l[0] === k); host.dataset.layer = k; $$('#gSeg button').forEach(b => b.classList.toggle('on', b.dataset.l === k)); $('#gCap').innerHTML = `<b>${LAYERS[li][1]}</b> · ${LAYERS[li][2]}. ${k === 'depth' ? 'Depth is estimated within each shot by VGGT-Ω, where lighter pixels are farther.' : k === 'masks' ? 'Character 1 keeps the same instance colour across shots 1 and 3.' : k === 'boxes' ? 'Bounding boxes use the storyboard registry identifiers, linking C1 across shots 1 and 3.' : 'Three consecutive shots from one annotated scene block.'}`; }
-  $$('#gSeg button').forEach(b => b.addEventListener('click', () => { held = true; setL(b.dataset.l); }));
+  $$('#gSeg button').forEach(b => b.addEventListener('click', () => setL(b.dataset.l)));
   setL('boxes');
-  function cycle() { clearTimeout(timer); if (held || !vis || RM) return; timer = setTimeout(() => { setL(LAYERS[(li + 1) % 4][0]); cycle(); }, 2600); }
-  watch(host, v => { vis = v; cycle(); }, 0.35);
   /* annotation card typed in, entity hover links to boxes */
   const an = $('#annot');
   const LINES = [['h', 'Entity registry'], ['e', 'C1', 'an older man with white hair; black suit, white shirt, dark red tie'], ['e', 'C2', 'a man with dark hair and a lean build; dark grey polo shirt'], ['e', 'O1', 'a pile of newspapers and magazines'], ['e', 'O2', 'a metal mesh cage or display case'], ['e', 'O3', 'a black armored suit and cowl inside the cage'], ['h', 'Shot-level annotations'], ['s', 'Shot 1', 'Medium shot, static. C1 stands near a pile of newspapers and looks down, then looks up.'], ['s', 'Shot 2', 'Medium shot, tracking. C2 walks towards a metal mesh cage containing a black armored suit.'], ['s', 'Shot 3', 'Medium shot, static. C1 speaks while looking at C2.'], ['h', 'State change in shot 1'], ['c', 'C1 posture', 'looking down → looking up and forward']];
   an.innerHTML = `<div class="gh"><span class="k">One-pass block annotation · Qwen3.7-Flash</span></div><div class="astrip">${[1, 2, 3].map(i => `<div style="background-image:url(f/ground/s${i}-rgb.jpg)"><span class="mono">Shot ${i}</span></div>`).join('')}</div><div class="alines">${LINES.map(l => l[0] === 'h' ? `<p class="ah">${l[1]}</p>` : `<p class="a${l[0]}"${l[0] === 'e' ? ` data-e="${l[1]}"` : ''}><b>${l[1]}</b> ${esc(l[2])}</p>`).join('')}</div>`;
-  $$('.ae', an).forEach(p => { p.addEventListener('pointerenter', () => { held = true; setL('boxes'); host.classList.add('focus'); $$(`.boxes g`, host).forEach(g => g.classList.toggle('hl', g.dataset.e === p.dataset.e)); }); p.addEventListener('pointerleave', () => { host.classList.remove('focus'); $$('.boxes g', host).forEach(g => g.classList.remove('hl')); }); });
-  once(an, () => { if (RM) return; $$('.alines p', an).forEach((p, i) => { p.style.animation = `fadeIn .5s var(--ease) ${i * 90}ms both`; }); }, 0.3);
+  $$('.ae', an).forEach(p => { p.addEventListener('pointerenter', () => { setL('boxes'); host.classList.add('focus'); $$(`.boxes g`, host).forEach(g => g.classList.toggle('hl', g.dataset.e === p.dataset.e)); }); p.addEventListener('pointerleave', () => { host.classList.remove('focus'); $$('.boxes g', host).forEach(g => g.classList.remove('hl')); }); });
 });
 
 /* =============== 7 · composition sunburst (paper Fig. 3 centre; plot_dataset_composition.py, v17 data) =============== */
@@ -484,7 +262,6 @@ run('sunburst', function sunburst() {
   segs.forEach(sg => { sg.el.addEventListener('pointerenter', () => focus([sg.el, sg.fac.el], sg.fac.name.toUpperCase(), `${sg.share.toFixed(1)}%`, sg.lab || sg.what, `${sg.count.toLocaleString('en-US')} of ${sg.fac.total.toLocaleString('en-US')}`)); sg.el.addEventListener('pointerleave', reset); });
   facetsAll.forEach(f => { f.el.addEventListener('pointerenter', () => focus([f.el, ...f.cats.map(c => c.el)], f.unit.toUpperCase(), f.total.toLocaleString('en-US'), f.name, `${f.cats.filter(c => c.lab).length} categories`)); f.el.addEventListener('pointerleave', reset); });
   requestAnimationFrame(() => { try { const b = svg.getBBox(); if (b.width > 0) svg.setAttribute('viewBox', `${b.x - 8} ${b.y - 8} ${b.width + 16} ${b.height + 16}`); } catch (e) {} });
-  once(host, () => { if (RM) return; svg.classList.add('sb-in'); }, 0.3);
 });
 
 /* =============== 8 · window distance (paper Fig. 6 right): line chart with values =============== */
@@ -496,7 +273,7 @@ run('distLines', function distLines() {
   const grid = sv('g', { class: 'grid' }, svg), ax = sv('g', { class: 'axis' }, svg);
   [30, 40, 50, 60].forEach(v => { sv('line', { x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v) }, grid); sv('text', { x: m.l - 8, y: Y(v) + 4, 'text-anchor': 'end' }, ax).textContent = v + '%'; });
   ['Same window', '1 window apart', '≥2 windows apart'].forEach((n, i) => T(svg, X(i), H - m.b + 22, n, BODY(12.5, C.paper, 500), 'middle'));
-  const anims = [];
+
   S.forEach(([k, name, col, v, n, d, mk, dash], si) => {
     const g = sv('g', {}, svg);
     const path = sv('path', { d: v.map((y, i) => `${i ? 'L' : 'M'}${X(i)} ${Y(y)}`).join(''), fill: 'none', stroke: col, 'stroke-width': k === 'ours' ? 3 : 2.2, 'stroke-dasharray': dash || 'none', 'stroke-linecap': 'round' }, g);
@@ -509,9 +286,8 @@ run('distLines', function distLines() {
       T(pg, x + dx, yy + dy, y.toFixed(1), `font:${k === 'ours' ? 700 : 500} 12px var(--mono);fill:${col}`, an);
       pg.addEventListener('pointermove', e => showTip(`<b>${name}</b> · ${['same window', '1 window apart', '≥2 windows apart'][i]}<table><tr><td>pass rate</td><td>${y.toFixed(1)}%</td></tr><tr><td>checks, 3 seeds</td><td>${n[i]}</td></tr>${d ? `<tr><td>vs CaT-Movie</td><td>${d[i][0] > 0 ? '+' : ''}${d[i][0].toFixed(1)} [${d[i][1]}, ${d[i][2]}]</td></tr>` : ''}</table>`, e)); pg.addEventListener('pointerleave', hideTip);
     });
-    anims.push({ path, g, si });
+
   });
-  once(host, () => { if (RM) return; anims.forEach(({ path, g, si }) => { const L = path.getTotalLength(); const dash = path.getAttribute('stroke-dasharray'); path.style.strokeDasharray = `${L}`; path.style.strokeDashoffset = L; path.getBoundingClientRect(); path.style.transition = `stroke-dashoffset 1.3s var(--ease) ${si * 250}ms`; path.style.strokeDashoffset = 0; setTimeout(() => { path.style.strokeDasharray = dash === 'none' ? '' : dash; path.style.transition = ''; path.style.strokeDashoffset = ''; }, 1400 + si * 250); $$('g', g).forEach((pg, i) => pg.animate([{ opacity: 0, transform: 'scale(.4)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: si * 250 + i * 320, fill: 'both', easing: 'cubic-bezier(.2,.7,.1,1)' })); }); }, 0.35);
 });
 
 /* =============== 9 · block length histogram + curation yield (dataset statistics b, d) =============== */
@@ -527,7 +303,6 @@ run('dataStats', function dataStats() {
     T(svg, (W + m.l) / 2, H - 4, 'Shots per block', BODY(11.5, C.mute), 'middle');
     const mx = m.l + 3 * bw + bw / 2; const med = sv('g', { class: 'hb-med' }, svg); sv('path', { d: `M${mx} ${m.t - 6}V${Y(0)}`, stroke: C.cut, 'stroke-width': 2, 'stroke-dasharray': '6 5' }, med); T(med, mx + 8, m.t + 26, 'Median = 4', `font:700 13px var(--body);fill:${C.cut}`);
     T(svg, m.l + bw / 2, Y(15459) - 22, '15.5k', `font:700 12.5px var(--mono);fill:${C.ours}`, 'middle'); T(svg, m.l + bw / 2, Y(15459) - 8, '(mode)', MONO(9.5, C.ours), 'middle');
-    once(hb, () => { if (RM) return; bars.forEach(({ r, v }, i) => r.animate([{ height: '0px', y: `${Y(0)}px` }, { height: `${Y(0) - Y(v)}px`, y: `${Y(v)}px` }], { duration: 700, delay: i * 45, easing: 'cubic-bezier(.2,.7,.1,1)', fill: 'backwards' })); med.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 700, fill: 'backwards' }); }, 0.35);
   }
   const cy = $('#yieldChart'); if (!cy) return;
   const D = [['Usable shots', 226648, 290267, '+28.1%'], ['Adjacent trainable pairs', 140120, 166550, '+18.9%']];
@@ -547,6 +322,5 @@ run('dataStats', function dataStats() {
     [r1, r2].forEach((r, j) => r.addEventListener('pointermove', e => showTip(`<b>${n}</b><table><tr><td>window-first</td><td>${a.toLocaleString('en-US')}</td></tr><tr><td>shot-first</td><td>${b.toLocaleString('en-US')}</td></tr><tr><td>gain</td><td>${up}</td></tr></table>`, e))); [r1, r2].forEach(r => r.addEventListener('pointerleave', hideTip));
     anim.push([r1, a, 0], [r2, b, 1], [l2, 0, 2], [l3, 0, 2]);
   });
-  once(cy, () => { if (RM) return; anim.forEach(([el, v, k], i) => { if (k === 2) el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 900, fill: 'backwards' }); else el.animate([{ height: '0px', y: `${Y(0)}px` }, { height: `${Y(0) - Y(v)}px`, y: `${Y(v)}px` }], { duration: 800, delay: k * 300 + i * 60, easing: 'cubic-bezier(.2,.7,.1,1)', fill: 'backwards' }); }); }, 0.35);
 });
 })();

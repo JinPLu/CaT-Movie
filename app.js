@@ -17,6 +17,18 @@ const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
 const camLabel = cam => { if (!cam) return ''; const p = []; if (cam.shot_size) p.push(cap(cam.shot_size.replace(/ shot$/, ''))); if (cam.angle) p.push(cam.angle.replace(/ shot$/, '')); if (cam.movement) p.push(cam.movement); return p.join(' · '); };
 const pad = (n, w = 2) => String(n).padStart(w, '0');
 const winRange = (spans, w) => [spans[w.shots[0] - 1][0], spans[w.shots[w.shots.length - 1] - 1][1]];
+const entLabel = (s, n) => {
+  const c = s.plan.characters.find(x => x.name === n); if (c) return `${short(n)}, ${c.appearance.replace(/^an? /, '').split(',')[0]}`;
+  const o = s.plan.objects.find(x => x.name === n); return o ? o.appearance.replace(/^an? /, '') : n;
+};
+const recallUse = (s, w) => w.refs.map((ref, ri) => {
+  const src = s.plan.shots[ref.shot - 1]; const have = new Set(src.present.map(p => p.name)); const uses = [];
+  w.shots.forEach((k, si) => { if (!(w.routing[si] || []).includes(ri)) return; const sh = s.plan.shots[k - 1];
+    uses.push({ shot: k, shared: sh.present.map(p => p.name).filter(n => have.has(n)), place: sh.place === src.place }); });
+  return { ref, ri, uses };
+});
+const purpose = (s, u) => { const names = [...new Set(u.uses.flatMap(x => x.shared))].sort((x, y) => /^Character/.test(y) - /^Character/.test(x));
+  return names.length ? names.map(n => esc(entLabel(s, n))).join('; ') : (u.uses.some(x => x.place) ? 'the setting' : ''); };
 const once = (node, cb, threshold = 0.25) => { if (!node) return; const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.disconnect(); cb(); } }), { threshold }); io.observe(node); };
 const watch = (node, cb, threshold = 0.2, rootMargin = '0px') => { const io = new IntersectionObserver(es => es.forEach(e => cb(e.isIntersecting, e)), { threshold, rootMargin }); io.observe(node); return io; };
 const COURT = 'film-003995-b0001-shot06';
@@ -38,11 +50,11 @@ const hideTip = () => tip.classList.remove('on');
 /* ---------------- film grain ---------------- */
 run('grain', function grain() {
   const c = $('#grain'); const ctx = c.getContext('2d');
-  let frames = [], i = 0, last = 0;
+  let frames = [];
   function build() {
     const w = Math.max(64, Math.ceil(innerWidth / 2)), hh = Math.max(64, Math.ceil(innerHeight / 2));
     c.width = w; c.height = hh; frames = [];
-    for (let f = 0; f < (RM ? 1 : 4); f++) {
+    for (let f = 0; f < 1; f++) {
       const img = ctx.createImageData(w, hh); const d = img.data;
       for (let p = 0; p < d.length; p += 4) { const v = Math.random() * 255 | 0; d[p] = d[p + 1] = d[p + 2] = v; d[p + 3] = 255; }
       frames.push(img);
@@ -51,8 +63,6 @@ run('grain', function grain() {
   }
   build();
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 200); });
-  if (RM) return;
-  (function loop(t) { if (t - last > 83) { last = t; i = (i + 1) % frames.length; ctx.putImageData(frames[i], 0, 0); } requestAnimationFrame(loop); })(0);
 });
 
 /* ---------------- nav progress + active section + theme toggle ---------------- */
@@ -85,88 +95,56 @@ run('nav', function nav() {
   secs.forEach(s => io.observe(s));
 });
 
-/* ---------------- settle-in + counters ---------------- */
-run('settle', function settle() {
-  const els = $$('.settle');
-  els.forEach(e => { if (e.getBoundingClientRect().top > innerHeight * 0.95) e.classList.add('pre'); });
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } }), { threshold: 0.08 });
-  els.forEach(e => io.observe(e));
-  $$('[data-count]').forEach(n => once(n, () => {
-    if (RM) return;
-    const to = parseFloat(n.dataset.count), fmt = n.dataset.fmt, t0 = performance.now(), dur = 1500;
-    const f = v => fmt === 'int' ? Math.round(v).toLocaleString('en-US') : v.toFixed(+fmt);
-    (function step(t) { const p = Math.min(1, (t - t0) / dur); const e = 1 - Math.pow(2, -10 * p); n.textContent = f(to * (p === 1 ? 1 : e)); if (p < 1) requestAnimationFrame(step); })(t0);
-  }, 0.6));
-});
-
-/* ---------------- hero ---------------- */
+/* ---------------- hero: one long story; the side panel shows what each window recalls and why ---------------- */
 run('hero', function hero() {
   const s = story(HERO); const spans = s.spans.ours; const v = $('#heroVideo');
   const root = $('#top');
   root.addEventListener('pointermove', e => { const r = root.getBoundingClientRect(); root.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%'); root.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%'); });
-  $('#reelTitle').textContent = s.title; $('#reelStats').innerHTML = `${spans.length} shots · <b>${s.seconds.toFixed(1)} s</b> · ${s.windows.length} generation passes · 7 s window cap`;
-  const tl = $('#heroTimeline'); const shotBtns = []; const wins = []; const refEls = [];
-  const NS2 = 'http://www.w3.org/2000/svg'; const arcs = document.createElementNS(NS2, 'svg'); arcs.setAttribute('class', 'tl-arcs'); arcs.setAttribute('aria-hidden', 'true');
+  $('#reelTitle').textContent = s.title;
+  $('#reelStats').textContent = `${spans.length} shots, ${s.seconds.toFixed(1)} s, ${s.windows.length} generation windows`;
+  const tl = $('#heroTimeline'); const shotBtns = []; const wins = [];
   s.windows.forEach((w, wi) => {
     const [a, b] = winRange(spans, w);
     const win = h('div', 'tl-win'); win.style.flex = `${b - a} 1 0`;
-    win.appendChild(h('div', 'lab', `<span>Pass ${wi + 1}</span><span>${(b - a).toFixed(1)} s</span>`));
+    win.appendChild(h('div', 'lab', `<span>Window ${wi + 1}</span><span>${(b - a).toFixed(1)} s</span>`));
     const strip = h('div', 'tl-strip');
     w.shots.forEach(k => {
       const [sa, sb] = spans[k - 1];
       const btn = h('button', 'tl-shot', `<span>${k}</span><i class="ph"></i>`);
-      btn.style.flex = `${sb - sa} 1 0`; btn.style.backgroundImage = `url(${frame(HERO, k)})`;
+      btn.type = 'button'; btn.style.flex = `${sb - sa} 1 0`; btn.style.backgroundImage = `url(${frame(HERO, k)})`;
       btn.setAttribute('aria-label', `Jump to shot ${k}`);
       btn.addEventListener('click', () => { v.currentTime = sa + 0.02; v.play().catch(() => {}); });
       strip.appendChild(btn); shotBtns[k - 1] = btn;
     });
-    win.appendChild(strip);
-    const refs = h('div', 'tl-refs'); refEls[wi] = [];
-    if (!w.refs.length) refs.appendChild(h('span', 'none', 'no history yet'));
-    w.refs.forEach(r => {
-      const d = h('div', 'tl-ref', `<b>${r.shot}</b>`); d.style.backgroundImage = `url(${frame(HERO, r.shot, r.kind)})`;
-      d.title = `Recalled: shot ${r.shot} (${r.kind} frame)${r.entities.length ? ' · ' + r.entities.join(', ') : ' · location view'}`;
-      d.addEventListener('pointerenter', () => shotBtns[r.shot - 1].classList.add('src')); d.addEventListener('pointerleave', () => shotBtns[r.shot - 1].classList.remove('src'));
-      refs.appendChild(d); refEls[wi].push({ d, shot: r.shot });
-    });
-    win.appendChild(refs); tl.appendChild(win); wins.push(win);
+    win.appendChild(strip); tl.appendChild(win); wins.push(win);
   });
-  tl.appendChild(arcs);
-  /* in-frame progress, one segment per generation pass */
-  const prog = $('#heroProg'); const segs = s.windows.map(w => { const [a, b] = winRange(spans, w); const sp = document.createElement('span'); sp.style.flex = `${b - a} 1 0`; sp.appendChild(document.createElement('i')); prog.appendChild(sp); return { a, b, fill: sp.firstChild }; });
+  const box = $('#heroRecall'), winEl = $('#castWin'), note = $('#castNote'); let items = [];
+  function showWindow(wi) {
+    const w = s.windows[wi]; const used = recallUse(s, w).filter(u => u.uses.length);
+    winEl.textContent = `Window ${wi + 1} of ${s.windows.length}, shot${w.shots.length > 1 ? 's' : ''} ${w.shots[0]}${w.shots.length > 1 ? '–' + w.shots[w.shots.length - 1] : ''}`;
+    box.innerHTML = ''; items = [];
+    if (!used.length) { note.textContent = 'Nothing has been generated yet, so the first window starts from the storyboard text alone.'; return; }
+    note.textContent = 'Earlier shots this window recalls, and who or what each one is recalled for. Lit: read by the shot now playing.';
+    items = used.map(u => { const el = h('div', 'rc', `<i style="background-image:url(${frame(HERO, u.ref.shot)})"></i><span><b>Shot ${u.ref.shot}</b><span>${purpose(s, u)}</span></span>`); box.appendChild(el); return { el, ri: u.ri }; });
+  }
   const shotNo = $('#heroShotNo'), cam = $('#heroCam'), line = $('#heroLine'), lineNo = $('#heroLineNo'), tc = $('#heroTc'), passEl = $('#heroPass');
-  let cur = -1, curWin = -1, typeTimer = null;
-  function typeTo(text) {
-    clearInterval(typeTimer);
-    if (RM) { line.textContent = text; return; }
-    let i = 0; line.textContent = '';
-    typeTimer = setInterval(() => { i += 3; line.textContent = text.slice(0, i); if (i >= text.length) clearInterval(typeTimer); }, 16);
-  }
-  function drawArcs() {
-    while (arcs.firstChild) arcs.removeChild(arcs.firstChild);
-    if (curWin < 0 || innerWidth < 640) return; const base = tl.getBoundingClientRect();
-    refEls[curWin].forEach(({ d, shot }, n) => {
-      const r1 = d.getBoundingClientRect(), r0 = shotBtns[shot - 1].getBoundingClientRect();
-      const x1 = r1.left + r1.width / 2 - base.left, y1 = r1.top - base.top - 1, x0 = r0.left + r0.width / 2 - base.left, y0 = r0.bottom - base.top + 1;
-      const p = document.createElementNS(NS2, 'path'); const dy = Math.max(14, (y1 - y0) * .9);
-      p.setAttribute('d', `M${x0} ${y0} C${x0} ${y0 + dy}, ${x1} ${y1 - dy}, ${x1} ${y1}`); p.style.animationDelay = `${-n * .2}s`; arcs.appendChild(p);
-    });
-  }
-  addEventListener('resize', () => requestAnimationFrame(drawArcs));
+  const prog = $('#heroProg'); const segs = s.windows.map(w => { const [a, b] = winRange(spans, w); const sp = document.createElement('span'); sp.style.flex = `${b - a} 1 0`; sp.appendChild(document.createElement('i')); prog.appendChild(sp); return { a, b, fill: sp.firstChild }; });
+  let cur = -1, curWin = -1;
   function update() {
     const t = v.currentTime || 0; const k = shotAt(spans, t);
     const fr = Math.floor(t * 24);
     tc.textContent = `00:${pad(Math.floor(t / 60) % 60)}:${pad(Math.floor(t) % 60)}:${pad(fr % 24)}`;
     if (k !== cur) {
       cur = k;
-      shotNo.textContent = `SHOT ${pad(k + 1)} / ${spans.length}`;
-      if (!RM) { shotNo.classList.add('flash'); setTimeout(() => shotNo.classList.remove('flash'), 260); }
+      shotNo.textContent = `Shot ${k + 1} / ${spans.length}`;
       cam.textContent = camLabel(s.plan.shots[k].camera);
-      lineNo.textContent = `s${pad(k + 1)}`;
-      typeTo(s.requests.shots[k]);
+      lineNo.textContent = `Shot ${k + 1}`;
+      line.textContent = s.requests.shots[k];
       shotBtns.forEach((b, i) => b.classList.toggle('on', i === k));
       const wi = s.windows.findIndex(w => w.shots.includes(k + 1));
-      if (wi !== curWin) { curWin = wi; wins.forEach((w, i) => w.classList.toggle('on', i === wi)); passEl.textContent = `Pass ${wi + 1} / ${s.windows.length}`; drawArcs(); }
+      if (wi !== curWin) { curWin = wi; wins.forEach((w, i) => w.classList.toggle('on', i === wi)); passEl.textContent = `Window ${wi + 1} / ${s.windows.length}`; showWindow(wi); }
+      const w = s.windows[wi]; const reads = new Set(w.routing[w.shots.indexOf(k + 1)] || []);
+      items.forEach(x => x.el.classList.toggle('on', reads.has(x.ri)));
     }
     const [a, b] = spans[k]; const ph = shotBtns[k].querySelector('.ph'); ph.style.left = (Math.min(1, (t - a) / (b - a)) * 100) + '%';
     segs.forEach(g => { g.fill.style.width = (Math.max(0, Math.min(1, (t - g.a) / (g.b - g.a))) * 100) + '%'; });
@@ -175,121 +153,8 @@ run('hero', function hero() {
   v.addEventListener('play', () => { cancelAnimationFrame(raf); loop(); });
   v.addEventListener('pause', () => cancelAnimationFrame(raf));
   v.addEventListener('seeked', update);
-  update(); setTimeout(drawArcs, 600); addEventListener('load', drawArcs);
+  update();
   watch(v, vis => { if (vis) v.play().catch(() => {}); else v.pause(); }, 0.15);
-});
-
-/* ---------------- paradigms (schematic) ---------------- */
-const PLANNED = ['C', 'A', 'B', 'A', 'C', 'D'];
-const SETUP_NAME = { A: 'Close-up · her', B: 'Close-up · him', C: 'Two-shot', D: 'Over-shoulder' };
-const WOMAN = [{ hair: '#d8b98a', top: '#8c7b74' }, { hair: '#5e3b2c', top: '#6f84b3' }, { hair: '#24201e', top: '#a65a5a' }, { hair: '#c9c2b8', top: '#55705f' }];
-const MAN = [{ top: '#2f7a55' }, { top: '#a3542f' }, { top: '#43618a' }, { top: '#7d6c37' }];
-const PARS = {
-  pershot: { groups: [[0], [1], [2], [3], [4], [5]], carry: 'none', render: PLANNED, w: [0, 1, 0, 2, 3, 3], m: [0, 0, 1, 0, 2, 3], wNeq: [0, 1, 0, 1, 1, 1], mNeq: [0, 0, 1, 0, 1, 1],
-    verdict: 'Executes nearly every planned cut, but rebuilds the cast from scratch in each shot.', who: 'Wan2.2 per shot (representative of four per-shot and keyframe pipelines)',
-    metrics: [['0.996', 'cut execution'], ['0.227', 'character consistency'], ['0.497', 'average']], hl: ['Wan2.1, per shot', 'Wan2.2, per shot', 'StoryDiffusion', 'IC-LoRA'] },
-  joint: { groups: [[0, 1, 2], [3, 4, 5]], carry: 'nothing', render: PLANNED, w: [0, 0, 0, 1, 1, 1], m: [0, 0, 0, 0, 1, 1], wNeq: [0, 0, 0, 1, 1, 0], mNeq: [0, 0, 0, 0, 1, 1],
-    verdict: 'Coordinates camera cuts within a window, but resets character identity at the window seam.', who: 'HoloCine and MultiShotMaster (62–83% in-window vs. 28–30% cross-window)',
-    metrics: [['0.97 / 0.99', 'cut execution'], ['0.52 / 0.54', 'character consistency'], ['0.57 / 0.53', 'average']], hl: ['HoloCine', 'MultiShotMaster'] },
-  memory: { groups: [[0], [1], [2], [3], [4], [5]], carry: 'frame', render: ['C', 'A', 'B', 'B', 'C', 'D'], w: [0, 0, 0, 0, 0, 0], m: [0, 0, 0, 0, 0, 0], wNeq: [0, 0, 0, 0, 0, 0], mNeq: [0, 0, 0, 0, 0, 0],
-    verdict: 'Preserves character identity, but raw frame recall copies prior framing across planned cuts.', who: 'StoryMem (repeats prior framing at 114 of 674 planned setup changes)',
-    metrics: [['0.719', 'cut execution'], ['0.631', 'character consistency'], ['0.527', 'average']], hl: ['StoryMem'] },
-  ours: { groups: [[0, 1], [2, 3], [4, 5]], carry: 'storyboard', render: PLANNED, w: [0, 0, 0, 0, 0, 0], m: [0, 0, 0, 0, 0, 0], wNeq: [0, 0, 0, 0, 0, 0], mNeq: [0, 0, 0, 0, 0, 0],
-    verdict: 'Borrows identity from storyboard-indexed anchor views while taking state and framing from text.', who: 'CaT-Movie (matches HoloCine within windows and leads by +22.2 pts across windows)',
-    metrics: [['0.974', 'cut execution'], ['0.651', 'character consistency'], ['0.597', 'average']], hl: ['CaT-Movie'] },
-};
-function person(g, cx, cy, s, look, isMan, back) {
-  const skin = isMan ? '#6a4733' : '#e3bc9d';
-  if (back) { sv('ellipse', { cx, cy: cy + 26 * s, rx: 26 * s, ry: 22 * s, fill: '#0b0d13' }, g); sv('circle', { cx, cy, r: 13 * s, fill: '#0b0d13' }, g); return; }
-  sv('path', { d: `M${cx - 24 * s} ${cy + 46 * s} Q${cx - 24 * s} ${cy + 16 * s} ${cx} ${cy + 15 * s} Q${cx + 24 * s} ${cy + 16 * s} ${cx + 24 * s} ${cy + 46 * s} Z`, fill: look.top }, g);
-  if (isMan) sv('path', { d: `M${cx - 22 * s} ${cy + 30 * s} H${cx + 22 * s}`, stroke: 'rgba(255,255,255,.18)', 'stroke-width': 3 * s }, g);
-  else for (let i = 0; i < 3; i++) sv('path', { d: `M${cx - 20 * s} ${cy + (24 + i * 6) * s} H${cx + 20 * s}`, stroke: 'rgba(255,255,255,.14)', 'stroke-width': 1.6 * s }, g);
-  sv('rect', { x: cx - 4 * s, y: cy + 8 * s, width: 8 * s, height: 9 * s, fill: skin }, g);
-  if (!isMan) sv('path', { d: `M${cx - 14 * s} ${cy + 10 * s} Q${cx - 16 * s} ${cy - 16 * s} ${cx} ${cy - 15 * s} Q${cx + 16 * s} ${cy - 16 * s} ${cx + 14 * s} ${cy + 10 * s} Z`, fill: look.hair }, g);
-  sv('circle', { cx, cy, r: 11 * s, fill: skin }, g);
-  if (isMan) sv('path', { d: `M${cx - 11 * s} ${cy - 3 * s} Q${cx} ${cy - 17 * s} ${cx + 11 * s} ${cy - 3 * s} Q${cx} ${cy - 9 * s} ${cx - 11 * s} ${cy - 3 * s}Z`, fill: '#1c1512' }, g);
-  else sv('path', { d: `M${cx - 11 * s} ${cy - 1 * s} Q${cx - 6 * s} ${cy - 15 * s} ${cx + 11 * s} ${cy - 4 * s} Q${cx + 2 * s} ${cy - 10 * s} ${cx - 11 * s} ${cy - 1 * s}Z`, fill: look.hair }, g);
-}
-function neqMark(g, x, y, s = 1) { const u = sv('use', { href: '#i-neq', x: x - 7 * s, y: y - 17 * s, width: 14 * s, height: 17 * s }, g); return u; }
-function drawShot(svg, x, y, w, hh, setup, wl, ml, wNeq, mNeq, id) {
-  const clip = sv('clipPath', { id }, svg); sv('rect', { x, y, width: w, height: hh, rx: 1.5 }, clip);
-  const g = sv('g', { 'clip-path': `url(#${id})` }, svg);
-  sv('rect', { x, y, width: w, height: hh, fill: '#252a36' }, g);
-  sv('rect', { x, y, width: w, height: hh * 0.62, fill: '#2f3442' }, g);
-  sv('rect', { x: x + w * 0.72, y: y + hh * 0.12, width: w * 0.12, height: hh * 0.28, fill: '#3a4152' }, g);
-  const marks = [];
-  if (setup === 'A') { person(g, x + w * 0.46, y + hh * 0.5, 1.75, wl, false); if (wNeq) marks.push([x + w * 0.46, y + hh * 0.12]); }
-  if (setup === 'B') { person(g, x + w * 0.54, y + hh * 0.5, 1.75, ml, true); if (mNeq) marks.push([x + w * 0.54, y + hh * 0.16]); }
-  if (setup === 'C') {
-    person(g, x + w * 0.3, y + hh * 0.42, 0.95, wl, false); person(g, x + w * 0.7, y + hh * 0.42, 0.95, ml, true);
-    sv('rect', { x: x + w * 0.12, y: y + hh * 0.74, width: w * 0.76, height: hh * 0.3, rx: 3, fill: '#d9d4c7', opacity: 0.85 }, g);
-    if (wNeq) marks.push([x + w * 0.3, y + hh * 0.17]); if (mNeq) marks.push([x + w * 0.7, y + hh * 0.17]);
-  }
-  if (setup === 'D') { person(g, x + w * 0.66, y + hh * 0.44, 1.15, ml, true); person(g, x + w * 0.2, y + hh * 0.68, 1.9, wl, false, true); if (mNeq) marks.push([x + w * 0.66, y + hh * 0.13]); }
-  marks.forEach(([mx, my]) => neqMark(svg, mx, my));
-}
-run('paradigms', function paradigms() {
-  const root = $('#paradigms'); const stage = $('#parStage'); const read = $('#parRead'); const tabs = $$('.tab', root);
-  let cur = 'pershot', timer = null, held = false;
-  function render(p) {
-    const P = PARS[p]; const fw = 124, fh = 74, gi = 3, G = 34, padS = 6;
-    const widths = P.groups.map(g => padS * 2 + g.length * fw + (g.length - 1) * gi);
-    const total = widths.reduce((a, b) => a + b, 0) + (P.groups.length - 1) * G;
-    const W = Math.max(960, total + 24);
-    let x = (W - total) / 2; const top = 76, stripH = fh + 22;
-    const svg = sv('svg', { viewBox: `0 0 ${W} 232`, role: 'img', 'aria-label': `${P.who}: ${P.verdict}` });
-    sv('text', { x: 8, y: 16, class: 'svg-text', 'letter-spacing': '0.12em' }, svg).textContent = 'PLANNED SHOTS';
-    sv('text', { x: 8, y: top - 8, class: 'svg-text', 'letter-spacing': '0.12em' }, svg).textContent = '';
-    const fx = []; // frame x positions
-    P.groups.forEach((g, gi2) => {
-      const sw = widths[gi2];
-      const strip = sv('g', { class: 'fade-in', style: `animation-delay:${gi2 * 70}ms` }, svg);
-      sv('rect', { x, y: top, width: sw, height: stripH, rx: 4, fill: '#000', stroke: p === 'ours' ? 'rgba(138,168,255,.55)' : '#2a3040' }, strip);
-      for (let px = x + 5; px < x + sw - 8; px += 10) { sv('rect', { x: px, y: top + 3.5, width: 5, height: 4, rx: 1, fill: 'rgba(236,232,224,.16)' }, strip); sv('rect', { x: px, y: top + stripH - 7.5, width: 5, height: 4, rx: 1, fill: 'rgba(236,232,224,.16)' }, strip); }
-      g.forEach((si, j) => {
-        const fxx = x + padS + j * (fw + gi); fx[si] = fxx;
-        drawShot(strip, fxx, top + 11, fw, fh, P.render[si], WOMAN[P.w[si]], MAN[P.m[si]], P.wNeq[si], P.mNeq[si], `c-${p}-${si}`);
-      });
-      if (gi2 < P.groups.length - 1) {
-        const sx = x + sw + G / 2, sy = top + stripH / 2; const cg = sv('g', {}, svg);
-        if (P.carry === 'none' || P.carry === 'nothing') {
-          sv('path', { d: `M${sx - 5} ${sy - 5} l10 10 M${sx + 5} ${sy - 5} l-10 10`, stroke: '#5d6475', 'stroke-width': 1.6, 'stroke-linecap': 'round' }, cg);
-        } else {
-          sv('path', { d: `M${sx - 15} ${sy} H${sx + 15}`, stroke: p === 'ours' ? 'rgba(138,168,255,.5)' : 'rgba(227,144,127,.5)', 'stroke-dasharray': '2 3' }, cg);
-          const mv = sv('g', { class: 'carrier' }, cg);
-          if (P.carry === 'frame') { sv('rect', { x: sx - 8, y: sy - 6, width: 16, height: 11, rx: 1.5, fill: '#2f3442', stroke: '#e3907f' }, mv); sv('circle', { cx: sx - 2, cy: sy - 1, r: 2.3, fill: '#e3bc9d' }, mv); sv('circle', { cx: sx + 3, cy: sy - 1, r: 2.3, fill: '#6a4733' }, mv); }
-          else { sv('rect', { x: sx - 9, y: sy - 8, width: 9, height: 12, rx: 1, fill: '#ece8e0' }, mv); [0, 1, 2].forEach(i => sv('path', { d: `M${sx - 7.5} ${sy - 5 + i * 3} h6`, stroke: '#3d5bb8', 'stroke-width': 1 }, mv)); sv('circle', { cx: sx + 5, cy: sy - 2, r: 4, fill: '#8aa8ff' }, mv); }
-        }
-      }
-      x += sw + G;
-    });
-    // planned labels + seams labels
-    PLANNED.forEach((s, i) => {
-      const cx = fx[i] + fw / 2;
-      sv('text', { x: cx, y: 36, 'text-anchor': 'middle', class: 'svg-text', fill: '#ece8e0', style: 'fill:#ece8e0;font-weight:600' }, svg).textContent = `Shot ${i + 1}`;
-      sv('text', { x: cx, y: 51, 'text-anchor': 'middle', class: 'svg-text' }, svg).textContent = SETUP_NAME[s];
-    });
-    // cut marks between consecutive shots
-    for (let i = 1; i < 6; i++) {
-      const bx = (fx[i - 1] + fw + fx[i]) / 2; const same = P.render[i] === P.render[i - 1];
-      sv('use', { href: same ? '#i-scissor-x' : '#i-scissor', x: bx - 9, y: top - 19, width: 18, height: 18, class: 'fade-in', style: `animation-delay:${200 + i * 60}ms` }, svg);
-    }
-    const carryText = { none: 'each shot is generated in isolation · no visual history crosses shot boundaries', nothing: 'multiple shots denoised per pass · no visual history crosses window seams', frame: 'unindexed historical frames cross the seam · identity stays bundled with prior framing and state', storyboard: 'compiled per-shot prompts + entity-routed anchor views cross every window seam' }[P.carry];
-    sv('text', { x: W / 2, y: top + stripH + 28, 'text-anchor': 'middle', class: 'svg-text', style: `fill:${p === 'ours' ? '#8aa8ff' : '#868d9d'}` }, svg).textContent = `One film strip = one generation pass · ${carryText}`;
-    stage.replaceChildren(svg);
-    read.innerHTML = `<div class="verdict fade-in">${esc(P.verdict)}<small>${esc(P.who)} · Table 1, 92 test stories</small></div>` +
-      P.metrics.map((m, i) => `<div class="metric fade-in" style="animation-delay:${80 + i * 60}ms"><b class="tnum${p === 'ours' ? ' k-ours' : ''}">${m[0]}</b><span>${m[1]}</span></div>`).join('');
-    tabs.forEach(t => t.classList.toggle('on', t.dataset.p === p));
-    tabs.forEach(t => { const b = $('.bar', t); if (b) { b.style.animation = 'none'; void b.offsetWidth; b.style.animation = ''; } });
-    document.dispatchEvent(new CustomEvent('paradigm', { detail: P.hl }));
-    cur = p;
-  }
-  const order = ['pershot', 'joint', 'memory', 'ours'];
-  function schedule() { clearTimeout(timer); if (held || RM) return; timer = setTimeout(() => { render(order[(order.indexOf(cur) + 1) % 4]); schedule(); }, 6500); }
-  tabs.forEach(t => t.addEventListener('click', () => { held = true; root.classList.add('held'); clearTimeout(timer); render(t.dataset.p); }));
-  render('pershot');
-  if (RM) root.classList.add('held');
-  watch(root, vis => { if (vis) schedule(); else clearTimeout(timer); }, 0.35);
 });
 
 /* ---------------- paper tables ---------------- */
@@ -320,8 +185,8 @@ run('pareto', function pareto() {
   [0.80, 0.85, 0.90, 0.95, 1.00].forEach(v => { sv('line', { x1: X(v), x2: X(v), y1: m.t, y2: H - m.b }, grid); sv('text', { x: X(v), y: H - m.b + 18, 'text-anchor': 'middle' }, ax).textContent = v.toFixed(2); });
   [0.2, 0.3, 0.4, 0.5, 0.6].forEach(v => { sv('line', { x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v) }, grid); sv('text', { x: m.l - 10, y: Y(v) + 4, 'text-anchor': 'end' }, ax).textContent = v.toFixed(1); });
   sv('path', { d: `M${m.l} ${m.t} V${H - m.b} H${W - m.r}`, fill: 'none' }, ax);
-  sv('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', style: 'fill:#c8ccd5' }, ax).textContent = 'Transition control →';
-  const yl = sv('text', { x: 0, y: 0, 'text-anchor': 'middle', transform: `translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`, style: 'fill:#c8ccd5' }, ax); yl.textContent = 'Inter-shot consistency →';
+  sv('text', { x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle', style: 'fill:#c8ccd5' }, ax).textContent = 'Transition control: planned cuts made →';
+  const yl = sv('text', { x: 0, y: 0, 'text-anchor': 'middle', transform: `translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`, style: 'fill:#c8ccd5' }, ax); yl.textContent = 'Consistency: same characters, objects, places →';
   const base = pts.filter(p => p.fam !== 'ours'); const ours = pts.find(p => p.fam === 'ours');
   const front = base.slice().sort((a, b) => b.tr - a.tr).reduce((acc, p) => { if (!acc.length || p.co > acc[acc.length - 1].co) acc.push(p); return acc; }, []);
   const f = xv => Math.max(...base.filter(p => p.tr >= xv).map(p => p.co), y0);
@@ -350,205 +215,98 @@ run('pareto', function pareto() {
     g.addEventListener('focus', () => { const r = g.getBoundingClientRect(); showTip(html, { clientX: r.right, clientY: r.top }); }); g.addEventListener('blur', hideTip);
     nodes.push(g);
   });
-  document.addEventListener('paradigm', e => nodes.forEach(n => n.classList.toggle('dim', !e.detail.includes(n.dataset.name) && n.dataset.name !== 'CaT-Movie')));
-  once(host, () => {
-    if (RM) return;
-    const len = fp.getTotalLength(); fp.style.setProperty('--len', len); fp.classList.add('draw', 'run');
-    nodes.forEach((n, i) => { n.style.animationDelay = (i * 70) + 'ms'; n.classList.add('pop', 'run'); });
-  }, 0.4);
 });
 
-/* ---------------- method scrollytelling ---------------- */
-run('method', function method() {
-  const s = story(COURT); const spans = s.spans.ours; const plan = s.plan;
-  const layers = $$('#scrolly .layer'); const steps = $$('#scrolly .step');
-  let active = 1, win = 3, focusShot = null;
-  /* 1 · request */
-  const reqBox = $('#reqBox'); const reqMeta = $('#reqMeta');
-  function showReq(t) {
-    $$('#reqTabs .tab').forEach(b => b.classList.toggle('on', b.dataset.t === t));
-    const R = s.requests;
-    if (t === 'shots') {
-      reqBox.innerHTML = `<p class="hd">SUBJECTS</p><div class="subj">${R.subjects.map(esc).join('<br>')}</div><p class="hd">SHOTS</p><div class="sl">${R.shots.map((l, i) => `<span class="n">s${pad(i + 1)}</span><span>${esc(l)}</span>`).join('')}</div>`;
-    } else reqBox.innerHTML = `<p style="margin:0;font-size:${t === 'synopsis' ? 22 : 17}px;line-height:1.55">${esc(R[t])}</p>`;
-    const words = (t === 'shots' ? R.shots.join(' ') + ' ' + R.subjects.join(' ') : R[t]).split(/\s+/).length;
-    reqMeta.innerHTML = `<span><b>${words}</b> words</span><span><b>${plan.characters.length}</b> characters · <b>${plan.objects.length}</b> objects in the storyboard</span><span>CaT-Movie rendered this story from the <b>shot list</b></span>`;
+/* ---------------- one story, three generators (judge verdicts from the released CaT-MBench receipts, v17) ---------------- */
+run('compare', function compare() {
+  const host = $('#cmpGrid'); if (!host) return;
+  const sid = 'cinedance-010942-b0000-shot03'; const s = story(sid); const SH = [1, 2, 3, 8];
+  const HEAD = [['Medium close-up', 'The bearded man sits at a desk.'], ['Close-up', 'The officer looks to the side.'], ['Medium close-up', 'The bearded man looks up.'], ['Close-up', 'The officer looks to the side.']];
+  /* cuts: verdicts for the planned cuts shot 1→2 and shot 2→3; marks: [pin x, pin y, zoom x, zoom y] on shots judged a different person */
+  const ROWS = [
+    { m: 'holocine', n: 'Joint generation', who: 'HoloCine', col: 'var(--holo)', cuts: ['new', 'new'], marks: { 2: [.5, .2, .5, .42], 8: [.53, .22, .53, .42] },
+      note: 'HoloCine cuts where the story asks, but the officer who returns in shot 8 is judged a different man from shot 2.' },
+    { m: 'storymem', n: 'Memory-augmented', who: 'StoryMem', col: 'var(--mem)', cuts: ['new', 'lost'], marks: {},
+      note: 'StoryMem keeps both men, but shot 3 runs on from shot 2 with no detectable cut, so the planned new shot never happens. Every shot also keeps the same framing.' },
+    { m: 'ours', n: 'CaT-Movie', who: 'ours', col: 'var(--ours)', cuts: ['new', 'new'], marks: {},
+      note: 'CaT-Movie opens a new camera setup at both cuts, and both men are judged the same people throughout.' },
+  ];
+  const zoom = (img, cx, cy) => { const c = 0.3, ch = c * 16 / 9; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
+  host.innerHTML = `<div class="qh"><span></span>${SH.map((k, i) => `<button type="button" class="cmp-col" data-k="${k}" aria-label="Play shot ${k} in all three"><b>Shot ${k}</b><em>${HEAD[i][0]}</em><q>${HEAD[i][1]}</q></button>`).join('')}</div>` +
+    ROWS.map(r => `<div class="qr" data-m="${r.m}"><div class="qn" style="color:${r.col}">${r.n}<small>${r.who === 'ours' ? '' : r.who}</small></div><div class="qstrip${r.m === 'ours' ? ' ours' : ''}">${SH.map(k => {
+      const img = `f/qual/${r.m}-s${k}.jpg`; const mk = r.marks[k];
+      return `<div class="qc" data-k="${k}" style="background-image:url(${img})">${mk ? `<span class="pin" style="left:${mk[0] * 100}%;top:${mk[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg></span><span class="zoom" style="${zoom(img, mk[2], mk[3])}"></span>` : ''}<span class="tc mono"></span></div>`;
+    }).join('')}${r.cuts.map((c, i) => `<svg class="qcut" style="left:${(i + 1) * 25}%" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div></div>`).join('') +
+    `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>judged a different person</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>planned cut, new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>planned cut not made</span><span>shots 4&ndash;7 not shown</span></div>`;
+  /* playback: a cell plays its own shot; a column header plays that shot in all three */
+  let live = [];
+  function stop() { live.forEach(({ v, cell }) => { v.pause(); v.remove(); cell.classList.remove('playing'); }); live = []; }
+  function start(cell) {
+    const m = cell.closest('.qr').dataset.m; const k = +cell.dataset.k; const [a, b] = s.spans[m][k - 1];
+    const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = `v/${sid}/${m}.mp4#t=${a.toFixed(2)}`; v.className = 'qv';
+    cell.prepend(v); cell.classList.add('playing'); const tc = $('.tc', cell);
+    v.addEventListener('loadedmetadata', () => { v.currentTime = a + 0.02; v.play().catch(() => {}); }, { once: true });
+    v.addEventListener('timeupdate', () => { if (v.currentTime >= b - 0.06) v.currentTime = a + 0.02; tc.textContent = `${(v.currentTime - a).toFixed(1)} / ${(b - a).toFixed(1)} s`; });
+    live.push({ v, cell });
   }
-  $$('#reqTabs .tab').forEach(b => b.addEventListener('click', () => showReq(b.dataset.t)));
-  showReq('shots');
-  /* 2 · storyboard */
-  const reg = $('#registry'); const tbl = $('#sbTable');
-  const ents = [...plan.characters.map(c => ({ n: c.name, t: 'c', d: `${c.appearance}${c.outfit ? '; ' + c.outfit : ''}` })), ...plan.objects.map(o => ({ n: o.name, t: 'o', d: o.appearance })), ...plan.places.map(p => ({ n: p.name, t: 'p', d: p.appearance }))];
-  ents.forEach(e => { const d = h('div', `ent ${e.t}`, `<b>${esc(short(e.n))}</b><small>${esc(e.d.length > 26 ? e.d.slice(0, 25) + '\u2026' : e.d)}</small>`); d.dataset.n = e.n; d.title = `${e.n}: ${e.d}`; reg.appendChild(d); });
-  tbl.innerHTML = `<colgroup><col class="c1"><col class="c2"><col class="c3"><col></colgroup><thead><tr><th>Shot</th><th>Camera</th><th>Present</th><th>Action and changes</th></tr></thead><tbody>${plan.shots.map(sh => {
-    const pres = sh.present.map(p => `<span class="tag${/^Character/.test(p.name) ? ' c' : ''}" data-n="${esc(p.name)}">${esc(short(p.name))}${p.posture ? ' · ' + esc(p.posture) : ''}</span>`).join('');
-    const chg = sh.changes.map(c => `<span class="tag chg">${esc(short(c.name))} ${esc(c.what)} → ${esc(Array.isArray(c.after) ? (c.after.join(', ') || 'empty-handed') : c.after)}</span>`).join('');
-    const names = sh.present.map(p => p.name).concat(sh.place ? [sh.place] : []).join('|');
-    return `<tr data-names="${esc(names)}"><td class="n">${pad(sh.shot)}</td><td class="cam">${esc(camLabel(sh.camera))}</td><td>${pres}</td><td>${esc(sh.action)}${chg ? '<br>' + chg : ''}</td></tr>`;
-  }).join('')}</tbody>`;
-  $$('.ent', reg).forEach(e => {
-    e.addEventListener('pointerenter', () => { e.classList.add('hl'); $$('tbody tr', tbl).forEach(r => { const on = r.dataset.names.split('|').includes(e.dataset.n); r.classList.toggle('hl', on); r.classList.toggle('dim', !on); }); });
-    e.addEventListener('pointerleave', () => { e.classList.remove('hl'); $$('tbody tr', tbl).forEach(r => r.classList.remove('hl', 'dim')); });
-  });
-  /* 3 · packing */
-  const pk = $('#packSvg'); const T = spans[spans.length - 1][1]; const PX = t => 24 + t / T * 712;
-  function drawPack(animate) {
-    pk.replaceChildren();
-    sv('text', { x: 24, y: 22, class: 'svg-text', 'letter-spacing': '0.12em' }, pk).textContent = 'STORYBOARD TIMELINE · PLANNED SHOT DURATIONS';
-    spans.forEach(([a, b], i) => {
-      sv('rect', { x: PX(a) + 1, y: 34, width: Math.max(2, PX(b) - PX(a) - 2), height: 30, rx: 3, fill: '#161a24', stroke: '#323a4b' }, pk);
-      sv('text', { x: (PX(a) + PX(b)) / 2, y: 54, 'text-anchor': 'middle', class: 'svg-text', style: 'fill:#ece8e0' }, pk).textContent = i + 1;
-    });
-    for (let t = 0; t <= T; t += 5) { sv('path', { d: `M${PX(t)} 70 v5`, stroke: '#323a4b' }, pk); sv('text', { x: PX(t), y: 88, 'text-anchor': 'middle', class: 'svg-text' }, pk).textContent = t + ' s'; }
-    sv('text', { x: 24, y: 128, class: 'svg-text', 'letter-spacing': '0.12em' }, pk).textContent = 'GENERATION PASSES · EACH STRIP IS DENOISED JOINTLY';
-    s.windows.forEach((w, wi) => {
-      const [a, b] = winRange(spans, w); const x = PX(a) + 3, wd = PX(b) - PX(a) - 6, y = 150, hh = 92;
-      const g = sv('g', {}, pk);
-      sv('rect', { x, y, width: wd, height: hh, rx: 5, fill: '#000', stroke: 'rgba(138,168,255,.45)' }, g);
-      for (let px = x + 4; px < x + wd - 6; px += 9) { sv('rect', { x: px, y: y + 3, width: 4.5, height: 4, rx: 1, fill: 'rgba(236,232,224,.18)' }, g); sv('rect', { x: px, y: y + hh - 7, width: 4.5, height: 4, rx: 1, fill: 'rgba(236,232,224,.18)' }, g); }
-      w.shots.forEach((k, j) => {
-        const [sa, sb] = spans[k - 1]; const fx = PX(sa) + (j === 0 ? 5 : 1), fwid = PX(sb) - PX(sa) - (j === 0 ? 6 : 2) - (j === w.shots.length - 1 ? 4 : 0);
-        const img = sv('image', { href: frame(COURT, k), x: fx, y: y + 11, width: Math.max(4, fwid), height: hh - 22, preserveAspectRatio: 'xMidYMid slice' }, g);
-        if (animate && !RM) { img.style.transition = `transform .8s var(--ease) ${wi * 90 + j * 40}ms, opacity .8s ${wi * 90}ms`; img.style.transform = 'translateY(-118px)'; img.style.opacity = '.2'; requestAnimationFrame(() => requestAnimationFrame(() => { img.style.transform = 'none'; img.style.opacity = '1'; })); }
-      });
-      sv('text', { x: x + wd / 2, y: y + hh + 18, 'text-anchor': 'middle', class: 'svg-text', style: 'fill:#8aa8ff;font-weight:600' }, g).textContent = `Pass ${wi + 1}`;
-      sv('text', { x: x + wd / 2, y: y + hh + 32, 'text-anchor': 'middle', class: 'svg-text' }, g).textContent = `${(b - a).toFixed(1)} s`;
-    });
-    const cx = PX(0) + 3; sv('path', { d: `M${cx} 300 v8 H${PX(7) + 3} v-8`, stroke: '#d690bb', fill: 'none', 'stroke-width': 1.4 }, pk);
-    sv('text', { x: (cx + PX(7)) / 2, y: 326, 'text-anchor': 'middle', class: 'svg-text', style: 'fill:#d690bb' }, pk).textContent = '7 s window cap';
-    const longest = Math.max(...s.windows.map(w => { const [a, b] = winRange(spans, w); return b - a; }));
-    $('#packNote').textContent = `${s.windows.length} passes · ${spans.length} shots · longest pass ${longest.toFixed(1)} s`;
+  $$('.qc', host).forEach(c => { c.tabIndex = 0; c.setAttribute('role', 'button'); c.setAttribute('aria-label', `Play shot ${c.dataset.k} of ${c.closest('.qr').dataset.m}`);
+    const toggle = () => { const was = live.length === 1 && live[0].cell === c; stop(); if (!was) start(c); };
+    c.addEventListener('click', toggle); c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } }); });
+  $$('.cmp-col', host).forEach(b => b.addEventListener('click', () => { const k = b.dataset.k; const cells = $$(`.qc[data-k="${k}"]`, host); const was = live.length === cells.length && live.every(x => x.cell.dataset.k === k); stop(); if (!was) cells.forEach(start); }));
+  /* reading the verdicts one generator at a time */
+  const ctrl = $('#cmpCtrl'), note = $('#cmpNote');
+  const btns = ROWS.map(r => { const b = h('button', 'cmp-btn', `${r.n}${r.who === 'ours' ? '' : ` <span>${r.who}</span>`}`); b.type = 'button'; b.dataset.m = r.m; b.setAttribute('aria-pressed', 'false'); ctrl.appendChild(b); return b; });
+  function focusRow(m) {
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
+    $$('.qr', host).forEach(r => r.classList.toggle('dim', m != null && r.dataset.m !== m));
+    note.textContent = m ? ROWS.find(r => r.m === m).note : 'Pick a generator to read what the judge found, or click a shot heading to play that shot in all three.';
   }
-  drawPack(false);
-  /* 4 · recall */
-  const rs = $('#recallSvg'); const pbox = $('#promptBox');
-  function chips(host) { host.replaceChildren(); s.windows.forEach((w, i) => { const b = h('button', 'win-chip' + (i === win ? ' on' : ''), `Pass ${i + 1}`); b.addEventListener('click', () => { win = i; focusShot = null; refreshWin(); }); host.appendChild(b); }); }
-  function highlight(text) { return esc(text).replace(/(Character \d+|Object \d+|Location \d+)/g, '<b>$1</b>').replace(/(By the end of the shot[^.]*\.)/g, '<span class="chgw">$1</span>'); }
-  function drawRecall() {
-    rs.replaceChildren(); const w = s.windows[win]; const start = w.shots[0];
-    const hist = Array.from({ length: start - 1 }, (_, i) => i + 1);
-    const refBy = new Map(w.refs.map((r, i) => [r.shot, { ...r, i }]));
-    sv('text', { x: 20, y: 20, class: 'svg-text', 'letter-spacing': '0.12em' }, rs).textContent = hist.length ? 'GENERATED HISTORY · EARLIER PASSES' : 'GENERATED HISTORY';
-    const hx = {}; let tw = 0, th = 0;
-    if (!hist.length) {
-      sv('text', { x: 380, y: 96, 'text-anchor': 'middle', style: 'font:600 22px var(--display);fill:#ece8e0' }, rs).textContent = 'First pass: nothing generated yet.';
-      sv('text', { x: 380, y: 122, 'text-anchor': 'middle', class: 'svg-text' }, rs).textContent = 'The renderer opens from text alone, and training drops references for 20% of windows to match.';
-    } else {
-      tw = Math.min(118, (720 - (hist.length - 1) * 8) / hist.length); th = tw * 0.55;
-      const totalW = hist.length * tw + (hist.length - 1) * 8; let x = (760 - totalW) / 2;
-      hist.forEach(k => {
-        const r = refBy.get(k); const g = sv('g', { style: `opacity:${r ? 1 : .22};transition:opacity .4s` }, rs);
-        sv('image', { href: frame(COURT, k, r && r.kind), x, y: 32, width: tw, height: th, preserveAspectRatio: 'xMidYMid slice' }, g);
-        sv('rect', { x, y: 32, width: tw, height: th, fill: 'none', stroke: r ? '#8aa8ff' : '#323a4b', 'stroke-width': r ? 2 : 1, rx: 2 }, g);
-        sv('text', { x: x + 4, y: 44, style: 'font:600 9.5px var(--mono);fill:#fff;paint-order:stroke;stroke:#000;stroke-width:2.5px' }, g).textContent = k;
-        if (r) {
-          sv('text', { x: x + tw / 2, y: 32 + th + 14, 'text-anchor': 'middle', class: 'svg-text', style: 'fill:#8aa8ff;font-size:10px' }, g).textContent = r.entities.length ? r.entities.map(short).join(' ') : 'place';
-          sv('text', { x: x + tw / 2, y: 32 + th + 27, 'text-anchor': 'middle', class: 'svg-text', style: 'font-size:9.5px' }, g).textContent = r.kind === 'last' ? 'last frame' : 'mid frame';
-        }
-        hx[k] = x + tw / 2; x += tw + 8;
-      });
-    }
-    const m = w.shots.length; const bw = Math.min(230, (700 - (m - 1) * 18) / m), bh = bw * 0.55; const totalB = m * bw + (m - 1) * 18; let bx = (760 - totalB) / 2; const by = 236;
-    sv('text', { x: 20, y: by - 22, class: 'svg-text', 'letter-spacing': '0.12em', style: 'fill:#8aa8ff' }, rs).textContent = `PASS ${win + 1} · DENOISED JOINTLY`;
-    const curves = sv('g', {}, rs);
-    w.shots.forEach((k, j) => {
-      const g = sv('g', { style: 'cursor:pointer' }, rs);
-      const sel = (focusShot ?? w.shots[0]) === k;
-      sv('rect', { x: bx - 6, y: by - 6, width: bw + 12, height: bh + 12, rx: 6, fill: '#000', stroke: sel ? '#8aa8ff' : 'rgba(138,168,255,.35)', 'stroke-width': sel ? 2 : 1 }, g);
-      sv('image', { href: frame(COURT, k), x: bx, y: by, width: bw, height: bh, preserveAspectRatio: 'xMidYMid slice' }, g);
-      sv('text', { x: bx, y: by + bh + 22, style: 'font:600 12px var(--mono);fill:#ece8e0' }, g).textContent = `Shot ${k}`;
-      sv('text', { x: bx + 12 + 7.4 * ('Shot ' + k).length, y: by + bh + 22, class: 'svg-text' }, g).textContent = camLabel(plan.shots[k - 1].camera);
-      const reads = (w.routing[j] || []).map(i => w.refs[i]);
-      sv('text', { x: bx, y: by + bh + 38, class: 'svg-text', style: 'font-size:10px' }, g).textContent = reads.length ? `reads ${reads.map(r => 'shot ' + r.shot).join(', ')}` : 'reads no recalled frame';
-      g.addEventListener('click', () => { focusShot = k; drawRecall(); });
-      (w.routing[j] || []).forEach((ri, n) => {
-        const r = w.refs[ri]; const sx = hx[r.shot]; if (sx == null) return; const sy = 32 + th + 32; const tx = bx + bw / 2 + (n - ((w.routing[j].length - 1) / 2)) * 10, ty = by - 8;
-        const p = sv('path', { d: `M${sx} ${sy} C${sx} ${sy + 60}, ${tx} ${ty - 70}, ${tx} ${ty}`, fill: 'none', stroke: '#8aa8ff', 'stroke-width': 1.5, 'stroke-opacity': (focusShot ?? w.shots[0]) === k ? .9 : .35 }, curves);
-        if (!RM) { const L = 400; p.style.setProperty('--len', L); p.style.strokeDasharray = L; p.classList.add('draw', 'run'); p.style.animationDelay = (n * 120 + j * 160) + 'ms'; }
-      });
-      bx += bw + 18;
-    });
-    const k = focusShot ?? w.shots[0]; const j = w.shots.indexOf(k);
-    const reads = (w.routing[j] || []).map(i => w.refs[i]);
-    pbox.innerHTML = `<div style="color:var(--mute);margin-bottom:6px">Compiled prompt c<sub>${k}</sub> · click a shot to switch</div>${highlight(w.prompts[j])}` +
-      (reads.length ? `<div style="color:var(--mute);margin:10px 0 4px">Identity lines of the frames shot ${k} reads</div>` + reads.map(r => `<div>shot ${r.shot}: ${highlight(r.line)}</div>`).join('') : '');
+  btns.forEach(b => b.addEventListener('click', () => focusRow(b.getAttribute('aria-pressed') === 'true' ? null : b.dataset.m)));
+  focusRow(null);
+});
+
+/* ---------------- how it works: plan once, then render window by window (Cable Car) ---------------- */
+run('howit', function howit() {
+  const body = $('#hwBody'); if (!body) return;
+  const s = story(HERO); const note = $('#hwNote');
+  const ents = s.plan.characters.filter(c => s.plan.shots.some(sh => sh.present.some(p => p.name === c.name)));
+  const desc = c => c.appearance.replace(/^an? /, '');
+  const who = sh => sh.present.filter(p => /^Character/.test(p.name)).map(p => `<span class="hw-chip">${esc(p.name.replace('Character ', 'C'))}</span>`).join('') || '<span class="hw-none">none</span>';
+  const PLAN = `<div class="hw-plan">
+    <div class="hw-col"><h4>The request (a shot list)</h4><ol class="hw-req">${s.requests.shots.map(l => `<li>${esc(l)}</li>`).join('')}</ol></div>
+    <div class="hw-col"><h4>The storyboard the planner writes</h4>
+      <div class="hw-reg">${ents.map(c => `<div class="hw-ent"><b>${esc(c.name.replace('Character ', 'C'))}</b><span>${esc(desc(c))}${c.outfit ? `; ${esc(c.outfit)}` : ''}</span></div>`).join('')}</div>
+      <div class="hw-scroll"><table class="hw-shots"><thead><tr><th>Shot</th><th>Camera</th><th>Who is on screen</th></tr></thead><tbody>${s.plan.shots.map(sh => `<tr><td>${sh.shot}</td><td>${esc(camLabel(sh.camera))}</td><td>${who(sh)}</td></tr>`).join('')}</tbody></table></div>
+    </div></div>`;
+  let wi = 1;
+  function renderView() {
+    const w = s.windows[wi];
+    const winBtns = s.windows.map((x, i) => `<button type="button" class="hw-win${i === wi ? ' on' : ''}" data-w="${i}" aria-pressed="${i === wi}"><b>Window ${i + 1}</b><span>shots ${x.shots[0]}${x.shots.length > 1 ? '&ndash;' + x.shots[x.shots.length - 1] : ''}</span><span class="thumbs">${x.shots.map(k => `<i style="background-image:url(${frame(HERO, k)})"></i>`).join('')}</span></button>`).join('');
+    const shots = w.shots.map((k, si) => {
+      const reads = (w.routing[si] || []).map(ri => w.refs[ri]).filter(Boolean);
+      return `<div class="hw-shot"><i style="background-image:url(${frame(HERO, k)})"></i><b>Shot ${k}</b><span>${esc(camLabel(s.plan.shots[k - 1].camera))}</span><span class="hw-q">${esc(s.requests.shots[k - 1].replace(/^[A-Za-z -]+shot\. /, ''))}</span><span class="hw-reads">${reads.length ? 'reads ' + reads.map(r => `<span class="hw-chip ours">shot ${r.shot}</span>`).join('') : 'reads no earlier shot'}</span></div>`;
+    }).join('');
+    const used = recallUse(s, w).filter(u => u.uses.length);
+    const refs = used.length ? used.map(u => `<div class="hw-ref"><i style="background-image:url(${frame(HERO, u.ref.shot)})"></i><div><b>Shot ${u.ref.shot}</b><span>for ${purpose(s, u)}</span><span>read by shot${u.uses.length > 1 ? 's' : ''} ${u.uses.map(x => x.shot).join(' and ')}</span></div></div>`).join('')
+      : '<p class="hw-empty">Nothing has been generated yet. The first window starts from the storyboard text alone.</p>';
+    body.innerHTML = `<div class="hw-wins" role="group" aria-label="Generation windows">${winBtns}</div>
+      <div class="hw-detail"><div><h4>Shots generated together in window ${wi + 1}</h4><div class="hw-shotrow">${shots}</div></div>
+      <div><h4>Earlier views recalled for it</h4><div class="hw-refs">${refs}</div></div></div>`;
+    $$('.hw-win', body).forEach(b => b.addEventListener('click', () => { wi = +b.dataset.w; renderView(); }));
   }
-  /* 5 · attention mask */
-  const ms = $('#maskSvg'); const mv = $('#miniVideo'); const leg = $('#maskLegend');
-  let loopRange = null;
-  function drawMask() {
-    ms.replaceChildren(); const w = s.windows[win]; const N = w.refs.length, M = w.shots.length;
-    const blocks = []; w.refs.forEach((r, i) => blocks.push({ t: 'ref', i, u: 1, lab: `R${i + 1}` }));
-    w.shots.forEach((k, j) => { blocks.push({ t: 'first', j, u: 1, lab: `${k}ᶠ` }); blocks.push({ t: 'rest', j, u: 3, lab: `${k}` }); });
-    const U = blocks.reduce((a, b) => a + b.u, 0); const off = 44, size = 400 - off - 6, c = size / U;
-    let acc = 0; blocks.forEach(b => { b.o = acc; acc += b.u; });
-    const allow = (q, k) => {
-      if (q.t === 'ref') return k.t === 'ref' && k.i === q.i ? 'ref' : null;
-      if (k.t === 'ref') return (w.routing[q.j] || []).includes(k.i) ? 'ref' : null;
-      if (k.j === q.j) return 'self';
-      if (k.t === 'first') return 'first';
-      return null;
-    };
-    const COL = { self: '#ece8e0', first: '#d8b26e', ref: '#8aa8ff' };
-    const rows = [];
-    blocks.forEach(q => {
-      const rowG = sv('g', { class: 'mrow' }, ms);
-      blocks.forEach(k => {
-        const a = allow(q, k);
-        sv('rect', { x: off + k.o * c + .5, y: off + q.o * c + .5, width: k.u * c - 1, height: q.u * c - 1, rx: 1.5, fill: a ? COL[a] : '#161a24', 'fill-opacity': a ? (q.t === 'ref' ? .45 : .92) : 1, class: 'cell' }, rowG);
-      });
-      sv('text', { x: off - 6, y: off + (q.o + q.u / 2) * c + 3.5, 'text-anchor': 'end', class: 'svg-text', style: `font-size:${Math.min(10.5, c * 0.9 + 3)}px;fill:${q.t === 'ref' ? '#8aa8ff' : '#ece8e0'}` }, ms).textContent = q.t === 'ref' ? q.lab : (q.t === 'first' ? '' : `S${w.shots[q.j]}`);
-      const hit = sv('rect', { x: 0, y: off + q.o * c, width: 400, height: q.u * c, fill: 'transparent', style: 'cursor:pointer' }, ms);
-      hit.addEventListener('pointerenter', () => focusRow(q));
-      hit.addEventListener('pointerleave', () => focusRow(null));
-      rows.push({ q, rowG });
-    });
-    blocks.forEach(k => sv('text', { x: off + (k.o + k.u / 2) * c, y: off - 8, 'text-anchor': 'middle', class: 'svg-text', style: `font-size:${Math.min(10.5, c * 0.9 + 3)}px;fill:${k.t === 'ref' ? '#8aa8ff' : '#ece8e0'}` }, ms).textContent = k.t === 'ref' ? k.lab : (k.t === 'first' ? 'ᶠ' : `S${w.shots[k.j]}`));
-    sv('text', { x: 4, y: 12, class: 'svg-text', style: 'font-size:9.5px;letter-spacing:.1em' }, ms).textContent = 'QUERY ↓  KEY →';
-    function focusRow(q) {
-      rows.forEach(r => r.rowG.style.opacity = !q ? 1 : ((r.q.t === q.t && (r.q.i === q.i && q.t === 'ref' || (q.t !== 'ref' && r.q.j === q.j))) ? 1 : .18));
-      legend(q);
-      if (q && q.t !== 'ref') { const k = w.shots[q.j]; loopRange = spans[k - 1]; mv.currentTime = loopRange[0] + 0.02; }
-      else if (!q) setLoop();
-    }
-    function legend(q) {
-      const base = `<div><i style="background:#ece8e0"></i>own shot tokens</div><div><i style="background:#d8b26e"></i>first latent frame of a co-generated shot</div><div><i style="background:#8aa8ff"></i>routed recalled frame</div>`;
-      let msg;
-      if (!q) msg = N ? `Hover a row. ${M} shots and ${N} recalled frame${N > 1 ? 's' : ''} share this pass.` : 'First pass: no recalled frames, shots see each other only through first latent frames.';
-      else if (q.t === 'ref') { const r = w.refs[q.i]; msg = `<b>R${q.i + 1}</b> = shot ${r.shot}, ${r.kind} frame${r.entities.length ? ' (' + r.entities.join(', ') + ')' : ''}. It attends only to itself and its identity line.`; }
-      else { const k = w.shots[q.j]; const reads = (w.routing[q.j] || []).map(i => `R${i + 1} (shot ${w.refs[i].shot})`); const others = w.shots.filter(x => x !== k); msg = `<b>Shot ${k}</b> reads its own tokens${others.length ? ', the first latent frame of shot ' + others.join(' and ') : ''}${reads.length ? ', and ' + reads.join(', ') : ', and no recalled frame'}.`; }
-      leg.innerHTML = base + `<div style="margin-top:6px;color:var(--paper)">${msg}</div>`;
-    }
-    legend(null);
-    $('#miniWin').textContent = `PASS ${win + 1}`;
+  const tabs = $$('.hw-tab');
+  function show(step) {
+    tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.s === step)));
+    if (step === 'plan') { body.innerHTML = PLAN; note.textContent = 'Qwen3.8-27B, used as is, turns the request into a storyboard: who each character is, once, and what each shot shows. Code then carries outfits and held items from shot to shot.'; }
+    else { renderView(); note.textContent = 'Shots are packed into windows of up to 7 s. Each recalled view goes only to the shots that show the same character, object or place, so a window borrows who or what something is without copying how an earlier shot was framed.'; }
   }
-  function setLoop() { loopRange = winRange(spans, s.windows[win]); if (mv.currentTime < loopRange[0] || mv.currentTime > loopRange[1]) mv.currentTime = loopRange[0] + 0.02; }
-  mv.addEventListener('timeupdate', () => {
-    if (!loopRange) return; if (mv.currentTime >= loopRange[1] - 0.05) mv.currentTime = loopRange[0] + 0.02;
-    $('#miniShot').textContent = `SHOT ${pad(shotAt(spans, mv.currentTime) + 1)}`;
-  });
-  function refreshWin() { chips($('#winChips4')); chips($('#winChips5')); drawRecall(); drawMask(); setLoop(); }
-  refreshWin();
-  /* activation */
-  function setStep(n) {
-    if (n === active) return; active = n;
-    layers.forEach(l => l.classList.toggle('on', +l.dataset.layer === n));
-    steps.forEach(st => st.classList.toggle('on', +st.dataset.step === n));
-    if (n === 3) drawPack(true);
-    if (n === 4) drawRecall();
-    if (n === 5) { setLoop(); mv.play().catch(() => {}); } else mv.pause();
-  }
-  steps.forEach(st => {
-    st.addEventListener('click', () => setStep(+st.dataset.step));
-    st.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setStep(+st.dataset.step); });
-    st.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setStep(+st.dataset.step); } });
-  });
-  watch($('#scrolly'), vis => { if (!vis) mv.pause(); else if (active === 5) mv.play().catch(() => {}); }, 0.05);
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.s)));
+  show('plan');
 });
 
 /* ---------------- theater ---------------- */
 const MET = [
-  { key: 'ours', name: 'CaT-Movie', color: '#8aa8ff', kind: 'planner storyboard · routed references' },
+  { key: 'ours', name: 'CaT-Movie', color: '#8aa8ff', kind: 'planner storyboard · recalled views' },
   { key: 'holocine', name: 'HoloCine', color: '#d8b26e', kind: 'joint generation' },
   { key: 'multishotmaster', name: 'MultiShotMaster', color: '#7cc4a4', kind: 'joint generation' },
   { key: 'storymem', name: 'StoryMem', color: '#e3907f', kind: 'memory-augmented' },
@@ -556,7 +314,7 @@ const MET = [
 run('theater', function theater() {
   const rail = $('#storyRail'), screens = $('#screens'), bar = $('#shotbar'), handle = $('#wipeHandle');
   const playBtn = $('#tPlay'), timeEl = $('#tTime'), capK = $('#capK'), capLine = $('#capLine'), wipeSel = $('#wipeSel'), wipeLab = $('#wipeLab');
-  let si = 0, mode = 'grid', focus = 'ours', wipeB = 'storymem', userPaused = false, inView = false, loaded = false, raf = 0, curShot = -1;
+  let si = 0, mode = 'grid', focus = 'ours', wipeB = 'storymem', userPaused = true, inView = false, loaded = false, raf = 0, curShot = -1;
   const tiles = MET.map((m, i) => {
     const t = h('div', 'tile', `<video muted playsinline preload="none"></video><span class="name"><i style="background:${m.color}"></i>${m.name}</span><span class="shotno tnum">Shot 1</span><span class="kind">${m.kind}</span>`);
     t.dataset.m = m.key; t.tabIndex = 0; t.setAttribute('aria-label', `${m.name} video`);
@@ -566,7 +324,7 @@ run('theater', function theater() {
   const master = tiles[0].v;
   D.stories.forEach((s, i) => {
     const b = h('button', 'story' + (i === 0 ? ' on' : ''), `<span class="th" style="background-image:url(f/${s.id}/s${s.cover}.jpg)"></span><span><b>${esc(s.title)}</b><small>${s.spans.ours.length} shots · ${s.seconds.toFixed(1)} s</small></span>`);
-    b.addEventListener('click', () => { if (si === i) return; si = i; $$('.story', rail).forEach((x, j) => x.classList.toggle('on', j === i)); load(true); });
+    b.addEventListener('click', () => { if (si === i) return; si = i; userPaused = false; $$('.story', rail).forEach((x, j) => x.classList.toggle('on', j === i)); load(true); });
     rail.appendChild(b);
   });
   function S() { return D.stories[si]; }
@@ -645,14 +403,12 @@ run('gate', function gate() {
     `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s04.jpg)"></div><span class="gate-fail"><span>gate fails · setup kept</span></span></div>` +
     `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s06.jpg)"></div></div>` +
     `<svg class="scissor" style="left:33.33%" viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>`;
-  let touched = false;
   function set(on) {
     sw.setAttribute('aria-checked', on); root.classList.toggle('gate-on', on); $('#gateState').textContent = on ? 'on' : 'off';
     $('#srOff').classList.toggle('dim', on); $('#srOn').classList.toggle('dim', !on);
     const op = $('#srOn .op'); if (on && !RM) { op.style.transform = 'scale(1.6)'; setTimeout(() => op.style.transform = '', 350); }
   }
-  sw.addEventListener('click', () => { touched = true; set(sw.getAttribute('aria-checked') !== 'true'); });
-  once(root, () => { if (RM) return; setTimeout(() => { if (!touched) set(true); }, 1800); }, 0.5);
+  sw.addEventListener('click', () => set(sw.getAttribute('aria-checked') !== 'true'));
 });
 
 /* ---------------- tables ---------------- */
@@ -673,7 +429,6 @@ run('mainTable', function mainTable() {
     $$('th[data-k]', tb).forEach(th => th.addEventListener('click', () => { const k = +th.dataset.k; if (k < 0) { sortK = null; } else if (sortK === k) dir = -dir; else { sortK = k; dir = -1; } render(); }));
   }
   render();
-  once(tb, () => { if (RM) return; $$('.bar', tb).forEach((b, i) => { b.style.transform = 'scaleX(0)'; requestAnimationFrame(() => { b.style.transitionDelay = (i % 9) * 40 + 'ms'; b.style.transform = ''; }); }); }, 0.3);
 });
 const T2 = [
   { name: 'CaT-Movie (ref. storyboard)', v: [0.958, 0.581, 0.585, 0.566, 0.615, 0.571], sig: [] , ours: true },
@@ -730,7 +485,6 @@ function barChart(host, cfg) {
       bars.push({ r, y: Y(d.v), hgt: Math.max(0, Y(yMin) - Y(d.v)) });
     });
   });
-  once(host, () => { if (RM) return; bars.forEach((b, i) => { b.r.setAttribute('y', Y(yMin)); b.r.setAttribute('height', 0); const t0 = performance.now() + i * 35; (function f(t) { const p = Math.max(0, Math.min(1, (t - t0) / 700)); const e = 1 - Math.pow(1 - p, 3); b.r.setAttribute('y', Y(yMin) - b.hgt * e); b.r.setAttribute('height', b.hgt * e); if (p < 1) requestAnimationFrame(f); })(performance.now()); }); }, 0.35);
 }
 run('returnChart', function returnChart() {
   const RT = { 'CaT-Movie': { rate: [0.6331, 0.6111, 0.6344], lo: [0.5710, 0.5257, 0.5592], hi: [0.7044, 0.7178, 0.7129] }, HoloCine: { rate: [0.6115, 0.4091, 0.4355], lo: [0.5369, 0.3209, 0.3402], hi: [0.6906, 0.5023, 0.5517] }, MultiShotMaster: { rate: [0.5791, 0.4444, 0.4892], lo: [0.5143, 0.3432, 0.3423], hi: [0.6558, 0.5489, 0.6172] }, StoryMem: { rate: [0.5827, 0.5960, 0.7312], lo: [0.5075, 0.5060, 0.6646], hi: [0.6771, 0.6835, 0.7873] } };
@@ -747,7 +501,6 @@ run('dataCharts', function dataCharts() {
     const st = h('div', 'stack'); parts.forEach(([n, v], i) => { const d = h('div', '', v >= 12 ? `${v.toFixed(1)}%` : ''); d.style.flex = `${v} 1 0`; d.style.background = colors[i]; d.title = `${n}: ${v.toFixed(1)}%`; d.addEventListener('pointermove', e => showTip(`<b>${n}</b> \u00b7 ${v.toFixed(1)}%`, e)); d.addEventListener('pointerleave', hideTip); st.appendChild(d); });
     const key = h('div', 'stack-key', parts.map(([n, v], i) => `<span><i style="background:${colors[i]}"></i>${n} ${v.toFixed(1)}%</span>`).join(''));
     host.append(st, key);
-    once(host, () => { if (RM) return; const kids = Array.from(st.children); kids.forEach(k => { k.dataset.f = k.style.flex; k.style.flexGrow = 0.0001; }); requestAnimationFrame(() => requestAnimationFrame(() => kids.forEach((k, i) => { k.style.transitionDelay = i * 120 + 'ms'; k.style.flex = k.dataset.f; }))); }, 0.4);
   }
   stack($('#srcStack'), [['CinePile', 65.74], ['CineDance', 24.69], ['MovieChat', 9.57]], ['#5a82f7', '#d8b26e', '#7cc4a4']);
   stack($('#typeStack'), [['Live action', 84.92], ['3D / game', 9.35], ['2D', 5.73]], ['#b8c0cf', '#8d95a5', '#666d7c']);

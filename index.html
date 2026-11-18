@@ -146,8 +146,6 @@ h3{font:700 24px/1.08 var(--display);letter-spacing:.01em;color:var(--paper);mar
 
 section{position:relative;padding-block:clamp(56px,7vw,96px)}
 section + section{border-top:1px solid var(--line)}
-.settle{transition:transform .7s var(--ease),opacity .7s var(--ease)}
-.settle.pre{transform:translateY(12px);opacity:.65}
 
 /* ---------- hero ---------- */
 .hero{padding-block:clamp(28px,4vw,52px) clamp(48px,6vw,76px);border-top:0;overflow-x:clip}
@@ -158,25 +156,16 @@ section + section{border-top:1px solid var(--line)}
 .hero-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:end;margin-top:clamp(16px,2vw,24px);padding-top:clamp(16px,1.8vw,22px);border-top:1px solid var(--line)}
 .title{margin:0 0 0 -.03em;font:900 clamp(72px,15.5vw,228px)/.82 var(--display);letter-spacing:-.01em;color:var(--paper);white-space:nowrap}
 .title .film{background:url(f/title-strip.jpg) 0 50%/auto 100% repeat-x;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
-  -webkit-text-stroke:1.5px rgba(17,21,32,.38);animation:rise 1.1s var(--ease) both,reel 80s linear infinite}
+  -webkit-text-stroke:1.5px rgba(17,21,32,.38)}
 html[data-theme="dark"] .title .film{-webkit-text-stroke:1.5px rgba(236,232,224,.5)}
-.title .f2{background-position:-1400px 50%;animation:rise 1.1s var(--ease) .2s both,reel2 80s linear infinite}
+.title .f2{background-position:-1400px 50%}
 .title .dash{display:inline-block;width:.3em;height:.075em;margin:0 .05em;vertical-align:.27em;border-radius:.04em;background:linear-gradient(90deg,var(--ours-deep),var(--ours));box-shadow:0 0 .18em rgba(37,78,218,.4)}
-@keyframes reel{from{background-position:0 50%}to{background-position:-5454px 50%}}
-@keyframes reel2{from{background-position:-1400px 50%}to{background-position:-6854px 50%}}
 .title .ch{display:inline-block}
-.title .dash{animation:rise 1.1s var(--ease) .12s both}
-@keyframes rise{from{transform:translateY(.08em);opacity:.3}to{transform:none;opacity:1}}
-.subtitle{font:700 clamp(22px,2.4vw,34px)/1.1 var(--display);letter-spacing:.01em;color:var(--paper);margin:0 0 10px;max-width:30ch;text-wrap:balance}
-.acro{font:400 14px/1.45 var(--mono);color:var(--mute);margin:0 0 12px;letter-spacing:.02em}
-.acro b{color:var(--ours);font-weight:600}
 .authors{font:500 14.5px/1.5 var(--body);color:var(--paper);margin:0 0 3px}
 .authors sup{color:var(--ours);font-weight:700;margin-left:1px}
 .affil{font:400 12.5px/1.4 var(--mono);color:var(--mute);margin:0;letter-spacing:.02em}
 .affil span{color:var(--text)}
 .hero-side{display:grid;gap:14px}
-.hero-side p{margin:0;color:var(--text);font-size:15px;line-height:1.58}
-.hero-side p b{color:var(--paper);font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{font:500 11.5px/1 var(--mono);letter-spacing:.05em;color:var(--text);border:1px solid var(--line-2);border-radius:999px;padding:8px 11px;display:inline-flex;gap:7px;align-items:center;background:var(--ink-2);box-shadow:var(--card-shadow)}
 .chip s{text-decoration:none;color:var(--mute)}
@@ -207,7 +196,7 @@ html[data-theme="dark"] .title .film{-webkit-text-stroke:1.5px rgba(236,232,224,
 .ov-shot .pill{border:1px solid rgba(236,232,224,.4);border-radius:999px;padding:4px 8px;background:rgba(0,0,0,.4);backdrop-filter:blur(6px)}
 .ov-shot .pill.pass{border-color:rgba(138,168,255,.65);color:#cfdaff;background:rgba(61,91,184,.32)}
 .ov-tc{right:32px;top:26px;display:flex;align-items:center;gap:8px}
-.ov-tc i{width:7px;height:7px;border-radius:50%;background:#8aa8ff;box-shadow:0 0 10px #8aa8ff;animation:blink 1.4s ease-in-out infinite}
+.ov-tc i{width:7px;height:7px;border-radius:50%;background:#8aa8ff;box-shadow:0 0 10px #8aa8ff}
 .vf i{position:absolute;width:18px;height:18px;border:1.5px solid rgba(236,232,224,.55);pointer-events:none}
 .vf i:nth-child(1){left:12px;top:12px;border-right:0;border-bottom:0}
 .vf i:nth-child(2){right:12px;top:12px;border-left:0;border-bottom:0}
@@ -219,15 +208,11 @@ html[data-theme="dark"] .title .film{-webkit-text-stroke:1.5px rgba(236,232,224,
 @keyframes blink{50%{opacity:.2}}
 .ov-line{left:0;right:0;bottom:0;padding:48px 28px 32px;background:linear-gradient(transparent,rgba(0,0,0,.8));text-transform:none;letter-spacing:0;font:400 clamp(13px,1.3vw,16px)/1.45 var(--body);display:flex;gap:12px;align-items:baseline;color:#ece8e0}
 .ov-line span:first-child{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#8aa8ff;white-space:nowrap}
-.ov-line .typed::after{content:"";display:inline-block;width:.45em;height:.95em;vertical-align:-.1em;background:#8aa8ff;margin-left:2px;animation:blink 1s steps(2) infinite}
 .reel-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 2px 10px;font:500 11.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
 .reel-meta b{color:var(--paper);font-weight:600}
 
 /* window timeline */
 .tl{position:relative;display:flex;gap:8px;align-items:stretch;user-select:none}
-.tl-arcs{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:2}
-.tl-arcs path{fill:none;stroke:var(--ours);stroke-width:1.5;stroke-dasharray:4 4;animation:dash 1.1s linear infinite;opacity:.85}
-.tl-shot.src{filter:none;box-shadow:inset 0 0 0 2px var(--ours)}
 .tl-win{display:flex;flex-direction:column;gap:6px;min-width:62px}
 .tl-win .lab{font:500 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;justify-content:space-between;gap:4px}
 .tl-win.on .lab{color:var(--ours);font-weight:600}
@@ -241,23 +226,8 @@ html[data-theme="dark"] .title .film{-webkit-text-stroke:1.5px rgba(236,232,224,
 .tl-shot:hover{filter:none}
 .tl-shot .ph{position:absolute;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 8px #fff;left:0;display:none}
 .tl-shot.on .ph{display:block}
-.tl-refs{display:flex;gap:4px;min-height:26px;align-items:center;flex-wrap:wrap}
-.tl-refs .none{font:500 9.5px/1.2 var(--mono);color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
-.tl-ref{width:40px;height:22px;border-radius:3px;background:center/cover;box-shadow:0 0 0 1px var(--line-2);position:relative;transition:transform .25s var(--ease),box-shadow .25s}
-.tl-ref b{position:absolute;right:2px;bottom:1px;font:600 8.5px/1 var(--mono);color:#fff;text-shadow:0 1px 3px #000}
-.tl-win.on .tl-ref{box-shadow:0 0 0 1.5px var(--ours);transform:translateY(-1px)}
 .tl-cap{display:flex;gap:16px;align-items:center;margin-top:8px;font:500 10.5px/1.4 var(--mono);letter-spacing:.06em;color:var(--mute);flex-wrap:wrap}
-.tl-cap i{display:inline-block;width:16px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:6px;background:#0b0e14;box-shadow:0 0 0 1px var(--line-2)}
-.tl-cap i.r{width:13px;height:8px;box-shadow:0 0 0 1.5px var(--ours);background:var(--ink-3)}
 
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(28px,3.6vw,44px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stat{padding:18px 18px 18px 0;display:grid;gap:4px;align-content:start}
-.stat + .stat{border-left:1px solid var(--line);padding-left:20px}
-.stat .sk{font:600 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.stat b{font:800 clamp(34px,4vw,52px)/.92 var(--display);color:var(--paper);letter-spacing:.005em}
-.stat b.k-ours{color:var(--ours)}
-.stat span{font:400 13px/1.42 var(--body);color:var(--mute)}
-.stat span strong{color:var(--text);font-weight:500}
 
 /* ---------- balanced section headers & panels ---------- */
 .split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end}
@@ -269,24 +239,8 @@ html[data-theme="dark"] .title .film{-webkit-text-stroke:1.5px rgba(236,232,224,
 .tab.on{background:var(--paper);color:var(--ink)}
 .tab.on.ours{background:var(--ours);color:#fff}
 html[data-theme="dark"] .tab.on.ours{color:#081022}
-.tab .bar{position:absolute;left:12px;right:12px;bottom:3px;height:2px;border-radius:2px;background:rgba(255,255,255,.35);transform-origin:left;transform:scaleX(0)}
-.tab.on .bar{animation:tabbar 6.5s linear forwards}
-.paradigms.held .tab .bar{display:none}
-@keyframes tabbar{to{transform:scaleX(1)}}
-.paradigms{margin-top:24px;padding:clamp(16px,2vw,24px)}
-.par-head{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
-.par-stage{overflow-x:auto}
-.par-stage svg{width:100%;min-width:640px;height:auto;display:block}
-.par-read{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,.65fr));gap:16px;align-items:end;margin-top:12px;padding-top:14px;border-top:1px solid var(--line)}
-.par-read .verdict{font:600 20px/1.18 var(--display);color:var(--paper);letter-spacing:.01em}
-.par-read .verdict small{display:block;font:400 13px/1.45 var(--body);color:var(--mute);margin-top:4px;letter-spacing:0}
-.metric{display:grid;gap:3px}
-.metric b{font:800 32px/.9 var(--display);color:var(--paper)}
-.metric span{font:500 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
 .fade-in{animation:fadeIn .5s var(--ease) both}
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.carrier{animation:carry 2.4s var(--ease) infinite}
-@keyframes carry{0%{transform:translateX(-14px);opacity:0}25%{opacity:1}75%{opacity:1}100%{transform:translateX(14px);opacity:0}}
 
 .chart-card{padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;justify-content:space-between}
 .chart-card svg{width:100%;height:auto;display:block;overflow:visible}
@@ -312,76 +266,6 @@ html[data-theme="dark"] .tab.on.ours{color:#081022}
 @keyframes draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
 .pop.run{animation:pop .6s var(--ease) both}
 @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
-
-/* ---------- method (height-matched 2-column workbench) ---------- */
-.scrolly{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px;margin-top:20px;align-items:stretch}
-.stage{position:relative;height:540px;min-height:540px}
-.stage-in{position:relative;height:100%;padding:clamp(14px,1.6vw,20px);overflow:hidden}
-.layer{position:absolute;inset:clamp(14px,1.6vw,20px);background:var(--ink-2);pointer-events:none;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .32s var(--ease),transform .32s var(--ease),visibility 0s .32s;display:flex;flex-direction:column;gap:10px;min-height:0}
-.layer.on{pointer-events:auto;z-index:2;opacity:1;visibility:visible;transform:none;transition:opacity .32s var(--ease),transform .32s var(--ease),visibility 0s}
-.layer-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.layer-head .k{font:500 11px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--mute)}
-.layer-body{flex:1;min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
-
-.steps{display:flex;flex-direction:column;gap:8px;height:540px}
-.step{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:12px 18px;cursor:pointer;transition:border-color .25s,background .25s,flex .32s var(--ease);display:flex;flex-direction:column;justify-content:center;min-height:0;overflow:hidden;box-shadow:var(--card-shadow)}
-.step:hover{border-color:var(--line-2)}
-.step-hd{display:flex;align-items:baseline;gap:12px}
-.step .no{font:800 13.5px/1 var(--display);color:var(--ours);letter-spacing:.1em;white-space:nowrap;flex:none}
-.step h3{font-size:18.5px;margin:0;line-height:1.15;color:var(--paper)}
-.step-body{display:none;margin-top:0;flex-direction:column;gap:10px}
-.step.on{border-color:var(--ours);flex:1;justify-content:flex-start;gap:12px;padding:18px 20px}
-.step.on h3{font-size:23px}
-.step.on .step-body{display:flex;flex:1;justify-content:space-between}
-.step p{margin:0;font-size:14.5px;line-height:1.55;color:var(--text)}
-.step .facts{margin-top:2px}
-.fact{display:block;font:500 11.5px/1.38 var(--mono);color:var(--text);border-left:2px solid var(--ours);padding:4px 0 4px 10px;background:var(--ink);border-radius:0 6px 6px 0}
-.fact b{color:var(--ours);font-weight:600}
-
-.req{font:400 14.5px/1.6 var(--body);color:var(--paper);background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.req .sl{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 8px;font-size:13.5px;line-height:1.48}
-.req .sl .n{font:500 11.5px/1.55 var(--mono);color:var(--ours)}
-.req .subj{font:400 12px/1.5 var(--mono);color:var(--mute);margin:0 0 10px;padding-bottom:10px;border-bottom:1px dashed var(--line-2)}
-.req .hd{font:600 10.5px/1 var(--mono);letter-spacing:.14em;color:var(--mute);margin:0 0 6px}
-.req-meta{display:flex;gap:14px;flex-wrap:wrap;font:500 11px/1.35 var(--mono);color:var(--mute)}
-.req-meta b{color:var(--paper);font-weight:600}
-
-/* Compact 2-row entity registry so the storyboard table gets full height */
-.registry{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
-.ent{font:500 11px/1.2 var(--mono);border:1px solid var(--line-2);border-radius:6px;padding:4px 8px;background:var(--ink);cursor:default;transition:border-color .2s,background .2s;display:inline-flex;align-items:baseline;gap:6px}
-.ent small{font:400 11px/1.2 var(--body);color:var(--mute);max-width:20ch;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ent.c{border-left:3px solid var(--ours)}
-.ent.o{border-left:3px solid var(--holo)}
-.ent.p{border-left:3px solid var(--msm)}
-.ent.hl{border-color:var(--ours);background:rgba(37,78,218,.08)}
-.sb-table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
-.sb-table col.c1{width:42px}.sb-table col.c2{width:88px}.sb-table col.c3{width:34%}
-.sb-table .tag{white-space:normal}
-.sb-table th{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:left;padding:7px 6px;border-bottom:1px solid var(--line-2);position:sticky;top:0;background:var(--ink-2)}
-.sb-table td{padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4;transition:background .2s,opacity .2s}
-.sb-table td.n{font:600 11.5px/1.4 var(--mono);color:var(--ours);white-space:nowrap}
-.sb-table td.cam{font:500 10.5px/1.4 var(--mono);color:var(--text);white-space:nowrap}
-.sb-table tr.hl td{background:rgba(37,78,218,.07)}
-.sb-table tr.dim td{opacity:.35}
-.tag{display:inline-block;font:500 10px/1 var(--mono);padding:2.5px 5px;border-radius:4px;background:var(--ink-3);border:1px solid var(--line-2);margin:0 3px 3px 0}
-.tag.c{color:var(--ours);border-color:rgba(37,78,218,.35)}
-.tag.chg{color:var(--cut);border-color:rgba(184,56,126,.4)}
-.svg-stage{width:100%;height:auto;display:block}
-.win-chips{display:flex;gap:4px;flex-wrap:wrap}
-.win-chip{border:1px solid var(--line-2);background:var(--ink);border-radius:999px;padding:6px 10px;font:500 11px/1 var(--mono);color:var(--mute);cursor:pointer;transition:all .2s}
-.win-chip:hover{color:var(--paper)}
-.win-chip.on{background:var(--ours);border-color:var(--ours);color:#fff}
-html[data-theme="dark"] .win-chip.on{color:#081022}
-.prompt-box{font:400 12px/1.5 var(--mono);color:var(--text);background:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 12px;max-height:125px;overflow:auto}
-.prompt-box b{color:var(--ours);font-weight:600}
-.prompt-box .chgw{color:var(--cut)}
-.mask-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start;min-height:0}
-.mini-video{position:relative;border-radius:8px;overflow:hidden;background:#000;aspect-ratio:1280/704;box-shadow:0 0 0 1px var(--line)}
-.mini-video video{width:100%;height:100%;object-fit:cover}
-.mini-video .ov{font-size:10px}
-.mask-svg rect.cell{transition:opacity .2s}
-.mask-legend{display:grid;gap:5px;font:400 12px/1.42 var(--body);color:var(--text)}
-.mask-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:-1px}
 
 /* ---------- theater ---------- */
 .theater{display:grid;grid-template-columns:230px minmax(0,1fr);gap:18px;margin-top:24px;align-items:start}
@@ -586,36 +470,10 @@ html[data-theme="dark"] .pf-row em small.dn{color:#ff9a8a}
 .pf-note{margin:0}
 
 .overview{margin-top:24px;padding:clamp(16px,1.8vw,22px)}
-.ov-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
-.ov-head .k,.k{font:500 11px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--mute);display:block}
-.ov-head h3{margin:6px 0 0;font-size:clamp(22px,2.2vw,28px)}
-.ov-ctrl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.ov-stages{display:flex;gap:4px;flex-wrap:wrap}
-.ov-chip{border:1px solid var(--line-2);background:var(--ink);border-radius:999px;padding:6px 10px 6px 6px;font:500 11.5px/1 var(--body);color:var(--mute);cursor:pointer;display:inline-flex;gap:6px;align-items:center;transition:all .25s}
-.ov-chip span{width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font:600 9.5px/1 var(--mono);background:var(--ink-3);color:var(--mute);transition:all .25s}
-.ov-chip:hover{color:var(--paper)}
-.ov-chip.on{background:rgba(37,78,218,.12);border-color:var(--ours);color:var(--paper)}
-.ov-chip.on span{background:var(--ours);color:#fff}
+.k{font:500 11px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--mute);display:block}
 html[data-theme="dark"] .ov-chip.on span{color:#081022}
-.ov-scroll{overflow-x:auto;scrollbar-width:thin}
-#ovSvg{width:100%;min-width:900px;height:auto;display:block}
-#ovSvg [data-st]{transition:opacity .5s var(--ease)}
-#ovSvg .ov-dim{opacity:.28}
-#ovSvg [data-st]:not(.ov-dim) .ov-badge circle{animation:badgePulse 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes badgePulse{50%{stroke-width:6;stroke:rgba(37,78,218,.25)}}
-#ovSvg .ov-reveal{opacity:0;transition:opacity .7s var(--ease)}
-#ovSvg.decoded .ov-reveal{opacity:1}
-#ovSvg .tok-noise{opacity:.85;transition:opacity .35s}
-#ovSvg.denoising .tok-noise{animation:denoise 2.4s ease-in-out infinite}
-#ovSvg.decoded .tok-noise{opacity:0}
-@keyframes denoise{0%{opacity:.9}70%{opacity:0}100%{opacity:0}}
-#ovSvg .noise-shimmer{animation:shimmer 1.4s steps(4) infinite}
-@keyframes shimmer{50%{opacity:.35}}
 .flow-line{stroke-dasharray:4 5;animation:dash 1.1s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-18}}
-#ovSvg .mcell{transition:fill-opacity .25s}
-.ov-cap{margin:10px 0 0;min-height:2.4em;font-size:14px;line-height:1.5;color:var(--text)}
-.ov-cap b{color:var(--ours);font-weight:600}
 
 .judging{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:16px;margin-top:16px;align-items:stretch}
 .jqb,.jv{padding:clamp(16px,2vw,22px);display:flex;flex-direction:column;justify-content:space-between;gap:10px}
@@ -719,6 +577,27 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
 #sunburst svg.sb-in .sb-lab{animation:fadeIn .5s var(--ease) both;animation-delay:calc(300ms + var(--d) * 2ms)}
 @keyframes sbIn{from{opacity:0;transform:scale(.84)}to{opacity:1;transform:none}}
 
+/* ---------- focus pass (11-18): one claim, three beats; secondary material sits in drawers ---------- */
+.hero-claim{font:800 clamp(30px,3.7vw,52px)/1.02 var(--display);color:var(--paper);margin:0 0 16px;max-width:21ch;text-wrap:balance;letter-spacing:.005em}
+.paper-title{font:600 15px/1.42 var(--body);color:var(--text);margin:0 0 8px;max-width:50ch}
+.beat h2{font-size:clamp(38px,5.2vw,74px);max-width:20ch}
+.minor h2{font-size:clamp(28px,3.2vw,46px);max-width:24ch}
+.lead{max-width:54ch}
+.flow.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bench-grid.solo{grid-template-columns:minmax(0,1fr)}
+details.more{margin-top:22px;border-top:1px solid var(--line)}
+details.more + details.more{margin-top:0}
+details.more > summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:18px 0;font:600 16px/1.3 var(--body);color:var(--paper);transition:color .2s}
+details.more > summary::-webkit-details-marker{display:none}
+details.more > summary::before{content:"";flex:none;align-self:center;width:8px;height:8px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(-45deg);transition:transform .25s var(--ease)}
+details.more[open] > summary::before{transform:rotate(45deg) translate(-2px,-2px)}
+details.more > summary span{font-weight:400;font-size:14px;color:var(--mute)}
+details.more > summary:hover{color:var(--ours)}
+details.more > summary:focus-visible{outline:2px solid var(--ours);outline-offset:4px;border-radius:4px}
+details.more > .more-body{padding-bottom:28px}
+details.more > .more-body > .split{margin-bottom:12px}
+details.more > .more-body > *:first-child{margin-top:0}
+
 /* ---------- responsive ---------- */
 @media (max-width:1040px){
   .theater{grid-template-columns:1fr}
@@ -732,20 +611,11 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
 }
 @media (max-width:860px){
   .hero-top,.split,.two,.data-grid,.bench-grid,.pareto-grid,.judging,.annot-grid{grid-template-columns:1fr}
-  .scrolly{grid-template-columns:1fr}
-  .stage{height:460px;min-height:420px}
-  .steps{height:auto}
-  .mask-wrap{grid-template-columns:1fr}
-  .par-read{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .par-read .verdict{grid-column:1 / -1}
 }
 @media (max-width:640px){
   body{font-size:15px}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat:nth-child(3){border-left:0;padding-left:0}
-  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .flow.three{grid-template-columns:1fr}
   .bench-nums,.judge-grid{grid-template-columns:1fr}
-  .tl-refs{display:none}
   .tl-win .lab span:last-child{display:none}
   .gate-cols,.gate-row{grid-template-columns:72px minmax(0,1fr)}
   .gate-cols{grid-template-columns:72px repeat(3,minmax(0,1fr))}
@@ -760,8 +630,138 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-  .title .film{animation:none}
 }
+/* ---------- v3 (11-18): the video first, one comparison, a legible method; nothing moves on its own except the hero video ---------- */
+.hero-side{align-self:end;justify-items:start}
+.hero{padding-block:clamp(18px,2.6vw,32px) clamp(48px,6vw,76px)}
+.hero .title{font-size:clamp(60px,9vw,128px)}
+.hero-top{margin-top:12px;padding-top:14px;gap:clamp(16px,3vw,40px)}
+.hero-claim{font-size:clamp(24px,2.5vw,36px);max-width:28ch;margin:0 0 10px}
+.paper-title{font-size:14px;margin:0 0 4px;max-width:none}
+.authors{font-size:13.5px}
+.reel-row{margin-top:clamp(18px,2.4vw,28px)}
+.reel-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,300px);gap:clamp(18px,2.2vw,28px);margin-top:clamp(24px,3.4vw,40px);align-items:start}
+.reel-row .reel{margin:0;width:auto}
+.tl-cap{display:block;margin:8px 0 0;font:400 13px/1.45 var(--body);color:var(--mute);letter-spacing:0}
+.recall-panel{display:grid;gap:10px;align-content:start;padding-top:4px}
+.recall-win{font:700 22px/1.08 var(--display);letter-spacing:.01em;color:var(--paper)}
+.recall-note{margin:0;font-size:14px;line-height:1.5;color:var(--text)}
+.recall{display:grid;gap:8px;margin-top:4px}
+.rc{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;align-items:center;padding:6px;border-radius:10px;border:1px solid var(--line);background:var(--ink-2);transition:border-color .2s,box-shadow .2s}
+.rc i{aspect-ratio:16/9;border-radius:6px;background:#161a24 center/cover}
+.rc > span{display:grid;gap:2px;font-size:13px;line-height:1.38;color:var(--mute)}
+.rc b{font-size:14px;font-weight:600;color:var(--paper)}
+.rc.on{border-color:var(--ours);box-shadow:inset 0 0 0 1px var(--ours)}
+.rc.on b{color:var(--ours)}
+
+.cmp{margin-top:24px;padding:clamp(14px,1.8vw,22px)}
+.cmp-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 22px;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.cmp-ctrl{display:flex;gap:6px;flex-wrap:wrap}
+.cmp-btn{border:1px solid var(--line-2);background:var(--ink);border-radius:999px;padding:9px 14px;font:500 13.5px/1 var(--body);color:var(--text);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.cmp-btn span{color:var(--mute)}
+.cmp-btn:hover{border-color:var(--paper)}
+.cmp-btn[aria-pressed="true"]{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.cmp-btn[aria-pressed="true"] span{color:inherit;opacity:.7}
+.cmp-note{margin:0;font-size:15px;line-height:1.5;color:var(--paper);min-height:3em;display:flex;align-items:center}
+.cmp-grid{margin-top:10px;padding:4px 0 0}
+.cmp .qcut{width:30px;height:30px;padding:4px;top:-16px;background:var(--ink-2);border-radius:50%;box-shadow:0 0 0 1px var(--line-2)}
+.beat h2{font-size:clamp(34px,4.2vw,60px);max-width:22ch}
+.cmp-col{border:0;background:none;font:inherit;display:grid;gap:4px;justify-items:center;text-align:center;cursor:pointer;padding:8px 4px;border-radius:8px;transition:background .2s}
+.cmp-col:hover{background:var(--ink-3)}
+.qr{transition:opacity .25s}
+.qr.dim{opacity:.28}
+.qn small{display:block;font:400 12.5px/1.3 var(--body);color:var(--mute);margin-top:4px;letter-spacing:0}
+.cmp-sum{margin-top:clamp(36px,4vw,52px)}
+.cmp-sum > h3{font-size:clamp(24px,2.4vw,30px);margin:0 0 14px}
+.cmp-sum .pareto-grid{margin-top:0}
+
+.howit{margin-top:24px;padding:clamp(16px,2vw,24px)}
+.hw-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 24px;align-items:center;margin-bottom:20px}
+.hw-tab{font-size:14px;padding:10px 15px}
+.hw-tab[aria-selected="true"]{background:var(--paper);color:var(--ink)}
+.hw-note{margin:0;font-size:15px;line-height:1.55;color:var(--text);max-width:72ch}
+.howit h4{font:600 13.5px/1.3 var(--body);color:var(--mute);margin:0 0 10px}
+.hw-plan{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(18px,2.6vw,32px)}
+.hw-req{margin:0;padding-left:1.9em;display:grid;gap:6px;font-size:14px;line-height:1.45;color:var(--text)}
+.hw-req li::marker{color:var(--mute);font:500 12.5px var(--mono)}
+.hw-reg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px;margin-bottom:14px}
+.hw-ent{display:flex;gap:9px;font-size:13px;line-height:1.4;color:var(--text);padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--ink)}
+.hw-ent b{color:var(--ours);font:600 13px/1.4 var(--mono);flex:none}
+.hw-scroll{max-height:330px;overflow:auto;border:1px solid var(--line);border-radius:8px}
+.hw-shots{width:100%;border-collapse:collapse;font-size:13.5px}
+.hw-shots th{font:600 12.5px/1.3 var(--body);color:var(--mute);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line-2);position:sticky;top:0;background:var(--ink-2)}
+.hw-shots td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--text);vertical-align:top}
+.hw-shots tr:last-child td{border-bottom:0}
+.hw-shots td:first-child{font:600 13px/1.4 var(--mono);color:var(--paper);width:3.5em}
+.hw-chip{display:inline-block;font:600 12.5px/1 var(--mono);padding:4px 7px;border-radius:5px;background:var(--ink-3);color:var(--paper);margin:0 4px 3px 0}
+.hw-chip.ours{background:rgba(37,78,218,.12);color:var(--ours)}
+html[data-theme="dark"] .hw-chip.ours{background:rgba(138,168,255,.16)}
+.hw-none{color:var(--mute);font-size:13px}
+.hw-wins{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:22px;align-items:start}
+.hw-win{border:1px solid var(--line-2);background:var(--ink);border-radius:10px;padding:9px;display:grid;gap:3px;align-content:start;text-align:left;cursor:pointer;font:400 13px/1.3 var(--body);color:var(--mute);transition:border-color .2s,box-shadow .2s}
+.hw-win b{font:600 14.5px/1.2 var(--body);color:var(--paper)}
+.hw-win .thumbs{display:flex;gap:2px;margin-top:5px}
+.hw-win .thumbs i{flex:1;aspect-ratio:16/9;background:#161a24 center/cover;border-radius:2px}
+.hw-win:hover{border-color:var(--paper)}
+.hw-win.on{border-color:var(--ours);box-shadow:inset 0 0 0 1px var(--ours)}
+.hw-win.on b{color:var(--ours)}
+.hw-detail{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(18px,2.6vw,32px)}
+.hw-shotrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hw-shot{display:grid;gap:4px;align-content:start;font-size:13px;line-height:1.4;color:var(--mute)}
+.hw-shot i{aspect-ratio:16/9;background:#161a24 center/cover;border-radius:6px;margin-bottom:4px}
+.hw-shot b{color:var(--paper);font-size:14.5px}
+.hw-q{color:var(--text)}
+.hw-reads{margin-top:2px}
+.hw-refs{display:grid;gap:10px}
+.hw-ref{display:grid;grid-template-columns:128px minmax(0,1fr);gap:12px;align-items:center}
+.hw-ref i{aspect-ratio:16/9;background:#161a24 center/cover;border-radius:6px;box-shadow:0 0 0 1.5px var(--ours)}
+.hw-ref div{display:grid;gap:2px;font-size:13px;line-height:1.4;color:var(--mute)}
+.hw-ref b{color:var(--paper);font-size:14.5px}
+.hw-ref div span:first-of-type{color:var(--text)}
+.hw-empty{margin:0;font-size:14.5px;line-height:1.5;color:var(--mute)}
+.hw-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hw-facts p{margin:0;padding:16px 18px 16px 0;font-size:14.5px;line-height:1.45;color:var(--text)}
+.hw-facts p + p{border-left:1px solid var(--line);padding-left:18px}
+.hw-facts b{display:block;font:800 clamp(30px,3.2vw,42px)/1 var(--display);color:var(--paper);margin-bottom:6px;letter-spacing:.005em}
+.hw-src{margin:10px 0 0}
+
+.limits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.lim{margin:0;padding:12px;display:grid;gap:12px}
+.lim-pair{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.lim-pair img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+.lim figcaption{font-size:14px;line-height:1.5;color:var(--text);padding:0 4px 4px}
+.lim figcaption b{color:var(--paper);font-weight:600}
+
+@media (max-width:1040px){
+  .reel-row{grid-template-columns:1fr}
+  .recall{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+  .hw-wins{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto;padding-bottom:4px}
+}
+@media (max-width:860px){
+  .cmp-top,.hw-head,.hw-plan,.hw-detail,.limits{grid-template-columns:1fr}
+  .hw-facts{grid-template-columns:1fr}
+  .hw-facts p + p{border-left:0;padding-left:0;border-top:1px solid var(--line)}
+}
+@media (max-width:640px){
+  .ov-tc,.ov-shot .pill:not(.pass),.vf{display:none}
+  .ov-shot{left:12px;top:10px}
+  .ov-shot b{font-size:15px}
+  .ov-line{padding:26px 12px 14px;font-size:12px;gap:8px}
+  .ov-prog{left:12px;right:12px;bottom:7px}
+  .hw-shotrow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hw-ref{grid-template-columns:104px minmax(0,1fr)}
+  .cmp-grid > *{min-width:0}
+  .cmp .qh{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 4px}
+  .cmp .qh > span,.cmp .qh q{display:none}
+  .cmp .qh em{font-size:9.5px;padding:2px 5px}
+  .cmp .qr{grid-template-columns:1fr;gap:16px;margin-top:18px}
+  .cmp .zoom{display:none}
+  .cmp .qn{display:flex;gap:8px;align-items:baseline}
+  .cmp .qn br{display:none}
+  .cmp .qn small{margin:0}
+  .cmp .qcut{width:24px;height:24px;padding:3px;top:-13px}
+}
+
 </style>
 </head>
 <body>
@@ -772,11 +772,10 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
   <div class="nav-in">
     <a class="brand" href="#top"><i></i>CaT-Movie</a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#tradeoff">Trade-off</a>
+      <a href="#compare">Comparison</a>
       <a href="#method">Method</a>
-      <a href="#theater">Videos</a>
       <a href="#benchmark">Benchmark</a>
-      <a href="#numbers">Results</a>
+      <a href="#gallery">Videos</a>
       <a href="#data">Data</a>
       <a href="#cite">Cite</a>
     </nav>
@@ -789,248 +788,118 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
 </header>
 
 <main>
-<!-- ================= HERO ================= -->
+<!-- ================= HERO: the video first ================= -->
 <section class="hero" id="top">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow">Long multi-shot video generation</p>
-    <h1 class="title" aria-label="CaT-Movie"><span class="film ch" aria-hidden="true">CaT</span><span class="dash ch" style="animation-delay:.12s" aria-hidden="true"></span><span class="film ch f2" style="animation-delay:.2s" aria-hidden="true">Movie</span></h1>
+    <h1 class="title" aria-label="CaT-Movie"><span class="film ch" aria-hidden="true">CaT</span><span class="dash ch" aria-hidden="true"></span><span class="film ch f2" aria-hidden="true">Movie</span></h1>
     <div class="hero-top">
       <div>
-        <p class="subtitle">Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation</p>
-        <p class="acro"><b>C</b>oherence <b>a</b>cross <b>T</b>ime, for movies longer than any generation window.</p>
+        <p class="hero-claim">Long multi-shot videos that keep the same characters and still cut where the story says.</p>
+        <p class="paper-title">Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation</p>
         <p class="authors">Jinpeng Lu<sup>*</sup> &middot; Haoyuan Shi<sup>*</sup> &middot; Yuanshen Guan &middot; Jiyuan Xia &middot; Bin Wu &middot; Yinda Chen &middot; Zhiwei Xiong</p>
         <p class="affil"><span>University of Science and Technology of China</span> &middot; * Equal contribution</p>
       </div>
       <div class="hero-side">
-        <p>Diffusion transformers generate only a few seconds per pass, so minute-long stories must be stitched from local windows where either identity drifts or camera cuts fail. <b>CaT-Movie</b> connects a training-free <b>global story planner</b> with a <b>local window renderer</b> through one <b>structured storyboard</b> that decouples persistent identity from per-shot state and framing.</p>
         <div class="chips" aria-label="Release">
           <a class="chip link" href="https://github.com/JinPLu/CaT-Movie">Code <s>&middot; GitHub</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
-          <a class="chip link" href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Resources <s>&middot; Hugging Face</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
-          <a class="chip link" href="https://huggingface.co/JinPLU/CaT-Movie">Weights <s>&middot; Hugging Face</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
-          <a class="chip link" href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data">350K-shot data <s>&middot; Hugging Face</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
-          <a class="chip link" href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench <s>&middot; Hugging Face</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+          <a class="chip link" href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Models &amp; data <s>&middot; Hugging Face</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           <!-- paper-link -->
         </div>
         <div class="cta">
-          <a class="btn primary" href="#theater"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>Watch the comparisons</a>
+          <a class="btn primary" href="#compare">See the comparison</a>
           <a class="btn" href="#method">How it works</a>
         </div>
       </div>
     </div>
 
-    <div class="reel settle">
-      <div class="reel-frame">
-        <div class="perf top"></div>
-        <div class="reel-screen">
-          <video id="heroVideo" src="v/hero-cablecar.mp4" poster="f/film-003995-b0001-shot06/s1.jpg" muted playsinline autoplay loop preload="auto" aria-label="CaT-Movie generation of the Cable Car test story"></video>
-          <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <div class="ov ov-shot"><b id="heroShotNo">SHOT 01 / 12</b><span class="pill" id="heroCam">Close-up</span><span class="pill pass" id="heroPass">Pass 1 / 5</span></div>
-          <div class="ov ov-tc"><i></i><span id="heroTc" class="tnum">00:00:00:00</span></div>
-          <div class="ov ov-line"><span id="heroLineNo">s01</span><span class="typed" id="heroLine">Close-up shot. Character 1 looks at Character 2 while standing near a metallic shock absorber.</span></div>
-          <div class="ov-prog" id="heroProg" aria-hidden="true"></div>
+    <div class="reel-row">
+      <div class="reel">
+        <div class="reel-frame">
+          <div class="perf top"></div>
+          <div class="reel-screen">
+            <video id="heroVideo" src="v/hero-cablecar.mp4" poster="f/film-003995-b0001-shot06/s1.jpg" muted playsinline autoplay loop preload="auto" aria-label="CaT-Movie generation of the Cable Car test story"></video>
+            <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="ov ov-shot"><b id="heroShotNo">Shot 1 / 12</b><span class="pill" id="heroCam">Close-up</span><span class="pill pass" id="heroPass">Window 1 / 5</span></div>
+            <div class="ov ov-tc"><i></i><span id="heroTc" class="tnum">00:00:00:00</span></div>
+            <div class="ov ov-line"><span id="heroLineNo">Shot 1</span><span id="heroLine">Close-up shot. Character 1 looks at Character 2 while standing near a metallic shock absorber.</span></div>
+            <div class="ov-prog" id="heroProg" aria-hidden="true"></div>
+          </div>
+          <div class="perf bot"></div>
         </div>
-        <div class="perf bot"></div>
+        <div class="reel-meta"><span><b id="reelTitle">Cable Car</b>, a held-out test story</span><span id="reelStats">12 shots, 27.8 s, 5 generation windows</span></div>
+        <div class="tl" id="heroTimeline"></div>
+        <p class="tl-cap">Each strip is one generation window: the shots in it are generated together. Click a shot to jump to it.</p>
       </div>
-      <div class="reel-meta"><span><b id="reelTitle">Cable Car</b> &middot; held-out test story &middot; CaT-Movie output</span><span id="reelStats">12 shots &middot; <b>27.8 s</b> &middot; 5 generation passes &middot; 7 s window cap</span></div>
-      <div class="tl" id="heroTimeline"></div>
-      <div class="tl-cap"><span><i></i>one film strip = one generation pass</span><span><i class="r"></i>anchor frames recalled from earlier passes</span><span>click any shot to jump</span></div>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><span class="sk">Film Storyboard Dataset</span><b class="tnum" data-count="358302" data-fmt="int">358,302</b><span><strong>annotated film shots</strong> across 75,461 scene blocks and 332.8 hours</span></div>
-      <div class="stat"><span class="sk">Camera Cut Execution</span><b class="tnum" data-count="0.974" data-fmt="3">0.974</b><span><strong>of 674 planned cuts executed</strong> across window boundaries</span></div>
-      <div class="stat"><span class="sk">Character Consistency</span><b class="tnum k-ours" data-count="0.651" data-fmt="3">0.651</b><span><strong>highest among 8 methods</strong>, holding 61&ndash;63% past 20 seconds</span></div>
-      <div class="stat"><span class="sk">Overall Benchmark Score</span><b class="tnum" data-count="0.597" data-fmt="3">0.597</b><span><strong>#1 overall on CaT-MBench</strong> across all four evaluation aspects</span></div>
+      <aside class="recall-panel" aria-live="polite">
+        <b class="recall-win" id="castWin">Window 1 of 5</b>
+        <p class="recall-note" id="castNote"></p>
+        <div class="recall" id="heroRecall"></div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ================= TRADE-OFF ================= -->
-<section id="tradeoff">
+<!-- ================= ONE STORY, THREE WAYS ================= -->
+<section id="compare" class="beat">
   <div class="wrap">
-    <p class="eyebrow">The trade-off</p>
     <div class="split">
-      <h2>Existing generators either <em>execute camera cuts</em> or <em>preserve identity</em> across them.</h2>
-      <p class="lead settle"><b>Per-shot pipelines</b> cut cleanly but rebuild the cast in every shot. <b>Joint multi-shot generators</b> coordinate cuts inside a window but lose identity at window seams. <b>Memory-augmented generators</b> carry raw frames forward, bundling identity with prior camera framing so planned cuts repeat old setups.</p>
+      <h2>Joint generation forgets the cast. Memory repeats the shot.</h2>
+      <p class="lead">Police Station, a held-out test story of 11 shots, from three kinds of generator. The marks are the benchmark judge&rsquo;s verdicts. Click a frame to play that shot, or a shot heading to play it in all three.</p>
+    </div>
+    <div class="panel cmp">
+      <div class="cmp-top"><div class="cmp-ctrl" id="cmpCtrl" role="group" aria-label="Read one generator"></div><p class="cmp-note" id="cmpNote" aria-live="polite"></p></div>
+      <div class="qual cmp-grid" id="cmpGrid"></div>
     </div>
 
-    <div class="panel paradigms settle" id="paradigms">
-      <div class="par-head">
-        <div class="tabs" role="tablist" aria-label="Generation paradigms">
-          <button class="tab" role="tab" data-p="pershot">Per-shot<span class="bar"></span></button>
-          <button class="tab" role="tab" data-p="joint">Joint generation<span class="bar"></span></button>
-          <button class="tab" role="tab" data-p="memory">Memory-augmented<span class="bar"></span></button>
-          <button class="tab ours" role="tab" data-p="ours">CaT-Movie<span class="bar"></span></button>
-        </div>
-        <div class="legend" aria-hidden="true">
-          <span><svg width="16" height="16" viewBox="0 0 24 24"><use href="#i-scissor"/></svg>new camera setup</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>same camera setup</span>
-          <span><svg width="14" height="16" viewBox="0 0 20 24"><use href="#i-neq"/></svg>inconsistent</span>
-        </div>
-      </div>
-      <div class="par-stage" id="parStage"></div>
-      <div class="par-read" id="parRead"></div>
-    </div>
-
-    <div class="pareto-grid">
-      <div class="panel chart-card settle">
-        <div class="chart-title"><h3>Consistency against transition control</h3>
+    <div class="cmp-sum">
+      <h3>Across all 92 held-out test stories</h3>
+      <div class="pareto-grid">
+      <div class="panel chart-card">
+        <div class="chart-title"><h3>Keeping the cast against cutting on cue</h3>
           <div class="legend"><span><i style="background:var(--grey-b)"></i>per-shot</span><span><i class="dia" style="background:var(--holo)"></i>joint</span><span><i class="dia" style="background:var(--ours)"></i>CaT-Movie</span></div></div>
         <div id="pareto"></div>
-        <p class="small">92 held-out test stories. CaT-Movie reaches 0.985 in transition control and 0.593 in inter-shot consistency (0.651 on Character), advancing beyond the baseline Pareto frontier (dotted line).</p>
+        <p class="small">Across 92 held-out test stories, CaT-Movie is the only method beyond the baselines&rsquo; trade-off frontier (dotted line). Hover a point for its scores.</p>
       </div>
-      <div class="panel profile settle" id="profile" aria-live="polite"></div>
+      <div class="panel profile" id="profile" aria-live="polite"></div>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- ================= METHOD ================= -->
-<section id="method">
+<section id="method" class="beat">
   <div class="wrap">
-    <p class="eyebrow">Method</p>
     <div class="split">
-      <h2>One structured storyboard <em>decouples identity</em> from per-shot <em>state and framing</em>.</h2>
-      <p class="lead settle">Given a story request at any granularity, a training-free <b>global story planner</b> writes an entity registry and per-shot plans. Deterministic code maintains cross-shot state, compiles self-contained shot prompts, and routes <b>anchor views</b> into a <b>local window renderer</b> that denoises each window jointly.</p>
+      <h2>Plan the story once, then render it window by window.</h2>
+      <p class="lead">A language model writes one storyboard for the whole story. The video model then generates a few shots at a time, and each shot sees an earlier view of only the characters and objects it shows.</p>
     </div>
-
-    <div class="panel overview settle" id="overview">
-      <div class="ov-head">
-        <div><span class="k" id="ovKicker">System overview &middot; Cable Car, pass 4</span><h3>One window, end to end</h3></div>
-        <div class="ov-ctrl"><div class="ov-stages" id="ovStages" role="group" aria-label="Pipeline stages"></div><button class="ibtn" id="ovPlay" aria-label="Play or pause the tour"></button></div>
+    <div class="panel howit">
+      <div class="hw-head">
+        <div class="tabs" role="tablist" aria-label="Steps"><button class="tab hw-tab" role="tab" type="button" data-s="plan">1. Plan once</button><button class="tab hw-tab" role="tab" type="button" data-s="render">2. Render window by window</button></div>
+        <p class="hw-note" id="hwNote"></p>
       </div>
-      <div class="ov-scroll"><svg id="ovSvg" viewBox="0 0 1200 720" role="img" aria-label="CaT-Movie overview: a planner writes a storyboard, code compiles prompts and recalls frames, and the window renderer denoises one window of the Cable Car story"></svg></div>
-      <p class="ov-cap" id="ovCap"></p>
+      <div id="hwBody"></div>
     </div>
-
-    <div class="scrolly" id="scrolly">
-      <div class="stage panel">
-        <div class="stage-in">
-          <!-- 1 request -->
-          <div class="layer on" data-layer="1">
-            <div class="layer-head"><span class="k">Request &middot; three granularities</span>
-              <div class="tabs" id="reqTabs"><button class="tab on" data-t="synopsis">Synopsis</button><button class="tab" data-t="paragraph">Paragraph</button><button class="tab" data-t="shots">Shot list</button></div></div>
-            <div class="layer-body"><div class="req" id="reqBox"></div></div>
-            <div class="req-meta" id="reqMeta"></div>
-          </div>
-          <!-- 2 storyboard -->
-          <div class="layer" data-layer="2">
-            <div class="layer-head"><span class="k">Storyboard &middot; Qwen3.8-27B, no fine-tuning</span><span class="small">hover an entity to highlight its shots</span></div>
-            <div class="registry" id="registry"></div>
-            <div class="layer-body"><table class="sb-table" id="sbTable"></table></div>
-          </div>
-          <!-- 3 windows -->
-          <div class="layer" data-layer="3">
-            <div class="layer-head"><span class="k">Window packing &middot; greedy, 7 s cap</span><span class="small" id="packNote"></span></div>
-            <div class="layer-body" style="overflow:visible"><svg class="svg-stage" id="packSvg" viewBox="0 0 760 360"></svg></div>
-          </div>
-          <!-- 4 recall -->
-          <div class="layer" data-layer="4">
-            <div class="layer-head"><span class="k">Anchor-view recall</span><div class="win-chips" id="winChips4"></div></div>
-            <div class="layer-body" style="overflow:visible"><svg class="svg-stage" id="recallSvg" viewBox="0 0 760 400"></svg></div>
-            <div class="prompt-box" id="promptBox"></div>
-          </div>
-          <!-- 5 render -->
-          <div class="layer" data-layer="5">
-            <div class="layer-head"><span class="k">Window attention</span><div class="win-chips" id="winChips5"></div></div>
-            <div class="layer-body">
-              <div class="mask-wrap">
-                <svg class="svg-stage mask-svg" id="maskSvg" viewBox="0 0 400 400"></svg>
-                <div style="display:grid;gap:10px">
-                  <div class="mini-video"><video id="miniVideo" muted playsinline preload="metadata" src="v/film-003995-b0001-shot06/ours.mp4"></video><div class="ov ov-shot"><b id="miniShot">SHOT 07</b></div><div class="ov ov-tc"><span class="pill pass" id="miniWin">PASS 4</span></div></div>
-                  <div class="mask-legend" id="maskLegend"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="steps" id="methodSteps">
-        <article class="step on" data-step="1" tabindex="0">
-          <div class="step-hd"><span class="no">01 &middot; Request</span><h3>Three input granularities, one contract.</h3></div>
-          <div class="step-body">
-            <p>A unified prompt guides frozen Qwen3.8-27B to expand a one-sentence synopsis, paragraph, or numbered shot list into valid storyboard JSON: <b>preserve</b> stated facts, <b>infer</b> implied presence and outcomes, and <b>complete</b> open visual details.</p>
-            <div class="facts"><span class="fact">Retains <b>100%</b> of requested events and <b>90&ndash;98%</b> of outcomes across 70 stories.</span></div>
-          </div>
-        </article>
-        <article class="step" data-step="2" tabindex="0">
-          <div class="step-hd"><span class="no">02 &middot; Storyboard</span><h3>Entity registry &amp; state propagation.</h3></div>
-          <div class="step-body">
-            <p>The storyboard links a global <b>entity registry</b> (fixed IDs, appearance, default attire) with per-shot plans. Deterministic code propagates attire changes and held items across shots to compile one self-contained prompt per shot.</p>
-            <div class="facts"><span class="fact">Code state propagation lifts post-change attire accuracy by <b>+14.1 pts</b>.</span></div>
-          </div>
-        </article>
-        <article class="step" data-step="3" tabindex="0">
-          <div class="step-hd"><span class="no">03 &middot; Windows</span><h3>Duration scaling &amp; greedy packing.</h3></div>
-          <div class="step-body">
-            <p>Predicted shot durations are scaled to the target video length and greedily packed into multi-shot windows under a 7 s cap. Shots inside each window are denoised jointly to coordinate local camera cuts directly.</p>
-            <div class="facts"><span class="fact"><b>91.4%</b> of entity returns in test storyboards cross a window boundary.</span></div>
-          </div>
-        </article>
-        <article class="step" data-step="4" tabindex="0">
-          <div class="step-hd"><span class="no">04 &middot; Recall</span><h3>Storyboard-indexed anchor views.</h3></div>
-          <div class="step-body">
-            <p>Rather than taking the latest shot (which chains errors across windows), code queries the storyboard for each entity's clearest <b>anchor view</b> after its latest state change, routing each recalled frame only to shots where that entity appears.</p>
-            <div class="facts"><span class="fact">Anchor views beat recent-shot recall by <b>+9.3 pts</b> on Character and <b>+15.4 pts</b> at &ge;2 windows apart.</span></div>
-          </div>
-        </article>
-        <article class="step" data-step="5" tabindex="0">
-          <div class="step-hd"><span class="no">05 &middot; Render</span><h3>Routed window attention.</h3></div>
-          <div class="step-body">
-            <p>Each shot is VAE-encoded separately so no latent straddles a cut. Under <b>shot-wise cross-attention</b> and <b>reference-routed sparse self-attention</b>, each shot reads its own tokens, co-generated first frames, and its routed anchor views.</p>
-            <div class="facts"><span class="fact">Entity routing lifts cut execution from <b>0.869 to 0.970</b> when hiding absent-character frames.</span></div>
-          </div>
-        </article>
-      </div>
+    <div class="hw-facts">
+      <p><b>&minus;29.2</b> points of character consistency without any recalled view</p>
+      <p><b>&minus;9.3</b> points when each window recalls the latest shots instead</p>
+      <p><b>0.970 &rarr; 0.869</b> planned cuts made in windows with recalled views, if every shot sees all of them</p>
     </div>
-  </div>
-</section>
-
-<!-- ================= THEATER ================= -->
-<section id="theater">
-  <div class="wrap">
-    <p class="eyebrow">Videos</p>
-    <div class="split">
-      <h2>Eight held-out test stories. <em>Four paradigms</em>, in sync.</h2>
-      <p class="lead settle">Watch the exact test-set renders evaluated in Table 1 in a 2&times;2 grid, single-method focus, or interactive A/B wipe. Baselines render the film-annotated reference storyboard in their native prompt formats, whereas <b>CaT-Movie</b> renders from the shot-list request via our planner.</p>
-    </div>
-
-    <div class="theater" id="theaterRoot">
-      <div class="rail" id="storyRail" aria-label="Stories"></div>
-      <div class="player">
-        <div class="toolbar">
-          <div class="tool-group">
-            <button class="ibtn" id="tPlay" aria-label="Play or pause"><svg viewBox="0 0 14 14" id="tPlayIcon"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></button>
-            <button class="ibtn" id="tRestart" aria-label="Restart"><svg viewBox="0 0 14 14"><path d="M2.5 7a4.5 4.5 0 1 0 1.6-3.45M2.5 1.8v2.6h2.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
-            <div class="seg" role="group" aria-label="Speed"><button data-rate="0.5">0.5&times;</button><button data-rate="1" class="on">1&times;</button></div>
-            <span class="mono small tnum" id="tTime">0.0 / 0.0 s</span>
-          </div>
-          <div class="tool-group">
-            <div class="seg" role="group" aria-label="Layout"><button data-mode="grid" class="on">Grid</button><button data-mode="focus">Focus</button><button data-mode="wipe">Wipe</button></div>
-            <label class="small" for="wipeSel" hidden id="wipeLab">vs</label>
-            <select class="ibtn" id="wipeSel" hidden><option value="holocine">HoloCine</option><option value="multishotmaster">MultiShotMaster</option><option value="storymem">StoryMem</option></select>
-          </div>
-        </div>
-        <div class="screens" id="screens"><div class="wipe-handle" id="wipeHandle"></div></div>
-        <div class="shotbar" id="shotbar" aria-label="Shots"></div>
-        <div class="caption-line"><span class="k" id="capK">Shot 1/12</span><span id="capLine"></span></div>
-      </div>
-    </div>
+    <p class="small hw-src">Ablations on 30 development stories, three seeds each. The full table is under the videos.</p>
   </div>
 </section>
 
 <!-- ================= BENCHMARK ================= -->
-<section id="benchmark">
+<section id="benchmark" class="beat">
   <div class="wrap">
-    <p class="eyebrow">CaT-MBench</p>
     <div class="split">
-      <h2>Consistency counts only when the planned <em>cut is executed</em>.</h2>
-      <p class="lead settle">Feature-similarity metrics such as ViCLIP and DINOv2 reward videos that repeat the previous camera framing across a planned cut. <b>CaT-MBench</b> pairs entity-specific binary checks with an explicit <b>cut gate</b>: a returning character, object, or scene is credited as consistent only if TransNetV2 and the VLM judge verify that the planned cut opened a new camera setup.</p>
+      <h2>Consistency only counts when the planned cut actually happens.</h2>
+      <p class="lead">CaT-MBench, our benchmark, asks a judge yes-or-no questions about every returning character, object and place, and fails a check when the video skipped the planned camera change. Flip the switch to see the ranking reverse.</p>
     </div>
 
-    <div class="bench-grid">
-      <div class="panel gate settle" id="gate">
+    <div class="bench-grid solo">
+      <div class="panel gate" id="gate">
         <div class="gate-cols">
           <span></span>
           <div class="ch"><b>Shot 3 <em>Close-up</em></b><br><q>The woman looks at him and speaks.</q></div>
@@ -1060,7 +929,12 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
         </div>
       </div>
 
-      <div class="panel bench-side settle">
+    </div>
+
+    <details class="more">
+      <summary>Benchmark scale, judge calibration and findings <span>122 stories, 557 human-labelled items</span></summary>
+      <div class="more-body">
+      <div class="panel bench-side">
         <div>
           <span class="k" style="margin-bottom:10px">Benchmark scale &middot; held-out films</span>
           <div class="bench-nums">
@@ -1079,10 +953,8 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
         </div>
         <p class="small" style="margin:0">Unedited cuts fail all cross-shot consistency and state-persistence checks across them. Human rankings and CaT-MBench agree on all 7 evaluated baselines.</p>
       </div>
-    </div>
-
     <div class="judging" id="judging">
-      <div class="panel jqb settle">
+      <div class="panel jqb">
         <div>
           <span class="k">Question bank</span>
           <h3>Entity-linked binary verification.</h3>
@@ -1095,7 +967,7 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
           <div class="adapters" id="adapters"></div>
         </div>
       </div>
-      <div class="panel jv settle">
+      <div class="panel jv">
         <div class="jv-head"><span class="k">Cut-gated judging &middot; Gemini 3.8 Flash (2 fps)</span><div class="seg" id="jEx"><button data-e="0" class="on">Character check</button><button data-e="1">Cut check</button></div></div>
         <div class="jstrip" id="jStrip"></div>
         <div class="jflow" id="jFlow"></div>
@@ -1103,140 +975,190 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
     </div>
 
     <div class="findings">
-      <div class="panel finding settle">
+      <div class="panel finding">
         <span class="fk">Finding 1 &middot; Cross-Window Drift</span>
         <h3>Joint generators reset identity at window seams.</h3>
         <div class="big tnum">28<small>% / 30% character pass rate across windows</small></div>
-        <p>HoloCine and MultiShotMaster pass 62&ndash;83% of character checks within a single window, but drop to 28% and 30% as soon as a character crosses a window boundary.</p>
+        <p>HoloCine and MultiShotMaster pass 62&ndash;83% of character checks inside a window and 28&ndash;30% across one.</p>
       </div>
-      <div class="panel finding settle">
+      <div class="panel finding">
         <span class="fk">Finding 2 &middot; Copied Framing</span>
         <h3>Raw frame memory copies prior camera setups.</h3>
         <div class="big tnum">114<small>of 674 planned setup changes repeated by StoryMem</small></div>
-        <p>StoryMem fails the cut gate on 15.7% of consistency checks (vs. 0.7% for CaT-Movie). Omitting the cut gate inflates its consistency score by over 15.3 points.</p>
+        <p>StoryMem fails the gate on 15.7% of consistency checks, against 0.7% for CaT-Movie.</p>
       </div>
-      <div class="panel finding settle">
+      <div class="panel finding">
         <span class="fk">Finding 3 &middot; Per-Shot Amnesia</span>
         <h3>Independent per-shot pipelines cut cleanly but forget.</h3>
         <div class="big tnum">0.17&ndash;0.30<small>character consistency across per-shot baselines</small></div>
-        <p>Per-shot Wan2.1/2.2 and keyframe pipelines (StoryDiffusion, IC-LoRA) execute over 90% of cuts, but independent sampling collapses cross-shot identity.</p>
+        <p>Per-shot Wan and keyframe pipelines execute over 90% of cuts but forget who is who.</p>
       </div>
     </div>
+      </div>
+    </details>
   </div>
 </section>
 
-<!-- ================= NUMBERS ================= -->
-<section id="numbers">
+<!-- ================= VIDEOS ================= -->
+<section id="gallery" class="beat">
   <div class="wrap">
-    <p class="eyebrow">Quantitative results</p>
     <div class="split">
-      <h2>Highest overall score, most consistent characters, and <em>cuts on schedule</em>.</h2>
-      <p class="lead settle">Across 92 held-out test stories, <b>CaT-Movie</b> executes <b>0.974</b> of planned cuts while achieving the highest overall consistency (<b>0.593</b>), Character consistency (<b>0.651</b>), State persistence (<b>0.785</b>), and benchmark average (<b>0.597</b>). Click any column header to sort.</p>
+      <h2>Eight held-out stories, four generators in sync.</h2>
+      <p class="lead">CaT-Movie renders from a shot-list request through its planner; the other three render the reference storyboard in their own input formats. Pick a story to play it.</p>
+    </div>
+    <div class="theater" id="theaterRoot">
+      <div class="rail" id="storyRail" aria-label="Stories"></div>
+      <div class="player">
+        <div class="toolbar">
+          <div class="tool-group">
+            <button class="ibtn" id="tPlay" aria-label="Play or pause"><svg viewBox="0 0 14 14" id="tPlayIcon"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></button>
+            <button class="ibtn" id="tRestart" aria-label="Restart"><svg viewBox="0 0 14 14"><path d="M2.5 7a4.5 4.5 0 1 0 1.6-3.45M2.5 1.8v2.6h2.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <div class="seg" role="group" aria-label="Speed"><button data-rate="0.5">0.5&times;</button><button data-rate="1" class="on">1&times;</button></div>
+            <span class="mono small tnum" id="tTime">0.0 / 0.0 s</span>
+          </div>
+          <div class="tool-group">
+            <div class="seg" role="group" aria-label="Layout"><button data-mode="grid" class="on">Grid</button><button data-mode="focus">Focus</button><button data-mode="wipe">Wipe</button></div>
+            <label class="small" for="wipeSel" hidden id="wipeLab">vs</label>
+            <select class="ibtn" id="wipeSel" hidden><option value="holocine">HoloCine</option><option value="multishotmaster">MultiShotMaster</option><option value="storymem">StoryMem</option></select>
+          </div>
+        </div>
+        <div class="screens" id="screens"><div class="wipe-handle" id="wipeHandle"></div></div>
+        <div class="shotbar" id="shotbar" aria-label="Shots"></div>
+        <div class="caption-line"><span class="k" id="capK">Shot 1/12</span><span id="capLine"></span></div>
+      </div>
     </div>
 
-    <div class="tbl-wrap settle" style="margin-top:20px"><table class="data" id="mainTable"></table></div>
+    <details class="more">
+      <summary>Full results table <span>8 methods, 9 metrics, return time and window distance</span></summary>
+      <div class="more-body">
+    <div class="tbl-wrap" style="margin-top:20px"><table class="data" id="mainTable"></table></div>
     <div class="tbl-note"><span>Table 1 &middot; 92 held-out test stories. CaT-Movie renders from the shot-list request via our planner; baselines render the reference storyboard in their native formats.</span><span><span class="best-k">best</span> &middot; <span class="second-k">second</span></span></div>
 
     <div class="two">
-      <div class="panel chart-card settle">
+      <div class="panel chart-card">
         <div class="chart-title"><h3>Character consistency by return time</h3><div class="legend"><span><i style="background:var(--paper);opacity:.85"></i>&lt;10 s</span><span><i style="background:var(--paper);opacity:.5"></i>10&ndash;20 s</span><span><i style="background:var(--paper);opacity:.25"></i>&ge;20 s</span></div></div>
         <div id="returnChart"></div>
         <p class="small">CaT-Movie holds 61&ndash;63% character consistency even when characters return more than 20 s later.</p>
       </div>
-      <div class="panel chart-card settle">
-        <div class="chart-title"><h3>Consistency by window distance</h3><div class="legend"><span><i style="background:var(--ours)"></i>CaT-Movie</span><span><i style="background:var(--grey-a);border-radius:2px"></i>recent-shot recall</span><span><i style="background:var(--cut);border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%)"></i>no references</span></div></div>
+      <div class="panel chart-card">
+        <div class="chart-title"><h3>Consistency by window distance</h3><div class="legend"><span><i style="background:var(--ours)"></i>CaT-Movie</span><span><i style="background:var(--grey-a);border-radius:2px"></i>recall latest shots</span><span><i style="background:var(--cut);border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%)"></i>no recalled views</span></div></div>
         <div id="distChart"></div>
-        <p class="small">Anchor-view recall avoids cross-window error chaining, beating recent-shot recall by 15.4 points at &ge;2 windows apart.</p>
+        <p class="small">Recalling each character&rsquo;s clearest earlier view keeps errors from piling up window after window: 15.4 points above recalling the latest shots when the two shots are two or more windows apart.</p>
       </div>
     </div>
 
-    <div style="margin-top:44px" class="split">
+
+      </div>
+    </details>
+    <details class="more">
+      <summary>Ablations <span>30 development stories, three seeds</span></summary>
+      <div class="more-body">
+    <div class="split">
       <div>
-        <h3 style="font-size:clamp(24px,2.6vw,34px);margin:0 0 6px">Ablation studies</h3>
-        <p class="small" style="margin:0">30 development stories over three seeds. Toggle to view point differences from CaT-Movie (&dagger; marks 95% bootstrap intervals excluding zero).</p>
+        <p class="small" style="margin:0">Toggle to see differences from CaT-Movie in points; &dagger; marks 95% intervals that exclude zero.</p>
       </div>
       <div style="display:flex;justify-content:flex-end;align-items:end"><div class="seg" id="ablMode"><button class="on" data-m="abs">Scores</button><button data-m="delta">&Delta; vs CaT-Movie</button></div></div>
     </div>
-    <div class="tbl-wrap settle" style="margin-top:12px"><table class="data" id="ablTable" style="min-width:640px"></table></div>
+    <div class="tbl-wrap" style="margin-top:12px"><table class="data" id="ablTable" style="min-width:640px"></table></div>
 
     <div class="findings" style="margin-top:16px">
-      <div class="panel finding settle">
+      <div class="panel finding">
         <span class="fk">Ablation 1 &middot; Renderer &amp; Attention</span>
         <h3>Routing prevents framing copy.</h3>
-        <p>Dropping references collapses Character (&#8722;29.2 pts) and Object (&#8722;24.3 pts). Removing entity routing drops cut execution from <b>0.970 to 0.869</b> on cuts where routing hides absent-character frames.</p>
+        <p>Without references, characters fall 29.2 points; without routing, cut execution falls from 0.970 to 0.869 where routing would apply.</p>
       </div>
-      <div class="panel finding settle">
+      <div class="panel finding">
         <span class="fk">Ablation 2 &middot; Reference Recall</span>
         <h3>Anchor views beat recent &amp; CLIP recall.</h3>
-        <p>Recalling from recent shots degrades Execution (&#8722;3.0 pts), Character (&#8722;9.3 pts), and Scene (&#8722;9.5 pts) due to error chaining across windows. CLIP retrieval drops the overall average by 3.4 pts.</p>
+        <p>Recalling the latest shots chains errors across windows: characters &#8722;9.3 and scenes &#8722;9.5 points.</p>
       </div>
-      <div class="panel finding settle">
+      <div class="panel finding">
         <span class="fk">Ablation 3 &middot; Storyboard Source</span>
         <h3>Planner state tracking lifts rendering.</h3>
-        <p>Our planner's storyboard beats directly compiled requests across every column (+5.4 Character, +16.0 Establish, +15.1 Persist) and surpasses the reference storyboard by +9.3 pts on Persist.</p>
+        <p>Against requests compiled directly: +5.4 characters, +16.0 establish, +15.1 persist.</p>
       </div>
     </div>
 
-    <div style="margin-top:44px" class="split">
-      <div>
-        <h3 style="font-size:clamp(24px,2.6vw,34px);margin:0 0 6px">Qualitative comparison &amp; planner analysis</h3>
-        <p class="small" style="margin:0">Police Station (11 shots, 29 s). Hover or tap any frame to play its shot clip.</p>
-      </div>
-      <div style="display:flex;justify-content:flex-end;align-items:end"><button class="ibtn on" id="qualMarks">Hide judge marks</button></div>
-    </div>
-    <div class="panel qual settle" id="qual"></div>
 
-    <div class="two" style="margin-top:16px">
-      <div class="panel chart-card settle">
+      </div>
+    </details>
+    <details class="more">
+      <summary>Planner analysis <span>what the planner adds to the request, and which written changes reach the video</span></summary>
+      <div class="more-body">
+    <div class="two">
+      <div class="panel chart-card">
         <div class="chart-title"><h3>Information stated in compiled text</h3><div class="legend"><span><i style="background:var(--grey-c)"></i>request alone</span><span><i style="background:var(--ours)"></i>added by planner</span></div></div>
         <div id="planText"></div>
         <p class="small">Across 70 stories (synopsis, paragraph, shot list), the planner expands stated opening states to 45%&ndash;73% and held items to 22%&ndash;68%.</p>
       </div>
-      <div class="panel chart-card settle">
+      <div class="panel chart-card">
         <div class="chart-title"><h3>Written versus executed state changes</h3><div class="legend"><span><i style="background:var(--ours)"></i>stated &amp; shown</span><span><i style="background:var(--cut)"></i>stated, not shown</span><span><i style="background:transparent;box-shadow:0 0 0 1px var(--line-2) inset"></i>unstated</span></div></div>
         <div id="writExec"></div>
         <p class="small">On 30 rendered development stories, our planner states 91% of required state changes and the renderer executes 69% of stated changes.</p>
       </div>
     </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= LIMITS ================= -->
+<section id="limits" class="minor">
+  <div class="wrap">
+    <div class="split">
+      <h2>Where it still fails</h2>
+      <p class="lead">Character consistency is 0.651: the best of eight methods, and still far from solved. Two pairs the judge marked as different people:</p>
+    </div>
+    <div class="limits">
+      <figure class="panel lim">
+        <div class="lim-pair"><img src="f/film-003995-b0001-shot06/s1.jpg" alt="Cable Car shot 1: a bearded man in a black cap" loading="lazy"><img src="f/film-003995-b0001-shot06/s3.jpg" alt="Cable Car shot 3: the same character with a different face" loading="lazy"></div>
+        <figcaption><b>Cable Car, shots 1 and 3.</b> Both come from the first window, before anything exists to recall. The cap carries over but the face and beard do not.</figcaption>
+      </figure>
+      <figure class="panel lim">
+        <div class="lim-pair"><img src="f/cinedance-010942-b0000-shot03/s1.jpg" alt="Police Station shot 1: a bearded man at a desk" loading="lazy"><img src="f/cinedance-010942-b0000-shot03/s7.jpg" alt="Police Station shot 7: a crowded shot where the man looks different" loading="lazy"></div>
+        <figcaption><b>Police Station, shots 1 and 7.</b> Shot 7 reads the man&rsquo;s view from shot 1, but in this crowded shot with the woman and a group of officers his face and shirt drift.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <!-- ================= DATA ================= -->
-<section id="data">
+<section id="data" class="minor">
   <div class="wrap">
-    <p class="eyebrow">Film storyboard dataset</p>
     <div class="split">
-      <h2>358K film shots annotated in the <em>exact schema</em> the planner writes.</h2>
-      <p class="lead settle">We segment <b>19,535 films</b> from CineDance, CinePile, and MovieChat into <b>75,461 scene blocks</b> (358,302 shots, 332.8 hours) and annotate each block in a single Qwen3.7-Flash pass with entity registries, per-shot states, transitions, and pixel grounding.</p>
+      <h2>Film shots annotated in the storyboard format the planner writes.</h2>
+      <p class="lead">Each scene block carries an entity registry, per-shot states, within-shot changes and pixel grounding, all from one annotation pass.</p>
     </div>
 
-    <div class="flow settle">
-      <div><span>Source videos</span><b class="tnum" data-count="19535" data-fmt="int">19,535</b><p>CineDance, CinePile, MovieChat</p></div>
-      <div><span>Scene blocks</span><b class="tnum" data-count="75461" data-fmt="int">75,461</b><p>up to 12 shots each, median 4</p></div>
-      <div><span>Total shots</span><b class="tnum" data-count="358302" data-fmt="int">358,302</b><p>332.8 hours of narrative film</p></div>
-      <div><span>Usable shots</span><b class="tnum" data-count="290267" data-fmt="int">290,267</b><p>shot-first filtering (+28.1% yield)</p></div>
-      <div><span>Train &middot; held out</span><b class="tnum" data-count="66573" data-fmt="int">66,573</b><p>train blocks &middot; 916 held out by film</p></div>
+    <div class="flow three">
+      <div><span>Source films</span><b class="tnum" data-count="19535" data-fmt="int">19,535</b><p>CineDance, CinePile, MovieChat</p></div>
+      <div><span>Scene blocks</span><b class="tnum" data-count="75461" data-fmt="int">75,461</b><p>up to 12 shots each</p></div>
+      <div><span>Film shots</span><b class="tnum" data-count="358302" data-fmt="int">358,302</b><p>332.8 hours</p></div>
     </div>
 
     <div class="annot-grid">
-      <div class="panel annot settle" id="annot"></div>
-      <div class="panel ground settle" id="ground"></div>
+      <div class="panel annot" id="annot"></div>
+      <div class="panel ground" id="ground"></div>
     </div>
 
+
+    <details class="more">
+      <summary>Dataset statistics <span>composition, sources, entities, block lengths, curation yield</span></summary>
+      <div class="more-body">
     <div class="data-grid">
-      <div class="panel chart-card sun-card settle">
+      <div class="panel chart-card sun-card">
         <div class="chart-title"><h3>Dataset &amp; benchmark composition</h3><span class="small">hover any ring segment</span></div>
         <div id="sunburst"></div>
         <p class="small">Upper half (rose): 288,083 labelled training shots. Lower half (blue): 1,361 CaT-MBench questions and 122 stories.</p>
       </div>
       <div class="data-col">
-        <div class="panel chart-card settle">
+        <div class="panel chart-card">
           <div class="chart-title"><h3>Source corpora and visual style</h3><span class="small">290,267 usable shots</span></div>
           <div id="srcStack"></div>
           <div style="height:10px"></div>
           <div id="typeStack"></div>
         </div>
-        <div class="panel chart-card settle">
+        <div class="panel chart-card">
           <div class="chart-title"><h3>Registered entities per scene block</h3><div class="legend"><span><i style="background:var(--grey-d)"></i>0</span><span><i style="background:var(--grey-b)"></i>1</span><span><i style="background:var(--grey-a)"></i>2</span><span><i style="background:var(--ours)"></i>3+</span></div></div>
           <div id="entStack"></div>
           <p class="small">58.3% of the 192,815 registered characters recur across two or more shots within their block.</p>
@@ -1245,11 +1167,11 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
     </div>
 
     <div class="two">
-      <div class="panel chart-card settle">
+      <div class="panel chart-card">
         <div class="chart-title"><h3>Scene block length distribution</h3><span class="small">75,461 scene blocks</span></div>
         <div id="blockHist"></div>
       </div>
-      <div class="panel chart-card settle">
+      <div class="panel chart-card">
         <div class="chart-title"><h3>Shot-first vs. window-first curation yield</h3><div class="legend"><span><i style="background:var(--cut);opacity:.6;border-radius:2px"></i>window-first</span><span><i style="background:var(--ours);border-radius:2px"></i>shot-first</span></div></div>
         <div id="yieldChart"></div>
       </div>
@@ -1262,16 +1184,17 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
       <div class="panel"><b>Entity grounding</b><span>Registry-linked Qwen3.8-27B boxes, SAM 3.1 masks, and VGGT-Omega depth.</span></div>
       <div class="panel"><b>Three request tiers</b><span>Synopsis, paragraph, and shot-list requests paired with every block.</span></div>
     </div>
+      </div>
+    </details>
   </div>
 </section>
 
 <!-- ================= CITE ================= -->
-<section id="cite">
+<section id="cite" class="minor">
   <div class="wrap">
-    <p class="eyebrow">Citation &amp; Open Release</p>
     <div class="split">
       <h2>Cite CaT-Movie</h2>
-      <p class="lead">Code is on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>, and weights, datasets, benchmark files, videos, and human labels are in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">CaT-Movie Hugging Face Collection</a>.</p>
+      <p class="lead">Code is on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>; weights, data, the benchmark, videos and human labels are in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Hugging Face collection</a>.</p>
     </div>
     <div class="bib">
       <pre id="bibText">@misc{catmovie2026,
@@ -1296,13 +1219,13 @@ html[data-theme="dark"] .ov-chip.on span{color:#081022}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-scissor" viewBox="0 0 24 24"><g fill="none" stroke="#d690bb" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 16 18 3M15.8 16 6 3"/></g></symbol>
-    <symbol id="i-scissor-x" viewBox="0 0 24 24"><g fill="none" stroke="#d690bb" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 16 18 3M15.8 16 6 3"/></g><g stroke="#ece8e0" stroke-width="2.6" stroke-linecap="round"><path d="M14 9l7 7M21 9l-7 7"/></g></symbol>
+    <symbol id="i-scissor-x" viewBox="0 0 24 24"><g fill="none" stroke="#d690bb" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 16 18 3M15.8 16 6 3"/></g><g stroke="#b8387e" stroke-width="2.8" stroke-linecap="round"><path d="M14 9l7 7M21 9l-7 7"/></g></symbol>
     <symbol id="i-neq" viewBox="0 0 20 24"><path d="M10 23C4 15 1.5 11.5 1.5 8.2a8.5 8.5 0 0 1 17 0c0 3.3-2.5 6.8-8.5 14.8z" fill="#d690bb"/><path d="M5.5 6.6h9M5.5 10h9M12.4 3.8 7.6 12.8" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></symbol>
   </defs>
 </svg>
 
-<script src="data.js?v=3" charset="utf-8"></script>
-<script src="app.js?v=3" charset="utf-8"></script>
-<script src="figs.js?v=3" charset="utf-8"></script>
+<script src="data.js?v=5" charset="utf-8"></script>
+<script src="app.js?v=5" charset="utf-8"></script>
+<script src="figs.js?v=5" charset="utf-8"></script>
 </body>
 </html>
