@@ -3,12 +3,12 @@
 # CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation
 
 <p>
-  <a href="https://jinplu.github.io/CaT-Movie/"><img src="https://img.shields.io/badge/Project%20Page-Live-blue?style=flat-square" alt="Project Page"></a>
-  <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206"><img src="https://img.shields.io/badge/HF%20Collection-CaT--Movie-yellow?style=flat-square&logo=huggingface" alt="Hugging Face Collection"></a>
-  <a href="https://huggingface.co/JinPLU/CaT-Movie"><img src="https://img.shields.io/badge/Weights-CaT--Movie%205B-orange?style=flat-square&logo=huggingface" alt="Weights"></a>
-  <a href="https://huggingface.co/JinPLU/CaT-Movie-Data"><img src="https://img.shields.io/badge/Dataset-CaT--Movie--Data-green?style=flat-square&logo=huggingface" alt="Dataset"></a>
-  <a href="https://huggingface.co/JinPLU/CaT-MBench"><img src="https://img.shields.io/badge/Benchmark-CaT--MBench-red?style=flat-square&logo=huggingface" alt="Benchmark"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=flat-square" alt="License"></a>
+  <a href="https://jinplu.github.io/CaT-Movie/"><img src="https://img.shields.io/badge/Project-Page-2563eb?style=flat-square" alt="Project Page"></a>
+  <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206"><img src="https://img.shields.io/badge/HF-Collection-FFD21E?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Hugging Face Collection"></a>
+  <a href="https://huggingface.co/JinPLU/CaT-Movie"><img src="https://img.shields.io/badge/Weights-5B-ea580c?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Weights"></a>
+  <a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data"><img src="https://img.shields.io/badge/Dataset-Data-16a34a?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench"><img src="https://img.shields.io/badge/Bench-CaT--MBench-dc2626?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Benchmark"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-6b7280?style=flat-square" alt="License"></a>
   <!-- paper-link -->
 </p>
 
@@ -81,16 +81,18 @@ One film pool and one unified storyboard schema back both training (**Film Story
 
 Evaluated with seed `42` across all methods (`Table 1`): baselines convert annotated **reference storyboards** into native prompt formats, whereas **CaT-Movie** renders its **Qwen3.8-27B** planner's storyboard generated solely from the `shots` request (best **bold**, second *italic*; baseline adapters in [`src/mspc/comparison_methods/`](src/mspc/comparison_methods/README.md)):
 
-| Regime | Method | Video Base | Cut F1 ↑ | Execution ↑ | Character ↑ | Object ↑ | Scene ↑ | Establish ↑ | Persist ↑ | Text Alignment ↑ | Avg. ↑ |
-|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| *Per-shot* | Wan2.1, per shot | Wan2.1-T2V-1.3B | *0.998* | *0.994* | 0.219 | 0.169 | 0.310 | 0.274 | 0.694 | 0.181 | 0.474 |
-| *Per-shot* | Wan2.2, per shot | Wan2.2-TI2V-5B | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | *0.701* | 0.174 | 0.497 |
-| *Per-shot* | StoryMem | Wan2.2-I2V-A14B | 0.928 | 0.719 | *0.631* | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
-| *Per-shot* | StoryDiffusion | Wan2.2-I2V-A14B | 0.905 | 0.825 | 0.300 | 0.265 | 0.245 | *0.597* | 0.535 | 0.171 | 0.468 |
-| *Per-shot* | IC-LoRA | Wan2.2-I2V-A14B | 0.976 | 0.961 | 0.168 | 0.133 | 0.406 | 0.452 | 0.663 | 0.176 | 0.484 |
-| *Joint* | MultiShotMaster | Wan2.1-T2V-1.3B | 0.994 | 0.990 | 0.538 | 0.254 | 0.582 | 0.371 | 0.587 | 0.178 | 0.527 |
-| *Joint* | HoloCine | Wan2.2-T2V-A14B | 0.748 | 0.967 | 0.517 | **0.512** | 0.586 | **0.694** | 0.691 | **0.195** | *0.571* |
-| *Joint* | **CaT-Movie (Ours)** | Wan2.2-TI2V-5B | 0.995 | 0.974 | **0.651** | *0.497* | *0.630* | 0.468 | **0.785** | *0.186* | **0.597** |
+| Method (Video Base & Regime) | Cut F1 ↑ | Exec. ↑ | Char. ↑ | Obj. ↑ | Scene ↑ | Est. ↑ | Persist ↑ | Align. ↑ | Avg. ↑ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Wan2.1, per shot *(1.3B, per-shot)* | *0.998* | *0.994* | 0.219 | 0.169 | 0.310 | 0.274 | 0.694 | 0.181 | 0.474 |
+| Wan2.2, per shot *(5B, per-shot)* | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | *0.701* | 0.174 | 0.497 |
+| StoryMem *(A14B-I2V, per-shot)* | 0.928 | 0.719 | *0.631* | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
+| StoryDiffusion *(A14B-I2V, per-shot)* | 0.905 | 0.825 | 0.300 | 0.265 | 0.245 | *0.597* | 0.535 | 0.171 | 0.468 |
+| IC-LoRA *(A14B-I2V, per-shot)* | 0.976 | 0.961 | 0.168 | 0.133 | 0.406 | 0.452 | 0.663 | 0.176 | 0.484 |
+| MultiShotMaster *(1.3B, joint)* | 0.994 | 0.990 | 0.538 | 0.254 | 0.582 | 0.371 | 0.587 | 0.178 | 0.527 |
+| HoloCine *(A14B-T2V, joint)* | 0.748 | 0.967 | 0.517 | **0.512** | 0.586 | **0.694** | 0.691 | **0.195** | *0.571* |
+| **CaT-Movie (Ours)** *(5B, joint)* | 0.995 | 0.974 | **0.651** | *0.497* | *0.630* | 0.468 | **0.785** | *0.186* | **0.597** |
+
+*(Bases: `Wan2.1-T2V-1.3B`, `Wan2.2-TI2V-5B`, `Wan2.2-I2V-A14B`, `Wan2.2-T2V-A14B`. Columns shorten `Execution`, `Character`, `Object`, `Scene`, `Establish`, `Text Alignment`.)*
 
 ---
 
