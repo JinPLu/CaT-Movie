@@ -1,4 +1,4 @@
-/* CaT-Movie project page — interactions. Data: window.CAT_DATA (data.js), paper tables below. */
+﻿/* CaT-Movie project page — interactions. Data: window.CAT_DATA (data.js), paper tables below. */
 (() => {
 'use strict';
 const D = window.CAT_DATA;
@@ -55,8 +55,23 @@ run('grain', function grain() {
   (function loop(t) { if (t - last > 83) { last = t; i = (i + 1) % frames.length; ctx.putImageData(frames[i], 0, 0); } requestAnimationFrame(loop); })(0);
 });
 
-/* ---------------- nav progress + active section ---------------- */
+/* ---------------- nav progress + active section + theme toggle ---------------- */
 run('nav', function nav() {
+  const root = document.documentElement;
+  const tBtn = $('#themeToggle'), tLab = $('#themeLabel'), tIcon = $('#themeIcon');
+  const sunSvg = '<circle cx="8" cy="8" r="3.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/>';
+  const moonSvg = '<path d="M13.2 10.2A5.5 5.5 0 0 1 5.8 2.8a5.5 5.5 0 1 0 7.4 7.4z"/>';
+  function applyTheme(th) {
+    root.dataset.theme = th;
+    if (tLab) tLab.textContent = th === 'light' ? 'Dark' : 'Light';
+    if (tIcon) tIcon.innerHTML = th === 'light' ? moonSvg : sunSvg;
+    try { localStorage.setItem('cat-theme', th); } catch (e) {}
+  }
+  let saved = 'light';
+  try { saved = localStorage.getItem('cat-theme') || 'light'; } catch (e) {}
+  applyTheme(saved);
+  if (tBtn) tBtn.addEventListener('click', () => applyTheme(root.dataset.theme === 'light' ? 'dark' : 'light'));
+
   const bar = $('#navProgress span'); const prog = $('#navProgress');
   const secs = $$('main > section'); const links = $$('.nav-links a');
   function ticks() {
@@ -364,7 +379,7 @@ run('method', function method() {
   /* 2 · storyboard */
   const reg = $('#registry'); const tbl = $('#sbTable');
   const ents = [...plan.characters.map(c => ({ n: c.name, t: 'c', d: `${c.appearance}${c.outfit ? '; ' + c.outfit : ''}` })), ...plan.objects.map(o => ({ n: o.name, t: 'o', d: o.appearance })), ...plan.places.map(p => ({ n: p.name, t: 'p', d: p.appearance }))];
-  ents.forEach(e => { const d = h('div', `ent ${e.t}`, `${esc(e.n)}<small>${esc(e.d.length > 90 ? e.d.slice(0, 88) + '…' : e.d)}</small>`); d.dataset.n = e.n; d.title = e.d; reg.appendChild(d); });
+  ents.forEach(e => { const d = h('div', `ent ${e.t}`, `<b>${esc(short(e.n))}</b><small>${esc(e.d.length > 26 ? e.d.slice(0, 25) + '\u2026' : e.d)}</small>`); d.dataset.n = e.n; d.title = `${e.n}: ${e.d}`; reg.appendChild(d); });
   tbl.innerHTML = `<colgroup><col class="c1"><col class="c2"><col class="c3"><col></colgroup><thead><tr><th>Shot</th><th>Camera</th><th>Present</th><th>Action and changes</th></tr></thead><tbody>${plan.shots.map(sh => {
     const pres = sh.present.map(p => `<span class="tag${/^Character/.test(p.name) ? ' c' : ''}" data-n="${esc(p.name)}">${esc(short(p.name))}${p.posture ? ' · ' + esc(p.posture) : ''}</span>`).join('');
     const chg = sh.changes.map(c => `<span class="tag chg">${esc(short(c.name))} ${esc(c.what)} → ${esc(Array.isArray(c.after) ? (c.after.join(', ') || 'empty-handed') : c.after)}</span>`).join('');
@@ -523,9 +538,11 @@ run('method', function method() {
     if (n === 4) drawRecall();
     if (n === 5) { setLoop(); mv.play().catch(() => {}); } else mv.pause();
   }
-  const narrow = matchMedia('(max-width: 920px)').matches;
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setStep(+e.target.dataset.step); }), { rootMargin: narrow ? '-74% 0px -22% 0px' : '-48% 0px -48% 0px' });
-  steps.forEach(st => io.observe(st));
+  steps.forEach(st => {
+    st.addEventListener('click', () => setStep(+st.dataset.step));
+    st.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setStep(+st.dataset.step); });
+    st.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setStep(+st.dataset.step); } });
+  });
   watch($('#scrolly'), vis => { if (!vis) mv.pause(); else if (active === 5) mv.play().catch(() => {}); }, 0.05);
 });
 
@@ -719,21 +736,21 @@ run('returnChart', function returnChart() {
   const RT = { 'CaT-Movie': { rate: [0.6331, 0.6111, 0.6344], lo: [0.5710, 0.5257, 0.5592], hi: [0.7044, 0.7178, 0.7129] }, HoloCine: { rate: [0.6115, 0.4091, 0.4355], lo: [0.5369, 0.3209, 0.3402], hi: [0.6906, 0.5023, 0.5517] }, MultiShotMaster: { rate: [0.5791, 0.4444, 0.4892], lo: [0.5143, 0.3432, 0.3423], hi: [0.6558, 0.5489, 0.6172] }, StoryMem: { rate: [0.5827, 0.5960, 0.7312], lo: [0.5075, 0.5060, 0.6646], hi: [0.6771, 0.6835, 0.7873] } };
   const N = [278, 198, 186]; const bins = ['<10 s', '10–20 s', '≥20 s']; const names = Object.keys(RT);
   barChart($('#returnChart'), {
-    label: 'Character checks passed by return time for four methods', groups: names.map(n => ({ name: n, color: n === 'CaT-Movie' ? '#8aa8ff' : null })), series: bins, yMin: 0.3, yMax: 0.8, ticks: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+    label: 'Character checks passed by return time for four methods', groups: names.map(n => ({ name: n, color: n === 'CaT-Movie' ? 'var(--ours)' : null })), series: bins, yMin: 0.3, yMax: 0.8, ticks: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
     value: (g, s) => ({ v: RT[names[g]].rate[s], lo: RT[names[g]].lo[s], hi: RT[names[g]].hi[s] }),
-    fill: (g, s) => names[g] === 'CaT-Movie' ? `rgba(138,168,255,${[.95, .6, .32][s]})` : `rgba(236,232,224,${[.9, .55, .28][s]})`,
-    tip: (g, s, d) => `<b>${names[g]}</b> · return ${bins[s]}<table><tr><td>pass rate</td><td>${(d.v * 100).toFixed(1)}%</td></tr><tr><td>95% interval</td><td>${(d.lo * 100).toFixed(1)}–${(d.hi * 100).toFixed(1)}%</td></tr><tr><td>checks</td><td>${N[s]}</td></tr></table>`,
+    fill: (g, s) => names[g] === 'CaT-Movie' ? `rgba(61,105,235,${[.94, .64, .38][s]})` : `rgba(116,124,140,${[.86, .56, .32][s]})`,
+    tip: (g, s, d) => `<b>${names[g]}</b> \u00b7 return ${bins[s]}<table><tr><td>pass rate</td><td>${(d.v * 100).toFixed(1)}%</td></tr><tr><td>95% interval</td><td>${(d.lo * 100).toFixed(1)}\u2013${(d.hi * 100).toFixed(1)}%</td></tr><tr><td>checks</td><td>${N[s]}</td></tr></table>`,
   });
 });
 run('dataCharts', function dataCharts() {
   function stack(host, parts, colors) {
-    const st = h('div', 'stack'); parts.forEach(([n, v], i) => { const d = h('div', '', v >= 12 ? `${v.toFixed(1)}%` : ''); d.style.flex = `${v} 1 0`; d.style.background = colors[i]; d.title = `${n}: ${v.toFixed(1)}%`; d.addEventListener('pointermove', e => showTip(`<b>${n}</b> · ${v.toFixed(1)}%`, e)); d.addEventListener('pointerleave', hideTip); st.appendChild(d); });
+    const st = h('div', 'stack'); parts.forEach(([n, v], i) => { const d = h('div', '', v >= 12 ? `${v.toFixed(1)}%` : ''); d.style.flex = `${v} 1 0`; d.style.background = colors[i]; d.title = `${n}: ${v.toFixed(1)}%`; d.addEventListener('pointermove', e => showTip(`<b>${n}</b> \u00b7 ${v.toFixed(1)}%`, e)); d.addEventListener('pointerleave', hideTip); st.appendChild(d); });
     const key = h('div', 'stack-key', parts.map(([n, v], i) => `<span><i style="background:${colors[i]}"></i>${n} ${v.toFixed(1)}%</span>`).join(''));
     host.append(st, key);
     once(host, () => { if (RM) return; const kids = Array.from(st.children); kids.forEach(k => { k.dataset.f = k.style.flex; k.style.flexGrow = 0.0001; }); requestAnimationFrame(() => requestAnimationFrame(() => kids.forEach((k, i) => { k.style.transitionDelay = i * 120 + 'ms'; k.style.flex = k.dataset.f; }))); }, 0.4);
   }
-  stack($('#srcStack'), [['CinePile', 65.74], ['CineDance', 24.69], ['MovieChat', 9.57]], ['#8aa8ff', '#d8b26e', '#7cc4a4']);
-  stack($('#typeStack'), [['Live action', 84.92], ['3D / game', 9.35], ['2D', 5.73]], ['#ece8e0', '#a3a9b5', '#666d7c']);
+  stack($('#srcStack'), [['CinePile', 65.74], ['CineDance', 24.69], ['MovieChat', 9.57]], ['#5a82f7', '#d8b26e', '#7cc4a4']);
+  stack($('#typeStack'), [['Live action', 84.92], ['3D / game', 9.35], ['2D', 5.73]], ['#b8c0cf', '#8d95a5', '#666d7c']);
   const ENT = { People: [8.21, 18.82, 33.10, 39.87], Objects: [5.98, 16.44, 17.26, 60.31], Places: [0.27, 81.90, 15.13, 2.70] };
   const host = $('#entStack'); const colors = ['#525867', '#7f8695', '#a3a9b5', '#8aa8ff'];
   Object.entries(ENT).forEach(([k, arr]) => { const lab = h('div', 'small', `<b style="color:var(--paper);font-weight:500">${k}</b>`); const st = h('div', 'stack'); arr.forEach((v, i) => { const d = h('div', '', v >= 9 ? `${v.toFixed(0)}%` : ''); d.style.flex = `${v} 1 0`; d.style.background = colors[i]; if (i === 3) d.style.color = '#081022'; d.addEventListener('pointermove', e => showTip(`<b>${k}</b> · ${['0', '1', '2', '3+'][i]} per block · ${v.toFixed(1)}%`, e)); d.addEventListener('pointerleave', hideTip); st.appendChild(d); }); host.append(lab, st); });

@@ -1,9 +1,9 @@
-/* CaT-Movie project page — native, animated versions of every paper figure. Needs app.js (window.CAT). */
+﻿/* CaT-Movie project page — native, animated versions of every paper figure. Needs app.js (window.CAT). */
 (() => {
 'use strict';
 const { $, $$, sv, h, esc, once, watch, showTip, hideTip, story, frame, camLabel, short, RM, T1, POINT_COLOR, barChart, pad, run } = window.CAT;
 const STORY = 'film-003995-b0001-shot06';
-const C = { ours: '#8aa8ff', oursDeep: '#3d5bb8', cut: '#d690bb', holo: '#d8b26e', msm: '#7cc4a4', mem: '#e3907f', paper: '#ece8e0', text: '#c8ccd5', mute: '#868d9d', line: '#242a37', line2: '#323a4b', ink: '#07080c', ink2: '#0e1118', ink3: '#161a24', flame: '#ef9a5a', ice: '#9fd3ff' };
+const C = { ours: 'var(--ours)', oursDeep: 'var(--ours-deep)', cut: 'var(--cut)', holo: 'var(--holo)', msm: 'var(--msm)', mem: 'var(--mem)', paper: 'var(--paper)', text: 'var(--text)', mute: 'var(--mute)', line: 'var(--line)', line2: 'var(--line-2)', ink: 'var(--ink)', ink2: 'var(--ink-2)', ink3: 'var(--ink-3)', flame: '#e07b39', ice: 'var(--ours)' };
 const T = (g, x, y, str, style = '', anchor = 'start') => { const t = sv('text', { x, y, 'text-anchor': anchor, style }, g); t.textContent = str; return t; };
 const MONO = (size = 10, fill = C.mute, w = 500) => `font:${w} ${size}px var(--mono);fill:${fill};letter-spacing:.06em`;
 const BODY = (size = 12, fill = C.text, w = 400) => `font:${w} ${size}px var(--body);fill:${fill}`;
@@ -74,16 +74,16 @@ run('overview', function overview() {
   arrowDefs(svg);
   const st = (el, l) => { el.setAttribute('data-st', l); return el; };
   const badge = (g, x, y, n) => { const b = sv('g', { class: 'ov-badge' }, g); sv('circle', { cx: x, cy: y, r: 11, fill: C.ours, stroke: C.ink2, 'stroke-width': 3 }, b); T(b, x, y + 4, n, 'font:700 11.5px var(--mono);fill:#081022', 'middle'); return b; };
-  const arrow = (g, d, col = C.mute, flow = true) => sv('path', { d, fill: 'none', stroke: col, 'stroke-width': 1.4, 'marker-end': `url(#${col === C.ours ? 'arrB' : 'arr'})`, class: flow ? 'flow' : '' }, g);
+  const arrow = (g, d, col = C.mute, flow = true) => sv('path', { d, fill: 'none', stroke: col, 'stroke-width': 1.4, 'marker-end': `url(#${col === C.ours ? 'arrB' : 'arr'})`, class: flow ? 'flow-line' : '' }, g);
   const srcShots = [...new Set(W4.refs.map(r => r.shot))];
   const STAGES = [
-    ['Request', 'A story request at any granularity (synopsis, paragraph, or shot list) enters the planner. Frozen Qwen3.8-27B expands it into a structured storyboard S in one constrained-decoding pass, preserving stated facts, inferring consequences, and completing open details.'],
-    ['Storyboard', 'The storyboard S registers each recurring character, object, and location once with a fixed identifier and appearance description, then plans every shot k: location, camera setup, present entities ℰₖ with opening states, action, and within-shot transitions.'],
-    ['Compile', 'Deterministic code propagates recorded attire changes and unstated held items across shots, compiling a self-contained prompt cₖ for every shot and a reference identity line cʳᵉᶠ naming the cast and setting of each recalled frame.'],
-    ['Recall', `For the current window (shots ${A} and ${B}), code queries S for anchor views in the generated history (shots ${list(srcShots)}), prioritizing post-change views, fewer co-occurring characters, character-legible shot sizes, and earliest appearances.`],
-    ['Encode', 'Each shot is VAE-encoded separately so no latent frame spans a cut. Recalled frames enter as clean latents at RoPE temporal indices pₖ − 5, pₖ − 10, … immediately before reading shot k’s first latent frame pₖ.'],
-    ['Denoise', 'In every transformer block, shot k attends to its own tokens Zₖ, the first latent frames Zⱼᶠ of co-generated shots, and its entity-routed references Rₖ, while cross-attending exclusively to its own prompt cₖ.'],
-    ['Decode', `The VAE decoder outputs shots ${A} and ${B}, which join the generated video history so subsequent windows can recall their middle or post-change final frames.`],
+    ['Request', 'A story request (synopsis, paragraph, or shot list) is expanded by frozen Qwen3.8-27B into a structured storyboard in a single pass.'],
+    ['Storyboard', 'The storyboard registers each recurring character, object, and place once, then plans every shot with camera setup, present entities, action, and state changes.'],
+    ['Compile', 'Deterministic code propagates attire changes and held items across shots, compiling a self-contained prompt per shot and an identity line per recalled frame.'],
+    ['Recall', `For the current window (shots ${A} and ${B}), code queries the storyboard for anchor views in earlier generated windows (shots ${list(srcShots)}).`],
+    ['Encode', 'Each shot is VAE-encoded separately so no latent frame straddles a cut, and recalled frames are placed at negative RoPE temporal offsets.'],
+    ['Denoise', 'Each shot attends to its own tokens, co-generated first frames, and entity-routed references, while cross-attending only to its own shot prompt.'],
+    ['Decode', `The VAE decoder outputs shots ${A} and ${B}, appending them to the generated history for subsequent windows.`],
   ];
   sv('rect', { x: 16, y: 16, width: 328, height: 690, rx: 16, fill: 'rgba(214,144,187,.045)', stroke: 'rgba(214,144,187,.22)' }, svg);
   sv('rect', { x: 362, y: 172, width: 826, height: 534, rx: 16, fill: 'rgba(138,168,255,.04)', stroke: 'rgba(138,168,255,.2)' }, svg);
@@ -154,7 +154,7 @@ run('overview', function overview() {
     T(svg, x + 4, ty + 12, k, 'font:600 9.5px var(--mono);fill:#fff;paint-order:stroke;stroke:#000;stroke-width:2.5px');
   }
   const gR = st(sv('g', {}, svg), '4');
-  W4.routing.forEach((reads, j) => { const target = W4.shots[j]; reads.forEach((ri, n) => { const sx = tx(W4.refs[ri].shot) + tw / 2, ex = tx(target) + tw / 2 + (n - (reads.length - 1) / 2) * 9; sv('path', { d: `M${sx} ${ty + th} C${sx} ${ty + th + 46}, ${ex} ${ty + th + 46}, ${ex} ${ty + th + 3}`, fill: 'none', stroke: C.ours, 'stroke-width': 1.5, 'marker-end': 'url(#arrB)', class: 'flow' }, gR); }); });
+  W4.routing.forEach((reads, j) => { const target = W4.shots[j]; reads.forEach((ri, n) => { const sx = tx(W4.refs[ri].shot) + tw / 2, ex = tx(target) + tw / 2 + (n - (reads.length - 1) / 2) * 9; sv('path', { d: `M${sx} ${ty + th} C${sx} ${ty + th + 46}, ${ex} ${ty + th + 46}, ${ex} ${ty + th + 3}`, fill: 'none', stroke: C.ours, 'stroke-width': 1.5, 'marker-end': 'url(#arrB)', class: 'flow-line' }, gR); }); });
   T(gR, 378, 160, W4.shots.map((k, j) => `shot ${k} ← ${W4.routing[j].map(i => W4.refs[i].shot).join(', ')}`).join('   ·   ') + '   ·   routed by shared entities', MONO(9.5, C.ours));
   /* ---- renderer: recall + encode ---- */
   const gF = st(sv('g', {}, svg), '4,5');
@@ -331,7 +331,7 @@ run('planner', function planner() {
     tiers.forEach((t, ti) => {
       const [r, tot] = D[key][t]; const x = gx + ti * 82, bw = 58;
       const g = sv('g', { style: 'cursor:pointer' }, svg);
-      const r1 = sv('rect', { x, y: Y(r), width: bw, height: Y(0) - Y(r), fill: 'rgba(236,232,224,.32)', rx: 2 }, g);
+      const r1 = sv('rect', { x, y: Y(r), width: bw, height: Y(0) - Y(r), fill: 'rgba(116,124,140,.42)', rx: 2 }, g);
       const r2 = sv('rect', { x, y: Y(tot), width: bw, height: Y(r) - Y(tot), fill: C.ours, rx: 2 }, g);
       const lab = T(g, x + bw / 2, Y(tot) - 7, `${Math.round(tot * 100)}%`, MONO(11, C.paper, 600), 'middle');
       T(svg, x + bw / 2, H - m.b + 16, t, MONO(10.5), 'middle');
@@ -446,7 +446,7 @@ run('sunburst', function sunburst() {
   facetsAll.forEach(f => {
     const mid = (f.d0 + f.d1) / 2, [x, y] = P((R.i0 + R.i1) / 2, mid); let rot = mid; if (mid > 90 && mid < 270) rot = mid - 180;
     const words = f.name === 'State change type' ? ['State change', 'type'] : f.name.split(' ').length > 1 && f.name.length > 10 ? [f.name.split(' ').slice(0, -1).join(' '), f.name.split(' ').slice(-1)[0]] : [f.name];
-    const t = sv('text', { x, y: y - (words.length - 1) * 7 + 5, 'text-anchor': 'middle', transform: `rotate(${rot} ${x} ${y})`, style: 'font:700 13px var(--body);fill:#fff;pointer-events:none' }, gW);
+    const t = sv('text', { x, y: y - (words.length - 1) * 7 + 5, 'text-anchor': 'middle', transform: `rotate(${rot} ${x} ${y})`, style: 'font:700 13px var(--body);fill:#fff;paint-order:stroke;stroke:rgba(17,21,32,.48);stroke-width:2.5px;pointer-events:none' }, gW);
     words.forEach((w, i) => { const sp = sv('tspan', { x, dy: i ? 15 : 0 }, t); sp.textContent = w; });
   });
   /* quadrant boundaries */
