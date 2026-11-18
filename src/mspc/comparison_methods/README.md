@@ -32,7 +32,7 @@ SDXL `462165984030d82259a11f4367a4eed129e94a7b`, FLUX.1-dev `3de623fc3c33e44ffbe
   outfit; no source footage is used.
 - Sampling: Wan, MultiShotMaster and HoloCine 50 steps, CFG 5, shift 5; StoryMem 40 UniPC steps, CFG 3.5, shift 12
   for T2V and 4 for M2V; the shared I2V stage 40 steps, CFG 3.5, shift 5.
-- Videos are 832×480 at 16 fps; HoloCine keeps its official 15 fps (`sampling.output_fps`).
+- Videos are 832×480 at 16 fps, HoloCine included (`sampling.output_fps`; its official default is 15 fps), matching the paper's HoloCine videos.
 - StoryMem's memory is the story's own generated history: the official `extract_keyframes.py` keeps frames that pass
   the HPSv3 quality gate (threshold 3.0) and a CLIP diversity check. When no frame passes, the memory stays empty, as
   in the official pipeline; no fallback is added.

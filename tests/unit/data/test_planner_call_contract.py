@@ -224,8 +224,8 @@ def test_missing_generated_history_rejected_before_any_dispatch(tmp_path,monkeyp
     assert not calls and not (tmp_path/'out').exists()
 
 
-@pytest.mark.parametrize("service_name,text_only", [("vllm_planner_qwen35_9b.yaml", True), ("vllm_planner_qwen38_27b.yaml", False)])
-def test_service_snapshot_uses_service_interpreter_and_preserves_raw_template(tmp_path, monkeypatch, service_name, text_only):
+@pytest.mark.parametrize("service_name,max_len", [("vllm_planner_qwen35_9b.yaml", "131072"), ("vllm_planner_qwen38_27b.yaml", "49152")])
+def test_service_snapshot_uses_service_interpreter_and_preserves_raw_template(tmp_path, monkeypatch, service_name, max_len):
     import yaml
     from mspc.inference.planner_serving import save_service_provenance, service_command
     c=yaml.safe_load((ROOT/'configs/serving'/service_name).read_text())
@@ -246,12 +246,9 @@ def test_service_snapshot_uses_service_interpreter_and_preserves_raw_template(tm
     assert calls[0][0]==str(binary.parent/'python')
     assert result['status']=='prelaunch_metadata_only'
     assert result['command']==service_command(c)
-    assert result['command'][result['command'].index('--max-model-len')+1]=='131072'
+    assert result['command'][result['command'].index('--max-model-len')+1]==max_len
     assert result['command'][result['command'].index('--chat-template-content-format')+1]=='openai'
-    if text_only:
-        assert '--language-model-only' in result['command'] and '--enforce-eager' not in result['command']
-    else:
-        assert result['command'][result['command'].index('--mm-processor-cache-gb')+1]=='0'
+    assert '--language-model-only' in result['command'] and '--enforce-eager' not in result['command']
     template=next(r for r in result['model_files'] if r['file']=='chat_template.jinja')
     assert template['download_revision']=='fixture-revision'
     absent=next(r for r in result['model_files'] if r['file']=='processor_config.json')
