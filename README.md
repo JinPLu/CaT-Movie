@@ -2,7 +2,7 @@
 
 **Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation**
 
-[Project page](https://jinplu.github.io/CaT-Movie-page/) ·
+[Project page](https://jinplu.github.io/CaT-Movie/) ·
 [Renderer weights](https://huggingface.co/JinPLU/CaT-Movie) ·
 [Training data](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) ·
 [CaT-MBench](https://huggingface.co/datasets/JinPLU/CaT-MBench) ·
@@ -148,6 +148,6 @@ Jinpeng Lu and Haoyuan Shi contributed equally.
   title         = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
   author        = {Jinpeng Lu and Haoyuan Shi and Yuanshen Guan and Jiyuan Xia and Bin Wu and Yinda Chen and Zhiwei Xiong},
   year          = {2026},
-  url           = {https://jinplu.github.io/CaT-Movie-page/}
+  url           = {https://jinplu.github.io/CaT-Movie/}
 }
 ```
