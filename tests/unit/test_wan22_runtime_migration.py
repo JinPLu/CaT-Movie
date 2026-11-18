@@ -102,21 +102,24 @@ def _install_fake_diffsynth_runtime(
     (package_root / "wan_video.py").write_text("", encoding="utf-8")
     (package_root / "diffusion.py").write_text("", encoding="utf-8")
     class ModelConfig:
-        def __init__(self, *, path: object, skip_download: bool, computation_dtype=None) -> None:
+        def __init__(self, *, path: object, skip_download: bool, computation_dtype=None,
+                     computation_device=None) -> None:
             self.path = path
             self.skip_download = skip_download
             self.computation_dtype = computation_dtype
+            self.computation_device = computation_device
 
     class WanVideoPipeline:
         @classmethod
         def from_pretrained(cls, **kwargs: object) -> object:
             calls.append(kwargs)
             config_paths = [config.path for config in kwargs["model_configs"]]  # type: ignore[index]
-            has_dit = any(isinstance(path, list) for path in config_paths)
+            dit_count = sum(isinstance(path, list) for path in config_paths)
             has_t5 = any(isinstance(path, str) and path.endswith("t5.safetensors") for path in config_paths)
             has_vae = any(isinstance(path, str) and path.endswith("vae.safetensors") for path in config_paths)
             return SimpleNamespace(
-                dit=_FakeDit() if has_dit else None,
+                dit=_FakeDit() if dit_count else None,
+                dit2=_FakeDit() if dit_count == 2 else None,
                 text_encoder=torch.nn.Linear(1, 1) if has_t5 else None,
                 vae=torch.nn.Linear(1, 1) if has_vae else None,
                 tokenizer=(
@@ -508,6 +511,51 @@ def test_cached_training_loader_never_opens_text_or_vae_paths(tmp_path, monkeypa
     assert pipe.dit is not None
     assert len(calls[0]["model_configs"]) == 1
     assert calls[0]["tokenizer_config"] is None
+
+
+def test_dual_expert_loader_converts_original_parameters_before_device_transfer(tmp_path, monkeypatch):
+    calls = []
+    transfers = []
+    _install_fake_diffsynth_runtime(monkeypatch, tmp_path, calls)
+    paths = _model_paths(tmp_path)
+    low_noise_shard = tmp_path / "low-noise.safetensors"
+    low_noise_shard.write_bytes(b"weights")
+    fake_wan_video = wan22_runtime.importlib.import_module("diffsynth.pipelines.wan_video")
+    original = fake_wan_video.WanVideoPipeline.from_pretrained
+
+    def load_original_fp32(**kwargs):
+        pipe = original(**kwargs)
+        with torch.no_grad():
+            for dit in (pipe.dit, pipe.dit2):
+                dit.patch_embedding.weight.fill_(1.003)
+                dit.head.head.weight.fill_(1.003)
+        return pipe
+
+    def transfer(dit, *args, **kwargs):
+        assert not args and kwargs == {"device": torch.device("cuda:0")}
+        assert dit.patch_embedding.weight.device.type == "cpu"
+        assert dit.patch_embedding.weight.dtype == torch.bfloat16
+        assert torch.equal(dit.patch_embedding.weight,
+                           torch.full_like(dit.patch_embedding.weight, 1.003))
+        assert dit.head.head.weight.dtype == torch.float32
+        assert torch.equal(dit.head.head.weight, torch.full_like(dit.head.head.weight, 1.003))
+        transfers.append(dit)
+        return dit
+
+    monkeypatch.setattr(fake_wan_video.WanVideoPipeline, "from_pretrained", load_original_fp32)
+    monkeypatch.setattr(_FakeDit, "to", transfer)
+    pipe, _ = wan22_runtime.load_pure_t2v_pipeline(
+        diffsynth_root=str(tmp_path / "runtime"), model_paths=paths,
+        self_attention_policy="holocine_first_frame", torch_dtype=torch.bfloat16,
+        device=torch.device("cuda:0"), low_noise_dit=[str(low_noise_shard)],
+    )
+    expert_configs = [config for config in calls[0]["model_configs"] if isinstance(config.path, list)]
+    assert len(expert_configs) == 2
+    assert all(config.computation_device == "cpu" for config in expert_configs)
+    assert all(config.computation_dtype == torch.float32 for config in expert_configs)
+    assert transfers == [pipe.dit, pipe.dit2]
+    assert pipe.in_iteration_models == ("dit",)
+    assert pipe.in_iteration_models_2 == ("dit2",)
 
 
 @pytest.mark.parametrize("extra_component", ["text_encoder", "tokenizer", "vae"])

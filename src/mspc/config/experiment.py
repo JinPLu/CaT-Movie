@@ -532,7 +532,9 @@ def _parse_wan22_diffsynth_inference(
         "negative_prompt": _string,
         "num_inference_steps": lambda v, p: _integer(v, p, minimum=1),
         "sigma_shift": _number,
-        "cfg_scale": _number,
+        "cfg_scale": lambda v, p: _fields(v, location=p, validators={
+            "high_noise": _number, "low_noise": _number,
+        }) if isinstance(v, Mapping) else _number(v, p),
         "video_quality": lambda v, p: _integer(v, p, minimum=1),
         "sampler": lambda v, p: _one_of(v, p, {"flow_match_euler", "flow_unipc_official"}),
         "test_csv_path": lambda v, p: _nullable_path(v, p, base_dir),
@@ -574,6 +576,8 @@ def _parse_wan22_diffsynth_inference(
     )
     if (parsed["weight_source"] == "expert_lora_checkpoints") != (parsed["experts"] is not None):
         raise ExperimentConfigError("inference.experts goes with weight_source='expert_lora_checkpoints' and only with it")
+    if isinstance(parsed["cfg_scale"], Mapping) and parsed["experts"] is None:
+        raise ExperimentConfigError("per-expert inference.cfg_scale requires inference.experts")
     if parsed["experts"] is not None:
         experts = parsed["experts"]
         if (not 0 < experts["boundary"] < 1 or experts["lora"]["recipe"] != WAN22_DIT_PARAMETER_FREEZE_LORA_V1

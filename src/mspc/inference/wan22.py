@@ -33,6 +33,7 @@ from mspc.models.wan22_loader import (
 from mspc.models.memory_prefix_options import MemoryAttentionWindow, MemoryPrefixModelOptions
 from mspc.models.reference_noise import noise_reference_latents, reference_model_timestep
 from mspc.models.source_identity import SourceIdentityOptions
+from mspc.models.noise_expert import denoising_guidance_scale
 from mspc.training.dit_parameter_freeze import load_dit_state_dict
 
 
@@ -89,9 +90,10 @@ class _CleanPrefixDenoiseState:
         *,
         pipe: Any,
         original_model_fn: Callable[..., Any],
-        cfg_scale: float,
+        cfg_scale: float | Mapping[str, float],
         clean_latents: torch.Tensor | None,
         forward_kwargs: Mapping[str, Any],
+        expert_boundary: float | None = None,
     ) -> None:
         self.pipe = pipe
         self.original_model_fn = original_model_fn
@@ -104,9 +106,9 @@ class _CleanPrefixDenoiseState:
                 f"but {self.clean_frame_count} clean latent frame(s) are pinned"
             )
         self.forward_kwargs: dict[str, Any] = dict(forward_kwargs)
-        # 依据：cfg_scale==1.0 每步一次 model_fn，否则先 posi
-        # 再 nega 两次（见 WanVideoPipeline.__call__ 的去噪循环）。
-        self._calls_per_step = 1 if cfg_scale == 1.0 else 2
+        # 按每步实际专家 CFG 核调用次数；某专家 CFG=1 时该段只有正分支。
+        self._cfg_scale = cfg_scale
+        self._expert_boundary = expert_boundary
         self._call_count = 0
         self._step_count = 0
         #: 最后一次 ``scheduler.step`` 的返回值（σ=0 的干净潜变量）。
@@ -209,13 +211,14 @@ class _CleanPrefixDenoiseState:
     def assert_finished(self) -> None:
         """跑完之后核调用次数：每个 scheduler 步的每一支都必须经过本对象。"""
 
-        expected_calls = len(self.pipe.scheduler.timesteps) * self._calls_per_step
+        expected_calls = sum(1 if denoising_guidance_scale(
+            self._cfg_scale, float(timestep), self._expert_boundary) == 1.0 else 2
+            for timestep in self.pipe.scheduler.timesteps)
         if self._call_count != expected_calls:
             raise RuntimeError(
                 "clean-prefix denoise loop ended with a mismatched model_fn call "
-                f"count: expected {expected_calls} "
-                f"({len(self.pipe.scheduler.timesteps)} scheduler steps x "
-                f"{self._calls_per_step} call(s)/step), got {self._call_count}"
+                f"count: expected {expected_calls} across "
+                f"{len(self.pipe.scheduler.timesteps)} scheduler steps, got {self._call_count}"
             )
         expected_steps = len(self.pipe.scheduler.timesteps)
         if self._step_count != expected_steps:
@@ -240,7 +243,7 @@ class _MemoryPrefixDenoiseState(_CleanPrefixDenoiseState):
         *,
         pipe: Any,
         original_model_fn: Callable[..., Any],
-        cfg_scale: float,
+        cfg_scale: float | Mapping[str, float],
         memory_latents: torch.Tensor | None,
         reference_timestep: float,
         reference_offset: tuple[int, int, int],
@@ -248,6 +251,7 @@ class _MemoryPrefixDenoiseState(_CleanPrefixDenoiseState):
         attention_window: MemoryAttentionWindow,
         planner_tokens: Any = None,
         reference_routing: tuple[tuple[int, ...], ...] | None = None,
+        expert_boundary: float | None = None,
     ) -> None:
         frames = 0 if memory_latents is None else int(memory_latents.shape[2])
         self.reference_timestep = reference_timestep
@@ -273,6 +277,7 @@ class _MemoryPrefixDenoiseState(_CleanPrefixDenoiseState):
             pipe=pipe,
             original_model_fn=original_model_fn,
             cfg_scale=cfg_scale,
+            expert_boundary=expert_boundary,
             clean_latents=memory_latents,
             forward_kwargs=forward_kwargs,
         )
@@ -329,12 +334,13 @@ def build_memory_prefix_controller(
     pipe: Any,
     device: torch.device,
     dtype: torch.dtype,
-    cfg_scale: float,
+    cfg_scale: float | Mapping[str, float],
     memory_prefix_options: MemoryPrefixModelOptions | None,
     memory_latents: torch.Tensor | None,
     seed: int,
     planner_tokens: Any = None,
     reference_routing: tuple[tuple[int, ...], ...] | None = None,
+    expert_boundary: float | None = None,
 ) -> _MemoryPrefixDenoiseState | None:
     """这一条 case 走不走记忆前缀口，以及走的话前缀是哪 M 帧。
 
@@ -385,6 +391,7 @@ def build_memory_prefix_controller(
         pipe=pipe,
         original_model_fn=pipe.model_fn,
         cfg_scale=cfg_scale,
+        expert_boundary=expert_boundary,
         memory_latents=clean_memory,
         reference_timestep=reference_model_timestep(reference_sigma),
         reference_offset=memory_prefix_options.reference_offset.inference,
@@ -441,9 +448,10 @@ def build_first_frame_controller(
     pipe: Any,
     device: torch.device,
     dtype: torch.dtype,
-    cfg_scale: float,
+    cfg_scale: float | Mapping[str, float],
     first_frame: torch.Tensor,
     pin_until_sigma: float,
+    expert_boundary: float | None = None,
 ) -> _CleanPrefixDenoiseState | None:
     """原生首帧口，入参是潜变量：本镜第 0 潜帧钉成 ``first_frame``、时间步 0，其余帧照常去噪。
 
@@ -474,6 +482,7 @@ def build_first_frame_controller(
         pipe=pipe,
         original_model_fn=pipe.model_fn,
         cfg_scale=cfg_scale,
+        expert_boundary=expert_boundary,
         clean_latents=first_frame.to(device=device, dtype=dtype),
         forward_kwargs={"fuse_vae_embedding_in_latents": True, "prefix_frames": 1},
     )
@@ -792,7 +801,9 @@ class Wan22InferenceRuntime:
             pipe=self.pipe,
             device=self.device,
             dtype=self.dtype,
-            cfg_scale=float(self.inference_cfg["cfg_scale"]),
+            cfg_scale=self.inference_cfg["cfg_scale"],
+            expert_boundary=(None if getattr(self, "experts", None) is None
+                             else float(self.experts["boundary"])),
             memory_prefix_options=self.memory_prefix_options,
             memory_latents=None if memory is None else memory.latents,
             seed=seed,
@@ -879,7 +890,9 @@ class Wan22InferenceRuntime:
                 pipe=self.pipe,
                 device=self.device,
                 dtype=self.dtype,
-                cfg_scale=float(self.inference_cfg["cfg_scale"]),
+                cfg_scale=self.inference_cfg["cfg_scale"],
+                expert_boundary=(None if getattr(self, "experts", None) is None
+                                 else float(self.experts["boundary"])),
                 first_frame=first_frame,
                 pin_until_sigma=first_frame_pin_until_sigma,
             )
@@ -944,6 +957,8 @@ class Wan22InferenceRuntime:
             quality=self.inference_cfg["video_quality"],
         )
         readout: dict[str, Any] = {}
+        if experts is not None:
+            readout["denoising_steps"] = list(self.pipe.denoising_steps)
         if long_shot:
             readout["long_shot_rope"] = {"index": rope.index, "latent_frames": frames, "margin": rope.margin}
         if first_frame_controller is not None:

@@ -14,6 +14,21 @@ import torch
 NOISE_LEVELS = ("high", "low")
 
 
+def denoising_expert(timestep: float, boundary: float) -> str:
+    """原生 Wan 的边界属于高噪专家；路由与逐专家 CFG 共用这一判据。"""
+    return "high_noise" if timestep >= boundary * 1000 else "low_noise"
+
+
+def denoising_guidance_scale(cfg_scale: float | Mapping[str, float], timestep: float,
+                             boundary: float | None) -> float:
+    """标量 CFG 用于整条轨迹；双专家 CFG 按当前实际时间步取值。"""
+    if isinstance(cfg_scale, Mapping):
+        if boundary is None:
+            raise ValueError("per-expert CFG requires an explicit expert boundary")
+        return float(cfg_scale[denoising_expert(timestep, boundary)])
+    return float(cfg_scale)
+
+
 @dataclass(frozen=True)
 class NoiseExpertOptions:
     noise_level: str

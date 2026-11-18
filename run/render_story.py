@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""给定逐镜Storyboard的故事渲染薄入口。"""
+"""Thin entrypoint for rendering one story from a shot-level storyboard JSON."""
 from mspc.inference.render_story import main
 
 

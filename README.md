@@ -1,191 +1,230 @@
-# CaT-Movie
+<div align="center">
 
-**Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation**
+# CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation
 
-[Project page](https://jinplu.github.io/CaT-Movie/) ·
-[Hugging Face collection](https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206) ·
-[Renderer weights](https://huggingface.co/JinPLU/CaT-Movie) ·
-[Training data](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) ·
-[CaT-MBench](https://huggingface.co/datasets/JinPLU/CaT-MBench) ·
-[CaT-MBench videos](https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos) ·
-[Judge calibration labels](https://huggingface.co/datasets/JinPLU/CaT-MBench-Author-Labels)
+<p>
+  <a href="https://jinplu.github.io/CaT-Movie/"><img src="https://img.shields.io/badge/Project%20Page-Live-blue?style=flat-square" alt="Project Page"></a>
+  <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206"><img src="https://img.shields.io/badge/HF%20Collection-CaT--Movie-yellow?style=flat-square&logo=huggingface" alt="Hugging Face Collection"></a>
+  <a href="https://huggingface.co/JinPLU/CaT-Movie"><img src="https://img.shields.io/badge/Weights-CaT--Movie%205B-orange?style=flat-square&logo=huggingface" alt="Weights"></a>
+  <a href="https://huggingface.co/JinPLU/CaT-Movie-Data"><img src="https://img.shields.io/badge/Dataset-CaT--Movie--Data-green?style=flat-square&logo=huggingface" alt="Dataset"></a>
+  <a href="https://huggingface.co/JinPLU/CaT-MBench"><img src="https://img.shields.io/badge/Benchmark-CaT--MBench-red?style=flat-square&logo=huggingface" alt="Benchmark"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-lightgrey?style=flat-square" alt="License"></a>
+  <!-- paper-link -->
+</p>
 
-<!-- paper-link -->
+<p>
+  <strong>Jinpeng Lu</strong><sup>*</sup> ·
+  <strong>Haoyuan Shi</strong><sup>*</sup> ·
+  <strong>Yuanshen Guan</strong> ·
+  <strong>Jiyuan Xia</strong> ·
+  <strong>Bin Wu</strong> ·
+  <strong>Yinda Chen</strong> ·
+  <strong>Zhiwei Xiong</strong>
+</p>
+<p>
+  University of Science and Technology of China &nbsp;·&nbsp; <sup>*</sup>Equal contribution
+</p>
 
-A diffusion pass renders a limited duration, so a long movie has to be generated window by window. CaT-Movie
-keeps **C**oherence **a**cross **T**ime with one structured storyboard written before the first frame:
+<p>
+  <img src="assets/overview.png" width="98%" alt="CaT-Movie framework overview: Planner, Prompt Compiler & Frame Recall, and Reference-Routed Sparse Renderer">
+</p>
 
-- **Global story planner.** A public language model (Qwen3.8-27B, no fine-tuning) expands a synopsis, a paragraph
-  or a shot list into an entity registry and a plan per shot. Deterministic code carries attire and held items
-  across shots, compiles a self-contained prompt per shot, and indexes anchor views of recurring entities in the
-  frames generated so far.
-- **Local window renderer.** Wan2.2-TI2V-5B fine-tuned without new parameters. Shot-wise cross-attention lets each
-  shot read only its own prompt; reference-routed sparse self-attention lets it read its own tokens, the first
-  latent frame of each co-generated shot, and only the recalled frames that share its entities.
-- **CaT-MBench.** 122 stories from held-out films with a binary question bank. Consistency counts only across cuts
-  that open the planned new camera setup, so repeated framing cannot pass as consistency.
+</div>
 
-This repository holds the code for all three, plus the data pipeline that built the 350K-shot training set.
+---
 
-## Results on CaT-MBench (92 test stories)
+## Overview
 
-| Method | Cut F1 | Execution | Character | Object | Scene | Establish | Persist | Avg. |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Wan2.2-TI2V-5B, per shot | 0.999 | 0.996 | 0.227 | 0.275 | 0.310 | 0.387 | 0.701 | 0.497 |
-| StoryMem | 0.928 | 0.719 | 0.631 | 0.453 | 0.687 | 0.484 | 0.545 | 0.527 |
-| MultiShotMaster | 0.994 | 0.990 | 0.538 | 0.254 | 0.582 | 0.371 | 0.587 | 0.527 |
-| HoloCine | 0.748 | 0.967 | 0.517 | 0.512 | 0.586 | 0.694 | 0.691 | 0.571 |
-| **CaT-Movie** | 0.995 | 0.974 | **0.651** | 0.497 | 0.630 | 0.468 | **0.785** | **0.597** |
+Existing multi-shot video generation approaches sit on an uncomfortable trade-off between **transition control** and **inter-shot consistency**:
 
-Avg. averages transition control, inter-shot consistency, state continuity and text alignment. Baselines render
-the reference storyboard; CaT-Movie renders its own planner's storyboard written from the shot-list request.
-All scores and every judge answer behind them are in [CaT-MBench](https://huggingface.co/datasets/JinPLU/CaT-MBench).
+- **Per-shot generation** executes cuts faithfully but drifts in identity, attire, objects, and scene state across shots.
+- **Joint multi-shot synthesis** models short windows together, often softening or dropping planned cuts and scaling poorly to long stories.
+- **Naive visual memory** over-attends to retrieved frames, encouraging background copying over planned compositional changes.
 
-## Layout
+**CaT-Movie** decouples global narrative planning from local multi-shot rendering around **three design principles**:
 
-- `src/mspc/` — the Python package (data, annotation, training, inference, evaluation, comparison methods)
-- `run/` — thin launch scripts (`run/train.sh CONFIG`, `run/precompute.sh CONFIG`, `run/vllm_serve.py`)
-- `tools/` — data-pipeline, planning and analysis scripts
-- `configs/` — explicit experiment configs
-- `third_party/` — upstream pins, patches, licenses and the modified DiffSynth runtime
-- `tests/` — pytest suite
+1. **Code-Maintained Storyboard Planning.** A structured planner (**Qwen3.8-27B** by default) plans shots with explicit entity registries, attire/object persistence, shot-level opening/action/end states, and layout cues—eliminating long-horizon narrative drift before any pixel is synthesized.
+2. **Localized Prompt Compilation & Frame Recall.** Each shot receives its own localized text prompt and selectively recalled keyframe references anchored with negative temporal RoPE indices.
+3. **Reference-Routed Sparse Renderer (704p, 24 fps).** Built on **Wan2.2-TI2V-5B**, the renderer pairs first-frame cross-shot sparse attention (`holocine_first_frame`) with entity-routed, self-only reference attention (`routed_self_only_v1`) and shot-wise cross-attention, keeping transitions crisp while carrying identities across long shot gaps.
 
-## Setup
+<p align="center">
+  <img src="assets/pareto_consistency_control.png" width="68%" alt="Pareto frontier of Transition Control vs. Inter-Shot Consistency on CaT-MBench">
+</p>
 
-Run the commands below from the repository root. Test-story generation requires Linux with NVIDIA CUDA and system
-FFmpeg, plus the Hugging Face CLI (`hf`) for the downloads.
+---
+
+## Release Resources
+
+All weights, annotations, benchmarks, and generated comparison videos are organized in the **[CaT-Movie Hugging Face Collection](https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206)**:
+
+| Resource | Tier | Description | Link |
+|---|---|---|---|
+| **CaT-Movie Codebase** | **Core** | Training, inference, data construction, planner & CaT-MBench evaluation (`mspc` package) | [GitHub](https://github.com/JinPLu/CaT-Movie) (Apache-2.0) |
+| **CaT-Movie-5B Weights** | **Core** | Finetuned Wan2.2-TI2V-5B multi-shot renderer (`step-3000.safetensors`, 9.4 GiB) | [`JinPLU/CaT-Movie`](https://huggingface.co/JinPLU/CaT-Movie) |
+| **CaT-Movie-Data** | **Core** | 75,461 annotated multi-shot blocks (`358,302` shots, `332.8 h`) + `96,000` training samples (`blocks.jsonl`, `block_annotations.jsonl`, `training_inputs/`) | [`JinPLU/CaT-Movie-Data`](https://huggingface.co/JinPLU/CaT-Movie-Data) |
+| **CaT-MBench** | **Core** | 122 stories (`92` test / `30` dev), cut-gated multi-shot VQA (`1,012` test / `349` dev scored questions), judge verdicts & human labels | [`JinPLU/CaT-MBench`](https://huggingface.co/JinPLU/CaT-MBench) |
+| **CaT-MBench-Videos** | **Supporting** | All `736` generated 92-story videos across `8` evaluated methods (`13.7 GiB`) | [`JinPLU/CaT-MBench-Videos`](https://huggingface.co/JinPLU/CaT-MBench-Videos) |
+| **CaT-MBench-Author-Labels** | **Archive** | Earlier single-author VLM-judge calibration frames & labels *(superseded by `CaT-MBench/human/`)* | [`JinPLU/CaT-MBench-Author-Labels`](https://huggingface.co/JinPLU/CaT-MBench-Author-Labels) |
+
+> **Source video & cache redistribution policy:** Source MP4 clips from CinePile-T2V, MovieChat-1K, and CineDance are **not** redistributed; `CaT-Movie-Data` provides exact upstream clip identifiers, frame boundaries, quality scores, and offline reconstruction tools.
+
+---
+
+## Main Results on CaT-MBench (92 Test Stories)
+
+Full evaluation on `CaT-MBench` (`1,012` test questions evaluated whole-video at `2 fps` with Gemini 2.5 Flash under the cut-execution gate). Best score per metric is **bold**; second best is *italic*.
+
+| Method | Backbone | Cut F1 ↑ | Cut Exec. ↑ | Character ↑ | Object ↑ | Scene ↑ | Establish ↑ | Persist ↑ | Text Align. ↑ | Avg. ↑ |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Wan2.1, per shot | Wan2.1-T2V-1.3B | 0.998 | 0.994 | 0.219 | 0.169 | 0.310 | 0.274 | 0.694 | 0.181 | 0.474 |
+| Wan2.2, per shot | Wan2.2-TI2V-5B | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | *0.701* | 0.174 | 0.497 |
+| StoryMem | Wan2.2-I2V-A14B | 0.928 | 0.719 | *0.631* | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
+| StoryDiffusion | Wan2.2-I2V-A14B | 0.905 | 0.825 | 0.300 | 0.265 | 0.245 | *0.597* | 0.535 | 0.171 | 0.468 |
+| IC-LoRA | Wan2.2-I2V-A14B | 0.976 | 0.961 | 0.168 | 0.133 | 0.406 | 0.452 | 0.663 | 0.176 | 0.484 |
+| MultiShotMaster | Wan2.1-T2V-1.3B | 0.994 | 0.990 | 0.538 | 0.254 | 0.582 | 0.371 | 0.587 | 0.178 | 0.527 |
+| HoloCine | Wan2.2-T2V-A14B | 0.748 | 0.967 | 0.517 | **0.512** | 0.586 | **0.694** | 0.691 | **0.195** | *0.571* |
+| **CaT-Movie (Ours)** | Wan2.2-TI2V-5B | 0.995 | 0.974 | **0.651** | *0.497* | *0.630* | 0.468 | **0.785** | *0.186* | **0.597** |
+
+---
+
+## Installation
+
+### 1. Clone and install core package
 
 ```bash
-export MSPC_SHARED_ROOT=/absolute/path/to/workspace
-mkdir -p "$MSPC_SHARED_ROOT"
-uv sync --locked --extra api
+git clone https://github.com/JinPLu/CaT-Movie.git
+cd CaT-Movie
+uv sync
 source .venv/bin/activate
+```
+
+> **Note on package name:** The Python package and CLI use `src/mspc/` (`mspc` — Multi-Shot Planning & Consistency, the internal working title of the codebase) so existing configs, imports, and checkpoints load cleanly without breaking compatibility.
+
+### 2. Optional extras and auxiliary environments
+
+Additional isolated environments are provided under [`environments/`](environments/) and [`src/mspc/comparison_methods/environments/`](src/mspc/comparison_methods/environments/):
+
+| Extra / Env | Purpose |
+|---|---|
+| `uv sync --extra api` | Planner API calls and `CaT-MBench` VLM evaluation |
+| `uv sync --extra gpu-wan` | GPU training and Wan2.2 inference |
+| [`environments/planner_inference/`](environments/planner_inference/) | Serving `Qwen3.8-27B` / `Qwen3.5-9B` planners via vLLM |
+| [`environments/person_tools/`](environments/person_tools/) & [`environments/moge2/`](environments/moge2/) | Training-set preprocessing (SAM / MoGe2) |
+| [`src/mspc/comparison_methods/`](src/mspc/comparison_methods/README.md) | Baseline runners & scoring environments |
+
+See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for upstream Wan2.2 / DiffSynth-Studio / MultiShotMaster provenance and offline verification.
+
+---
+
+## Quickstart: Single-Story Inference
+
+> **Important:** `step-3000.safetensors` is trained with CaT-Movie's first-frame sparse window attention, routed negative-RoPE visual references, and shot-wise cross-attention (`configs/infer/cat_movie_5b.py`). Run inference through `run/render_story.py` rather than vanilla Wan2.2 `generate.py`.
+
+### 1. Download base Wan2.2-TI2V-5B and CaT-Movie weights
+
+```bash
+export MSPC_SHARED_ROOT=/path/to/cat_movie_workspace
+export MSPC_CODE_ROOT="$(pwd)"
+
+hf download Wan-AI/Wan2.2-TI2V-5B \
+  --local-dir "$MSPC_SHARED_ROOT/checkpoints/Wan2.2-TI2V-5B"
+
+hf download JinPLU/CaT-Movie step-3000.safetensors \
+  --local-dir "$MSPC_SHARED_ROOT/checkpoints/CaT-Movie"
+```
+
+### 2. Render a story (704p, 24 fps)
+
+You can render the bundled example storyboard (`examples/sample_storyboard.json`), or replace `--storyboard` with any story JSON generated by the planner:
+
+```bash
+PYTHONPATH=.:src python run/render_story.py \
+  --config configs/infer/cat_movie_5b.py \
+  --storyboard examples/sample_storyboard.json \
+  --story-id cinedance-008935-b0001-shot01 \
+  --output outputs/demo/cinedance-008935-b0001-shot01 \
+  --seed 42 \
+  --segment-seed-stride 1009 \
+  --segment-max-shots none \
+  --segment-max-frames 112 \
+  --history-policy plan_selection
+```
+
+Pass `--prepare-only` first to run CPU preflight checks and inspect the compiled per-shot prompts and reference routing before loading weights onto GPU.
+
+---
+
+## Reproducing Paper Results
+
+### 1. Plan & Render the 92 `CaT-MBench` Test Stories
+
+Using `configs/infer/planner_renderer_test92.json` (which runs exact paper checkpoint/path bindings) and a running planner endpoint (`configs/serving/vllm_planner_qwen38_27b.yaml`):
+
+```bash
+# Write planner storyboards from story requests
+PYTHONPATH=src python -m mspc.benchmark.layout_baseline write-planner-plans \
+  --conditions configs/infer/planner_renderer_test92.json \
+  --records path/to/planner_records.jsonl
+
+# Render all 92 test stories across segments (704p, max 112 frames/window)
+PYTHONPATH=src python -m mspc.benchmark.layout_baseline prepare \
+  --conditions configs/infer/planner_renderer_test92.json
+```
+
+### 2. Recompute or Run `CaT-MBench` Evaluation
+
+Download [`JinPLU/CaT-MBench`](https://huggingface.co/JinPLU/CaT-MBench) (and optionally [`JinPLU/CaT-MBench-Videos`](https://huggingface.co/JinPLU/CaT-MBench-Videos)) and run the unified benchmark evaluator:
+
+```bash
+# Summarize shipped verdicts and compute Table 1 + paired bootstrap statistics
+PYTHONPATH=src python -m mspc.evaluation.benchmark summarize \
+  --manifest path/to/eval_manifest.json \
+  --output outputs/eval/cat_mbench_summary
+
+# Run metrics and VLM judge on your own generated videos
+PYTHONPATH=src python -m mspc.evaluation.benchmark score \
+  --manifest path/to/eval_manifest.json \
+  --output outputs/eval/custom_run \
+  --components all
+```
+
+### 3. Training & Method Ablations
+
+`CaT-Movie` trains from `Wan2.2-TI2V-5B` under `configs/train/renderer_wan22_final.py`, alongside three single-variable ablations:
+
+- `configs/train/renderer_wan22_final.py` — Full CaT-Movie model (`Step 3000` released)
+- `configs/train/renderer_wan22_final_fixed_role_rows.py` — Without per-reference entity identity descriptions
+- `configs/train/renderer_wan22_final_window_shared.py` — Without entity-based reference routing (window-shared references)
+- `configs/train/renderer_wan22_final_without_references.py` — Without reference prefix frames
+
+Launch distributed training with `run/train.sh` after preparing target/text caches (`tools/data/build_shot_targets.py`, `configs/runtime/wan22_final_long_single_shot_targets.py`).
+
+### 4. Reconstruct Training Data from Upstream Datasets
+
+Download [`JinPLU/CaT-Movie-Data`](https://huggingface.co/JinPLU/CaT-Movie-Data) (`blocks.jsonl`, `block_annotations.jsonl`, `training_inputs/`) and obtain upstream video clips from **CinePile-T2V**, **MovieChat-1K**, and **CineDance** under their respective licenses, then run `tools/data/preprocess_sources.py` and `tools/data/prepare_renderer_training.py`. See [`JinPLU/CaT-Movie-Data`](https://huggingface.co/JinPLU/CaT-Movie-Data) for full instructions.
+
+---
+
+## Testing
+
+```bash
+MSPC_SHARED_ROOT=/tmp/mspc_shared_root \
+MSPC_CODE_ROOT="$(pwd)" \
+PYTHONPATH=src \
 pytest -q
 ```
 
-Configs refer to data, model and output locations as `${MSPC_SHARED_ROOT}/...`.
-`run/train.sh` and `run/precompute.sh` use the interpreter named in the config's `runtime.python`.
-The separate planner server and data-tool environments are locked under `environments/`.
+---
 
-Weights go where the configs expect them:
+## License & Acknowledgements
 
-```bash
-# base model (T5 encoder, VAE, tokenizer and the original DiT shards)
-hf download Wan-AI/Wan2.2-TI2V-5B --local-dir "$MSPC_SHARED_ROOT/OoVMetric/models_ckpt/wan22_5b_native"
-# CaT-Movie renderer, training step 3,000 (the checkpoint behind the results above)
-hf download JinPLU/CaT-Movie step-3000.safetensors --local-dir \
-  "$MSPC_SHARED_ROOT/Storyboard/outputs/experiments/renderer-wan22-final-20261113/training/wan22_final_704p__20261112T231417_893962Z/checkpoints"
-# planner
-hf download Qwen/Qwen3.8-27B --local-dir "$MSPC_SHARED_ROOT/OoVMetric/models_ckpt/Qwen3.8-27B"
-```
+- **Code:** Released under the [Apache-2.0 License](LICENSE). Third-party components retain their original licenses; see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+- **Weights, datasets, and benchmarks (`CaT-Movie` checkpoint, `CaT-Movie-Data`, `CaT-MBench`, `CaT-MBench-Videos`, `CaT-MBench-Author-Labels`):** Released under **CC BY-NC-SA 4.0** for non-commercial research (required by upstream CineDance ShareAlike terms on training annotations). The base model `Wan2.2-TI2V-5B` is Apache-2.0.
+- We build upon [Wan2.2](https://github.com/Wan-Video/Wan2.2), [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio), [Qwen](https://github.com/QwenLM), [MultiShotMaster](https://github.com/KlingAIResearch/MultiShotMaster), [CinePile](https://huggingface.co/datasets/tomg-group-umd/cinepile), [MovieChat-1K](https://huggingface.co/datasets/Enxin/MovieChat-1K), and [CineDance](https://huggingface.co/datasets/CineDance/CineDance_01).
 
-## Generate the test stories with CaT-Movie
-
-Install the planner server into the path used by the serving config. The planner config uses two-way tensor
-parallelism. Choose two available GPUs in `CUDA_VISIBLE_DEVICES`.
-
-```bash
-UV_PROJECT_ENVIRONMENT="$MSPC_SHARED_ROOT/env/planner_inference_cu128" \
-  uv sync --project environments/planner_inference --locked --python 3.12
-
-python - <<'PYTHON'
-import os
-from pathlib import Path
-
-import yaml
-
-template = Path("configs/serving/vllm_planner_qwen38_27b.yaml")
-output = Path("outputs/planner-serving.yaml")
-config = yaml.safe_load(template.read_text())
-for field in ("vllm_executable", "model_path"):
-    config[field] = config[field].replace("${MSPC_SHARED_ROOT}", os.environ["MSPC_SHARED_ROOT"])
-output.parent.mkdir(parents=True, exist_ok=True)
-output.write_text(yaml.safe_dump(config, sort_keys=False))
-PYTHON
-
-export CUDA_DEVICE_ORDER=PCI_BUS_ID
-export CUDA_VISIBLE_DEVICES=0,1
-python run/vllm_serve.py --config outputs/planner-serving.yaml \
-  --provenance-dir outputs/planner-serving
-```
-
-The launcher creates `outputs/planner-serving/provenance.json`. It requires a fresh provenance directory on each
-launch. For a rerun, choose a new directory and pass its `provenance.json` to the next command.
-
-In a second terminal, activate the same environment and set `MSPC_SHARED_ROOT` as in Setup. Once the server is
-ready, write the storyboards from the shot-list requests.
-
-```bash
-curl --fail http://127.0.0.1:8188/v1/models
-python tools/run/planner_form_plans.py plan --requests configs/benchmark/story_requests_v4.json --split test \
-  --prompt current --sampling thinking-medium --base-url http://127.0.0.1:8188/v1 --model Qwen3.8-27B \
-  --provenance outputs/planner-serving/provenance.json --seeds 42 --tiers shots \
-  --output outputs/planner-records --workers 4
-```
-
-If the renderer shares the planner's GPUs, stop the planner before rendering. Compile the plans and render the
-stories window by window.
-
-```bash
-python -m mspc.benchmark.layout_baseline write-planner-plans --conditions configs/infer/planner_renderer_test92.json \
-  --records outputs/planner-records
-python -m mspc.benchmark.layout_baseline prepare --conditions configs/infer/planner_renderer_test92.json
-```
-
-`configs/infer/planner_renderer_test92.json` renders with a 7 s window cap (`segment_max_frames` 112 at 16 fps)
-and storyboard-indexed recall (`history_policy` `plan_selection`); it reads
-`configs/infer/renderer_wan22_final_step3000.py`. To render your own storyboard, see
-`python run/render_story.py --help`.
-
-## Entry points
-
-| Part | Entry point |
-|---|---|
-| Shot screening and blocks | `tools/data/preprocess_sources.py`, `score_shots.py`, `quality_lines.py`, `build_block_members.py` |
-| Block annotation and spatial fields | `tools/data/annotate_windows.py`, `validate_annotations.py`, `spatial_layer.py` |
-| Training windows and target latents | `tools/data/select_training_windows.py`, `build_shot_targets.py`, `run/precompute.sh` |
-| Renderer training | `run/train.sh configs/train/renderer_wan22_final.py` (3,000 steps on 8 A100 GPUs) |
-| Ablations: without identity lines, routing, references | `configs/train/renderer_wan22_final_fixed_role_rows.py`, `_window_shared.py`, `_without_references.py` |
-| Planner | `tools/run/planner_form_plans.py plan`, served by `run/vllm_serve.py` |
-| Story rendering | `python -m mspc.benchmark.layout_baseline write-planner-plans`, then `prepare` |
-| Benchmark stories | `configs/benchmark/story_requests_v4.json`, `benchmark_storyboards_v4.json` |
-| Questions, judges and scores | `src/mspc/evaluation/question_writer.py`, `gemini_checklist_batch.py`, `consistency_pair_batch.py`, `tools/analysis/planned_cut_accuracy.py`, `python -m mspc.evaluation.benchmark score\|summarize` |
-| Paired intervals | `src/mspc/evaluation/paired_bootstrap.py` |
-| Baselines | `src/mspc/comparison_methods/` |
-
-## Recompute the CaT-MBench scores
-
-```bash
-hf download JinPLU/CaT-MBench --repo-type dataset --local-dir cat-mbench
-cd cat-mbench && python -m mspc.evaluation.checklist_scoring readout-v17 \
-  --bank questions.v17.json --cut-items cut_items.v17.json \
-  --cut-root judge/cut --pair-root judge/pairs --video-root judge/video \
-  --rows wan22-final-test92-planner-27b-seed42 test92-holocine test92-storymem test92-multishotmaster \
-         test92-storydiffusion test92-ic-lora test92-official-wan test92-wan21-1p3b-native \
-  --answer-scope existing --output readout.json
-```
-
-This reproduces `readouts/readout_v17.json` value for value. Judging a new method calls Gemini through the judge
-scripts listed above and needs your own API key.
-
-## Data
-
-[CaT-Movie Data](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) releases 75,461 annotated blocks
-(358,302 shots, 332.8 hours) and the renderer's 96,000 training samples. Source videos are not redistributed:
-blocks name their upstream clip and the frame span of every shot, so the clips can be rebuilt from CinePile-T2V,
-CineDance and MovieChat-1K under their own terms.
-
-## License
-
-- Code: Apache-2.0 (`LICENSE`). Third-party components keep their own licenses; see `THIRD_PARTY_NOTICES.md`.
-- Renderer weights, training data, CaT-MBench and its videos: CC BY-NC-SA 4.0, for non-commercial research.
-  The base model Wan2.2-TI2V-5B is Apache-2.0. See the [videos card](https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos) for upstream output terms and third-party rights.
+---
 
 ## Citation
-
-Author affiliation: University of Science and Technology of China.
-
-Jinpeng Lu and Haoyuan Shi contributed equally.
 
 ```bibtex
 @misc{catmovie2026,

@@ -1,7 +1,6 @@
-"""Wan2.2-TI2V-5B原生重训：1280×704/24fps，连续12k更新。
+"""Wan2.2-TI2V-5B native multi-shot joint training config (1280x704, 24 fps, 12k updates).
 
-源窗同480p，360RGB为联合窗口预算；源镜超过10秒的整窗在共用抽样入口丢弃。
-只消费生产线程发布的真实index/provenance，尚未发布时明确拒绝开训。
+Consumes verified 704p VAE target latents and umT5-XXL context caches.
 """
 import copy
 import runpy
@@ -12,7 +11,7 @@ _config = copy.deepcopy(runpy.run_path(str(Path(__file__).with_name(
 _source_root = Path(__file__).resolve().parents[2]
 _pythonpath = [str(_source_root / "src"), str(_source_root),
                str(_source_root / "third_party/wan22_runtime")]
-# 代码从本配置所属冻结检出执行，数据、模型资产和输出仍用共享盘原位置。
+# Execute from this checkout while resolving datasets and model weights under ${MSPC_SHARED_ROOT}.
 _config["model"]["diffsynth_root"] = str(_source_root / "third_party/wan22_runtime")
 _config["launch"].update(
     train_entrypoint=str(_source_root / "src/mspc/training/runner.py"),

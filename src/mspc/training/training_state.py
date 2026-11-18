@@ -9,6 +9,7 @@ import random
 import shutil
 import os
 import tempfile
+from types import SimpleNamespace
 from typing import Any
 
 import numpy as np
@@ -417,6 +418,9 @@ def install_training_state_readback_probe(
     readback = Path(readback_dir).resolve()
     if not original.is_dir() or not (original / "state.json").is_file():
         raise ValueError("readback probe requires a complete original training-state directory")
+    metadata = json.loads((original / "state.json").read_text())
+    inspect_training_state(original, config=metadata["config"], world_size=metadata["world_size"])
+    partial = partial_module_state(SimpleNamespace(training_cfg=metadata["config"]["training"]))
     if original == readback or original.is_relative_to(readback) or readback.is_relative_to(original):
         raise ValueError("original and readback training states must have separate directories")
     if type(deadline_epoch) not in (int, float) or not math.isfinite(deadline_epoch) or deadline_epoch <= time.time():
@@ -438,6 +442,8 @@ def install_training_state_readback_probe(
     def load_and_readback(accelerator: Any, input_dir=None, *args, **kwargs):
         if input_dir is None or Path(input_dir).resolve(strict=True) != original:
             raise ValueError("readback probe received a different resume-state directory")
+        if accelerator.num_processes != metadata["world_size"]:
+            raise ValueError("readback probe world size differs from the original state")
         result = original_load(accelerator, input_dir, *args, **kwargs)
         restored_rng = _capture_rng()
         iteration = accelerator.project_configuration.iteration
@@ -454,7 +460,8 @@ def install_training_state_readback_probe(
             raise RuntimeError(error[0])
         try:
             accelerator.wait_for_everyone()
-            accelerator.save_state(str(readback), safe_serialization=True)
+            accelerator.save_state(str(readback), safe_serialization=True,
+                                   **({"exclude_frozen_parameters": True} if partial else {}))
             accelerator.wait_for_everyone()
             if accelerator.is_main_process:
                 write_receipt(readback / "readback-ready.json", {

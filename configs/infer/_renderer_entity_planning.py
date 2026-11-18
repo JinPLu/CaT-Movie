@@ -1,15 +1,15 @@
-"""渲染器的共同推理壳；媒体、采样及模型合同取正式训练配置，权重初始化由调用端明确给出。"""
+"""Shared inference helper inheriting media, sampling, and model settings from a training config."""
 from copy import deepcopy
 from pathlib import Path
 import runpy
 
 
 def consumer_config(training_file: str, run_id: str | None, step: int | None) -> dict:
-    """None／None是原生逐镜基座；真实run_id／step是相应联合训练检查点。"""
+    """Use run_id=None and step=None for native per-shot baseline; otherwise specify checkpoint run_id and step."""
     repo = Path(__file__).resolve().parents[2]
     config = deepcopy(runpy.run_path(str(repo / "configs/train" / training_file))["EXPERIMENT_CONFIG"])
     arm = config["identity"]["run_name"]
-    # 训练文字缓存只服务训练步（定稿配置起才有这一项）；推理现编文字，不读它。
+    # Text context cache is used only during training; inference encodes prompts dynamically.
     config["model"].pop("text_context_cache", None)
     if (run_id is None) != (step is None):
         raise ValueError("native initialization requires explicit run_id=None and step=None together")
@@ -19,7 +19,7 @@ def consumer_config(training_file: str, run_id: str | None, step: int | None) ->
         config["model"].update(self_attention_policy="full", temporal_position_mode="global_time_native_rope_v1",
                                memory_prefix=None)
     else:
-        # 导出既可能来自周期保存，也可能来自完整状态停点；文件存在由实际prepare核。
+        # Checkpoints may come from periodic saves or full-state stops; existence is checked during prepare.
         if type(step) is not int or not 0 < step <= config["training"]["max_train_steps"]:
             raise ValueError(f"{training_file} checkpoint step must be a positive integer up to "
                              f"{config['training']['max_train_steps']}; got step {step!r}")
@@ -30,7 +30,7 @@ def consumer_config(training_file: str, run_id: str | None, step: int | None) ->
     if run_id is not None:
         output = f"{root}/Storyboard/outputs/experiments/renderer-entity-planning-dev30-20261102"
     unused_csv = f"{root}/Storyboard/outputs/experiments/layout-baseline-dev30/schema-required-inference.csv"
-    # render_story读取显式Storyboard；沿现有multishot_csv推理壳，通过配置解析但不构造数据集。
+    # render_story loads an explicit storyboard JSON directly via the multishot_csv inference schema.
     media = config["task"]
     config["dataset"] = {"type": "multishot_csv", "schema": "multishot_csv_explicit_mapping_v3_tail_padding",
         "prompt_format": "caption_json_v1", "metadata_path": unused_csv, "video_column": "video",

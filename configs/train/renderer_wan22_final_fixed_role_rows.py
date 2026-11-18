@@ -1,9 +1,6 @@
-"""方法消融「参考不带身份行」：定稿只改参考行写法——每张参考只写固定的「另一镜的参考帧」一句，不列逐帧可见人物。
+"""Ablation (without per-reference entity identity lines): replaces registered entity descriptions per reference with a fixed role label.
 
-回答引言第二条要求「文字怎样指向召回的帧，免得绑错人」：预期人物、物体降，照抄或串人增；若不降，推理可以去掉读图
-服务。配置值 ``model.memory_prefix.row_policy``：``frame_entities_v1`` → ``fixed_role_v1``。这组不需要逐帧身份标签，
-训练与验证的 ``reference_entities`` 都是 None（行写法与标签必须同时声明）；抽签、参考帧、路由、裁剪表都与定稿相同。
-参考行文字变了，所以文字准入与文字缓存按本组另出。
+Overrides ``model.memory_prefix.row_policy`` from ``frame_entities_v1`` to ``fixed_role_v1`` and disables ``reference_entities``.
 """
 import copy
 import runpy

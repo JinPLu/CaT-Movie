@@ -43,6 +43,7 @@ CONDITION_FIELDS = (
     "seed", "segment_seed_stride", "segment_max_shots", "segment_max_frames",
     "output_dir",
 )
+EXPERT_LORA_CHECKPOINT_KEYS = ("high_noise_lora", "low_noise_lora")
 
 
 def repo_root() -> Path:
@@ -88,8 +89,8 @@ def load_run(path: Path) -> dict:
         frames = condition["segment_max_frames"]
         if type(frames) is not int or not 1 <= frames <= SEGMENT_MAX_FRAMES:
             raise ValueError(f"segment_max_frames must be an integer in 1..{SEGMENT_MAX_FRAMES}")
-        if condition["checkpoint"] is not None:
-            condition["checkpoint"] = expand_shared_root_token(condition["checkpoint"], f"{path}:{condition['name']}.checkpoint")
+        condition["checkpoint"] = map_checkpoint_paths(condition["checkpoint"], lambda value:
+            expand_shared_root_token(value, f"{path}:{condition['name']}.checkpoint"))
         names.append(condition["name"])
     if len(names) != len(set(names)):
         raise ValueError("condition names must be unique")
@@ -322,20 +323,52 @@ def film_paired_interval(left: Mapping[str, Mapping[str, float | None]],
     return result
 
 
-def _checkpoint(config_path: Path) -> str | None:
-    from mspc.config import load_experiment_config
-    config = load_experiment_config(config_path)
-    inference = config.resolved["inference"]
+def checkpoint_paths(checkpoint: str | Mapping[str, str] | None) -> tuple[str, ...]:
+    """条件里的权重：原生为空、全量为一个文件、双专家为显式高／低噪 LoRA 对。"""
+    if checkpoint is None:
+        return ()
+    if isinstance(checkpoint, Mapping):
+        if set(checkpoint) != set(EXPERT_LORA_CHECKPOINT_KEYS):
+            raise ValueError(f"expert checkpoint requires exactly {EXPERT_LORA_CHECKPOINT_KEYS}")
+        paths = tuple(checkpoint[key] for key in EXPERT_LORA_CHECKPOINT_KEYS)
+    else:
+        paths = (checkpoint,)
+    if any(not isinstance(value, str) or not value.strip() or value != value.strip() for value in paths):
+        raise ValueError("checkpoint paths must be nonempty trimmed strings")
+    return paths
+
+
+def map_checkpoint_paths(checkpoint: str | Mapping[str, str] | None, transform):
+    paths = checkpoint_paths(checkpoint)
+    if isinstance(checkpoint, Mapping):
+        return {key: transform(value) for key, value in zip(EXPERT_LORA_CHECKPOINT_KEYS, paths, strict=True)}
+    return None if checkpoint is None else transform(paths[0])
+
+
+def checkpoint_identity(inference: Mapping[str, Any]) -> str | dict[str, str] | None:
+    """从渲染器已声明的权重来源取出条件须独立绑定的导出路径，不以单份全量权重代替专家对。"""
     checkpoint = inference["dit_checkpoint"]
     if inference["weight_source"] == "pretrained_model_paths":
         if checkpoint is not None:
-            raise ValueError(f"{config_path} native initialization requires dit_checkpoint=null")
+            raise ValueError("native initialization requires dit_checkpoint=null")
         return None
+    if inference["weight_source"] == "expert_lora_checkpoints":
+        if checkpoint is not None:
+            raise ValueError("expert LoRA initialization requires dit_checkpoint=null")
+        pair = {key: inference["experts"][key] for key in EXPERT_LORA_CHECKPOINT_KEYS}
+        checkpoint_paths(pair)
+        return pair
     if inference["weight_source"] != "full_dit_checkpoint":
-        raise ValueError(f"{config_path} requires an explicit native or full DiT initialization")
+        raise ValueError("requires an explicit native, full DiT or expert LoRA initialization")
     if not isinstance(checkpoint, str) or not checkpoint:
-        raise ValueError(f"{config_path} full DiT initialization requires an explicit checkpoint")
-    return str(Path(checkpoint).resolve())
+        raise ValueError("full DiT initialization requires an explicit checkpoint")
+    return checkpoint
+
+
+def _checkpoint(config_path: Path) -> str | dict[str, str] | None:
+    from mspc.config import load_experiment_config
+    config = load_experiment_config(config_path)
+    return map_checkpoint_paths(checkpoint_identity(config.resolved["inference"]), lambda value: str(Path(value).resolve()))
 
 
 def scoring_rows(run: Mapping[str, Any], root: Path) -> list[dict]:
@@ -412,7 +445,7 @@ def prepare(manifest: Path, *, story_ids: Sequence[str] | None, prepare_only: bo
     for condition in conditions:
         config_path = resolve_path(condition["renderer_config"], root)
         checkpoint = _checkpoint(config_path)
-        declared_checkpoint = None if condition["checkpoint"] is None else str(Path(condition["checkpoint"]).resolve())
+        declared_checkpoint = map_checkpoint_paths(condition["checkpoint"], lambda value: str(Path(value).resolve()))
         if checkpoint != declared_checkpoint:
             raise ValueError(f"{condition['name']} checkpoint does not match {config_path}")
         if resolve_path(condition["plan_dir"], root) != plan_dir:

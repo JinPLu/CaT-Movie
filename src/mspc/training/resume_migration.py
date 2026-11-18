@@ -206,10 +206,11 @@ def native_state_layout(state_path: str | Path, *, completed_steps: int, world_s
                        map_location="cpu", mmap=True, weights_only=False)
     if saved["global_steps"] != completed_steps or saved["dp_world_size"] != world_size:
         raise ValueError("resume migration native DeepSpeed step/world differs from its receipt")
-    module, groups = saved["module"], saved["param_shapes"]
+    module, groups, buffers = saved["module"], saved["param_shapes"], saved["buffer_names"]
     names = [name for group in groups for name in group]
-    if len(names) != len(set(names)) or set(names) != set(module):
-        raise ValueError("resume migration native parameter and optimizer names differ")
+    if (len(names) != len(set(names)) or len(buffers) != len(set(buffers))
+            or set(names).intersection(buffers) or set(names).union(buffers) != set(module)):
+        raise ValueError("resume migration native module, buffer and optimizer names differ")
     for group in groups:
         for name, shape in group.items():
             if list(module[name].shape) != list(shape):
@@ -218,6 +219,26 @@ def native_state_layout(state_path: str | Path, *, completed_steps: int, world_s
                                    "dtype": str(value.dtype).removeprefix("torch.")}
                                   for name, value in module.items()],
             "optimizer": {"class": "torch.optim.AdamW", "parameter_groups": [list(group) for group in groups]}}
+
+
+def require_cost_migration_boundary(contract: dict[str, Any], state_path: Path) -> None:
+    """换成本只能从完整排序窗继续，避免新次序的跳批重复或遗漏旧窗内样本。"""
+    source, target = contract["source_config"]["training"], contract["target_config"]["training"]
+    if source.get("workload_cost") == target.get("workload_cost"):
+        return
+    import torch
+    from mspc.training.loop import COST_BUCKET_WINDOW_STEPS
+    from mspc.training.training_state import TrainingProgress
+    accumulation = source["gradient_accumulation_steps"]
+    if type(accumulation) is not int or accumulation < 1:
+        raise ValueError("cost migration requires the original positive gradient accumulation")
+    progress = TrainingProgress()
+    progress.load_state_dict(torch.load(state_path / "custom_checkpoint_0.pkl",
+                                       map_location="cpu", weights_only=False))
+    if progress.completed_steps != contract["completed_steps"]:
+        raise ValueError("cost migration native progress differs from the saved update")
+    if progress.next_batch % (COST_BUCKET_WINDOW_STEPS * accumulation):
+        raise ValueError("cost migration requires a complete cost sorting-window boundary")
 
 
 def source_snapshot_path(contract: dict[str, Any]) -> Path:
@@ -268,8 +289,9 @@ def read_resume_migration(path: str | Path, *, state_path: str | Path,
             or contract["from_repository_sha"] == contract["to_repository_sha"]
             or contract["to_repository_sha"] != repository_sha):
         raise ValueError("resume migration requires distinct full source/actual target Git SHAs")
-    if type(world_size) is not int or world_size != 8 or contract["world_size"] != world_size:
-        raise ValueError("resume migration requires the original world size 8")
+    if (type(world_size) is not int or world_size < 1
+            or type(contract["world_size"]) is not int or contract["world_size"] != world_size):
+        raise ValueError("resume migration requires the original declared world size")
     if contract["target_config"] != target_config:
         raise ValueError("resume migration target config differs from this launch")
     if contract["target_config_path"] != str(Path(target_config_path).resolve(strict=True)):
@@ -299,6 +321,7 @@ def read_resume_migration(path: str | Path, *, state_path: str | Path,
             or snapshot["config"] != contract["source_config"]):
         raise ValueError("resume migration source snapshot/SHA/config differs")
     validate_config_migration(contract)
+    require_cost_migration_boundary(contract, original)
     actual = native_state_layout(original, completed_steps=contract["completed_steps"], world_size=world_size)
     if any(contract[name] != actual[name] for name in actual):
         raise ValueError("resume migration layout differs from the actual source native state")
@@ -368,10 +391,15 @@ def require_model_migration_layout(model: Any, optimizer_groups: list[dict[str, 
     contract = getattr(args, "resume_migration", None)
     if contract is None:
         return
+    from mspc.training.training_state import partial_module_state
     parameters = dict(model.named_parameters())
+    module = model.state_dict()
+    if partial_module_state(args):
+        frozen = {name for name, value in parameters.items() if not value.requires_grad}
+        module = {name: value for name, value in module.items() if name not in frozen}
     actual = [{"name": name, "shape": list(value.shape),
                "dtype": str(value.dtype).removeprefix("torch.")}
-              for name, value in parameters.items()]
+              for name, value in module.items()]
     names = {id(value): name for name, value in parameters.items()}
     groups = [[names[id(value)] for value in group["params"]] for group in optimizer_groups]
     if actual != contract["parameter_layout"] or groups != contract["optimizer"]["parameter_groups"]:

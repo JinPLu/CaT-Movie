@@ -1,4 +1,4 @@
-"""给定逐镜分镜表的故事出片入口；CPU预检后复用现有Wan逐段执行链。"""
+"""Render one multi-shot story video from a storyboard JSON via the Wan2.2 CaT-Movie pipeline."""
 from __future__ import annotations
 
 import argparse
@@ -98,6 +98,12 @@ def prepare_story(config: ExperimentConfig, *, storyboard: Path, story_id: str, 
         checkpoint = str(require_path(checkpoint, "inference.dit_checkpoint"))
     elif checkpoint is not None:
         raise ValueError(f"{inference['weight_source']} requires dit_checkpoint=null")
+    if inference["experts"] is not None:
+        experts = inference["experts"]
+        experts["low_noise_dit"] = [str(require_path(path, "inference.experts.low_noise_dit"))
+                                    for path in experts["low_noise_dit"]]
+        for name in ("high_noise_lora", "low_noise_lora"):
+            experts[name] = str(require_path(experts[name], f"inference.experts.{name}"))
     media = media_from_task(data["task"])
     if (inference["fps"] != media["target_fps"] or inference["target_height"] != media["height"]
             or inference["target_width"] != media["width"]):
@@ -240,6 +246,7 @@ def render_story(config: ExperimentConfig, *, storyboard: Path, output: Path, st
             segment_max_frames=segment_max_frames, history_policy=history_policy)
         record.update(weight_source=prepared.runtime_kwargs["inference_cfg"]["weight_source"],
                       dit_checkpoint=prepared.runtime_kwargs["dit_ckpt"],
+                      experts=prepared.runtime_kwargs["inference_cfg"]["experts"],
                       model_paths=prepared.runtime_kwargs["model_cfg"]["paths"])
         _write_json(output / "inputs.json", {**record, "resolved_config": config.to_dict(),
             "runtime": prepared.runtime_kwargs, "annotation": prepared.annotation,

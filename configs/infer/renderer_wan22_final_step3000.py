@@ -1,6 +1,6 @@
-"""定稿渲染器第 3,000 步权重的推理配置：论文表 1 中 CaT-Movie 一行读它。
+"""Paper Table 1 CaT-Movie inference configuration (Wan2.2-TI2V-5B renderer, step 3,000 checkpoint).
 
-与该行出片时实际读的 renderer.json 逐字段核过：模型、采样、参考加噪都相同，只差名称、路径与只在训练时用的保存间隔。
+Matches the exact model, attention routing, reference memory, and sampling settings used to generate the benchmark videos.
 """
 from configs.infer._renderer_entity_planning import consumer_config
 

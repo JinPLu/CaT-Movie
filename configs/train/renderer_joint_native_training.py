@@ -1,7 +1,4 @@
-"""两个原生基座新训练共用的监督与控制合同；实际入口为对应480p/720p配置。
-
-同一96k按1/2/3/4及以上镜权重15/25/30/30抽层的约8秒完整source窗口，超预算长镜独占，训练沿同块随机镜帧参考，推理使用历史中帧，统一G_i＋本镜开态/动作/末态，
-均匀MSE。12k总调度固定，外部cache-stage在3k保存完整state后停，继续时不更换数学配置。
+"""Shared supervision and sampling contract for native-backbone joint training (see 480p and 720p entry configs).
 """
 import copy
 import runpy
@@ -25,9 +22,9 @@ _config["dataset"]["reference_entities"] = None
 _config["dataset"]["reference_row_dropout_p"] = 0.0
 _config["dataset"]["picture_type_dropout_p"] = 0.5
 _config["dataset"]["box_dropout_p"] = 0.5
-# 保留已训练的随机同块参考供给与整组丢弃；身份未知仍保留像素。
+# Sample random in-block reference frames with 0.2 full-prefix dropout while keeping visual pixels.
 _config["model"]["memory_prefix"]["dropout_p"] = 0.2
-# 连续flow sigma，按Wan实际model t<=400适配；不是pre-shift schedule比例。
+# Continuous flow sigma calibrated for Wan timestep threshold (t <= 400).
 _config["model"]["memory_prefix"]["noise"] = {"train_sigma_max": 0.4, "inference_sigma": 0.0}
 _config["model"]["omit_target_text"] = []
 _config["training"].update(max_train_steps=12000, save_steps=3000, state_checkpoint={"keep": 1},

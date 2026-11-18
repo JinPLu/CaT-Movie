@@ -1,0 +1,193 @@
+{
+  "characters": [
+    {
+      "name": "Character 1",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a woman with long black hair, purple eyes, and a red headband",
+      "outfit": "a black and white sailor-style school uniform with red accents and a black pleated skirt"
+    },
+    {
+      "name": "Character 2",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young man with short black hair, green eyes, and an eyepatch over his right eye",
+      "outfit": "a black school uniform jacket over a white shirt with bandages on his chest and left arm"
+    },
+    {
+      "name": "Character 3",
+      "kind": "person",
+      "visibility": "clear",
+      "appearance": "a young man with short blonde hair and a lean build",
+      "outfit": "a black suit jacket, white shirt, and dark pants"
+    }
+  ],
+  "objects": [
+    {
+      "name": "Object 1",
+      "appearance": "a long, thin spear or staff with a golden tip"
+    },
+    {
+      "name": "Object 2",
+      "appearance": "a large building with a purple facade, golden roof accents, and pentagram symbols"
+    },
+    {
+      "name": "Object 3",
+      "appearance": "a large red eye on the building"
+    },
+    {
+      "name": "Object 4",
+      "appearance": "giant disembodied arms and legs of various colors"
+    }
+  ],
+  "places": [
+    {
+      "name": "Location 1",
+      "appearance": "a dark, red-lit interior space with angular architecture and a large building facade visible outside"
+    },
+    {
+      "name": "Location 2",
+      "appearance": "a dark, red-tiled room or void"
+    }
+  ],
+  "shots": [
+    {
+      "shot": 1,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "medium shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 1",
+          "posture": "standing on a staircase"
+        },
+        {
+          "name": "Object 2",
+          "state": "with a large red eye and pentagram symbols"
+        },
+        {
+          "name": "Object 3"
+        }
+      ],
+      "action": "A woman with long black hair stands on a staircase in front of a building with pentagram symbols and a large red eye.",
+      "changes": [],
+      "frame_count": 57
+    },
+    {
+      "shot": 2,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 1",
+          "posture": "looking forward with a slight smile"
+        }
+      ],
+      "action": "The woman with long black hair smiles menacingly.",
+      "changes": [],
+      "frame_count": 89
+    },
+    {
+      "shot": 3,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "medium shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 1",
+          "posture": "pointing a spear forward",
+          "holding": []
+        },
+        {
+          "name": "Character 2",
+          "posture": "standing on a higher level, looking down"
+        },
+        {
+          "name": "Object 1"
+        }
+      ],
+      "action": "The woman points a long spear at a young man with an eyepatch who is standing on a higher level.",
+      "changes": [
+        {
+          "name": "Character 1",
+          "what": "holding",
+          "before": [],
+          "after": [
+            "Object 1"
+          ]
+        }
+      ],
+      "frame_count": 53
+    },
+    {
+      "shot": 4,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "medium close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 2",
+          "posture": "looking shocked and speaking",
+          "state": "with bandages on his chest and arm"
+        }
+      ],
+      "action": "The young man with the eyepatch and bandages looks shocked and speaks.",
+      "changes": [],
+      "frame_count": 105
+    },
+    {
+      "shot": 5,
+      "place": "Location 2",
+      "camera": {
+        "shot_size": "wide shot",
+        "angle": "high angle shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 3",
+          "posture": "standing in the center of a red-tiled room"
+        },
+        {
+          "name": "Object 4",
+          "posture": "surrounding the young man"
+        }
+      ],
+      "action": "A blonde young man stands in a red room surrounded by giant disembodied arms and legs.",
+      "changes": [],
+      "frame_count": 33
+    },
+    {
+      "shot": 6,
+      "place": "Location 1",
+      "camera": {
+        "shot_size": "close-up shot",
+        "angle": "eye-level shot",
+        "movement": "static"
+      },
+      "present": [
+        {
+          "name": "Character 2",
+          "posture": "looking down with a shocked expression",
+          "state": "with bandages on his chest and arm"
+        }
+      ],
+      "action": "The young man with the eyepatch looks down in shock.",
+      "changes": [],
+      "frame_count": 45
+    }
+  ]
+}

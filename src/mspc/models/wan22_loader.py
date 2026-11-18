@@ -211,11 +211,12 @@ def load_pure_t2v_pipeline(
         # Load the original source before applying selective parameter storage:
         # loading every tensor as BF16 would also round protected FP32 modules.
         model_configs.append(ModelConfig(path=paths["dit"], skip_download=True,
-                                         computation_dtype=torch.float32))
+                                         computation_dtype=torch.float32,
+                                         computation_device="cpu" if low_noise_dit is not None else device))
     if low_noise_dit is not None:
         model_configs.append(ModelConfig(
             path=[str(require_path(path, f"low_noise_dit[{index}]")) for index, path in enumerate(low_noise_dit)],
-            skip_download=True, computation_dtype=torch.float32))
+            skip_download=True, computation_dtype=torch.float32, computation_device="cpu"))
     if "t5" in paths:
         model_configs.append(ModelConfig(path=paths["t5"], skip_download=True))
     if "vae" in paths:
@@ -288,6 +289,10 @@ def load_pure_t2v_pipeline(
     for dit in experts if dit_loaded else []:
         from mspc.models.wan22_precision import apply_wan22_parameter_storage
         apply_wan22_parameter_storage(dit)
+        if low_noise_dit is not None:
+            # Convert each original FP32 expert on the host before GPU residency.
+            # Keep both unconverted experts out of the GPU startup peak.
+            dit.to(device=device)
         from mspc.core.wan22_contract import WAN22_SELF_ATTENTION_POLICIES
         if self_attention_policy not in WAN22_SELF_ATTENTION_POLICIES:
             raise ValueError(f"unknown self_attention_policy: {self_attention_policy}")

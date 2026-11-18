@@ -21,6 +21,7 @@ from mspc.inference.flow_unipc import (
 from mspc.data.reference_routing import require_reference_routing
 from mspc.core.wan22_contract import ROUTED_MEMORY_ATTENTION_POLICIES
 from mspc.models.memory_prefix_options import MemoryAttentionWindow
+from mspc.models.noise_expert import denoising_expert, denoising_guidance_scale
 from mspc.models.source_identity import SourceIdentityCondition, WanVideoPrediction
 from mspc.models.region_attention import region_channel_anchor
 from mspc.models.spatial_layout import (
@@ -256,7 +257,7 @@ class WanVideoPipeline(BasePipeline):
         width: int = 832,
         num_frames: int = 81,
         # Classifier-free guidance
-        cfg_scale: float = 5.0,
+        cfg_scale: float | dict[str, float] = 5.0,
         cfg_merge: bool = False,
         # Boundary
         switch_DiT_boundary: float = 0.875,
@@ -429,9 +430,13 @@ class WanVideoPipeline(BasePipeline):
         # Denoise
         self.load_models_to_device(self.in_iteration_models)
         models = {name: getattr(self, name) for name in self.in_iteration_models}
+        self.denoising_steps = []
         for progress_id, timestep in enumerate(progress_bar_cmd(self.scheduler.timesteps)):
+            step_timestep = timestep.item()
+            active_expert = denoising_expert(step_timestep, switch_DiT_boundary)
+            step_cfg_scale = denoising_guidance_scale(cfg_scale, step_timestep, switch_DiT_boundary)
             # Switch DiT if necessary
-            if timestep.item() < switch_DiT_boundary * 1000 and self.dit2 is not None and not models["dit"] is self.dit2:
+            if active_expert == "low_noise" and self.dit2 is not None and not models["dit"] is self.dit2:
                 self.load_models_to_device(self.in_iteration_models_2)
                 models["dit"] = self.dit2
                 models["vace"] = self.vace2
@@ -439,12 +444,12 @@ class WanVideoPipeline(BasePipeline):
             # Preserve the scheduler timestep; the shared model_fn owns BF16 AMP.
             model_timestep = timestep.unsqueeze(0).to(dtype=torch.float32, device=self.device)
             noise_pred_posi = self.model_fn(**models, **inputs_shared, **inputs_posi, timestep=model_timestep).noise
-            if cfg_scale != 1.0:
+            if step_cfg_scale != 1.0:
                 if cfg_merge:
                     noise_pred_posi, noise_pred_nega = noise_pred_posi.chunk(2, dim=0)
                 else:
                     noise_pred_nega = self.model_fn(**models, **inputs_shared, **inputs_nega, timestep=model_timestep).noise
-                noise_pred = noise_pred_nega + cfg_scale * (noise_pred_posi - noise_pred_nega)
+                noise_pred = noise_pred_nega + step_cfg_scale * (noise_pred_posi - noise_pred_nega)
             else:
                 noise_pred = noise_pred_posi
 
@@ -455,6 +460,12 @@ class WanVideoPipeline(BasePipeline):
             inputs_shared["latents"] = updated
             if "first_frame_latents" in inputs_shared:
                 inputs_shared["latents"][:, :, 0:1] = inputs_shared["first_frame_latents"]
+            self.denoising_steps.append({
+                "timestep": step_timestep,
+                "expert": "low_noise" if models["dit"] is self.dit2 else "high_noise",
+                "cfg_scale": step_cfg_scale,
+                "model_calls": 1 if step_cfg_scale == 1.0 or cfg_merge else 2,
+            })
         
         # VACE (TODO: remove it)
         if vace_reference_image is not None or (animate_pose_video is not None and animate_face_video is not None):
