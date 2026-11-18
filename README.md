@@ -214,7 +214,7 @@ hf download JinPLU/CaT-Movie-Source-Videos --repo-type dataset --local-dir "$MSP
 
 Each dataset includes its restoration script (`restore_training_inputs.py`, `restore_t5_cache.py`, `restore_vae_caches.py`, `restore_source_videos.py`) to unpack shards and expand `${MSPC_SHARED_ROOT}` paths.
 
-### Codebase Entrypoint Map (Appendix Table S8)
+### Codebase Entrypoint Map
 
 | Stage | Entry Point(s) |
 |---|---|
