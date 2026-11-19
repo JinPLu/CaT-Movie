@@ -92,7 +92,7 @@ run('nav', function nav() {
   function ticks() {
     $$('b', prog).forEach(b => b.remove());
     const max = document.documentElement.scrollHeight - innerHeight;
-    secs.slice(1).forEach(s => { const b = document.createElement('b'); b.style.left = (Math.min(1, s.offsetTop / max) * 100) + '%'; prog.appendChild(b); });
+    secs.slice(1).forEach(s => { const b = document.createElement('b'); b.style.left = `calc(${(Math.min(1, s.offsetTop / max) * 100).toFixed(2)}% - 1px)`; prog.appendChild(b); });
   }
   function onScroll() { const max = document.documentElement.scrollHeight - innerHeight; bar.style.width = (Math.min(1, scrollY / Math.max(1, max)) * 100) + '%'; }
   addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', ticks); addEventListener('load', ticks); setTimeout(ticks, 1500); onScroll();
@@ -107,108 +107,52 @@ run('nav', function nav() {
   addEventListener('resize', () => { const a = $('.nav-links a.on'); if (a) mark(a.getAttribute('href').slice(1)); });
 });
 
-/* ---------------- hero: one long story; arcs under the timeline carry each recalled view into the shot that reads it ---------------- */
+/* ---------------- reading route: one dot per chapter in the left margin of wide screens ---------------- */
+run('route', function route() {
+  const links = $$('.nav-links a'); if (!links.length) return;
+  const nav = h('nav', 'route'); nav.setAttribute('aria-label', 'Reading route');
+  const items = links.map(l => { const a = h('a', '', `<i></i><span>${esc(l.textContent)}</span>`); a.href = l.getAttribute('href'); nav.appendChild(a); return { a, id: l.getAttribute('href').slice(1) }; });
+  document.body.appendChild(nav);
+  const secs = items.map(x => document.getElementById(x.id)).filter(Boolean);
+  const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const k = items.findIndex(x => x.id === (e.target.dataset.nav || e.target.id)); items.forEach((x, j) => { x.a.classList.toggle('on', j === k); x.a.classList.toggle('done', j < k); }); }), { rootMargin: '-45% 0px -50% 0px' });
+  secs.forEach(s => io.observe(s));
+  watch($('#top'), vis => nav.classList.toggle('show', !vis), 0.02);
+});
+
+/* ---------------- hero: the film, one progress line per generation window, the request line of the shot on screen ---------------- */
 run('hero', function hero() {
-  const s = story(HERO); const spans = s.spans.ours; const v = $('#heroVideo');
-  const root = $('#top');
-  root.addEventListener('pointermove', e => { const r = root.getBoundingClientRect(); root.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%'); root.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%'); });
-  $('#reelTitle').textContent = s.title;
-  $('#reelStats').textContent = `${spans.length} shots, ${s.seconds.toFixed(1)} s, ${s.windows.length} generation windows`;
-  const tl = $('#heroTimeline'); const shotBtns = []; const wins = [];
-  s.windows.forEach((w, wi) => {
+  const s = story(HERO); const spans = s.spans.ours; const v = $('#heroVideo'); const steps = $('#heroSteps');
+  const line = $('#heroLine'), lineNo = $('#heroLineNo'), cap = line.closest('.film-cap');
+  const segs = s.windows.map((w, wi) => {
     const [a, b] = winRange(spans, w);
-    const win = h('div', 'tl-win'); win.style.flex = `${b - a} 1 0`;
-    win.appendChild(h('div', 'lab', `<span>Window ${wi + 1}</span><span>${(b - a).toFixed(1)} s</span>`));
-    const strip = h('div', 'tl-strip');
-    w.shots.forEach(k => {
-      const [sa, sb] = spans[k - 1];
-      const btn = h('button', 'tl-shot', `<span>${k}</span><i class="ph"></i>`);
-      btn.type = 'button'; btn.style.flex = `${sb - sa} 1 0`; btn.style.backgroundImage = `url(${frame(HERO, k)})`;
-      btn.setAttribute('aria-label', `Jump to shot ${k}`);
-      btn.addEventListener('click', () => { v.currentTime = sa + 0.02; v.play().catch(() => {}); });
-      strip.appendChild(btn); shotBtns[k - 1] = btn;
-    });
-    win.appendChild(strip); tl.appendChild(win); wins.push(win);
+    const el = h('button', 'fs', `<span class="fs-lab"><b>${pad(wi + 1)}</b></span><i><u></u></i>`);
+    el.type = 'button'; el.style.flex = `${(b - a).toFixed(2)} 1 0`;
+    el.setAttribute('aria-label', `Window ${wi + 1}, shots ${w.shots[0]}${w.shots.length > 1 ? ' to ' + w.shots[w.shots.length - 1] : ''}`);
+    el.title = `Shots ${w.shots.join(', ')} generated together`;
+    el.addEventListener('click', () => { v.currentTime = a + 0.02; v.play().catch(() => {}); });
+    steps.appendChild(el); return { el, a, b, fill: $('u', el) };
   });
-  const arcSvg = sv('svg', { class: 'tl-arcs', 'aria-hidden': 'true' }, tl);
-  let arcs = [];
-  function drawArcs(wi) {
-    arcSvg.innerHTML = ''; arcs = [];
-    shotBtns.forEach(b => b.classList.remove('src'));
-    wins.forEach(w => w.classList.toggle('narrow', w.getBoundingClientRect().width < 118));
-    const r0 = tl.getBoundingClientRect(); if (!r0.width) return;
-    arcSvg.setAttribute('viewBox', `0 0 ${r0.width.toFixed(1)} ${r0.height.toFixed(1)}`);
-    recallUse(s, s.windows[wi]).forEach(u => u.uses.forEach(x => {
-      const a = shotBtns[u.ref.shot - 1], b = shotBtns[x.shot - 1]; a.classList.add('src');
-      const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
-      const x1 = ra.left + ra.width / 2 - r0.left, x2 = rb.left + rb.width / 2 - r0.left, y = ra.bottom - r0.top + 3;
-      const dip = Math.min(30, 12 + Math.abs(x2 - x1) * 0.05);
-      const d = `M${x1.toFixed(1)} ${y.toFixed(1)} C${x1.toFixed(1)} ${(y + dip).toFixed(1)} ${x2.toFixed(1)} ${(y + dip).toFixed(1)} ${x2.toFixed(1)} ${y.toFixed(1)}`;
-      const p = sv('path', { d, class: 'arc' }, arcSvg);
-      p.style.setProperty('--len', p.getTotalLength().toFixed(1)); p.style.animationDelay = `${arcs.length * 110}ms`;
-      const dot = sv('circle', { r: 3.2, class: 'arc-dot' }, arcSvg);
-      if (!RM) sv('animateMotion', { dur: '1.5s', repeatCount: 'indefinite', path: d }, dot);
-      arcs.push({ p, dot, to: x.shot });
-    }));
-  }
-  const box = $('#heroRecall'), winEl = $('#castWin'), note = $('#castNote'); let items = [];
-  function showWindow(wi) {
-    const w = s.windows[wi]; const used = recallUse(s, w).filter(u => u.uses.length);
-    winEl.textContent = `Window ${wi + 1} of ${s.windows.length}, shot${w.shots.length > 1 ? 's' : ''} ${w.shots[0]}${w.shots.length > 1 ? '–' + w.shots[w.shots.length - 1] : ''}`;
-    winEl.classList.remove('bump'); void winEl.offsetWidth; winEl.classList.add('bump');
-    box.innerHTML = ''; items = [];
-    if (!used.length) { note.textContent = 'Nothing has been generated yet, so the first window starts from the storyboard text alone.';
-      box.appendChild(h('div', 'rc-empty', `<b>No earlier shots to recall</b><span>Shots ${w.shots.join(', ')} are generated from their storyboard text only. From window 2 on, earlier shots of the same characters come back here.</span>`)); }
-    else {
-      note.textContent = 'Earlier shots this window recalls, and who or what each is recalled for. Lit: read by the shot now playing.';
-      items = used.map((u, i) => { const el = h('div', 'rc', `<i style="background-image:url(${frame(HERO, u.ref.shot)})"></i><span><b>Shot ${u.ref.shot}</b><span>${purpose(s, u)}</span></span>`); el.style.setProperty('--i', i); box.appendChild(el); return { el, ri: u.ri }; });
-    }
-    drawArcs(wi);
-  }
-  const shotNo = $('#heroShotNo'), cam = $('#heroCam'), line = $('#heroLine'), lineNo = $('#heroLineNo'), tc = $('#heroTc'), passEl = $('#heroPass');
-  let typeTimer = 0;
-  function typeTo(text) {
-    clearInterval(typeTimer);
-    if (RM) { line.textContent = text; return; }
-    let i = 0; line.textContent = '';
-    typeTimer = setInterval(() => { i += 3; line.textContent = text.slice(0, i); if (i >= text.length) clearInterval(typeTimer); }, 16);
-  }
-  const prog = $('#heroProg'); const segs = s.windows.map(w => { const [a, b] = winRange(spans, w); const sp = document.createElement('span'); sp.style.flex = `${b - a} 1 0`; sp.appendChild(document.createElement('i'));
-    w.shots.slice(1).forEach(k => { const t = h('b'); t.style.left = ((spans[k - 1][0] - a) / (b - a) * 100) + '%'; sp.appendChild(t); }); prog.appendChild(sp); return { a, b, fill: sp.firstChild }; });
-  let cur = -1, curWin = -1;
+  const pb = h('button', 'fs-play'); pb.type = 'button'; steps.appendChild(pb);
+  let userPaused = false;
+  const sync = () => { pb.innerHTML = v.paused ? '<svg viewBox="0 0 10 10"><path d="M2.5 1v8l6.5-4z" fill="currentColor"/></svg>' : '<svg viewBox="0 0 10 10"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></svg>'; pb.setAttribute('aria-label', v.paused ? 'Play the film' : 'Pause the film'); };
+  pb.addEventListener('click', () => { if (v.paused) { userPaused = false; v.play().catch(() => {}); } else { userPaused = true; v.pause(); } });
+  v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
+  let cur = -1;
   function update() {
     const t = v.currentTime || 0; const k = shotAt(spans, t);
-    const fr = Math.floor(t * 24);
-    tc.textContent = `00:${pad(Math.floor(t / 60) % 60)}:${pad(Math.floor(t) % 60)}:${pad(fr % 24)}`;
+    segs.forEach(g => { const p = Math.max(0, Math.min(1, (t - g.a) / (g.b - g.a))); g.fill.style.width = (p * 100) + '%'; g.el.classList.toggle('on', t >= g.a && t < g.b); g.el.classList.toggle('done', t >= g.b); });
     if (k !== cur) {
-      cur = k;
-      shotNo.textContent = `Shot ${k + 1} / ${spans.length}`;
-      if (!RM) { shotNo.classList.add('flash'); setTimeout(() => shotNo.classList.remove('flash'), 260); }
-      cam.textContent = camLabel(s.plan.shots[k].camera);
-      lineNo.textContent = `Shot ${k + 1}`;
-      typeTo(s.requests.shots[k]);
-      shotBtns.forEach((b, i) => b.classList.toggle('on', i === k));
-      const wi = s.windows.findIndex(w => w.shots.includes(k + 1));
-      if (wi !== curWin) { curWin = wi; wins.forEach((w, i) => w.classList.toggle('on', i === wi)); passEl.textContent = `Window ${wi + 1} / ${s.windows.length}`; showWindow(wi); }
-      const w = s.windows[wi]; const reads = new Set(w.routing[w.shots.indexOf(k + 1)] || []);
-      items.forEach(x => x.el.classList.toggle('on', reads.has(x.ri))); box.classList.toggle('live', reads.size > 0);
-      arcs.forEach(a => { const on = a.to === k + 1; a.p.classList.toggle('on', on); a.dot.classList.toggle('on', on); });
+      cur = k; const wi = s.windows.findIndex(w => w.shots.includes(k + 1)); lineNo.textContent = `Window ${wi + 1} · Shot ${k + 1}`;
+      if (RM || !line.textContent) line.textContent = s.requests.shots[k];
+      else { cap.classList.add('swap'); setTimeout(() => { line.textContent = s.requests.shots[cur]; cap.classList.remove('swap'); }, 250); }
     }
-    const [a, b] = spans[k]; const ph = shotBtns[k].querySelector('.ph'); ph.style.left = (Math.min(1, (t - a) / (b - a)) * 100) + '%';
-    segs.forEach(g => { g.fill.style.width = (Math.max(0, Math.min(1, (t - g.a) / (g.b - g.a))) * 100) + '%'; });
   }
   let raf = 0; const loop = () => { update(); raf = requestAnimationFrame(loop); };
   v.addEventListener('play', () => { cancelAnimationFrame(raf); loop(); });
   v.addEventListener('pause', () => cancelAnimationFrame(raf));
   v.addEventListener('seeked', update);
-  const pBtn = $('#heroPlay'), pIcon = $('#heroPlayIcon'); let heroUserPaused = false;
-  function syncBtn() { const p = v.paused; pIcon.innerHTML = p ? '<path d="M2 1v8l7-4z" fill="currentColor"/>' : '<path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/>'; pBtn.lastChild.textContent = p ? 'Play' : 'Pause'; pBtn.setAttribute('aria-label', p ? 'Play the film' : 'Pause the film'); }
-  pBtn.addEventListener('click', () => { if (v.paused) { heroUserPaused = false; v.play().catch(() => {}); } else { heroUserPaused = true; v.pause(); } });
-  v.addEventListener('play', syncBtn); v.addEventListener('pause', syncBtn);
-  let rt = 0; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (curWin >= 0) { drawArcs(curWin); const kk = cur; cur = -1; update(); if (kk < 0) cur = -1; } }, 150); });
-  addEventListener('load', () => { if (curWin >= 0) drawArcs(curWin); cur = -1; update(); });
   update();
-  watch(v, vis => { if (vis && !heroUserPaused) v.play().catch(() => {}); else if (!vis) v.pause(); }, 0.15);
+  watch(v, vis => { if (vis && !userPaused) v.play().catch(() => {}); else if (!vis) v.pause(); }, 0.15);
 });
 
 /* ---------------- paper tables ---------------- */
@@ -287,9 +231,9 @@ run('compare', function compare() {
      pin = [x, y] tip on the head or the clothes, zoom = [x, y, width] square crop of the whole head (hair to chin) or the outfit */
   const ROWS = [
     { m: 'holocine', n: 'Joint generation', who: 'HoloCine', col: 'var(--holo)', cuts: ['new', 'new'], marks: { 2: { kind: 'person', pin: [.49, .27], zoom: [.49, .43, .46] }, 8: { kind: 'person', pin: [.40, .19], zoom: [.40, .34, .36] } },
-      note: 'HoloCine cuts where the story asks, but the officer who returns in shot 8 is judged a different man from shot 2.' },
-    { m: 'storymem', n: 'Memory-augmented', who: 'StoryMem', col: 'var(--mem)', cuts: ['new', 'lost'], marks: { 3: { kind: 'outfit', pin: [.42, .64], zoom: [.40, .69, .36] } },
-      note: 'StoryMem keeps both faces, but the bearded man is judged to have changed clothes by shot 3, and shot 3 runs on from shot 2 with no detectable cut, so the planned new shot never happens. Every shot also keeps the same framing.' },
+      note: 'HoloCine cuts where the story asks, but the officer in shots 2 and 8 is judged to be two different men.' },
+    { m: 'storymem', n: 'Memory-augmented', who: 'StoryMem', col: 'var(--mem)', cuts: ['new', 'lost'], marks: { 1: { kind: 'outfit', pin: [.50, .62], zoom: [.52, .66, .36] }, 3: { kind: 'outfit', pin: [.42, .64], zoom: [.40, .69, .36] } },
+      note: 'StoryMem keeps both faces, but the bearded man is judged to wear different clothes in shots 1 and 3, and shot 3 runs on from shot 2 with no detectable cut, so the planned new shot never happens. Every shot also keeps the same framing.' },
     { m: 'ours', n: 'CaT-Movie', who: 'ours', col: 'var(--ours)', cuts: ['new', 'new'], marks: {},
       note: 'CaT-Movie opens a new camera setup at both cuts, and both men are judged the same people throughout.' },
   ];
@@ -297,25 +241,31 @@ run('compare', function compare() {
   host.innerHTML = `<div class="qh"><span></span>${SH.map((k, i) => `<button type="button" class="cmp-col" data-k="${k}" aria-label="Play shot ${k} in all three"><b>Shot ${k}</b><em>${HEAD[i][0]}</em><q>${HEAD[i][1]}</q></button>`).join('')}</div>` +
     ROWS.map(r => `<div class="qr" data-m="${r.m}"><div class="qn" style="color:${r.col}">${r.n}<small>${r.who === 'ours' ? '' : r.who}</small></div><div class="qstrip${r.m === 'ours' ? ' ours' : ''}">${SH.map(k => {
       const img = `${MEDIA}f/qual/${r.m}-s${k}.jpg`; const mk = r.marks[k];
-      return `<div class="qc" data-k="${k}" style="background-image:url(${img})">${mk ? `<span class="pin ${mk.kind}" style="left:${mk.pin[0] * 100}%;top:${mk.pin[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#${mk.kind === 'outfit' ? 'i-outfit' : 'i-neq'}"/></svg></span><span class="zoom" style="${zoom(img, ...mk.zoom)}"></span>` : ''}<span class="tc mono"></span><i class="qbar"></i></div>`;
+      return `<div class="qc" data-k="${k}"${mk ? ` data-pair="${r.m}-${mk.kind}"` : ''} style="background-image:url(${img})">${mk ? `<span class="pin ${mk.kind}" style="left:${mk.pin[0] * 100}%;top:${mk.pin[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#${mk.kind === 'outfit' ? 'i-outfit' : 'i-neq'}"/></svg></span><span class="zoom" style="${zoom(img, ...mk.zoom)}"></span>` : ''}<span class="tc mono"></span><i class="qbar"></i></div>`;
     }).join('')}${r.cuts.map((c, i) => `<svg class="qcut${c === 'lost' ? ' lost' : ''}" data-b="${i + 1}" style="left:${(i + 1) * 25}%" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div></div>`).join('') +
-    `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>judged a different person</span><span><svg viewBox="0 0 20 24"><use href="#i-outfit"/></svg>same person, judged a different outfit</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>planned cut, new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>planned cut not made</span><span>shots 4&ndash;7 not shown</span></div>`;
+    `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>pinned pair: different people</span><span><svg viewBox="0 0 20 24"><use href="#i-outfit"/></svg>pinned pair: same person, different outfit</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>planned cut, new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>planned cut not made</span><span>shots 4&ndash;7 not shown</span></div>`;
 
   /* playback: a cell plays its own shot (looping), or once when the playhead drives it */
+  /* each shown shot is its own clip, cut frame-exact at the method's frame rate (ours 24 fps, the others 16 fps), so a clip
+     cannot run into the next shot; clips are preloaded once the section is near, so a shot starts at once */
+  const clip = (m, k) => `${MEDIA}v/cmp/${m}-s${k}.mp4`;
+  const pool = new Map();
+  const make = src => { const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.className = 'qv'; v.src = src; return v; };
+  const warm = () => ROWS.forEach(r => SH.forEach(k => { const src = clip(r.m, k); if (!pool.has(src)) pool.set(src, make(src)); }));
+  watch(host, vis => { if (vis) warm(); }, 0, '900px');
   let live = [];
-  function stop() { live.forEach(({ v, cell }) => { v.pause(); v.remove(); cell.classList.remove('playing'); $('.qbar', cell).style.width = '0'; $('.tc', cell).textContent = ''; }); live = []; }
+  function stop() { live.forEach(({ v, cell, src }) => { v.pause(); v.onended = null; v.loop = false; v.remove(); try { v.currentTime = 0; } catch (e) {} pool.set(src, v); cell.classList.remove('playing'); $('.qbar', cell).style.width = '0'; $('.tc', cell).textContent = ''; }); live = []; }
   function start(cell, onDone) {
-    const m = cell.closest('.qr').dataset.m; const k = +cell.dataset.k; const [a, b] = s.spans[m][k - 1];
-    const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = `${MEDIA}v/${sid}/${m}.mp4#t=${a.toFixed(2)}`; v.className = 'qv';
+    const m = cell.closest('.qr').dataset.m; const k = +cell.dataset.k; const [a, b] = s.spans[m][k - 1]; const L = b - a;
+    const src = clip(m, k); const v = pool.get(src) || make(src); pool.delete(src);
+    v.loop = !onDone; try { v.currentTime = 0; } catch (e) {}
     cell.prepend(v); cell.classList.add('playing'); const tc = $('.tc', cell), bar = $('.qbar', cell);
-    const x = { v, cell, done: false };
-    v.addEventListener('loadedmetadata', () => { v.currentTime = a + 0.02; v.play().catch(() => {}); }, { once: true });
-    v.addEventListener('timeupdate', () => {
-      if (!v.isConnected) return;
-      if (v.currentTime >= b - 0.06) { if (onDone) { v.pause(); if (!x.done) { x.done = true; onDone(); } } else v.currentTime = a + 0.02; }
-      const p = Math.max(0, Math.min(1, (v.currentTime - a) / (b - a)));
-      tc.textContent = `${(v.currentTime - a).toFixed(1)} / ${(b - a).toFixed(1)} s`; bar.style.width = (p * 100) + '%';
-    });
+    const x = { v, cell, src, done: false };
+    const show = t => { tc.textContent = `${Math.min(L, t).toFixed(1)} / ${L.toFixed(1)} s`; bar.style.width = (Math.min(1, t / L) * 100) + '%'; };
+    const rvfc = 'requestVideoFrameCallback' in HTMLVideoElement.prototype;
+    (function tick() { if (!v.isConnected || x.done) return; show(v.currentTime || 0); if (rvfc) v.requestVideoFrameCallback(tick); else requestAnimationFrame(tick); })();
+    if (onDone) v.onended = () => { if (x.done) return; x.done = true; show(L); onDone(); };
+    v.play().catch(() => {});
     live.push(x);
   }
 
@@ -360,6 +310,8 @@ run('compare', function compare() {
     stopTour(true); stop(); if (!was) { cells.forEach(c => start(c)); b.classList.add('on'); }
   }));
 
+  $$('.qc[data-pair]', host).forEach(c => { const mates = () => $$(`.qc[data-pair="${c.dataset.pair}"]`, host);
+    c.addEventListener('pointerenter', () => mates().forEach(x => x.classList.add('pair-hl'))); c.addEventListener('pointerleave', () => mates().forEach(x => x.classList.remove('pair-hl'))); });
   /* reading the verdicts one generator at a time */
   const ctrl = $('#cmpCtrl'), note = $('#cmpNote');
   const btns = ROWS.map(r => { const b = h('button', 'cmp-btn', `<i style="background:${r.col}"></i>${r.n}${r.who === 'ours' ? '' : ` <span>${r.who}</span>`}`); b.type = 'button'; b.dataset.m = r.m; b.setAttribute('aria-pressed', 'false'); ctrl.appendChild(b); return b; });
@@ -594,14 +546,40 @@ run('theater', function theater() {
 /* ---------------- cut-gate demo ---------------- */
 run('gate', function gate() {
   const J = $('#gateJoint'), M = $('#gateMem'), root = $('#gate'), sw = $('#gateSwitch');
-  const zoom = (img, cx, cy) => { const c = 0.34, ch = c * 16 / 9; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
-  const neq = (x, y) => `<span class="neq" style="left:${x}%;top:${y}%"><svg width="22" height="26" viewBox="0 0 20 24"><use href="#i-neq"/></svg></span>`;
-  J.innerHTML = `<div class="gstrip span2"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/joint-s03.jpg)"></div><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/joint-s04.jpg)">${neq(47, 12)}<span class="zoom" style="${zoom(`${MEDIA}f/kitchen/joint-s04.jpg`, .47, .45)}"></span></div><svg class="scissor" style="left:50%" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>` +
-    `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/joint-s06.jpg)">${neq(42, 12)}<span class="zoom" style="${zoom(`${MEDIA}f/kitchen/joint-s06.jpg`, .42, .45)}"></span></div></div>`;
-  M.innerHTML = `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/memory-s03.jpg)"></div></div>` +
-    `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/memory-s04.jpg)"></div><span class="gate-fail"><span>gate fails · setup kept</span></span></div>` +
-    `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/memory-s06.jpg)"></div></div>` +
+  /* the paper's teaser (Figure 1): frames, pins and the paired upper-body crops follow ~/Documents/优秀绘图/Storyboard/Figure1_动机/代码/make_kitchen_motive.py */
+  const F = k => `${MEDIA}f/teaser/${k}.jpg`;
+  const crop = (img, [x0, y0, x1, y1]) => { const w = x1 - x0, hh = y1 - y0; return `background-image:url(${img});background-size:${(832 / w * 100).toFixed(1)}% ${(480 / hh * 100).toFixed(1)}%;background-position:${w < 832 ? (x0 / (832 - w) * 100).toFixed(1) : 0}% ${hh < 480 ? (y0 / (480 - hh) * 100).toFixed(1) : 0}%`; };
+  const pin = (x, y) => `<span class="neq" style="left:${x}%;top:${y}%"><svg width="22" height="26" viewBox="0 0 20 24"><use href="#i-neq"/></svg></span>`;
+  J.innerHTML = `<div class="gstrip span2"><div class="gframe" style="background-image:url(${F('joint-s03')})"></div><div class="gframe" style="background-image:url(${F('joint-s04')})">${pin(50, 24)}<span class="zoom" style="${crop(F('joint-s04'), [220, 0, 640, 480])}"></span></div><svg class="scissor" style="left:50%" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>` +
+    `<div class="gstrip"><div class="gframe" style="background-image:url(${F('joint-s06')})">${pin(41, 24)}<span class="zoom" style="${crop(F('joint-s06'), [205, 30, 505, 373])}"></span></div></div>`;
+  M.innerHTML = `<div class="gstrip"><div class="gframe" style="background-image:url(${F('memory-s03')})"></div></div>` +
+    `<div class="gstrip"><div class="gframe" style="background-image:url(${F('memory-s04')})"></div><span class="gate-fail"><span>gate fails · setup kept</span></span></div>` +
+    `<div class="gstrip"><div class="gframe" style="background-image:url(${F('memory-s06')})"></div></div>` +
     `<svg class="scissor" style="left:33.33%" viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>`;
+  /* playback: each shown shot is its own short clip (frames 90-186, 187-223 and 261-301 of each 16 fps render) */
+  const COLS = ['3', '4', '6'];
+  const cells = $$('.gframe', root); let pinned = null, hoverT = 0;
+  cells.forEach((c, i) => { c.dataset.clip = `${i < 3 ? 'joint' : 'memory'}-s0${COLS[i % 3]}`; c.dataset.col = COLS[i % 3]; c.tabIndex = 0; c.setAttribute('role', 'button'); c.setAttribute('aria-label', `Play shot ${COLS[i % 3]}, ${i < 3 ? 'joint generation' : 'memory-augmented'}`); });
+  const heads = $$('.gate-cols .ch', root); heads.forEach((hd, i) => { hd.dataset.col = COLS[i]; hd.tabIndex = 0; hd.setAttribute('role', 'button'); hd.setAttribute('aria-label', `Play shot ${COLS[i]} in both rows`); });
+  /* clips are preloaded as the panel nears and reused; each starts from the frame already on screen (the teaser's
+     still is the 1 fps frame at 2.5 s, 0.5 s and 1.5 s into shots 3, 4 and 6), so pressing play continues the picture */
+  const FROM = { 3: 2.5, 4: 0.5, 6: 1.5 }, pool = new Map();
+  const make = clip => { const v = document.createElement('video'); v.className = 'gv'; v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto'; v.src = `${MEDIA}v/teaser/${clip}.mp4`; return v; };
+  watch(root, vis => { if (vis) cells.forEach(c => { if (!pool.has(c.dataset.clip) && !$('.gv', c)) pool.set(c.dataset.clip, make(c.dataset.clip)); }); }, 0, '900px');
+  function play(c) { if (c.classList.contains('playing')) return; const v = pool.get(c.dataset.clip) || make(c.dataset.clip); pool.delete(c.dataset.clip); try { v.currentTime = FROM[c.dataset.col]; } catch (e) {} c.prepend(v); c.classList.add('playing'); v.play().catch(() => {}); }
+  function halt(c) { const v = $('.gv', c); if (v) { v.pause(); v.remove(); pool.set(c.dataset.clip, v); } c.classList.remove('playing'); }
+  const haltAll = () => cells.forEach(halt);
+  cells.forEach(c => {
+    const toggle = () => { const was = pinned === c; haltAll(); heads.forEach(hd => hd.classList.remove('on')); pinned = was ? null : c; if (!was) play(c); };
+    c.addEventListener('click', toggle); c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    c.addEventListener('pointerenter', e => { if (e.pointerType !== 'mouse' || pinned) return; clearTimeout(hoverT); hoverT = setTimeout(() => play(c), 40); });
+    c.addEventListener('pointerleave', e => { if (e.pointerType !== 'mouse') return; clearTimeout(hoverT); if (!pinned) halt(c); });
+  });
+  heads.forEach(hd => {
+    const go = () => { const col = hd.dataset.col; const was = pinned === col; haltAll(); heads.forEach(x => x.classList.toggle('on', !was && x === hd)); pinned = was ? null : col; if (!was) cells.filter(c => c.dataset.col === col).forEach(play); };
+    hd.addEventListener('click', go); hd.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  });
+  watch(root, vis => { if (!vis) { haltAll(); pinned = null; heads.forEach(x => x.classList.remove('on')); } }, 0.1);
   let touched = false;
   function set(on) {
     const rows = [$('#srOff'), $('#srOn')]; const before = rows.map(r => r.getBoundingClientRect().top);

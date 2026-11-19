@@ -10,7 +10,6 @@
 <meta property="og:image" content="https://jinplu.github.io/CaT-Movie/f/film-003995-b0001-shot06/s2.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307080c'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%238aa8ff'/%3E%3C/svg%3E">
-<meta name="cat-media" content="https://cdn.jsdelivr.net/gh/JinPLu/CaT-Movie@a4cd651/">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>CaT-Movie</title>
@@ -18,7 +17,7 @@
 <meta name="description" content="CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
 <style>
 /* Layout: Editorial dual-theme screening room (Light default + Dark toggle).
    Film strips with perforations always mean one generation pass, scissors mean a planned cut, and cobalt/steel blue is CaT-Movie. */
@@ -157,7 +156,7 @@ section + section{border-top:1px solid var(--line)}
 .hero > .wrap{position:relative;z-index:1}
 .hero-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:end;margin-top:clamp(16px,2vw,24px);padding-top:clamp(16px,1.8vw,22px);border-top:1px solid var(--line)}
 .title{margin:0 0 0 -.03em;font:900 clamp(72px,15.5vw,228px)/.82 var(--display);letter-spacing:-.01em;color:var(--paper);white-space:nowrap}
-.title .film{background:url(https://cdn.jsdelivr.net/gh/JinPLu/CaT-Movie@a4cd651/f/title-strip.jpg) 0 50%/auto 100% repeat-x;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+.title .film{background:url(f/title-strip.jpg) 0 50%/auto 100% repeat-x;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
   -webkit-text-stroke:1.5px rgba(17,21,32,.38)}
 html[data-theme="dark"] .title .film{-webkit-text-stroke:1.5px rgba(236,232,224,.5)}
 .title .f2{background-position:-1400px 50%}
@@ -957,6 +956,199 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
   .steps-head{flex-wrap:wrap}
   .steps-head p{margin:0}
 }
+
+/* marks follow the paper's teaser and Figure 5: plum scissors and pins, a dark × for a cut that was not made */
+:root{--mk-cut:#985a80;--mk-pin:#985a80;--mk-x:#222;--mk-halo:#fff}
+html[data-theme="dark"]{--mk-cut:#d690bb;--mk-pin:#c27aa5;--mk-x:#111520;--mk-halo:#ece8e0}
+.gframe .neq{transform:translate(-50%,-90%)}
+.gframe .zoom{aspect-ratio:300/343;width:30%}
+.gstrip.span2{gap:0}
+.gstrip.span2 .gframe + .gframe::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#fff;z-index:2;pointer-events:none}
+.gate .rn small{display:none}
+.qc.pair-hl{box-shadow:0 0 0 2px var(--mk-pin)}
+.score-row .cmp{display:block;text-align:right;white-space:nowrap}
+.score-row .cmp .v{min-width:0}
+.score-row .cmp .op{margin:0 .35em}
+@media (max-width:640px){.score-row{grid-template-columns:1fr;gap:4px}.score-row .cmp{white-space:normal;text-align:left;font-size:12.5px}}
+.gframe{cursor:pointer;transition:box-shadow var(--t2) var(--eo)}
+.gframe:hover{box-shadow:0 0 0 2px rgba(236,232,224,.6)}
+.gframe .gv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.gframe .neq,.gframe .zoom{z-index:1;transition:opacity .2s}
+.gframe.playing .neq,.gframe.playing .zoom{opacity:0}
+.gframe.playing{box-shadow:0 0 0 2px #fff}
+.gate-cols .ch{cursor:pointer;border-radius:8px;padding:4px 6px 8px;margin:-4px -6px 0;transition:background var(--t2)}
+.gate-cols .ch:hover,.gate-cols .ch.on{background:var(--ink-3)}
+.gate-legend .gate-hint{color:var(--mute);margin-left:auto}
+
+/* ---------- v6 (11-19): restraint after the Mundo page — one sans family at light weights, paper and ink,
+   blue only for what CaT-Movie recalls, plum only for cuts and mismatches, soft borderless panels, one left line ---------- */
+:root{--display:"Geist","Inter","Helvetica Neue",system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);--eo:cubic-bezier(.2,.7,.2,1);--ee:cubic-bezier(.2,.7,.2,1);
+  --panel:#efede7;--rule:rgba(17,21,32,.13);--rule2:rgba(17,21,32,.07);--ink:#f5f4f0}
+html[data-theme="dark"]{--panel:#11141b;--rule:rgba(236,232,224,.14);--rule2:rgba(236,232,224,.07);--ink:#0a0b10}
+*{text-transform:none!important}
+#grain,.vignette,.hero-glow,.vf,.perf,.ov-tc,.tile .kind{display:none!important}
+body{font-size:16.5px}
+h1,h2,h3,h4,.brand,.rs-count,.recall-win,.qn,.qh b,.cmp-col b,.story b,.steps-head h3,.chart-title h3,.cmp-sum>h3,.hw-facts b,.stat b{font-family:var(--body)!important;letter-spacing:-.025em}
+h2,.beat h2,.minor h2{font:500 clamp(32px,3.3vw,46px)/1.08 var(--body);letter-spacing:-.03em;max-width:22ch}
+h3,.chart-title h3,.steps-head h3,.cmp-sum>h3{font-weight:500}
+.lead{font-size:17.5px;line-height:1.62;max-width:62ch;color:var(--text)}
+.k,.legend,.qlegend,.gate-legend,.tl-cap,.pk-lab,.tl-win .lab,.reel-meta,.ov,.nav-links a,.theme-btn,.mini-btn,.rs-hint,.cmp-status,.qh em,.gate-cols .ch b,.gate-cols .ch b em{letter-spacing:.01em!important}
+
+/* chapters: number and a hairline, then the title, then the lede — all on one left line */
+main{counter-reset:ch}
+main > section:not(.hero) > .wrap > .split{display:block;max-width:none}
+main > section:not(.hero) > .wrap > .split::before{counter-increment:ch;content:counter(ch,decimal-leading-zero);display:block;font:500 12px/1 var(--mono);color:var(--mute);padding-bottom:12px;margin-bottom:26px;border-bottom:1px solid var(--rule);max-width:660px}
+main > section:not(.hero) > .wrap > .split .lead{margin-top:16px}
+section + section{border-top:0}
+section{padding-block:clamp(64px,8vw,112px)}
+
+/* panels: few, large, low contrast, never nested borders */
+.panel{background:var(--panel);border:0!important;box-shadow:none!important;border-radius:18px}
+.panel .panel{background:transparent}
+.hw-ent,.rc,.rc-empty,.cmp-btn,.cmp-tour,.mini-btn,.rs-dots button,.hw-win,.score-row,.chip,.theme-btn,.seg,.tabs,.story{border-color:var(--rule2)!important}
+.hw-ent,.rc{background:var(--ink)}
+.hw-scroll,.hw-shots th,.hw-shots td,.data td,.data th{border-color:var(--rule2)!important}
+.tl-strip,.pk-strip,.qstrip,.gstrip{box-shadow:none!important}
+.qn{color:var(--paper)!important;font-weight:500}
+.qn small{font-weight:400}
+
+/* nav: quiet sentence-case links with a thin blue underline under the current one */
+.nav{background:color-mix(in srgb,var(--ink) 88%,transparent);border-bottom:1px solid var(--rule2)}
+.brand{font-weight:600;font-size:18px}
+.nav-links a{font:450 13.5px/1 var(--body)!important;color:var(--mute);padding:10px 12px}
+.nav-links a.on{color:var(--paper)}
+.nav-ind{height:2px!important;top:auto!important;bottom:4px;background:var(--ours)!important;box-shadow:none!important;border-radius:2px}
+.nav-progress{display:none}
+
+/* hero: the title and one sentence beside the film; the film carries only its shot label */
+.hero{padding-block:clamp(28px,4vw,56px) clamp(56px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.42fr);gap:clamp(28px,4vw,64px);align-items:center;min-height:calc(100vh - 140px)}
+.hero-text{display:grid;gap:18px;align-content:center}
+.hero .title{font:500 clamp(56px,6.2vw,88px)/.95 var(--body)!important;letter-spacing:-.045em;color:var(--paper);margin:0;white-space:nowrap}
+.hero .title .dash{display:inline-block;width:.32em;height:.07em;margin:0 .06em;vertical-align:.28em;background:var(--ours);border-radius:.03em;box-shadow:none}
+.hero .paper-title{font:400 clamp(19px,1.7vw,24px)/1.3 var(--body);color:var(--mute);letter-spacing:-.015em;margin:0;max-width:26ch}
+.hero .hero-claim{font:400 17px/1.55 var(--body);color:var(--text);margin:0;max-width:40ch}
+.hero .chips{gap:8px}
+.hero .chip{background:var(--paper);color:var(--ink);border-color:var(--paper)!important;font:500 13px/1 var(--body);padding:10px 14px;box-shadow:none}
+.hero .chip s{color:inherit;opacity:.6}
+.hero .chip.link:hover{background:var(--ours);border-color:var(--ours)!important;color:#fff}
+.hero .authors{font-size:14px;margin:6px 0 0;color:var(--text)}
+.hero .affil{font:400 13px/1.4 var(--body);color:var(--mute);margin:0}
+.hero-media{display:grid;gap:14px;min-width:0}
+.hero .reel{margin:0;width:auto}
+.reel-frame{padding:0!important;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 24px 48px -24px rgba(17,21,32,.45)!important}
+.reel-screen::before{height:70px;background:linear-gradient(rgba(0,0,0,.35),transparent)}
+.ov-shot{left:16px;top:14px;gap:10px}
+.ov-shot b{font:500 12px/1 var(--mono)!important;letter-spacing:.02em}
+.ov-shot .pill{border:0!important;background:none!important;padding:0;font:400 12px/1 var(--mono);color:rgba(236,232,224,.8)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+.ov-shot .pill::before{content:"·";margin-right:10px;opacity:.7}
+.ov-prog{left:16px;right:16px;bottom:12px;height:2px}
+.hero-caption{display:flex;gap:12px;align-items:baseline;margin:2px 0 0;min-height:2.9em;font:400 15px/1.5 var(--body);color:var(--text)}
+.hero-caption span:first-child{font:500 12px/1 var(--mono);color:var(--ours);white-space:nowrap}
+.hero-caption .typed::after{background:var(--ours)}
+.reel-meta{margin:0;font:400 12.5px/1.4 var(--body);color:var(--mute)}
+.reel-meta b{font-weight:500;color:var(--paper)}
+.recall-panel{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;align-items:start;padding-top:0}
+.recall-panel .recall-win{font:500 15px/1.3 var(--body);grid-column:1;white-space:nowrap}
+.recall-panel .recall-note{grid-column:2;font-size:13.5px;margin:0;color:var(--mute)}
+.recall-panel .recall{grid-column:1 / -1;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:0}
+.rc{grid-template-columns:84px minmax(0,1fr)}
+
+/* a reading route in the left margin of wide screens */
+.route{position:fixed;left:max(20px,calc((100vw - var(--wrap)) / 2 - 150px));top:50%;transform:translateY(-50%);z-index:40;display:grid;gap:12px;opacity:0;transition:opacity .4s var(--ease);pointer-events:none}
+.route.show{opacity:1;pointer-events:auto}
+.route a{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 12.5px/1 var(--body);color:var(--mute);transition:color .25s var(--ease)}
+.route a i{width:7px;height:7px;border-radius:50%;border:1px solid var(--rule);background:transparent;transition:background .25s var(--ease),border-color .25s}
+.route a.done i{background:var(--rule)}
+.route a.on{color:var(--paper)}
+.route a.on i{background:var(--ours);border-color:var(--ours)}
+@media (max-width:1499px){.route{display:none}}
+
+@media (max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero .title{white-space:normal}
+}
+@media (max-width:640px){
+  .recall-panel{grid-template-columns:1fr}
+  .recall-panel .recall-note{grid-column:1}
+  .hero-caption{font-size:14px}
+}
+
+/* v6 fixes: the hero column fits one screen; steps follow the left line; no how-to sentences inside demos */
+.hero .tl-cap{font-size:12.5px;gap:4px 16px;margin-top:-6px}
+.recall-panel .recall-note{display:none}
+.recall-panel{grid-template-columns:1fr}
+.recall-panel .recall{grid-template-columns:repeat(4,minmax(0,1fr))}
+.recall-panel .rc{grid-template-columns:56px minmax(0,1fr);gap:8px;padding:5px;font-size:12px}
+.recall-panel .rc b{font-size:13px}
+.recall-panel .rc > span{font-size:12px;line-height:1.3}
+.recall-panel .rc-empty{grid-column:1 / -1;padding:10px 14px;font-size:13px}
+.steps-head{display:block;margin:40px 0 16px}
+.steps-head b{display:block;margin-bottom:8px}
+.steps-head p{margin:8px 0 0!important;max-width:62ch}
+.gate-hint,.rs-hint{display:none}
+@media (max-width:860px){.recall-panel .recall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- v7 (11-19): a calm first screen; videos sit on the page; authors at the end ---------- */
+.hero{padding-block:clamp(32px,5vw,72px) clamp(56px,8vw,112px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(40px,6vw,104px);align-items:center;min-height:min(66vh,680px)}
+.hero-text{display:grid;gap:22px;align-content:center;justify-items:start}
+.hero .title{font:500 clamp(54px,5.6vw,80px)/.95 var(--body)!important;letter-spacing:-.045em}
+.hero .paper-title{font:400 clamp(18px,1.5vw,22px)/1.35 var(--body);color:var(--mute);max-width:24ch;margin:-6px 0 0}
+.hero .hero-claim{font:400 16.5px/1.6 var(--body);max-width:36ch;margin:0}
+.hero .chips{margin-top:4px}
+.hero .affil{font:400 13px/1.4 var(--body);color:var(--mute);margin:6px 0 0}
+.hero-film{margin:0;display:grid;gap:14px;min-width:0}
+.film-frame{position:relative;aspect-ratio:1280/704;border-radius:16px;overflow:hidden;background:#0b0d12;box-shadow:0 34px 64px -34px rgba(17,21,32,.42)}
+html[data-theme="dark"] .film-frame{box-shadow:0 34px 64px -30px rgba(0,0,0,.8)}
+.film-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.film-steps{display:flex;gap:6px;align-items:flex-end}
+.film-steps .fs{flex-basis:0;min-width:0;display:grid;gap:7px;padding:0;border:0;background:none;text-align:left;cursor:pointer;font:400 12px/1 var(--body);color:var(--mute);transition:color .3s var(--ease)}
+.film-steps .fs .fs-lab{white-space:nowrap;overflow:hidden;text-overflow:clip}
+.film-steps .fs .fs-lab b{font:500 11px/1 var(--mono);margin-right:6px;color:inherit}
+.film-steps .fs i{display:block;height:2px;border-radius:2px;background:var(--rule);overflow:hidden}
+.film-steps .fs u{display:block;height:100%;width:0;background:var(--ours)}
+.film-steps .fs.done u{background:var(--mute);opacity:.45}
+.film-steps .fs.on{color:var(--paper)}
+.film-steps .fs:hover{color:var(--paper)}
+.film-steps .fs-play{flex:none;width:26px;height:26px;margin-left:6px;border-radius:50%;border:1px solid var(--rule);background:transparent;color:var(--paper);display:grid;place-items:center;cursor:pointer}
+.film-steps .fs-play svg{width:9px;height:9px}
+.film-cap{display:flex;gap:10px;align-items:baseline;margin:0;min-height:1.5em;font:400 14px/1.5 var(--body);color:var(--mute)}
+.film-cap span:first-child{font:500 11.5px/1 var(--mono);color:var(--paper);white-space:nowrap}
+.film-cap #heroLine{transition:opacity .35s var(--ease)}
+.film-cap.swap #heroLine{opacity:0}
+
+/* videos sit on the page: no dark stage or perforated chrome around the comparison and the gallery */
+.qstrip{background:transparent!important;padding:0!important;gap:6px!important}
+.qstrip::before,.qstrip::after{display:none!important}
+.qstrip.ours{box-shadow:none!important}
+.qc{border-radius:10px}
+.qcut{top:-17px}
+.qr[data-m="ours"] .qn{color:var(--ours)!important}
+.screens{background:transparent!important;padding:0!important;box-shadow:none!important;gap:10px!important;border-radius:0}
+.tile{border-radius:12px;background:#0b0d12}
+.tile video{background:#0b0d12}
+.tile .name,.tile .shotno{font:500 11px/1 var(--body)!important;letter-spacing:0!important;background:rgba(0,0,0,.42)!important;border-radius:999px;padding:5px 9px}
+.tile[data-m="ours"]{box-shadow:0 0 0 2px var(--ours)}
+
+/* the end: labels on the left, content on the right */
+.foot-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:22px 40px;max-width:980px;margin-top:8px}
+.foot-grid .fl{margin:0;font:500 12px/1.6 var(--mono);color:var(--mute);padding-top:3px}
+.foot-grid .fr{min-width:0}
+.foot-grid .fr p{margin:0 0 4px;font-size:16px;line-height:1.6;color:var(--text)}
+.foot-grid .authors{color:var(--paper)!important}
+.foot-grid .affil{font:400 13.5px/1.5 var(--body)!important;color:var(--mute)!important;letter-spacing:0!important}
+.foot-grid .bib{width:100%;max-width:100%;margin:0}
+.foot-grid .bib pre{overflow-x:auto}
+.foot-grid .fr a{color:var(--paper);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+@media (max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;min-height:0;gap:36px}
+}
+@media (max-width:640px){
+  .film-steps .fs .fs-lab span{display:none}
+  .foot-grid{grid-template-columns:1fr;gap:6px}
+  .foot-grid .fl{padding-top:14px}
+}
 </style>
 </head>
 <body>
@@ -985,53 +1177,23 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
 <main>
 <!-- ================= HERO: the video first ================= -->
 <section class="hero" id="top">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="wrap">
-    <h1 class="title" aria-label="CaT-Movie"><span class="film ch" aria-hidden="true">CaT</span><span class="dash ch" aria-hidden="true"></span><span class="film ch f2" aria-hidden="true">Movie</span></h1>
-    <div class="hero-top">
-      <div>
-        <p class="hero-claim">Long multi-shot videos that keep the same characters and still cut where the story says.</p>
-        <p class="paper-title">Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation</p>
-        <p class="authors">Jinpeng Lu<sup>*</sup> &middot; Haoyuan Shi<sup>*</sup> &middot; Yuanshen Guan &middot; Jiyuan Xia &middot; Bin Wu &middot; Yinda Chen &middot; Zhiwei Xiong</p>
-        <p class="affil"><span>University of Science and Technology of China</span> &middot; * Equal contribution</p>
-      </div>
-      <div class="hero-side">
-        <div class="chips" aria-label="Release">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 class="title">CaT<span class="dash" aria-hidden="true"></span>Movie</h1>
+      <p class="paper-title">Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation</p>
+      <p class="hero-claim">Long multi-shot videos that keep the same characters and still cut where the story says.</p>
+      <div class="chips" aria-label="Release">
           <a class="chip link" href="https://github.com/JinPLu/CaT-Movie">Code <s>&middot; GitHub</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           <a class="chip link" href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Models &amp; data <s>&middot; Hugging Face</s><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           <!-- paper-link -->
         </div>
-        <div class="cta">
-          <a class="btn primary" href="#compare">See the comparison</a>
-          <a class="btn" href="#method">How it works</a>
-        </div>
-      </div>
+      <p class="affil">University of Science and Technology of China</p>
     </div>
-
-    <div class="reel-row">
-      <div class="reel">
-        <div class="reel-frame">
-          <div class="perf top"></div>
-          <div class="reel-screen">
-            <video id="heroVideo" src="https://cdn.jsdelivr.net/gh/JinPLu/CaT-Movie@a4cd651/v/hero-cablecar.mp4" poster="https://cdn.jsdelivr.net/gh/JinPLu/CaT-Movie@a4cd651/f/film-003995-b0001-shot06/s1.jpg" muted playsinline autoplay loop preload="auto" aria-label="CaT-Movie generation of the Cable Car test story"></video>
-            <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-            <div class="ov ov-shot"><b id="heroShotNo">Shot 1 / 12</b><span class="pill" id="heroCam">Close-up</span><span class="pill pass" id="heroPass">Window 1 / 5</span></div>
-            <div class="ov ov-tc"><i></i><span id="heroTc" class="tnum">00:00:00:00</span></div>
-            <div class="ov ov-line"><span id="heroLineNo">Shot 1</span><span class="typed" id="heroLine">Close-up shot. Character 1 looks at Character 2 while standing near a metallic shock absorber.</span></div>
-            <div class="ov-prog" id="heroProg" aria-hidden="true"></div>
-          </div>
-          <div class="perf bot"></div>
-        </div>
-        <div class="reel-meta"><span><b id="reelTitle">Cable Car</b>, a held-out test story &middot; <span id="reelStats">12 shots, 27.8 s, 5 generation windows</span></span><button class="mini-btn" id="heroPlay" type="button" aria-label="Pause the film"><svg viewBox="0 0 10 10" id="heroPlayIcon"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></svg><span>Pause</span></button></div>
-        <div class="tl" id="heroTimeline"></div>
-        <p class="tl-cap"><span><i class="k-win"></i>one strip = shots generated together in one window</span><span><i class="k-arc"></i>arc = an earlier shot recalled for the shot it ends on</span><span>click a shot to jump to it</span></p>
-      </div>
-      <aside class="recall-panel" aria-live="polite">
-        <b class="recall-win" id="castWin">Window 1 of 5</b>
-        <p class="recall-note" id="castNote"></p>
-        <div class="recall" id="heroRecall"></div>
-      </aside>
-    </div>
+    <figure class="hero-film">
+      <div class="film-frame"><video id="heroVideo" src="v/hero-cablecar.mp4" poster="f/film-003995-b0001-shot06/s1.jpg" muted playsinline autoplay loop preload="auto" aria-label="CaT-Movie generation of the Cable Car test story"></video></div>
+      <div class="film-steps" id="heroSteps" role="group" aria-label="Generation windows"></div>
+      <figcaption class="film-cap"><span id="heroLineNo">Shot 1</span><span id="heroLine"></span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -1100,11 +1262,11 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
           <div class="ch"><b>Shot 6 <em>Medium close-up</em></b><br><q>The man speaks to the woman.</q></div>
         </div>
         <div class="gate-row">
-          <div class="rn">Joint generation<small>MultiShotMaster</small></div>
+          <div class="rn">Joint generation</div>
           <div class="strips" id="gateJoint"></div>
         </div>
         <div class="gate-row">
-          <div class="rn">Memory-augmented<small>StoryMem</small></div>
+          <div class="rn">Memory-augmented</div>
           <div class="strips" id="gateMem"></div>
         </div>
         <div class="gate-switch">
@@ -1112,13 +1274,14 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
           <span class="switch-label" id="gateLab">Cut gate <span id="gateState">off</span><small>Kitchen test story (11 shots). Toggle to apply the cut-execution gate.</small></span>
         </div>
         <div class="scores">
-          <div class="score-row" id="srOff"><span class="nm">Consistency without cut gate</span><span class="cmp">Joint <span class="v">0.85</span><span class="op">&lt;</span><span class="v win">1.00</span> Memory</span></div>
-          <div class="score-row dim" id="srOn"><span class="nm">CaT-MBench (cut-gated)</span><span class="cmp">Joint <span class="v win">0.85</span><span class="op">&gt;</span><span class="v lose">0.20</span> Memory</span></div>
+          <div class="score-row" id="srOff"><span class="nm">Consistency w/o cut gate</span><span class="cmp">Joint (<span class="v">0.85</span>) <span class="op">&lt;</span> Memory-augmented (<span class="v win">1.00</span>)</span></div>
+          <div class="score-row dim" id="srOn"><span class="nm">CaT-MBench (ours)</span><span class="cmp">Joint (<span class="v win">0.85</span>) <span class="op">&gt;</span> Memory-augmented (<span class="v lose">0.20</span>)</span></div>
         </div>
         <div class="gate-legend">
-          <span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>inconsistent (judged)</span>
+          <span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>inconsistent</span>
           <span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>new camera setup</span>
           <span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>same camera setup</span>
+          <span class="gate-hint">point at a frame to play its shot; click a shot heading to play it in both rows</span>
         </div>
       </div>
 
@@ -1365,10 +1528,14 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
 <!-- ================= CITE ================= -->
 <section id="cite" class="minor">
   <div class="wrap">
-    <div class="split">
-      <h2>Cite CaT-Movie</h2>
-      <p class="lead">Code is on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>; weights, data, the benchmark, videos and human labels are in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Hugging Face collection</a>.</p>
-    </div>
+    <div class="split"><h2>Authors and citation</h2></div>
+    <div class="foot-grid">
+      <p class="fl">Authors</p>
+      <div class="fr"><p class="authors">Jinpeng Lu<sup>*</sup>, Haoyuan Shi<sup>*</sup>, Yuanshen Guan, Jiyuan Xia, Bin Wu, Yinda Chen, Zhiwei Xiong</p><p class="affil">University of Science and Technology of China &middot; <sup>*</sup> equal contribution</p></div>
+      <p class="fl">Release</p>
+      <div class="fr"><p>Code is on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>; weights, data, the benchmark, videos and human labels are in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Hugging Face collection</a>.</p></div>
+      <p class="fl">Citation</p>
+      <div class="fr">
     <div class="bib">
       <pre id="bibText">@misc{catmovie2026,
   title         = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
@@ -1377,6 +1544,8 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
   url           = {https://jinplu.github.io/CaT-Movie/}
 }</pre>
       <button class="ibtn" id="copyBib">Copy</button>
+    </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1391,15 +1560,15 @@ html[data-theme="dark"] .rs-dots button.on{color:#081022}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-scissor" viewBox="0 0 24 24"><g fill="none" stroke="#d690bb" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 16 18 3M15.8 16 6 3"/></g></symbol>
-    <symbol id="i-scissor-x" viewBox="0 0 24 24"><g fill="none" stroke="#d690bb" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 16 18 3M15.8 16 6 3"/></g><g stroke="#b8387e" stroke-width="2.8" stroke-linecap="round"><path d="M14 9l7 7M21 9l-7 7"/></g></symbol>
-    <symbol id="i-outfit" viewBox="0 0 20 24"><path d="M10 23C4 15 1.5 11.5 1.5 8.2a8.5 8.5 0 0 1 17 0c0 3.3-2.5 6.8-8.5 14.8z" fill="#d690bb"/><path d="M7.6 4.6 5 6.1l1.1 2.3 1.1-.5v4.4h5.6V7.9l1.1.5L15 6.1l-2.6-1.5c-.4.9-1.3 1.4-2.4 1.4s-2-.5-2.4-1.4z" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></symbol>
-    <symbol id="i-neq" viewBox="0 0 20 24"><path d="M10 23C4 15 1.5 11.5 1.5 8.2a8.5 8.5 0 0 1 17 0c0 3.3-2.5 6.8-8.5 14.8z" fill="#d690bb"/><path d="M5.5 6.6h9M5.5 10h9M12.4 3.8 7.6 12.8" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-scissor" viewBox="0 0 24 24"><g fill="none" stroke-linecap="round"><g stroke="var(--mk-halo)" stroke-width="4.2"><circle cx="5.5" cy="5.5" r="3"/><circle cx="18.5" cy="5.5" r="3"/><path d="M6.7 7.9 17.85 21M17.3 7.9 6.15 21"/></g><g stroke="var(--mk-cut)" stroke-width="2"><circle cx="5.5" cy="5.5" r="3"/><circle cx="18.5" cy="5.5" r="3"/><path d="M6.7 7.9 17.85 21M17.3 7.9 6.15 21"/></g></g></symbol>
+    <symbol id="i-scissor-x" viewBox="0 0 24 24"><g fill="none" stroke-linecap="round"><g stroke="var(--mk-halo)" stroke-width="4.2"><circle cx="5.5" cy="5.5" r="3"/><circle cx="18.5" cy="5.5" r="3"/><path d="M6.7 7.9 17.85 21M17.3 7.9 6.15 21"/></g><g stroke="var(--mk-cut)" stroke-width="2"><circle cx="5.5" cy="5.5" r="3"/><circle cx="18.5" cy="5.5" r="3"/><path d="M6.7 7.9 17.85 21M17.3 7.9 6.15 21"/></g><g stroke="var(--mk-halo)" stroke-width="3.6"><path d="M15.6 13.4l5.2 5.2M20.8 13.4l-5.2 5.2"/></g><g stroke="var(--mk-x)" stroke-width="2"><path d="M15.6 13.4l5.2 5.2M20.8 13.4l-5.2 5.2"/></g></g></symbol>
+    <symbol id="i-outfit" viewBox="0 0 20 24"><path d="M10 23C4 15 1.5 11.5 1.5 8.2a8.5 8.5 0 0 1 17 0c0 3.3-2.5 6.8-8.5 14.8z" fill="var(--mk-pin)" stroke="#fff" stroke-width="1.3"/><path d="M7.6 4.6 5 6.1l1.1 2.3 1.1-.5v4.4h5.6V7.9l1.1.5L15 6.1l-2.6-1.5c-.4.9-1.3 1.4-2.4 1.4s-2-.5-2.4-1.4z" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-neq" viewBox="0 0 20 24"><path d="M10 23C4 15 1.5 11.5 1.5 8.2a8.5 8.5 0 0 1 17 0c0 3.3-2.5 6.8-8.5 14.8z" fill="var(--mk-pin)" stroke="#fff" stroke-width="1.3"/><path d="M5.5 6.6h9M5.5 10h9M12.4 3.8 7.6 12.8" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></symbol>
   </defs>
 </svg>
 
-<script src="data.js?v=11" charset="utf-8"></script>
-<script src="app.js?v=11" charset="utf-8"></script>
-<script src="figs.js?v=11" charset="utf-8"></script>
+<script src="data.js?v=21" charset="utf-8"></script>
+<script src="app.js?v=21" charset="utf-8"></script>
+<script src="figs.js?v=21" charset="utf-8"></script>
 </body>
 </html>
