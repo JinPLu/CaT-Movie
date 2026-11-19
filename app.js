@@ -50,11 +50,11 @@ const hideTip = () => tip.classList.remove('on');
 /* ---------------- film grain ---------------- */
 run('grain', function grain() {
   const c = $('#grain'); const ctx = c.getContext('2d');
-  let frames = [];
+  let frames = [], i = 0, last = 0;
   function build() {
     const w = Math.max(64, Math.ceil(innerWidth / 2)), hh = Math.max(64, Math.ceil(innerHeight / 2));
     c.width = w; c.height = hh; frames = [];
-    for (let f = 0; f < 1; f++) {
+    for (let f = 0; f < (RM ? 1 : 4); f++) {
       const img = ctx.createImageData(w, hh); const d = img.data;
       for (let p = 0; p < d.length; p += 4) { const v = Math.random() * 255 | 0; d[p] = d[p + 1] = d[p + 2] = v; d[p + 3] = 255; }
       frames.push(img);
@@ -63,6 +63,8 @@ run('grain', function grain() {
   }
   build();
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 200); });
+  if (RM) return;
+  (function loop(t) { if (t - last > 83) { last = t; i = (i + 1) % frames.length; ctx.putImageData(frames[i], 0, 0); } requestAnimationFrame(loop); })(0);
 });
 
 /* ---------------- nav progress + active section + theme toggle ---------------- */
@@ -91,11 +93,18 @@ run('nav', function nav() {
   }
   function onScroll() { const max = document.documentElement.scrollHeight - innerHeight; bar.style.width = (Math.min(1, scrollY / Math.max(1, max)) * 100) + '%'; }
   addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', ticks); addEventListener('load', ticks); setTimeout(ticks, 1500); onScroll();
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+  const nl = $('.nav-links'); const ind = h('span', 'nav-ind'); nl.prepend(ind);
+  function mark(id) {
+    let hit = null; links.forEach(a => { const on = a.getAttribute('href') === '#' + id; a.classList.toggle('on', on); if (on) hit = a; });
+    if (!hit) { ind.style.opacity = 0; return; }
+    ind.style.opacity = 1; ind.style.width = hit.offsetWidth + 'px'; ind.style.transform = `translate(${hit.offsetLeft}px,-50%)`;
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) mark(e.target.dataset.nav || e.target.id); }), { rootMargin: '-45% 0px -50% 0px' });
   secs.forEach(s => io.observe(s));
+  addEventListener('resize', () => { const a = $('.nav-links a.on'); if (a) mark(a.getAttribute('href').slice(1)); });
 });
 
-/* ---------------- hero: one long story; the side panel shows what each window recalls and why ---------------- */
+/* ---------------- hero: one long story; arcs under the timeline carry each recalled view into the shot that reads it ---------------- */
 run('hero', function hero() {
   const s = story(HERO); const spans = s.spans.ours; const v = $('#heroVideo');
   const root = $('#top');
@@ -118,17 +127,51 @@ run('hero', function hero() {
     });
     win.appendChild(strip); tl.appendChild(win); wins.push(win);
   });
+  const arcSvg = sv('svg', { class: 'tl-arcs', 'aria-hidden': 'true' }, tl);
+  let arcs = [];
+  function drawArcs(wi) {
+    arcSvg.innerHTML = ''; arcs = [];
+    shotBtns.forEach(b => b.classList.remove('src'));
+    wins.forEach(w => w.classList.toggle('narrow', w.getBoundingClientRect().width < 118));
+    const r0 = tl.getBoundingClientRect(); if (!r0.width) return;
+    arcSvg.setAttribute('viewBox', `0 0 ${r0.width.toFixed(1)} ${r0.height.toFixed(1)}`);
+    recallUse(s, s.windows[wi]).forEach(u => u.uses.forEach(x => {
+      const a = shotBtns[u.ref.shot - 1], b = shotBtns[x.shot - 1]; a.classList.add('src');
+      const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+      const x1 = ra.left + ra.width / 2 - r0.left, x2 = rb.left + rb.width / 2 - r0.left, y = ra.bottom - r0.top + 3;
+      const dip = Math.min(30, 12 + Math.abs(x2 - x1) * 0.05);
+      const d = `M${x1.toFixed(1)} ${y.toFixed(1)} C${x1.toFixed(1)} ${(y + dip).toFixed(1)} ${x2.toFixed(1)} ${(y + dip).toFixed(1)} ${x2.toFixed(1)} ${y.toFixed(1)}`;
+      const p = sv('path', { d, class: 'arc' }, arcSvg);
+      p.style.setProperty('--len', p.getTotalLength().toFixed(1)); p.style.animationDelay = `${arcs.length * 110}ms`;
+      const dot = sv('circle', { r: 3.2, class: 'arc-dot' }, arcSvg);
+      if (!RM) sv('animateMotion', { dur: '1.5s', repeatCount: 'indefinite', path: d }, dot);
+      arcs.push({ p, dot, to: x.shot });
+    }));
+  }
   const box = $('#heroRecall'), winEl = $('#castWin'), note = $('#castNote'); let items = [];
   function showWindow(wi) {
     const w = s.windows[wi]; const used = recallUse(s, w).filter(u => u.uses.length);
     winEl.textContent = `Window ${wi + 1} of ${s.windows.length}, shot${w.shots.length > 1 ? 's' : ''} ${w.shots[0]}${w.shots.length > 1 ? '–' + w.shots[w.shots.length - 1] : ''}`;
+    winEl.classList.remove('bump'); void winEl.offsetWidth; winEl.classList.add('bump');
     box.innerHTML = ''; items = [];
-    if (!used.length) { note.textContent = 'Nothing has been generated yet, so the first window starts from the storyboard text alone.'; return; }
-    note.textContent = 'Earlier shots this window recalls, and who or what each one is recalled for. Lit: read by the shot now playing.';
-    items = used.map(u => { const el = h('div', 'rc', `<i style="background-image:url(${frame(HERO, u.ref.shot)})"></i><span><b>Shot ${u.ref.shot}</b><span>${purpose(s, u)}</span></span>`); box.appendChild(el); return { el, ri: u.ri }; });
+    if (!used.length) { note.textContent = 'Nothing has been generated yet, so the first window starts from the storyboard text alone.';
+      box.appendChild(h('div', 'rc-empty', `<b>No earlier shots to recall</b><span>Shots ${w.shots.join(', ')} are generated from their storyboard text only. From window 2 on, earlier shots of the same characters come back here.</span>`)); }
+    else {
+      note.textContent = 'Earlier shots this window recalls, and who or what each is recalled for. Lit: read by the shot now playing.';
+      items = used.map((u, i) => { const el = h('div', 'rc', `<i style="background-image:url(${frame(HERO, u.ref.shot)})"></i><span><b>Shot ${u.ref.shot}</b><span>${purpose(s, u)}</span></span>`); el.style.setProperty('--i', i); box.appendChild(el); return { el, ri: u.ri }; });
+    }
+    drawArcs(wi);
   }
   const shotNo = $('#heroShotNo'), cam = $('#heroCam'), line = $('#heroLine'), lineNo = $('#heroLineNo'), tc = $('#heroTc'), passEl = $('#heroPass');
-  const prog = $('#heroProg'); const segs = s.windows.map(w => { const [a, b] = winRange(spans, w); const sp = document.createElement('span'); sp.style.flex = `${b - a} 1 0`; sp.appendChild(document.createElement('i')); prog.appendChild(sp); return { a, b, fill: sp.firstChild }; });
+  let typeTimer = 0;
+  function typeTo(text) {
+    clearInterval(typeTimer);
+    if (RM) { line.textContent = text; return; }
+    let i = 0; line.textContent = '';
+    typeTimer = setInterval(() => { i += 3; line.textContent = text.slice(0, i); if (i >= text.length) clearInterval(typeTimer); }, 16);
+  }
+  const prog = $('#heroProg'); const segs = s.windows.map(w => { const [a, b] = winRange(spans, w); const sp = document.createElement('span'); sp.style.flex = `${b - a} 1 0`; sp.appendChild(document.createElement('i'));
+    w.shots.slice(1).forEach(k => { const t = h('b'); t.style.left = ((spans[k - 1][0] - a) / (b - a) * 100) + '%'; sp.appendChild(t); }); prog.appendChild(sp); return { a, b, fill: sp.firstChild }; });
   let cur = -1, curWin = -1;
   function update() {
     const t = v.currentTime || 0; const k = shotAt(spans, t);
@@ -137,14 +180,16 @@ run('hero', function hero() {
     if (k !== cur) {
       cur = k;
       shotNo.textContent = `Shot ${k + 1} / ${spans.length}`;
+      if (!RM) { shotNo.classList.add('flash'); setTimeout(() => shotNo.classList.remove('flash'), 260); }
       cam.textContent = camLabel(s.plan.shots[k].camera);
       lineNo.textContent = `Shot ${k + 1}`;
-      line.textContent = s.requests.shots[k];
+      typeTo(s.requests.shots[k]);
       shotBtns.forEach((b, i) => b.classList.toggle('on', i === k));
       const wi = s.windows.findIndex(w => w.shots.includes(k + 1));
       if (wi !== curWin) { curWin = wi; wins.forEach((w, i) => w.classList.toggle('on', i === wi)); passEl.textContent = `Window ${wi + 1} / ${s.windows.length}`; showWindow(wi); }
       const w = s.windows[wi]; const reads = new Set(w.routing[w.shots.indexOf(k + 1)] || []);
-      items.forEach(x => x.el.classList.toggle('on', reads.has(x.ri)));
+      items.forEach(x => x.el.classList.toggle('on', reads.has(x.ri))); box.classList.toggle('live', reads.size > 0);
+      arcs.forEach(a => { const on = a.to === k + 1; a.p.classList.toggle('on', on); a.dot.classList.toggle('on', on); });
     }
     const [a, b] = spans[k]; const ph = shotBtns[k].querySelector('.ph'); ph.style.left = (Math.min(1, (t - a) / (b - a)) * 100) + '%';
     segs.forEach(g => { g.fill.style.width = (Math.max(0, Math.min(1, (t - g.a) / (g.b - g.a))) * 100) + '%'; });
@@ -153,8 +198,14 @@ run('hero', function hero() {
   v.addEventListener('play', () => { cancelAnimationFrame(raf); loop(); });
   v.addEventListener('pause', () => cancelAnimationFrame(raf));
   v.addEventListener('seeked', update);
+  const pBtn = $('#heroPlay'), pIcon = $('#heroPlayIcon'); let heroUserPaused = false;
+  function syncBtn() { const p = v.paused; pIcon.innerHTML = p ? '<path d="M2 1v8l7-4z" fill="currentColor"/>' : '<path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/>'; pBtn.lastChild.textContent = p ? 'Play' : 'Pause'; pBtn.setAttribute('aria-label', p ? 'Play the film' : 'Pause the film'); }
+  pBtn.addEventListener('click', () => { if (v.paused) { heroUserPaused = false; v.play().catch(() => {}); } else { heroUserPaused = true; v.pause(); } });
+  v.addEventListener('play', syncBtn); v.addEventListener('pause', syncBtn);
+  let rt = 0; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (curWin >= 0) { drawArcs(curWin); const kk = cur; cur = -1; update(); if (kk < 0) cur = -1; } }, 150); });
+  addEventListener('load', () => { if (curWin >= 0) drawArcs(curWin); cur = -1; update(); });
   update();
-  watch(v, vis => { if (vis) v.play().catch(() => {}); else v.pause(); }, 0.15);
+  watch(v, vis => { if (vis && !heroUserPaused) v.play().catch(() => {}); else if (!vis) v.pause(); }, 0.15);
 });
 
 /* ---------------- paper tables ---------------- */
@@ -201,7 +252,7 @@ run('pareto', function pareto() {
   const LBL = { 'StoryMem': [0, -16, 'middle'], HoloCine: [14, 5, 'start'], MultiShotMaster: [-14, 20, 'end'], 'CaT-Movie': [-16, 5, 'end'], StoryDiffusion: [12, 4, 'start'], 'IC-LoRA': [-12, 4, 'end'], 'Wan2.2, per shot': [-10, -12, 'end'], 'Wan2.1, per shot': [-10, 20, 'end'] };
   const nodes = [];
   pts.forEach((p, i) => {
-    const g = sv('g', { class: 'pt', tabindex: 0, 'data-name': p.name, style: 'transform-box:fill-box;transform-origin:center' }, svg);
+    const g = sv('g', { class: 'pt' + (p.fam === 'ours' ? ' ours-pt' : ''), tabindex: 0, 'data-name': p.name, style: 'transform-box:fill-box;transform-origin:center' }, svg);
     const cx = X(p.tr), cy = Y(p.co), col = POINT_COLOR[p.name];
     if (p.fam === 'shot') sv('circle', { cx, cy, r: 7.5, fill: col, stroke: '#07080c', 'stroke-width': 2 }, g);
     else { const s = p.fam === 'ours' ? 12 : 9; if (p.fam === 'ours') sv('rect', { x: cx - s, y: cy - s, width: 2 * s, height: 2 * s, transform: `rotate(45 ${cx} ${cy})`, fill: 'none', stroke: col, 'stroke-opacity': .35, 'stroke-width': 8 }, g); sv('rect', { x: cx - s * .72, y: cy - s * .72, width: 1.44 * s, height: 1.44 * s, transform: `rotate(45 ${cx} ${cy})`, fill: col, stroke: '#07080c', 'stroke-width': 2 }, g); }
@@ -215,93 +266,231 @@ run('pareto', function pareto() {
     g.addEventListener('focus', () => { const r = g.getBoundingClientRect(); showTip(html, { clientX: r.right, clientY: r.top }); }); g.addEventListener('blur', hideTip);
     nodes.push(g);
   });
+  once(host, () => {
+    if (RM) return;
+    const len = fp.getTotalLength(); fp.style.setProperty('--len', len); fp.classList.add('draw', 'run');
+    nodes.forEach((n, i) => { n.style.animationDelay = (i * 70) + 'ms'; n.classList.add('pop', 'run'); });
+  }, 0.4);
 });
 
-/* ---------------- one story, three generators (judge verdicts from the released CaT-MBench receipts, v17) ---------------- */
+/* ---------------- one story, three generators (judge verdicts from the released CaT-MBench receipts, v17) ----------------
+   While the panel is in view a playhead plays shot 1, 2, 3, 8 in all three rows; each verdict appears as the playhead reaches it. */
 run('compare', function compare() {
   const host = $('#cmpGrid'); if (!host) return;
   const sid = 'cinedance-010942-b0000-shot03'; const s = story(sid); const SH = [1, 2, 3, 8];
   const HEAD = [['Medium close-up', 'The bearded man sits at a desk.'], ['Close-up', 'The officer looks to the side.'], ['Medium close-up', 'The bearded man looks up.'], ['Close-up', 'The officer looks to the side.']];
-  /* cuts: verdicts for the planned cuts shot 1→2 and shot 2→3; marks: [pin x, pin y, zoom x, zoom y] on shots judged a different person */
+  /* cuts: verdicts for the planned cuts shot 1→2 and shot 2→3; marks: per shot, the judge's attribute verdict against the earlier shot of the same character (v17 receipts):
+     kind 'person' = judged a different person, 'outfit' = same person, clothing judged different;
+     pin = [x, y] tip on the head or the clothes, zoom = [x, y, width] square crop of the whole head (hair to chin) or the outfit */
   const ROWS = [
-    { m: 'holocine', n: 'Joint generation', who: 'HoloCine', col: 'var(--holo)', cuts: ['new', 'new'], marks: { 2: [.5, .2, .5, .42], 8: [.53, .22, .53, .42] },
+    { m: 'holocine', n: 'Joint generation', who: 'HoloCine', col: 'var(--holo)', cuts: ['new', 'new'], marks: { 2: { kind: 'person', pin: [.49, .27], zoom: [.49, .43, .46] }, 8: { kind: 'person', pin: [.40, .19], zoom: [.40, .34, .36] } },
       note: 'HoloCine cuts where the story asks, but the officer who returns in shot 8 is judged a different man from shot 2.' },
-    { m: 'storymem', n: 'Memory-augmented', who: 'StoryMem', col: 'var(--mem)', cuts: ['new', 'lost'], marks: {},
-      note: 'StoryMem keeps both men, but shot 3 runs on from shot 2 with no detectable cut, so the planned new shot never happens. Every shot also keeps the same framing.' },
+    { m: 'storymem', n: 'Memory-augmented', who: 'StoryMem', col: 'var(--mem)', cuts: ['new', 'lost'], marks: { 3: { kind: 'outfit', pin: [.42, .64], zoom: [.40, .69, .36] } },
+      note: 'StoryMem keeps both faces, but the bearded man is judged to have changed clothes by shot 3, and shot 3 runs on from shot 2 with no detectable cut, so the planned new shot never happens. Every shot also keeps the same framing.' },
     { m: 'ours', n: 'CaT-Movie', who: 'ours', col: 'var(--ours)', cuts: ['new', 'new'], marks: {},
       note: 'CaT-Movie opens a new camera setup at both cuts, and both men are judged the same people throughout.' },
   ];
-  const zoom = (img, cx, cy) => { const c = 0.3, ch = c * 16 / 9; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
+  const zoom = (img, cx, cy, c) => { const ch = c * 640 / 370; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
   host.innerHTML = `<div class="qh"><span></span>${SH.map((k, i) => `<button type="button" class="cmp-col" data-k="${k}" aria-label="Play shot ${k} in all three"><b>Shot ${k}</b><em>${HEAD[i][0]}</em><q>${HEAD[i][1]}</q></button>`).join('')}</div>` +
     ROWS.map(r => `<div class="qr" data-m="${r.m}"><div class="qn" style="color:${r.col}">${r.n}<small>${r.who === 'ours' ? '' : r.who}</small></div><div class="qstrip${r.m === 'ours' ? ' ours' : ''}">${SH.map(k => {
       const img = `f/qual/${r.m}-s${k}.jpg`; const mk = r.marks[k];
-      return `<div class="qc" data-k="${k}" style="background-image:url(${img})">${mk ? `<span class="pin" style="left:${mk[0] * 100}%;top:${mk[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg></span><span class="zoom" style="${zoom(img, mk[2], mk[3])}"></span>` : ''}<span class="tc mono"></span></div>`;
-    }).join('')}${r.cuts.map((c, i) => `<svg class="qcut" style="left:${(i + 1) * 25}%" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div></div>`).join('') +
-    `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>judged a different person</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>planned cut, new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>planned cut not made</span><span>shots 4&ndash;7 not shown</span></div>`;
-  /* playback: a cell plays its own shot; a column header plays that shot in all three */
+      return `<div class="qc" data-k="${k}" style="background-image:url(${img})">${mk ? `<span class="pin ${mk.kind}" style="left:${mk.pin[0] * 100}%;top:${mk.pin[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#${mk.kind === 'outfit' ? 'i-outfit' : 'i-neq'}"/></svg></span><span class="zoom" style="${zoom(img, ...mk.zoom)}"></span>` : ''}<span class="tc mono"></span><i class="qbar"></i></div>`;
+    }).join('')}${r.cuts.map((c, i) => `<svg class="qcut${c === 'lost' ? ' lost' : ''}" data-b="${i + 1}" style="left:${(i + 1) * 25}%" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div></div>`).join('') +
+    `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>judged a different person</span><span><svg viewBox="0 0 20 24"><use href="#i-outfit"/></svg>same person, judged a different outfit</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>planned cut, new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>planned cut not made</span><span>shots 4&ndash;7 not shown</span></div>`;
+
+  /* playback: a cell plays its own shot (looping), or once when the playhead drives it */
   let live = [];
-  function stop() { live.forEach(({ v, cell }) => { v.pause(); v.remove(); cell.classList.remove('playing'); }); live = []; }
-  function start(cell) {
+  function stop() { live.forEach(({ v, cell }) => { v.pause(); v.remove(); cell.classList.remove('playing'); $('.qbar', cell).style.width = '0'; $('.tc', cell).textContent = ''; }); live = []; }
+  function start(cell, onDone) {
     const m = cell.closest('.qr').dataset.m; const k = +cell.dataset.k; const [a, b] = s.spans[m][k - 1];
     const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = `v/${sid}/${m}.mp4#t=${a.toFixed(2)}`; v.className = 'qv';
-    cell.prepend(v); cell.classList.add('playing'); const tc = $('.tc', cell);
+    cell.prepend(v); cell.classList.add('playing'); const tc = $('.tc', cell), bar = $('.qbar', cell);
+    const x = { v, cell, done: false };
     v.addEventListener('loadedmetadata', () => { v.currentTime = a + 0.02; v.play().catch(() => {}); }, { once: true });
-    v.addEventListener('timeupdate', () => { if (v.currentTime >= b - 0.06) v.currentTime = a + 0.02; tc.textContent = `${(v.currentTime - a).toFixed(1)} / ${(b - a).toFixed(1)} s`; });
-    live.push({ v, cell });
+    v.addEventListener('timeupdate', () => {
+      if (!v.isConnected) return;
+      if (v.currentTime >= b - 0.06) { if (onDone) { v.pause(); if (!x.done) { x.done = true; onDone(); } } else v.currentTime = a + 0.02; }
+      const p = Math.max(0, Math.min(1, (v.currentTime - a) / (b - a)));
+      tc.textContent = `${(v.currentTime - a).toFixed(1)} / ${(b - a).toFixed(1)} s`; bar.style.width = (p * 100) + '%';
+    });
+    live.push(x);
   }
+
+  /* the playhead */
+  const tourBtn = $('#cmpTour'), status = $('#cmpStatus');
+  let ci = -1, touring = false, held = RM, timer = 0, guard = 0, hoverCell = null, hoverT = 0, pinnedCell = null;
+  if (!RM) host.classList.add('tour');
+  const revealCut = i => $$(`.qcut[data-b="${i}"]`, host).forEach(q => q.classList.add('in'));
+  const revealMarks = i => $$(`.qc[data-k="${SH[i]}"]`, host).forEach(c => c.classList.add('marked'));
+  function setBtn() {
+    tourBtn.innerHTML = touring ? '<svg viewBox="0 0 14 14"><path d="M4 2.5v9M10 2.5v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Pause' : '<svg viewBox="0 0 14 14"><path d="M3.5 2v10l8.5-5z" fill="currentColor"/></svg>Play all three';
+    tourBtn.setAttribute('aria-pressed', String(touring));
+    if (!touring) status.textContent = 'Click a frame to play that shot, or a shot heading to play it in all three.';
+  }
+  function playCol(i) {
+    ci = i; stop(); revealCut(i); clearTimeout(guard);
+    $$('.cmp-col', host).forEach((b, j) => b.classList.toggle('on', j === i));
+    const cells = $$(`.qc[data-k="${SH[i]}"]`, host); let done = 0;
+    status.innerHTML = `Shot ${SH[i]}, all three in sync <span class="dots">${SH.map((_, j) => `<i class="${j < i ? 'past' : j === i ? 'now' : ''}"></i>`).join('')}</span>`;
+    const next = () => { clearTimeout(guard); clearTimeout(timer); stop(); revealMarks(i); timer = setTimeout(() => { if (!touring) return; const n = (i + 1) % SH.length; if (n === 0) host.classList.remove('tour'); playCol(n); }, 1300); };
+    cells.forEach(c => start(c, () => { if (++done === cells.length) next(); }));
+    const longest = Math.max(...ROWS.map(r => s.spans[r.m][SH[i] - 1][1] - s.spans[r.m][SH[i] - 1][0]));
+    guard = setTimeout(next, (longest + 4) * 1000);
+  }
+  function startTour() { if (held || touring) return; touring = true; setBtn(); playCol(ci < 0 ? 0 : (ci + 1) % SH.length); }
+  function stopTour(hold) {
+    touring = false; clearTimeout(timer); clearTimeout(guard);
+    if (hold) { held = true; host.classList.remove('tour'); }
+    $$('.cmp-col', host).forEach(b => b.classList.remove('on')); setBtn();
+  }
+  tourBtn.addEventListener('click', () => { if (touring) { stopTour(true); stop(); } else { held = false; startTour(); } });
+  watch(host, vis => { if (vis) startTour(); else if (touring) { stopTour(false); stop(); } }, 0.35);
+
   $$('.qc', host).forEach(c => { c.tabIndex = 0; c.setAttribute('role', 'button'); c.setAttribute('aria-label', `Play shot ${c.dataset.k} of ${c.closest('.qr').dataset.m}`);
-    const toggle = () => { const was = live.length === 1 && live[0].cell === c; stop(); if (!was) start(c); };
-    c.addEventListener('click', toggle); c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } }); });
-  $$('.cmp-col', host).forEach(b => b.addEventListener('click', () => { const k = b.dataset.k; const cells = $$(`.qc[data-k="${k}"]`, host); const was = live.length === cells.length && live.every(x => x.cell.dataset.k === k); stop(); if (!was) cells.forEach(start); }));
+    const toggle = () => { const was = !touring && pinnedCell === c; stopTour(true); stop(); hoverCell = null; pinnedCell = was ? null : c; if (!was) start(c); };
+    c.addEventListener('click', toggle); c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    c.addEventListener('pointerenter', e => { if (e.pointerType !== 'mouse' || touring || !held || pinnedCell) return; clearTimeout(hoverT); hoverT = setTimeout(() => { stop(); hoverCell = c; start(c); }, 120); });
+    c.addEventListener('pointerleave', e => { if (e.pointerType !== 'mouse') return; clearTimeout(hoverT); if (!pinnedCell && hoverCell === c) { stop(); hoverCell = null; } }); });
+  $$('.cmp-col', host).forEach(b => b.addEventListener('click', () => {
+    const k = b.dataset.k; const cells = $$(`.qc[data-k="${k}"]`, host);
+    const was = !touring && live.length === cells.length && live.every(x => x.cell.dataset.k === k);
+    stopTour(true); stop(); if (!was) { cells.forEach(c => start(c)); b.classList.add('on'); }
+  }));
+
   /* reading the verdicts one generator at a time */
   const ctrl = $('#cmpCtrl'), note = $('#cmpNote');
-  const btns = ROWS.map(r => { const b = h('button', 'cmp-btn', `${r.n}${r.who === 'ours' ? '' : ` <span>${r.who}</span>`}`); b.type = 'button'; b.dataset.m = r.m; b.setAttribute('aria-pressed', 'false'); ctrl.appendChild(b); return b; });
+  const btns = ROWS.map(r => { const b = h('button', 'cmp-btn', `<i style="background:${r.col}"></i>${r.n}${r.who === 'ours' ? '' : ` <span>${r.who}</span>`}`); b.type = 'button'; b.dataset.m = r.m; b.setAttribute('aria-pressed', 'false'); ctrl.appendChild(b); return b; });
   function focusRow(m) {
     btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
     $$('.qr', host).forEach(r => r.classList.toggle('dim', m != null && r.dataset.m !== m));
-    note.textContent = m ? ROWS.find(r => r.m === m).note : 'Pick a generator to read what the judge found, or click a shot heading to play that shot in all three.';
+    note.classList.remove('swap'); void note.offsetWidth; note.classList.add('swap');
+    note.textContent = m ? ROWS.find(r => r.m === m).note : 'Pick a generator to read what the judge found in its four shots.';
   }
   btns.forEach(b => b.addEventListener('click', () => focusRow(b.getAttribute('aria-pressed') === 'true' ? null : b.dataset.m)));
-  focusRow(null);
+  focusRow(null); setBtn();
 });
 
-/* ---------------- how it works: plan once, then render window by window (Cable Car) ---------------- */
+/* ---------------- how it works: plan once, then render window by window (Cable Car) ----------------
+   Step 1: request lines, cast registry and shot table are linked on hover.
+   Step 2: scrolling generates the windows one by one (pinned where there is room): an empty film strip fills in,
+   and arcs carry each recalled earlier shot into the shots that read it. Elsewhere the windows are picked by click. */
 run('howit', function howit() {
-  const body = $('#hwBody'); if (!body) return;
-  const s = story(HERO); const note = $('#hwNote');
+  const plan = $('#planBody'), wrap = $('#renderScroll'), stage = $('#renderStage'); if (!plan || !stage) return;
+  const s = story(HERO); const spans = s.spans.ours; const N = s.windows.length;
+  const dur = k => spans[k - 1][1] - spans[k - 1][0];
   const ents = s.plan.characters.filter(c => s.plan.shots.some(sh => sh.present.some(p => p.name === c.name)));
   const desc = c => c.appearance.replace(/^an? /, '');
-  const who = sh => sh.present.filter(p => /^Character/.test(p.name)).map(p => `<span class="hw-chip">${esc(p.name.replace('Character ', 'C'))}</span>`).join('') || '<span class="hw-none">none</span>';
-  const PLAN = `<div class="hw-plan">
-    <div class="hw-col"><h4>The request (a shot list)</h4><ol class="hw-req">${s.requests.shots.map(l => `<li>${esc(l)}</li>`).join('')}</ol></div>
+  const label = n => /^Character/.test(n) ? short(n) : entLabel(s, n);
+  const who = sh => sh.present.filter(p => /^Character/.test(p.name)).map(p => `<span class="hw-chip">${esc(short(p.name))}</span>`).join('') || '<span class="hw-none">none</span>';
+
+  /* ---- step 1 ---- */
+  $('#planNote').textContent = 'Qwen3.8-27B, used as is, turns the request into a storyboard: who each character is, once, and what each shot shows. Code then carries outfits and held items from shot to shot. Point at a character, a request line or a row to see how they link.';
+  plan.innerHTML = `<div class="hw-plan">
+    <div class="hw-col"><h4>The request, a shot list</h4><ol class="hw-req">${s.requests.shots.map((l, i) => `<li data-k="${i + 1}" style="--i:${i}">${esc(l).replace(/Character (\d+)/g, '<b data-e="Character $1">Character $1</b>')}</li>`).join('')}</ol></div>
     <div class="hw-col"><h4>The storyboard the planner writes</h4>
-      <div class="hw-reg">${ents.map(c => `<div class="hw-ent"><b>${esc(c.name.replace('Character ', 'C'))}</b><span>${esc(desc(c))}${c.outfit ? `; ${esc(c.outfit)}` : ''}</span></div>`).join('')}</div>
-      <div class="hw-scroll"><table class="hw-shots"><thead><tr><th>Shot</th><th>Camera</th><th>Who is on screen</th></tr></thead><tbody>${s.plan.shots.map(sh => `<tr><td>${sh.shot}</td><td>${esc(camLabel(sh.camera))}</td><td>${who(sh)}</td></tr>`).join('')}</tbody></table></div>
+      <div class="hw-reg">${ents.map((c, i) => `<div class="hw-ent" data-e="${c.name}" style="--i:${i}"><b>${esc(short(c.name))}</b><span>${esc(desc(c))}${c.outfit ? `; ${esc(c.outfit)}` : ''}</span></div>`).join('')}</div>
+      <div class="hw-scroll"><table class="hw-shots"><thead><tr><th>Shot</th><th>Camera</th><th>Who is on screen</th></tr></thead><tbody>${s.plan.shots.map((sh, i) => `<tr data-k="${sh.shot}" data-es="${sh.present.map(p => p.name).join('|')}" style="--i:${i}"><td>${sh.shot}</td><td>${esc(camLabel(sh.camera))}</td><td>${who(sh)}</td></tr>`).join('')}</tbody></table></div>
     </div></div>`;
-  let wi = 1;
-  function renderView() {
-    const w = s.windows[wi];
-    const winBtns = s.windows.map((x, i) => `<button type="button" class="hw-win${i === wi ? ' on' : ''}" data-w="${i}" aria-pressed="${i === wi}"><b>Window ${i + 1}</b><span>shots ${x.shots[0]}${x.shots.length > 1 ? '&ndash;' + x.shots[x.shots.length - 1] : ''}</span><span class="thumbs">${x.shots.map(k => `<i style="background-image:url(${frame(HERO, k)})"></i>`).join('')}</span></button>`).join('');
-    const shots = w.shots.map((k, si) => {
-      const reads = (w.routing[si] || []).map(ri => w.refs[ri]).filter(Boolean);
-      return `<div class="hw-shot"><i style="background-image:url(${frame(HERO, k)})"></i><b>Shot ${k}</b><span>${esc(camLabel(s.plan.shots[k - 1].camera))}</span><span class="hw-q">${esc(s.requests.shots[k - 1].replace(/^[A-Za-z -]+shot\. /, ''))}</span><span class="hw-reads">${reads.length ? 'reads ' + reads.map(r => `<span class="hw-chip ours">shot ${r.shot}</span>`).join('') : 'reads no earlier shot'}</span></div>`;
+  (function bindPlan() {
+    const set = (li, tr, en) => { plan.classList.add('linking');
+      $$('.hw-req li', plan).forEach(x => x.classList.toggle('hl', li(x))); $$('.hw-shots tr[data-k]', plan).forEach(x => x.classList.toggle('hl', tr(x))); $$('.hw-ent', plan).forEach(x => x.classList.toggle('hl', en(x))); };
+    const clear = () => { plan.classList.remove('linking'); $$('.hl, b.m', plan).forEach(x => x.classList.remove('hl', 'm')); };
+    const mark = names => $$('.hw-req b[data-e]', plan).forEach(b => b.classList.toggle('m', names.includes(b.dataset.e)));
+    const scroller = $('.hw-scroll', plan);
+    const reveal = () => { const first = $('.hw-shots tr.hl', plan); if (!first) return; const top = first.offsetTop - 34, bot = first.offsetTop + first.offsetHeight; if (top < scroller.scrollTop || bot > scroller.scrollTop + scroller.clientHeight) scroller.scrollTo({ top: Math.max(0, top - 20), behavior: RM ? 'auto' : 'smooth' }); };
+    $$('.hw-ent', plan).forEach(e => { const n = e.dataset.e;
+      e.addEventListener('pointerenter', () => { set(li => !!li.querySelector(`b[data-e="${n}"]`), tr => tr.dataset.es.split('|').includes(n), x => x === e); mark([n]); reveal(); }); e.addEventListener('pointerleave', clear); });
+    $$('.hw-req li, .hw-shots tr[data-k]', plan).forEach(x => { const k = x.dataset.k;
+      x.addEventListener('pointerenter', () => { const es = $(`.hw-shots tr[data-k="${k}"]`, plan).dataset.es.split('|'); set(li => li.dataset.k === k, tr => tr.dataset.k === k, en => es.includes(en.dataset.e)); mark(es); if (x.tagName === 'LI') reveal(); });
+      x.addEventListener('pointerleave', clear); });
+  })();
+  watch(plan, v => { if (v) plan.classList.add('in'); }, 0.25);
+
+  /* ---- step 2 ---- */
+  stage.innerHTML = `<div class="rs-top"><div class="rs-count" id="rsCount"></div><p class="rs-note" id="rsNote"></p>
+      <div class="rs-dots" role="group" aria-label="Generation windows">${s.windows.map((w, i) => `<button type="button" data-w="${i}" aria-label="Window ${i + 1}">${i + 1}</button>`).join('')}</div></div>
+    <div class="pk${RM ? '' : ' packing'}">${s.windows.map((x, i) => { const d = x.shots.reduce((t, k) => t + dur(k), 0);
+      return `<button type="button" class="pk-win" data-w="${i}" aria-label="Window ${i + 1}, ${d.toFixed(1)} seconds" style="flex:${d.toFixed(2)} 1 0"><span class="pk-lab"><b><span class="w-long">Window </span><span class="w-short">W</span>${i + 1}</b><span>${d.toFixed(1)} s</span></span><span class="pk-strip">${x.shots.map((k, j) => `<i style="flex:${dur(k).toFixed(2)} 1 0;--j:${j};background-image:url(${frame(HERO, k)})"><em>${k}</em></i>`).join('')}</span></button>`; }).join('')}</div>
+    <div class="hw-stage" id="hwStage"></div>
+    <p class="rs-hint" id="rsHint"></p>`;
+  const winEls = $$('.pk-win', stage), dots = $$('.rs-dots button', stage), count = $('#rsCount'), note = $('#rsNote'), hint = $('#rsHint'), body = $('#hwStage');
+  let wi = -1;
+  function setWin(i, force) {
+    if (i === wi && !force) return; wi = i; const w = s.windows[i]; const first = w.shots[0];
+    winEls.forEach((e, j) => { e.classList.toggle('on', j === i); e.classList.toggle('done', j < i); e.setAttribute('aria-pressed', String(j === i)); });
+    dots.forEach((d, j) => { d.classList.toggle('on', j === i); d.classList.toggle('done', j < i); });
+    count.innerHTML = `Window ${i + 1}<span>of ${N}</span>`;
+    const used = recallUse(s, w).filter(u => u.uses.length); const recalled = new Set(used.map(u => u.ref.shot));
+    const range = w.shots.length > 1 ? `Shots ${w.shots[0]}–${w.shots[w.shots.length - 1]} are generated together.` : `Shot ${w.shots[0]} is generated on its own.`;
+    note.textContent = used.length ? `${range} ${recalled.size === 1 ? 'One earlier shot is' : recalled.size + ' earlier shots are'} recalled, each only by the shots that show the same character, object or place.`
+      : `${range} Nothing has been generated yet, so this window starts from the storyboard text alone.`;
+    const past = first > 1 ? `<div class="past-grid">${Array.from({ length: first - 1 }, (_, j) => j + 1).map(k => `<div class="past${recalled.has(k) ? ' rec' : ''}" data-k="${k}"><i style="background-image:url(${frame(HERO, k)})"></i><span>${k}</span></div>`).join('')}</div>`
+      : '<p class="hw-empty">Nothing has been generated yet, so window 1 starts from the storyboard text alone.</p>';
+    const now = w.shots.map((k, si) => {
+      const reads = used.flatMap(u => u.uses.filter(x => x.shot === k).map(x => ({ src: u.ref.shot, what: x.shared.length ? x.shared.map(label).join(', ') : 'setting' })));
+      return `<div class="hw-shot" data-k="${k}" style="--i:${si}"><i style="background-image:url(${frame(HERO, k)})"></i><div><b>Shot ${k}<span>${esc(camLabel(s.plan.shots[k - 1].camera))}</span></b><span class="hw-q">${esc(s.requests.shots[k - 1].replace(/^[A-Za-z -]+shot\. /, ''))}</span><span class="hw-reads">${reads.length ? reads.map(r => `<span class="hw-chip ours" data-src="${r.src}">shot ${r.src} &middot; ${esc(r.what)}</span>`).join('') : '<span class="hw-none">reads no earlier shot</span>'}</span></div></div>`;
     }).join('');
-    const used = recallUse(s, w).filter(u => u.uses.length);
-    const refs = used.length ? used.map(u => `<div class="hw-ref"><i style="background-image:url(${frame(HERO, u.ref.shot)})"></i><div><b>Shot ${u.ref.shot}</b><span>for ${purpose(s, u)}</span><span>read by shot${u.uses.length > 1 ? 's' : ''} ${u.uses.map(x => x.shot).join(' and ')}</span></div></div>`).join('')
-      : '<p class="hw-empty">Nothing has been generated yet. The first window starts from the storyboard text alone.</p>';
-    body.innerHTML = `<div class="hw-wins" role="group" aria-label="Generation windows">${winBtns}</div>
-      <div class="hw-detail"><div><h4>Shots generated together in window ${wi + 1}</h4><div class="hw-shotrow">${shots}</div></div>
-      <div><h4>Earlier views recalled for it</h4><div class="hw-refs">${refs}</div></div></div>`;
-    $$('.hw-win', body).forEach(b => b.addEventListener('click', () => { wi = +b.dataset.w; renderView(); }));
+    body.innerHTML = `<div class="hw-past"><h4>Earlier shots${used.length ? `, ${recalled.size} recalled` : ''}</h4>${past}</div><div class="hw-now"><h4>Generated together in window ${i + 1}</h4>${now}</div><svg class="hw-arcs" aria-hidden="true"></svg>`;
+    $$('.hw-chip[data-src], .past.rec', body).forEach(x => { const src = x.dataset.src || x.dataset.k;
+      x.addEventListener('pointerenter', () => { body.classList.add('tracing'); $$('.hw-arc', body).forEach(p => p.classList.toggle('hl', p.dataset.src === src)); $$(`.past[data-k="${src}"]`, body).forEach(p => p.classList.add('hl')); });
+      x.addEventListener('pointerleave', () => { body.classList.remove('tracing'); $$('.hl', body).forEach(p => p.classList.remove('hl')); }); });
+    requestAnimationFrame(drawArcs);
   }
-  const tabs = $$('.hw-tab');
-  function show(step) {
-    tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.s === step)));
-    if (step === 'plan') { body.innerHTML = PLAN; note.textContent = 'Qwen3.8-27B, used as is, turns the request into a storyboard: who each character is, once, and what each shot shows. Code then carries outfits and held items from shot to shot.'; }
-    else { renderView(); note.textContent = 'Shots are packed into windows of up to 7 s. Each recalled view goes only to the shots that show the same character, object or place, so a window borrows who or what something is without copying how an earlier shot was framed.'; }
+  function drawArcs() {
+    const svg = $('.hw-arcs', body); if (!svg) return;
+    const r0 = body.getBoundingClientRect(); svg.setAttribute('viewBox', `0 0 ${r0.width.toFixed(1)} ${r0.height.toFixed(1)}`); svg.innerHTML = '';
+    const per = new Map(), seenK = new Map(); let n = 0;
+    $$('.hw-chip[data-src]', body).forEach(c => { const k = c.closest('.hw-shot').dataset.k; per.set(k, (per.get(k) || 0) + 1); });
+    $$('.hw-chip[data-src]', body).forEach(chip => {
+      const src = $(`.past[data-k="${chip.dataset.src}"] i`, body), dst = $('i', chip.closest('.hw-shot')); if (!src || !dst) return;
+      const a = src.getBoundingClientRect(), b = dst.getBoundingClientRect();
+      const tk = chip.closest('.hw-shot').dataset.k; const j = seenK.get(tk) || 0; seenK.set(tk, j + 1); const m = per.get(tk);
+      const x1 = a.right - r0.left - 6, y1 = a.top + a.height / 2 - r0.top, x2 = b.left - r0.left - 5, y2 = b.top - r0.top + b.height * (j + 1) / (m + 1);
+      const mx = (x1 + x2) / 2;
+      const d = `M${x1.toFixed(1)} ${y1.toFixed(1)} C${mx.toFixed(1)} ${y1.toFixed(1)} ${mx.toFixed(1)} ${y2.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+      const p = sv('path', { d, class: 'hw-arc', 'data-src': chip.dataset.src }, svg);
+      p.style.setProperty('--len', p.getTotalLength().toFixed(1)); p.style.animationDelay = `${120 + n * 120}ms`;
+      sv('circle', { cx: x2.toFixed(1), cy: y2.toFixed(1), r: 3.5, class: 'hw-end', style: `animation-delay:${n * 120 + 800}ms` }, svg);
+      if (!RM) { const dot = sv('circle', { r: 3, class: 'hw-dot' }, svg); sv('animateMotion', { dur: '2.2s', begin: `${(n * 0.12 + 0.9).toFixed(2)}s`, repeatCount: 'indefinite', path: d }, dot); }
+      n++;
+    });
   }
-  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.s)));
-  show('plan');
+  /* pinned only where there is room and motion is welcome; otherwise the same stage is driven by clicks */
+  let pinned = false;
+  const canPin = () => !RM && innerWidth > 860 && innerHeight >= 700;
+  const span = () => N * 0.58 * innerHeight;
+  function fromScroll() {
+    if (!pinned) return; const r = wrap.getBoundingClientRect();
+    const p = Math.max(0, Math.min(0.9999, (72 - r.top) / span())); setWin(Math.floor(p * N));
+  }
+  function layout() {
+    pinned = canPin(); wrap.classList.toggle('pinned', pinned); wrap.style.setProperty('--n', N);
+    hint.textContent = pinned ? 'Keep scrolling to generate the next window, or pick one.' : 'Pick a window.';
+    if (pinned) fromScroll(); else setWin(wi < 0 ? 1 : wi, true);
+  }
+  function go(i) {
+    if (!pinned) { setWin(i); return; }
+    scrollTo({ top: wrap.getBoundingClientRect().top + scrollY - 72 + (i + 0.5) / N * span(), behavior: RM ? 'auto' : 'smooth' });
+  }
+  [...winEls, ...dots].forEach(b => b.addEventListener('click', () => go(+b.dataset.w)));
+  addEventListener('scroll', fromScroll, { passive: true });
+  watch(stage, v => { if (v) $('.pk', stage).classList.remove('packing'); const svg = $('.hw-arcs', body); if (svg && svg.pauseAnimations) v ? svg.unpauseAnimations() : svg.pauseAnimations(); }, 0.2);
+  let rt = 0; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layout(); setWin(wi, true); }, 150); });
+  setWin(0, true); layout();
+});
+
+/* ---------------- headings wipe in once; numbers count up ---------------- */
+run('reveal', function reveal() {
+  const heads = $$('main > section:not(.hero) .split h2');
+  heads.forEach(hd => hd.classList.add('rv'));
+  if (RM) heads.forEach(hd => hd.classList.add('in'));
+  else { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { $('h2', e.target).classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.3 }); heads.forEach(hd => io.observe(hd.closest('.split'))); }
+  $$('[data-count]').forEach(n => once(n, () => {
+    if (RM) return;
+    const to = parseFloat(n.dataset.count), fmt = n.dataset.fmt, t0 = performance.now(), dur = 1400;
+    const f = v => (to < 0 ? '−' : '') + (fmt === 'int' ? Math.round(Math.abs(v)).toLocaleString('en-US') : Math.abs(v).toFixed(+fmt));
+    (function step(t) { const p = Math.min(1, (t - t0) / dur); const e = 1 - Math.pow(2, -10 * p); n.textContent = f(to * (p === 1 ? 1 : e)); if (p < 1) requestAnimationFrame(step); })(t0);
+  }, 0.6));
 });
 
 /* ---------------- theater ---------------- */
@@ -314,10 +503,10 @@ const MET = [
 run('theater', function theater() {
   const rail = $('#storyRail'), screens = $('#screens'), bar = $('#shotbar'), handle = $('#wipeHandle');
   const playBtn = $('#tPlay'), timeEl = $('#tTime'), capK = $('#capK'), capLine = $('#capLine'), wipeSel = $('#wipeSel'), wipeLab = $('#wipeLab');
-  let si = 0, mode = 'grid', focus = 'ours', wipeB = 'storymem', userPaused = true, inView = false, loaded = false, raf = 0, curShot = -1;
+  let si = 0, mode = 'grid', focus = 'ours', wipeB = 'storymem', userPaused = false, inView = false, loaded = false, raf = 0, curShot = -1;
   const tiles = MET.map((m, i) => {
     const t = h('div', 'tile', `<video muted playsinline preload="none"></video><span class="name"><i style="background:${m.color}"></i>${m.name}</span><span class="shotno tnum">Shot 1</span><span class="kind">${m.kind}</span>`);
-    t.dataset.m = m.key; t.tabIndex = 0; t.setAttribute('aria-label', `${m.name} video`);
+    t.dataset.m = m.key; t.tabIndex = 0; t.setAttribute('aria-label', `${m.name} video`); t.style.viewTransitionName = 'tile-' + m.key;
     t.addEventListener('click', () => { if (mode === 'wipe') return; focus = m.key; setMode('focus'); });
     screens.insertBefore(t, handle); const v = $('video', t); v.muted = true; v.playsInline = true; return { m, t, v, no: $('.shotno', t) };
   });
@@ -330,7 +519,7 @@ run('theater', function theater() {
   function S() { return D.stories[si]; }
   function load(autoplay) {
     loaded = true; const s = S(); curShot = -1;
-    tiles.forEach(({ m, v }) => { v.preload = 'auto'; v.src = `v/${s.id}/${m.key}.mp4`; v.playbackRate = rate; v.load(); });
+    tiles.forEach(({ m, v }) => { v.poster = `p/${s.id}/${m.key}.jpg`; v.preload = 'auto'; v.src = `v/${s.id}/${m.key}.mp4`; v.playbackRate = rate; v.load(); });
     bar.replaceChildren();
     s.spans.ours.forEach(([a, b], k) => { const btn = h('button', '', `<i></i><span>${k + 1}</span>`); btn.style.flex = `${b - a} 1 0`; btn.title = `Shot ${k + 1}: ${s.requests.shots[k]}`; btn.addEventListener('click', () => seekShot(k)); bar.appendChild(btn); });
     update(true);
@@ -360,6 +549,10 @@ run('theater', function theater() {
   $('#tRestart').addEventListener('click', () => { seekShot(0); if (master.paused) { userPaused = false; play(); } });
   $$('.seg [data-rate]').forEach(b => b.addEventListener('click', () => { rate = +b.dataset.rate; $$('.seg [data-rate]').forEach(x => x.classList.toggle('on', x === b)); tiles.forEach(({ v }) => v.playbackRate = rate); }));
   function setMode(md) {
+    if (document.startViewTransition && !RM && md !== mode && (md === 'focus' || mode === 'focus')) { document.startViewTransition(() => applyMode(md)); return; }
+    applyMode(md);
+  }
+  function applyMode(md) {
     mode = md; $$('.seg [data-mode]').forEach(x => x.classList.toggle('on', x.dataset.mode === md));
     screens.classList.toggle('focus', md === 'focus'); screens.classList.toggle('wipe', md === 'wipe');
     tiles.forEach(({ m, t }) => { t.classList.toggle('big', md === 'focus' && m.key === focus); t.classList.toggle('wipe-a', md === 'wipe' && m.key === 'ours'); t.classList.toggle('wipe-b', md === 'wipe' && m.key === wipeB); });
@@ -369,6 +562,8 @@ run('theater', function theater() {
     if (md === 'wipe' && !RM) sweep();
   }
   $$('.seg [data-mode]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  screens.addEventListener('pointerover', e => { if (mode === 'grid' && e.pointerType === 'mouse' && e.target.closest('.tile')) screens.classList.add('grid-hover'); });
+  screens.addEventListener('pointerleave', () => screens.classList.remove('grid-hover'));
   wipeSel.value = wipeB; wipeSel.addEventListener('change', () => { wipeB = wipeSel.value; setMode('wipe'); });
   function setCut(p) { screens.style.setProperty('--cut', (Math.max(0.03, Math.min(0.97, p)) * 100) + '%'); }
   function sweep() { const t0 = performance.now(); (function f(t) { const p = (t - t0) / 1600; if (p > 1) { setCut(.5); return; } setCut(.5 + Math.sin(p * Math.PI * 2) * .32); requestAnimationFrame(f); })(t0); }
@@ -388,6 +583,7 @@ run('theater', function theater() {
     else if (/^[1-4]$/.test(e.key)) { focus = MET[+e.key - 1].key; setMode('focus'); }
   });
   const root = $('#theaterRoot');
+  tiles.forEach(({ m, v }) => { v.poster = `p/${S().id}/${m.key}.jpg`; });
   watch(root, vis => { if (vis && !loaded) load(false); }, 0, '600px');
   watch(root, vis => { inView = vis; if (vis && !userPaused) play(); else if (!vis) pause(); }, 0.3);
 });
@@ -403,12 +599,16 @@ run('gate', function gate() {
     `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s04.jpg)"></div><span class="gate-fail"><span>gate fails · setup kept</span></span></div>` +
     `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s06.jpg)"></div></div>` +
     `<svg class="scissor" style="left:33.33%" viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>`;
+  let touched = false;
   function set(on) {
+    const rows = [$('#srOff'), $('#srOn')]; const before = rows.map(r => r.getBoundingClientRect().top);
     sw.setAttribute('aria-checked', on); root.classList.toggle('gate-on', on); $('#gateState').textContent = on ? 'on' : 'off';
+    if (!RM) rows.forEach((r, i) => { const dy = before[i] - r.getBoundingClientRect().top; if (!dy) return; r.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.2,0,0,1)' }); });
     $('#srOff').classList.toggle('dim', on); $('#srOn').classList.toggle('dim', !on);
     const op = $('#srOn .op'); if (on && !RM) { op.style.transform = 'scale(1.6)'; setTimeout(() => op.style.transform = '', 350); }
   }
-  sw.addEventListener('click', () => set(sw.getAttribute('aria-checked') !== 'true'));
+  sw.addEventListener('click', () => { touched = true; set(sw.getAttribute('aria-checked') !== 'true'); });
+  once(root, () => { if (RM) return; setTimeout(() => { if (!touched) set(true); }, 1800); }, 0.5);
 });
 
 /* ---------------- tables ---------------- */
@@ -429,6 +629,7 @@ run('mainTable', function mainTable() {
     $$('th[data-k]', tb).forEach(th => th.addEventListener('click', () => { const k = +th.dataset.k; if (k < 0) { sortK = null; } else if (sortK === k) dir = -dir; else { sortK = k; dir = -1; } render(); }));
   }
   render();
+  once(tb, () => { if (RM) return; $$('.bar', tb).forEach((b, i) => { b.style.transform = 'scaleX(0)'; requestAnimationFrame(() => { b.style.transitionDelay = (i % 9) * 40 + 'ms'; b.style.transform = ''; }); }); }, 0.3);
 });
 const T2 = [
   { name: 'CaT-Movie (ref. storyboard)', v: [0.958, 0.581, 0.585, 0.566, 0.615, 0.571], sig: [] , ours: true },
@@ -485,6 +686,7 @@ function barChart(host, cfg) {
       bars.push({ r, y: Y(d.v), hgt: Math.max(0, Y(yMin) - Y(d.v)) });
     });
   });
+  once(host, () => { if (RM) return; bars.forEach((b, i) => { b.r.setAttribute('y', Y(yMin)); b.r.setAttribute('height', 0); const t0 = performance.now() + i * 35; (function f(t) { const p = Math.max(0, Math.min(1, (t - t0) / 700)); const e = 1 - Math.pow(1 - p, 3); b.r.setAttribute('y', Y(yMin) - b.hgt * e); b.r.setAttribute('height', b.hgt * e); if (p < 1) requestAnimationFrame(f); })(performance.now()); }); }, 0.35);
 }
 run('returnChart', function returnChart() {
   const RT = { 'CaT-Movie': { rate: [0.6331, 0.6111, 0.6344], lo: [0.5710, 0.5257, 0.5592], hi: [0.7044, 0.7178, 0.7129] }, HoloCine: { rate: [0.6115, 0.4091, 0.4355], lo: [0.5369, 0.3209, 0.3402], hi: [0.6906, 0.5023, 0.5517] }, MultiShotMaster: { rate: [0.5791, 0.4444, 0.4892], lo: [0.5143, 0.3432, 0.3423], hi: [0.6558, 0.5489, 0.6172] }, StoryMem: { rate: [0.5827, 0.5960, 0.7312], lo: [0.5075, 0.5060, 0.6646], hi: [0.6771, 0.6835, 0.7873] } };
@@ -501,6 +703,7 @@ run('dataCharts', function dataCharts() {
     const st = h('div', 'stack'); parts.forEach(([n, v], i) => { const d = h('div', '', v >= 12 ? `${v.toFixed(1)}%` : ''); d.style.flex = `${v} 1 0`; d.style.background = colors[i]; d.title = `${n}: ${v.toFixed(1)}%`; d.addEventListener('pointermove', e => showTip(`<b>${n}</b> \u00b7 ${v.toFixed(1)}%`, e)); d.addEventListener('pointerleave', hideTip); st.appendChild(d); });
     const key = h('div', 'stack-key', parts.map(([n, v], i) => `<span><i style="background:${colors[i]}"></i>${n} ${v.toFixed(1)}%</span>`).join(''));
     host.append(st, key);
+    once(host, () => { if (RM) return; const kids = Array.from(st.children); kids.forEach(k => { k.dataset.f = k.style.flex; k.style.flexGrow = 0.0001; }); requestAnimationFrame(() => requestAnimationFrame(() => kids.forEach((k, i) => { k.style.transitionDelay = i * 120 + 'ms'; k.style.flex = k.dataset.f; }))); }, 0.4);
   }
   stack($('#srcStack'), [['CinePile', 65.74], ['CineDance', 24.69], ['MovieChat', 9.57]], ['#5a82f7', '#d8b26e', '#7cc4a4']);
   stack($('#typeStack'), [['Live action', 84.92], ['3D / game', 9.35], ['2D', 5.73]], ['#b8c0cf', '#8d95a5', '#666d7c']);
