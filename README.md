@@ -13,15 +13,11 @@
 </p>
 
 <p>
-  <strong>Jinpeng Lu</strong><sup>*</sup> ·
-  <strong>Haoyuan Shi</strong><sup>*</sup> ·
-  <strong>Yuanshen Guan</strong> ·
-  <strong>Jiyuan Xia</strong> ·
-  <strong>Bin Wu</strong> ·
-  <strong>Yinda Chen</strong> ·
-  <strong>Zhiwei Xiong</strong>
+  <strong>Jinpeng Lu</strong><sup>*</sup>, <strong>Haoyuan Shi</strong><sup>*</sup>, <strong>Yuanshen Guan</strong>, <strong>Jiyuan Xia</strong>, <strong>Bin Wu</strong>, <strong>Yinda Chen</strong>, <strong>Zhiwei Xiong</strong><sup>&dagger;</sup>
   <br>
-  University of Science and Technology of China &nbsp;·&nbsp; <sup>*</sup>Equal contribution
+  University of Science and Technology of China
+  <br>
+  <sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding author
 </p>
 
 <p>
