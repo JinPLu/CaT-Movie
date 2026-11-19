@@ -76,8 +76,8 @@ run('pareto', function pareto() {
 
   chart(host, W => {
     const narrow = W < 480;
-    const H = Math.round(Math.max(295, Math.min(390, W * 0.66)));
-    const m = { l: 48, r: narrow ? 12 : 20, t: 14, b: 46 };
+    const H = Math.round(Math.max(255, Math.min(308, W * 0.54)));
+    const m = { l: 46, r: narrow ? 12 : 18, t: 12, b: 40 };
     const x0 = 0.785, x1 = 1.014, y0 = 0.17, y1 = 0.64;
     const X = v => m.l + (v - x0) / (x1 - x0) * (W - m.l - m.r);
     const Y = v => H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b);
@@ -154,18 +154,18 @@ run('returnChart', function returnChart() {
   $('#rtLegend').innerHTML = bins.map((b, s) => `<span><i class="sq" style="background:color-mix(in srgb,var(--grey-b) ${OP[s] * 100}%,transparent)"></i>${b}</span>`).join('') + '<span><i class="sq" style="background:var(--ours)"></i>CaT-Movie</span>';
   chart(host, W => {
     const narrow = W < 520;
-    const H = 280, m = { l: 44, r: 8, t: 12, b: narrow ? 50 : 36 };
+    const H = 220, m = { l: 42, r: 8, t: 10, b: narrow ? 46 : 32 };
     const yMin = 0.3, yMax = 0.8;
     const Y = v => H - m.b - (v - yMin) / (yMax - yMin) * (H - m.t - m.b);
     const svg = svgAt(host, W, H, 'Character checks passed by return time for four methods');
     gridY(svg, m, W, Y, [0.3, 0.4, 0.5, 0.6, 0.7, 0.8], v => Math.round(v * 100) + '%');
     sv('path', { d: `M${m.l} ${Y(yMin)} H${W - m.r}`, stroke: 'var(--rule)' }, svg);
-    const gw = (W - m.l - m.r) / names.length, bw = Math.min(34, (gw - 28) / 3);
+    const gw = (W - m.l - m.r) / names.length, bw = Math.min(36, (gw - 28) / 3);
     const bars = [], whisk = [];
     names.forEach((n, gi) => {
       const cx = m.l + gi * gw + gw / 2, gx = cx - (bw * 3 + 8) / 2;
       const lines = narrow && n === 'MultiShotMaster' ? ['MultiShot', 'Master'] : [n];
-      lines.forEach((ln, li) => T(svg, cx, H - m.b + 20 + li * 15, ln, 'svg-text', `fill:${n === 'CaT-Movie' ? 'var(--ours)' : 'var(--text)'};font-weight:${n === 'CaT-Movie' ? 600 : 450}`, 'middle'));
+      lines.forEach((ln, li) => T(svg, cx, H - m.b + 19 + li * 14, ln, 'svg-text', `fill:${n === 'CaT-Movie' ? 'var(--ours)' : 'var(--text)'};font-weight:${n === 'CaT-Movie' ? 600 : 450}`, 'middle'));
       bins.forEach((b, s) => {
         const d = RT[n], x = gx + s * (bw + 4);
         const g = sv('g', { style: 'cursor:pointer' }, svg);
@@ -175,7 +175,7 @@ run('returnChart', function returnChart() {
         g.addEventListener('pointerleave', hideTip);
       });
     });
-    return () => { grow(bars, 'bottom', 90, 28); fadeIn(whisk, 640, 14); };
+    return () => { grow(bars, 'bottom', 60, 22); fadeIn(whisk, 420, 12); };
   });
 });
 
@@ -190,30 +190,30 @@ run('distChart', function distChart() {
   ];
   const XL = ['same window', '1 window apart', '2 or more windows apart'];
   chart(host, W => {
-    const H = 265, m = { l: 44, r: 18, t: 20, b: 38 };
+    const H = 210, m = { l: 42, r: 16, t: 16, b: 32 };
     const padX = Math.min(68, (W - m.l - m.r) * 0.13);
     const X = i => m.l + padX + i * ((W - m.l - m.r - 2 * padX) / 2);
     const Y = v => H - m.b - (v - 25) / (65 - 25) * (H - m.t - m.b);
     const svg = svgAt(host, W, H, 'Consistency pass rate by window distance for three settings');
     gridY(svg, m, W, Y, [30, 40, 50, 60], v => v + '%');
-    XL.forEach((n, i) => T(svg, X(i), H - m.b + 22, n, 'svg-text', 'fill:var(--text)', 'middle'));
+    XL.forEach((n, i) => T(svg, X(i), H - m.b + 20, n, 'svg-text', 'fill:var(--text)', 'middle'));
     const lines = [], marks = [];
     S.forEach(([k, name, col, v, n, d, mk, dash]) => {
       const g = sv('g', {}, svg);
       lines.push(sv('path', { d: v.map((y, i) => `${i ? 'L' : 'M'}${X(i)} ${Y(y)}`).join(''), fill: 'none', stroke: col, 'stroke-width': k === 'ours' ? 2.8 : 2, 'stroke-dasharray': dash || null, 'stroke-linecap': 'round' }, g));
       v.forEach((y, i) => {
         const x = X(i), yy = Y(y), pg = sv('g', { style: 'cursor:pointer' }, g);
-        if (mk === 'circle') sv('circle', { cx: x, cy: yy, r: 5.5, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
-        else if (mk === 'square') sv('rect', { x: x - 5, y: yy - 5, width: 10, height: 10, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
-        else sv('path', { d: `M${x} ${yy - 6.5}L${x + 6} ${yy + 4.5}L${x - 6} ${yy + 4.5}Z`, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
-        const [dx, dy, an] = k === 'ours' ? [[-11, 5, 'end'], [0, 21, 'middle'], [0, -12, 'middle']][i] : k === 'recent' ? [[0, -12, 'middle'], [0, -12, 'middle'], [0, 21, 'middle']][i] : [0, 22, 'middle'];
+        if (mk === 'circle') sv('circle', { cx: x, cy: yy, r: 5.2, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
+        else if (mk === 'square') sv('rect', { x: x - 4.8, y: yy - 4.8, width: 9.6, height: 9.6, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
+        else sv('path', { d: `M${x} ${yy - 6}L${x + 5.6} ${yy + 4.2}L${x - 5.6} ${yy + 4.2}Z`, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
+        const [dx, dy, an] = k === 'ours' ? [[-11, 5, 'end'], [0, 19, 'middle'], [0, -11, 'middle']][i] : k === 'recent' ? [[0, -11, 'middle'], [0, -11, 'middle'], [0, 19, 'middle']][i] : [0, 20, 'middle'];
         T(pg, x + dx, yy + dy, y.toFixed(1) + '%', 'svg-text', `fill:${col};font-weight:${k === 'ours' ? 600 : 450}`, an);
         pg.addEventListener('pointermove', e => showTip(`<b>${name}</b> (${XL[i]})<table><tr><td>Pass rate</td><td>${y.toFixed(1)}%</td></tr><tr><td>Checks (3 seeds)</td><td>${n[i]}</td></tr>${d ? `<tr><td>vs CaT-Movie</td><td>${d[i][0] > 0 ? '+' : ''}${d[i][0].toFixed(1)} [${d[i][1]}, ${d[i][2]}]</td></tr>` : ''}</table>`, e));
         pg.addEventListener('pointerleave', hideTip);
         marks.push(pg);
       });
     });
-    return () => { lines.forEach((p, i) => drawLine(p, i * 90, 660)); pop(marks, 180, 38); };
+    return () => { lines.forEach((p, i) => drawLine(p, i * 70, 500)); pop(marks, 120, 28); };
   });
 });
 
@@ -224,32 +224,33 @@ run('planner', function planner() {
   const D = { opening: { Syn: [0.1625, 0.4471], Para: [0.5649, 0.7091], Shot: [0.4833, 0.7304] }, held: { Syn: [0.0732, 0.2171], Para: [0.5721, 0.6797], Shot: [0.3122, 0.5122] } };
   const TL = { Syn: 'synopsis', Para: 'paragraph', Shot: 'shot list' };
   chart(a, W => {
-    const H = 265, m = { l: 42, r: 8, t: 20, b: 50 };
-    const Y = v => H - m.b - v * (H - m.t - m.b);
+    const H = 220, m = { l: 40, r: 8, t: 16, b: 44 };
+    const yMax = 0.85;
+    const Y = v => H - m.b - (v / yMax) * (H - m.t - m.b);
     const svg = svgAt(a, W, H, 'Share of reference opening states and held items stated by request alone and with planner');
-    gridY(svg, m, W, Y, [0, 0.25, 0.5, 0.75, 1], v => (v * 100) + '%');
+    gridY(svg, m, W, Y, [0, 0.2, 0.4, 0.6, 0.8], v => Math.round(v * 100) + '%');
     const gw = (W - m.l - m.r) / 2, bw = Math.min(48, (gw - 34) / 3), segs = [], labs = [];
     [['opening', 'Opening states'], ['held', 'Held items']].forEach(([key, name], gi) => {
       const cx = m.l + gi * gw + gw / 2;
-      T(svg, cx, H - 10, name, 'svg-text', 'fill:var(--paper);font-weight:500', 'middle');
+      T(svg, cx, H - 7, name, 'svg-text', 'fill:var(--paper);font-weight:500', 'middle');
       ['Syn', 'Para', 'Shot'].forEach((t, ti) => {
         const [r, tot] = D[key][t], x = cx + (ti - 1) * (bw + 10) - bw / 2;
         const g = sv('g', { style: 'cursor:pointer' }, svg);
         segs.push(sv('rect', { x, y: Y(r), width: bw, height: Y(0) - Y(r), fill: 'var(--grey-c)', 'fill-opacity': 0.5, rx: 2.5 }, g));
         const top = sv('rect', { x, y: Y(tot), width: bw, height: Y(r) - Y(tot), fill: 'var(--ours)', rx: 2.5 }, g);
-        labs.push(T(g, x + bw / 2, Y(tot) - 7, `${Math.round(tot * 100)}%`, 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px', 'middle'));
-        T(svg, x + bw / 2, H - m.b + 17, TL[t], 'svg-text', 'font-size:11px', 'middle');
+        labs.push(T(g, x + bw / 2, Y(tot) - 6, `${Math.round(tot * 100)}%`, 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px', 'middle'));
+        T(svg, x + bw / 2, H - m.b + 16, TL[t], 'svg-text', 'font-size:11px', 'middle');
         g.addEventListener('pointermove', e => showTip(`<b>${name} (${TL[t]})</b><table><tr><td>Request alone</td><td>${(r * 100).toFixed(1)}%</td></tr><tr><td>Planner adds</td><td>+${((tot - r) * 100).toFixed(1)}%</td></tr><tr><td>Compiled total</td><td>${(tot * 100).toFixed(1)}%</td></tr></table>`, e));
         g.addEventListener('pointerleave', hideTip);
         segs.push(top);
       });
     });
-    return () => { grow(segs, 'bottom', 0, 28); fadeIn(labs, 560, 28); };
+    return () => { grow(segs, 'bottom', 0, 14); fadeIn(labs, 50, 10); };
   });
 
   const R = [['Request', 170, 79, 49, 42], ['Reference', 171, 91, 59, 21], ['Our planner', 171, 108, 48, 15]];
   chart(b, W => {
-    const H = 265, m = { l: 42, r: 8, t: 16, b: 56 };
+    const H = 220, m = { l: 40, r: 8, t: 14, b: 48 };
     const Y = v => H - m.b - v * (H - m.t - m.b);
     const svg = svgAt(b, W, H, 'State questions shown, stated not shown, or unstated');
     gridY(svg, m, W, Y, [0, 0.25, 0.5, 0.75, 1], v => (v * 100) + '%');
@@ -257,7 +258,7 @@ run('planner', function planner() {
     const hp = sv('pattern', { id: 'hatchP', width: 6, height: 6, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
     sv('rect', { width: 6, height: 6, fill: 'var(--cut)', 'fill-opacity': 0.16 }, hp);
     sv('path', { d: 'M0 0V6', stroke: 'var(--cut)', 'stroke-width': 2 }, hp);
-    const gw = (W - m.l - m.r) / 3, bw = Math.min(72, gw - 28), parts = [], labs = [];
+    const gw = (W - m.l - m.r) / 3, bw = Math.min(68, gw - 26), parts = [], labs = [];
     R.forEach(([name, n, se, sn, ns], i) => {
       const x = m.l + i * gw + (gw - bw) / 2, f1 = se / n, f2 = sn / n, f3 = ns / n;
       const g = sv('g', { style: 'cursor:pointer' }, svg);
@@ -265,15 +266,15 @@ run('planner', function planner() {
       parts.push(sv('rect', { x, y: Y(f1 + f2), width: bw, height: Y(f1) - Y(f1 + f2), fill: 'url(#hatchP)', rx: 2.5 }, g));
       sv('rect', { x: x + 0.5, y: Y(1) + 0.5, width: bw - 1, height: Y(f1 + f2) - Y(1) - 1, fill: 'none', stroke: 'var(--rule)', 'stroke-dasharray': '3 3', rx: 2.5 }, g);
       const ours = name === 'Our planner';
-      T(svg, x + bw / 2, H - m.b + 18, name, 'svg-text', `fill:${ours ? 'var(--ours)' : 'var(--paper)'};font-weight:600`, 'middle');
-      T(svg, x + bw / 2, H - m.b + 34, `${Math.round((se + sn) / n * 100)}% stated`, 'svg-text', 'font-size:11px', 'middle');
-      labs.push(T(g, x + bw / 2, Y(f1 / 2) + 4, Math.round(f1 * 100) + '%', 'svg-text', 'fill:#fff;font-weight:600;font-size:12px', 'middle'));
-      labs.push(T(g, x + bw / 2, Y(f1 + f2 / 2) + 4, Math.round(f2 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:600;font-size:12px;paint-order:stroke;stroke:var(--card);stroke-width:3px', 'middle'));
-      if (f3 >= 0.08) labs.push(T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 4, Math.round(f3 * 100) + '%', 'svg-text', 'font-weight:600;font-size:11.5px', 'middle'));
+      T(svg, x + bw / 2, H - m.b + 17, name, 'svg-text', `fill:${ours ? 'var(--ours)' : 'var(--paper)'};font-weight:600`, 'middle');
+      T(svg, x + bw / 2, H - m.b + 32, `${Math.round((se + sn) / n * 100)}% stated`, 'svg-text', 'font-size:11px', 'middle');
+      labs.push(T(g, x + bw / 2, Y(f1 / 2) + 4, Math.round(f1 * 100) + '%', 'svg-text', 'fill:#fff;font-weight:600;font-size:11.5px', 'middle'));
+      labs.push(T(g, x + bw / 2, Y(f1 + f2 / 2) + 4, Math.round(f2 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px;paint-order:stroke;stroke:var(--card);stroke-width:3px', 'middle'));
+      if (f3 >= 0.08) labs.push(T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 4, Math.round(f3 * 100) + '%', 'svg-text', 'fill:var(--mute);font-weight:600;font-size:11px', 'middle'));
       g.addEventListener('pointermove', e => showTip(`<b>${name} storyboard</b><table><tr><td>Stated &amp; shown</td><td>${se} (${(f1 * 100).toFixed(0)}%)</td></tr><tr><td>Stated, not shown</td><td>${sn} (${(f2 * 100).toFixed(0)}%)</td></tr><tr><td>Unstated</td><td>${ns} (${(f3 * 100).toFixed(0)}%)</td></tr></table>`, e));
       g.addEventListener('pointerleave', hideTip);
     });
-    return () => { grow(parts, 'bottom', 0, 50); fadeIn(labs, 500, 22); };
+    return () => { grow(parts, 'bottom', 0, 24); fadeIn(labs, 50, 12); };
   });
 });
 
@@ -302,7 +303,7 @@ run('overview', function overview() {
   const ph = '<i class="ov-dn ph" aria-hidden="true"></i>', dn = '<i class="ov-dn" aria-hidden="true"></i>';
   fig.innerHTML = `<div class="ov-bar">
       <div class="ov-bar-left">
-        <h3>Interactive Architecture</h3>
+        <h3>System Architecture</h3>
         <div class="tabs" id="ovWinTabs" role="group" aria-label="Active window">${s.windows.map((w, i) => `<button type="button" data-w="${i}" class="${i === WI ? 'on' : ''}" aria-pressed="${i === WI}">W${i + 1}</button>`).join('')}</div>
       </div>
       <div class="ov-ctl">
@@ -317,11 +318,11 @@ run('overview', function overview() {
         <p class="ov-rt">CaT-Movie Planner<small>global once</small></p>
         <div class="ovn box" data-st="1" id="ovReqBox"></div>
         ${dn}
-        <div class="ovn pill" data-st="1" id="ovLlm">Input Adaptation <small>Qwen3.8-27B</small>${ICE}</div>
+        <div class="ovn pill" data-st="1" id="ovLlm">Input Adaptation <small>(Qwen3.8-27B)</small>${ICE}</div>
         ${dn}
-        <div class="ovn box" data-st="2" id="ovBoard"></div>
+        <div class="ovn box ov-board-card" data-st="2" id="ovBoard"></div>
         ${dn}
-        <div class="ovn pill" data-st="3" id="ovComp">Prompt Compiler <small>code</small></div>
+        <div class="ovn pill" data-st="3" id="ovComp">Prompt Compiler <small>(code)</small></div>
       </div>
       ${ph}
       <div class="ov-top">
@@ -333,7 +334,7 @@ run('overview', function overview() {
         <div class="ov-mid-a">
           <div class="ovn pill" data-st="4" id="ovRecall">Frame Recall</div>
           ${dn}
-          <div class="ovn pill" data-st="5" id="ovEnc">VAE Encoder${ICE}</div>
+          <div class="ovn trap-enc" data-st="5" id="ovEnc">VAE Encoder${ICE}</div>
         </div>
         <div class="ov-mid-b">
           <div class="ovn pill" data-st="6" id="ovT5">umT5${ICE}</div>
@@ -343,30 +344,39 @@ run('overview', function overview() {
       </div>
       ${ph}
       <div class="ov-reg ov-rd">
-        <p class="ov-rt">CaT-Movie Renderer<small>Wan2.2-TI2V-5B, zero added parameters</small></p>
         <div class="ov-rd-in">
-          <div class="ov-tokb ovn" data-st="5" id="ovTokBox">
-            <div class="ov-tok-head"><span class="ovl" style="margin:0">Latent Sequence &amp; RoPE Time</span><div class="tabs" id="ovReader" role="group" aria-label="Reading shot"></div></div>
+          <div class="ov-tokb ovn bare" data-st="5" id="ovTokBox">
+            <div class="ov-tok-head">
+              <div class="ov-tok-left"><span class="ovl" style="margin:0">RoPE Time Index</span><div class="tabs" id="ovReader" role="group" aria-label="Reading shot"></div></div>
+              <p class="ov-rt">CaT-Movie Renderer<small>Wan2.2-TI2V-5B</small></p>
+            </div>
             <div class="chart" id="ovTok"></div>
           </div>
-          <div class="ovn ov-dit" data-st="6" id="ovDit">
-            <span class="ovl" style="margin-bottom:4px">Transformer Block &times; N</span>
-            <div class="ov-layer" id="ovSelf"><i class="dot" style="background:var(--ours)"></i>Reference-Routed Sparse Self-Attention${FLAME}</div>
-            <div class="ov-layer" id="ovCross"><i class="dot" style="background:var(--holo)"></i>Shot-wise Cross-Attention${FLAME}</div>
-            <div class="ov-layer"><i class="dot" style="background:var(--grey-c)"></i>Feed-Forward${FLAME}</div>
-          </div>
-          <div class="ov-dec ovn" data-st="7" id="ovDec">
-            <div class="ovn pill" data-st="7" id="ovDecPill">VAE Decoder${ICE}</div>
-            <div class="ov-outs" id="ovOuts"></div>
+          <div class="ov-pipe">
+            <div class="ovn ov-dit" data-st="6" id="ovDit">
+              <div class="ov-layer" id="ovSelf">Reference-Routed Sparse Self-Attention${FLAME}</div>
+              <div class="ov-layer cross" id="ovCross">Shot-wise Cross-Attention${FLAME}</div>
+              <div class="ov-layer ffn">Feed-Forward${FLAME}</div>
+              <span class="ov-dit-xn">&times; <i>N</i></span>
+            </div>
+            ${dn}
+            <div id="ovCleanToks"></div>
+            ${dn}
+            <div class="ov-dec-col" id="ovDec">
+              <div class="ovn trap-dec" data-st="7" id="ovDecPill">VAE Decoder${ICE}</div>
+              <div class="ov-outs ovn bare" data-st="7" id="ovOuts"></div>
+            </div>
           </div>
           <div class="ov-mreg ovn" data-st="6" id="ovMaskBox">
-            <p class="ov-rt">Reference-Routed Attention Mask</p>
-            <div id="ovMask"></div>
-            <span class="legend">
-              <span><i class="sq" style="background:var(--grey-a)"></i>within own shot</span>
-              <span><i class="sq" style="background:var(--holo)"></i>other shot first frame</span>
-              <span><i class="sq" style="background:var(--ours)"></i>routed recalled frame</span>
-            </span>
+            <div id="ovMask" style="width:100%"></div>
+            <div class="ov-mreg-foot">
+              <p class="ov-mreg-title">Reference-Routed Attention Mask</p>
+              <span class="legend">
+                <span><i class="sq" style="background:var(--ours)"></i>routed ref</span>
+                <span><i class="sq" style="background:var(--holo)"></i>1st frame</span>
+                <span><i class="sq" style="background:var(--grey-a)"></i>own shot</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -397,6 +407,7 @@ run('overview', function overview() {
   }
 
   let placeTok = () => {};
+  const OBJ_CROP = `background-image:url(${frame(HERO, 4)});background-size:320% 180%;background-position:34% 82%`;
 
   function buildWindowDOM() {
     const W = s.windows[WI], shs = W.shots;
@@ -404,56 +415,68 @@ run('overview', function overview() {
     const refByShot = new Map();
     W.refs.forEach((r, idx) => { if (!refByShot.has(r.shot)) refByShot.set(r.shot, []); refByShot.get(r.shot).push(`R${idx + 1}`); });
 
-    /* 1. Planner Request & Storyboard */
-    $('#ovReqBox', fig).innerHTML = `<span class="ovl">Request (shot list)</span>${shs.slice(0, 2).map(k => `<p class="ov-q"><b>S${pad(k)}</b>${esc(s.requests.shots[k - 1])}</p>`).join('')}`;
+    /* 1. Planner Request & Storyboard (floating Storyboard pill, 5-entity row, single-line shot rows) */
+    $('#ovReqBox', fig).innerHTML = shs.slice(0, 2).map((k, idx) => `<p class="ov-q">${idx === 0 ? '<b>Request:</b>' : ''}<b>S${pad(k)}</b>${esc(s.requests.shots[k - 1])}</p>`).join('');
     const rowIndices = [];
     const lo = Math.max(1, shs[0] - 1), hi = Math.min(s.plan.shots.length, lo + 3);
     for (let k = Math.max(1, hi - 3); k <= hi; k++) rowIndices.push(k);
-    $('#ovBoard', fig).innerHTML = `<span class="ovl">Storyboard</span>
-      <div class="ov-avs">${s.plan.characters.map(c => `<span class="ov-av" data-e="${esc(c.name)}"><i style="${avatarStyle(c.name)}"></i>${esc(short(c.name))}</span>`).join('')}</div>
+    $('#ovBoard', fig).innerHTML = `<span class="ov-board-tab">Storyboard</span>
+      <div class="ov-avs">${s.plan.characters.map(c => `<span class="ov-av" data-e="${esc(c.name)}"><i style="${avatarStyle(c.name)}"></i>${esc(short(c.name))}</span>`).join('')}<span class="ov-av" data-obj="Papers"><i style="${OBJ_CROP}"></i>O3</span></div>
       <div class="ov-th"><span>Shot</span><span>Entities</span><span>Shot plan</span></div>
       ${rowIndices.map(k => {
         const sh = s.plan.shots[k - 1], who = sh.present.filter(p => /^Character/.test(p.name)).map(p => p.name), pos = posture(sh), nm = named(k);
-        return `<div class="ov-tr${shs.includes(k) ? ' cur' : ''}"><b>${pad(k)}</b><span class="who">${who.map(n => `<i class="${nm.has(n) ? '' : 'inf'}" style="${avatarStyle(n)}"></i>`).join('')}</span><span>${esc(camLabel(sh.camera))}${pos ? `, <span class="${prov(k, pos)}">${esc(pos.replace(/Character (\d+)/g, 'C$1'))}</span>` : ''}</span></div>`;
+        return `<div class="ov-tr${shs.includes(k) ? ' cur' : ''}"><b>${pad(k)}</b><span class="who">${who.map(n => `<i class="${nm.has(n) ? '' : 'inf'}" style="${avatarStyle(n)}"></i>`).join('')}</span><span>${esc(camLabel(sh.camera))}${pos ? `; <span class="${prov(k, pos)}">${esc(pos.replace(/Character (\d+)/g, 'C$1'))}</span>` : ''}</span></div>`;
       }).join('')}
       <div class="ov-key"><span>Preserved</span><span class="inf">Inferred</span><span class="cmp">Completed</span></div>`;
     $$('.ov-av', fig).forEach(a => {
-      a.addEventListener('pointermove', e => showTip(charTip(s, a.dataset.e), e));
+      a.addEventListener('pointermove', e => showTip(a.dataset.e ? charTip(s, a.dataset.e) : '<b>O3</b> stack of papers carried across shots', e));
       a.addEventListener('pointerleave', hideTip);
     });
 
     /* 2. Top Film History Strip (clickable W1..W5!) */
     $('#ovHist', fig).innerHTML = `<div class="ov-strip">${s.windows.map((w, wi) => {
       const cls = wi === WI ? ' now' : wi > WI ? ' future' : '';
-      const lbl = wi === WI ? `W${wi + 1} (Current)` : wi > WI ? `W${wi + 1} <em>Planned</em>` : `Window ${wi + 1}`;
+      const lbl = wi === WI ? `Current (W${wi + 1})` : wi > WI ? `Planned (W${wi + 1})` : `Window ${wi + 1}`;
       return `<button type="button" class="hw${cls}" data-w="${wi}" style="--n:${w.shots.length}" title="Switch architecture view to Window ${wi + 1}">
         <span class="hw-head"><span>${lbl}</span></span>
         <span class="hw-cards">${w.shots.map(k => {
           const rbs = refByShot.get(k);
-          return `<i class="hs${rbs ? ' rec' : ''}" data-k="${k}" style="background-image:url(${frame(HERO, k)})"><em>S${k}</em>${rbs ? `<b class="rb">${rbs[0]}</b>` : ''}${wi === WI ? '<span class="nz"></span>' : ''}</i>`;
+          return `<i class="hs${rbs ? ' rec' : ''}" data-k="${k}" style="background-image:url(${frame(HERO, k)})"><em>Shot ${k}</em>${rbs ? `<b class="rb">${rbs[0]}</b>` : ''}${wi === WI ? '<span class="nz"></span>' : ''}</i>`;
         }).join('')}</span>
       </button>`;
     }).join('')}</div>`;
     $$('.hw', fig).forEach(b => b.addEventListener('click', () => { stopTour(); selectWindow(+b.dataset.w); }));
 
     /* 3. Compiled Prompts Stack */
-    $('#ovPrompts', fig).innerHTML = `${W.refs.length ? `<span><b>c<sup>ref</sup></b>${W.refs.length} identity line${W.refs.length > 1 ? 's' : ''}</span>` : `<span><b>c<sup>ref</sup></b>none (cold start)</span>`}
+    $('#ovPrompts', fig).innerHTML = `${W.refs.length ? `<span><b>c<sup>ref</sup></b>identity lines (${W.refs.length})</span>` : `<span><b>c<sup>ref</sup></b>none (cold start)</span>`}
       ${shs.map(k => `<span><b>c<sub>${k}</sub></b>Shot ${k} prompt</span>`).join('')}
-      <small>[Entities] [Attire] [Camera] [Opening] [Action]</small>`;
+      <small>[Entities] [Attire]<br>[Location] [Camera]<br>[Opening state]<br>[Action] [End state]</small>`;
 
     /* 4. Reader shot pills */
     const rdr = $('#ovReader', fig);
-    rdr.innerHTML = shs.map(k => `<button type="button" data-k="${k}" class="${k === reader ? 'on' : ''}" aria-pressed="${k === reader}">Shot ${k}</button>`).join('');
+    rdr.innerHTML = shs.map(k => `<button type="button" data-k="${k}" class="${k === reader ? 'on' : ''}" aria-pressed="${k === reader}">read by S${k}</button>`).join('');
     $$('button', rdr).forEach(b => b.addEventListener('click', () => setReader(+b.dataset.k)));
 
-    /* 5. Decoded outputs */
+    /* 5. Denoised latent strip + Decoded outputs */
+    const cleanHost = $('#ovCleanToks', fig);
+    cleanHost.replaceChildren();
+    (function drawClean() {
+      const nS = shs.length, tot = nS * 5 + (nS - 1) * 0.5, cw = 220, ch = 16, step = (cw - 4) / tot, sBox = Math.min(14, step - 2.5);
+      const cSvg = sv('svg', { viewBox: `0 0 ${cw} ${ch}`, class: 'ov-clean-toks', 'aria-hidden': 'true' }, cleanHost);
+      shs.forEach((k, j) => {
+        for (let q = 0; q < 5; q++) {
+          const x = 2 + (j * 5.5 + q) * step;
+          sv('rect', { x, y: 1, width: sBox, height: ch - 2, rx: 2.5, fill: q === 0 ? 'var(--ours)' : 'var(--card)', 'fill-opacity': q === 0 ? 0.45 : 1, stroke: 'var(--ours)', 'stroke-width': 1.2 }, cSvg);
+        }
+      });
+    })();
     const outs = $('#ovOuts', fig);
     outs.style.setProperty('--sn', String(Math.max(2, shs.length)));
     outs.innerHTML = shs.map(k => `<div class="ov-out"><i style="background-image:url(${frame(HERO, k)})"><span class="nz"></span></i><b>Shot ${k}</b></div>`).join('');
 
-    /* 6. Attention Mask SVG */
+    /* 6. Square 5-latent-per-shot Attention Mask SVG */
     buildMask();
-    /* 7. Contiguous Latent + RoPE SVG */
+    /* 7. Large unboxed hatched Latent + RoPE SVG */
     tokHost.replaceChildren();
     buildTokens();
     applyStage();
@@ -464,12 +487,43 @@ run('overview', function overview() {
   function buildMask() {
     const W = s.windows[WI], host = $('#ovMask', fig);
     host.replaceChildren();
-    const blocks = [];
-    W.refs.forEach((r, i) => blocks.push({ t: 'ref', i, u: 1, label: `R${i + 1} (Shot ${r.shot})` }));
-    W.shots.forEach((k, j) => { blocks.push({ t: 'first', j, k, u: 1 }); blocks.push({ t: 'rest', j, k, u: 3 }); });
-    let acc = 0; blocks.forEach(b => { b.o = acc; acc += b.u; });
-    const c = Math.min(13, Math.floor(156 / Math.max(8, acc))), L = 40, Tp = 22, size = acc * c;
-    const svg = sv('svg', { width: L + size + 4, height: Tp + size + 4, viewBox: `0 0 ${L + size + 4} ${Tp + size + 4}`, role: 'img', 'aria-label': `Attention mask for Window ${WI + 1}` }, host);
+    const cells = [];
+    let pos = 0;
+    W.refs.forEach((r, i) => { cells.push({ t: 'ref', i, pos }); pos += 1; });
+    if (W.refs.length) pos += 0.35;
+    W.shots.forEach((k, j) => {
+      if (j > 0) pos += 0.35;
+      for (let q = 0; q < 5; q++) { cells.push({ t: q === 0 ? 'first' : 'rest', j, k, q, pos }); pos += 1; }
+    });
+    const L = 32, Tp = 22, gridPx = 196, unit = gridPx / pos, sz = Math.max(6, unit - 1.5);
+    const Wsvg = Math.ceil(L + gridPx + 4), Hsvg = Math.ceil(Tp + gridPx + 4);
+    const svg = sv('svg', { width: Wsvg, height: Hsvg, viewBox: `0 0 ${Wsvg} ${Hsvg}`, role: 'img', 'aria-label': `Attention mask for Window ${WI + 1}` }, host);
+
+    /* Group header pills like Figure 2 */
+    const hdr = (x0, spanU, fill, base, supSub, isSup, col) => {
+      const w = spanU * unit - 1.5;
+      sv('rect', { x: L + x0 * unit, y: 2, width: w, height: Tp - 5, rx: 2.5, fill }, svg);
+      const t = sv('text', { x: L + x0 * unit + w / 2, y: Tp - 7, 'text-anchor': 'middle', style: `font:600 10px var(--mono);fill:${col}` }, svg);
+      t.textContent = base;
+      sv('tspan', { dy: isSup ? -3 : 2.2, style: 'font-size:7.8px' }, t).textContent = supSub;
+    };
+    const rowHdr = (y0, spanU, fill, base, supSub, isSup, col) => {
+      const h = spanU * unit - 1.5;
+      sv('rect', { x: 2, y: Tp + y0 * unit, width: L - 5, height: h, rx: 2.5, fill }, svg);
+      const t = sv('text', { x: (L - 3) / 2 + 1, y: Tp + y0 * unit + h / 2 + 3.5, 'text-anchor': 'middle', style: `font:600 10px var(--mono);fill:${col}` }, svg);
+      t.textContent = base;
+      sv('tspan', { dy: isSup ? -3 : 2.2, style: 'font-size:7.8px' }, t).textContent = supSub;
+    };
+    if (W.refs.length) {
+      hdr(0, W.refs.length, 'var(--cut-soft)', 'K', 'ref', true, 'var(--cut)');
+      rowHdr(0, W.refs.length, 'var(--cut-soft)', 'Q', 'ref', true, 'var(--cut)');
+    }
+    W.shots.forEach((k, j) => {
+      const p0 = (W.refs.length ? W.refs.length + 0.35 : 0) + j * 5.35;
+      hdr(p0, 5, 'var(--ours-soft)', 'K', String(k), false, 'var(--ours)');
+      rowHdr(p0, 5, k === reader ? 'var(--ours-soft)' : 'var(--panel)', 'Q', String(k), false, k === reader ? 'var(--ours)' : 'var(--paper)');
+    });
+
     const allow = (q, k) => {
       if (q.t === 'ref') return k.t === 'ref' && k.i === q.i ? 'ref' : null;
       if (k.t === 'ref') return (W.routing[q.j] || []).includes(k.i) ? 'ref' : null;
@@ -477,71 +531,54 @@ run('overview', function overview() {
       return k.t === 'first' ? 'first' : null;
     };
     const FILL = { self: 'var(--grey-a)', first: 'var(--holo)', ref: 'var(--ours)' };
-    blocks.forEach(q => blocks.forEach(k => {
+    cells.forEach(q => cells.forEach(k => {
       const a = allow(q, k);
       const rect = sv('rect', {
-        x: L + k.o * c + 0.6, y: Tp + q.o * c + 0.6, width: k.u * c - 1.2, height: q.u * c - 1.2, rx: 1.8,
-        fill: a ? FILL[a] : 'var(--panel)', 'fill-opacity': a ? (q.t === 'ref' ? 0.55 : 0.88) : 1,
-        class: 'mc', 'data-q': q.k || '', 'data-ref': k.t === 'ref' ? W.refs[k.i].shot : '',
+        x: (L + k.pos * unit).toFixed(1), y: (Tp + q.pos * unit).toFixed(1), width: sz.toFixed(1), height: sz.toFixed(1), rx: 1.4,
+        fill: a ? FILL[a] : 'var(--panel)', 'fill-opacity': a ? (q.t === 'ref' ? 0.62 : 0.85) : 0.72,
+        class: 'mc', 'data-q': q.k || '',
       }, svg);
-      rect.addEventListener('pointerenter', () => {
-        rect.classList.add('hl');
-        if (q.k && q.k !== reader) setReader(q.k);
-      });
-      rect.addEventListener('pointerleave', () => rect.classList.remove('hl'));
+      rect.addEventListener('pointerenter', () => { if (q.k && q.k !== reader) setReader(q.k); });
     }));
-    const mLab = (x, y, base, supSub, isSup, col, an) => {
-      const t = sv('text', { x, y, 'text-anchor': an, style: `font:600 11px var(--mono);fill:${col}` }, svg);
-      t.textContent = base;
-      const sp = sv('tspan', { dy: isSup ? -3.5 : 2.5, style: 'font-size:8.5px' }, t);
-      sp.textContent = supSub;
-    };
-    if (W.refs.length) {
-      mLab(L - 5, Tp + W.refs.length * c / 2 + 4, 'Q', 'ref', true, 'var(--ours)', 'end');
-      mLab(L + W.refs.length * c / 2, Tp - 5, 'K', 'ref', true, 'var(--ours)', 'middle');
-    }
-    W.shots.forEach((k, j) => {
-      const o = W.refs.length + j * 4;
-      mLab(L - 5, Tp + (o + 2) * c + 4, 'Q', String(k), false, k === reader ? 'var(--ours)' : 'var(--paper)', 'end');
-      mLab(L + (o + 2) * c, Tp - 5, 'K', String(k), false, 'var(--paper)', 'middle');
-    });
   }
 
   function buildTokens() {
     const W = s.windows[WI], shs = W.shots;
-    const Wd = 420, H = 64, padL = 8;
+    const Wd = 540, H = 48, padL = 6;
     const maxRefSlots = Math.max(2, W.refs.length);
-    const totalSlots = maxRefSlots + 0.7 + shs.length * 5 + (shs.length - 1) * 0.35;
-    const sw = (Wd - padL * 2) / totalSlots, sz = Math.min(18, Math.max(11, sw - 4));
+    const totalSlots = maxRefSlots + 0.65 + shs.length * 5 + (shs.length - 1) * 0.45;
+    const sw = (Wd - padL * 2) / totalSlots, sz = Math.min(24, Math.max(15, sw - 4));
     const X = slot => padL + slot * sw + (sw - sz) / 2;
-    const yT = 18, yA = 47;
+    const yT = 6, yLbl = yT + sz + 13;
     const svg = sv('svg', { width: Wd, height: H, viewBox: `0 0 ${Wd} ${H}`, role: 'img', 'aria-label': 'Contiguous latent token sequence with RoPE time offsets' }, tokHost);
-    const pat = sv('pattern', { id: 'ovNoisePat', width: 4, height: 4, patternUnits: 'userSpaceOnUse' }, sv('defs', {}, svg));
-    [[0, 0], [2, 1], [1, 3], [3, 2]].forEach(([x, y]) => sv('rect', { x, y, width: 1.2, height: 1.2, fill: '#fff', 'fill-opacity': 0.85 }, pat));
+    const defs = sv('defs', {}, svg);
+    const hatch = sv('pattern', { id: 'ovTokHatch', width: 5, height: 5, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
+    sv('line', { x1: 0, y1: 0, x2: 0, y2: 5, stroke: 'var(--ours)', 'stroke-width': 1.5, 'stroke-opacity': 0.42 }, hatch);
+    const pat = sv('pattern', { id: 'ovNoisePat', width: 4, height: 4, patternUnits: 'userSpaceOnUse' }, defs);
+    [[0, 0], [2, 1], [1, 3], [3, 2]].forEach(([x, y]) => sv('rect', { x, y, width: 1.3, height: 1.3, fill: 'var(--ours)', 'fill-opacity': 0.55 }, pat));
 
-    sv('path', { d: `M${padL} ${yA} H${Wd - padL}`, stroke: 'var(--rule)' }, svg);
     const refLabels = [];
     for (let m = 0; m < maxRefSlots; m++) {
       const cx = X(m) + sz / 2;
-      sv('rect', { x: X(m), y: yT, width: sz, height: sz, rx: 3, fill: 'none', stroke: 'var(--rule)', 'stroke-dasharray': '2 2' }, svg);
-      refLabels.push(T(svg, cx, yA + 13, `−${(maxRefSlots - m) * 5}`, 'svg-text', 'font:500 9.5px var(--mono);fill:var(--cut)', 'middle'));
+      sv('rect', { x: X(m), y: yT, width: sz, height: sz, rx: 4, fill: 'var(--card)', 'fill-opacity': 0.5, stroke: 'var(--rule)', 'stroke-dasharray': '2.5 2.5' }, svg);
+      refLabels.push(T(svg, cx, yLbl, `p−${(maxRefSlots - m) * 5}`, 'svg-text', 'font:600 9.5px var(--mono);fill:var(--cut)', 'middle'));
     }
     const refGroups = W.refs.map((r, i) => {
       const g = sv('g', { class: 'tk-r' }, svg);
-      sv('rect', { x: 0, y: yT, width: sz, height: sz, rx: 3, fill: 'var(--cut-soft)', stroke: 'var(--cut)', 'stroke-width': 1.5 }, g);
-      T(g, sz / 2, yT - 4, `R${i + 1}`, 'svg-text', 'font:600 9.5px var(--mono);fill:var(--cut)', 'middle');
+      sv('rect', { x: 0, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--cut-soft)', stroke: 'var(--cut)', 'stroke-width': 1.6 }, g);
+      T(g, sz / 2, yT + sz / 2 + 3.5, `R${i + 1}`, 'svg-text', 'font:600 9.5px var(--mono);fill:var(--cut)', 'middle');
       return g;
     });
 
     const shotGroups = shs.map((k, j) => {
       const g = sv('g', { class: 'tk-s', 'data-k': k, style: 'cursor:pointer' }, svg);
-      const baseSlot = maxRefSlots + 0.7 + j * 5.35;
-      T(g, X(baseSlot + 2) + sz / 2, yT - 4, `Shot ${k}`, 'svg-text', 'font:600 10px var(--mono);fill:var(--paper)', 'middle');
+      const baseSlot = maxRefSlots + 0.65 + j * 5.45;
       for (let q = 0; q < 5; q++) {
         const x = X(baseSlot + q);
-        sv('rect', { x, y: yT, width: sz, height: sz, rx: 3, fill: q === 0 ? 'var(--holo)' : 'var(--ours-soft)', stroke: q === 0 ? 'var(--holo)' : 'var(--ours)', 'stroke-width': 1.2 }, g);
-        sv('rect', { x, y: yT, width: sz, height: sz, rx: 3, fill: 'url(#ovNoisePat)', class: 'tk-n' }, g);
-        if (q === 0 || q === 4) T(svg, x + sz / 2, yA + 13, String(j * 5 + q), 'svg-text', 'font:500 9.5px var(--mono)', 'middle');
+        sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--card)' }, g);
+        sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: q === 0 ? 'var(--holo)' : 'url(#ovTokHatch)', 'fill-opacity': q === 0 ? 0.85 : 1, stroke: q === 0 ? 'var(--holo)' : 'var(--ours)', 'stroke-width': 1.4 }, g);
+        sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: 'url(#ovNoisePat)', class: 'tk-n' }, g);
+        T(svg, x + sz / 2, yLbl, String(j * 5 + q), 'svg-text', 'font:600 10px var(--mono);fill:var(--ours)', 'middle');
       }
       g.addEventListener('click', () => setReader(k));
       return g;
@@ -566,7 +603,7 @@ run('overview', function overview() {
         g.style.transform = `translate(${X(slot).toFixed(1)}px,0)`;
         g.style.opacity = posInRead < 0 ? 0 : 1;
       });
-      shotGroups.forEach(g => { g.style.opacity = +g.dataset.k === reader ? 1 : 0.42; });
+      shotGroups.forEach(g => { g.style.opacity = +g.dataset.k === reader ? 1 : 0.45; });
       $$('#ovMask rect.mc', fig).forEach(r => r.classList.toggle('hl', +r.dataset.q === reader));
     };
     placeTok();
@@ -592,7 +629,7 @@ run('overview', function overview() {
   let wireSeq = 0;
   function addPulse(grp, pathId, delay = 0) {
     if (RM) return;
-    const c = sv('circle', { r: 3.3, class: 'pulse', opacity: 0 }, grp);
+    const c = sv('circle', { r: 3.2, class: 'pulse', opacity: 0 }, grp);
     const begin = `${delay.toFixed(2)}s`;
     sv('animate', { attributeName: 'opacity', values: '0;1;1;0', keyTimes: '0;0.12;0.86;1', dur: '1.8s', begin, repeatCount: 'indefinite' }, c);
     const am = sv('animateMotion', { dur: '1.8s', begin, repeatCount: 'indefinite', calcMode: 'spline', keyTimes: '0;1', keySplines: '0.3 0.1 0.25 1' }, c);
@@ -604,6 +641,16 @@ run('overview', function overview() {
     const r0 = map.getBoundingClientRect();
     if (!r0.width) return;
     links.setAttribute('viewBox', `0 0 ${r0.width.toFixed(1)} ${r0.height.toFixed(1)}`);
+
+    const board = rel($('#ovBoard', fig), r0), comp = rel($('#ovComp', fig), r0), prompts = rel($('#ovPrompts', fig), r0), t5 = rel($('#ovT5', fig), r0);
+    const recall = rel($('#ovRecall', fig), r0), enc = rel($('#ovEnc', fig), r0), tok = rel($('#ovTok', fig), r0), dit = rel($('#ovDit', fig), r0), selfLayer = rel($('#ovSelf', fig), r0), cross = rel($('#ovCross', fig), r0), maskBox = rel($('#ovMaskBox', fig), r0);
+
+    /* Perspective callout wedge from Sparse Self-Attention to Attention Mask card (like Paper Figure 2) */
+    sv('polygon', {
+      points: `${(dit.r + 3).toFixed(1)},${(selfLayer.t + 1).toFixed(1)} ${(maskBox.l - 1).toFixed(1)},${(maskBox.t + 8).toFixed(1)} ${(maskBox.l - 1).toFixed(1)},${(maskBox.b - 10).toFixed(1)} ${(dit.r + 3).toFixed(1)},${(selfLayer.b + 4).toFixed(1)}`,
+      class: 'wedge',
+    }, links);
+
     const g = (st, cls = '') => sv('g', { 'data-st': st, class: cls }, links);
     const head = (e, x, y, dir) => {
       const d = dir === 'down' ? `M${x - 4} ${y - 6} L${x} ${y} L${x + 4} ${y - 6}` : `M${x - 6} ${y - 4} L${x} ${y} L${x - 6} ${y + 4}`;
@@ -623,13 +670,10 @@ run('overview', function overview() {
       addPulse(e, pid, 0.15);
     };
 
-    const board = rel($('#ovBoard', fig), r0), comp = rel($('#ovComp', fig), r0), prompts = rel($('#ovPrompts', fig), r0), t5 = rel($('#ovT5', fig), r0);
-    const recall = rel($('#ovRecall', fig), r0), enc = rel($('#ovEnc', fig), r0), tok = rel($('#ovTokBox', fig), r0), dit = rel($('#ovDit', fig), r0), cross = rel($('#ovCross', fig), r0), dec = rel($('#ovDec', fig), r0);
-
     curve(board, recall, '4', 'rose');
     curve(comp, prompts, '3', 'rose');
     curve(t5, cross, '6');
-    curve(enc, { l: tok.l - 3, cy: tok.cy }, '5');
+    curve(enc, { l: tok.l - 2, cy: tok.cy - 4 }, '5', 'rose');
 
     const recs = $$('.hs.rec', fig).map(el => rel(el, r0)), hist = rel($('#ovHist', fig), r0), rend = rel($('.ov-rd', fig), r0);
     if (recs.length) {
@@ -642,8 +686,7 @@ run('overview', function overview() {
       sv('path', { d: `M${Math.min(...xs).toFixed(1)} ${busY.toFixed(1)} H${Math.max(...xs).toFixed(1)}`, class: 'wire' }, bus);
       head(bus, recall.cx, recall.t - 3, 'down');
     }
-    vert(dit.cx, tok.b + 2, dit.cx, dit.t - 3, '5,6');
-    vert(dit.cx, dit.b + 2, dit.cx, dec.t - 3, '7');
+    vert(dit.cx, tok.b + 1, dit.cx, dit.t - 3, '5,6');
     applyStage();
   }
 
@@ -755,8 +798,8 @@ run('benchFig', function benchFig() {
       <div class="bf-box">
         <div class="bf-step-hd"><span class="bf-badge"><i>2</i>Entity Question Bank</span><span class="bf-model">GPT-6.1-sol</span></div>
         <div class="bf-qgrid">${Q.map(([t, q, ex]) => ex != null
-          ? `<button type="button" class="bf-qitem click" data-ex="${ex}"><div><b>${t}</b><span>${esc(q)}</span></div><em>Replay ↓</em></button>`
-          : `<div class="bf-qitem"><div><b>${t}</b><span>${esc(q)}</span></div></div>`).join('')}</div>
+          ? `<button type="button" class="bf-qitem click" data-ex="${ex}"><div class="bf-qitem-top"><b>${t}</b><em>Replay ↓</em></div><span>${esc(q)}</span></button>`
+          : `<div class="bf-qitem"><div class="bf-qitem-top"><b>${t}</b></div><span>${esc(q)}</span></div>`).join('')}</div>
         <div class="bf-nums">
           <div><b>1,361</b><span>binary questions (349 dev, 1,012 test)</span></div>
           <div><b>995</b><span>planned cuts (674 of 740 test cuts change setup)</span></div>

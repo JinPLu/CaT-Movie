@@ -301,7 +301,7 @@ run('compare', function compare() {
         const img = `${MEDIA}f/qual/${r.m}-s${k}.jpg`;
         const mk = r.marks[k];
         return `<div class="qc" data-k="${k}"${mk ? ` data-pair="${r.m}-${mk.kind}"` : ''} style="background-image:url(${img})">${mk ? `<span class="pin ${mk.kind}" style="left:${mk.pin[0] * 100}%;top:${mk.pin[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#${mk.kind === 'outfit' ? 'i-outfit' : 'i-neq'}"/></svg></span><span class="zoom" style="${zoom(img, ...mk.zoom)}"></span>` : ''}<i class="qbar"></i></div>`;
-      }).join('')}${r.cuts.map((c, i) => `<svg class="qcut${c === 'lost' ? ' lost' : ''}" data-b="${i + 1}" style="left:calc(${(i + 1) * 25}% + ${(i + 1) * 2.5 - 5}px)" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div>
+      }).join('')}${r.cuts.map((c, i) => `<svg class="qcut${c === 'lost' ? ' lost' : ''}" data-b="${i + 1}" style="left:calc(${(i + 1) * 25}% + ${(i + 1) * 2 - 4}px)" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div>
     </div>`).join('');
 
   const clip = (m, k) => `${MEDIA}v/cmp/${m}-s${k}.mp4`;
@@ -464,22 +464,27 @@ run('method', function method() {
   let showAll = false;
   function renderPlan() {
     const pickShots = showAll ? s.plan.shots : s.plan.shots.filter(sh => KEY_SHOTS.includes(sh.shot));
+    const shortState = txt => (txt || '').replace(/\s+(in|near|by|at|beside)\s+(a\s+|the\s+)?[A-Za-z0-9 ]+$/i, '').split(',')[0].trim();
     const changeTag = sh => {
       if (!sh.changes || !sh.changes.length) return '';
       const ch = sh.changes[0];
-      return `<span class="tag chg">${esc(short(ch.name))} ${esc(ch.what)}: ${ch.before ? esc(ch.before.split(',')[0]) + ' → ' : ''}${esc(ch.after)}</span>`;
+      return `<span class="tag chg">${esc(short(ch.name))} ${esc(ch.what)}: ${ch.before ? esc(shortState(ch.before)) + ' → ' : ''}${esc(shortState(ch.after))}</span>`;
     };
-    planFig.innerHTML = `<div class="reg-strip">${s.plan.characters.map(c => `<div class="reg-card" data-e="${esc(c.name)}" tabindex="0"><i style="${avatarStyle(c.name)}"></i><div><b>${esc(short(c.name))} (${esc(c.name.replace('Character ', 'Char '))})</b><span>${esc(c.appearance.replace(/^an? /, ''))}</span></div></div>`).join('')}</div>
+    const fmtAct = txt => esc(txt || '')
+      .replace(/Character (\d+)/g, '<b data-e="Character $1">C$1</b>')
+      .replace(/Object (\d+)/g, '<b>O$1</b>');
+    planFig.innerHTML = `<div class="reg-strip">${s.plan.characters.map(c => `<div class="reg-card" data-e="${esc(c.name)}" tabindex="0"><i style="${avatarStyle(c.name)}"></i><div><b>${esc(short(c.name))}${c.outfit ? `<em>${esc(c.outfit.replace(/^an? /, '').split(',')[0])}</em>` : ''}</b><span>${esc(c.appearance.replace(/^an? /, ''))}</span></div></div>`).join('')}</div>
       <div class="plan-rows">
         <span class="label">User Shot Request</span><span></span><span class="label">Compiled Storyboard Plan</span>
         ${pickShots.map(sh => {
           const line = esc(s.requests.shots[sh.shot - 1]).replace(/Character (\d+)/g, '<b data-e="Character $1">Character $1</b>');
           const who = sh.present.filter(p => /^Character/.test(p.name)).map(p => `<span class="tag ours" data-e="${esc(p.name)}">${esc(short(p.name))}</span>`).join('');
-          return `<div class="req card" data-k="${sh.shot}" tabindex="0"><span class="no">S${pad(sh.shot)}</span>${line}</div>
+          const held = sh.present.flatMap(p => (p.holding || []).map(o => `<span class="tag">holds ${esc(short(o))}</span>`)).join('');
+          return `<div class="req card" data-k="${sh.shot}" tabindex="0"><span class="no">S${pad(sh.shot)}</span><span>${line}</span></div>
           <span class="plan-arrow" aria-hidden="true">→</span>
           <div class="shp card" data-k="${sh.shot}" data-es="${esc(sh.present.map(p => p.name).join('|'))}" tabindex="0">
-            <div class="shp-head"><b>Shot ${pad(sh.shot)}</b><span>${esc(camLabel(sh.camera))}</span></div>
-            <div class="chips-row">${who}${changeTag(sh)}</div>
+            <div class="shp-head"><div class="shp-head-left"><b>Shot ${pad(sh.shot)}</b><span class="chips-row">${who}${held}${changeTag(sh)}</span></div><span>${esc(camLabel(sh.camera))}</span></div>
+            <p class="shp-act">${fmtAct(sh.action)}</p>
           </div>`;
         }).join('')}
       </div>
@@ -999,6 +1004,26 @@ run('misc', function misc() {
     toast.classList.add('on');
     setTimeout(() => toast.classList.remove('on'), 1800);
   });
+
+  const dv = $('#demoVideo'), chaps = $('#demoChaps'), wBtn = $('#watchDemoBtn');
+  if (dv && chaps) {
+    const btns = $$('button', chaps);
+    btns.forEach(b => b.addEventListener('click', () => {
+      dv.currentTime = +b.dataset.t;
+      dv.play().catch(() => {});
+    }));
+    dv.addEventListener('timeupdate', () => {
+      const t = dv.currentTime || 0;
+      let active = 0;
+      btns.forEach((b, i) => { if (t >= +b.dataset.t - 0.3) active = i; });
+      btns.forEach((b, i) => b.classList.toggle('on', i === active));
+    });
+    if (wBtn) {
+      wBtn.addEventListener('click', () => {
+        setTimeout(() => { dv.play().catch(() => {}); }, 350);
+      });
+    }
+  }
 });
 
 window.CAT = { MEDIA, $, $$, sv, h, esc, once, watch, onReveal, chart, setTab, showTip, hideTip, pick, RM, T1, POINT_COLOR, run, story, frame, short, camLabel, pad, HERO, avatarStyle, charTip, showWhenReady };
