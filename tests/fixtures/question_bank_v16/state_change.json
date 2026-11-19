@@ -166,7 +166,7 @@
    {
     "requirement_id": "cinedance-014127-b0000-shot01/q05",
     "verdict": "keep",
-    "reason": "请求第 11 镜「watches the man walk away」：男人在做动作，按请求算在场；该题的离开动作就在第 11 镜，codex 以「已在第 10 镜问过」删除不成立。统筹会话改判保留。"
+    "reason": "请求第 11 镜「watches the man walk away」：男人在做动作，按请求算在场；该题的离开动作就在第 11 镜，codex 以「已在第 10 镜问过」删除不成立，改判保留。"
    }
   ],
   "agent_overrides": [

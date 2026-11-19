@@ -5,7 +5,6 @@
 判官只回答这些检查点，不从答案里另立检查点。
 
 判官是 DeepSeek 官方接口的 DeepSeek-V4.1-Flash（模型名 ``deepseek-flash``；与被评的 Qwen 规划器不同家）。密钥从环境变量 ``DEEPSEEK_API_KEY`` 读，不进命令行、日志与回执。
-此前 11-12 的 gpt-6.1-sol（Codex CLI）读数、10-28 的 Gemini 3.8 Flash 读数各自保留原身份，不与本判官的读数混算。
 冻结检查点（梗概与段落由 gpt-6.1-sol 只读请求写出）是题库，不随判官换。
 """
 from __future__ import annotations
@@ -27,7 +26,7 @@ MODEL, EFFORT = "deepseek-flash", "high"
 EFFORTS = ("disabled", "low", "high", "max")  # 官方文档：思考默认开、档位默认 high；关思考用 thinking: {type: disabled}
 ENDPOINT = "https://api.deepseek.com/chat/completions"
 MAX_TOKENS = 65536  # 思考模式默认上限；含推理在内，回答本身只有几百 token
-MAX_WORKERS = 64  # DeepSeek 官方接口不限并发档位；15 是 Codex 时期的上限
+MAX_WORKERS = 64  # DeepSeek 官方接口不限并发档位
 REGISTRY_LINE = re.compile(r"^- (Character \d+|Object \d+) \(", re.M)
 LOCATION_LINE = re.compile(r"^- (Location \d+):", re.M)
 SHOT_LINE = re.compile(r"^s(\d+): ", re.M)

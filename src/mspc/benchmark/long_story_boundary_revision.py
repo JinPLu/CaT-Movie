@@ -2,7 +2,7 @@
 
 一次性、确定性的机械修订。输入是
 ``configs/benchmark/script_state_bench_long_boundary_review_r4.json``：逐镜 TransNetV2 扫出的疑似切点
-（阈值 0.5 与 0.2–0.5 低置信峰）及 Claude 亲看的结论。只有 ``verdict == "cut"`` 的条目生效：
+（阈值 0.5 与 0.2–0.5 低置信峰）及人工复看的结论。只有 ``verdict == "cut"`` 的条目生效：
 
 - 镜头开头或结尾 0.5 秒内的真切点：按训练池生产端同一规则
   （:func:`mspc.data.shot_boundary_revision.revise_shot_boundary`）把起点挪到开头带里最后一个切点、

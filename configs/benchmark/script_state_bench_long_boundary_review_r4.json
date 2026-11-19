@@ -3,7 +3,7 @@
  "scan": "outputs/experiments/eval-boundary-scan-20261010（主服务器）：逐镜 TransNetV2，阈值 0.5 的切点与 0.2–0.5 的低置信峰；代码 0ee2df63",
  "frame_convention": "frame 是进入新镜的第一帧，FFmpeg -fps_mode passthrough 顺序解码帧号（与冻结区间同一约定）；segment 是修订 3 的源镜区间 [start, end)",
  "position_rule": "切点距镜首 ≤0.5 秒为 head、距镜尾 ≤0.5 秒为 tail，其余为 mid（shot_boundary_revision.BOUNDARY_EDGE_SECONDS）",
- "review": "Claude 10-10 亲看全部 100 条：每条看镜首、切点前两帧、切点帧及后一帧、镜尾；不确定的再看切点前后各 6 帧连续帧条。verdict 只有 cut 进修订 4。",
+ "review": "人工看全部 100 条：每条看镜首、切点前两帧、切点帧及后一帧、镜尾；不确定的再看切点前后各 6 帧连续帧条。verdict 只有 cut 进修订 4。",
  "user_decision": "按看帧复核结论修订",
  "items": [
   {
@@ -1623,5 +1623,5 @@
    "note": "裁去开头叠化后整镜是 Movieclips 片尾卡（海报与推荐缩略图），无可评影片内容"
   }
  ],
- "whole_shot_review": "Claude 10-10 另看全部 138 窗首镜与末镜（修订 4 区间）的中间帧，频道片尾卡或台标画面只有这两镜；lsh-111 s11 的直播界面是片中画面，不算。"
+ "whole_shot_review": "人工另看全部 138 窗首镜与末镜（修订 4 区间）的中间帧，频道片尾卡或台标画面只有这两镜；lsh-111 s11 的直播界面是片中画面，不算。"
 }

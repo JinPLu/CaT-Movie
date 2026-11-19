@@ -123,7 +123,7 @@ def main():
     finally:
         renderer.close()
         state['finished_at'] = now()
-        state['release_owner'] = 'Codex uses GPU scheduler after every process under this lease is terminal'
+        state['release_owner'] = 'GPU scheduler after every process under this lease is terminal'
         write_json(worker_path, state)
 
 
