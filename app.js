@@ -10,7 +10,10 @@ const sv = (tag, attrs = {}, parent) => { const n = document.createElementNS(NS,
 const h = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const story = id => D.stories.find(s => s.id === id);
-const frame = (sid, k, kind) => `f/${sid}/s${k}${kind === 'last' ? '-last' : ''}.jpg`;
+/* media (video, frames) come from a pinned CDN mirror on the published page; empty base = same origin */
+const MEDIA = (document.querySelector('meta[name="cat-media"]') || {}).content || '';
+if (MEDIA) document.addEventListener('error', e => { const el = e.target; if (!el || !/^(VIDEO|IMG|SOURCE)$/.test(el.tagName)) return; const u = el.getAttribute('src') || ''; if (u.startsWith(MEDIA)) el.setAttribute('src', u.slice(MEDIA.length)); const p = el.getAttribute('poster') || ''; if (p.startsWith(MEDIA)) el.setAttribute('poster', p.slice(MEDIA.length)); }, true);
+const frame = (sid, k, kind) => `${MEDIA}f/${sid}/s${k}${kind === 'last' ? '-last' : ''}.jpg`;
 const shotAt = (spans, t) => { for (let i = 0; i < spans.length; i++) if (t < spans[i][1]) return i; return spans.length - 1; };
 const short = n => n.replace(/^Character /, 'C').replace(/^Object /, 'O').replace(/^Location /, 'L');
 const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
@@ -293,7 +296,7 @@ run('compare', function compare() {
   const zoom = (img, cx, cy, c) => { const ch = c * 640 / 370; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
   host.innerHTML = `<div class="qh"><span></span>${SH.map((k, i) => `<button type="button" class="cmp-col" data-k="${k}" aria-label="Play shot ${k} in all three"><b>Shot ${k}</b><em>${HEAD[i][0]}</em><q>${HEAD[i][1]}</q></button>`).join('')}</div>` +
     ROWS.map(r => `<div class="qr" data-m="${r.m}"><div class="qn" style="color:${r.col}">${r.n}<small>${r.who === 'ours' ? '' : r.who}</small></div><div class="qstrip${r.m === 'ours' ? ' ours' : ''}">${SH.map(k => {
-      const img = `f/qual/${r.m}-s${k}.jpg`; const mk = r.marks[k];
+      const img = `${MEDIA}f/qual/${r.m}-s${k}.jpg`; const mk = r.marks[k];
       return `<div class="qc" data-k="${k}" style="background-image:url(${img})">${mk ? `<span class="pin ${mk.kind}" style="left:${mk.pin[0] * 100}%;top:${mk.pin[1] * 100}%"><svg viewBox="0 0 20 24"><use href="#${mk.kind === 'outfit' ? 'i-outfit' : 'i-neq'}"/></svg></span><span class="zoom" style="${zoom(img, ...mk.zoom)}"></span>` : ''}<span class="tc mono"></span><i class="qbar"></i></div>`;
     }).join('')}${r.cuts.map((c, i) => `<svg class="qcut${c === 'lost' ? ' lost' : ''}" data-b="${i + 1}" style="left:${(i + 1) * 25}%" viewBox="0 0 24 24"><use href="#${c === 'lost' ? 'i-scissor-x' : 'i-scissor'}"/></svg>`).join('')}</div></div>`).join('') +
     `<div class="qlegend"><span><svg viewBox="0 0 20 24"><use href="#i-neq"/></svg>judged a different person</span><span><svg viewBox="0 0 20 24"><use href="#i-outfit"/></svg>same person, judged a different outfit</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor"/></svg>planned cut, new camera setup</span><span><svg viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>planned cut not made</span><span>shots 4&ndash;7 not shown</span></div>`;
@@ -303,7 +306,7 @@ run('compare', function compare() {
   function stop() { live.forEach(({ v, cell }) => { v.pause(); v.remove(); cell.classList.remove('playing'); $('.qbar', cell).style.width = '0'; $('.tc', cell).textContent = ''; }); live = []; }
   function start(cell, onDone) {
     const m = cell.closest('.qr').dataset.m; const k = +cell.dataset.k; const [a, b] = s.spans[m][k - 1];
-    const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = `v/${sid}/${m}.mp4#t=${a.toFixed(2)}`; v.className = 'qv';
+    const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = `${MEDIA}v/${sid}/${m}.mp4#t=${a.toFixed(2)}`; v.className = 'qv';
     cell.prepend(v); cell.classList.add('playing'); const tc = $('.tc', cell), bar = $('.qbar', cell);
     const x = { v, cell, done: false };
     v.addEventListener('loadedmetadata', () => { v.currentTime = a + 0.02; v.play().catch(() => {}); }, { once: true });
@@ -512,14 +515,14 @@ run('theater', function theater() {
   });
   const master = tiles[0].v;
   D.stories.forEach((s, i) => {
-    const b = h('button', 'story' + (i === 0 ? ' on' : ''), `<span class="th" style="background-image:url(f/${s.id}/s${s.cover}.jpg)"></span><span><b>${esc(s.title)}</b><small>${s.spans.ours.length} shots · ${s.seconds.toFixed(1)} s</small></span>`);
+    const b = h('button', 'story' + (i === 0 ? ' on' : ''), `<span class="th" style="background-image:url(${MEDIA}f/${s.id}/s${s.cover}.jpg)"></span><span><b>${esc(s.title)}</b><small>${s.spans.ours.length} shots · ${s.seconds.toFixed(1)} s</small></span>`);
     b.addEventListener('click', () => { if (si === i) return; si = i; userPaused = false; $$('.story', rail).forEach((x, j) => x.classList.toggle('on', j === i)); load(true); });
     rail.appendChild(b);
   });
   function S() { return D.stories[si]; }
   function load(autoplay) {
     loaded = true; const s = S(); curShot = -1;
-    tiles.forEach(({ m, v }) => { v.poster = `p/${s.id}/${m.key}.jpg`; v.preload = 'auto'; v.src = `v/${s.id}/${m.key}.mp4`; v.playbackRate = rate; v.load(); });
+    tiles.forEach(({ m, v }) => { v.poster = `${MEDIA}p/${s.id}/${m.key}.jpg`; v.preload = 'auto'; v.src = `${MEDIA}v/${s.id}/${m.key}.mp4`; v.playbackRate = rate; v.load(); });
     bar.replaceChildren();
     s.spans.ours.forEach(([a, b], k) => { const btn = h('button', '', `<i></i><span>${k + 1}</span>`); btn.style.flex = `${b - a} 1 0`; btn.title = `Shot ${k + 1}: ${s.requests.shots[k]}`; btn.addEventListener('click', () => seekShot(k)); bar.appendChild(btn); });
     update(true);
@@ -583,7 +586,7 @@ run('theater', function theater() {
     else if (/^[1-4]$/.test(e.key)) { focus = MET[+e.key - 1].key; setMode('focus'); }
   });
   const root = $('#theaterRoot');
-  tiles.forEach(({ m, v }) => { v.poster = `p/${S().id}/${m.key}.jpg`; });
+  tiles.forEach(({ m, v }) => { v.poster = `${MEDIA}p/${S().id}/${m.key}.jpg`; });
   watch(root, vis => { if (vis && !loaded) load(false); }, 0, '600px');
   watch(root, vis => { inView = vis; if (vis && !userPaused) play(); else if (!vis) pause(); }, 0.3);
 });
@@ -593,11 +596,11 @@ run('gate', function gate() {
   const J = $('#gateJoint'), M = $('#gateMem'), root = $('#gate'), sw = $('#gateSwitch');
   const zoom = (img, cx, cy) => { const c = 0.34, ch = c * 16 / 9; return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`; };
   const neq = (x, y) => `<span class="neq" style="left:${x}%;top:${y}%"><svg width="22" height="26" viewBox="0 0 20 24"><use href="#i-neq"/></svg></span>`;
-  J.innerHTML = `<div class="gstrip span2"><div class="gframe" style="background-image:url(f/kitchen/joint-s03.jpg)"></div><div class="gframe" style="background-image:url(f/kitchen/joint-s04.jpg)">${neq(47, 12)}<span class="zoom" style="${zoom('f/kitchen/joint-s04.jpg', .47, .45)}"></span></div><svg class="scissor" style="left:50%" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>` +
-    `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/joint-s06.jpg)">${neq(42, 12)}<span class="zoom" style="${zoom('f/kitchen/joint-s06.jpg', .42, .45)}"></span></div></div>`;
-  M.innerHTML = `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s03.jpg)"></div></div>` +
-    `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s04.jpg)"></div><span class="gate-fail"><span>gate fails · setup kept</span></span></div>` +
-    `<div class="gstrip"><div class="gframe" style="background-image:url(f/kitchen/memory-s06.jpg)"></div></div>` +
+  J.innerHTML = `<div class="gstrip span2"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/joint-s03.jpg)"></div><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/joint-s04.jpg)">${neq(47, 12)}<span class="zoom" style="${zoom(`${MEDIA}f/kitchen/joint-s04.jpg`, .47, .45)}"></span></div><svg class="scissor" style="left:50%" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>` +
+    `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/joint-s06.jpg)">${neq(42, 12)}<span class="zoom" style="${zoom(`${MEDIA}f/kitchen/joint-s06.jpg`, .42, .45)}"></span></div></div>`;
+  M.innerHTML = `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/memory-s03.jpg)"></div></div>` +
+    `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/memory-s04.jpg)"></div><span class="gate-fail"><span>gate fails · setup kept</span></span></div>` +
+    `<div class="gstrip"><div class="gframe" style="background-image:url(${MEDIA}f/kitchen/memory-s06.jpg)"></div></div>` +
     `<svg class="scissor" style="left:33.33%" viewBox="0 0 24 24"><use href="#i-scissor-x"/></svg>`;
   let touched = false;
   function set(on) {
@@ -728,5 +731,5 @@ run('misc', function misc() {
     toast.classList.add('on'); setTimeout(() => toast.classList.remove('on'), 1800);
   });
 });
-window.CAT = { $, $$, sv, h, esc, once, watch, showTip, hideTip, story, frame, camLabel, short, RM, T1, POINT_COLOR, barChart, pad, winRange, shotAt, run };
+window.CAT = { MEDIA, $, $$, sv, h, esc, once, watch, showTip, hideTip, story, frame, camLabel, short, RM, T1, POINT_COLOR, barChart, pad, winRange, shotAt, run };
 })();
