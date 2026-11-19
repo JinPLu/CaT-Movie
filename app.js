@@ -134,7 +134,7 @@ const pick = (name, from) => document.dispatchEvent(new CustomEvent('pick', { de
 
 /* ---------- navigation and theme ---------- */
 run('nav', function nav() {
-  const root = document.documentElement;
+  const root = document.documentElement, navEl = $('#nav'), progEl = $('#navProg');
   const tLab = $('#themeLabel'), tIcon = $('#themeIcon');
   const sunSvg = '<circle cx="8" cy="8" r="3.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/>';
   const moonSvg = '<path d="M13.2 10.2A5.5 5.5 0 0 1 5.8 2.8a5.5 5.5 0 1 0 7.4 7.4z"/>';
@@ -159,12 +159,25 @@ run('nav', function nav() {
     ind.style.width = hit.offsetWidth + 'px';
     ind.style.transform = `translateX(${hit.offsetLeft}px)`;
   }
+  function syncScroll() {
+    const y = scrollY || pageYOffset || 0;
+    if (navEl) navEl.classList.toggle('scrolled', y > 20);
+    if (y < 140) mark('top');
+    if (progEl) {
+      const max = Math.max(1, root.scrollHeight - innerHeight);
+      progEl.style.width = (Math.min(1, Math.max(0, y / max)) * 100).toFixed(2) + '%';
+    }
+  }
+  addEventListener('scroll', syncScroll, { passive: true });
+  addEventListener('resize', syncScroll);
+  syncScroll();
+
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) mark(e.target.id); }), { rootMargin: '-42% 0px -52% 0px' });
   $$('main > section').forEach(s => io.observe(s));
   addEventListener('resize', () => { const a = $('.nav-links a.on'); if (a) mark(a.getAttribute('href').slice(1)); });
 });
 
-/* ---------- hero: window-synced cinema player with 3 stories ---------- */
+/* ---------- hero: Mundo-inspired storyboard-to-cinema exploration stage ---------- */
 const HERO = 'cinedance-010942-b0000-shot03';
 const HERO_REELS = [
   { id: 'cinedance-010942-b0000-shot03', label: 'Police Station', video: 'v/hero-police.mp4', poster: 'f/cinedance-010942-b0000-shot03/s1.jpg' },
@@ -174,11 +187,19 @@ const HERO_REELS = [
 run('hero', function hero() {
   const v = $('#heroVideo'), steps = $('#heroSteps'), line = $('#heroLine'), lineNo = $('#heroLineNo');
   const capEl = line.closest('.film-cap'), sw = $('#heroSwitch');
-  let reelIdx = 0, s = story(HERO_REELS[0].id), spans = s.spans.ours, segs = [], pb = null;
-  let userPaused = false, cur = -1, raf = 0;
+  const storyName = $('#heroStoryName'), tele = $('#heroTelemetry');
+  const prevBtn = $('#heroPrevWin'), nextBtn = $('#heroNextWin'), pb = $('#heroPlayBtn');
+  let reelIdx = 0, s = story(HERO_REELS[0].id), spans = s.spans.ours, segs = [];
+  let userPaused = false, cur = -1, curWin = 0, raf = 0;
 
-  sw.innerHTML = HERO_REELS.map((r, i) => `<button type="button" data-i="${i}" class="${i === 0 ? 'on' : ''}" aria-pressed="${i === 0}">${esc(r.label)}</button>`).join('');
-  $$('button', sw).forEach(b => b.addEventListener('click', () => {
+  sw.innerHTML = HERO_REELS.map((r, i) => {
+    const st = story(r.id);
+    return `<button type="button" class="hs-card${i === 0 ? ' on' : ''}" data-i="${i}" aria-pressed="${i === 0}" aria-label="${esc(r.label)}" title="${esc(r.label)}">
+      <span class="hs-thumb" style="background-image:url(${MEDIA + r.poster})"></span>
+      <span class="hs-dots">${st.windows.map((_, wi) => `<i class="${i === 0 && wi === 0 ? 'on' : ''}"></i>`).join('')}</span>
+    </button>`;
+  }).join('');
+  $$('.hs-card', sw).forEach(b => b.addEventListener('click', () => {
     const idx = +b.dataset.i;
     if (idx === reelIdx) return;
     userPaused = false;
@@ -188,15 +209,17 @@ run('hero', function hero() {
   function syncPlayBtn() {
     if (!pb) return;
     pb.innerHTML = v.paused
-      ? '<svg viewBox="0 0 10 10"><path d="M2.5 1v8l6.5-4z" fill="currentColor"/></svg>'
-      : '<svg viewBox="0 0 10 10"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></svg>';
+      ? '<svg viewBox="0 0 10 10"><path d="M2.6 1.2v7.6L9 5z" fill="currentColor"/></svg>'
+      : '<svg viewBox="0 0 10 10"><path d="M2.2 1.4h2v7.2h-2zM5.8 1.4h2v7.2h-2z" fill="currentColor"/></svg>';
     pb.setAttribute('aria-label', v.paused ? 'Play the film' : 'Pause the film');
   }
+
   function buildSteps() {
     steps.replaceChildren();
     segs = s.windows.map((w, wi) => {
       const [a, b] = winRange(spans, w);
-      const el = h('button', 'fs', `<span>W${pad(wi + 1)}</span><i><u></u></i>`);
+      const rng = w.shots.length > 1 ? `S${w.shots[0]}–${w.shots[w.shots.length - 1]}` : `S${w.shots[0]}`;
+      const el = h('button', 'fs', `<i><u></u></i><span class="fs-lbl"><b>${pad(wi + 1)}</b><span class="fs-shots">${rng}</span></span>`);
       el.type = 'button';
       el.style.flex = `${(b - a).toFixed(2)} 1 0`;
       el.setAttribute('aria-label', `Window ${wi + 1}, shots ${w.shots[0]}${w.shots.length > 1 ? ' to ' + w.shots[w.shots.length - 1] : ''}`);
@@ -205,32 +228,43 @@ run('hero', function hero() {
       steps.appendChild(el);
       return { el, a, b, fill: $('u', el) };
     });
-    pb = h('button', 'ibtn');
-    pb.type = 'button';
-    pb.addEventListener('click', () => {
-      if (v.paused) { userPaused = false; v.play().catch(() => {}); }
-      else { userPaused = true; v.pause(); }
-    });
-    steps.appendChild(pb);
     syncPlayBtn();
   }
+
+  if (pb) pb.addEventListener('click', () => {
+    if (v.paused) { userPaused = false; v.play().catch(() => {}); }
+    else { userPaused = true; v.pause(); }
+  });
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    const target = (curWin - 1 + s.windows.length) % s.windows.length;
+    userPaused = false; v.currentTime = segs[target].a + 0.02; v.play().catch(() => {});
+  });
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    const target = (curWin + 1) % s.windows.length;
+    userPaused = false; v.currentTime = segs[target].a + 0.02; v.play().catch(() => {});
+  });
+
   function update() {
     const t = v.currentTime || 0;
     const k = shotAt(spans, t);
-    segs.forEach(g => {
+    const wi = Math.max(0, s.windows.findIndex(w => w.shots.includes(k + 1)));
+    curWin = wi;
+    segs.forEach((g, idx) => {
       const p = Math.max(0, Math.min(1, (t - g.a) / (g.b - g.a)));
       g.fill.style.width = (p * 100) + '%';
-      g.el.classList.toggle('on', t >= g.a && t < g.b);
+      g.el.classList.toggle('on', idx === wi);
       g.el.classList.toggle('done', t >= g.b);
     });
+    const activeCard = $$('.hs-card', sw)[reelIdx];
+    if (activeCard) $$('.hs-dots i', activeCard).forEach((d, idx) => d.classList.toggle('on', idx === wi));
+    if (tele) tele.textContent = `Shot ${pad(k + 1)} / ${pad(spans.length)}`;
     if (k !== cur) {
       cur = k;
-      const wi = s.windows.findIndex(w => w.shots.includes(k + 1));
-      lineNo.textContent = `W${wi + 1} / Shot ${k + 1}`;
+      lineNo.textContent = `W${wi + 1} / S${pad(k + 1)}`;
       if (RM || !line.textContent) line.textContent = s.requests.shots[k];
       else {
         capEl.classList.add('swapping');
-        setTimeout(() => { line.textContent = s.requests.shots[cur]; capEl.classList.remove('swapping'); }, 200);
+        setTimeout(() => { line.textContent = s.requests.shots[cur]; capEl.classList.remove('swapping'); }, 180);
       }
     }
   }
@@ -241,7 +275,13 @@ run('hero', function hero() {
     spans = s.spans.ours;
     cur = -1;
     line.textContent = '';
-    setTab(sw, $$('button', sw)[idx]);
+    if (storyName) storyName.textContent = r.label;
+    $$('.hs-card', sw).forEach((b, i) => {
+      const on = i === idx;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', String(on));
+      $$('.hs-dots i', b).forEach((d, wi) => d.classList.toggle('on', on && wi === 0));
+    });
     v.setAttribute('aria-label', `CaT-Movie generation of the ${r.label} test story`);
     if (playNow || !(v.getAttribute('src') || '').endsWith(r.video)) {
       v.poster = MEDIA + r.poster;
@@ -280,13 +320,13 @@ run('compare', function compare() {
     ['Close-up', 'The officer looks to the side.'],
   ];
   const ROWS = [
-    { m: 'holocine', who: 'HoloCine', kind: 'joint generation', col: 'var(--holo)', cuts: ['new', 'new'],
+    { m: 'holocine', who: 'HoloCine', kind: 'joint generation', col: 'var(--c2)', cuts: ['new', 'new'],
       marks: { 2: { kind: 'person', pin: [0.49, 0.27], zoom: [0.49, 0.43, 0.46] }, 8: { kind: 'person', pin: [0.40, 0.19], zoom: [0.40, 0.34, 0.36] } },
       say: 'Cuts where requested, but the officer in Shots 2 and 8 becomes two different men. Across window boundaries, joint generators retain only 28–30% of characters versus 62–83% within one window.' },
-    { m: 'storymem', who: 'StoryMem', kind: 'memory-augmented', col: 'var(--mem)', cuts: ['new', 'lost'],
+    { m: 'storymem', who: 'StoryMem', kind: 'memory-augmented', col: 'var(--c5)', cuts: ['new', 'lost'],
       marks: { 1: { kind: 'outfit', pin: [0.50, 0.62], zoom: [0.52, 0.66, 0.36] }, 3: { kind: 'outfit', pin: [0.42, 0.64], zoom: [0.40, 0.69, 0.36] } },
       say: 'Retains faces, but alters the bearded man’s shirt between Shots 1 and 3 and repeats Shot 2’s camera framing in Shot 3 instead of cutting (repeating 114 of 674 planned setup changes on test).' },
-    { m: 'ours', who: 'CaT-Movie', kind: 'ours (5B)', col: 'var(--ours)', cuts: ['new', 'new'], marks: {},
+    { m: 'ours', who: 'CaT-Movie', kind: 'ours (5B)', col: 'var(--c1)', cuts: ['new', 'new'], marks: {},
       say: 'Executes both planned camera cuts cleanly while preserving both characters’ identities and outfits across windows.' },
   ];
   const zoom = (img, cx, cy, c) => {
@@ -737,8 +777,8 @@ const T1ASK = [
   ['Average', 'Mean across the four benchmark aspects.'],
 ];
 const POINT_COLOR = {
-  'CaT-Movie': 'var(--ours)', HoloCine: 'var(--holo)', MultiShotMaster: 'var(--msm)', StoryMem: 'var(--mem)',
-  'Wan2.1, per shot': 'var(--grey-b)', 'Wan2.2, per shot': 'var(--grey-a)', StoryDiffusion: 'var(--grey-c)', 'IC-LoRA': 'var(--grey-d)',
+  'CaT-Movie': 'var(--c1)', HoloCine: 'var(--c2)', MultiShotMaster: 'var(--c2)', StoryMem: 'var(--c5)',
+  'Wan2.1, per shot': 'var(--c5)', 'Wan2.2, per shot': 'var(--c5)', StoryDiffusion: 'var(--c5)', 'IC-LoRA': 'var(--c5)',
 };
 run('mainTable', function mainTable() {
   const tb = $('#mainTable');
@@ -828,10 +868,10 @@ run('ablTable', function ablTable() {
 
 /* ---------- 05 gallery: visual thumbnail cards + 4-way lockstep theater ---------- */
 const MET = [
-  { key: 'ours', name: 'CaT-Movie', color: 'var(--ours)' },
-  { key: 'holocine', name: 'HoloCine', color: 'var(--holo)' },
-  { key: 'multishotmaster', name: 'MultiShotMaster', color: 'var(--msm)' },
-  { key: 'storymem', name: 'StoryMem', color: 'var(--mem)' },
+  { key: 'ours', name: 'CaT-Movie', color: 'var(--c1)' },
+  { key: 'holocine', name: 'HoloCine', color: 'var(--c2)' },
+  { key: 'multishotmaster', name: 'MultiShotMaster', color: 'var(--c2)' },
+  { key: 'storymem', name: 'StoryMem', color: 'var(--c5)' },
 ];
 run('theater', function theater() {
   const fig = $('#theater'), tabsEl = $('#storyTabs'), screens = $('#screens'), bar = $('#shotbar'), handle = $('#wipeHandle');

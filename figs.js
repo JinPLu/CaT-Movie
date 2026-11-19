@@ -95,29 +95,33 @@ run('pareto', function pareto() {
     const bps = front.map(p => p.tr).filter(v => v < ours.tr).sort((a, b) => b - a);
     let poly = `M${X(bps[bps.length - 1])} ${Y(ours.co)} H${X(ours.tr)} V${Y(f(ours.tr))}`;
     bps.forEach((bx, i) => { poly += ` H${X(bx)}`; if (i < bps.length - 1) poly += ` V${Y(f(bx - 1e-6))}`; });
-    const region = sv('path', { d: poly + 'Z', fill: 'var(--ours)', 'fill-opacity': 0.13, stroke: 'none' }, svg);
+    const region = sv('path', { d: poly + 'Z', fill: 'var(--c1)', 'fill-opacity': 0.20, stroke: 'none' }, svg);
     let st = `M${X(front[0].tr)} ${Y(y0)} V${Y(front[0].co)}`;
     for (let i = 1; i < front.length; i++) st += ` H${X(front[i].tr)} V${Y(front[i].co)}`;
     st += ` H${X(x0)}`;
-    const fp = sv('path', { d: st, fill: 'none', stroke: 'var(--grey-b)', 'stroke-width': 1.5, 'stroke-dasharray': '4 4' }, svg);
+    const fp = sv('path', { d: st, fill: 'none', stroke: 'var(--grey-b)', 'stroke-width': 1.4, 'stroke-dasharray': '2.2 3.4', 'stroke-linecap': 'round' }, svg);
 
     const LBL = {
-      StoryMem: [0, -14, 'middle'], HoloCine: [13, 5, 'start'], MultiShotMaster: [-13, 20, 'end'], 'CaT-Movie': [-16, 5, 'end'],
-      StoryDiffusion: [11, 4, 'start'], 'IC-LoRA': [-11, 4, 'end'], 'Wan2.2, per shot': [-10, -10, 'end'], 'Wan2.1, per shot': [-10, 18, 'end'],
+      StoryMem: [0, -13, 'middle'], HoloCine: [12, 4, 'start'], MultiShotMaster: [-11, 18, 'end'], 'CaT-Movie': [-15, 4, 'end'],
+      StoryDiffusion: [10, 4, 'start'], 'IC-LoRA': [-10, 4, 'end'], 'Wan2.2, per shot': [-9, -8, 'end'], 'Wan2.1, per shot': [-9, 16, 'end'],
     };
     nodes = [];
     pts.forEach(p => {
       const g = sv('g', { class: 'pt', tabindex: 0, 'data-name': p.name }, svg);
       const cx = X(p.tr), cy = Y(p.co), col = POINT_COLOR[p.name];
-      if (p.fam === 'shot') sv('circle', { cx, cy, r: 6.8, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, g);
-      else {
-        const s = p.fam === 'ours' ? 11.5 : 8.8;
-        if (p.fam === 'ours') sv('rect', { x: cx - s, y: cy - s, width: 2 * s, height: 2 * s, transform: `rotate(45 ${cx} ${cy})`, fill: 'none', stroke: col, 'stroke-opacity': 0.32, 'stroke-width': 6.5 }, g);
-        sv('rect', { x: cx - s * 0.72, y: cy - s * 0.72, width: 1.44 * s, height: 1.44 * s, transform: `rotate(45 ${cx} ${cy})`, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, g);
+      if (p.fam === 'shot') {
+        sv('circle', { cx, cy, r: 6.2, fill: 'var(--surface)' }, g);
+        sv('circle', { cx, cy, r: 6.2, fill: col, 'fill-opacity': 0.92, stroke: 'var(--edge)', 'stroke-width': 1.1 }, g);
+      } else {
+        const s = p.fam === 'ours' ? 9.4 : 8.2;
+        if (p.fam === 'ours') sv('rect', { x: cx - s * 1.05, y: cy - s * 1.05, width: 2.1 * s, height: 2.1 * s, transform: `rotate(45 ${cx} ${cy})`, fill: 'none', stroke: col, 'stroke-opacity': 0.26, 'stroke-width': 5 }, g);
+        sv('rect', { x: cx - s * 0.72, y: cy - s * 0.72, width: 1.44 * s, height: 1.44 * s, transform: `rotate(45 ${cx} ${cy})`, fill: 'var(--surface)' }, g);
+        sv('rect', { x: cx - s * 0.72, y: cy - s * 0.72, width: 1.44 * s, height: 1.44 * s, transform: `rotate(45 ${cx} ${cy})`, fill: col, 'fill-opacity': 0.94, stroke: 'var(--edge)', 'stroke-width': p.fam === 'ours' ? 1.25 : 1.1 }, g);
       }
       const [dx, dy, an] = LBL[p.name];
-      const nm = narrow ? p.name.replace(', per shot', '') : p.name;
-      T(g, cx + dx, cy + dy, nm, 'svg-text', `fill:${p.fam === 'shot' && p.name !== 'StoryMem' ? 'var(--mute)' : col};font-weight:${p.fam === 'shot' ? 450 : 600}`, an);
+      const nm = p.name.replace(', per shot', '');
+      const lblCol = p.fam === 'ours' ? 'var(--ours)' : (p.fam === 'joint' ? 'var(--paper)' : 'var(--mute)');
+      T(g, cx + dx, cy + dy, nm, 'svg-text', `fill:${lblCol};font-weight:${p.fam === 'shot' ? 450 : 600}`, an);
       const v = p.r.v;
       const html = `<b>${esc(p.name)}</b><table><tr><td>Transition control</td><td>${p.tr.toFixed(3)}</td></tr><tr><td>Inter-shot consistency</td><td>${p.co.toFixed(3)}</td></tr><tr><td>Character</td><td>${v[2].toFixed(3)}</td></tr><tr><td>Average</td><td>${v[8].toFixed(3)}</td></tr></table>`;
       g.addEventListener('pointermove', e => showTip(html, e));
@@ -148,10 +152,9 @@ run('returnChart', function returnChart() {
     MultiShotMaster: { rate: [0.5791, 0.4444, 0.4892], lo: [0.5143, 0.3432, 0.3423], hi: [0.6558, 0.5489, 0.6172] },
     StoryMem: { rate: [0.5827, 0.5960, 0.7312], lo: [0.5075, 0.5060, 0.6646], hi: [0.6771, 0.6835, 0.7873] },
   };
-  const N = [278, 198, 186], bins = ['under 10 s', '10–20 s', '20 s or more'], names = Object.keys(RT);
-  const OP = [0.9, 0.58, 0.34];
-  const fill = (g, s) => names[g] === 'CaT-Movie' ? `color-mix(in srgb,var(--ours) ${[95, 64, 38][s]}%,transparent)` : `color-mix(in srgb,var(--grey-b) ${OP[s] * 100}%,transparent)`;
-  $('#rtLegend').innerHTML = bins.map((b, s) => `<span><i class="sq" style="background:color-mix(in srgb,var(--grey-b) ${OP[s] * 100}%,transparent)"></i>${b}</span>`).join('') + '<span><i class="sq" style="background:var(--ours)"></i>CaT-Movie</span>';
+  const N = [278, 198, 186], bins = ['<10 s', '10–20 s', '≥20 s'], names = Object.keys(RT);
+  const BIN_FILL = ['var(--grey-d)', 'var(--grey-c)', 'var(--grey-a)'];
+  $('#rtLegend').innerHTML = bins.map((b, s) => `<span><i class="sq" style="background:${BIN_FILL[s]};box-shadow:inset 0 0 0 1px var(--edge)"></i>${b}</span>`).join('');
   chart(host, W => {
     const narrow = W < 520;
     const H = 220, m = { l: 42, r: 8, t: 10, b: narrow ? 46 : 32 };
@@ -159,18 +162,18 @@ run('returnChart', function returnChart() {
     const Y = v => H - m.b - (v - yMin) / (yMax - yMin) * (H - m.t - m.b);
     const svg = svgAt(host, W, H, 'Character checks passed by return time for four methods');
     gridY(svg, m, W, Y, [0.3, 0.4, 0.5, 0.6, 0.7, 0.8], v => Math.round(v * 100) + '%');
-    sv('path', { d: `M${m.l} ${Y(yMin)} H${W - m.r}`, stroke: 'var(--rule)' }, svg);
-    const gw = (W - m.l - m.r) / names.length, bw = Math.min(36, (gw - 28) / 3);
+    sv('path', { d: `M${m.l} ${m.t} V${Y(yMin)} H${W - m.r}`, stroke: 'var(--edge)', fill: 'none' }, svg);
+    const gw = (W - m.l - m.r) / names.length, bw = Math.min(34, (gw - 28) / 3);
     const bars = [], whisk = [];
     names.forEach((n, gi) => {
-      const cx = m.l + gi * gw + gw / 2, gx = cx - (bw * 3 + 8) / 2;
+      const cx = m.l + gi * gw + gw / 2, gx = cx - (bw * 3 + 6) / 2;
       const lines = narrow && n === 'MultiShotMaster' ? ['MultiShot', 'Master'] : [n];
-      lines.forEach((ln, li) => T(svg, cx, H - m.b + 19 + li * 14, ln, 'svg-text', `fill:${n === 'CaT-Movie' ? 'var(--ours)' : 'var(--text)'};font-weight:${n === 'CaT-Movie' ? 600 : 450}`, 'middle'));
+      lines.forEach((ln, li) => T(svg, cx, H - m.b + 19 + li * 14, ln, 'svg-text', `fill:${n === 'CaT-Movie' ? 'var(--ours)' : 'var(--paper)'};font-weight:${n === 'CaT-Movie' ? 600 : 450}`, 'middle'));
       bins.forEach((b, s) => {
-        const d = RT[n], x = gx + s * (bw + 4);
+        const d = RT[n], x = gx + s * (bw + 3);
         const g = sv('g', { style: 'cursor:pointer' }, svg);
-        bars.push(sv('rect', { x, y: Y(d.rate[s]), width: bw, height: Y(yMin) - Y(d.rate[s]), rx: 3, fill: fill(gi, s) }, g));
-        whisk.push(sv('path', { d: `M${x + bw / 2} ${Y(d.lo[s])} V${Y(d.hi[s])} M${x + bw / 2 - 3.5} ${Y(d.lo[s])} h7 M${x + bw / 2 - 3.5} ${Y(d.hi[s])} h7`, stroke: 'var(--paper)', 'stroke-opacity': 0.5, 'stroke-width': 1.2, fill: 'none' }, g));
+        bars.push(sv('rect', { x, y: Y(d.rate[s]), width: bw, height: Y(yMin) - Y(d.rate[s]), rx: 1.5, fill: BIN_FILL[s], stroke: 'var(--edge)', 'stroke-width': 0.9 }, g));
+        whisk.push(sv('path', { d: `M${x + bw / 2} ${Y(d.lo[s])} V${Y(d.hi[s])} M${x + bw / 2 - 3.5} ${Y(d.lo[s])} h7 M${x + bw / 2 - 3.5} ${Y(d.hi[s])} h7`, stroke: 'var(--edge)', 'stroke-opacity': 0.85, 'stroke-width': 1.1, fill: 'none' }, g));
         g.addEventListener('pointermove', e => showTip(`<b>${n}</b> (${b})<table><tr><td>Pass rate</td><td>${(d.rate[s] * 100).toFixed(1)}%</td></tr><tr><td>95% CI</td><td>${(d.lo[s] * 100).toFixed(1)}–${(d.hi[s] * 100).toFixed(1)}%</td></tr><tr><td>Checks</td><td>${N[s]}</td></tr></table>`, e));
         g.addEventListener('pointerleave', hideTip);
       });
@@ -184,9 +187,9 @@ run('distChart', function distChart() {
   const host = $('#distChart');
   if (!host) return;
   const S = [
-    ['ours', 'CaT-Movie', 'var(--ours)', [46.3, 53.9, 59.8], [147, 297, 480], null, 'circle', ''],
-    ['recent', 'Latest-shot recall', 'var(--grey-a)', [46.9, 54.9, 44.4], [147, 297, 480], [[0.7, -5.6, 9.4], [1.0, -5.1, 7.3], [-15.4, -22.7, -9.0]], 'square', '7 5'],
-    ['no_refs', 'No recalled views', 'var(--cut)', [38.8, 31.3, 32.1], [147, 297, 480], [[-7.5, -20.2, 3.2], [-22.6, -30.6, -14.4], [-27.7, -35.3, -20.7]], 'tri', '2 5'],
+    ['ours', 'CaT-Movie', 'var(--c1)', 'var(--c1)', 'var(--ours)', [46.3, 53.9, 59.8], [147, 297, 480], null, 'circle', ''],
+    ['recent', 'Latest-shot recall', 'var(--grey-b)', '#c4c4c4', 'var(--mute)', [46.9, 54.9, 44.4], [147, 297, 480], [[0.7, -5.6, 9.4], [1.0, -5.1, 7.3], [-15.4, -22.7, -9.0]], 'square', '7 4'],
+    ['no_refs', 'No recalled views', 'var(--cut)', 'var(--c5)', 'var(--cut)', [38.8, 31.3, 32.1], [147, 297, 480], [[-7.5, -20.2, 3.2], [-22.6, -30.6, -14.4], [-27.7, -35.3, -20.7]], 'tri', '3.5 3.5'],
   ];
   const XL = ['same window', '1 window apart', '2 or more windows apart'];
   chart(host, W => {
@@ -196,18 +199,19 @@ run('distChart', function distChart() {
     const Y = v => H - m.b - (v - 25) / (65 - 25) * (H - m.t - m.b);
     const svg = svgAt(host, W, H, 'Consistency pass rate by window distance for three settings');
     gridY(svg, m, W, Y, [30, 40, 50, 60], v => v + '%');
-    XL.forEach((n, i) => T(svg, X(i), H - m.b + 20, n, 'svg-text', 'fill:var(--text)', 'middle'));
+    sv('path', { d: `M${m.l} ${m.t} V${H - m.b} H${W - m.r}`, stroke: 'var(--edge)', fill: 'none' }, svg);
+    XL.forEach((n, i) => T(svg, X(i), H - m.b + 20, n, 'svg-text', 'fill:var(--paper)', 'middle'));
     const lines = [], marks = [];
-    S.forEach(([k, name, col, v, n, d, mk, dash]) => {
+    S.forEach(([k, name, lineCol, fillCol, txtCol, v, n, d, mk, dash]) => {
       const g = sv('g', {}, svg);
-      lines.push(sv('path', { d: v.map((y, i) => `${i ? 'L' : 'M'}${X(i)} ${Y(y)}`).join(''), fill: 'none', stroke: col, 'stroke-width': k === 'ours' ? 2.8 : 2, 'stroke-dasharray': dash || null, 'stroke-linecap': 'round' }, g));
+      lines.push(sv('path', { d: v.map((y, i) => `${i ? 'L' : 'M'}${X(i)} ${Y(y)}`).join(''), fill: 'none', stroke: lineCol, 'stroke-width': k === 'ours' ? 2.5 : 1.9, 'stroke-dasharray': dash || null, 'stroke-linecap': 'round' }, g));
       v.forEach((y, i) => {
         const x = X(i), yy = Y(y), pg = sv('g', { style: 'cursor:pointer' }, g);
-        if (mk === 'circle') sv('circle', { cx: x, cy: yy, r: 5.2, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
-        else if (mk === 'square') sv('rect', { x: x - 4.8, y: yy - 4.8, width: 9.6, height: 9.6, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
-        else sv('path', { d: `M${x} ${yy - 6}L${x + 5.6} ${yy + 4.2}L${x - 5.6} ${yy + 4.2}Z`, fill: col, stroke: 'var(--card)', 'stroke-width': 2 }, pg);
+        if (mk === 'circle') sv('circle', { cx: x, cy: yy, r: 5, fill: fillCol, stroke: 'var(--edge)', 'stroke-width': 1.1 }, pg);
+        else if (mk === 'square') sv('rect', { x: x - 4.6, y: yy - 4.6, width: 9.2, height: 9.2, fill: fillCol, stroke: 'var(--edge)', 'stroke-width': 1.1 }, pg);
+        else sv('path', { d: `M${x} ${yy - 5.8}L${x + 5.2} ${yy + 4}L${x - 5.2} ${yy + 4}Z`, fill: fillCol, stroke: 'var(--edge)', 'stroke-width': 1.1 }, pg);
         const [dx, dy, an] = k === 'ours' ? [[-11, 5, 'end'], [0, 19, 'middle'], [0, -11, 'middle']][i] : k === 'recent' ? [[0, -11, 'middle'], [0, -11, 'middle'], [0, 19, 'middle']][i] : [0, 20, 'middle'];
-        T(pg, x + dx, yy + dy, y.toFixed(1) + '%', 'svg-text', `fill:${col};font-weight:${k === 'ours' ? 600 : 450}`, an);
+        T(pg, x + dx, yy + dy, y.toFixed(1) + '%', 'svg-text', `fill:${txtCol};font-weight:${k === 'ours' ? 600 : 450}`, an);
         pg.addEventListener('pointermove', e => showTip(`<b>${name}</b> (${XL[i]})<table><tr><td>Pass rate</td><td>${y.toFixed(1)}%</td></tr><tr><td>Checks (3 seeds)</td><td>${n[i]}</td></tr>${d ? `<tr><td>vs CaT-Movie</td><td>${d[i][0] > 0 ? '+' : ''}${d[i][0].toFixed(1)} [${d[i][1]}, ${d[i][2]}]</td></tr>` : ''}</table>`, e));
         pg.addEventListener('pointerleave', hideTip);
         marks.push(pg);
@@ -217,29 +221,30 @@ run('distChart', function distChart() {
   });
 });
 
-/* =============== 02 Method Workbench: Planner study charts =============== */
+/* =============== 02 Method Workbench: Planner study charts (Figure 7 exact palette) =============== */
 run('planner', function planner() {
   const a = $('#planText'), b = $('#writExec');
   if (!a || !b) return;
   const D = { opening: { Syn: [0.1625, 0.4471], Para: [0.5649, 0.7091], Shot: [0.4833, 0.7304] }, held: { Syn: [0.0732, 0.2171], Para: [0.5721, 0.6797], Shot: [0.3122, 0.5122] } };
-  const TL = { Syn: 'synopsis', Para: 'paragraph', Shot: 'shot list' };
+  const TL = { Syn: 'Syn', Para: 'Para', Shot: 'Shot' };
   chart(a, W => {
     const H = 220, m = { l: 40, r: 8, t: 16, b: 44 };
     const yMax = 0.85;
     const Y = v => H - m.b - (v / yMax) * (H - m.t - m.b);
     const svg = svgAt(a, W, H, 'Share of reference opening states and held items stated by request alone and with planner');
     gridY(svg, m, W, Y, [0, 0.2, 0.4, 0.6, 0.8], v => Math.round(v * 100) + '%');
-    const gw = (W - m.l - m.r) / 2, bw = Math.min(48, (gw - 34) / 3), segs = [], labs = [];
+    sv('path', { d: `M${m.l} ${m.t} V${H - m.b} H${W - m.r}`, stroke: 'var(--edge)', fill: 'none' }, svg);
+    const gw = (W - m.l - m.r) / 2, bw = Math.min(44, (gw - 34) / 3), segs = [], labs = [];
     [['opening', 'Opening states'], ['held', 'Held items']].forEach(([key, name], gi) => {
       const cx = m.l + gi * gw + gw / 2;
       T(svg, cx, H - 7, name, 'svg-text', 'fill:var(--paper);font-weight:500', 'middle');
       ['Syn', 'Para', 'Shot'].forEach((t, ti) => {
         const [r, tot] = D[key][t], x = cx + (ti - 1) * (bw + 10) - bw / 2;
         const g = sv('g', { style: 'cursor:pointer' }, svg);
-        segs.push(sv('rect', { x, y: Y(r), width: bw, height: Y(0) - Y(r), fill: 'var(--grey-c)', 'fill-opacity': 0.5, rx: 2.5 }, g));
-        const top = sv('rect', { x, y: Y(tot), width: bw, height: Y(r) - Y(tot), fill: 'var(--ours)', rx: 2.5 }, g);
-        labs.push(T(g, x + bw / 2, Y(tot) - 6, `${Math.round(tot * 100)}%`, 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px', 'middle'));
-        T(svg, x + bw / 2, H - m.b + 16, TL[t], 'svg-text', 'font-size:11px', 'middle');
+        segs.push(sv('rect', { x, y: Y(r), width: bw, height: Y(0) - Y(r), fill: 'var(--grey-d)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g));
+        const top = sv('rect', { x, y: Y(tot), width: bw, height: Y(r) - Y(tot), fill: 'var(--c1)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g);
+        labs.push(T(g, x + bw / 2, Y(tot) - 6, `${Math.round(tot * 100)}%`, 'svg-text', 'fill:var(--ours);font-weight:600;font-size:11.5px', 'middle'));
+        T(svg, x + bw / 2, H - m.b + 16, TL[t], 'svg-text', 'font-size:11px;fill:var(--paper)', 'middle');
         g.addEventListener('pointermove', e => showTip(`<b>${name} (${TL[t]})</b><table><tr><td>Request alone</td><td>${(r * 100).toFixed(1)}%</td></tr><tr><td>Planner adds</td><td>+${((tot - r) * 100).toFixed(1)}%</td></tr><tr><td>Compiled total</td><td>${(tot * 100).toFixed(1)}%</td></tr></table>`, e));
         g.addEventListener('pointerleave', hideTip);
         segs.push(top);
@@ -248,33 +253,34 @@ run('planner', function planner() {
     return () => { grow(segs, 'bottom', 0, 14); fadeIn(labs, 50, 10); };
   });
 
-  const R = [['Request', 170, 79, 49, 42], ['Reference', 171, 91, 59, 21], ['Our planner', 171, 108, 48, 15]];
+  const R = [['Request', 170, 79, 49, 42], ['Reference', 171, 91, 59, 21], ['Planner', 171, 108, 48, 15]];
   chart(b, W => {
     const H = 220, m = { l: 40, r: 8, t: 14, b: 48 };
     const Y = v => H - m.b - v * (H - m.t - m.b);
     const svg = svgAt(b, W, H, 'State questions shown, stated not shown, or unstated');
     gridY(svg, m, W, Y, [0, 0.25, 0.5, 0.75, 1], v => (v * 100) + '%');
+    sv('path', { d: `M${m.l} ${m.t} V${H - m.b} H${W - m.r}`, stroke: 'var(--edge)', fill: 'none' }, svg);
     const defs = sv('defs', {}, svg);
-    const hp = sv('pattern', { id: 'hatchP', width: 6, height: 6, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
-    sv('rect', { width: 6, height: 6, fill: 'var(--cut)', 'fill-opacity': 0.16 }, hp);
-    sv('path', { d: 'M0 0V6', stroke: 'var(--cut)', 'stroke-width': 2 }, hp);
-    const gw = (W - m.l - m.r) / 3, bw = Math.min(68, gw - 26), parts = [], labs = [];
+    const hp = sv('pattern', { id: 'hatchP', width: 7, height: 7, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
+    sv('rect', { width: 7, height: 7, fill: 'var(--c2)' }, hp);
+    sv('path', { d: 'M0 0V7', stroke: 'var(--edge)', 'stroke-width': 1 }, hp);
+    const gw = (W - m.l - m.r) / 3, bw = Math.min(64, gw - 26), parts = [], labs = [];
     R.forEach(([name, n, se, sn, ns], i) => {
       const x = m.l + i * gw + (gw - bw) / 2, f1 = se / n, f2 = sn / n, f3 = ns / n;
       const g = sv('g', { style: 'cursor:pointer' }, svg);
-      parts.push(sv('rect', { x, y: Y(f1), width: bw, height: Y(0) - Y(f1), fill: 'var(--ours)', rx: 2.5 }, g));
-      parts.push(sv('rect', { x, y: Y(f1 + f2), width: bw, height: Y(f1) - Y(f1 + f2), fill: 'url(#hatchP)', rx: 2.5 }, g));
-      sv('rect', { x: x + 0.5, y: Y(1) + 0.5, width: bw - 1, height: Y(f1 + f2) - Y(1) - 1, fill: 'none', stroke: 'var(--rule)', 'stroke-dasharray': '3 3', rx: 2.5 }, g);
-      const ours = name === 'Our planner';
-      T(svg, x + bw / 2, H - m.b + 17, name, 'svg-text', `fill:${ours ? 'var(--ours)' : 'var(--paper)'};font-weight:600`, 'middle');
-      T(svg, x + bw / 2, H - m.b + 32, `${Math.round((se + sn) / n * 100)}% stated`, 'svg-text', 'font-size:11px', 'middle');
+      parts.push(sv('rect', { x, y: Y(1), width: bw, height: Y(f1 + f2) - Y(1), fill: 'var(--surface)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g));
+      parts.push(sv('rect', { x, y: Y(f1 + f2), width: bw, height: Y(f1) - Y(f1 + f2), fill: 'url(#hatchP)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g));
+      parts.push(sv('rect', { x, y: Y(f1), width: bw, height: Y(0) - Y(f1), fill: 'var(--c1)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g));
+      const ours = name === 'Planner';
+      T(svg, x + bw / 2, H - m.b + 17, name, 'svg-text', `fill:${ours ? 'var(--ours)' : 'var(--paper)'};font-weight:${ours ? 600 : 500}`, 'middle');
+      T(svg, x + bw / 2, H - m.b + 32, `${Math.round((se + sn) / n * 100)}% stated`, 'svg-text', 'font-size:11px;fill:var(--mute)', 'middle');
       labs.push(T(g, x + bw / 2, Y(f1 / 2) + 4, Math.round(f1 * 100) + '%', 'svg-text', 'fill:#fff;font-weight:600;font-size:11.5px', 'middle'));
-      labs.push(T(g, x + bw / 2, Y(f1 + f2 / 2) + 4, Math.round(f2 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px;paint-order:stroke;stroke:var(--card);stroke-width:3px', 'middle'));
-      if (f3 >= 0.08) labs.push(T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 4, Math.round(f3 * 100) + '%', 'svg-text', 'fill:var(--mute);font-weight:600;font-size:11px', 'middle'));
+      labs.push(T(g, x + bw / 2, Y(f1 + f2 / 2) + 4, Math.round(f2 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px;paint-order:stroke;stroke:var(--c2);stroke-width:4px', 'middle'));
+      if (f3 >= 0.08) labs.push(T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 4, Math.round(f3 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:500;font-size:11px', 'middle'));
       g.addEventListener('pointermove', e => showTip(`<b>${name} storyboard</b><table><tr><td>Stated &amp; shown</td><td>${se} (${(f1 * 100).toFixed(0)}%)</td></tr><tr><td>Stated, not shown</td><td>${sn} (${(f2 * 100).toFixed(0)}%)</td></tr><tr><td>Unstated</td><td>${ns} (${(f3 * 100).toFixed(0)}%)</td></tr></table>`, e));
       g.addEventListener('pointerleave', hideTip);
     });
-    return () => { grow(parts, 'bottom', 0, 24); fadeIn(labs, 50, 12); };
+    return () => { grow(parts, 'bottom', 0, 20); fadeIn(labs, 50, 12); };
   });
 });
 
@@ -372,9 +378,9 @@ run('overview', function overview() {
             <div class="ov-mreg-foot">
               <p class="ov-mreg-title">Reference-Routed Attention Mask</p>
               <span class="legend">
-                <span><i class="sq" style="background:var(--ours)"></i>routed ref</span>
-                <span><i class="sq" style="background:var(--holo)"></i>1st frame</span>
-                <span><i class="sq" style="background:var(--grey-a)"></i>own shot</span>
+                <span><i class="sq" style="background:var(--c5)"></i>routed ref</span>
+                <span><i class="sq" style="background:var(--c1)"></i>1st frame</span>
+                <span><i class="sq" style="background:var(--c2)"></i>own shot</span>
               </span>
             </div>
           </div>
@@ -530,12 +536,12 @@ run('overview', function overview() {
       if (k.j === q.j) return 'self';
       return k.t === 'first' ? 'first' : null;
     };
-    const FILL = { self: 'var(--grey-a)', first: 'var(--holo)', ref: 'var(--ours)' };
+    const FILL = { self: 'var(--c2)', first: 'var(--c1)', ref: 'var(--c5)' };
     cells.forEach(q => cells.forEach(k => {
       const a = allow(q, k);
       const rect = sv('rect', {
         x: (L + k.pos * unit).toFixed(1), y: (Tp + q.pos * unit).toFixed(1), width: sz.toFixed(1), height: sz.toFixed(1), rx: 1.4,
-        fill: a ? FILL[a] : 'var(--panel)', 'fill-opacity': a ? (q.t === 'ref' ? 0.62 : 0.85) : 0.72,
+        fill: a ? FILL[a] : 'var(--panel)', 'fill-opacity': a ? (q.t === 'ref' ? 0.72 : 0.92) : 0.72,
         class: 'mc', 'data-q': q.k || '',
       }, svg);
       rect.addEventListener('pointerenter', () => { if (q.k && q.k !== reader) setReader(q.k); });
@@ -553,7 +559,7 @@ run('overview', function overview() {
     const svg = sv('svg', { width: Wd, height: H, viewBox: `0 0 ${Wd} ${H}`, role: 'img', 'aria-label': 'Contiguous latent token sequence with RoPE time offsets' }, tokHost);
     const defs = sv('defs', {}, svg);
     const hatch = sv('pattern', { id: 'ovTokHatch', width: 5, height: 5, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
-    sv('line', { x1: 0, y1: 0, x2: 0, y2: 5, stroke: 'var(--ours)', 'stroke-width': 1.5, 'stroke-opacity': 0.42 }, hatch);
+    sv('line', { x1: 0, y1: 0, x2: 0, y2: 5, stroke: 'var(--c1)', 'stroke-width': 1.5, 'stroke-opacity': 0.52 }, hatch);
     const pat = sv('pattern', { id: 'ovNoisePat', width: 4, height: 4, patternUnits: 'userSpaceOnUse' }, defs);
     [[0, 0], [2, 1], [1, 3], [3, 2]].forEach(([x, y]) => sv('rect', { x, y, width: 1.3, height: 1.3, fill: 'var(--ours)', 'fill-opacity': 0.55 }, pat));
 
@@ -565,7 +571,7 @@ run('overview', function overview() {
     }
     const refGroups = W.refs.map((r, i) => {
       const g = sv('g', { class: 'tk-r' }, svg);
-      sv('rect', { x: 0, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--cut-soft)', stroke: 'var(--cut)', 'stroke-width': 1.6 }, g);
+      sv('rect', { x: 0, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--c4)', 'fill-opacity': 0.72, stroke: 'var(--cut)', 'stroke-width': 1.5 }, g);
       T(g, sz / 2, yT + sz / 2 + 3.5, `R${i + 1}`, 'svg-text', 'font:600 9.5px var(--mono);fill:var(--cut)', 'middle');
       return g;
     });
@@ -576,7 +582,7 @@ run('overview', function overview() {
       for (let q = 0; q < 5; q++) {
         const x = X(baseSlot + q);
         sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--card)' }, g);
-        sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: q === 0 ? 'var(--holo)' : 'url(#ovTokHatch)', 'fill-opacity': q === 0 ? 0.85 : 1, stroke: q === 0 ? 'var(--holo)' : 'var(--ours)', 'stroke-width': 1.4 }, g);
+        sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: q === 0 ? 'var(--c2)' : 'url(#ovTokHatch)', 'fill-opacity': q === 0 ? 0.92 : 1, stroke: 'var(--ours)', 'stroke-width': 1.4 }, g);
         sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: 'url(#ovNoisePat)', class: 'tk-n' }, g);
         T(svg, x + sz / 2, yLbl, String(j * 5 + q), 'svg-text', 'font:600 10px var(--mono);fill:var(--ours)', 'middle');
       }
@@ -856,15 +862,15 @@ run('benchFig', function benchFig() {
 run('dataFig', function dataFig() {
   const fig = $('#dataFig'), pipe = $('#pipe'), host = $('#blk');
   if (!fig || !pipe || !host) return;
-  const SRC = [['CinePile', 65.74, 'var(--ours)'], ['CineDance', 24.69, 'var(--grey-a)'], ['MovieChat', 9.57, 'var(--grey-c)']];
+  const SRC = [['CinePile', 65.74, 'var(--c1)'], ['CineDance', 24.69, 'var(--c2)'], ['MovieChat', 9.57, 'var(--c4)']];
   const HB = [15459, 12498, 8388, 5959, 4301, 4242, 5642, 4826, 4864, 4136, 3100, 2046], mx = Math.max(...HB);
   const step = (n, chip, title, big, desc, mini) => `<li class="pp lit" data-i="${n - 1}"><div class="pp-top"><span class="pp-n">${n}</span><span class="pp-chip">${chip}</span></div><b class="pp-t">${title}</b>${big ? `<strong>${big}</strong>` : ''}<span class="pp-d">${desc}</span><div class="mini">${mini}</div></li>`;
   pipe.innerHTML = [
     step(1, 'Corpus', 'Cinematic videos', '19,535', 'raw film & scene sources', `<div class="mbar">${SRC.map(([nm, v, c]) => `<i style="flex:${v} 1 0;background:${c}" title="${nm} ${v.toFixed(1)}%"></i>`).join('')}</div><div class="mkey">${SRC.map(([nm, v, c]) => `<span><i style="background:${c}"></i>${nm} ${Math.round(v)}%</span>`).join('')}</div>`),
     step(2, 'TransNetV2', 'Shot detection', '358,302', 'clean shots after boundary & quality checks (332.8 h)', `<div class="pp-cuts">${[1, 2, 3].map(i => `<i style="background-image:url(${MEDIA}f/ground/s${i}-rgb.jpg)"></i>`).join('')}<svg style="left:calc(33.333% - 2px)" viewBox="0 0 24 24"><use href="#i-scissor"/></svg><svg style="left:calc(66.667% + 2px)" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>`),
     step(3, 'Blocks', 'Scene grouping', '75,461', 'contiguous multi-shot blocks of up to 12 shots', `<div class="mhist">${HB.map((v, i) => `<i class="${i === 0 ? 'mode' : ''}" data-i="${i}" style="height:${(v / mx * 100).toFixed(1)}%"></i>`).join('')}<span class="med" style="left:${(3.5 / 12 * 100).toFixed(2)}%"><span>med 4</span></span></div><div class="mhist-x"><span>1 shot</span><span>12 shots</span></div>`),
-    step(4, 'Quality', 'Shot-first filtering', '+28.1%', 'drops single bad shots rather than discarding whole windows', `<div class="myield"><div><p><span>window-first</span><em>227k</em></p><i style="width:${(226648 / 290267 * 100).toFixed(1)}%"></i></div><div><p><span>shot-first</span><em>290k</em></p><i style="width:100%"></i></div></div>`),
-    step(5, 'Split', 'Film-disjoint split', '66,573<small>train</small>', 'blocks + 916 held-out; zero film overlap with CaT-MBench', `<div class="mbar split"><i style="flex:66573 1 0;background:var(--grey-b)"></i><i style="flex:916 1 0;min-width:5px"></i></div><div class="mkey"><span><i style="background:var(--grey-b)"></i>train 66,573</span><span><i style="background:var(--ours)"></i>held-out 916</span></div>`),
+    step(4, 'Quality', 'Shot-first filtering', '+28.1%', 'drops single bad shots rather than discarding whole windows', `<div class="myield"><div><p><span>window-first</span><em>227k</em></p><i style="width:${(226648 / 290267 * 100).toFixed(1)}%;background:var(--c4)"></i></div><div><p><span>shot-first</span><em>290k</em></p><i style="width:100%;background:var(--c1)"></i></div></div>`),
+    step(5, 'Split', 'Film-disjoint split', '66,573<small>train</small>', 'blocks + 916 held-out; zero film overlap with CaT-MBench', `<div class="mbar split"><i style="flex:66573 1 0;background:var(--c5)"></i><i style="flex:916 1 0;min-width:5px;background:var(--c1)"></i></div><div class="mkey"><span><i style="background:var(--c5)"></i>train 66,573</span><span><i style="background:var(--c1)"></i>held-out 916</span></div>`),
   ].join('');
   $$('.mhist i', pipe).forEach(b => {
     const i = +b.dataset.i;
@@ -877,7 +883,8 @@ run('dataFig', function dataFig() {
     { shot: 2, entities: ['C2', 'O2', 'O3'], frames: [[[145, 71, 303, 409], [250, 0, 425, 480], [408, 80, 133, 393]], [[123, 61, 298, 419], [249, 0, 487, 480], [415, 74, 142, 399]], [[104, 61, 287, 419], [249, 0, 510, 480], [428, 71, 150, 409]], [[96, 54, 305, 426], [242, 0, 517, 480], [424, 66, 171, 414]], [[109, 50, 325, 430], [235, 0, 535, 480], [439, 57, 178, 423]], [[140, 26, 367, 454], [238, 0, 562, 480], [424, 50, 216, 430]], [[162, 5, 399, 475], [206, 0, 626, 480], [426, 65, 226, 408]], [[155, 2, 420, 478], [169, 0, 663, 480], [420, 36, 233, 290]], [[118, 0, 432, 480], [135, 0, 697, 480], [397, 33, 255, 447]], [[66, 0, 445, 480], [113, 0, 719, 480], [386, 29, 267, 451]], [[29, 0, 462, 480], [645, 0, 187, 480], [393, 29, 248, 451]], [[0, 0, 468, 480], [679, 0, 153, 480], [403, 27, 282, 453]], [[0, 0, 444, 480], [466, 0, 366, 480], [407, 28, 315, 452]], [[0, 0, 428, 480], [339, 0, 493, 480], [402, 31, 348, 449]], [[0, 0, 435, 480], [73, 0, 759, 480], [398, 33, 388, 447]], [[0, 0, 454, 480], [73, 0, 759, 480], [399, 33, 416, 447]], [[0, 0, 471, 480], null, [395, 32, 413, 448]], [[0, 0, 470, 480], null, [391, 36, 410, 444]], [[0, 0, 460, 480], null, [388, 42, 413, 438]], [[0, 0, 471, 480], null, [390, 46, 411, 434]]] },
     { shot: 3, entities: ['C1'], frames: [[[315, 36, 517, 444]], [[361, 21, 471, 459]], [[368, 26, 464, 454]], [[333, 54, 499, 426]], [[264, 45, 532, 435]], [[251, 35, 540, 445]], [[284, 38, 540, 442]], [[342, 34, 490, 446]], [[397, 12, 435, 468]], [[405, 13, 427, 467]], [[363, 29, 469, 451]], [[296, 2, 536, 478]], [[283, 8, 549, 472]], [[315, 17, 517, 463]], [[389, 10, 443, 470]], [[430, 3, 402, 477]], [[424, 12, 408, 468]], [[380, 30, 452, 450]], [[310, 21, 522, 459]], [[284, 15, 548, 465]]] },
   ];
-  const COL = { C1: '#29B6AA', O1: '#5B8FF9', C2: '#FCB84C', O2: '#B084D8', O3: '#EE7D92' };
+  const COL = { C1: '#6E87B0', C2: '#B7799E', O1: '#EDE5E3', O2: '#B2C1D6', O3: '#DBBACB' };  /* paper C1, C5, C3, C2, C4; same colours as the baked mask layer */
+  const TAG = { C1: '#ffffff', C2: '#ffffff', O1: '#1a1a1a', O2: '#1a1a1a', O3: '#1a1a1a' };
   const REG = [
     ['C1', 'older man, white hair, black suit & red tie'],
     ['C2', 'dark-haired man, dark grey polo shirt'],
@@ -903,7 +910,7 @@ run('dataFig', function dataFig() {
     <div class="blk-reg">${REG.map(([id, d]) => `<button type="button" data-e="${id}"><i style="background:${COL[id]}"></i><b>${id}</b><span>${esc(d)}</span></button>`).join('')}</div>
     <div class="blk-shots">${TRACK.map((t, i) => `<div class="blk-shot">
       <div class="gfr"><div class="gvid"><video muted loop playsinline preload="none" poster="${MEDIA}v/ground/s${i + 1}-poster.jpg" src="${MEDIA}v/ground/s${i + 1}.mp4" aria-label="Shot ${i + 1} of the annotated block"></video></div>
-        <div class="gbx">${t.entities.map(n => `<div class="gb" data-e="${n}" style="border-color:${COL[n]}"><span style="background:${COL[n]}">${n}</span></div>`).join('')}</div>
+        <div class="gbx">${t.entities.map(n => `<div class="gb" data-e="${n}" style="border-color:${COL[n]}"><span style="background:${COL[n]};color:${TAG[n]}">${n}</span></div>`).join('')}</div>
         <span class="gs">Shot ${i + 1}</span></div>
       <p><b>Shot ${i + 1}</b>${esc(SHOT[i])}</p>${i === 0 ? '<p class="chg"><b>State change (C1):</b>looking down → looking up and forward</p>' : ''}
     </div>`).join('')}</div>
@@ -977,7 +984,7 @@ run('entStack', function entStack() {
   const host = $('#entStack');
   if (!host) return;
   const ENT = { People: [8.21, 18.82, 33.10, 39.87], Objects: [5.98, 16.44, 17.26, 60.31], Places: [0.27, 81.90, 15.13, 2.70] };
-  const COLS = [['var(--grey-d)', 'var(--paper)'], ['var(--grey-b)', '#fff'], ['var(--grey-a)', '#fff'], ['var(--ours)', '#fff']];
+  const COLS = [['var(--c3)', 'var(--paper)'], ['var(--c2)', 'var(--paper)'], ['var(--c4)', 'var(--paper)'], ['var(--c1)', '#fff']];
   host.innerHTML = Object.entries(ENT).map(([k, arr]) => `<span>${k}</span><div class="stack">${arr.map((v, i) => `<div data-i="${i}" style="flex:${v} 1 0;background:${COLS[i][0]};color:${COLS[i][1]}">${v >= 9 ? Math.round(v) + '%' : ''}</div>`).join('')}</div>`).join('');
   $$('.stack', host).forEach((st, r) => $$('div', st).forEach((d, i) => {
     const k = Object.keys(ENT)[r], v = ENT[k][i];
@@ -1056,7 +1063,7 @@ run('sunburst', function sunburst() {
       const [x, y] = P((R.o0 + R.o1) / 2, sg.mid);
       let rot = sg.mid - 90; if (rot > 90) rot -= 180; if (rot < -90) rot += 180;
       const L = sg.color.reduce((a, v, i) => a + v * [0.299, 0.587, 0.114][i], 0);
-      T(gW, x, y + 4.5, `${Math.round(sg.share)}%`, '', `font:600 13px var(--mono);font-variant-numeric:tabular-nums;fill:${L < 0.52 ? '#fff' : '#121520'};pointer-events:none`, 'middle').setAttribute('transform', `rotate(${rot} ${x} ${y})`);
+      T(gW, x, y + 4.5, `${Math.round(sg.share)}%`, '', `font:600 13px var(--mono);font-variant-numeric:tabular-nums;fill:${L < 0.52 ? '#fff' : '#1a1a1a'};pointer-events:none`, 'middle').setAttribute('transform', `rotate(${rot} ${x} ${y})`);
     });
     facetsAll.forEach(f => {
       const mid = (f.d0 + f.d1) / 2, [x, y] = P((R.i0 + R.i1) / 2, mid);
