@@ -515,7 +515,7 @@ run('method', function method() {
       .replace(/Object (\d+)/g, '<b>O$1</b>');
     planFig.innerHTML = `<div class="reg-strip">${s.plan.characters.map(c => `<div class="reg-card" data-e="${esc(c.name)}" tabindex="0"><i style="${avatarStyle(c.name)}"></i><div><b>${esc(short(c.name))}${c.outfit ? `<em>${esc(c.outfit.replace(/^an? /, '').split(',')[0])}</em>` : ''}</b><span>${esc(c.appearance.replace(/^an? /, ''))}</span></div></div>`).join('')}</div>
       <div class="plan-rows">
-        <span class="label">User Shot Request</span><span></span><span class="label">Compiled Storyboard Plan</span>
+        <span class="label">User shot request</span><span></span><span class="label">Compiled storyboard plan</span>
         ${pickShots.map(sh => {
           const line = esc(s.requests.shots[sh.shot - 1]).replace(/Character (\d+)/g, '<b data-e="Character $1">Character $1</b>');
           const who = sh.present.filter(p => /^Character/.test(p.name)).map(p => `<span class="tag ours" data-e="${esc(p.name)}">${esc(short(p.name))}</span>`).join('');
@@ -605,7 +605,7 @@ run('method', function method() {
         <div>
           <b>Shot ${k}<span>${esc(camLabel(s.plan.shots[k - 1].camera))}</span></b>
           <span class="rs-q">${esc(s.requests.shots[k - 1].replace(/^[A-Za-z -]+shot\. /, ''))}</span>
-          <span class="chips-row">${reads.length ? reads.map(r => `<span class="tag ours" data-src="${r.src}">← Shot ${r.src}: ${esc(r.what)}</span>`).join('') : '<span class="label">text conditioning only</span>'}</span>
+          <span class="chips-row">${reads.length ? reads.map(r => `<span class="tag ours" data-src="${r.src}">← Shot ${r.src}: ${esc(r.what)}</span>`).join('') : ''}</span>
         </div>
       </div>`;
     }).join('');

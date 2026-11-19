@@ -44,7 +44,6 @@ run('pareto', function pareto() {
     if (!prof) return;
     const p = pts.find(x => x.name === name) || oursPt;
     const col = POINT_COLOR[p.name] || 'var(--ours)';
-    const famLabel = p.fam === 'ours' ? 'Global Plan + Window Render' : p.fam === 'joint' ? 'Joint Multi-Shot Baseline' : 'Per-Shot / Memory Baseline';
     const axes = [
       ['Transition control', p.tr, oursPt.tr],
       ['Character consistency', p.r.v[2], oursPt.r.v[2]],
@@ -53,7 +52,6 @@ run('pareto', function pareto() {
       ['CaT-MBench overall', p.r.v[8], oursPt.r.v[8]],
     ];
     prof.innerHTML = `<div class="prof-top">
-        <span class="prof-fam">${famLabel}</span>
         <h4 class="prof-name"><i style="background:${col}"></i>${esc(p.name)}</h4>
         <p class="prof-meta">${esc(p.r.base)} &mdash; ${esc(p.r.input)}</p>
       </div>
@@ -64,7 +62,7 @@ run('pareto', function pareto() {
           ${p.fam !== 'ours' ? `<span class="pbar-ref" style="left:${(ref * 100).toFixed(1)}%" title="CaT-Movie: ${ref.toFixed(3)}"></span>` : ''}
         </div>
       </div>`).join('')}</div>
-      <div class="prof-foot">${p.fam === 'ours' ? 'Hover or click any baseline point or table row to compare against CaT-Movie.' : 'Blue tick marks on each bar indicate CaT-Movie (5B) reference performance.'}</div>`;
+      ${p.fam === 'ours' ? '' : '<div class="prof-foot">Blue tick marks on each bar indicate CaT-Movie (5B) reference performance.</div>'}`;
   }
 
   const mark = name => {
@@ -121,7 +119,7 @@ run('pareto', function pareto() {
       const [dx, dy, an] = LBL[p.name];
       const nm = p.name.replace(', per shot', '');
       const lblCol = p.fam === 'ours' ? 'var(--ours)' : (p.fam === 'joint' ? 'var(--paper)' : 'var(--mute)');
-      T(g, cx + dx, cy + dy, nm, 'svg-text', `fill:${lblCol};font-weight:${p.fam === 'shot' ? 450 : 600}`, an);
+      T(g, cx + dx, cy + dy, nm, 'svg-text', `fill:${lblCol};font-weight:${p.fam === 'shot' ? 400 : 600}`, an);
       const v = p.r.v;
       const html = `<b>${esc(p.name)}</b><table><tr><td>Transition control</td><td>${p.tr.toFixed(3)}</td></tr><tr><td>Inter-shot consistency</td><td>${p.co.toFixed(3)}</td></tr><tr><td>Character</td><td>${v[2].toFixed(3)}</td></tr><tr><td>Average</td><td>${v[8].toFixed(3)}</td></tr></table>`;
       g.addEventListener('pointermove', e => showTip(html, e));
@@ -168,7 +166,7 @@ run('returnChart', function returnChart() {
     names.forEach((n, gi) => {
       const cx = m.l + gi * gw + gw / 2, gx = cx - (bw * 3 + 6) / 2;
       const lines = narrow && n === 'MultiShotMaster' ? ['MultiShot', 'Master'] : [n];
-      lines.forEach((ln, li) => T(svg, cx, H - m.b + 19 + li * 14, ln, 'svg-text', `fill:${n === 'CaT-Movie' ? 'var(--ours)' : 'var(--paper)'};font-weight:${n === 'CaT-Movie' ? 600 : 450}`, 'middle'));
+      lines.forEach((ln, li) => T(svg, cx, H - m.b + 19 + li * 14, ln, 'svg-text', `fill:${n === 'CaT-Movie' ? 'var(--ours)' : 'var(--paper)'};font-weight:${n === 'CaT-Movie' ? 600 : 400}`, 'middle'));
       bins.forEach((b, s) => {
         const d = RT[n], x = gx + s * (bw + 3);
         const g = sv('g', { style: 'cursor:pointer' }, svg);
@@ -211,7 +209,7 @@ run('distChart', function distChart() {
         else if (mk === 'square') sv('rect', { x: x - 4.6, y: yy - 4.6, width: 9.2, height: 9.2, fill: fillCol, stroke: 'var(--edge)', 'stroke-width': 1.1 }, pg);
         else sv('path', { d: `M${x} ${yy - 5.8}L${x + 5.2} ${yy + 4}L${x - 5.2} ${yy + 4}Z`, fill: fillCol, stroke: 'var(--edge)', 'stroke-width': 1.1 }, pg);
         const [dx, dy, an] = k === 'ours' ? [[-11, 5, 'end'], [0, 19, 'middle'], [0, -11, 'middle']][i] : k === 'recent' ? [[0, -11, 'middle'], [0, -11, 'middle'], [0, 19, 'middle']][i] : [0, 20, 'middle'];
-        T(pg, x + dx, yy + dy, y.toFixed(1) + '%', 'svg-text', `fill:${txtCol};font-weight:${k === 'ours' ? 600 : 450}`, an);
+        T(pg, x + dx, yy + dy, y.toFixed(1) + '%', 'svg-text', `fill:${txtCol};font-weight:${k === 'ours' ? 600 : 400}`, an);
         pg.addEventListener('pointermove', e => showTip(`<b>${name}</b> (${XL[i]})<table><tr><td>Pass rate</td><td>${y.toFixed(1)}%</td></tr><tr><td>Checks (3 seeds)</td><td>${n[i]}</td></tr>${d ? `<tr><td>vs CaT-Movie</td><td>${d[i][0] > 0 ? '+' : ''}${d[i][0].toFixed(1)} [${d[i][1]}, ${d[i][2]}]</td></tr>` : ''}</table>`, e));
         pg.addEventListener('pointerleave', hideTip);
         marks.push(pg);
@@ -243,8 +241,8 @@ run('planner', function planner() {
         const g = sv('g', { style: 'cursor:pointer' }, svg);
         segs.push(sv('rect', { x, y: Y(r), width: bw, height: Y(0) - Y(r), fill: 'var(--grey-d)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g));
         const top = sv('rect', { x, y: Y(tot), width: bw, height: Y(r) - Y(tot), fill: 'var(--c1)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g);
-        labs.push(T(g, x + bw / 2, Y(tot) - 6, `${Math.round(tot * 100)}%`, 'svg-text', 'fill:var(--ours);font-weight:600;font-size:11.5px', 'middle'));
-        T(svg, x + bw / 2, H - m.b + 16, TL[t], 'svg-text', 'font-size:11px;fill:var(--paper)', 'middle');
+        labs.push(T(g, x + bw / 2, Y(tot) - 6, `${Math.round(tot * 100)}%`, 'svg-text', 'fill:var(--ours);font-weight:600;font-size:13px', 'middle'));
+        T(svg, x + bw / 2, H - m.b + 16, TL[t], 'svg-text', 'font-size:13px;fill:var(--paper)', 'middle');
         g.addEventListener('pointermove', e => showTip(`<b>${name} (${TL[t]})</b><table><tr><td>Request alone</td><td>${(r * 100).toFixed(1)}%</td></tr><tr><td>Planner adds</td><td>+${((tot - r) * 100).toFixed(1)}%</td></tr><tr><td>Compiled total</td><td>${(tot * 100).toFixed(1)}%</td></tr></table>`, e));
         g.addEventListener('pointerleave', hideTip);
         segs.push(top);
@@ -273,10 +271,10 @@ run('planner', function planner() {
       parts.push(sv('rect', { x, y: Y(f1), width: bw, height: Y(0) - Y(f1), fill: 'var(--c1)', stroke: 'var(--edge)', 'stroke-width': 0.9, rx: 1.5 }, g));
       const ours = name === 'Planner';
       T(svg, x + bw / 2, H - m.b + 17, name, 'svg-text', `fill:${ours ? 'var(--ours)' : 'var(--paper)'};font-weight:${ours ? 600 : 500}`, 'middle');
-      T(svg, x + bw / 2, H - m.b + 32, `${Math.round((se + sn) / n * 100)}% stated`, 'svg-text', 'font-size:11px;fill:var(--mute)', 'middle');
-      labs.push(T(g, x + bw / 2, Y(f1 / 2) + 4, Math.round(f1 * 100) + '%', 'svg-text', 'fill:#fff;font-weight:600;font-size:11.5px', 'middle'));
-      labs.push(T(g, x + bw / 2, Y(f1 + f2 / 2) + 4, Math.round(f2 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:600;font-size:11.5px;paint-order:stroke;stroke:var(--c2);stroke-width:4px', 'middle'));
-      if (f3 >= 0.08) labs.push(T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 4, Math.round(f3 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:500;font-size:11px', 'middle'));
+      T(svg, x + bw / 2, H - m.b + 32, `${Math.round((se + sn) / n * 100)}% stated`, 'svg-text', 'font-size:13px;fill:var(--mute)', 'middle');
+      labs.push(T(g, x + bw / 2, Y(f1 / 2) + 4, Math.round(f1 * 100) + '%', 'svg-text', 'fill:#fff;font-weight:600;font-size:13px', 'middle'));
+      labs.push(T(g, x + bw / 2, Y(f1 + f2 / 2) + 4, Math.round(f2 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:600;font-size:13px;paint-order:stroke;stroke:var(--c2);stroke-width:4px', 'middle'));
+      if (f3 >= 0.08) labs.push(T(g, x + bw / 2, Y(f1 + f2 + f3 / 2) + 4, Math.round(f3 * 100) + '%', 'svg-text', 'fill:var(--paper);font-weight:500;font-size:13px', 'middle'));
       g.addEventListener('pointermove', e => showTip(`<b>${name} storyboard</b><table><tr><td>Stated &amp; shown</td><td>${se} (${(f1 * 100).toFixed(0)}%)</td></tr><tr><td>Stated, not shown</td><td>${sn} (${(f2 * 100).toFixed(0)}%)</td></tr><tr><td>Unstated</td><td>${ns} (${(f3 * 100).toFixed(0)}%)</td></tr></table>`, e));
       g.addEventListener('pointerleave', hideTip);
     });
@@ -309,7 +307,7 @@ run('overview', function overview() {
   const ph = '<i class="ov-dn ph" aria-hidden="true"></i>', dn = '<i class="ov-dn" aria-hidden="true"></i>';
   fig.innerHTML = `<div class="ov-bar">
       <div class="ov-bar-left">
-        <h3>System Architecture</h3>
+        <h3>System architecture</h3>
         <div class="tabs" id="ovWinTabs" role="group" aria-label="Active window">${s.windows.map((w, i) => `<button type="button" data-w="${i}" class="${i === WI ? 'on' : ''}" aria-pressed="${i === WI}">W${i + 1}</button>`).join('')}</div>
       </div>
       <div class="ov-ctl">
@@ -444,7 +442,7 @@ run('overview', function overview() {
       const cls = wi === WI ? ' now' : wi > WI ? ' future' : '';
       const lbl = wi === WI ? `Current (W${wi + 1})` : wi > WI ? `Planned (W${wi + 1})` : `Window ${wi + 1}`;
       return `<button type="button" class="hw${cls}" data-w="${wi}" style="--n:${w.shots.length}" title="Switch architecture view to Window ${wi + 1}">
-        <span class="hw-head"><span>${lbl}</span></span>
+        <span class="hw-head"><span class="l-long">${lbl}</span><span class="l-short">W${wi + 1}</span></span>
         <span class="hw-cards">${w.shots.map(k => {
           const rbs = refByShot.get(k);
           return `<i class="hs${rbs ? ' rec' : ''}" data-k="${k}" style="background-image:url(${frame(HERO, k)})"><em>Shot ${k}</em>${rbs ? `<b class="rb">${rbs[0]}</b>` : ''}${wi === WI ? '<span class="nz"></span>' : ''}</i>`;
@@ -509,16 +507,16 @@ run('overview', function overview() {
     const hdr = (x0, spanU, fill, base, supSub, isSup, col) => {
       const w = spanU * unit - 1.5;
       sv('rect', { x: L + x0 * unit, y: 2, width: w, height: Tp - 5, rx: 2.5, fill }, svg);
-      const t = sv('text', { x: L + x0 * unit + w / 2, y: Tp - 7, 'text-anchor': 'middle', style: `font:600 10px var(--mono);fill:${col}` }, svg);
+      const t = sv('text', { x: L + x0 * unit + w / 2, y: Tp - 7, 'text-anchor': 'middle', style: `font:500 13px var(--body);fill:${col}` }, svg);
       t.textContent = base;
-      sv('tspan', { dy: isSup ? -3 : 2.2, style: 'font-size:7.8px' }, t).textContent = supSub;
+      sv('tspan', { dy: isSup ? -3 : 2.2, style: 'font-size:10px' }, t).textContent = supSub;
     };
     const rowHdr = (y0, spanU, fill, base, supSub, isSup, col) => {
       const h = spanU * unit - 1.5;
       sv('rect', { x: 2, y: Tp + y0 * unit, width: L - 5, height: h, rx: 2.5, fill }, svg);
-      const t = sv('text', { x: (L - 3) / 2 + 1, y: Tp + y0 * unit + h / 2 + 3.5, 'text-anchor': 'middle', style: `font:600 10px var(--mono);fill:${col}` }, svg);
+      const t = sv('text', { x: (L - 3) / 2 + 1, y: Tp + y0 * unit + h / 2 + 3.5, 'text-anchor': 'middle', style: `font:500 13px var(--body);fill:${col}` }, svg);
       t.textContent = base;
-      sv('tspan', { dy: isSup ? -3 : 2.2, style: 'font-size:7.8px' }, t).textContent = supSub;
+      sv('tspan', { dy: isSup ? -3 : 2.2, style: 'font-size:10px' }, t).textContent = supSub;
     };
     if (W.refs.length) {
       hdr(0, W.refs.length, 'var(--cut-soft)', 'K', 'ref', true, 'var(--cut)');
@@ -567,12 +565,12 @@ run('overview', function overview() {
     for (let m = 0; m < maxRefSlots; m++) {
       const cx = X(m) + sz / 2;
       sv('rect', { x: X(m), y: yT, width: sz, height: sz, rx: 4, fill: 'var(--card)', 'fill-opacity': 0.5, stroke: 'var(--rule)', 'stroke-dasharray': '2.5 2.5' }, svg);
-      refLabels.push(T(svg, cx, yLbl, `p−${(maxRefSlots - m) * 5}`, 'svg-text', 'font:600 9.5px var(--mono);fill:var(--cut)', 'middle'));
+      refLabels.push(T(svg, cx, yLbl, `p−${(maxRefSlots - m) * 5}`, 'svg-text', 'font:500 12px var(--body);fill:var(--cut)', 'middle'));
     }
     const refGroups = W.refs.map((r, i) => {
       const g = sv('g', { class: 'tk-r' }, svg);
       sv('rect', { x: 0, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--c4)', 'fill-opacity': 0.72, stroke: 'var(--cut)', 'stroke-width': 1.5 }, g);
-      T(g, sz / 2, yT + sz / 2 + 3.5, `R${i + 1}`, 'svg-text', 'font:600 9.5px var(--mono);fill:var(--cut)', 'middle');
+      T(g, sz / 2, yT + sz / 2 + 3.5, `R${i + 1}`, 'svg-text', 'font:500 12px var(--body);fill:var(--cut)', 'middle');
       return g;
     });
 
@@ -584,7 +582,7 @@ run('overview', function overview() {
         sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: 'var(--card)' }, g);
         sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: q === 0 ? 'var(--c2)' : 'url(#ovTokHatch)', 'fill-opacity': q === 0 ? 0.92 : 1, stroke: 'var(--ours)', 'stroke-width': 1.4 }, g);
         sv('rect', { x, y: yT, width: sz, height: sz, rx: 4, fill: 'url(#ovNoisePat)', class: 'tk-n' }, g);
-        T(svg, x + sz / 2, yLbl, String(j * 5 + q), 'svg-text', 'font:600 10px var(--mono);fill:var(--ours)', 'middle');
+        T(svg, x + sz / 2, yLbl, String(j * 5 + q), 'svg-text', 'font:500 12px var(--body);fill:var(--ours)', 'middle');
       }
       g.addEventListener('click', () => setReader(k));
       return g;
@@ -773,9 +771,9 @@ run('benchFig', function benchFig() {
       q: 'Character check: Is C1 at 0:09–0:12 (Shot 3) the same person as at 0:00–0:04 (Shot 1)?',
       hi: [[0, 1, 2], [4, 5, 6]], roles: ['Anchor S1', 'Query S3'],
       steps: [
-        ['Cut Gate', 'New camera setup confirmed (correlation −0.08)', 'ok'],
+        ['Cut gate', 'New camera setup confirmed (correlation −0.08)', 'ok'],
         ['Gemini 3.8 Flash', 'No: face differs, though hair, build, and suit match', 'bad'],
-        ['Scored Verdict', 'Gate passes, so the failed character check counts (0)', 'bad'],
+        ['Scored verdict', 'Gate passes, so the failed character check counts (0)', 'bad'],
       ],
     },
     {
@@ -795,19 +793,19 @@ run('benchFig', function benchFig() {
     </div>
     <div class="bf-pipe">
       <div class="bf-box">
-        <div class="bf-step-hd"><span class="bf-badge"><i>1</i>Held-Out Stories &amp; Native Inputs</span><span class="bf-model">Film-disjoint</span></div>
-        <div class="bf-big"><b>122</b><span>stories (6–12 shots, up to 60 s): 30 dev + 92 test</span></div>
+        <div class="bf-step-hd"><span class="bf-badge"><i>1</i>Held-out stories and native inputs</span></div>
+        <div class="bf-big"><b>122</b><span>film-disjoint stories (6–12 shots, up to 60 s): 30 dev + 92 test</span></div>
         <div class="mbar"><i style="flex:30 1 0;background:var(--grey-c)"></i><i style="flex:92 1 0;background:var(--ours)"></i></div>
         <div class="bf-req"><b>C1</b> dark-haired man, grey suit. <b>O1</b> piece of paper. <b>L1</b> wooden kitchen.<br><b>S01</b> Medium shot. C1 writes on the paper, folds it, and hands it to C2.</div>
         <div class="bf-adapters">${AD.map(([m, f]) => `<div class="bf-ad"><b>${m}</b><span>${f}</span></div>`).join('')}</div>
       </div>
       <div class="bf-box">
-        <div class="bf-step-hd"><span class="bf-badge"><i>2</i>Entity Question Bank</span><span class="bf-model">GPT-6.1-sol</span></div>
+        <div class="bf-step-hd"><span class="bf-badge"><i>2</i>Entity question bank</span></div>
         <div class="bf-qgrid">${Q.map(([t, q, ex]) => ex != null
           ? `<button type="button" class="bf-qitem click" data-ex="${ex}"><div class="bf-qitem-top"><b>${t}</b><em>Replay ↓</em></div><span>${esc(q)}</span></button>`
           : `<div class="bf-qitem"><div class="bf-qitem-top"><b>${t}</b></div><span>${esc(q)}</span></div>`).join('')}</div>
         <div class="bf-nums">
-          <div><b>1,361</b><span>binary questions (349 dev, 1,012 test)</span></div>
+          <div><b>1,361</b><span>binary questions from GPT-6.1-sol (349 dev, 1,012 test)</span></div>
           <div><b>995</b><span>planned cuts (674 of 740 test cuts change setup)</span></div>
         </div>
       </div>
@@ -815,10 +813,10 @@ run('benchFig', function benchFig() {
     <div class="bf-join"><span>↓ Sampled at 2 fps into Cut-Gated VLM Judge (TransNetV2 + Gemini 3.8 Flash) ↓</span></div>
     <div class="bf-judge">
       <div class="bf-jhead">
-        <span class="bf-badge"><i>3</i>Worked Judge Trace (Wan2.2 per-shot video)</span>
+        <span class="bf-badge"><i>3</i>Worked judge trace (Wan2.2 per-shot video)</span>
         <div class="tabs" id="jEx" role="group" aria-label="Worked judge example">
-          <button type="button" data-e="0" class="on" aria-pressed="true">Character Check</button>
-          <button type="button" data-e="1" aria-pressed="false">Cut Execution Check</button>
+          <button type="button" data-e="0" class="on" aria-pressed="true">Character check</button>
+          <button type="button" data-e="1" aria-pressed="false">Cut execution check</button>
         </div>
       </div>
       <div class="bf-rule"><span><b>Visible evidence only</b></span><span>Yes / No + timestamp + reason</span><span>Unclear defaults to No</span></div>
@@ -864,10 +862,10 @@ run('dataFig', function dataFig() {
   if (!fig || !pipe || !host) return;
   const SRC = [['CinePile', 65.74, 'var(--c1)'], ['CineDance', 24.69, 'var(--c2)'], ['MovieChat', 9.57, 'var(--c4)']];
   const HB = [15459, 12498, 8388, 5959, 4301, 4242, 5642, 4826, 4864, 4136, 3100, 2046], mx = Math.max(...HB);
-  const step = (n, chip, title, big, desc, mini) => `<li class="pp lit" data-i="${n - 1}"><div class="pp-top"><span class="pp-n">${n}</span><span class="pp-chip">${chip}</span></div><b class="pp-t">${title}</b>${big ? `<strong>${big}</strong>` : ''}<span class="pp-d">${desc}</span><div class="mini">${mini}</div></li>`;
+  const step = (n, chip, title, big, desc, mini) => `<li class="pp lit" data-i="${n - 1}"><div class="pp-top"><span class="pp-n">${n}</span></div><b class="pp-t">${title}</b>${big ? `<strong>${big}</strong>` : ''}<span class="pp-d">${desc}</span><div class="mini">${mini}</div></li>`;
   pipe.innerHTML = [
     step(1, 'Corpus', 'Cinematic videos', '19,535', 'raw film & scene sources', `<div class="mbar">${SRC.map(([nm, v, c]) => `<i style="flex:${v} 1 0;background:${c}" title="${nm} ${v.toFixed(1)}%"></i>`).join('')}</div><div class="mkey">${SRC.map(([nm, v, c]) => `<span><i style="background:${c}"></i>${nm} ${Math.round(v)}%</span>`).join('')}</div>`),
-    step(2, 'TransNetV2', 'Shot detection', '358,302', 'clean shots after boundary & quality checks (332.8 h)', `<div class="pp-cuts">${[1, 2, 3].map(i => `<i style="background-image:url(${MEDIA}f/ground/s${i}-rgb.jpg)"></i>`).join('')}<svg style="left:calc(33.333% - 2px)" viewBox="0 0 24 24"><use href="#i-scissor"/></svg><svg style="left:calc(66.667% + 2px)" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>`),
+    step(2, 'TransNetV2', 'Shot detection', '358,302', 'clean shots after TransNetV2 boundary detection and quality checks (332.8 h)', `<div class="pp-cuts">${[1, 2, 3].map(i => `<i style="background-image:url(${MEDIA}f/ground/s${i}-rgb.jpg)"></i>`).join('')}<svg style="left:calc(33.333% - 2px)" viewBox="0 0 24 24"><use href="#i-scissor"/></svg><svg style="left:calc(66.667% + 2px)" viewBox="0 0 24 24"><use href="#i-scissor"/></svg></div>`),
     step(3, 'Blocks', 'Scene grouping', '75,461', 'contiguous multi-shot blocks of up to 12 shots', `<div class="mhist">${HB.map((v, i) => `<i class="${i === 0 ? 'mode' : ''}" data-i="${i}" style="height:${(v / mx * 100).toFixed(1)}%"></i>`).join('')}<span class="med" style="left:${(3.5 / 12 * 100).toFixed(2)}%"><span>med 4</span></span></div><div class="mhist-x"><span>1 shot</span><span>12 shots</span></div>`),
     step(4, 'Quality', 'Shot-first filtering', '+28.1%', 'drops single bad shots rather than discarding whole windows', `<div class="myield"><div><p><span>window-first</span><em>227k</em></p><i style="width:${(226648 / 290267 * 100).toFixed(1)}%;background:var(--c4)"></i></div><div><p><span>shot-first</span><em>290k</em></p><i style="width:100%;background:var(--c1)"></i></div></div>`),
     step(5, 'Split', 'Film-disjoint split', '66,573<small>train</small>', 'blocks + 916 held-out; zero film overlap with CaT-MBench', `<div class="mbar split"><i style="flex:66573 1 0;background:var(--c5)"></i><i style="flex:916 1 0;min-width:5px;background:var(--c1)"></i></div><div class="mkey"><span><i style="background:var(--c5)"></i>train 66,573</span><span><i style="background:var(--c1)"></i>held-out 916</span></div>`),
@@ -898,14 +896,14 @@ run('dataFig', function dataFig() {
     'Medium shot, static. C1 speaks while looking at C2.',
   ];
   const LAYERS = [
-    ['rgb', 'RGB Frame', 'Three consecutive shots of one scene block at the source film’s native frame rate.'],
+    ['rgb', 'RGB frame', 'Three consecutive shots of one scene block at the source film’s native frame rate.'],
     ['boxes', 'Boxes (Qwen3.8-27B)', 'Qwen3.8-27B open-vocabulary detection & tracking; C1 retains the same registry ID across Shots 1 and 3.'],
     ['masks', 'Masks (SAM 3.1)', 'SAM 3.1 dense instance segmentation propagated across every shot.'],
     ['depth', 'Depth (VGGT-Ω)', 'VGGT-Ω relative depth maps (lighter is farther), stored every fourth frame.'],
   ];
   host.innerHTML = `<div class="blk-head">
-      <div class="blk-head-item"><span class="pp-n">6</span><b>Block Storyboard Annotation</b><span class="pp-chip">Qwen3.7-Flash (1 pass)</span></div>
-      <div class="blk-head-item"><span class="pp-n">7</span><b>Pixel Grounding</b><div class="tabs" id="gSeg" role="group" aria-label="Grounding layer">${LAYERS.map(([k, n]) => `<button type="button" data-l="${k}"${k === 'boxes' ? ' class="on" aria-pressed="true"' : ' aria-pressed="false"'}>${n}</button>`).join('')}</div></div>
+      <div class="blk-head-item"><span class="pp-n">6</span><b>Block storyboard annotation</b><span>one Qwen3.7-Flash pass per block</span></div>
+      <div class="blk-head-item"><span class="pp-n">7</span><b>Pixel grounding</b><div class="tabs" id="gSeg" role="group" aria-label="Grounding layer">${LAYERS.map(([k, n]) => `<button type="button" data-l="${k}"${k === 'boxes' ? ' class="on" aria-pressed="true"' : ' aria-pressed="false"'}>${n}</button>`).join('')}</div></div>
     </div>
     <div class="blk-reg">${REG.map(([id, d]) => `<button type="button" data-e="${id}"><i style="background:${COL[id]}"></i><b>${id}</b><span>${esc(d)}</span></button>`).join('')}</div>
     <div class="blk-shots">${TRACK.map((t, i) => `<div class="blk-shot">
@@ -1063,13 +1061,13 @@ run('sunburst', function sunburst() {
       const [x, y] = P((R.o0 + R.o1) / 2, sg.mid);
       let rot = sg.mid - 90; if (rot > 90) rot -= 180; if (rot < -90) rot += 180;
       const L = sg.color.reduce((a, v, i) => a + v * [0.299, 0.587, 0.114][i], 0);
-      T(gW, x, y + 4.5, `${Math.round(sg.share)}%`, '', `font:600 13px var(--mono);font-variant-numeric:tabular-nums;fill:${L < 0.52 ? '#fff' : '#1a1a1a'};pointer-events:none`, 'middle').setAttribute('transform', `rotate(${rot} ${x} ${y})`);
+      T(gW, x, y + 4.5, `${Math.round(sg.share)}%`, '', `font:500 13px var(--body);font-variant-numeric:tabular-nums;fill:${L < 0.52 ? '#fff' : '#1a1a1a'};pointer-events:none`, 'middle').setAttribute('transform', `rotate(${rot} ${x} ${y})`);
     });
     facetsAll.forEach(f => {
       const mid = (f.d0 + f.d1) / 2, [x, y] = P((R.i0 + R.i1) / 2, mid);
       let rot = mid; if (mid > 90 && mid < 270) rot = mid - 180;
       const words = f.name === 'State change type' ? ['State change', 'type'] : f.name.split(' ').length > 1 && f.name.length > 10 ? [f.name.split(' ').slice(0, -1).join(' '), f.name.split(' ').slice(-1)[0]] : [f.name];
-      const t = sv('text', { x, y: y - (words.length - 1) * 7 + 5, 'text-anchor': 'middle', transform: `rotate(${rot} ${x} ${y})`, style: 'font:600 13px var(--body);fill:#fff;paint-order:stroke;stroke:rgba(17,21,32,.42);stroke-width:2.5px;pointer-events:none' }, gW);
+      const t = sv('text', { x, y: y - (words.length - 1) * 7 + 5, 'text-anchor': 'middle', transform: `rotate(${rot} ${x} ${y})`, style: 'font:500 13px var(--body);fill:#fff;paint-order:stroke;stroke:rgba(17,21,32,.42);stroke-width:2.5px;pointer-events:none' }, gW);
       words.forEach((w, i) => { const sp = sv('tspan', { x, dy: i ? 15 : 0 }, t); sp.textContent = w; });
     });
     [0, 90, 180, 270].forEach(d => { const [x0, y0] = P(R.c, d), [x1, y1] = P(R.o1 + 2, d); sv('path', { d: `M${x0} ${y0}L${x1} ${y1}`, stroke: 'var(--ink)', 'stroke-width': 5 }, gW); });
@@ -1108,7 +1106,7 @@ run('sunburst', function sunburst() {
       if (Math.abs(s) >= Math.abs(c)) { anchor = s > 0 ? 'start' : 'end'; y0 = yt - (ls.length - 1) * 8 + 5; }
       else if (c > 0) y0 = yt - (ls.length - 1) * 16 - 2;
       else y0 = yt + 12;
-      const t = sv('text', { x: xt, y: y0, 'text-anchor': anchor, style: 'font:500 13.5px var(--body);fill:var(--paper)' }, g);
+      const t = sv('text', { x: xt, y: y0, 'text-anchor': anchor, style: 'font:400 14px var(--body);fill:var(--paper)' }, g);
       ls.forEach((w, i) => { const sp = sv('tspan', { x: xt, dy: i ? 16 : 0 }, t); sp.textContent = w; });
       l.lg = g;
     });
@@ -1118,14 +1116,14 @@ run('sunburst', function sunburst() {
     sv('circle', { cx, cy, r: R.c - 4, fill: 'var(--ink)', stroke: 'var(--rule)' }, cg);
     const top = sv('g', { style: 'transition:opacity .18s' }, cg), bot = sv('g', { style: 'transition:opacity .18s' }, cg);
     sv('path', { d: `M${cx - 48} ${cy - 13}l6 -9l6 9h-4v8h-4v-8z`, fill: 'var(--cut)' }, top);
-    T(top, cx - 32, cy - 10, 'Dataset', '', 'font:600 17.5px var(--body);fill:var(--cut);letter-spacing:-.02em');
+    T(top, cx - 32, cy - 10, 'Dataset', '', 'font:500 16px var(--body);fill:var(--cut);letter-spacing:-.01em');
     sv('path', { d: `M${cx - 56} ${cy + 13}l6 9l6 -9h-4v-8h-4v8z`, fill: 'var(--ours)' }, bot);
-    T(bot, cx - 40, cy + 25, 'Benchmark', '', 'font:600 16.5px var(--body);fill:var(--ours);letter-spacing:-.02em');
+    T(bot, cx - 40, cy + 25, 'Benchmark', '', 'font:500 16px var(--body);fill:var(--ours);letter-spacing:-.01em');
     const info = sv('g', { style: 'opacity:0;transition:opacity .18s' }, cg);
-    const iCat = T(info, cx, cy - 25, '', '', 'font:500 10px var(--mono);fill:var(--mute)', 'middle');
-    const iVal = T(info, cx, cy + 5, '', '', 'font:600 25px var(--mono);fill:var(--paper);letter-spacing:-.02em', 'middle');
-    const iLab = T(info, cx, cy + 23, '', '', 'font:500 11.5px var(--body);fill:var(--paper)', 'middle');
-    const iCnt = T(info, cx, cy + 38, '', '', 'font:500 10px var(--mono);fill:var(--mute)', 'middle');
+    const iCat = T(info, cx, cy - 25, '', '', 'font:400 13px var(--body);fill:var(--mute)', 'middle');
+    const iVal = T(info, cx, cy + 5, '', '', 'font:500 24px var(--body);fill:var(--paper);letter-spacing:-.02em', 'middle');
+    const iLab = T(info, cx, cy + 23, '', '', 'font:500 13px var(--body);fill:var(--paper)', 'middle');
+    const iCnt = T(info, cx, cy + 38, '', '', 'font:400 13px var(--body);fill:var(--mute)', 'middle');
     function focus(list, cat, val, lab, cnt) {
       segs.forEach(sg => sg.el.classList.toggle('dim', !list.includes(sg.el)));
       facetsAll.forEach(f => f.el.classList.toggle('dim', !list.includes(f.el)));
