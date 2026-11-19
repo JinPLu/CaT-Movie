@@ -631,9 +631,9 @@ run('overview', function overview() {
     curve(t5, cross, '6');
     curve(enc, { l: tok.l - 3, cy: tok.cy }, '5');
 
-    const recs = $$('.hs.rec', fig).map(el => rel(el, r0)), hist = rel($('#ovHist', fig), r0);
+    const recs = $$('.hs.rec', fig).map(el => rel(el, r0)), hist = rel($('#ovHist', fig), r0), rend = rel($('.ov-rd', fig), r0);
     if (recs.length) {
-      const busY = hist.b + 7, bus = g('4', 'rose'), xs = [recall.cx, ...recs.map(a => a.cx)];
+      const busY = (hist.b + rend.t) / 2, bus = g('4', 'rose'), xs = [recall.cx, ...recs.map(a => a.cx)];
       recs.forEach((a, idx) => {
         const pid = `ovW_${++wireSeq}`;
         sv('path', { id: pid, d: `M${a.cx.toFixed(1)} ${(a.b + 2).toFixed(1)} V${busY.toFixed(1)} H${recall.cx.toFixed(1)} V${(recall.t - 3).toFixed(1)}`, class: 'wire' }, bus);
