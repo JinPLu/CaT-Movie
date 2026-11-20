@@ -237,7 +237,8 @@ h3{font:500 20px/1.28 var(--body);letter-spacing:-.022em;color:var(--paper);marg
 .hero .paper-title{font:400 clamp(19px,1.62vw,23px)/1.28 var(--body);color:var(--paper);letter-spacing:-.024em;margin:-4px 0 0;max-width:27ch;opacity:.92}
 .hero .hero-claim{font:400 16px/1.58 var(--body);color:var(--mute);margin:0;max-width:38ch}
 
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;max-width:360px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;max-width:440px}
+.chip-break{flex-basis:100%;height:0}
 .chips:has(a:nth-child(5)){max-width:460px}
 .chip{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 15px;border-radius:999px;font:500 14px/1 var(--body);letter-spacing:-.01em;text-decoration:none;border:0;background:var(--panel);color:var(--paper);transition:transform .2s var(--ease),background .2s,color .2s}
 .chip.primary{background:var(--navy);color:#ffffff}
@@ -1037,11 +1038,12 @@ footer a:hover{color:var(--ours)}
           <p class="paper-title">Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation</p>
           <p class="hero-claim">Turn a story prompt into minute-long multi-shot cinema where recurring characters keep their identity and camera cuts land on cue.</p>
           <div class="chips" aria-label="Release">
+            <a class="chip link primary" href="https://arxiv.org/abs/2611.25620"><svg class="c-ico" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 1.8h4.6l2.6 2.6v7.8H3.5z M8 1.8v2.8h2.7 M5.4 7.4h3.4 M5.4 9.6h3.4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>arXiv<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
             <a class="chip link primary" href="https://github.com/JinPLu/CaT-Movie"><svg class="c-ico" viewBox="0 0 14 14" aria-hidden="true"><path d="M4.6 4.2 1.8 7l2.8 2.8M9.4 4.2 12.2 7 9.4 9.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Code<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
             <a class="chip link primary" href="#overview-video" id="watchDemoBtn"><svg class="c-ico" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 2.2v7.6L9.8 6z" fill="currentColor"/></svg>Video <s>2:49</s></a>
+            <span class="chip-break" aria-hidden="true"></span>
             <a class="chip link" href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Models &amp; Data<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
             <a class="chip link" href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2.5h6v6M9.5 2.5 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a>
-            <!-- paper-link -->
           </div>
           <div class="hero-authors">
             <p class="names">Jinpeng Lu<sup>*</sup>, Haoyuan Shi<sup>*</sup>, Yuanshen Guan, Jiyuan Xia, Bin Wu, Yinda Chen, Zhiwei Xiong<sup>&dagger;</sup></p>
@@ -1363,7 +1365,7 @@ footer a:hover{color:var(--ours)}
       <p class="fl">Authors</p>
       <div class="fr"><p class="authors">Jinpeng Lu<sup>*</sup>, Haoyuan Shi<sup>*</sup>, Yuanshen Guan, Jiyuan Xia, Bin Wu, Yinda Chen, Zhiwei Xiong<sup>&dagger;</sup></p><p class="affil">University of Science and Technology of China</p><p class="affil author-notes"><span><sup>*</sup> Equal contribution</span><span><sup>&dagger;</sup> Corresponding author</span></p></div>
       <p class="fl">Release</p>
-      <div class="fr"><p>Code is available on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>, and model weights, training annotations, CaT-MBench evaluation suites, rendered videos, and human study labels are available in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Hugging Face collection</a>.</p></div>
+      <div class="fr"><p>The paper is on <a href="https://arxiv.org/abs/2611.25620">arXiv</a>. Code is available on <a href="https://github.com/JinPLu/CaT-Movie">GitHub</a>, and model weights, training annotations, CaT-MBench evaluation suites, rendered videos, and human study labels are available in the <a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Hugging Face collection</a>.</p></div>
       <p class="fl">Citation</p>
       <div class="fr">
         <div class="bib">
@@ -1372,7 +1374,10 @@ footer a:hover{color:var(--ours)}
   title         = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
   author        = {Jinpeng Lu and Haoyuan Shi and Yuanshen Guan and Jiyuan Xia and Bin Wu and Yinda Chen and Zhiwei Xiong},
   year          = {2026},
-  url           = {https://jinplu.github.io/CaT-Movie/}
+  eprint        = {2611.25620},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2611.25620}
 }</pre>
         </div>
       </div>
@@ -1382,7 +1387,7 @@ footer a:hover{color:var(--ours)}
 </main>
 
 <footer>
-  <div class="wrap"><span class="foot-links"><b>CaT-Movie</b><a href="https://github.com/JinPLu/CaT-Movie">Code</a><a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Collection</a><a href="https://huggingface.co/JinPLU/CaT-Movie">Weights</a><a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data">Dataset</a><a href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench</a></span><span>All showcased videos are generated renders on held-out test stories. Code under Apache-2.0; weights, dataset, and benchmark under CC BY-NC-SA 4.0.</span></div>
+  <div class="wrap"><span class="foot-links"><b>CaT-Movie</b><a href="https://arxiv.org/abs/2611.25620">Paper</a><a href="https://github.com/JinPLu/CaT-Movie">Code</a><a href="https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206">Collection</a><a href="https://huggingface.co/JinPLU/CaT-Movie">Weights</a><a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data">Dataset</a><a href="https://huggingface.co/datasets/JinPLU/CaT-MBench">CaT-MBench</a></span><span>All showcased videos are generated renders on held-out test stories. Code under Apache-2.0; weights, dataset, and benchmark under CC BY-NC-SA 4.0.</span></div>
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
