@@ -9,7 +9,7 @@
   <a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data"><img src="https://img.shields.io/badge/Dataset-Data-16a34a?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Dataset"></a>
   <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench"><img src="https://img.shields.io/badge/Bench-CaT--MBench-dc2626?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Benchmark"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-6b7280?style=flat-square" alt="License"></a>
-  <!-- paper-link -->
+  <a href="https://arxiv.org/abs/2611.25620"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="Paper (arXiv)"></a>
 </p>
 
 <p>
@@ -234,6 +234,9 @@ Each dataset includes its restoration script (`restore_training_inputs.py`, `res
   title         = {CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
   author        = {Jinpeng Lu and Haoyuan Shi and Yuanshen Guan and Jiyuan Xia and Bin Wu and Yinda Chen and Zhiwei Xiong},
   year          = {2026},
-  url           = {https://jinplu.github.io/CaT-Movie/}
+  eprint        = {2611.25620},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2611.25620}
 }
 ```
