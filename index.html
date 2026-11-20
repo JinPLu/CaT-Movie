@@ -386,14 +386,14 @@ html[data-theme="dark"] .chip.primary.link:hover{background:var(--paper);color:#
 .ov-ctl .ibtn{width:28px;height:28px}
 .ov-ctl .tbtn{padding:5.5px 12px;font-size:13px}
 
-.ov-map{position:relative;display:grid;grid-template-columns:minmax(286px,1fr) 142px minmax(0,1.9fr);grid-template-rows:auto auto;grid-template-areas:"plan top top" "plan mid rend";column-gap:15px;row-gap:8px;align-items:stretch}
+.ov-map{position:relative;display:grid;grid-template-columns:minmax(286px,1fr) 158px minmax(0,1.9fr);grid-template-rows:auto auto;grid-template-areas:"plan top top" "plan mid rend";column-gap:15px;row-gap:8px;align-items:stretch}
 .ov-reg{position:relative;z-index:1;border-radius:14px;padding:11px 13px 12px;min-width:0}
 .ov-pl{grid-area:plan;display:flex;flex-direction:column;justify-content:space-between;background:var(--cut-tint);border:1px solid color-mix(in srgb,var(--cut) 24%,transparent)}
 .ov-rd{grid-area:rend;display:flex;flex-direction:column;background:var(--ours-tint);border:1px solid color-mix(in srgb,var(--ours) 24%,transparent);padding:10px 13px 12px}
-.ov-rt{margin:0 0 6px;font:500 14px/1.2 var(--body);letter-spacing:-.015em;display:flex;align-items:baseline;justify-content:space-between;gap:6px;flex-wrap:wrap}
+.ov-rt{margin:0 0 6px;font:500 14px/1.2 var(--body);letter-spacing:-.015em;display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .ov-pl .ov-rt{color:var(--cut)}
 .ov-rd .ov-rt{color:var(--ours);margin:0}
-.ov-rt small{font:400 14px/1.15 var(--body);color:var(--mute);letter-spacing:0}
+.ov-rt small{font:400 13px/1.15 var(--body);color:var(--mute);letter-spacing:0}
 
 .ov-top{grid-area:top;display:flex;flex-direction:column;align-items:stretch;align-self:start;gap:5px;z-index:1;min-width:0}
 .ov-top > .ovn{width:100%;min-width:0}
@@ -684,7 +684,7 @@ html[data-theme="dark"] .bf-badge i{color:#0a0c12}
 .bf-ad b{display:block;font-weight:500;color:var(--paper)}
 .bf-ad span{color:var(--mute);font-size:13px}
 .bf-qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px}
-.bf-qitem{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:2px;padding:7px 2px;border-radius:0;background:transparent;border:0;border-bottom:1px solid var(--rule2);text-align:left;transition:background .2s,padding .2s}
+.bf-qitem{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:3px;padding:7px 2px;border-radius:0;background:transparent;border:0;border-bottom:1px solid var(--rule2);text-align:left;transition:background .2s,padding .2s}
 .bf-qitem-top{display:flex;align-items:center;justify-content:space-between;gap:4px}
 .bf-qitem b{font:500 13px/1.2 var(--body);color:var(--paper)}
 .bf-qitem span{display:block;font-size:14px;line-height:1.32;color:var(--mute)}
@@ -761,11 +761,8 @@ table.data tr.ours td{background:var(--tbl-focus)}
 table.data tr.ours td:first-child{color:var(--paper);font-weight:600}
 table.data tbody tr[data-name]{cursor:pointer}
 table.data tbody tr[data-name]:hover td,table.data tbody tr.hl td{background:var(--ours-soft)}
-table.data td .bar{position:absolute;right:7px;bottom:3px;height:2px;border-radius:2px;background:var(--rule);transform-origin:right}
 table.data td.best{color:var(--best);font-weight:600}
 table.data td.second{color:var(--second);font-weight:600}
-table.data td.best .bar{background:var(--best)}
-table.data td.second .bar{background:var(--second)}
 table.data td.sig::after{content:"\2020";color:var(--cut);margin-left:2px}
 table.data td.up{color:var(--navy)}
 table.data td.dn{color:var(--cut)}
@@ -900,6 +897,7 @@ html[data-theme="dark"] .pp-n{color:#0a0c12}
 .ent-stacks > span{font:500 14px/1.2 var(--body);color:var(--paper)}
 .stack{display:flex;height:20px;border-radius:5px;overflow:hidden;gap:2px}
 .stack div{display:flex;align-items:center;padding-left:7px;font:500 13px/1 var(--body);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;transform-origin:left}
+.stack div[data-i="0"]{box-shadow:inset 0 0 0 1px var(--rule);border-radius:5px 0 0 5px}
 
 /* ---------- 07 authors and citation ---------- */
 .foot-grid{display:grid;grid-template-columns:108px minmax(0,1fr);gap:14px 28px;margin-top:16px}
@@ -1347,7 +1345,7 @@ footer a:hover{color:var(--ours)}
     </figure>
 
     <figure class="fig wide stage-card">
-      <div class="fig-head"><h3>Registered entities per scene block</h3><span class="legend"><span><i class="sq" style="background:var(--c3)"></i>0</span><span><i class="sq" style="background:var(--c2)"></i>1</span><span><i class="sq" style="background:var(--c4)"></i>2</span><span><i class="sq" style="background:var(--c1)"></i>3 or more</span></span></div>
+      <div class="fig-head"><h3>Registered entities per scene block</h3><span class="legend"><span><i class="sq" style="background:var(--c3);box-shadow:inset 0 0 0 1px var(--rule)"></i>0</span><span><i class="sq" style="background:var(--c2);box-shadow:inset 0 0 0 1px var(--rule)"></i>1</span><span><i class="sq" style="background:var(--c4);box-shadow:inset 0 0 0 1px var(--rule)"></i>2</span><span><i class="sq" style="background:var(--c1);box-shadow:inset 0 0 0 1px var(--rule)"></i>3 or more</span></span></div>
       <div class="ent-stacks" id="entStack"></div>
       <p class="cap">58.3% of all 192,815 registered characters recur in two or more shots within their scene block.</p>
     </figure>
@@ -1408,8 +1406,8 @@ footer a:hover{color:var(--ours)}
   </defs>
 </svg>
 
-<script src="data.js?v=56" charset="utf-8"></script>
-<script src="app.js?v=56" charset="utf-8"></script>
-<script src="figs.js?v=56" charset="utf-8"></script>
+<script src="data.js?v=57" charset="utf-8"></script>
+<script src="app.js?v=57" charset="utf-8"></script>
+<script src="figs.js?v=57" charset="utf-8"></script>
 </body>
 </html>

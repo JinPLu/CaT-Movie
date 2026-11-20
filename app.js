@@ -786,11 +786,9 @@ run('mainTable', function mainTable() {
   let sortK = null, dir = -1;
   const rows = T1.filter(r => r.name);
   const best = T1COLS.map((_, c) => { const vals = rows.map(r => r.v[c]).sort((a, b) => b - a); return [vals[0], vals.find(v => v < vals[0])]; });
-  const rng = T1COLS.map((_, c) => { const vals = rows.map(r => r.v[c]); return [Math.min(...vals), Math.max(...vals)]; });
   const cell = (r, c) => {
     const v = r.v[c], cls = v === best[c][0] ? 'best' : v === best[c][1] ? 'second' : '';
-    const [lo, hi] = rng[c];
-    return `<td class="${cls}">${v.toFixed(3)}<span class="bar" style="width:${(6 + 26 * (v - lo) / (hi - lo || 1)).toFixed(1)}px"></span></td>`;
+    return `<td${cls ? ` class="${cls}"` : ''}>${v.toFixed(3)}</td>`;
   };
   const row = r => `<tr class="${r.fam === 'ours' ? 'ours' : ''}" data-name="${esc(r.name)}"><td>${esc(r.name)}<small>${esc(r.base)}</small></td>${T1COLS.map((_, c) => cell(r, c)).join('')}</tr>`;
   function render() {
@@ -824,10 +822,6 @@ run('mainTable', function mainTable() {
   }
   render();
   document.addEventListener('pick', e => { $$('tbody tr[data-name]', tb).forEach(tr => tr.classList.toggle('hl', tr.dataset.name === e.detail.name && e.detail.from !== 'table')); });
-  onReveal(tb.closest('.fig'), () => {
-    if (RM) return;
-    $$('.bar', tb).forEach((b, i) => b.animate([{ transform: 'scaleX(0)' }, { transform: 'none' }], { duration: 600, delay: 120 + (i % 9) * 32, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }));
-  });
 });
 
 const T2 = [

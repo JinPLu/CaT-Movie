@@ -119,7 +119,7 @@ run('pareto', function pareto() {
       const [dx, dy, an] = LBL[p.name];
       const nm = p.name.replace(', per shot', '');
       const lblCol = p.fam === 'ours' ? 'var(--ours)' : (p.fam === 'joint' ? 'var(--paper)' : 'var(--mute)');
-      T(g, cx + dx, cy + dy, nm, 'svg-text', `fill:${lblCol};font-weight:${p.fam === 'shot' ? 400 : 600}`, an);
+      T(g, cx + dx, cy + dy, nm, 'svg-text', `fill:${lblCol};font-weight:${p.fam === 'shot' ? 400 : 600};paint-order:stroke;stroke:var(--ink);stroke-width:3.5px;stroke-linejoin:round`, an);
       const v = p.r.v;
       const html = `<b>${esc(p.name)}</b><table><tr><td>Transition control</td><td>${p.tr.toFixed(3)}</td></tr><tr><td>Inter-shot consistency</td><td>${p.co.toFixed(3)}</td></tr><tr><td>Character</td><td>${v[2].toFixed(3)}</td></tr><tr><td>Average</td><td>${v[8].toFixed(3)}</td></tr></table>`;
       g.addEventListener('pointermove', e => showTip(html, e));
@@ -132,10 +132,10 @@ run('pareto', function pareto() {
     });
     mark(pinned);
     return () => {
-      fadeIn([region], 450);
-      drawLine(fp, 0, 820);
-      pop(nodes.filter(n => n.dataset.name !== 'CaT-Movie'), 140, 55);
-      pop(nodes.filter(n => n.dataset.name === 'CaT-Movie'), 740);
+      fadeIn([region], 180);
+      drawLine(fp, 0, 520);
+      pop(nodes.filter(n => n.dataset.name !== 'CaT-Movie'), 60, 35);
+      pop(nodes.filter(n => n.dataset.name === 'CaT-Movie'), 260);
     };
   });
 });
@@ -445,14 +445,14 @@ run('overview', function overview() {
         <span class="hw-head"><span class="l-long">${lbl}</span><span class="l-short">W${wi + 1}</span></span>
         <span class="hw-cards">${w.shots.map(k => {
           const rbs = refByShot.get(k);
-          return `<i class="hs${rbs ? ' rec' : ''}" data-k="${k}" style="background-image:url(${frame(HERO, k)})"><em>Shot ${k}</em>${rbs ? `<b class="rb">${rbs[0]}</b>` : ''}${wi === WI ? '<span class="nz"></span>' : ''}</i>`;
+          return `<i class="hs${rbs ? ' rec' : ''}" data-k="${k}" style="background-image:url(${frame(HERO, k)})"><em>S${k}</em>${rbs ? `<b class="rb">${rbs[0]}</b>` : ''}${wi === WI ? '<span class="nz"></span>' : ''}</i>`;
         }).join('')}</span>
       </button>`;
     }).join('')}</div>`;
     $$('.hw', fig).forEach(b => b.addEventListener('click', () => { stopTour(); selectWindow(+b.dataset.w); }));
 
     /* 3. Compiled Prompts Stack */
-    $('#ovPrompts', fig).innerHTML = `${W.refs.length ? `<span><b>c<sup>ref</sup></b>identity lines (${W.refs.length})</span>` : `<span><b>c<sup>ref</sup></b>none (cold start)</span>`}
+    $('#ovPrompts', fig).innerHTML = `${W.refs.length ? `<span><b>c<sup>ref</sup></b>${W.refs.length} identity lines</span>` : `<span><b>c<sup>ref</sup></b>none (cold start)</span>`}
       ${shs.map(k => `<span><b>c<sub>${k}</sub></b>Shot ${k} prompt</span>`).join('')}
       <small>[Entities] [Attire]<br>[Location] [Camera]<br>[Opening state]<br>[Action] [End state]</small>`;
 
