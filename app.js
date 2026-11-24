@@ -320,23 +320,21 @@ run('compare', function compare() {
     ['Close-up', 'The officer looks to the side.'],
   ];
   const ROWS = [
-    { m: 'holocine', who: 'HoloCine', kind: 'joint generation', col: 'var(--c2)', cuts: ['new', 'new'],
+    { m: 'holocine', who: 'Joint generation', kind: '', col: 'var(--c2)', cuts: ['new', 'new'],
       marks: { 2: { kind: 'person', pin: [0.49, 0.27], zoom: [0.49, 0.43, 0.46] }, 8: { kind: 'person', pin: [0.40, 0.19], zoom: [0.40, 0.34, 0.36] } },
-      say: 'Cuts where requested, but the officer in Shots 2 and 8 becomes two different men. Across window boundaries, joint generators retain only 28–30% of characters versus 62–83% within one window.' },
-    { m: 'storymem', who: 'StoryMem', kind: 'memory-augmented', col: 'var(--c5)', cuts: ['new', 'lost'],
+      say: 'Cuts where requested, but the officer in Shots 2 and 8 becomes two different men: Shot 8 is rendered in a later window that never sees Shot 2.' },
+    { m: 'storymem', who: 'Memory-augmented generation', kind: '', col: 'var(--c5)', cuts: ['new', 'lost'],
       marks: { 1: { kind: 'outfit', pin: [0.50, 0.62], zoom: [0.52, 0.66, 0.36] }, 3: { kind: 'outfit', pin: [0.42, 0.64], zoom: [0.40, 0.69, 0.36] } },
-      say: 'Retains faces, but alters the bearded man’s shirt between Shots 1 and 3 and repeats Shot 2’s camera framing in Shot 3 instead of cutting (repeating 114 of 674 planned setup changes on test).' },
-    { m: 'ours', who: 'CaT-Movie', kind: 'ours (5B)', col: 'var(--c1)', cuts: ['new', 'new'], marks: {},
-      say: 'Executes both planned camera cuts cleanly while preserving both characters’ identities and outfits across windows.' },
+      say: 'Keeps the faces by carrying earlier frames forward, but repeats Shot 2’s camera framing in Shot 3 instead of cutting, and alters the bearded man’s shirt between Shots 1 and 3.' },
   ];
   const zoom = (img, cx, cy, c) => {
     const ch = c * 640 / 370;
     return `background-image:url(${img});background-size:${100 / c}% ${100 / ch}%;background-position:${((cx - c / 2) / (1 - c) * 100).toFixed(1)}% ${((cy - ch / 2) / (1 - ch) * 100).toFixed(1)}%`;
   };
   host.innerHTML =
-    `<div class="cmp-heads">${SH.map((k, i) => `<button type="button" class="cmp-col" data-k="${k}" aria-label="Play shot ${k} in all three"><b>Shot ${k}<em>${HEAD[i][0]}</em></b><q>${HEAD[i][1]}</q></button>`).join('')}</div>` +
+    `<div class="cmp-heads">${SH.map((k, i) => `<button type="button" class="cmp-col" data-k="${k}" aria-label="Play shot ${k} in both rows"><b>Shot ${k}<em>${HEAD[i][0]}</em></b><q>${HEAD[i][1]}</q></button>`).join('')}</div>` +
     ROWS.map(r => `<div class="cmp-row" data-m="${r.m}">
-      <p class="cmp-say"><button type="button" class="cmp-gen" data-m="${r.m}" aria-pressed="false"><i style="background:${r.col}"></i>${r.who}</button><span class="cmp-kind">${r.kind}</span>${r.say}</p>
+      <p class="cmp-say"><button type="button" class="cmp-gen" data-m="${r.m}" aria-pressed="false"><i style="background:${r.col}"></i>${r.who}</button>${r.kind ? `<span class="cmp-kind">${r.kind}</span>` : ''}${r.say}</p>
       <div class="cmp-strip">${SH.map(k => {
         const img = `${MEDIA}f/qual/${r.m}-s${k}.jpg`;
         const mk = r.marks[k];
@@ -1058,6 +1056,23 @@ run('misc', function misc() {
       });
     }
   }
+});
+
+/* ---------- 03 benchmark: what each check measures (supplementary videos) ---------- */
+run('metricFig', function metricFig() {
+  const tabs = $('#metricTabs'), v = $('#metricVideo'), defs = $('#metricDef');
+  if (!tabs || !v) return;
+  const NAME = { cut: 'Cut execution', character: 'Character consistency', object: 'Object consistency', scene: 'Scene consistency', state: 'State persistence' };
+  $$('button', tabs).forEach(b => b.addEventListener('click', () => {
+    const m = b.dataset.m, playing = !v.paused;
+    setTab(tabs, b);
+    $$('p', defs).forEach(q => { q.hidden = q.dataset.m !== m; });
+    v.poster = `${MEDIA}f/metric/${m}.jpg`;
+    v.src = `${MEDIA}v/metric/${m}.mp4`;
+    v.setAttribute('aria-label', `${NAME[m]} check, four methods in sync`);
+    if (playing) v.play().catch(() => {});
+  }));
+  watch(v, vis => { if (!vis) v.pause(); }, 0.1);
 });
 
 window.CAT = { MEDIA, $, $$, sv, h, esc, once, watch, onReveal, chart, setTab, showTip, hideTip, pick, RM, T1, POINT_COLOR, run, story, frame, short, camLabel, pad, HERO, avatarStyle, charTip, showWhenReady };
