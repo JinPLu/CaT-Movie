@@ -28,7 +28,7 @@
 
 **TL;DR:** **CaT-Movie** decouples long multi-shot video generation into a training-free **Global Storyboard Planner** (`Qwen3.8-27B` + deterministic state compiler) and a **Local Window Renderer** (`Wan2.2-TI2V-5B`, `704p`, `24 fps`) with **shot-wise cross-attention**, **reference-routed sparse self-attention**, and storyboard-indexed **anchor recall**—executing planned cuts cleanly while preserving entities and states across window boundaries.
 
-> **What's New — CaT-Movie v1.1 Released:** Retrained on the full `202,144`-shot `704p` pool with refined per-entity reference supervision on the same `5B` backbone, **CaT-Movie v1.1** reaches **`0.612`** overall on `CaT-MBench` (`Establish` `0.468 → 0.629`, `Object` `0.497 → 0.564` `#1` overall). `v1.1` weights (`v1.1/step-3000.safetensors`), `training_inputs/v1.1/`, full `202,144`-shot VAE caches, and `598 GB` spatial/depth annotations are all live on [Hugging Face](https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206).
+> **Update (v1.1):** **CaT-Movie v1.1** reaches **`0.612`** on `CaT-MBench` (`Establish` `0.468 → 0.629`, `Object` `0.497 → 0.564`) on the same `5B` base; weights, `202K`-shot `704p` caches, and `training_inputs/v1.1/` are live on [Hugging Face](https://huggingface.co/JinPLU/CaT-Movie).
 
 ---
 
@@ -77,23 +77,21 @@ One film pool and one unified storyboard schema back both training (**Film Story
 
 ### Main Comparison on `CaT-MBench` (`92` Test Stories)
 
-Evaluated with seed `42` across all methods (rows 1–8 match Paper Table 1; `CaT-Movie v1.1` follows the identical protocol). Baselines convert annotated **reference storyboards** into native prompt formats, whereas **CaT-Movie** renders its **Qwen3.8-27B** planner's storyboard generated solely from the `shots` request (best **bold**, second *italic*; baseline adapters in [`src/mspc/comparison_methods/`](src/mspc/comparison_methods/README.md)):
+Evaluated with seed `42` across all methods (baselines use annotated reference storyboards; **CaT-Movie** renders its **Qwen3.8-27B** planner's storyboard from `shots`; best **bold**, second *italic* vs. baselines; `v1.0` listed for paper reference; adapters in [`src/mspc/comparison_methods/`](src/mspc/comparison_methods/README.md)):
 
 | Method (Video Base & Regime) | Cut F1 ↑ | Exec. ↑ | Char. ↑ | Obj. ↑ | Scene ↑ | Est. ↑ | Persist ↑ | Align. ↑ | Avg. ↑ |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Wan2.1, per shot *(1.3B, per-shot)* | *0.998* | *0.994* | 0.219 | 0.169 | 0.310 | 0.274 | 0.694 | 0.181 | 0.474 |
-| Wan2.2, per shot *(5B, per-shot)* | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | 0.701 | 0.174 | 0.497 |
-| StoryMem *(A14B-I2V, per-shot)* | 0.928 | 0.719 | 0.631 | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
+| Wan2.2, per shot *(5B, per-shot)* | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | *0.701* | 0.174 | 0.497 |
+| StoryMem *(A14B-I2V, per-shot)* | 0.928 | 0.719 | *0.631* | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
 | StoryDiffusion *(A14B-I2V, per-shot)* | 0.905 | 0.825 | 0.300 | 0.265 | 0.245 | 0.597 | 0.535 | 0.171 | 0.468 |
 | IC-LoRA *(A14B-I2V, per-shot)* | 0.976 | 0.961 | 0.168 | 0.133 | 0.406 | 0.452 | 0.663 | 0.176 | 0.484 |
 | MultiShotMaster *(1.3B, joint)* | 0.994 | 0.990 | 0.538 | 0.254 | 0.582 | 0.371 | 0.587 | 0.178 | 0.527 |
-| HoloCine *(A14B-T2V, joint)* | 0.748 | 0.967 | 0.517 | *0.512* | 0.586 | **0.694** | 0.691 | **0.195** | 0.571 |
-| **CaT-Movie v1.0 (Ours, paper)** *(5B, joint)* | 0.995 | 0.974 | **0.651** | 0.497 | 0.630 | 0.468 | **0.785** | 0.186 | *0.597* |
-| **CaT-Movie v1.1 (Ours)** *(5B, joint)* | 0.995 | 0.951 | *0.635* | **0.564** | *0.645* | *0.629* | *0.715* | *0.189* | **0.612** |
+| HoloCine *(A14B-T2V, joint)* | 0.748 | 0.967 | 0.517 | *0.512* | 0.586 | **0.694** | 0.691 | **0.195** | *0.571* |
+| CaT-Movie v1.0 *(Ours, paper; 5B, joint)* | 0.995 | 0.974 | 0.651 | 0.497 | 0.630 | 0.468 | 0.785 | 0.186 | 0.597 |
+| **CaT-Movie v1.1 (Ours)** *(5B, joint)* | 0.995 | 0.951 | **0.635** | **0.564** | *0.645* | *0.629* | **0.715** | *0.189* | **0.612** |
 
-*(Bases: `Wan2.1-T2V-1.3B`, `Wan2.2-TI2V-5B`, `Wan2.2-I2V-A14B`, `Wan2.2-T2V-A14B`. Columns shorten `Execution`, `Character`, `Object`, `Scene`, `Establish`, `Text Alignment`.)*
-
-Scaling to the full `202K` shot pool (`2×` window exposure) with per-entity distinct-camera-first reference selection and off-grid same-camera canvas shifts lifts **`CaT-Movie v1.1`** to `#1` overall on `Object` (`0.564`) and pushes `Establish` (`0.629`) into the 14B baseline range on the same `5B` backbone. **Which checkpoint to pick:** start with **`v1.1`** for the best overall quality, dynamic within-shot state changes, and object/scene consistency; choose **`v1.0`** for exact paper reproduction, sharpest cut execution (`0.974`), and state persistence (`0.785`)—see the [Model Card](https://huggingface.co/JinPLU/CaT-Movie#what-changed-in-v11) for full details.
+*(Bases: `Wan2.1-T2V-1.3B`, `Wan2.2-TI2V-5B`, `Wan2.2-I2V-A14B`, `Wan2.2-T2V-A14B`. Columns shorten `Execution`, `Character`, `Object`, `Scene`, `Establish`, `Text Alignment`. Use **v1.1** by default, or **v1.0** to reproduce Paper Table 1; [v1.1 recipe details](https://huggingface.co/JinPLU/CaT-Movie#what-changed-in-v11).)*
 
 ---
 
@@ -120,7 +118,7 @@ hf download JinPLU/CaT-Movie step-3000.safetensors --local-dir "$MSPC_SHARED_ROO
 
 ### 2. Render a story (`704p`, `24 fps`)
 
-Always invoke `run/render_story.py` (rather than stock Wan2.2 `generate.py`) so CaT-Movie's window attention and negative-RoPE routed references are enabled (`--prepare-only` runs CPU preflight first). Use `configs/infer/cat_movie_5b_v1_1.py` for **v1.1** (recommended default) or `configs/infer/cat_movie_5b.py` for **v1.0** (paper reproduction):
+Run via `run/render_story.py` (not stock Wan2.2 `generate.py`) to enable window attention and routed references (`--prepare-only` runs CPU preflight):
 
 ```bash
 # Swap --config to configs/infer/cat_movie_5b.py to reproduce v1.0 (Paper Table 1)
