@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from itertools import islice
 from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 import json
 import math
 import multiprocessing
@@ -278,6 +278,23 @@ def metadata_cache_stage(config: Any, *, world_size: int, target_step: int,
     return cache_stage_plan(dataset, args, world_size=world_size, target_step=target_step)
 
 
+def _require_text_stage_coverage(requested: dict[str, Any], published: dict[str, Any]) -> None:
+    if requested == published:
+        return
+    varying = {"target_step", "rank_sample_indices", "sample_indices", "target_keys"}
+    requested_contract = {key: value for key, value in requested.items() if key not in varying}
+    published_contract = {key: value for key, value in published.items() if key not in varying}
+    requested_targets = {tuple(key) for key in requested["target_keys"]}
+    if (requested["target_step"] >= published["target_step"]
+            or requested_contract != published_contract
+            or len(requested["rank_sample_indices"]) != len(published["rank_sample_indices"])
+            or any(short != full[:len(short)] for short, full in
+                   zip(requested["rank_sample_indices"], published["rank_sample_indices"], strict=True))
+            or not set(requested["sample_indices"]).issubset(published["sample_indices"])
+            or not requested_targets.issubset(map(tuple, published["target_keys"]))):
+        raise ValueError("text context cache must cover the actual stage with an identical rank-wise sampler prefix")
+
+
 def verify_config_cache_stage(config: Any, path: str | Path, *, world_size: int,
                               verification_workers: int) -> dict[str, Any]:
     """申请训练GPU前核真实缓存和实际编译文字；不读取RGB或构造模型。"""
@@ -290,6 +307,16 @@ def verify_config_cache_stage(config: Any, path: str | Path, *, world_size: int,
         raise ValueError("verification_workers must be an explicit positive integer")
     args = configure_training_topology(build_common_training_args(config), gpus_per_node=world_size, nnodes=1)
     args = replace_training_args(args, cache_stage_plan=read_cache_stage(path))
+    text_cache = None
+    model = config.resolved.get("model", {})
+    if model.get("text_context_cache") is not None:
+        from mspc.training.backends.wan22 import _CachedTextContextResolver
+
+        text_cache = _CachedTextContextResolver(model["text_context_cache"], model)
+        published_stage = text_cache.source["stage"]
+        _require_text_stage_coverage(args.cache_stage_plan, published_stage)
+        text_cache.require_training_contract(replace_training_args(args, cache_stage_plan=published_stage))
+    context_rows: set[int] = set()
     with _serial_tokenizer_calls():
         dataset = build_training_dataset(args)
         require_cache_stage(dataset, args, world_size=world_size)
@@ -298,15 +325,30 @@ def verify_config_cache_stage(config: Any, path: str | Path, *, world_size: int,
         if args.validation is not None:
             panels.append(("validation", build_validation_dataset(args),
                            args.cache_stage_plan["validation_sample_indices"]))
-        for row in _verified_text_rows(panels, verification_workers=verification_workers,
-                                       tokenizer_path=args.dataset_cfg["tokenizer_path"]):
-            counts = row["metadata"]["actual_token_counts"]
-            prompt_rows += len(counts)
-            max_tokens = max(max_tokens, max(counts))
-    return {"target_step": args.cache_stage_plan["target_step"],
+        with (nullcontext() if text_cache is None else text_cache.sample_path.open("rb")) as stream:
+            for row in _verified_text_rows(panels, verification_workers=verification_workers,
+                                           tokenizer_path=args.dataset_cfg["tokenizer_path"]):
+                counts = row["metadata"]["actual_token_counts"]
+                prompt_rows += len(counts)
+                max_tokens = max(max_tokens, max(counts))
+                if text_cache is not None:
+                    context_rows.update(text_cache.sample_context_rows(
+                        stream, split=row["split"], metadata=row["metadata"], prompts=row["prompts"]))
+    result = {"target_step": args.cache_stage_plan["target_step"],
             "ready_samples": len(args.cache_stage_plan["sample_indices"]),
             "ready_target_shots": len(dataset.targets),
             "validation_samples": len(args.cache_stage_plan["validation_sample_indices"]),
             "compiled_prompt_rows": prompt_rows, "max_prompt_tokens": max_tokens,
             "verification_workers": verification_workers,
             "verified_samples_by_split": {split: len(indices) for split, _, indices in panels}}
+    if text_cache is not None:
+        from mspc.training.text_cache import _ordered_context_file_operations
+
+        context_root = text_cache.path.parent / "contexts"
+        paths = (context_root / f"{index}.safetensors" for index in sorted(context_rows))
+        for context_path, exists in _ordered_context_file_operations(
+                lambda context_path: (context_path, context_path.is_file()), paths, verification_workers):
+            if not exists:
+                raise FileNotFoundError(f"text context payload is missing: {context_path}")
+        result.update(ready_text_contexts=len(context_rows), missing_text_contexts=0, missing_target_shots=0)
+    return result

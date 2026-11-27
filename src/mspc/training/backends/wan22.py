@@ -184,29 +184,33 @@ class _CachedTextContextResolver:
         if self.manifest["outer_autocast"] != {"enabled": autocast["enabled"], "dtype": autocast["dtype"]}:
             raise ValueError("text context cache differs from the actual outer autocast contract")
 
-    def resolve(self, data: Mapping[str, Any], *, device: torch.device) -> torch.Tensor:
-        from mspc.training.text_cache import read_text_context
-
-        identity = data["_text_cache_sample"]
-        metadata = identity["metadata"]
-        key = (identity["split"], metadata["sample_index"])
+    def sample_context_rows(self, stream, *, split: str, metadata: Mapping[str, Any],
+                            prompts: Sequence[str]) -> tuple[int, ...]:
+        key = (split, metadata["sample_index"])
         if key not in self.samples:
             raise ValueError(f"text context cache misses original sample {key}")
         offset, rows = self.samples[key]
-        with self.sample_path.open("rb") as stream:
-            stream.seek(offset)
-            sample = json.loads(stream.readline())
+        stream.seek(offset)
+        sample = json.loads(stream.readline())
         if (sample["split"], sample["sample_index"], tuple(sample["context_rows"])) != (*key, rows):
             raise ValueError("text context sample mapping changed after initialization")
         if any(name not in metadata or metadata[name] != value for name, value in sample["metadata"].items()):
             raise ValueError(f"text context sample metadata differs from the original draw: {key}")
-        prompts = data["prompt"]
+        if not isinstance(prompts, (list, tuple)) or list(prompts) != [self.prompts[index][0] for index in rows]:
+            raise ValueError(f"text context actual prompt strings or row order differ: {key}")
+        return rows
+
+    def resolve(self, data: Mapping[str, Any], *, device: torch.device) -> torch.Tensor:
+        from mspc.training.text_cache import read_text_context
+
+        identity = data["_text_cache_sample"]
+        split, metadata = identity["split"], identity["metadata"]
+        with self.sample_path.open("rb") as stream:
+            rows = self.sample_context_rows(stream, split=split, metadata=metadata, prompts=data["prompt"])
         shot_groups = data.get("shot_groups")
         group_count = 1 if shot_groups is None else len(shot_groups)
-        if (not isinstance(prompts, (list, tuple)) or list(prompts) != [self.prompts[index][0] for index in rows]
-                or group_count != len(rows)
-                or (identity["split"] == "train" and data["flow_draw_seed"] != metadata["flow_draw_seed"])):
-            raise ValueError(f"text context actual prompt strings or row order differ: {key}")
+        if group_count != len(rows) or (split == "train" and data["flow_draw_seed"] != metadata["flow_draw_seed"]):
+            raise ValueError(f"text context actual prompt strings or row order differ: {(split, metadata['sample_index'])}")
         tensors = []
         for index in rows:
             value = read_text_context(self.path.parent / "contexts" / f"{index}.safetensors")
@@ -470,6 +474,7 @@ def configure_args(
     }
     training_cfg["flow_shift"] = flow_shift
     training_cfg["self_attention_cache_layers"] = training.get("self_attention_cache_layers")
+    training_cfg["no_recompute_suffix_layers"] = training.get("no_recompute_suffix_layers")
     return replace_training_args(
         args,
         timing_prefix="[wan22_diffsynth_step]",
@@ -579,7 +584,10 @@ class Wan22DiffSynthTrainingModule(nn.Module):
             if policy == "save_self_attention":
                 from diffsynth.core.gradient.gradient_checkpoint import install_self_attention_checkpointing
                 install_self_attention_checkpointing(
-                    self.dit, cache_layers=self.training_cfg.get("self_attention_cache_layers"))
+                    self.dit,
+                    cache_layers=self.training_cfg.get("self_attention_cache_layers"),
+                    no_recompute_suffix_layers=self.training_cfg.get("no_recompute_suffix_layers"),
+                )
             elif policy != "recompute_all":
                 raise ValueError("unknown training.activation_checkpointing policy")
         else:
@@ -1438,10 +1446,20 @@ def _build_model(
     if args.checkpoint_path is not None:
         checkpoint_path = require_path(args.checkpoint_path, "checkpoint")
         from safetensors.torch import load_file
+        from mspc.training.dit_parameter_freeze import LORA_V1
 
         state_dict = load_file(str(checkpoint_path), device=str(device))
-        mode = load_dit_state_dict(model.dit, state_dict)
-        print(
-            f"load DiffSynth DiT from checkpoint ({mode}): {checkpoint_path}"
-        )
+        freeze_spec = require_dit_parameter_freeze(args.training_cfg["dit_parameter_freeze"])
+        if freeze_spec["recipe"] == LORA_V1:
+            from mspc.models.lora import load_lora_state_dict
+
+            loaded = load_lora_state_dict(model.dit, state_dict)
+            print(
+                f"load DiffSynth DiT LoRA from checkpoint (tensors={loaded}): {checkpoint_path}"
+            )
+        else:
+            mode = load_dit_state_dict(model.dit, state_dict)
+            print(
+                f"load DiffSynth DiT from checkpoint ({mode}): {checkpoint_path}"
+            )
     return model

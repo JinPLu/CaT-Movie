@@ -47,10 +47,10 @@ All checkpoints, datasets, caches, source clips, and benchmark assets live in th
 | Resource | Tier | Summary | Link |
 |---|---|---|---|
 | **Codebase** | **Core** | Planner, renderer training/inference, data curation & `CaT-MBench` (`mspc`) | [GitHub](https://github.com/JinPLu/CaT-Movie) |
-| **CaT-Movie-5B** | **Core** | Finetuned `Wan2.2-TI2V-5B` renderer weights (`step-3000.safetensors`, `9.44 GiB`) | [`JinPLU/CaT-Movie`](https://huggingface.co/JinPLU/CaT-Movie) |
-| **CaT-Movie-Data** | **Core** | `75,461` scene blocks (`358,302` shots), `Qwen3.7-Flash` schemas, grounding & `96,000` train windows | [`JinPLU/CaT-Movie-Data`](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) |
+| **CaT-Movie-5B** | **Core** | Finetuned `Wan2.2-TI2V-5B` renderer weights: v1.0 (paper, `step-3000.safetensors`) and v1.1 (`v1.1/step-3000.safetensors`: more training data, refined references), `9.44 GiB` each | [`JinPLU/CaT-Movie`](https://huggingface.co/JinPLU/CaT-Movie) |
+| **CaT-Movie-Data** | **Core** | `75,461` scene blocks (`358,302` shots), `Qwen3.7-Flash` schemas, grounding, spatial annotations (boxes, masks, depth, cameras; `598.0 GB`) & `96,000`-window training inputs for v1.0 and v1.1 | [`JinPLU/CaT-Movie-Data`](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) |
 | **CaT-Movie-T5-Cache** | **Core** | Precomputed `umT5-XXL` BF16 text context tensors (`332,516` unique prompts) | [`JinPLU/CaT-Movie-T5-Cache`](https://huggingface.co/datasets/JinPLU/CaT-Movie-T5-Cache) |
-| **CaT-Movie-VAE-Caches** | **Core** | Precomputed target VAE latents (`Wan2.2 704p` `104,534` + `Wan2.1 480p` `103,365` shots) | [`JinPLU/CaT-Movie-VAE-Caches`](https://huggingface.co/datasets/JinPLU/CaT-Movie-VAE-Caches) |
+| **CaT-Movie-VAE-Caches** | **Core** | Precomputed target VAE latents (`Wan2.2 704p` `202,144` + `Wan2.1 480p` `103,365` shots) | [`JinPLU/CaT-Movie-VAE-Caches`](https://huggingface.co/datasets/JinPLU/CaT-Movie-VAE-Caches) |
 | **Source Videos** | **Supporting** | Complete `18,173` block-yielding source MP4 clips (`CineDance`, `CinePile-T2V`, `MovieChat-1K`) | [`JinPLU/CaT-Movie-Source-Videos`](https://huggingface.co/datasets/JinPLU/CaT-Movie-Source-Videos) |
 | **CaT-MBench** | **Core** | `122` stories (`30` dev / `92` test), `GPT-6.1-sol` VQA (`1,012` test items), verdicts & `557` human labels | [`JinPLU/CaT-MBench`](https://huggingface.co/datasets/JinPLU/CaT-MBench) |
 | **CaT-MBench-Videos** | **Supporting** | All `736` generated test videos (`92` stories × `8` methods, `13.65 GiB`) | [`JinPLU/CaT-MBench-Videos`](https://huggingface.co/datasets/JinPLU/CaT-MBench-Videos) |
@@ -105,11 +105,14 @@ export MSPC_CODE_ROOT="$(pwd)"
 
 hf download Wan-AI/Wan2.2-TI2V-5B --local-dir "$MSPC_SHARED_ROOT/checkpoints/Wan2.2-TI2V-5B"
 hf download JinPLU/CaT-Movie step-3000.safetensors --local-dir "$MSPC_SHARED_ROOT/checkpoints/CaT-Movie"
+# v1.1 instead: hf download JinPLU/CaT-Movie v1.1/step-3000.safetensors --local-dir "$MSPC_SHARED_ROOT/checkpoints/CaT-Movie"
 ```
 
 ### 2. Render a story (`704p`, `24 fps`)
 
 Always invoke `run/render_story.py` (rather than stock Wan2.2 `generate.py`) so CaT-Movie's window attention and negative-RoPE routed references are enabled (`--prepare-only` runs CPU preflight first):
+
+For v1.1, pass `--config configs/infer/cat_movie_5b_v1_1.py`; the [model card](https://huggingface.co/JinPLU/CaT-Movie) explains what changed and when to use which checkpoint.
 
 ```bash
 PYTHONPATH=.:src python run/render_story.py \

@@ -13,7 +13,7 @@
 2. 每张参考取哪一帧（:func:`reference_position`）：源镜有衣着或状态变化取末帧，否则中帧（只有姿态或手持物变化取中帧）。
 3. 谁读哪张：与训练同一个 :func:`mspc.data.reference_routing.reference_readers`，推理不另加过滤。
 
-训练不调用本模块的选镜：训练参考是同块随机抽（``mspc.training.block_dataset.REFERENCE_POLICY``），锚视角选出的参考
+训练不调用本模块的选镜：训练参考是同块随机抽（``mspc.training.block_dataset.REFERENCE_POLICIES``），锚视角选出的参考
 在这个分布之内。
 
 为什么从「每个实体取最近一次出现」换成锚视角：
@@ -40,7 +40,9 @@
 目标镜读的参考「源镜自己就和被比镜不一致」的 67 道只过 13.4%，其中 62 道是被比的首次出场同框人更多、锚视角改取了后面
 人少却已画走样的一镜。读数出来前主线仍是锚视角。
 
-不处理的【推断】：同机位照抄（锚视角下 38.2%，略高于最近一次出现），按原决定在判分里看照抄次数；窗前从没出现过的
+同机位照抄：锚视角下 38.2%（略高于最近一次出现）。A14B 第 3,000 步测试集照抄 21→130、增量全在跨窗后；11-19 起
+训练改为 ``distinct_camera_first``（空位用无关镜补回张数、补回裁剪），推理配 ``distinct_camera=True``
+（``plan_selection_distinct_camera``）——外观不过期之后先避开与目标镜同机位的视角，没有异机位时照取。窗前从没出现过的
 实体给不了视角。
 """
 from __future__ import annotations
@@ -61,26 +63,41 @@ def _distance(shot: Mapping[str, Any]) -> int:
     return SHOT_DISTANCE[(shot.get("camera") or {}).get("shot_size")]
 
 
-def anchor_key(annotation: Mapping[str, Any], *, candidate: int, target: int, name: str) -> tuple[int, int, int, int]:
-    """实体 ``name`` 在候选镜 ``candidate`` 的视角作目标镜 ``target`` 参考的排序键，越小越好。"""
+def _same_camera(shots: Sequence[Mapping[str, Any]], candidate: int, target: int) -> int:
+    """候选镜与目标镜同机位（地点、景别、角度相同，没写角度按平视；任一方缺地点或景别也算）记 1，与训练 ``distinct_camera_first`` 同一判据。"""
+    from mspc.data.reference_routing import camera_setup
+    setup = camera_setup(shots[candidate])
+    return int(setup is None or camera_setup(shots[target]) in (None, setup))
+
+
+def anchor_key(annotation: Mapping[str, Any], *, candidate: int, target: int, name: str,
+               distinct_camera: bool) -> tuple[int, ...]:
+    """实体 ``name`` 在候选镜 ``candidate`` 的视角作目标镜 ``target`` 参考的排序键，越小越好。
+
+    ``distinct_camera``：外观不过期之后先比「是否与目标镜同机位」，异机位优先、没有异机位时同机位照取（兜底）。"""
     shots, characters = annotation["shots"], {entry["name"] for entry in annotation["characters"]}
     changed = [index for index in range(target) if any(
         change["name"] == name and change["what"] in APPEARANCE_CHANGES for change in shots[index].get("changes", ()))]
     stale = int(bool(changed) and candidate < changed[-1])
     others = len({entry["name"] for entry in shots[candidate]["present"]} & characters - {name})
     legibility = FACE_LEGIBILITY[_distance(shots[candidate])] if name in characters else 0
-    return stale, others, legibility, candidate
+    camera = (_same_camera(shots, candidate, target),) if distinct_camera else ()
+    return (stale, *camera, others, legibility, candidate)
 
 
-def place_key(annotation: Mapping[str, Any], *, candidate: int) -> tuple[int, int, int]:
-    """同地点候选镜作地点参考的排序键：同框登记角色少、景别远、早的优先。"""
+def place_key(annotation: Mapping[str, Any], *, candidate: int, target: int, distinct_camera: bool) -> tuple[int, ...]:
+    """同地点候选镜作地点参考的排序键：（``distinct_camera`` 时先异机位）同框登记角色少、景别远、早的优先。"""
     shot, characters = annotation["shots"][candidate], {entry["name"] for entry in annotation["characters"]}
-    return len({entry["name"] for entry in shot["present"]} & characters), -_distance(shot), candidate
+    camera = (_same_camera(annotation["shots"], candidate, target),) if distinct_camera else ()
+    return (*camera, len({entry["name"] for entry in shot["present"]} & characters), -_distance(shot), candidate)
 
 
 def select_references(annotation: Mapping[str, Any], *, span: Sequence[int], candidates: Sequence[int],
-                      frames_max: int) -> list[int]:
-    """返回选中的源镜下标（升序）。``span`` 是目标镜 ``(start, end)``；``candidates`` 是可作参考的镜（不能与目标段相交）。"""
+                      frames_max: int, distinct_camera: bool) -> list[int]:
+    """返回选中的源镜下标（升序）。``span`` 是目标镜 ``(start, end)``；``candidates`` 是可作参考的镜（不能与目标段相交）。
+
+    ``distinct_camera`` 为真时（推理 ``plan_selection_distinct_camera``，配训练 ``distinct_camera_first``）实体与地点视角都
+    先避开与目标镜同机位的镜，没有异机位候选时仍取同机位的那一镜。"""
     if type(frames_max) is not int or not 1 <= frames_max <= 10:
         raise ValueError("frames_max must be an int in 1..10")
     shots = annotation["shots"]
@@ -100,11 +117,12 @@ def select_references(annotation: Mapping[str, Any], *, span: Sequence[int], can
             appearances = [index for index in pool if entry["name"] in names[index]]
             if entry["name"] in registered and appearances:
                 found.append(min(appearances, key=lambda index: anchor_key(
-                    annotation, candidate=index, target=target, name=entry["name"])))
+                    annotation, candidate=index, target=target, name=entry["name"], distinct_camera=distinct_camera)))
         place = shots[target].get("place")
         same_place = [index for index in pool if place and shots[index].get("place") == place]
         if same_place:
-            found.append(min(same_place, key=lambda index: place_key(annotation, candidate=index)))
+            found.append(min(same_place, key=lambda index: place_key(annotation, candidate=index, target=target,
+                                                                     distinct_camera=distinct_camera)))
         for index in found:
             if index not in picked:
                 picked.append(index)

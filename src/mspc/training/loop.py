@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gc
 import json
 import math
 import time
@@ -209,7 +210,56 @@ def build_lr_scheduler(
         )
     if scheduler_type == "constant_with_warmup":
         return build_constant_with_warmup_scheduler(optimizer, args, num_processes)
+    if scheduler_type == "cosine_with_warmup":
+        return build_cosine_with_warmup_scheduler(optimizer, args, num_processes)
     raise ValueError(f"unsupported lr_scheduler_type={scheduler_type!r}")
+
+
+def build_cosine_with_warmup_scheduler(
+    optimizer: Any,
+    args: Any,
+    num_processes: int | None,
+) -> Any:
+    """Linear warmup to the configured learning rate, then cosine decay to ``min_lr_ratio``.
+
+    Same Accelerate ``split_batches=False`` contract as
+    :func:`build_constant_with_warmup_scheduler`: one synchronized optimizer
+    update advances ``last_epoch`` by ``num_processes``, so both ``warmup_steps``
+    and ``max_train_steps`` are scaled by ``num_processes`` to stay denominated
+    in optimizer updates regardless of world size.
+    """
+
+    warmup_steps = getattr(args, "warmup_steps", None)
+    max_train_steps = getattr(args, "max_train_steps", None)
+    min_lr_ratio = getattr(args, "min_lr_ratio", None)
+    if type(warmup_steps) is not int or warmup_steps < 0:
+        raise ValueError("warmup_steps must be a non-negative integer")
+    if type(max_train_steps) is not int or max_train_steps <= warmup_steps:
+        raise ValueError("cosine_with_warmup requires max_train_steps > warmup_steps")
+    if (
+        type(min_lr_ratio) not in (int, float)
+        or not math.isfinite(min_lr_ratio)
+        or not 0.0 < float(min_lr_ratio) <= 1.0
+    ):
+        raise ValueError("min_lr_ratio must be a finite number in (0, 1]")
+    if type(num_processes) is not int or num_processes < 1:
+        raise ValueError(
+            "cosine_with_warmup needs the prepared process count so "
+            "warmup_steps and max_train_steps stay denominated in optimizer updates"
+        )
+    ramp = warmup_steps * num_processes
+    total = max_train_steps * num_processes
+    floor = float(min_lr_ratio)
+
+    def cosine_factor(scheduler_step: int) -> float:
+        if scheduler_step < ramp:
+            return float(scheduler_step) / float(ramp)
+        if scheduler_step >= total:
+            return floor
+        progress = float(scheduler_step - ramp) / float(total - ramp)
+        return floor + 0.5 * (1.0 - floor) * (1.0 + math.cos(math.pi * progress))
+
+    return torch.optim.lr_scheduler.LambdaLR(optimizer, cosine_factor)
 
 
 def build_constant_with_warmup_scheduler(
@@ -244,6 +294,20 @@ def build_constant_with_warmup_scheduler(
         return float(scheduler_step) / float(ramp)
 
     return torch.optim.lr_scheduler.LambdaLR(optimizer, warmup_factor)
+
+
+def freeze_setup_objects() -> int:
+    """训练循环开始前把已建好的长期对象移出自动分代回收的遍历范围，返回冻结的对象数。
+
+    样本表、参考标签与裁剪表、文字准入与文字缓存清单常驻每个 rank 的主进程（11-19 实测主进程 RSS 约 17 GB）。
+    自动回收的全量一代每约 224 个 microstep 遍历全部对象一次：11-17 两专家 3,000 步里每个 rank 都按这个间隔
+    在 DiT 前向中卡约 8 秒，四卡轮流卡，每次更新都等卡住的那张。
+    冻结之后全量回收只遍历此后新建的对象；DataLoader worker 在此后 fork，回收也不再改写共享页。
+    同做法：Python ``gc.freeze``、Megatron-LM ``--manual-gc``、torchtitan ``GarbageCollector``。不改任何数值。
+    """
+    gc.collect()
+    gc.freeze()
+    return gc.get_freeze_count()
 
 
 def sync_cuda(enabled: bool) -> None:
@@ -702,6 +766,9 @@ def train_sft(
         metric_log = (Path(args.log_dir) / "metrics.jsonl").open("a", encoding="utf-8")
         tracker = open_loss_tracking(args.loss_tracking, hyperparameters=args.experiment_config or {},
                                      log_dir=Path(args.log_dir))
+    frozen_objects = freeze_setup_objects()
+    if accelerator.is_main_process:
+        print(f"[train] gc_frozen_objects={frozen_objects}", flush=True)
     try:
         training_started = time.perf_counter()
         if validation is not None and resume_path is None:
@@ -897,6 +964,7 @@ def train_sft(
                             save_training_state(accelerator, training_progress, args)
                         return
     finally:
+        gc.unfreeze()
         progress.close()
         if sample_log is not None:
             sample_log.close()

@@ -654,6 +654,19 @@ class Wan22InferenceRuntime:
 
             state_dict = load_file(str(checkpoint_path), device=str(self.device))
             load_dit_state_dict(self.pipe.dit, state_dict)
+        elif self.weight_source == "lora_checkpoint":
+            checkpoint_path = require_path(dit_ckpt, "inference.dit_checkpoint")
+            self.dit_checkpoint_path = checkpoint_path
+            from safetensors.torch import load_file
+
+            from mspc.models.lora import inject_lora, load_lora_state_dict
+            from mspc.training.dit_parameter_freeze import LORA_V1, require_dit_parameter_freeze
+
+            spec = require_dit_parameter_freeze(self.inference_cfg.get("lora"), location="inference.lora")
+            if spec["recipe"] != LORA_V1:
+                raise ValueError("inference.weight_source='lora_checkpoint' requires a lora_v1 recipe")
+            inject_lora(self.pipe.dit, rank=spec["rank"], alpha=float(spec["alpha"]), targets=spec["targets"])
+            load_lora_state_dict(self.pipe.dit, load_file(str(checkpoint_path), device=str(self.device)))
         elif self.weight_source == "expert_lora_checkpoints":
             from safetensors.torch import load_file
 
@@ -661,8 +674,9 @@ class Wan22InferenceRuntime:
             spec = self.experts["lora"]
             for dit, key in ((self.pipe.dit, "high_noise_lora"), (self.pipe.dit2, "low_noise_lora")):
                 inject_lora(dit, rank=spec["rank"], alpha=float(spec["alpha"]), targets=spec["targets"])
+                expert_device = str(next(dit.parameters()).device)
                 load_lora_state_dict(dit, load_file(str(require_path(self.experts[key], f"inference.experts.{key}")),
-                                                    device=str(self.device)))
+                                                    device=expert_device))
         elif self.weight_source != "pretrained_model_paths":
             raise ValueError(
                 "unsupported inference.weight_source=" f"{self.weight_source!r}"
@@ -1020,6 +1034,7 @@ def build_config(
             "video_quality",
             "weight_source",
             "sampler",
+            "lora",
             "experts",
         )
     }

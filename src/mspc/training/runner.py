@@ -400,6 +400,11 @@ def _human_start_lines(
         )
     elif scheduler_type == "constant_with_warmup":
         scheduler_text = f"{scheduler_type}:warmup_steps={optimization['warmup_steps']}"
+    elif scheduler_type == "cosine_with_warmup":
+        scheduler_text = (
+            f"{scheduler_type}:warmup_steps={optimization['warmup_steps']}:"
+            f"min_lr_ratio={optimization['min_lr_ratio']}"
+        )
     elif scheduler_type is None:
         scheduler_text = "legacy_constant_default"
     else:

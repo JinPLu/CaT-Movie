@@ -44,6 +44,9 @@ def main():
                             help="镜数分层可选：抽到单镜层时按 SHARE 只取长单镜窗（源16fps帧数不少于 MIN_SOURCE_FRAMES，"
                                  "且块标注该镜 activity 为 action_or_state_change 或 changes 非空；成员须带 annotation）；"
                                  "四层权重不变")
+        parser.add_argument("--target-index", type=Path,
+                            help="镜数分层可选：显式指定已编目标潜变量索引（jsonl），仅在索引覆盖的目标镜上枚举连续窗口；"
+                                 "不改成员资格，窗外参考候选仍取原块全部可用镜")
         parser.add_argument("--sample-budget", type=int, required=True)
         parser.add_argument("--forced-samples", type=int, help="旧时长档重放：显式衣着冲突定向份额")
         parser.add_argument("--output", type=Path, required=True)
@@ -59,7 +62,8 @@ def main():
                                       sample_budget=args.sample_budget, forced_samples=args.forced_samples,
                                       output=args.output, limit=args.limit,
                                       long_single_shot=None if args.long_single_shot is None else
-                                      (float(args.long_single_shot[0]), int(args.long_single_shot[1])))
+                                      (float(args.long_single_shot[0]), int(args.long_single_shot[1])),
+                                      target_index_path=args.target_index)
     elif sys.argv[1:2] == ["filter-text"]:
         parser = argparse.ArgumentParser(description="按真实固定抽签文字生产512-token准入，不重排原data_id")
         parser.add_argument("--config", type=Path, required=True)

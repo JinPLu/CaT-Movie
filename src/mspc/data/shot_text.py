@@ -32,7 +32,8 @@ _ACTION_SUBJECT = re.compile(
     r"\s+(?P<predicate>(?:(?:[a-z]+ly)\s+)*[a-z]+\b)", re.IGNORECASE)
 _FINITE_ACTION_VERB = re.compile(r"(?:is|are|was|were|has|have|had|does|do|did|can|could|will|would|should|must|may|might|[a-z]{3,}s)$")
 ARTICLE = re.compile(r"^an? ")
-DEFAULT_CAMERA = frozenset({"eye-level shot", "static"})  # 平视与静止是缺省，不写
+DEFAULT_ANGLE = "eye-level shot"
+DEFAULT_CAMERA = frozenset({DEFAULT_ANGLE, "static"})  # 平视与静止是缺省，不写
 # 穿着一栏里不是衣物的两类真实返回（首批 115,077 条里 514 条，2026-10-12）：没看清的不写，没穿的不接在 wearing 后面。
 UNSEEN_OUTFIT = re.compile(r"(?:unknown|unclear|none|not |no )", re.IGNORECASE)
 UNDRESSED = re.compile(r"(?:shirtless|topless|naked|nude|bare)", re.IGNORECASE)

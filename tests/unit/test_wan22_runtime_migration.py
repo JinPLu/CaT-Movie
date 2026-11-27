@@ -556,6 +556,99 @@ def test_dual_expert_loader_converts_original_parameters_before_device_transfer(
     assert transfers == [pipe.dit, pipe.dit2]
     assert pipe.in_iteration_models == ("dit",)
     assert pipe.in_iteration_models_2 == ("dit2",)
+    assert pipe.stage_models_on_device == ()
+
+
+def test_dual_expert_loader_stages_models_on_80gb_gpu(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    calls = []
+    transfers = []
+    text_transfers = []
+    _install_fake_diffsynth_runtime(monkeypatch, tmp_path, calls)
+    paths = _model_paths(tmp_path)
+    low_noise_shard = tmp_path / "low-noise.safetensors"
+    low_noise_shard.write_bytes(b"weights")
+    monkeypatch.setattr(_FakeDit, "to", lambda dit, *a, **kw: transfers.append((dit, a, kw)) or dit)
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "get_device_properties", lambda _: SimpleNamespace(total_memory=80 * 1024 ** 3))
+    monkeypatch.setattr(torch.cuda, "empty_cache", lambda: None)
+
+    fake_wan_video = wan22_runtime.importlib.import_module("diffsynth.pipelines.wan_video")
+    original = fake_wan_video.WanVideoPipeline.from_pretrained
+
+    def with_trackable_text_encoder(**kwargs):
+        pipe = original(**kwargs)
+        pipe.text_encoder = torch.nn.Linear(4, 4)
+        orig_to = pipe.text_encoder.to
+        pipe.text_encoder.to = lambda *a, **kw: text_transfers.append((a, kw)) or orig_to(*a, **kw)
+        return pipe
+
+    monkeypatch.setattr(fake_wan_video.WanVideoPipeline, "from_pretrained", with_trackable_text_encoder)
+    pipe, _ = wan22_runtime.load_pure_t2v_pipeline(
+        diffsynth_root=str(tmp_path / "runtime"), model_paths=paths,
+        self_attention_policy="holocine_first_frame", torch_dtype=torch.bfloat16,
+        device=torch.device("cuda:0"), low_noise_dit=[str(low_noise_shard)],
+    )
+    assert transfers == []
+    assert text_transfers == [((), {"device": "cpu"})]
+    assert pipe.stage_models_on_device == ("text_encoder", "dit", "dit2")
+
+
+def test_base_pipeline_load_models_to_device_swaps_staged_experts_preserving_dtypes(monkeypatch):
+    import sys
+    from pathlib import Path as _Path
+    runtime_root = str(_Path(__file__).resolve().parents[2] / "third_party/wan22_runtime")
+    if runtime_root not in sys.path:
+        sys.path.insert(0, runtime_root)
+    from diffsynth.diffusion.base_pipeline import BasePipeline
+    from mspc.models.lora import LoRALinear
+
+    class _Expert(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            base = torch.nn.Linear(4, 4, bias=False).to(dtype=torch.bfloat16)
+            self.proj = LoRALinear(base, rank=2, alpha=2.0)
+            self.norm = torch.nn.Parameter(torch.ones(4, dtype=torch.float32))
+
+    accel = "cuda:0" if torch.cuda.is_available() else ("mps:0" if torch.backends.mps.is_available() else None)
+    if accel is None:
+        pytest.skip("requires cuda or mps accelerator to test real device round-trip")
+    accel_type = accel.split(":")[0]
+    pipe = BasePipeline(device=accel)
+    pipe.device_type = accel_type
+    pipe.stage_models_on_device = ("text_encoder", "dit", "dit2")
+    pipe.text_encoder = torch.nn.Linear(4, 4, bias=False).to(dtype=torch.bfloat16)
+    pipe.dit = _Expert()
+    pipe.dit2 = _Expert()
+    pipe.vae = torch.nn.Linear(4, 4, bias=False).to(dtype=torch.bfloat16, device=accel)
+    orig_dit_base = pipe.dit.proj.base.weight.detach().clone()
+    orig_dit_down = pipe.dit.proj.lora_down.weight.detach().clone()
+
+    pipe.load_models_to_device(("text_encoder",))
+    assert next(pipe.text_encoder.parameters()).device.type == accel_type
+    assert next(pipe.dit.parameters()).device.type == "cpu"
+    assert next(pipe.dit2.parameters()).device.type == "cpu"
+
+    pipe.load_models_to_device(("dit",))
+    assert next(pipe.text_encoder.parameters()).device.type == "cpu"
+    assert pipe.dit.proj.base.weight.device.type == accel_type
+    assert pipe.dit.proj.base.weight.dtype == torch.bfloat16
+    assert pipe.dit.proj.lora_down.weight.device.type == accel_type
+    assert pipe.dit.proj.lora_down.weight.dtype == torch.float32
+    assert pipe.dit.norm.dtype == torch.float32
+    assert next(pipe.dit2.parameters()).device.type == "cpu"
+
+    pipe.load_models_to_device(("dit2",))
+    assert next(pipe.dit.parameters()).device.type == "cpu"
+    assert torch.equal(pipe.dit.proj.base.weight, orig_dit_base)
+    assert torch.equal(pipe.dit.proj.lora_down.weight, orig_dit_down)
+    assert pipe.dit2.proj.base.weight.device.type == accel_type
+    assert pipe.dit2.proj.lora_up.weight.dtype == torch.float32
+
+    pipe.load_models_to_device(["vae"])
+    assert next(pipe.dit2.parameters()).device.type == "cpu"
+    assert next(pipe.vae.parameters()).device.type == accel_type
 
 
 @pytest.mark.parametrize("extra_component", ["text_encoder", "tokenizer", "vae"])

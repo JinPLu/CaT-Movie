@@ -156,6 +156,30 @@ class BasePipeline(torch.nn.Module):
         return audio_output.float().cpu()
 
     def load_models_to_device(self, model_names):
+        staged = getattr(self, "stage_models_on_device", ())
+        if staged:
+            wanted = set(model_names)
+            offloaded = False
+            for name in staged:
+                if name not in wanted:
+                    model = getattr(self, name, None)
+                    if model is not None:
+                        param = next(model.parameters(), None)
+                        if param is not None and param.device.type != "cpu":
+                            model.to(device="cpu")
+                            offloaded = True
+            if offloaded:
+                getattr(torch, self.device_type).empty_cache()
+            target = torch.device(self.device)
+            target_index = (torch.cuda.current_device() if target.type == "cuda" and target.index is None
+                            else target.index)
+            for name in staged:
+                if name in wanted:
+                    model = getattr(self, name, None)
+                    if model is not None:
+                        param = next(model.parameters(), None)
+                        if param is not None and (param.device.type != target.type or param.device.index != target_index):
+                            model.to(device=target)
         if self.vram_management_enabled:
             # offload models
             for name, model in self.named_children():

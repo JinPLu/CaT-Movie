@@ -89,12 +89,13 @@ def prepare_story(config: ExperimentConfig, *, storyboard: Path, story_id: str, 
     model, inference = data["model"], data["inference"]
     if model["type"] != "wan22_diffsynth" or not inference["enabled"]:
         raise ValueError("story rendering requires wan22_diffsynth and inference.enabled=true")
-    if inference["weight_source"] not in ("pretrained_model_paths", "full_dit_checkpoint", "expert_lora_checkpoints"):
-        raise ValueError("story rendering requires explicitly selected pretrained paths, a full DiT checkpoint "
-                         "or the two A14B experts' LoRA exports")
+    if inference["weight_source"] not in ("pretrained_model_paths", "full_dit_checkpoint",
+                                          "lora_checkpoint", "expert_lora_checkpoints"):
+        raise ValueError("story rendering requires explicitly selected pretrained paths, a full DiT checkpoint, "
+                         "a single LoRA checkpoint or the two A14B experts' LoRA exports")
     model["paths"] = require_model_paths(model["paths"])
     checkpoint = inference["dit_checkpoint"]
-    if inference["weight_source"] == "full_dit_checkpoint":
+    if inference["weight_source"] in ("full_dit_checkpoint", "lora_checkpoint"):
         checkpoint = str(require_path(checkpoint, "inference.dit_checkpoint"))
     elif checkpoint is not None:
         raise ValueError(f"{inference['weight_source']} requires dit_checkpoint=null")
@@ -246,6 +247,7 @@ def render_story(config: ExperimentConfig, *, storyboard: Path, output: Path, st
             segment_max_frames=segment_max_frames, history_policy=history_policy)
         record.update(weight_source=prepared.runtime_kwargs["inference_cfg"]["weight_source"],
                       dit_checkpoint=prepared.runtime_kwargs["dit_ckpt"],
+                      lora=prepared.runtime_kwargs["inference_cfg"].get("lora"),
                       experts=prepared.runtime_kwargs["inference_cfg"]["experts"],
                       model_paths=prepared.runtime_kwargs["model_cfg"]["paths"])
         _write_json(output / "inputs.json", {**record, "resolved_config": config.to_dict(),

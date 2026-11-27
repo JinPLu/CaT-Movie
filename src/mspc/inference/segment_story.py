@@ -2,12 +2,13 @@
 
 逐镜与联合生成共用此链；分段只由 ``comparison_methods.prompts.adapt_storyboard`` 决定，不在这里重新打包。
 
-参考只来自真实已生成的镜（窗前全部镜），每镜至多一张帧，最多 ``frames_max`` 张。推理有四种历史（:data:`HISTORY_POLICIES`）：
+参考只来自真实已生成的镜（窗前全部镜），每镜至多一张帧，最多 ``frames_max`` 张。推理有五种历史（:data:`HISTORY_POLICIES`）：
 
 - ``none``：不给参考；
 - ``plan_selection``（按分镜选帧，锚视角）：:func:`mspc.data.reference_selection.select_references`——每个在场实体在
   外观不变期间取同框人少、景别清楚、最早的一镜，地点取同地点人少、景别远、最早的一镜；每张取
   :func:`mspc.data.reference_selection.reference_position`（镜内有衣着或状态变化取末帧，否则中帧）；
+- ``plan_selection_distinct_camera``：同上，锚视角排序在外观不过期之后先避开与目标镜同机位的镜；
 - ``recent_shots``（取最近几镜，论文消融「不看分镜的选帧」）：张数与同一窗按分镜选帧相同，只隔离「选哪几镜」，
   取窗前最近的那几镜，每镜中帧，不看分镜内容；
 - ``clip_retrieval``（按画面相似度选帧，论文消融「CLIP 检索」，规则见 :mod:`mspc.inference.clip_frame_selection`）：张数同上，
@@ -52,9 +53,11 @@ from mspc.inference.wan22 import MemoryPrefixInput, Wan22InferenceRuntime
 
 NO_REFERENCES = "none"
 PLAN_SELECTION = "plan_selection"
+#: 按分镜选帧＋避开同机位（配训练参考 ``distinct_camera_first``）：锚视角排序在外观不过期之后先比是否与目标镜同机位。
+PLAN_SELECTION_DISTINCT_CAMERA = "plan_selection_distinct_camera"
 RECENT_SHOTS = "recent_shots"
 CLIP_RETRIEVAL = "clip_retrieval"
-HISTORY_POLICIES = (NO_REFERENCES, PLAN_SELECTION, RECENT_SHOTS, CLIP_RETRIEVAL)
+HISTORY_POLICIES = (NO_REFERENCES, PLAN_SELECTION, PLAN_SELECTION_DISTINCT_CAMERA, RECENT_SHOTS, CLIP_RETRIEVAL)
 
 
 @dataclass(frozen=True)
@@ -69,7 +72,7 @@ class WholeReferenceFrame:
 
 def history_position(policy: str, shot: Mapping[str, Any]) -> str:
     """每个已生成镜存哪一帧作候选参考：按分镜选帧存 :func:`reference_position`，取最近几镜存中帧。"""
-    if policy == PLAN_SELECTION:
+    if policy in (PLAN_SELECTION, PLAN_SELECTION_DISTINCT_CAMERA):
         return reference_position(shot)
     if policy == RECENT_SHOTS:
         return "middle"
@@ -81,8 +84,9 @@ def select_reference_shots(policy: str, annotation: Mapping[str, Any], *, span: 
     """只看分镜的两种：一窗的参考 (源镜下标, 取哪一帧)，按镜序。候选是窗前全部已生成的镜；张数由按分镜选帧定，取最近几镜
     照这个张数取。CLIP 检索要看已生成的画面，在 :func:`generate_story` 里按同一张数检索。"""
     start = span[0]
-    planned = select_references(annotation, span=span, candidates=range(start), frames_max=frames_max)
-    if policy == PLAN_SELECTION:
+    planned = select_references(annotation, span=span, candidates=range(start), frames_max=frames_max,
+                                distinct_camera=policy == PLAN_SELECTION_DISTINCT_CAMERA)
+    if policy in (PLAN_SELECTION, PLAN_SELECTION_DISTINCT_CAMERA):
         return [(index, history_position(policy, annotation["shots"][index])) for index in planned]
     if policy == RECENT_SHOTS:
         return [(index, history_position(policy, annotation["shots"][index]))
@@ -194,7 +198,8 @@ def generate_story(runtime: Wan22InferenceRuntime, *, annotation: Mapping[str, A
         retrieval_scores = None
         if retrieval:
             # 张数与同一窗按分镜选帧相同；窗前每镜取它最像本窗文字的一帧，再按分取前 count 个镜。
-            count = len(select_references(annotation, span=(start, end), candidates=range(start), frames_max=frames_max))
+            count = len(select_references(annotation, span=(start, end), candidates=range(start), frames_max=frames_max,
+                                          distinct_camera=False))
             best = (clip_frame_selection.best_frames({index: library_embeddings[index] for index in range(start)},
                                                      embedder.texts(list(segment["prompts"]))) if start else {})
             chosen = [library[index][frame] for index, frame in clip_frame_selection.retrieve(best, count)]

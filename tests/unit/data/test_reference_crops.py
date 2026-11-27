@@ -8,7 +8,8 @@ import torch
 
 from mspc.data.history_reading_labels import ShotMasks
 from mspc.data.reference_crops import (ReferenceCrops, apply_crops, build_reference_crops,
-                                       character_keep_box, draw_crop, entity_box, union_box)
+                                       character_keep_box, draw_crop, entity_box,
+                                       select_same_camera_boxes, union_box)
 from tests.support.paths import REPO_ROOT
 
 #: 标注画幅与目标画幅相同时的几何（归一化框就是掩码外接框除以 832×480）。
@@ -105,3 +106,73 @@ def test_crop_table_counts_uncroppable_references_and_skips_frames_without_exact
                                  sample_indices=list(range(41)), workers=1)
     assert full["cropped"] == 0 and full["characters_too_large"] == 40
     assert full["uncroppable_fraction_of_references"] == pytest.approx(40 / 41)
+
+
+def test_reference_crops_only_same_camera_validation_and_selection(tmp_path):
+    table = tmp_path / "crops.jsonl"
+    table.write_text(json.dumps({
+        "schema": "reference_crops_v3",
+        "sample_index": 0,
+        "reference_draw": [[1, 0], [2, 0], [3, 0]],
+        "boxes": [[0.1, 0.1, 0.9, 0.9], [0.2, 0.2, 0.8, 0.8], [0.15, 0.15, 0.85, 0.85]],
+    }) + "\n", encoding="utf-8")
+
+    # Default omitted -> False; explicit bool accepted; non-bool / extra keys rejected.
+    assert ReferenceCrops({"path": str(table)}, [0]).only_same_camera is False
+    assert ReferenceCrops({"path": str(table), "only_same_camera": False}, [0]).only_same_camera is False
+    assert ReferenceCrops({"path": str(table), "only_same_camera": True}, [0]).only_same_camera is True
+    with pytest.raises(ValueError, match="only_same_camera must be a bool"):
+        ReferenceCrops({"path": str(table), "only_same_camera": 1}, [0])
+    with pytest.raises(ValueError, match="only_same_camera must be a bool"):
+        ReferenceCrops({"path": str(table), "only_same_camera": "true"}, [0])
+    with pytest.raises(ValueError, match="requires path and optional only_same_camera"):
+        ReferenceCrops({"path": str(table), "unexpected": True}, [0])
+
+    # Shot 0: Room / medium / eye-level; Shot 1: Room / close-up / eye-level; Shot 2: missing camera setup
+    # Targets: Shot 3 (Room / medium / eye-level -> same cam as Shot 0), Shot 4 (Room / wide / eye-level -> distinct from 0 & 1)
+    shots = [
+        {"place": "Room", "camera": {"shot_size": "medium", "angle": "eye-level"}},
+        {"place": "Room", "camera": {"shot_size": "close-up", "angle": "eye-level"}},
+        {"place": "Room", "camera": {}},  # missing shot_size -> camera_setup is None
+        {"place": "Room", "camera": {"shot_size": "medium", "angle": "eye-level"}},
+        {"place": "Room", "camera": {"shot_size": "wide", "angle": "eye-level"}},
+    ]
+    boxes = [[0.1, 0.1, 0.9, 0.9], [0.2, 0.2, 0.8, 0.8], [0.15, 0.15, 0.85, 0.85]]
+
+    # Non-routed (window-shared): all targets [3, 4] read every reference.
+    # Slot 0 clashes with target 3 -> keep; Slot 1 distinct from both 3 & 4 -> None; Slot 2 setup None -> keep.
+    assert select_same_camera_boxes(
+        boxes, shots=shots, reference_shots=[0, 1, 2], target_shots=[3, 4], routing=None
+    ) == [boxes[0], None, boxes[2]]
+
+    # Routed: target 3 reads [1, 2], target 4 reads [0, 1].
+    # Now slot 0's ONLY actual reader is target 4 (distinct camera!) -> uncropped (None)!
+    assert select_same_camera_boxes(
+        boxes, shots=shots, reference_shots=[0, 1, 2], target_shots=[3, 4], routing=[(1, 2), (0, 1)]
+    ) == [None, None, boxes[2]]
+
+    # Routed: target 3 reads [0], target 4 reads [1, 2] -> slot 0 clashes with reader 3 -> kept!
+    assert select_same_camera_boxes(
+        boxes, shots=shots, reference_shots=[0, 1, 2], target_shots=[3, 4], routing=[(0,), (1, 2)]
+    ) == [boxes[0], None, boxes[2]]
+
+
+def test_same_camera_shift_moves_a_centered_close_up_off_its_grid_position_and_keeps_others():
+    import torch
+    from mspc.data.reference_crops import shift_same_camera
+    images = torch.zeros(2, 3, 32, 64, dtype=torch.uint8)
+    images[:, :, 8:24, 24:40] = 255            # 居中的「大特写」方块
+    out = shift_same_camera(images, [True, False], [(0.0, 0.0, 0.5, 0.2), (0.5, 0.5, 0.5, 0.9)], scale=(0.6, 0.8), edge=0.1)
+    assert torch.equal(out[1], images[1])       # 异机位参考原样
+    columns = out[0, 0].float().sum(0).nonzero().flatten()
+    center = (columns.min() + columns.max()).item() / 2
+    assert center < 32 - 0.1 * 64               # 方块中心离开原位置（贴到左侧）
+    assert out[0, :, :, -8:].max() == 0         # 右侧留黑边
+
+
+def test_same_camera_shift_rejects_bad_ranges():
+    import pytest
+    import torch
+    from mspc.data.reference_crops import shift_same_camera
+    with pytest.raises(ValueError):
+        shift_same_camera(torch.zeros(1, 3, 8, 8, dtype=torch.uint8), [True], [(0, 0, 0, 0)], scale=(0.6, 1.2), edge=0.1)

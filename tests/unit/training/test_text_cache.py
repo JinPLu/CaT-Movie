@@ -198,6 +198,51 @@ def test_finalize_four_shards_preserves_original_rows_and_recomputes_payload(fou
             assert torch.equal(restored[name].view(torch.uint8), expected[name].view(torch.uint8))
 
 
+@pytest.mark.parametrize("modified", [False, True])
+def test_finalize_missing_prompt_shards_binds_to_original_stage(four_shards, tmp_path: Path, modified: bool):
+    source, shards, prompts, *_ = four_shards
+    target = tmp_path / "original-stage"
+    target.mkdir()
+    source_manifest = source / "manifest.json"
+    contract = json.loads(source_manifest.read_text())
+    target_manifest = target / "manifest.json"
+    target_manifest.write_text(json.dumps(contract))
+    original_rows = [*prompts[:1], {"row_id": 99, "prompt": "already cached", "token_count": 1}, *prompts[1:]]
+    if modified:
+        original_rows[0] = {**original_rows[0], "prompt": "different original prompt"}
+    _jsonl(target / "prompts.jsonl", original_rows)
+    source_manifest.write_text(json.dumps({
+        "complete": False, "source_manifest": str(target_manifest),
+        "encoding_contract": contract["encoding_contract"],
+        "prompt_manifest": "prompts.jsonl", "sample_manifest": "groups.jsonl",
+    }))
+    _jsonl(source / "groups.jsonl", [{"context_rows": [row["row_id"] for row in prompts]}])
+    for shard in shards:
+        manifest = shard / "manifest.json"
+        report = json.loads(manifest.read_text())
+        manifest.write_text(json.dumps({**report, "selected_samples": 1}))
+    output = tmp_path / "additional-contexts"
+
+    if modified:
+        with pytest.raises(ValueError, match="exact ordered subset"):
+            text_cache.finalize_text_cache(inputs=source, shards=shards, output=output)
+        assert not output.exists()
+        return
+
+    result = text_cache.finalize_text_cache(inputs=source, shards=shards, output=output)
+
+    assert result["artifact_type"] == "mspc_training_text_context_cache_shard"
+    assert result["source_manifest"] == str(target_manifest)
+    assert result["complete_stage"] is False
+    assert result["encoded_samples"] == result["selected_samples"] == 0
+    assert result["encoded_prompts"] == result["write_read_verified_prompts"] == len(prompts)
+    assert result["selected_prompt_rows"] == [row["row_id"] for row in prompts]
+    assert result["shard"] == {"index": 0, "count": 1, "assignment": "original row_id modulo shard_count"}
+    assert result["worker_shards"] == 4
+    assert (output / "prompts.jsonl").read_bytes() == (source / "prompts.jsonl").read_bytes()
+    assert not (output / "sample-context-rows.jsonl").exists()
+
+
 @pytest.mark.parametrize("broken", ["missing_shard", "duplicate_path", "duplicate_index"])
 def test_finalize_rejects_incomplete_worker_set_before_publication(four_shards, tmp_path: Path, broken: str):
     source, shards, *_ = four_shards
@@ -515,6 +560,49 @@ def test_reuse_additional_links_exact_new_rows_and_counts_sources(reusable_addit
                                  "source_manifest": str(origin / "manifest.json")})
     assert text_cache._read_rows(output / "context-reuse.jsonl") == expected_records
     assert result["context_file_bytes"] == sum(path.stat().st_size for path in (output / "contexts").iterdir())
+
+
+def test_parallel_reuse_preserves_row_order_from_multiple_sources(reusable_additional_contexts, tmp_path):
+    canonical, target, config, _, additional, prompts = reusable_additional_contexts
+    original = json.loads((canonical / "manifest.json").read_text())
+    original_rows = text_cache._read_rows(canonical / "prompts.jsonl")
+    primary, secondary = tmp_path / "primary-source", tmp_path / "secondary-source"
+    for root, ids in ((primary, {7, 10}), (secondary, {7, 12})):
+        (root / "contexts").mkdir(parents=True)
+        rows = [row for row in original_rows if row["row_id"] in ids]
+        _jsonl(root / "prompts.jsonl", rows)
+        file_bytes = 0
+        for row in rows:
+            filename = f"{row['row_id']}.safetensors"
+            path = root / "contexts" / filename
+            path.hardlink_to(canonical / "contexts" / filename)
+            file_bytes += path.stat().st_size
+        (root / "manifest.json").write_text(json.dumps({
+            **original, "encoded_prompts": len(rows), "write_read_verified_prompts": len(rows),
+            "context_file_bytes": file_bytes,
+            "context_tensor_bytes": sum(row["token_count"] for row in rows) * 4096 * 2,
+        }))
+
+    output = tmp_path / "shared-context"
+    result = text_cache.reuse_text_cache(config, inputs=target, context_source=primary,
+        context_sources=(secondary,), additional_contexts=additional, output=output, workers=8)
+
+    primary_manifest = str(primary / "manifest.json")
+    secondary_manifest = str(secondary / "manifest.json")
+    assert result["context_source_manifests"] == [primary_manifest, secondary_manifest]
+    assert result["reused_prompts_by_source"] == {primary_manifest: 2, secondary_manifest: 1}
+    assert result["newly_encoded_source_prompts"] == 1
+    paths = {
+        0: primary / "contexts/7.safetensors", 1: secondary / "contexts/12.safetensors",
+        2: primary / "contexts/10.safetensors", 91: additional / "contexts/91.safetensors",
+    }
+    assert [row["row_id"] for row in text_cache._read_rows(output / "context-reuse.jsonl")] == [
+        row["row_id"] for row in prompts]
+    for row_id, source in paths.items():
+        link = output / "contexts" / f"{row_id}.safetensors"
+        assert link.readlink() == source
+        assert link.read_bytes() == source.read_bytes()
+    assert result["context_file_bytes"] == sum(path.stat().st_size for path in paths.values())
 
 
 @pytest.mark.parametrize("broken", [

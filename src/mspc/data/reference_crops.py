@@ -71,12 +71,105 @@ def apply_crops(images: torch.Tensor, boxes: Sequence[Sequence[float] | None]) -
     return out
 
 
+def same_camera_slots(shots: Sequence[Mapping[str, Any]], *, reference_shots: Sequence[int],
+                      target_shots: Sequence[int], routing: Sequence[Sequence[int]] | None = None) -> list[bool]:
+    """每张参考是否与它的某个读者同机位（任一方机位缺失也算）；读者按 ``routing``，没有路由时是全部目标镜。"""
+    from mspc.data.reference_routing import camera_setup
+
+    targets = list(target_shots)
+    if routing is not None and len(routing) != len(targets):
+        raise ValueError("routing must match target_shots length")
+    flags = []
+    for slot, source_shot in enumerate(reference_shots):
+        readers = (targets if routing is None else
+                   [targets[t_idx] for t_idx, slots in enumerate(routing) if slot in slots])
+        setup = camera_setup(shots[source_shot])
+        flags.append(setup is None or any(camera_setup(shots[t]) in (None, setup) for t in readers))
+    return flags
+
+
+def shift_same_camera(images: torch.Tensor, flags: Sequence[bool], draws: Sequence[Sequence[float]], *,
+                      scale: Sequence[float], edge: float) -> torch.Tensor:
+    """同机位参考的打乱构图：整帧缩到 ``scale`` 区间内的比例，贴到黑底画布上靠左或靠右的一侧（离边不超过空余宽度的
+    ``edge``），上下位置任意；画面里所有内容都离开原位置，包括包不住、裁不动的大特写（同位置抄的捷径是逐格对齐）。
+
+    ``draws`` 每张参考四个 [0,1) 抽签：比例、横向位置、纵向位置、靠哪一侧。``flags`` 为假的参考原样返回。缩小用抗混叠
+    双线性；不翻转（翻转后居中的脸仍在原位置，且会改变脸的不对称细节）。"""
+    if images.dtype != torch.uint8 or images.ndim != 4 or len(flags) != images.shape[0] or len(draws) != len(flags):
+        raise ValueError("same-camera shift needs uint8 [N,3,H,W] images and one flag and draw per reference")
+    low, high = scale
+    if not 0 < low <= high < 1 or not 0 <= edge <= 0.5:
+        raise ValueError("same-camera shift scale must lie in (0, 1) and edge in [0, 0.5]")
+    height, width = images.shape[2:]
+    out = images.clone()
+    for i, (flag, (u_scale, u_x, u_y, u_side)) in enumerate(zip(flags, draws, strict=True)):
+        if not flag:
+            continue
+        factor = low + (high - low) * u_scale
+        h, w = max(1, round(height * factor)), max(1, round(width * factor))
+        small = torch.nn.functional.interpolate(images[i:i + 1].float(), size=(h, w), mode="bilinear",
+                                                align_corners=False, antialias=True)
+        free_x, free_y = width - w, height - h
+        offset = round(u_x * edge * free_x)
+        left = offset if u_side < 0.5 else free_x - offset
+        top = round(u_y * free_y)
+        canvas = torch.zeros_like(images[i])
+        canvas[:, top:top + h, left:left + w] = small.round().clamp(0, 255).to(torch.uint8)[0]
+        out[i] = canvas
+    return out
+
+
+def select_same_camera_boxes(
+    boxes: Sequence[Sequence[float] | None],
+    *,
+    shots: Sequence[Mapping[str, Any]],
+    reference_shots: Sequence[int],
+    target_shots: Sequence[int],
+    routing: Sequence[Sequence[int]] | None = None,
+) -> list[Sequence[float] | None]:
+    """条件同机位裁剪：只对与实际读者中任一目标镜同机位（或任一方机位缺失）的参考槽位保留裁剪框，
+    其余纯异机位参考返回 ``None``（保持未裁剪原图）。"""
+    from mspc.data.reference_routing import camera_setup
+
+    targets = list(target_shots)
+    if len(boxes) != len(reference_shots):
+        raise ValueError("boxes and reference_shots must have the same length")
+    if routing is not None and len(routing) != len(targets):
+        raise ValueError("routing must match target_shots length")
+    selected: list[Sequence[float] | None] = []
+    for slot, source_shot in enumerate(reference_shots):
+        box = boxes[slot]
+        if box is None:
+            selected.append(None)
+            continue
+        readers = (targets if routing is None else
+                   [targets[t_idx] for t_idx, slots in enumerate(routing) if slot in slots])
+        setup = camera_setup(shots[source_shot])
+        has_same_camera = (setup is None or any(camera_setup(shots[t]) in (None, setup) for t in readers))
+        selected.append(box if has_same_camera else None)
+    return selected
+
+
 class ReferenceCrops:
     """离线裁剪表的读者：逐样本、逐参考核对源镜与帧号和实际抽签一致。"""
 
     def __init__(self, config: Mapping[str, Any], expected_sample_indices: Sequence[int]):
-        if not isinstance(config, Mapping) or set(config) != {"path"}:
-            raise ValueError("reference_crops requires exactly path")
+        if (not isinstance(config, Mapping) or "path" not in config
+                or not set(config) <= {"path", "only_same_camera", "same_camera_shift"}):
+            raise ValueError("reference_crops requires path and optional only_same_camera / same_camera_shift")
+        only_same_camera = config.get("only_same_camera", False)
+        if type(only_same_camera) is not bool:
+            raise ValueError("reference_crops.only_same_camera must be a bool")
+        shift = config.get("same_camera_shift")
+        if shift is not None:
+            if (not isinstance(shift, Mapping) or set(shift) != {"scale", "edge"} or len(shift["scale"]) != 2
+                    or not 0 < shift["scale"][0] <= shift["scale"][1] < 1 or not 0 <= shift["edge"] <= 0.5):
+                raise ValueError("reference_crops.same_camera_shift needs scale [low, high] in (0, 1) and edge in [0, 0.5]")
+            if only_same_camera:
+                raise ValueError("same_camera_shift replaces the crop on same-camera references; "
+                                 "only_same_camera would drop the crops of the other references")
+        self.only_same_camera = only_same_camera
+        self.same_camera_shift = None if shift is None else {"scale": tuple(shift["scale"]), "edge": shift["edge"]}
         self.records = {}
         with Path(config["path"]).open(encoding="utf-8") as handle:
             for line in handle:

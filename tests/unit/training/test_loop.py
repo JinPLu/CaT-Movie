@@ -432,6 +432,114 @@ def test_unsupported_scheduler_type_is_rejected() -> None:
         loop.build_lr_scheduler(optimizer, args, num_processes=1)
 
 
+def _cosine_scheduler(
+    *,
+    warmup_steps: int,
+    max_train_steps: int,
+    min_lr_ratio: float,
+    num_processes: int,
+    learning_rate: float = 3.5e-5,
+):
+    parameter = torch.nn.Parameter(torch.zeros(()))
+    optimizer = torch.optim.SGD([parameter], lr=learning_rate)
+    args = types.SimpleNamespace(
+        lr_scheduler_type="cosine_with_warmup",
+        warmup_steps=warmup_steps,
+        max_train_steps=max_train_steps,
+        min_lr_ratio=min_lr_ratio,
+    )
+    scheduler = loop.build_lr_scheduler(optimizer, args, num_processes=num_processes)
+    return optimizer, scheduler
+
+
+@pytest.mark.parametrize("num_processes", [1, 8])
+def test_cosine_with_warmup_matches_exact_curve_across_world_sizes(num_processes: int) -> None:
+    import math
+
+    lr = 3.5e-5
+    optimizer, scheduler = _cosine_scheduler(
+        warmup_steps=4, max_train_steps=12, min_lr_ratio=0.1, num_processes=num_processes, learning_rate=lr
+    )
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.0)
+    _advance_optimizer_updates(optimizer, scheduler, 2, num_processes)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.5 * lr)
+    _advance_optimizer_updates(optimizer, scheduler, 2, num_processes)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(lr)
+    _advance_optimizer_updates(optimizer, scheduler, 4, num_processes)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.55 * lr)
+    _advance_optimizer_updates(optimizer, scheduler, 2, num_processes)
+    expected = lr * (0.1 + 0.45 * (1.0 + math.cos(math.pi * 6 / 8)))
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(expected)
+    _advance_optimizer_updates(optimizer, scheduler, 2, num_processes)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.1 * lr)
+    _advance_optimizer_updates(optimizer, scheduler, 3, num_processes)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.1 * lr)
+
+
+def test_cosine_with_zero_warmup_starts_at_peak_and_decays() -> None:
+    lr = 3.5e-5
+    optimizer, scheduler = _cosine_scheduler(
+        warmup_steps=0, max_train_steps=10, min_lr_ratio=0.1, num_processes=8, learning_rate=lr
+    )
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(lr)
+    _advance_optimizer_updates(optimizer, scheduler, 5, 8)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.55 * lr)
+    _advance_optimizer_updates(optimizer, scheduler, 5, 8)
+    assert optimizer.param_groups[0]["lr"] == pytest.approx(0.1 * lr)
+
+
+def test_cosine_with_warmup_resumes_seamlessly_from_step_3000_state_dict() -> None:
+    lr = 3.5e-5
+    full_opt, full_sched = _cosine_scheduler(
+        warmup_steps=200, max_train_steps=6000, min_lr_ratio=0.1, num_processes=8, learning_rate=lr
+    )
+    _advance_optimizer_updates(full_opt, full_sched, 3000, 8)
+    saved_opt = full_opt.state_dict()
+    saved_sched = full_sched.state_dict()
+    lr_at_3000 = full_opt.param_groups[0]["lr"]
+
+    resumed_opt, resumed_sched = _cosine_scheduler(
+        warmup_steps=200, max_train_steps=6000, min_lr_ratio=0.1, num_processes=8, learning_rate=lr
+    )
+    resumed_opt.load_state_dict(saved_opt)
+    resumed_sched.load_state_dict(saved_sched)
+    assert resumed_opt.param_groups[0]["lr"] == lr_at_3000
+
+    for _ in range(3001, 6001):
+        _advance_optimizer_updates(full_opt, full_sched, 1, 8)
+        _advance_optimizer_updates(resumed_opt, resumed_sched, 1, 8)
+        assert resumed_opt.param_groups[0]["lr"] == full_opt.param_groups[0]["lr"]
+    assert resumed_opt.param_groups[0]["lr"] == pytest.approx(0.1 * lr)
+
+
+def test_cosine_with_warmup_rejects_invalid_arguments() -> None:
+    parameter = torch.nn.Parameter(torch.zeros(()))
+    optimizer = torch.optim.SGD([parameter], lr=1e-5)
+    with pytest.raises(ValueError, match="max_train_steps > warmup_steps"):
+        loop.build_lr_scheduler(
+            optimizer,
+            types.SimpleNamespace(
+                lr_scheduler_type="cosine_with_warmup", warmup_steps=200, max_train_steps=200, min_lr_ratio=0.1
+            ),
+            num_processes=8,
+        )
+    with pytest.raises(ValueError, match="min_lr_ratio"):
+        loop.build_lr_scheduler(
+            optimizer,
+            types.SimpleNamespace(
+                lr_scheduler_type="cosine_with_warmup", warmup_steps=200, max_train_steps=6000, min_lr_ratio=0.0
+            ),
+            num_processes=8,
+        )
+    with pytest.raises(ValueError, match="denominated in optimizer updates"):
+        loop.build_lr_scheduler(
+            optimizer,
+            types.SimpleNamespace(
+                lr_scheduler_type="cosine_with_warmup", warmup_steps=200, max_train_steps=6000, min_lr_ratio=0.1
+            ),
+        )
+
+
 def test_one_step_backs_off_exactly_once_whatever_the_sample_is() -> None:
     """每 rank 每步的同步边界数与样本内容无关——镜级平铺之后由构造保证。
 
@@ -857,3 +965,19 @@ def test_step_peaks_are_per_step_and_the_run_peak_keeps_earlier_steps(monkeypatc
     for microstep in ({"cuda_peak_reserved_bytes": 6, "forward": 1.0}, {"cuda_peak_reserved_bytes": 4, "forward": 2.0}):
         loop.accumulate_update_timings(update, microstep)
     assert update == {"cuda_peak_reserved_bytes": 6, "forward": 3.0}
+
+
+def test_setup_objects_leave_the_automatic_collector_scan_and_return_on_unfreeze() -> None:
+    """长期对象冻结后不再被全量回收遍历（11-17 每约 224 个 microstep 一次约 8 秒的卡顿）；训练结束交还回收器。"""
+    import gc
+    loop = _load_loop_module()
+    long_lived = [{"sample_index": index} for index in range(1000)]
+    try:
+        frozen = loop.freeze_setup_objects()
+        assert frozen >= len(long_lived) and gc.get_freeze_count() == frozen
+        tracked = {id(item) for item in gc.get_objects()}
+        assert id(long_lived) not in tracked and not any(id(item) in tracked for item in long_lived)
+    finally:
+        gc.unfreeze()
+    assert gc.get_freeze_count() == 0
+    assert id(long_lived) in {id(item) for item in gc.get_objects()}

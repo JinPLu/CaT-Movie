@@ -66,5 +66,5 @@ def test_reference_selection_reads_the_same_carried_outfit_as_the_shot_text():
     assert [index for index in range(9) if any(entry['name'] == 'Character 1' and entry.get('outfit') == 'white underwear'
                                                for entry in board['shots'][index]['present'])] == [8]
     assert [change['what'] for change in board['shots'][7]['changes'] if change['name'] == 'Character 1'] == ['outfit']
-    picked = select_references(board, span=(9, 10), candidates=range(9), frames_max=10)
+    picked = select_references(board, span=(9, 10), candidates=range(9), frames_max=10, distinct_camera=False)
     assert 7 in picked and 8 not in picked and reference_position(board['shots'][7]) == 'last'

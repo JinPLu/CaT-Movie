@@ -217,6 +217,10 @@ def _layout_fraction(value: Any, location: str) -> float | None:
     return float(number)
 
 
+def _fail_shift_scale(location: str):
+    raise ExperimentConfigError(f"{location} must be a two-number list [low, high]")
+
+
 def _boolean(value: Any, location: str) -> bool:
     if type(value) is not bool:
         raise ExperimentConfigError(f"{location} must be a boolean")
@@ -270,7 +274,7 @@ def _parse_optimization(value: Any) -> dict[str, Any]:
         "learning_rate": lambda item, loc: _number(item, loc),
         "weight_decay": lambda item, loc: _number(item, loc),
         "lr_scheduler_type": lambda item, loc: _one_of(
-            item, loc, {"constant", "constant_with_warmup"}
+            item, loc, {"constant", "constant_with_warmup", "cosine_with_warmup"}
         ),
     }
     if raw.get("lr_scheduler_type") == "constant_with_warmup":
@@ -279,6 +283,14 @@ def _parse_optimization(value: Any) -> dict[str, Any]:
         # warmup_steps is denominated in optimizer updates, not micro-steps.
         validators["warmup_steps"] = lambda item, loc: _integer(item, loc, minimum=0)
         return _fields(raw, location="optimization", validators=validators)
+    if raw.get("lr_scheduler_type") == "cosine_with_warmup":
+        # Linear warmup then cosine decay to min_lr_ratio * learning_rate over training.max_train_steps.
+        validators["warmup_steps"] = lambda item, loc: _integer(item, loc, minimum=0)
+        validators["min_lr_ratio"] = lambda item, loc: _number(item, loc)
+        parsed = _fields(raw, location="optimization", validators=validators)
+        if not 0.0 < parsed["min_lr_ratio"] <= 1.0:
+            raise ExperimentConfigError("optimization.min_lr_ratio must be in (0, 1]")
+        return parsed
     validators["lr_scheduler_factor"] = lambda item, loc: _number(item, loc)
     validators["lr_scheduler_total_iters"] = lambda item, loc: _integer(
         item, loc, minimum=1
@@ -546,11 +558,14 @@ def _parse_wan22_diffsynth_inference(
             {
                 "pretrained_model_paths",
                 "full_dit_checkpoint",
+                "lora_checkpoint",
                 "training_output_checkpoint",
                 "expert_lora_checkpoints",
             },
         ),
         "dit_checkpoint": lambda v, p: _nullable_path(v, p, base_dir),
+        # 单专家 LoRA 推理：dit_checkpoint 指向单份 LoRA 导出，这里给训练时的 lora_v1 配方；只配 weight_source='lora_checkpoint'。
+        "lora": lambda v, p: None if v is None else parse_wan22_dit_parameter_freeze(v, p),
         # Wan2.2-A14B 两个去噪专家（``mspc.models.noise_expert``）：model.paths.dit 是高噪专家，这里给低噪专家、两份 LoRA 导出、
         # 训练时的 LoRA 配方与切换边界；只配 weight_source='expert_lora_checkpoints'。
         "experts": lambda v, p: None if v is None else _fields(v, location=p, validators={
@@ -566,6 +581,7 @@ def _parse_wan22_diffsynth_inference(
     defaults: dict[str, Any] = {
         "smoke_case_id": None,
         "long_shot_rope": None,
+        "lora": None,
         "experts": None,
     }
     parsed = _fields(
@@ -574,6 +590,11 @@ def _parse_wan22_diffsynth_inference(
         validators=validators,
         defaults=defaults,
     )
+    if (parsed["weight_source"] == "lora_checkpoint") != (parsed["lora"] is not None):
+        raise ExperimentConfigError("inference.lora goes with weight_source='lora_checkpoint' and only with it")
+    if parsed["lora"] is not None:
+        if parsed["lora"]["recipe"] != WAN22_DIT_PARAMETER_FREEZE_LORA_V1 or parsed["experts"] is not None:
+            raise ExperimentConfigError("inference.lora needs a lora_v1 recipe and experts=null")
     if (parsed["weight_source"] == "expert_lora_checkpoints") != (parsed["experts"] is not None):
         raise ExperimentConfigError("inference.experts goes with weight_source='expert_lora_checkpoints' and only with it")
     if isinstance(parsed["cfg_scale"], Mapping) and parsed["experts"] is None:
@@ -592,10 +613,10 @@ def _parse_wan22_diffsynth_inference(
                 raise ExperimentConfigError(
                     f"inference.enabled=true requires non-null operands: {missing}"
                 )
-        if parsed["weight_source"] == "full_dit_checkpoint":
+        if parsed["weight_source"] in ("full_dit_checkpoint", "lora_checkpoint"):
             if parsed["dit_checkpoint"] is None:
                 raise ExperimentConfigError(
-                    "inference.weight_source='full_dit_checkpoint' requires "
+                    f"inference.weight_source={parsed['weight_source']!r} requires "
                     "a non-null dit_checkpoint"
                 )
         elif parsed["weight_source"] == "training_output_checkpoint":
@@ -825,8 +846,10 @@ def parse_experiment_mapping(
         "hf_cache": lambda v, p: _path(v, p, base),
         "offline_hf": lambda v, p: _boolean(v, p),
     })
-    if runtime["deepspeed"] is not None and runtime["deepspeed"]["zero_optimization"]["stage"] != 2:
-        raise ExperimentConfigError("runtime.deepspeed.zero_optimization.stage must be 2 for this training path")
+    # ZeRO-2 每个 microstep 都归约并同步一次；ZeRO-1 只在累积边界归约一次（DeepSpeed engine.allreduce_gradients），
+    # 对只训 LoRA 的小参数量更省。两者同一个优化器类与状态格式。
+    if runtime["deepspeed"] is not None and runtime["deepspeed"]["zero_optimization"]["stage"] not in (1, 2):
+        raise ExperimentConfigError("runtime.deepspeed.zero_optimization.stage must be 1 or 2 for this training path")
     if model["type"] == "wan22_diffsynth" and runtime["deepspeed"] is not None:
         ds = runtime["deepspeed"]
         if ds["fp16"]["enabled"] or ds["bf16"]["enabled"]:
@@ -897,10 +920,18 @@ def parse_experiment_mapping(
                 "max_frames": lambda x, q: _integer(x, q, minimum=1),
             }),
             "reference_row_dropout_p": lambda v, p: None if v is None else _dropout_probability(v, p),
-            "reference_policy": lambda v, p: _one_of(v, p, {"random_frame"}),
+            "reference_policy": lambda v, p: _one_of(v, p, {"random_frame", "distinct_camera_first",
+                                                              "distinct_camera_only", "distinct_camera_shared_only",
+                                                              "distinct_camera_character_coverage"}),
             "reference_crops": lambda v, p: None if v is None else _fields(v, location=p, validators={
                 "path": lambda x, q: _path(x, q, base),
-            }),
+                "only_same_camera": _boolean,
+                "same_camera_shift": lambda x, q: None if x is None else _fields(x, location=q, validators={
+                    "scale": lambda s, r: [_number(item, f"{r}[{i}]", minimum=0) for i, item in enumerate(s)]
+                    if isinstance(s, list) and len(s) == 2 else _fail_shift_scale(r),
+                    "edge": lambda e, r: _number(e, r, minimum=0),
+                }),
+            }, defaults={"only_same_camera": False, "same_camera_shift": None}),
             "workload_cap": lambda v, p: None if v is None else _fields(v, location=p, validators={
                 "latent_frames": lambda x, q: _integer(x, q, minimum=1),
                 "attention_frame_pairs": lambda x, q: _integer(x, q, minimum=1),
@@ -1078,10 +1109,11 @@ def parse_experiment_mapping(
         training_validators["activation_checkpointing"] = lambda v, p: _one_of(
             v, p, WAN22_ACTIVATION_CHECKPOINTING_POLICIES
         )
-        if "self_attention_cache_layers" in root["training"]:
-            training_validators["self_attention_cache_layers"] = (
-                lambda v, p: None if v is None else _integer(v, p, minimum=1)
-            )
+        for layer_field in ("self_attention_cache_layers", "no_recompute_suffix_layers"):
+            if layer_field in root["training"]:
+                training_validators[layer_field] = (
+                    lambda v, p: None if v is None else _integer(v, p, minimum=1)
+                )
         if "workload_cost" in root["training"]:
             training_validators["workload_cost"] = lambda v, p: None if v is None else _fields(
                 v, location=p, validators={
@@ -1141,6 +1173,11 @@ def parse_experiment_mapping(
             raise ExperimentConfigError(
                 "training.self_attention_cache_layers requires activation_checkpointing='save_self_attention'"
             )
+    if (training.get("no_recompute_suffix_layers") is not None
+            and training["activation_checkpointing"] != "save_self_attention"):
+        raise ExperimentConfigError(
+            "training.no_recompute_suffix_layers requires activation_checkpointing='save_self_attention'"
+        )
     if workload_cost is not None:
         if not any(value > 0 for value in workload_cost.values()):
             raise ExperimentConfigError("training.workload_cost needs at least one positive coefficient")
@@ -1225,6 +1262,12 @@ def parse_experiment_mapping(
                 "pipeline_inputs must be a mapping for DiffSynth models and null otherwise"
             )
     optimization = _parse_optimization(root["optimization"])
+    if optimization["lr_scheduler_type"] == "cosine_with_warmup":
+        if training["max_train_steps"] is None or training["max_train_steps"] <= optimization["warmup_steps"]:
+            raise ExperimentConfigError(
+                "optimization.lr_scheduler_type='cosine_with_warmup' requires "
+                "training.max_train_steps > optimization.warmup_steps"
+            )
     dataloader = _fields(
         root["dataloader"],
         location="dataloader",

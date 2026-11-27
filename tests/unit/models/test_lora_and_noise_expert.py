@@ -106,3 +106,88 @@ def test_lora_export_round_trips_into_a_fresh_mounted_dit():
     assert torch.equal(_forward(fresh), _forward(trained))
     with pytest.raises(ValueError, match="differ"):
         load_lora_state_dict(fresh, dict(list(export.items())[1:]))
+
+
+def test_single_expert_lora_checkpoint_inference_runtime_and_warm_start(monkeypatch, tmp_path):
+    from types import SimpleNamespace
+    from safetensors.torch import save_file
+    from mspc.inference import wan22 as infer_wan22
+    from mspc.training.backends import wan22 as train_wan22
+
+    base_dit = _tiny_dit()
+    base_state = {k: v.detach().clone() for k, v in base_dit.state_dict().items()}
+    base_output = _forward(base_dit)
+
+    zero_dit = _tiny_dit()
+    zero_dit.load_state_dict(base_state)
+    apply_named_dit_freeze(zero_dit, LORA)
+    zero_export = {n: p.detach().clone() for n, p in zero_dit.named_parameters() if p.requires_grad}
+    zero_path = tmp_path / "step-0.safetensors"
+    save_file(zero_export, str(zero_path))
+
+    trained_dit = _tiny_dit()
+    trained_dit.load_state_dict(base_state)
+    apply_named_dit_freeze(trained_dit, LORA)
+    torch.manual_seed(13)
+    for n, p in trained_dit.named_parameters():
+        if p.requires_grad:
+            p.data.normal_(0.0, 0.02)
+    trained_output = _forward(trained_dit)
+    assert not torch.equal(trained_output, base_output)
+    trained_export = {n: p.detach().clone() for n, p in trained_dit.named_parameters() if p.requires_grad}
+    trained_path = tmp_path / "step-40.safetensors"
+    save_file(trained_export, str(trained_path))
+
+    def fake_pipe(*, low_noise_dit=None, **kwargs):
+        assert low_noise_dit is None
+        dit = _tiny_dit()
+        dit.load_state_dict(base_state)
+        pipe = SimpleNamespace(dit=dit, units=[], freeze_except=lambda names: None)
+        return pipe, object
+
+    monkeypatch.setattr(infer_wan22, "load_pure_t2v_pipeline", fake_pipe)
+    model_cfg = {
+        "diffsynth_root": str(tmp_path),
+        "temporal_position_mode": "global_time_native_rope_v1",
+        "self_attention_policy": "holocine_first_frame",
+        "memory_prefix": None,
+        "spatial_layout": None,
+        "planner_tokens": None,
+        "source_identity": None,
+    }
+    base_infer_cfg = {
+        "device": "cpu",
+        "model_paths": {},
+        "weight_source": "lora_checkpoint",
+        "lora": LORA,
+    }
+
+    zero_rt = infer_wan22.Wan22InferenceRuntime(
+        model_cfg=model_cfg, inference_cfg=base_infer_cfg, pipeline_cfg={}, dit_ckpt=str(zero_path)
+    )
+    assert zero_rt.dit_checkpoint_path == zero_path.resolve()
+    assert not zero_rt.pipe.dit.training
+    assert all(not p.requires_grad for p in zero_rt.pipe.dit.parameters())
+    assert torch.equal(_forward(zero_rt.pipe.dit), base_output)
+
+    trained_rt = infer_wan22.Wan22InferenceRuntime(
+        model_cfg=model_cfg, inference_cfg=base_infer_cfg, pipeline_cfg={}, dit_ckpt=str(trained_path)
+    )
+    assert torch.equal(_forward(trained_rt.pipe.dit), trained_output)
+
+    # Weights-only warm-start in training _build_model dispatches load_lora_state_dict for lora_v1.
+    warm_dit = _tiny_dit()
+    warm_dit.load_state_dict(base_state)
+    apply_named_dit_freeze(warm_dit, LORA)
+    fake_module = SimpleNamespace(dit=warm_dit, _text_context_resolver=None)
+    monkeypatch.setattr(train_wan22, "Wan22DiffSynthTrainingModule", lambda **kwargs: fake_module)
+    warm_args = SimpleNamespace(
+        model_cfg=model_cfg,
+        training_cfg={"dit_parameter_freeze": LORA},
+        pipeline_cfg={},
+        checkpoint_path=str(trained_path),
+    )
+    loaded_module = train_wan22._build_model(
+        warm_args, torch.device("cpu"), component_mode="cached_training", load_checkpoint=True
+    )
+    assert torch.equal(_forward(loaded_module.dit), trained_output)

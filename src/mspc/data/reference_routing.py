@@ -114,6 +114,93 @@ def route_references(shots: Sequence[Mapping[str, Any]], *, reference_shots: Seq
     return tuple(tuple(entry) for entry in routing), tuple(reasons)
 
 
+def camera_setup(shot: Mapping[str, Any]) -> tuple[Any, Any, Any] | None:
+    """机位＝地点、景别、角度三项（标注 ``place``、``camera.shot_size``、``camera.angle``）。
+
+    没写角度按平视：文字编译器不写平视（``DEFAULT_CAMERA``），规划器计划因此约九成镜不写角度，判官出切镜题也按平视读
+    （``question_writer.planned_difference``）。缺地点或景别为 None（未知）。"""
+    from mspc.data.shot_text import DEFAULT_ANGLE
+    camera = shot.get("camera") or {}
+    setup = (shot.get("place"), camera.get("shot_size"), camera.get("angle") or DEFAULT_ANGLE)
+    return None if None in setup else setup
+
+
+def distinct_camera_first(shots: Sequence[Mapping[str, Any]], *, candidates: Sequence[int],
+                          target_shots: Sequence[int], count: int, limit: int,
+                          same_camera_fallback: bool, fill_unrelated: bool) -> list[int]:
+    """异机位优先选参考；是否用同机位兜底（``same_camera_fallback``）与是否用无关镜补满张数（``fill_unrelated``）均显式声明。
+
+    ``candidates`` 已按随机次序排好。每张候选按 :func:`route_references` 的同一规则找它的读者（共有任一在场名字的目标镜）：
+    有读者且与每个读者机位都不同 → 第一档；有读者但与某个读者同机位（或任一方机位未知）→ 第二档；没有读者 → 无关镜。
+    先取第一档到 ``count`` 张；``same_camera_fallback`` 为真时，某个有在场名字的目标镜仍没有共有名字的参考就从第二档补一张给它；
+    ``fill_unrelated`` 为真时剩下名额用无关镜补，为假时不再补无关镜（无异机位共有实体候选的窗口返回空表，自然退化为纯窗内首潜帧互读）。
+    总数不超过 ``limit``。
+    """
+    if type(same_camera_fallback) is not bool or type(fill_unrelated) is not bool:
+        raise TypeError("same_camera_fallback and fill_unrelated must be explicit booleans")
+    names = [{entry["name"] for entry in shot["present"]} for shot in shots]
+    targets = list(target_shots)
+    distinct, same, unrelated = [], [], []
+    for position in candidates:
+        readers = [t for t in targets if names[position] & names[t]]
+        if not readers:
+            unrelated.append(position)
+            continue
+        setup = camera_setup(shots[position])
+        clash = setup is None or any(camera_setup(shots[t]) in (None, setup) for t in readers)
+        (same if clash else distinct).append(position)
+    chosen = distinct[:min(count, limit)]
+    for target in targets if same_camera_fallback else ():
+        if len(chosen) >= limit:
+            break
+        if names[target] and not any(names[p] & names[target] for p in chosen):
+            fallback = [p for p in same if names[p] & names[target] and p not in chosen]
+            if fallback:
+                chosen.append(fallback[0])
+    if fill_unrelated:
+        chosen += unrelated[:max(0, min(count, limit) - len(chosen))]
+    return sorted(chosen)
+
+
+def distinct_camera_character_coverage(shots: Sequence[Mapping[str, Any]], *, candidates: Sequence[int],
+                                       target_shots: Sequence[int], count: int, limit: int) -> list[int]:
+    """异机位优先、按在场实体逐个补齐、只补一张同地点场景镜；不补与本窗无关的镜。
+
+    ``candidates`` 已按随机次序排好，分档同 :func:`distinct_camera_first`（第一档异机位共有实体、第二档同机位或机位未知的
+    共有实体、无读者的为无关镜）。先取第一档到 ``count`` 张；再对每个目标镜的每个在场名字（按 ``present`` 顺序）检查已选参考
+    里有没有它，没有就先从第一档、再从第二档补一张含它的镜（只用异机位兜底按「整镜」判的旧做法会漏掉双人镜里的第二个人）；
+    最后若目标镜有地点，从与某个目标镜同地点的无关镜里补一张在场名字最少的作场景参考（同数按随机次序），对应推理时
+    :func:`mspc.data.reference_selection.select_references` 每个目标镜加的一张地点参考。与地点无关、与本窗无共有实体的镜
+    一律不选，所以全窗广播的参考只剩这一张同地点场景镜。总数不超过 ``limit``。
+    """
+    names = [{entry["name"] for entry in shot["present"]} for shot in shots]
+    targets = list(target_shots)
+    distinct, same, unrelated = [], [], []
+    for position in candidates:
+        readers = [t for t in targets if names[position] & names[t]]
+        if not readers:
+            unrelated.append(position)
+            continue
+        setup = camera_setup(shots[position])
+        clash = setup is None or any(camera_setup(shots[t]) in (None, setup) for t in readers)
+        (same if clash else distinct).append(position)
+    chosen = distinct[:min(count, limit)]
+    for target in targets:
+        for name in (entry["name"] for entry in shots[target]["present"]):
+            if len(chosen) >= limit:
+                break
+            if any(name in names[p] for p in chosen):
+                continue
+            pick = next((p for tier in (distinct, same) for p in tier if name in names[p] and p not in chosen), None)
+            if pick is not None:
+                chosen.append(pick)
+    places = {shots[t].get("place") for t in targets} - {None}
+    scene = [p for p in unrelated if shots[p].get("place") in places]
+    if scene and len(chosen) < limit:
+        chosen.append(min(scene, key=lambda p: len(names[p])))
+    return sorted(chosen)
+
+
 def reference_readers(policy: str, shots: Sequence[Mapping[str, Any]], *, reference_shots: Sequence[int],
                       target_shots: Sequence[int]) -> tuple[ReferenceRouting, tuple[str, ...]]:
     """按 ``model.memory_prefix.attention_policy`` 决定每张参考给哪些目标镜读；训练与推理的唯一分派。

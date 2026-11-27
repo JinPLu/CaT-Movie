@@ -95,3 +95,78 @@ def test_window_shared_policy_gives_every_target_all_references_on_the_real_bloc
     assert routed == route_references(annotation["shots"], reference_shots=[0, 3, 4], target_shots=range(1, 3))
     with pytest.raises(ValueError):
         reference_readers("bidirectional_v1", annotation["shots"], reference_shots=[0], target_shots=[1])
+
+
+def _shot(names, place="Location 1", size="medium", angle="eye_level"):
+    return {"present": [{"name": n} for n in names], "place": place, "camera": {"shot_size": size, "angle": angle}}
+
+
+def test_distinct_camera_first_prefers_other_setups_and_keeps_one_same_setup_only_as_fallback():
+    from mspc.data.reference_routing import distinct_camera_first
+    shots = [
+        _shot(["Character 1"]),                       # 0 同机位、共有人物 1
+        _shot(["Character 1"], size="close_up"),      # 1 异机位、共有人物 1
+        _shot(["Character 2"]),                       # 2 同机位、共有人物 2（人物 2 没有异机位候选）
+        _shot(["Character 9"]),                       # 3 无关镜
+        _shot(["Character 1"]),                       # 4 目标镜：人物 1 中景
+        _shot(["Character 2"]),                       # 5 目标镜：人物 2 中景
+    ]
+    chosen = distinct_camera_first(shots, candidates=[0, 1, 2, 3], target_shots=[4, 5], count=4, limit=10,
+                                   same_camera_fallback=True, fill_unrelated=True)
+    assert 1 in chosen and 2 in chosen and 0 not in chosen   # 人物 1 有异机位就不给同机位；人物 2 只能兜底
+    assert 3 in chosen                                       # 空位用无关镜补回张数
+    assert chosen == sorted(chosen)
+
+
+def test_distinct_camera_only_never_gives_a_same_setup_reference_and_fills_with_unrelated_shots():
+    from mspc.data.reference_routing import distinct_camera_first
+    shots = [
+        _shot(["Character 1"]),                       # 0 同机位、共有人物 1
+        _shot(["Character 1"], size="close_up"),      # 1 异机位、共有人物 1
+        _shot(["Character 2"]),                       # 2 同机位、共有人物 2（兜底时会被补进来）
+        _shot(["Character 9"]),                       # 3 无关镜
+        _shot(["Character 8"]),                       # 4 无关镜
+        _shot(["Character 1"]),                       # 5 目标镜
+        _shot(["Character 2"]),                       # 6 目标镜
+    ]
+    chosen = distinct_camera_first(shots, candidates=[0, 1, 2, 3, 4], target_shots=[5, 6], count=3, limit=10,
+                                   same_camera_fallback=False, fill_unrelated=True)
+    assert chosen == [1, 3, 4]                               # 不给同机位，名额用无关镜补回
+
+
+def test_distinct_camera_shared_only_drops_same_setup_and_unrelated_to_empty():
+    from mspc.data.reference_routing import distinct_camera_first
+    shots = [
+        _shot(["Character 1"]),                       # 0 同机位、共有人物 1
+        _shot(["Character 1"], size="close_up"),      # 1 异机位、共有人物 1
+        _shot(["Character 2"]),                       # 2 同机位、共有人物 2
+        _shot(["Character 9"]),                       # 3 无关镜
+        _shot(["Character 1"]),                       # 4 目标镜
+        _shot(["Character 2"]),                       # 5 目标镜
+    ]
+    assert distinct_camera_first(shots, candidates=[0, 1, 2, 3], target_shots=[4, 5], count=4, limit=10,
+                                 same_camera_fallback=False, fill_unrelated=False) == [1]
+    assert distinct_camera_first(shots, candidates=[0, 2, 3], target_shots=[4, 5], count=4, limit=10,
+                                 same_camera_fallback=False, fill_unrelated=False) == []
+    with pytest.raises(TypeError, match="explicit booleans"):
+        distinct_camera_first(shots, candidates=[0, 1], target_shots=[4], count=2, limit=10,
+                              same_camera_fallback=False, fill_unrelated=1)
+
+
+def test_camera_setup_reads_a_missing_angle_as_eye_level():
+    from mspc.data.reference_routing import camera_setup
+    written = _shot(["Character 1"], angle="eye-level shot")
+    omitted = {**written, "camera": {"shot_size": "medium"}}
+    assert camera_setup(omitted) == camera_setup(written) != camera_setup(_shot(["Character 1"], angle="high angle shot"))
+    assert camera_setup({**written, "camera": {"angle": "eye-level shot"}}) is None
+
+
+def test_distinct_camera_first_treats_unknown_setups_as_same_and_respects_the_limit():
+    from mspc.data.reference_routing import camera_setup, distinct_camera_first
+    unknown = {"present": [{"name": "Character 1"}], "place": None, "camera": {}}
+    assert camera_setup(unknown) is None
+    shots = [unknown] + [_shot(["Character 1"], angle=f"a{i}") for i in range(12)] + [_shot(["Character 1"])]
+    target = len(shots) - 1
+    chosen = distinct_camera_first(shots, candidates=list(range(target)), target_shots=[target], count=12, limit=10,
+                                   same_camera_fallback=True, fill_unrelated=True)
+    assert len(chosen) == 10 and 0 not in chosen

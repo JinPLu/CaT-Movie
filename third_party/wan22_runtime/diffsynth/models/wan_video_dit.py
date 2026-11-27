@@ -34,29 +34,47 @@ try:
     SAGE_ATTN_AVAILABLE = True
 except ModuleNotFoundError:
     SAGE_ATTN_AVAILABLE = False
-    
-    
+
+
+def attention_backend(device: torch.device) -> str:
+    """The kernel family ``flash_attention`` runs on this device (the only owner of that choice).
+
+    Selective activation checkpointing saves this backend's forward operator
+    (``diffsynth.core.gradient.gradient_checkpoint``), so both read the same answer.
+    """
+    if device.type == "cuda" and torch.cuda.get_device_capability(device)[0] >= 10:
+        # Blackwell (sm100): flash-attn 2 runs its old MMA path there; cuDNN attention is 3.2x faster at the
+        # renderer's shapes (DiT 1.49x end to end, 11-14 measurement) with the same error against fp32.
+        return "cudnn"
+    if FLASH_ATTN_3_AVAILABLE:
+        return "flash_attn_3"
+    if FLASH_ATTN_2_AVAILABLE:
+        return "flash_attn_2"
+    if SAGE_ATTN_AVAILABLE:
+        return "sage"
+    return "sdpa"
+
+
 def flash_attention(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, num_heads: int, compatibility_mode=False):
     # Official Wan normalizes/rotates Q/K in FP32, runs the attention kernel in
     # V's AMP dtype, then restores Q's dtype before the output projection.
     out_dtype = q.dtype
     q, k = q.to(v.dtype), k.to(v.dtype)
+    backend = None if compatibility_mode else attention_backend(q.device)
     if compatibility_mode:
         q = rearrange(q, "b s (n d) -> b n s d", n=num_heads)
         k = rearrange(k, "b s (n d) -> b n s d", n=num_heads)
         v = rearrange(v, "b s (n d) -> b n s d", n=num_heads)
         x = F.scaled_dot_product_attention(q, k, v)
         x = rearrange(x, "b n s d -> b s (n d)", n=num_heads)
-    elif q.is_cuda and torch.cuda.get_device_capability(q.device)[0] >= 10:
-        # Blackwell (sm100): flash-attn 2 runs its old MMA path there; cuDNN attention is 3.2x faster at the
-        # renderer's shapes (DiT 1.49x end to end, 11-14 measurement) with the same error against fp32.
+    elif backend == "cudnn":
         q = rearrange(q, "b s (n d) -> b n s d", n=num_heads)
         k = rearrange(k, "b s (n d) -> b n s d", n=num_heads)
         v = rearrange(v, "b s (n d) -> b n s d", n=num_heads)
         with sdpa_kernel(SDPBackend.CUDNN_ATTENTION):
             x = F.scaled_dot_product_attention(q, k, v)
         x = rearrange(x, "b n s d -> b s (n d)", n=num_heads)
-    elif FLASH_ATTN_3_AVAILABLE:
+    elif backend == "flash_attn_3":
         q = rearrange(q, "b s (n d) -> b s n d", n=num_heads)
         k = rearrange(k, "b s (n d) -> b s n d", n=num_heads)
         v = rearrange(v, "b s (n d) -> b s n d", n=num_heads)
@@ -64,13 +82,13 @@ def flash_attention(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, num_heads
         if isinstance(x,tuple):
             x = x[0]
         x = rearrange(x, "b s n d -> b s (n d)", n=num_heads)
-    elif FLASH_ATTN_2_AVAILABLE:
+    elif backend == "flash_attn_2":
         q = rearrange(q, "b s (n d) -> b s n d", n=num_heads)
         k = rearrange(k, "b s (n d) -> b s n d", n=num_heads)
         v = rearrange(v, "b s (n d) -> b s n d", n=num_heads)
         x = flash_attn.flash_attn_func(q, k, v)
         x = rearrange(x, "b s n d -> b s (n d)", n=num_heads)
-    elif SAGE_ATTN_AVAILABLE:
+    elif backend == "sage":
         q = rearrange(q, "b s (n d) -> b n s d", n=num_heads)
         k = rearrange(k, "b s (n d) -> b n s d", n=num_heads)
         v = rearrange(v, "b s (n d) -> b n s d", n=num_heads)
@@ -327,14 +345,16 @@ class SelfAttention(nn.Module):
             x = planner_self_attention(
                 self.attn, q, k, v, layout=planner_layout,
             )
-        elif self.self_attention_policy == "holocine_first_frame":
+        elif self.self_attention_policy in ("holocine_first_frame", "holocine_own_shot_only"):
             if memory_attention_policy is not None and memory_attention_policy not in ROUTED_MEMORY_ATTENTION_POLICIES:
                 raise ValueError(f"HoloCine communication reads references only under one of {ROUTED_MEMORY_ATTENTION_POLICIES!r}")
             scope = ("first_latent"
                      if memory_attention_policy == MEMORY_ATTENTION_POLICY_ROUTED_FIRST_LATENT_SELF_ONLY_V1
                      else "all_latents")
             x = self.routed_shot_attention(q, k, v, latent_shot_groups, tokens_per_frame, prefix_frames=prefix_frames,
-                                           routing=reference_routing, freqs=freqs, window="first_latents",
+                                           routing=reference_routing, freqs=freqs,
+                                           window=("first_latents" if self.self_attention_policy == "holocine_first_frame"
+                                                   else "own_first_latent"),
                                            reference_query_scope=scope)
         elif self.self_attention_policy == "first_frame_communication":
             # 首帧通信：只有每镜第一个潜帧读外部信息（本镜全部＋各镜首潜帧池＋路由参考），
@@ -361,7 +381,8 @@ class SelfAttention(nn.Module):
                               prefix_frames=0, routing=None,
                               freqs=None, first_frame_tokens=0):
         """逐镜注意力，共用一个 softmax。``window="first_latents"``（HoloCine）：每镜完整 Q 读取本镜 K/V＋所有目标镜
-        首潜帧 K/V；``window="all_targets"``（MultiShotMaster 式窗内全互读，HoloCine 的消融）：每镜读全部目标 K/V；
+        首潜帧 K/V；``window="own_first_latent"``（镜间读取切除）：首潜帧池只留本镜首潜帧，每镜只读本镜 K/V＋本镜首潜帧
+        的重复条目；``window="all_targets"``（MultiShotMaster 式窗内全互读，HoloCine 的消融）：每镜读全部目标 K/V；
         ``window="first_frame_communication"``：只有每镜第一个潜帧读本镜全部＋各镜首潜帧 K/V＋路由参考，其余潜帧只读
         本镜 K/V（``reference_query_scope`` 必须为 None，参考只在首潜帧被读）。
 
@@ -398,7 +419,7 @@ class SelfAttention(nn.Module):
         register_ranges = [(video + shot * registers, video + (shot + 1) * registers) for shot in range(len(ranges))]
         if (routing is None) != (prefix_frames == 0) or (routing is not None and len(routing) != len(ranges)):
             raise ValueError("references need reference_routing for every target shot, and only references do")
-        if window not in ("first_latents", "all_targets", "first_frame_communication"):
+        if window not in ("first_latents", "own_first_latent", "all_targets", "first_frame_communication"):
             raise ValueError(f"unknown shot attention window {window!r}")
         if window == "first_frame_communication" and reference_query_scope is not None:
             raise ValueError("first_frame_communication reads references only at the first latent frame; "
@@ -436,8 +457,12 @@ class SelfAttention(nn.Module):
                 if b > a + n:
                     pieces.append(self.attn(q[:, a + n:b].contiguous(), local_k.contiguous(), local_v.contiguous()))
                 continue
-            keys, values = (([k[:, a:b], global_k], [v[:, a:b], global_v]) if window == "first_latents"
-                            else ([target_k], [target_v]))
+            if window == "first_latents":
+                keys, values = [k[:, a:b], global_k], [v[:, a:b], global_v]
+            elif window == "own_first_latent":
+                keys, values = [k[:, a:b], k[:, a:a + n]], [v[:, a:b], v[:, a:a + n]]
+            else:
+                keys, values = [target_k], [target_v]
             if reference_query_scope == "first_latent" and prefix_frames and routing[shot] and b > a + n:
                 # Only direct reference keys change. Later frames still read the same local
                 # shot and dynamically updated first-latent pool, including duplicate keys.

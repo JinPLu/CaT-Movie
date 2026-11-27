@@ -240,12 +240,14 @@ SAMPLING_SCHEMES = ("shot_count_weighted_windows", "duration_bucket_windows")
 
 def _draw_shot_count_weighted_windows(members, *, media, seed, sample_budget,
                                      partition_max_rgb_frames, max_source_shot_seconds, shot_count_weights,
-                                     long_single_shot):
-    """共同源16fps网格上按1／2／3／4+镜抽层；候选集与缓存是否存在无关。
+                                     long_single_shot, eligible_target_shots=None):
+    """共同源16fps网格上按1／2／3／4+镜抽层；可选仅在已编目标缓存镜集合内枚举目标窗。
 
     ``long_single_shot=(份额, 最少源帧)``：单镜层内按份额只取长单镜（源16fps帧数不少于最少源帧，且块标注里该镜
     有动作或镜内变化，见 :func:`mspc.training.block_dataset.shows_action_or_change`）；此时成员要带
-    ``annotation.shots``（至少 ``activity`` 与 ``changes``）。"""
+    ``annotation.shots``（至少 ``activity`` 与 ``changes``）。
+    ``eligible_target_shots`` 非 None 时，目标镜仅保留 ``shot_key`` 在该集合内的可用镜（未命中镜在抽目标窗时作断点，
+    不改动成员本身，训练参考候选仍取原块全部可用镜）。"""
     if type(partition_max_rgb_frames) is not int or partition_max_rgb_frames <= 0:
         raise ValueError("shot-count windows require a positive partition_max_rgb_frames")
     if type(sample_budget) is not int or sample_budget <= 0:
@@ -257,8 +259,11 @@ def _draw_shot_count_weighted_windows(members, *, media, seed, sample_budget,
         raise ValueError("max_source_shot_seconds must be positive and finite")
     if shot_count_weights is None:
         raise ValueError("shot_count_weights must explicitly give the four source shot-count layers")
+    if eligible_target_shots is not None and not eligible_target_shots:
+        raise ValueError("eligible_target_shots must be a nonempty set of target shot keys or None")
     info, rows, target_counts = {}, [], {}
     dropped_shots = 0
+    target_index_dropped_shots = 0
     action_shots = set()
     for member in members:
         case = member["case_id"]
@@ -279,6 +284,8 @@ def _draw_shot_count_weighted_windows(members, *, media, seed, sample_budget,
                     raise ValueError(f"{case} shot {position}: annotation frames differ from source sampling media")
                 if shot["seconds"] > max_source_shot_seconds:
                     dropped_shots += 1
+                elif eligible_target_shots is not None and shot_key(shot) not in eligible_target_shots:
+                    target_index_dropped_shots += 1
                 else:
                     usable.append(position)
         if long_single_shot is not None:
@@ -322,6 +329,7 @@ def _draw_shot_count_weighted_windows(members, *, media, seed, sample_budget,
                      "source_window_max_rgb_frames": partition_max_rgb_frames,
                      "max_source_shot_seconds": max_source_shot_seconds,
                      "source_duration_dropped_usable_shots": dropped_shots,
+                     "target_index_dropped_usable_shots": target_index_dropped_shots,
                      "shot_count_layers": ["1", "2", "3", "4+"],
                      "shot_count_weights": list(shot_count_weights),
                      "long_single_shot": None if long_single_shot is None else {
@@ -341,7 +349,7 @@ def _draw_shot_count_weighted_windows(members, *, media, seed, sample_budget,
 
 def draw_sampling(members, *, media, seed, sampling_scheme, frame_buckets, bucket_weights,
                   max_shots, sample_budget, forced_samples, partition_max_rgb_frames, max_source_shot_seconds,
-                  shot_count_weights, long_single_shot=None):
+                  shot_count_weights, long_single_shot=None, eligible_target_shots=None):
     """按显式镜数权重冻结源窗；历史时长档只用于已命名的复现。"""
     media = require_training_media(media)
     if sampling_scheme == "shot_count_weighted_windows":
@@ -350,10 +358,10 @@ def draw_sampling(members, *, media, seed, sampling_scheme, frame_buckets, bucke
         return _draw_shot_count_weighted_windows(members, media=media, seed=seed,
             sample_budget=sample_budget, partition_max_rgb_frames=partition_max_rgb_frames,
             max_source_shot_seconds=max_source_shot_seconds, shot_count_weights=shot_count_weights,
-            long_single_shot=long_single_shot)
+            long_single_shot=long_single_shot, eligible_target_shots=eligible_target_shots)
     if sampling_scheme == "duration_bucket_windows":
-        if long_single_shot is not None:
-            raise ValueError("duration bucket replay does not take a long single-shot share")
+        if long_single_shot is not None or eligible_target_shots is not None:
+            raise ValueError("duration bucket replay does not take a long single-shot share or target index filter")
         if max_source_shot_seconds is not None or shot_count_weights is not None:
             raise ValueError("duration bucket replay does not accept source duration filtering or shot-count weights")
         if partition_max_rgb_frames is not None or any(value is None for value in (frame_buckets, bucket_weights, forced_samples)):
@@ -362,6 +370,18 @@ def draw_sampling(members, *, media, seed, sampling_scheme, frame_buckets, bucke
             bucket_weights=bucket_weights, max_shots=max_shots, sample_budget=sample_budget,
             forced_samples=forced_samples)
     raise ValueError(f"sampling_scheme must be one of {SAMPLING_SCHEMES}")
+
+
+def _read_target_index_keys(path: Path) -> frozenset[tuple[str, str, int]]:
+    keys = set()
+    for row in read_rows(path):
+        key = shot_key(row)
+        if key in keys:
+            raise ValueError(f"duplicate target index key: {key}")
+        keys.add(key)
+    if not keys:
+        raise ValueError("target index must contain at least one target shot")
+    return frozenset(keys)
 
 
 def _shot_count_member(member, *, with_activity):
@@ -377,11 +397,12 @@ def _shot_count_member(member, *, with_activity):
 
 def write_drawn_sampling(*, members_path, media, seed, sampling_scheme, frame_buckets, bucket_weights, max_shots,
                          sample_budget, forced_samples, partition_max_rgb_frames, max_source_shot_seconds, shot_count_weights, output, limit,
-                         long_single_shot=None):
+                         long_single_shot=None, target_index_path=None):
     """写 ``draw_sampling`` 的表；``limit`` 只写前若干行，是同一份全量表的前缀。"""
     if limit is not None and not 0 < limit <= sample_budget:
         raise ValueError("limit must be in 1..sample_budget")
     media = require_training_media(media)
+    eligible_target_shots = None if target_index_path is None else _read_target_index_keys(Path(target_index_path))
     # 新方案只在长单镜份额时读每镜 activity／changes，无需把1GB成员中的整块标注常驻两套对象。
     members = ([_shot_count_member(member, with_activity=long_single_shot is not None)
                 for member in read_rows(members_path)] if sampling_scheme == "shot_count_weighted_windows"
@@ -390,7 +411,7 @@ def write_drawn_sampling(*, members_path, media, seed, sampling_scheme, frame_bu
         frame_buckets=frame_buckets, bucket_weights=bucket_weights, max_shots=max_shots,
         sample_budget=sample_budget, forced_samples=forced_samples, partition_max_rgb_frames=partition_max_rgb_frames,
         max_source_shot_seconds=max_source_shot_seconds, shot_count_weights=shot_count_weights,
-        long_single_shot=long_single_shot)
+        long_single_shot=long_single_shot, eligible_target_shots=eligible_target_shots)
     written = samples[:limit] if limit is not None else samples
     with Path(output).open("x", encoding="utf-8") as handle:
         for row in written:
@@ -406,6 +427,7 @@ def write_drawn_sampling(*, members_path, media, seed, sampling_scheme, frame_bu
         for sample in written for position in range(*sample["span"])})
         if sampling_scheme == "shot_count_weighted_windows" else None)
     summary = {"members": str(members_path), "output": str(output), "seed": seed, "media": dict(media),
+               "target_index_path": None if target_index_path is None else str(target_index_path),
                "sampling_scheme": sampling_scheme,
                "shot_count_layer_counts": dict(sorted(layer_counts.items())),
                "shot_count_layer_fractions": {layer: layer_counts[layer] / len(written) for layer in range(1, 5)},

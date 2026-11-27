@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from collections import Counter, deque
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from datetime import datetime, timezone
 import json
 from itertools import islice
@@ -238,18 +238,30 @@ def encode_text_cache(config: Any, *, inputs: Path, output: Path,
 
 
 def finalize_text_cache(*, inputs: Path, shards: list[Path], output: Path) -> dict[str, Any]:
-    """CPU核全局row分片与原sample引用闭合，再原地移动张量，最后发布唯一完整manifest。"""
+    """核对原始 row 分片并发布完整缓存，或供同一阶段复用的缺失文字补编缓存。"""
     if output.exists():
         raise FileExistsError(f"text context output already exists: {output}")
-    source = json.loads((inputs / "manifest.json").read_text())
+    source_manifest = (inputs / "manifest.json").resolve()
+    source = json.loads(source_manifest.read_text())
     prompts = _read_rows(inputs / source["prompt_manifest"])
     samples = _read_rows(inputs / source["sample_manifest"])
     by_id = {row["row_id"]: row for row in prompts}
     referenced = {index for sample in samples for index in sample["context_rows"]}
-    if (not source["complete"] or len(by_id) != len(prompts) or set(by_id) != referenced
-            or len(samples) != sum(report["expected_samples"] for report in source["splits"].values())
-            or len({(row["split"], row["sample_index"]) for row in samples}) != len(samples)):
-        raise ValueError("text finalization requires the complete original prompt/sample mapping")
+    complete_stage = source["complete"]
+    if type(complete_stage) is not bool or len(by_id) != len(prompts) or set(by_id) != referenced:
+        raise ValueError("text finalization requires the exact original prompt row references")
+    target_manifest = source_manifest
+    if complete_stage:
+        if (len(samples) != sum(report["expected_samples"] for report in source["splits"].values())
+                or len({(row["split"], row["sample_index"]) for row in samples}) != len(samples)):
+            raise ValueError("text finalization requires the complete original prompt/sample mapping")
+    else:
+        target_manifest = Path(source["source_manifest"]).resolve()
+        target = json.loads(target_manifest.read_text())
+        target_rows = _read_rows(target_manifest.parent / target["prompt_manifest"])
+        if (target["complete"] is not True or target["encoding_contract"] != source["encoding_contract"]
+                or not prompts or prompts != [row for row in target_rows if row["row_id"] in by_id]):
+            raise ValueError("partial text finalization requires an exact ordered subset of the original stage rows")
     if len(shards) < 2 or len(set(path.resolve() for path in shards)) != len(shards):
         raise ValueError("text finalization requires all distinct explicit worker shards")
     reports = []
@@ -269,7 +281,7 @@ def finalize_text_cache(*, inputs: Path, shards: list[Path], output: Path) -> di
                 or shard["assignment"] != "original row_id modulo shard_count"
                 or report["complete_stage"] or report["sample_limit_per_split"] is not None
                 or report["selected_samples"] != len(samples)
-                or Path(report["source_manifest"]).resolve() != (inputs / "manifest.json").resolve()
+                or Path(report["source_manifest"]).resolve() != source_manifest
                 or report["encoding_contract"] != source["encoding_contract"]):
             raise ValueError(f"incomplete or mismatched text context shard: {path}")
         if reports and report["outer_autocast"] != reports[0]["outer_autocast"]:
@@ -304,19 +316,21 @@ def finalize_text_cache(*, inputs: Path, shards: list[Path], output: Path) -> di
     # keep one payload copy; no runnable manifest exists until every move finishes.
     for path in files:
         shutil.move(str(path), str(output / "contexts" / path.name))
-    for source_name, target_name in ((source["prompt_manifest"], "prompts.jsonl"),
-                                      (source["sample_manifest"], "sample-context-rows.jsonl")):
-        shutil.copyfile(inputs / source_name, output / target_name)
+    shutil.copyfile(inputs / source["prompt_manifest"], output / "prompts.jsonl")
+    if complete_stage:
+        shutil.copyfile(inputs / source["sample_manifest"], output / "sample-context-rows.jsonl")
     (output / "encoding-shards").mkdir()
     for report in reports:
         (output / "encoding-shards" / f"{report['shard']['index']}.json").write_text(
             json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     result = {
-        "artifact_type": TEXT_CACHE_ARTIFACT_TYPE, "schema_version": 2,
+        "artifact_type": TEXT_CACHE_ARTIFACT_TYPE if complete_stage else "mspc_training_text_context_cache_shard",
+        "schema_version": 2,
         "context_storage": dict(CONTEXT_STORAGE), "storage_contract": dict(CONTEXT_STORAGE_CONTRACT),
-        "source_manifest": str((inputs / "manifest.json").resolve()),
+        "source_manifest": str(target_manifest),
         "encoding_contract": source["encoding_contract"], "outer_autocast": reports[0]["outer_autocast"],
-        "complete_stage": True, "encoded_prompts": len(prompts), "encoded_samples": len(samples),
+        "complete_stage": complete_stage, "encoded_prompts": len(prompts),
+        "encoded_samples": len(samples) if complete_stage else 0,
         "context_tensor_bytes": payload_bytes, "context_file_bytes": file_bytes,
         "write_read_verified_prompts": len(prompts),
         "write_read_comparison": reports[0]["write_read_comparison"],
@@ -327,6 +341,11 @@ def finalize_text_cache(*, inputs: Path, shards: list[Path], output: Path) -> di
         "finalization_seconds": time.monotonic() - started,
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
+    if not complete_stage:
+        result.update(
+            shard={"index": 0, "count": 1, "assignment": "original row_id modulo shard_count"},
+            selected_samples=0, sample_limit_per_split=None, selected_prompt_rows=list(by_id),
+        )
     _publish_manifest(output, result)
     return result
 
@@ -354,14 +373,53 @@ def _require_reusable_text_contract(target: dict[str, Any], original: dict[str, 
         raise ValueError("text context reuse requires identical resolved tokenizers")
 
 
+def _reusable_text_context_rows(
+    context_sources: tuple[Path, ...], *, encoding_contract: dict[str, Any], outer_autocast: dict[str, Any],
+) -> dict[str, tuple[dict[str, Any], Path]]:
+    if len(set(path.resolve() for path in context_sources)) != len(context_sources):
+        raise ValueError("text context reuse requires distinct finalized sources")
+    by_prompt = {}
+    for root in context_sources:
+        original = json.loads((root / "manifest.json").read_text())
+        original_prompts = _read_rows(root / "prompts.jsonl")
+        if (original["artifact_type"] != TEXT_CACHE_ARTIFACT_TYPE or original["schema_version"] != 2
+                or not original["complete_stage"] or original["context_storage"] != CONTEXT_STORAGE
+                or original["storage_contract"] != CONTEXT_STORAGE_CONTRACT
+                or original["encoded_prompts"] != len(original_prompts)
+                or original["write_read_verified_prompts"] != len(original_prompts)):
+            raise ValueError(f"text context reuse requires a finalized, write/read verified source cache: {root}")
+        _require_reusable_text_contract(encoding_contract, original["encoding_contract"])
+        if original["outer_autocast"] != outer_autocast:
+            raise ValueError(f"text context reuse requires the same actual outer autocast: {root}")
+        if len({row["prompt"] for row in original_prompts}) != len(original_prompts):
+            raise ValueError(f"text context reuse source has duplicate actual prompt strings: {root}")
+        for row in original_prompts:
+            matched, _ = by_prompt.setdefault(row["prompt"], (row, root))
+            if matched["token_count"] != row["token_count"]:
+                raise ValueError(f"text context reuse sources disagree on an actual prompt's token count: {root}")
+    return by_prompt
+
+
+def _ordered_context_file_operations(operation, items, workers):
+    if workers == 1:
+        yield from map(operation, items)
+        return
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        source = iter(items)
+        while batch := list(islice(source, 512)):
+            yield from pool.map(operation, batch)
+
+
 def reuse_text_cache(config: Any, *, inputs: Path, context_source: Path, output: Path,
-                     additional_contexts: Path | None = None) -> dict[str, Any]:
+                     additional_contexts: Path | None = None, context_sources: tuple[Path, ...] = (),
+                     workers: int = 1) -> dict[str, Any]:
     """用原完整字符串复用已封存context；保留本地row与sample原文件，不复制payload。"""
     started = time.monotonic()
+    if type(workers) is not int or workers < 1:
+        raise ValueError("text context reuse workers must be a positive integer")
     if output.exists():
         raise FileExistsError(f"text context output already exists: {output}")
     source = json.loads((inputs / "manifest.json").read_text())
-    original = json.loads((context_source / "manifest.json").read_text())
     prompts = _read_rows(inputs / source["prompt_manifest"])
     samples = _read_rows(inputs / source["sample_manifest"])
     row_ids = {row["row_id"] for row in prompts}
@@ -370,20 +428,12 @@ def reuse_text_cache(config: Any, *, inputs: Path, context_source: Path, output:
             or len(samples) != sum(report["expected_samples"] for report in source["splits"].values())
             or len({(row["split"], row["sample_index"]) for row in samples}) != len(samples)):
         raise ValueError("text context reuse requires the complete local prompt/sample mapping")
-    original_prompts = _read_rows(context_source / "prompts.jsonl")
-    if (original["artifact_type"] != TEXT_CACHE_ARTIFACT_TYPE or original["schema_version"] != 2
-            or not original["complete_stage"] or original["context_storage"] != CONTEXT_STORAGE
-            or original["storage_contract"] != CONTEXT_STORAGE_CONTRACT
-            or original["encoded_prompts"] != len(original_prompts)
-            or original["write_read_verified_prompts"] != len(original_prompts)):
-        raise ValueError("text context reuse requires a finalized, write/read verified source cache")
-    _require_reusable_text_contract(source["encoding_contract"], original["encoding_contract"])
     options = config.resolved["runtime"]["deepspeed"]["torch_autocast"]
-    if original["outer_autocast"] != {key: options[key] for key in ("enabled", "dtype")}:
-        raise ValueError("text context reuse requires the same actual outer autocast")
-    by_prompt = {row["prompt"]: row for row in original_prompts}
-    if len(by_prompt) != len(original_prompts):
-        raise ValueError("text context reuse source has duplicate actual prompt strings")
+    outer_autocast = {key: options[key] for key in ("enabled", "dtype")}
+    source_roots = (context_source, *context_sources)
+    by_prompt = _reusable_text_context_rows(source_roots, encoding_contract=source["encoding_contract"],
+                                          outer_autocast=outer_autocast)
+    source_manifests = {root: str((root / "manifest.json").absolute()) for root in source_roots}
     missing = [row for row in prompts if row["prompt"] not in by_prompt]
     additional_rows = {}
     additional_manifest = None
@@ -397,7 +447,7 @@ def reuse_text_cache(config: Any, *, inputs: Path, context_source: Path, output:
                 or additional["storage_contract"] != CONTEXT_STORAGE_CONTRACT
                 or Path(additional["source_manifest"]).resolve() != (inputs / "manifest.json").resolve()
                 or additional["encoding_contract"] != source["encoding_contract"]
-                or additional["outer_autocast"] != original["outer_autocast"]
+                or additional["outer_autocast"] != outer_autocast
                 or additional["shard"] != {"index": 0, "count": 1,
                     "assignment": "original row_id modulo shard_count"}
                 or additional["encoded_samples"] != 0 or additional["selected_samples"] != 0
@@ -410,44 +460,54 @@ def reuse_text_cache(config: Any, *, inputs: Path, context_source: Path, output:
                 or {path.name for path in (additional_contexts / "contexts").iterdir()}
                     != {f"{index}.safetensors" for index in expected_ids}):
             raise ValueError("additional text contexts must exactly cover the missing original target rows")
-        extra_bytes = 0
-        for row in missing:
-            path = additional_contexts / "contexts" / f"{row['row_id']}.safetensors"
-            value = read_text_context(path)
-            if _token_count(value["ids"], value["mask"]) != row["token_count"]:
-                raise ValueError(f"additional text context token count differs from the original row: {row['row_id']}")
-            extra_bytes += path.stat().st_size
-        if (additional["context_tensor_bytes"] != sum(row["token_count"] for row in missing) * 4096 * 2
-                or additional["context_file_bytes"] != extra_bytes):
-            raise ValueError("additional text context physical bytes differ from its producer")
-        additional_rows = {row["row_id"]: row for row in missing}
+        additional_rows = {row["row_id"]: row["token_count"] for row in missing}
         additional_manifest = str((additional_contexts / "manifest.json").absolute())
     links = []
-    file_bytes = 0
-    reused = 0
-    original_manifest = str((context_source / "manifest.json").absolute())
+    reused_by_source = Counter()
     for row in prompts:
-        matched = by_prompt.get(row["prompt"])
-        if matched is not None and matched["token_count"] != row["token_count"]:
-            raise ValueError(f"text context reuse has a missing or mismatched actual prompt: {row['row_id']}")
-        if matched is not None:
-            path = (context_source / "contexts" / f"{matched['row_id']}.safetensors").absolute()
-            source_row_id, context_manifest = matched["row_id"], original_manifest
-            reused += 1
+        match = by_prompt.get(row["prompt"])
+        if match is not None:
+            matched, root = match
+            if matched["token_count"] != row["token_count"]:
+                raise ValueError(f"text context reuse has a missing or mismatched actual prompt: {row['row_id']}")
+            source_row_id, context_manifest = matched["row_id"], source_manifests[root]
+            reused_by_source[context_manifest] += 1
         elif row["row_id"] in additional_rows:
-            path = (additional_contexts / "contexts" / f"{row['row_id']}.safetensors").absolute()
+            root = additional_contexts
             source_row_id, context_manifest = row["row_id"], additional_manifest
         else:
             raise ValueError(f"text context reuse has a missing or mismatched actual prompt: {row['row_id']}")
-        file_bytes += path.stat().st_size
+        path = (root / "contexts" / f"{source_row_id}.safetensors").absolute()
         links.append((row["row_id"], source_row_id, path, context_manifest))
+
+    def verify_file(link):
+        row_id, _, path, context_manifest = link
+        is_additional = context_manifest == additional_manifest
+        if is_additional and _read_compact_text_context(path)["context"].shape[1] != additional_rows[row_id]:
+            raise ValueError(f"additional text context token count differs from the original row: {row_id}")
+        return path.stat().st_size, is_additional
+
+    file_bytes = extra_bytes = 0
+    for size, is_additional in _ordered_context_file_operations(verify_file, links, workers):
+        file_bytes += size
+        if is_additional:
+            extra_bytes += size
+    if additional_manifest is not None and (
+            additional["context_tensor_bytes"] != sum(additional_rows.values()) * 4096 * 2
+            or additional["context_file_bytes"] != extra_bytes):
+        raise ValueError("additional text context physical bytes differ from its producer")
+
     output.mkdir(parents=True, exist_ok=False)
     (output / "contexts").mkdir()
+
+    def link_file(link):
+        row_id, source_row_id, path, context_manifest = link
+        (output / "contexts" / f"{row_id}.safetensors").symlink_to(path)
+        return {"row_id": row_id, "source_row_id": source_row_id, "source_manifest": context_manifest}
+
     with (output / "context-reuse.jsonl").open("x") as stream:
-        for row_id, original_row_id, path, context_manifest in links:
-            (output / "contexts" / f"{row_id}.safetensors").symlink_to(path)
-            _write_jsonl(stream, {"row_id": row_id, "source_row_id": original_row_id,
-                                  "source_manifest": context_manifest})
+        for row in _ordered_context_file_operations(link_file, links, workers):
+            _write_jsonl(stream, row)
     for source_name, target_name in ((source["prompt_manifest"], "prompts.jsonl"),
                                     (source["sample_manifest"], "sample-context-rows.jsonl")):
         shutil.copyfile(inputs / source_name, output / target_name)
@@ -455,19 +515,22 @@ def reuse_text_cache(config: Any, *, inputs: Path, context_source: Path, output:
         "artifact_type": TEXT_CACHE_ARTIFACT_TYPE, "schema_version": 2,
         "context_storage": dict(CONTEXT_STORAGE), "storage_contract": dict(CONTEXT_STORAGE_CONTRACT),
         "source_manifest": str((inputs / "manifest.json").absolute()),
-        "encoding_contract": source["encoding_contract"], "outer_autocast": original["outer_autocast"],
+        "encoding_contract": source["encoding_contract"], "outer_autocast": outer_autocast,
         "complete_stage": True, "encoded_prompts": len(prompts), "encoded_samples": len(samples),
         "context_tensor_bytes": sum(row["token_count"] for row in prompts) * 4096 * 2,
         "context_file_bytes": file_bytes, "write_read_verified_prompts": len(prompts),
         "write_read_comparison": "inherited original source producer write/read verification by exact raw prompt",
-        "reused_prompts": reused, "encoded_here_prompts": 0,
+        "reused_prompts": sum(reused_by_source.values()), "encoded_here_prompts": 0,
         "newly_encoded_source_prompts": len(additional_rows),
-        "context_source_manifest": original_manifest,
+        "context_source_manifest": source_manifests[context_source],
         "context_reuse_manifest": "context-reuse.jsonl",
         "reuse_seconds": time.monotonic() - started,
         "independent_live_checked_prompts": 0, "verified_n0": False,
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
+    if context_sources:
+        result["context_source_manifests"] = list(source_manifests.values())
+        result["reused_prompts_by_source"] = dict(reused_by_source)
     if additional_manifest is not None:
         result["additional_contexts_manifest"] = additional_manifest
     _publish_manifest(output, result)

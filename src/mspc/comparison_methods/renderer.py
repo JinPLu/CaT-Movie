@@ -354,8 +354,15 @@ def load_backend(settings: dict, fps: int):
             raise ValueError("sampling.sampler is required")
         require_sampler(sample["sampler"])
         model = {**settings['model'], 'diffsynth_root': settings['upstream']}
+        lora = settings.get('lora')
+        if lora is not None:
+            if settings['checkpoint'] is None:
+                raise ValueError('comparison method lora requires a non-null checkpoint')
+            weight_source = 'lora_checkpoint'
+        else:
+            weight_source = 'full_dit_checkpoint' if settings['checkpoint'] is not None else 'pretrained_model_paths'
         inference = {**sample, 'target_height': sample['height'], 'target_width': sample['width'], 'fps': fps, 'device': 'cuda', 'model_paths': weights,
-                     'weight_source': 'full_dit_checkpoint' if settings['checkpoint'] is not None else 'pretrained_model_paths'}
+                     'weight_source': weight_source, **({'lora': lora} if lora is not None else {})}
         runtime = Wan22InferenceRuntime(model_cfg=model, inference_cfg=inference,
                                        pipeline_cfg=settings['pipeline'], dit_ckpt=settings['checkpoint'])
         return runtime, None

@@ -202,6 +202,22 @@ def test_matching_aggregate_counts_cannot_hide_duplicate_or_missing_identity(mon
         rows([("train", MathPanel("train"), [0, 1])], 8)
 
 
+def test_text_cache_preflight_requires_an_identical_rank_prefix():
+    published = {
+        "target_step": 4, "rank_sample_indices": [[3, 1, 2], [6, 5, 4]],
+        "sample_indices": [1, 2, 3, 4, 5, 6], "target_keys": [["a", 1], ["a", 2]],
+        "validation_sample_indices": [0, 1], "training_seed": 42,
+    }
+    requested = {**published, "target_step": 2, "rank_sample_indices": [[3, 1], [6, 5]],
+                 "sample_indices": [1, 3, 5, 6], "target_keys": [["a", 1]]}
+    cache_readiness._require_text_stage_coverage(published, published)
+    cache_readiness._require_text_stage_coverage(requested, published)
+    for change in ({"rank_sample_indices": [[1, 3], [6, 5]]},
+                   {"target_keys": [["missing", 1]]}, {"validation_sample_indices": [0]}):
+        with pytest.raises(ValueError, match="identical rank-wise sampler prefix"):
+            cache_readiness._require_text_stage_coverage({**requested, **change}, published)
+
+
 @pytest.mark.parametrize("workers", [1, 8])
 def test_public_verification_keeps_physical_stage_and_both_original_splits(tmp_path, monkeypatch, workers):
     from mspc.training import block_dataset, training_args

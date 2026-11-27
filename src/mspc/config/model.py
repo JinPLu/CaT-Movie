@@ -184,7 +184,7 @@ def parse_wan22_diffsynth_model(
     )
     if parsed["planner_tokens"] is not None and parsed["spatial_layout"] is not None:
         raise ExperimentConfigError("model.planner_tokens replaces model.spatial_layout; set it to null")
-    if (parsed["self_attention_policy"] in ("holocine_first_frame", "first_frame_communication")
+    if (parsed["self_attention_policy"] in ("holocine_first_frame", "holocine_own_shot_only", "first_frame_communication")
             and parsed["temporal_position_mode"] != "global_time_native_rope_v1"):
         raise ExperimentConfigError(f"{parsed['self_attention_policy']} requires native RoPE")
     # 参考注意力与 DiT 自注意力的唯一配对检查：holocine / 首帧通信的参考只能按镜路由；按镜路由的参考配这两者
@@ -192,11 +192,13 @@ def parse_wan22_diffsynth_model(
     routed = (parsed["memory_prefix"] is not None
               and parsed["memory_prefix"]["attention_policy"] in ROUTED_MEMORY_ATTENTION_POLICIES)
     if (parsed["memory_prefix"] is not None
-            and parsed["self_attention_policy"] in ("holocine_first_frame", "first_frame_communication")
+            and parsed["self_attention_policy"] in ("holocine_first_frame", "holocine_own_shot_only",
+                                                    "first_frame_communication")
             and not routed):
         raise ExperimentConfigError(f"{parsed['self_attention_policy']} reads references only under "
                                     f"model.memory_prefix.attention_policy in {ROUTED_MEMORY_ATTENTION_POLICIES!r}")
-    if routed and parsed["self_attention_policy"] not in ("holocine_first_frame", "first_frame_communication", "full"):
+    if routed and parsed["self_attention_policy"] not in ("holocine_first_frame", "holocine_own_shot_only",
+                                                          "first_frame_communication", "full"):
         raise ExperimentConfigError(f"routed reference policies {ROUTED_MEMORY_ATTENTION_POLICIES!r} need "
                                     "holocine_first_frame, first_frame_communication or full self-attention")
     if (routed and parsed["memory_prefix"]["attention_policy"] == MEMORY_ATTENTION_POLICY_ROUTED_FIRST_LATENT_SELF_ONLY_V1

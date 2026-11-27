@@ -22,9 +22,11 @@ QUALITY_ADMITTED_DATA_SCOPE: Final = "quality_admitted"
 
 #: DiT 自注意力：full 为联合镜头互读；holocine_first_frame 为各镜全部潜帧读首潜帧池与路由参考；
 #: first_frame_communication 为只有首潜帧读外部信息（本镜全部＋各镜首潜帧池＋路由参考），其余潜帧只读本镜。
+#: holocine_own_shot_only 是 holocine_first_frame 的镜间读取切除（推理时的注意力切除对照）：首潜帧池只留本镜首潜帧
+#: （本镜首帧照旧重复一份），每镜只读本镜全部潜帧＋路由参考，不读别的镜。
 #: 旧首帧接口的具体可见性见各模型 owner。配置解析与模型加载只认这一份。
 WAN22_SELF_ATTENTION_POLICIES: Final[frozenset[str]] = frozenset(
-    {"full", "holocine_first_frame", "first_frame_communication", "first_frame_interface"}
+    {"full", "holocine_first_frame", "holocine_own_shot_only", "first_frame_communication", "first_frame_interface"}
 )
 WAN22_DIFFSYNTH_TEMPORAL_POSITION_MODES: Final[frozenset[str]] = frozenset(
     {

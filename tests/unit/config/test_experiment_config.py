@@ -283,6 +283,25 @@ def test_partial_self_attention_cache_requires_save_policy(tmp_path: Path) -> No
         parse_experiment_mapping(mapping, source_path=tmp_path / "experiment.yaml")
 
 
+@pytest.mark.parametrize("layers", [None, 1, 10])
+def test_self_attention_cache_can_leave_an_explicit_no_recompute_suffix(tmp_path: Path, layers) -> None:
+    mapping = experiment_mapping()
+    mapping["training"].update(activation_checkpointing="save_self_attention",
+                               self_attention_cache_layers=30, no_recompute_suffix_layers=layers)
+    resolved = parse_experiment_mapping(mapping, source_path=tmp_path / "experiment.yaml").resolved
+    assert resolved["training"]["no_recompute_suffix_layers"] == layers
+
+
+@pytest.mark.parametrize("policy,layers", [
+    ("recompute_all", 1), ("save_self_attention", 0), ("save_self_attention", True),
+])
+def test_no_recompute_suffix_rejects_invalid_policy_or_count(tmp_path: Path, policy, layers) -> None:
+    mapping = experiment_mapping()
+    mapping["training"].update(activation_checkpointing=policy, no_recompute_suffix_layers=layers)
+    with pytest.raises(ExperimentConfigError, match="training.no_recompute_suffix_layers"):
+        parse_experiment_mapping(mapping, source_path=tmp_path / "experiment.yaml")
+
+
 @pytest.mark.parametrize("value", [0, 2])
 def test_dataloader_rejects_batching_multiple_complete_samples_per_device(
     tmp_path: Path,
@@ -505,7 +524,92 @@ def test_unknown_scheduler_type_names_the_supported_set(tmp_path: Path) -> None:
     with pytest.raises(
         ExperimentConfigError,
         match=(
-            r"must be one of \['constant', 'constant_with_warmup'\]"
+            r"must be one of \['constant', 'constant_with_warmup', 'cosine_with_warmup'\]"
         ),
     ):
         parse_experiment_mapping(mapping, source_path=tmp_path / "cosine.json")
+
+
+def test_cosine_with_warmup_contract_and_rejections(tmp_path: Path) -> None:
+    mapping = experiment_mapping()
+    mapping["training"]["max_train_steps"] = 6000
+    mapping["optimization"] = {
+        "learning_rate": 3.5e-5,
+        "weight_decay": 0.01,
+        "lr_scheduler_type": "cosine_with_warmup",
+        "warmup_steps": 200,
+        "min_lr_ratio": 0.1,
+    }
+    parsed = parse_experiment_mapping(mapping, source_path=tmp_path / "cosine-warmup.json")
+    optimization = parsed.to_dict()["optimization"]
+    assert optimization["warmup_steps"] == 200
+    assert optimization["min_lr_ratio"] == 0.1
+    assert "lr_scheduler_factor" not in optimization
+    assert "lr_scheduler_total_iters" not in optimization
+
+    for bad_ratio in (0.0, -0.1, 1.1):
+        bad = experiment_mapping()
+        bad["training"]["max_train_steps"] = 6000
+        bad["optimization"] = {**optimization, "min_lr_ratio": bad_ratio}
+        with pytest.raises(ExperimentConfigError, match="min_lr_ratio must be in"):
+            parse_experiment_mapping(bad, source_path=tmp_path / "bad-ratio.json")
+
+    for bad_steps in (None, 200, 100):
+        bad = experiment_mapping()
+        bad["training"]["max_train_steps"] = bad_steps
+        bad["optimization"] = dict(optimization)
+        with pytest.raises(ExperimentConfigError, match="max_train_steps > optimization.warmup_steps"):
+            parse_experiment_mapping(bad, source_path=tmp_path / "bad-steps.json")
+
+    for legacy_field, legacy_value in (("lr_scheduler_factor", 1.0), ("lr_scheduler_total_iters", 1)):
+        bad = experiment_mapping()
+        bad["training"]["max_train_steps"] = 6000
+        bad["optimization"] = {**optimization, legacy_field: legacy_value}
+        with pytest.raises(ExperimentConfigError, match=rf"unknown fields: \['{legacy_field}'\]"):
+            parse_experiment_mapping(bad, source_path=tmp_path / "legacy-field.json")
+
+
+def test_single_expert_lora_checkpoint_inference_contract(tmp_path: Path) -> None:
+    lora = {"recipe": "lora_v1", "rank": 128, "alpha": 128, "targets": ["self_attn.q", "ffn.0"]}
+    mapping = experiment_mapping()
+    mapping["inference"].update(
+        weight_source="lora_checkpoint",
+        dit_checkpoint="checkpoints/step-1000.safetensors",
+        lora=lora,
+    )
+    parsed = parse_experiment_mapping(mapping, source_path=tmp_path / "lora-infer.json")
+    assert parsed.to_dict()["inference"]["weight_source"] == "lora_checkpoint"
+    assert parsed.to_dict()["inference"]["lora"] == lora
+
+    missing_lora = experiment_mapping()
+    missing_lora["inference"].update(weight_source="lora_checkpoint", dit_checkpoint="checkpoints/step-1000.safetensors")
+    with pytest.raises(ExperimentConfigError, match="inference.lora goes with weight_source='lora_checkpoint'"):
+        parse_experiment_mapping(missing_lora, source_path=tmp_path / "missing-lora.json")
+
+    stray_lora = experiment_mapping()
+    stray_lora["inference"]["lora"] = lora
+    with pytest.raises(ExperimentConfigError, match="inference.lora goes with weight_source='lora_checkpoint'"):
+        parse_experiment_mapping(stray_lora, source_path=tmp_path / "stray-lora.json")
+
+    wrong_recipe = experiment_mapping()
+    wrong_recipe["inference"].update(
+        weight_source="lora_checkpoint",
+        dit_checkpoint="checkpoints/step-1000.safetensors",
+        lora={"recipe": "full_dit_v1"},
+    )
+    with pytest.raises(ExperimentConfigError, match="lora_v1 recipe"):
+        parse_experiment_mapping(wrong_recipe, source_path=tmp_path / "wrong-recipe.json")
+
+    missing_ckpt = experiment_mapping()
+    missing_ckpt["inference"].update(weight_source="lora_checkpoint", dit_checkpoint=None, lora=lora)
+    with pytest.raises(ExperimentConfigError, match="non-null dit_checkpoint"):
+        parse_experiment_mapping(missing_ckpt, source_path=tmp_path / "missing-ckpt.json")
+
+
+def test_block_config_accepts_distinct_camera_shared_only_reference_policy(tmp_path: Path) -> None:
+    from tests.support.paths import REPO_ROOT
+
+    raw = json.loads((REPO_ROOT / "tests/fixtures/block_renderer_config.json").read_text())
+    raw["dataset"]["reference_policy"] = "distinct_camera_shared_only"
+    parsed = parse_experiment_mapping(raw, source_path=tmp_path / "block.json")
+    assert parsed.to_dict()["dataset"]["reference_policy"] == "distinct_camera_shared_only"

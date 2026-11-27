@@ -3,7 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 import math
 from typing import Any, Mapping
-from mspc.core.wan22_contract import MEMORY_ATTENTION_POLICIES, MEMORY_ROW_POLICIES
+from mspc.core.wan22_contract import (
+    MEMORY_ATTENTION_POLICIES,
+    MEMORY_ROW_POLICIES,
+    ROUTED_MEMORY_ATTENTION_POLICIES,
+)
 
 MEMORY_PREFIX_OPTION_KEYS = (
     "frames_max", "dropout_p", "reference_offset", "attention_policy", "row_policy", "attention_window", "placement", "noise")
@@ -80,15 +84,21 @@ class MemoryAttentionWindow:
                 or not 0 <= interval[0] <= interval[1] <= 1000):
             raise ValueError(f"{location}.timestep_range must be [low, high] scheduler t in [0,1000]")
         result = cls(tuple(layers), tuple(map(float, interval)))
-        if not result.full:
-            raise ValueError(f"{location} requires the full window: all {DIT_LAYER_COUNTS} layers and timestep range [0,1000]")
+        if not result.full_layers:
+            raise ValueError(f"{location} requires all {DIT_LAYER_COUNTS} layers")
         return result
 
     @property
-    def full(self) -> bool:
+    def full_layers(self) -> bool:
         return (len(self.layer_indices) in DIT_LAYER_COUNTS
-                and set(self.layer_indices) == set(range(len(self.layer_indices)))
-                and self.timestep_range == (0.0, 1000.0))
+                and set(self.layer_indices) == set(range(len(self.layer_indices))))
+
+    @property
+    def full(self) -> bool:
+        return self.full_layers and self.timestep_range == (0.0, 1000.0)
+
+    def contains_timestep(self, timestep: float) -> bool:
+        return self.timestep_range[0] <= timestep <= self.timestep_range[1]
 
 @dataclass(frozen=True)
 class ReferenceNoiseOptions:
@@ -140,7 +150,10 @@ class MemoryPrefixModelOptions:
                 raise ValueError(f"memory_prefix.{name} must be one of {list(allowed)}")
         if not isinstance(self.attention_window, MemoryAttentionWindow):
             raise ValueError("memory_prefix.attention_window must be MemoryAttentionWindow")
-        if not self.attention_window.full:
+        if self.attention_policy in ROUTED_MEMORY_ATTENTION_POLICIES:
+            if not self.attention_window.full_layers:
+                raise ValueError("memory_prefix.attention_window requires all layers")
+        elif not self.attention_window.full:
             raise ValueError("memory_prefix.attention_window requires the full window")
         if not isinstance(self.noise, ReferenceNoiseOptions):
             raise ValueError("memory_prefix.noise must be ReferenceNoiseOptions")

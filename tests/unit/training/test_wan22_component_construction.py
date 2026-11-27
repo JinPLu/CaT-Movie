@@ -74,24 +74,27 @@ def test_actual_latents_only_cache_constructor_and_encode_need_only_frozen_vae(m
     assert context is None and metadata["latent_shot_groups"] == ((0, 13), (13, 21))
 
 
-@pytest.mark.parametrize("policy,cache_layers", [
-    ("recompute_all", None), ("save_self_attention", None), ("save_self_attention", 20),
+@pytest.mark.parametrize("policy,cache_layers,num_layers,suffix_layers", [
+    ("recompute_all", None, 1, None), ("save_self_attention", None, 30, None),
+    ("save_self_attention", 20, 30, None), ("save_self_attention", None, 40, None),
+    ("save_self_attention", 30, 40, 10),
 ])
-def test_actual_training_constructor_installs_only_the_explicit_checkpoint_policy(monkeypatch, policy, cache_layers):
+def test_actual_training_constructor_installs_only_the_explicit_checkpoint_policy(
+        monkeypatch, policy, cache_layers, num_layers, suffix_layers):
     from mspc.models import planner_tokens, region_attention
     from importlib import import_module
 
     checkpoint = import_module("diffsynth.core.gradient.gradient_checkpoint")
     selected = []
-    def operator():
-        selected.append("FA2")
+    def operator(device):
+        selected.append(("attention operator", device))
         return torch.ops.aten.mm.default
-    monkeypatch.setattr(checkpoint, "_fa2_forward_operator", operator)
+    monkeypatch.setattr(checkpoint, "_self_attention_forward_operator", operator)
 
     pipe = WanVideoPipeline(device="cpu", torch_dtype=torch.bfloat16)
     pipe.dit = WanModel(dim=24, in_dim=16, out_dim=16, ffn_dim=32, text_dim=4096,
                         freq_dim=16, eps=1e-6, patch_size=(1, 2, 2), num_heads=2,
-                        num_layers=30 if policy == "save_self_attention" else 1, has_image_input=False)
+                        num_layers=num_layers, has_image_input=False)
     pipe.text_encoder = nn.Linear(1, 1)
     calls = []
     actual_layout, actual_planner = region_attention.attach_layout_modules, planner_tokens.attach_planner_connector
@@ -110,16 +113,19 @@ def test_actual_training_constructor_installs_only_the_explicit_checkpoint_polic
     args = _args()
     args.training_cfg["activation_checkpointing"] = policy
     args.training_cfg["self_attention_cache_layers"] = cache_layers
+    args.training_cfg["no_recompute_suffix_layers"] = suffix_layers
     model = wan22.build_model(args, torch.device("cpu"))
     assert calls == [("layout", pipe.dit, None), ("planner", pipe.dit, None)]
     assert model.dit is pipe.dit and model.dit.source_identity_options is None
     assert pipe.dit.training and all(p.requires_grad for p in pipe.dit.parameters())
     assert not pipe.text_encoder.training and all(not p.requires_grad for p in pipe.text_encoder.parameters())
     assert set(model.state_dict()) == {"dit." + name for name in pipe.dit.state_dict()}
-    assert selected == (["FA2"] if policy == "save_self_attention" else [])
-    selected_layers = (30 if cache_layers is None else cache_layers) if policy == "save_self_attention" else 0
-    assert all((block.activation_checkpoint_context_fn is not None) == (index >= len(pipe.dit.blocks) - selected_layers)
-               for index, block in enumerate(pipe.dit.blocks))
+    assert selected == ([("attention operator", torch.device("cpu"))] if policy == "save_self_attention" else [])
+    checkpointed = num_layers - (suffix_layers or 0)
+    selected_layers = (checkpointed if cache_layers is None else cache_layers) if policy == "save_self_attention" else 0
+    for index, block in enumerate(pipe.dit.blocks):
+        assert (block.activation_checkpoint_context_fn is not None) == (checkpointed - selected_layers <= index < checkpointed)
+        assert getattr(block, "_skip_activation_checkpointing", False) == (index >= checkpointed)
     assert all("forward" not in block.self_attn.__dict__ for block in pipe.dit.blocks)
 
 
@@ -131,7 +137,7 @@ def test_installed_training_policy_model_can_run_without_checkpointing_with_iden
     # flash-attn installed; its CUDA-only kernel cannot consume CPU tensors.
     for flag in ("FLASH_ATTN_2_AVAILABLE", "FLASH_ATTN_3_AVAILABLE", "SAGE_ATTN_AVAILABLE"):
         monkeypatch.setattr(attention, flag, False)
-    monkeypatch.setattr(checkpoint, "_fa2_forward_operator", lambda: torch.ops.aten.mm.default)
+    monkeypatch.setattr(checkpoint, "_self_attention_forward_operator", lambda device: torch.ops.aten.mm.default)
     torch.manual_seed(25)
     dit = WanModel(dim=24, in_dim=2, out_dim=2, ffn_dim=32, text_dim=4,
                    freq_dim=16, eps=1e-6, patch_size=(1, 2, 2), num_heads=2,

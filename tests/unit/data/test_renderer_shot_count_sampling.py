@@ -191,3 +191,39 @@ def test_unusable_shot_without_changes_does_not_block_long_single_draw(tmp_path)
     path.write_text("".join(json.dumps(m) + "\n" for m in members))
     written = write_drawn_sampling(members_path=path, output=tmp_path / "sampling.jsonl", limit=None, **kw)
     assert written["long_single_shot"] == report["long_single_shot"]
+
+
+def test_target_index_filters_target_windows_without_touching_members_and_breaks_spans(tmp_path):
+    members = _annotated_real_members()
+    # 删掉一个块中间一镜（≤10s 可用镜）的目标缓存，验证它不进任何目标窗且切断连续段，其余缓存镜仍正常出窗。
+    all_keys = [shot_key(shot) for m in members for shot in m["shots"] if shot["usable"] and shot["seconds"] <= 10]
+    multi_member = next(m for m in members if sum(s["usable"] and s["seconds"] <= 10 for s in m["shots"]) >= 3)
+    dropped_pos = next(i for i, s in enumerate(multi_member["shots"]) if i >= 1 and s["usable"] and s["seconds"] <= 10)
+    dropped_key = shot_key(multi_member["shots"][dropped_pos])
+    kept_keys = frozenset(k for k in all_keys if k != dropped_key)
+    kw = {**options(sample_budget=1000), "shot_count_weights": [25, 35, 25, 15], "long_single_shot": (0.5, 80)}
+    samples, report = draw_sampling(members, **kw, eligible_target_shots=kept_keys)
+    by_case = {m["case_id"]: m for m in members}
+    for sample in samples:
+        for pos in range(*sample["span"]):
+            assert shot_key(by_case[sample["case_id"]]["shots"][pos]) in kept_keys
+            assert not (sample["case_id"] == multi_member["case_id"] and pos == dropped_pos)
+    assert report["target_index_dropped_usable_shots"] == 1
+    members_path = tmp_path / "members.jsonl"
+    members_path.write_text("".join(json.dumps(m) + "\n" for m in members))
+    index_path = tmp_path / "target-index.jsonl"
+    index_path.write_text("".join(json.dumps({"sid": k[0], "scene_id": k[1], "source_shot_index": k[2]}) + "\n"
+                                  for k in sorted(kept_keys)))
+    written = write_drawn_sampling(members_path=members_path, output=tmp_path / "sampling.jsonl", limit=None,
+                                   target_index_path=index_path, **kw)
+    assert written["target_index_path"] == str(index_path)
+    assert written["target_index_dropped_usable_shots"] == 1
+    assert [json.loads(line) for line in (tmp_path / "sampling.jsonl").read_text().splitlines()] == samples
+    with pytest.raises(ValueError, match="nonempty"):
+        draw_sampling(members, **kw, eligible_target_shots=frozenset())
+    dup_index = tmp_path / "dup-index.jsonl"
+    dup_line = json.dumps({"sid": all_keys[0][0], "scene_id": all_keys[0][1], "source_shot_index": all_keys[0][2]}) + "\n"
+    dup_index.write_text(dup_line + dup_line)
+    with pytest.raises(ValueError, match="duplicate target index key"):
+        write_drawn_sampling(members_path=members_path, output=tmp_path / "dup.jsonl", limit=None,
+                             target_index_path=dup_index, **kw)

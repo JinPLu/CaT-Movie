@@ -63,3 +63,35 @@ def test_pipeline_forward_backward_for_single_and_multiple_shots(groups):
     assert result.shape == latents.shape
     result.square().mean().backward()
     assert torch.isfinite(latents.grad).all()
+
+
+def test_own_shot_window_matches_dense_mask_without_other_shots():
+    """镜间读取切除：每镜只读本镜（本镜首帧照旧重复一份），与只留本镜块的加性掩码逐值相同。"""
+    from diffsynth.models.wan_video_dit import SelfAttention
+    torch.manual_seed(7)
+    attn = SelfAttention(12, 2).double()
+    groups, tpf = [(0, 2), (2, 5), (5, 6)], 2
+    q, k, v = [torch.randn(1, 12, 12, dtype=torch.float64) for _ in range(3)]
+    actual = attn.routed_shot_attention(q, k, v, groups, tpf, window="own_first_latent", reference_query_scope="all_latents")
+    mask = torch.full((12, 12), -torch.inf, dtype=torch.float64)
+    for a, b in groups:
+        mask[a*tpf:b*tpf, a*tpf:b*tpf] = 0
+        mask[a*tpf:b*tpf, a*tpf:(a+1)*tpf] = math.log(2)
+    split = lambda x: x.reshape(1, 12, 2, 6).transpose(1, 2)
+    expected = F.scaled_dot_product_attention(split(q), split(k), split(v), attn_mask=mask).transpose(1, 2).reshape(1, 12, 12)
+    torch.testing.assert_close(actual, expected)
+
+
+def test_own_shot_window_ignores_other_shots_first_frames_and_matches_single_shot_holocine():
+    from diffsynth.models.wan_video_dit import SelfAttention
+    attn = SelfAttention(12, 2).double()
+    q, k, v = [torch.randn(1, 8, 12, dtype=torch.float64) for _ in range(3)]
+    groups = [(0, 2), (2, 4)]
+    original = attn.routed_shot_attention(q, k, v, groups, 2, window="own_first_latent", reference_query_scope="all_latents")
+    changed = v.clone(); changed[:, 4:6] += 3   # 第二镜首潜帧
+    result = attn.routed_shot_attention(q, k, changed, groups, 2, window="own_first_latent", reference_query_scope="all_latents")
+    torch.testing.assert_close(original[:, :4], result[:, :4])
+    single = [(0, 2)]
+    torch.testing.assert_close(
+        attn.routed_shot_attention(q[:, :4], k[:, :4], v[:, :4], single, 2, window="own_first_latent", reference_query_scope="all_latents"),
+        attn.routed_shot_attention(q[:, :4], k[:, :4], v[:, :4], single, 2, window="first_latents", reference_query_scope="all_latents"))

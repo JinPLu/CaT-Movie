@@ -22,7 +22,8 @@ from mspc.evaluation.benchmark import load_manifest, write_json
 from mspc.evaluation.paired_bootstrap import cluster_bootstrap, paired
 from mspc.inference.render_story import RuntimeCache, render_story
 from mspc.inference.segment_story import (CLIP_RETRIEVAL, HISTORY_POLICIES, NO_REFERENCES, PLAN_SELECTION,
-                                          RECENT_SHOTS, reference_row, select_reference_shots)
+                                          PLAN_SELECTION_DISTINCT_CAMERA, RECENT_SHOTS, reference_row,
+                                          select_reference_shots)
 from mspc.models.spatial_layout import (
     SPATIAL_LAYOUT_MODE,
     SpatialLayoutAnchor,
@@ -264,7 +265,7 @@ def reference_plan(annotation: Mapping[str, Any], segments: Sequence[Mapping[str
         if (policy == NO_REFERENCES) != (frames_max is None):
             raise ValueError("frames_max is given exactly when references are kept (history_policy other than none)")
         return [[] for _ in segments]
-    if policy not in (PLAN_SELECTION, RECENT_SHOTS):
+    if policy not in (PLAN_SELECTION, PLAN_SELECTION_DISTINCT_CAMERA, RECENT_SHOTS):
         raise ValueError(f"unknown history policy: {policy!r}")
     if type(frames_max) is not int:
         raise ValueError("history policies require frames_max from the renderer config")
@@ -358,10 +359,10 @@ def checkpoint_identity(inference: Mapping[str, Any]) -> str | dict[str, str] | 
         pair = {key: inference["experts"][key] for key in EXPERT_LORA_CHECKPOINT_KEYS}
         checkpoint_paths(pair)
         return pair
-    if inference["weight_source"] != "full_dit_checkpoint":
-        raise ValueError("requires an explicit native, full DiT or expert LoRA initialization")
+    if inference["weight_source"] not in ("full_dit_checkpoint", "lora_checkpoint"):
+        raise ValueError("requires an explicit native, full DiT, single LoRA or expert LoRA initialization")
     if not isinstance(checkpoint, str) or not checkpoint:
-        raise ValueError("full DiT initialization requires an explicit checkpoint")
+        raise ValueError(f"{inference['weight_source']} requires an explicit checkpoint")
     return checkpoint
 
 
@@ -530,6 +531,8 @@ def prepare(manifest: Path, *, story_ids: Sequence[str] | None, prepare_only: bo
             PLAN_SELECTION: "窗前全部已生成镜为候选：窗内每个在场登记实体取它最近一次出现的镜，再加最近一次同地点的镜，"
                             "去重、至多 frames_max 张；镜内有变化取末帧、否则中帧；谁读哪张与训练同一个 reference_readers。"
                             "参考身份行写源镜分镜在场的登记人物，不读图。",
+            PLAN_SELECTION_DISTINCT_CAMERA: "同按分镜选帧，但锚视角与地点视角在外观不过期之后先避开与目标镜同机位（地点、景别、"
+                                            "角度相同，没写角度按平视）的镜，没有异机位候选照取。",
             RECENT_SHOTS: "张数与同一窗按分镜选帧相同，取窗前最近的那几镜中帧，不看分镜内容；之后的路由与身份行相同。",
             CLIP_RETRIEVAL: "张数与同一窗按分镜选帧相同；每个已生成镜存至多 6 张 CLIP 去重的帧，按与本窗各镜文字的 CLIP "
                             "文图相似度取前几镜、每镜最像的一帧，不看分镜内容；之后的路由与身份行相同。预检选不出，记空。",

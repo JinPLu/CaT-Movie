@@ -127,8 +127,9 @@ class TrainingArgs:
     output_root: str
     #: 整段联合去噪或逐镜前向；直接来自明确的训练配置。
     shot_forward_mode: str
-    # Linear-warmup key; None when lr_scheduler_type is constant.
+    # Linear-warmup / cosine-decay keys; None when lr_scheduler_type is constant.
     warmup_steps: int | None = None
+    min_lr_ratio: float | int | None = None
     gpus_per_node: int | None = None
     nnodes: int | None = None
     timing_prefix: str = ""
@@ -187,6 +188,7 @@ def build_common_training_args(config: ExperimentConfig) -> TrainingArgs:
         lr_scheduler_factor=optimization.get("lr_scheduler_factor"),
         lr_scheduler_total_iters=optimization.get("lr_scheduler_total_iters"),
         warmup_steps=optimization.get("warmup_steps"),
+        min_lr_ratio=optimization.get("min_lr_ratio"),
         per_device_batch_size=dataloader["per_device_batch_size"],
         dataloader_split_batches=dataloader["split_batches"],
         dataloader_drop_last=dataloader["drop_last"],

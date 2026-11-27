@@ -606,7 +606,7 @@ def random_references(*, span, seed, dropout_p=0.0, frames_max=10, usable=None, 
         for position in range(*span):
             real['annotation']['shots'][position]['present'] = []
     row = BlockRow(real['key'], frames, tuple(range(len(frames))) if usable is None else usable)
-    helper = SimpleNamespace(references_enabled=True, planner_tokens=None,
+    helper = SimpleNamespace(references_enabled=True, planner_tokens=None, reference_policy='random_frame',
         memory_options=SimpleNamespace(dropout_p=dropout_p, frames_max=frames_max),
         annotations={row.case_id: real['annotation']},
         reference_frame_counts={row.case_id: frames},
@@ -703,9 +703,59 @@ def test_a_dropped_reference_group_has_no_candidates():
     assert plan == ({}, 0) and references == ()
 
 
-def test_only_random_frame_is_a_training_reference_policy(inputs):
-    with pytest.raises(ValueError, match='reference_policy must be random_frame'):
+def test_training_reference_policy_is_one_of_the_two_named_selections(inputs):
+    with pytest.raises(ValueError, match='reference_policy must be one of'):
         BlockDataset(**{**inputs, 'reference_policy': 'unified_views'})
+
+
+def test_distinct_camera_shared_only_policy_degrades_same_camera_windows_to_empty_and_keeps_distinct_shared(inputs):
+    members = lines(Path(inputs['members_path']))
+    sampling = lines(Path(inputs['sampling_manifest_path']))
+    by_case = {m['case_id']: m for m in members}
+    sample_idx, span, member, outside = next(
+        (i, row['span'], by_case[row['case_id']],
+         [p for p, s in enumerate(by_case[row['case_id']]['shots'])
+          if s['usable'] and not (row['span'][0] <= p < row['span'][1])])
+        for i, row in enumerate(sampling)
+        if any(s['usable'] and not (row['span'][0] <= p < row['span'][1])
+               for p, s in enumerate(by_case[row['case_id']]['shots'])))
+    cand_pos = outside[0]
+    shots = member['annotation']['shots']
+    place = member['annotation']['places'][0]['name']
+    memory = {**inputs['memory_prefix_options'], 'dropout_p': 0.0, 'attention_policy': 'routed_self_only_v1'}
+    # 情形 1：全块同机位，窗外镜共有目标实体 → 不兜底，参考置空退化为纯窗内互读。
+    target_names = [e['name'] for t in range(*span) for e in shots[t]['present']]
+    shared_name = target_names[0]
+    for pos, shot in enumerate(shots):
+        shot['place'] = place
+        shot['camera'] = {'shot_size': 'medium shot', 'angle': 'eye-level shot'}
+        if pos in outside:
+            shot['present'] = [{'name': shared_name}]
+    Path(inputs['members_path']).write_text(''.join(json.dumps(row) + '\n' for row in members))
+    ds_same = BlockDataset(**{**inputs, 'memory_prefix_options': memory,
+                              'reference_policy': 'distinct_camera_shared_only'})
+    draw_same = ds_same.draw(sample_idx)
+    assert draw_same.references == () and draw_same.reference_offset is None
+    text_same = ds_same.text(sample_idx)
+    assert text_same.metadata['references'] == [] and text_same.metadata['reference_offset'] is None
+    wl_same = ds_same.sample_workloads()[sample_idx]
+    # 情形 2：窗外仅有无关镜（哪怕异机位）→ 不补无关镜，参考仍置空。
+    for pos in outside:
+        shots[pos]['camera'] = {'shot_size': 'close-up shot', 'angle': 'eye-level shot'}
+        shots[pos]['present'] = []
+    Path(inputs['members_path']).write_text(''.join(json.dumps(row) + '\n' for row in members))
+    ds_unrel = BlockDataset(**{**inputs, 'memory_prefix_options': memory,
+                               'reference_policy': 'distinct_camera_shared_only'})
+    assert ds_unrel.draw(sample_idx).references == ()
+    # 情形 3：窗外有一个异机位共有实体镜，其余为无关镜 → 只选这一镜。
+    shots[cand_pos]['present'] = [{'name': shared_name}]
+    Path(inputs['members_path']).write_text(''.join(json.dumps(row) + '\n' for row in members))
+    ds_distinct = BlockDataset(**{**inputs, 'memory_prefix_options': memory,
+                                  'reference_policy': 'distinct_camera_shared_only'})
+    draw_distinct = ds_distinct.draw(sample_idx)
+    assert [shot for shot, _ in draw_distinct.references] == [cand_pos]
+    assert draw_distinct.reference_offset is not None
+    assert ds_distinct.sample_workloads()[sample_idx]['latent_frames'] == wl_same['latent_frames'] + 1
 
 
 def test_verified_reference_consumer_checks_actual_source_frames_and_uses_registry_appearance(inputs, monkeypatch):

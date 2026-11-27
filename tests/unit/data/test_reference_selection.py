@@ -27,7 +27,7 @@ def _names(board, shot):
 def _anchor(board, name, target, before=None):
     """``name`` 在窗起点 ``before``（默认就是目标镜）之前出现过的镜里，按锚视角排序键取的那一镜。"""
     seen = [index for index in range(target if before is None else before) if name in _names(board, index)]
-    return min(seen, key=lambda index: anchor_key(board, candidate=index, target=target, name=name))
+    return min(seen, key=lambda index: anchor_key(board, candidate=index, target=target, name=name, distinct_camera=False))
 
 
 def test_a_character_reads_its_view_with_fewest_other_people_not_its_latest_appearance():
@@ -36,7 +36,7 @@ def test_a_character_reads_its_view_with_fewest_other_people_not_its_latest_appe
     board = _board("cinedance-014617-b0002-shot01")
     assert _names(board, 3) == ["Character 2", "Character 1", "Character 8"] and _names(board, 1) == ["Character 2"]
     assert _names(board, 4) == ["Character 2"]
-    assert select_references(board, span=(4, 5), candidates=range(4), frames_max=10) == [1]
+    assert select_references(board, span=(4, 5), candidates=range(4), frames_max=10, distinct_camera=False) == [1]
 
 
 def test_equally_clean_views_go_to_the_earliest_so_the_anchor_stays_fixed_across_windows():
@@ -44,7 +44,7 @@ def test_equally_clean_views_go_to_the_earliest_so_the_anchor_stays_fixed_across
     board = _board("cinedance-011050-b0000-shot01")
     assert _names(board, 5) == _names(board, 10) == ["Character 1"]
     assert _anchor(board, "Character 1", 10) == _anchor(board, "Character 1", 11) == 5
-    picked = select_references(board, span=(11, 12), candidates=range(11), frames_max=10)
+    picked = select_references(board, span=(11, 12), candidates=range(11), frames_max=10, distinct_camera=False)
     assert 5 in picked and 10 not in picked
 
 
@@ -69,18 +69,18 @@ def test_place_view_is_the_same_place_shot_with_fewest_people_then_the_widest():
     board = _board("cinedance-011050-b0000-shot01")
     assert [board["shots"][index]["camera"]["shot_size"] for index in (1, 2)] == ["close-up shot", "extreme close-up shot"]
     place = [index for index in range(10) if board["shots"][index]["place"] == "Location 1"]
-    assert min(place, key=lambda index: place_key(board, candidate=index)) == 1
-    assert select_references(board, span=(10, 11), candidates=range(10), frames_max=10) == [1, 5]
+    assert min(place, key=lambda index: place_key(board, candidate=index, target=10, distinct_camera=False)) == 1
+    assert select_references(board, span=(10, 11), candidates=range(10), frames_max=10, distinct_camera=False) == [1, 5]
 
 
 def test_references_are_collected_by_target_then_present_then_place_deduplicated_and_capped():
     # cinedance-012429 第 6–10 镜一窗：第 6 镜 Character 5 → 第 2 镜（单人特写）、地点 → 第 4 镜（单人中近景，比特写远）；
     # 第 7 镜 Character 3 → 第 1 镜（只出现过这一次）、Object 1 → 第 5 镜（同框一人）；其余重复。
     board = _board("cinedance-012429-b0002-shot01")
-    assert select_references(board, span=(5, 10), candidates=range(5), frames_max=10) == [0, 1, 2, 3, 4]
+    assert select_references(board, span=(5, 10), candidates=range(5), frames_max=10, distinct_camera=False) == [0, 1, 2, 3, 4]
     # 上限 3：按收集顺序留前三张（第 2、4、1 镜），按镜序返回。
-    assert select_references(board, span=(5, 10), candidates=range(5), frames_max=3) == [0, 1, 3]
-    assert select_references(board, span=(5, 10), candidates=[2, 3], frames_max=10) == [2, 3]
+    assert select_references(board, span=(5, 10), candidates=range(5), frames_max=3, distinct_camera=False) == [0, 1, 3]
+    assert select_references(board, span=(5, 10), candidates=[2, 3], frames_max=10, distinct_camera=False) == [2, 3]
 
 
 def test_every_entity_seen_before_its_window_gets_a_view_routed_to_its_target_on_every_dev_window():
@@ -93,7 +93,7 @@ def test_every_entity_seen_before_its_window_gets_a_view_routed_to_its_target_on
         for segment in adapt_storyboard(board, family="wan_segment", count_tokens=lambda text: len(text.split()),
                                         limits=dict(max_shots=None, max_frames=128, max_tokens=512)):
             start, end = segment["start_shot"], segment["end_shot"]
-            picked = select_references(board, span=(start, end), candidates=range(start), frames_max=10)
+            picked = select_references(board, span=(start, end), candidates=range(start), frames_max=10, distinct_camera=False)
             assert picked == sorted(set(picked)) and len(picked) <= 10 and all(index < start for index in picked)
             if not picked:
                 continue
@@ -112,14 +112,14 @@ def test_every_entity_seen_before_its_window_gets_a_view_routed_to_its_target_on
 def test_capacity_is_an_int_from_one_to_ten(frames_max):
     with pytest.raises(ValueError, match="1..10"):
         select_references(_board("cinedance-012429-b0002-shot01"), span=(5, 10), candidates=range(5),
-                          frames_max=frames_max)
+                          frames_max=frames_max, distinct_camera=False)
 
 
 @pytest.mark.parametrize("span,candidates", [((5, 10), [5]), ((5, 10), [1, 1]), ((5, 10), [10]), ((5, 5), [1]),
                                              ((5, 11), [1])])
 def test_candidates_must_be_unique_shots_outside_the_target_span(span, candidates):
     with pytest.raises(ValueError):
-        select_references(_board("cinedance-012429-b0002-shot01"), span=span, candidates=candidates, frames_max=10)
+        select_references(_board("cinedance-012429-b0002-shot01"), span=span, candidates=candidates, frames_max=10, distinct_camera=False)
 
 
 def test_frame_position_is_the_last_frame_only_for_an_outfit_or_state_change():
@@ -131,3 +131,27 @@ def test_frame_position_is_the_last_frame_only_for_an_outfit_or_state_change():
     # film-000123 第 3 镜「转身看身后」：只有姿态变化，取中帧（末帧是背影）。
     assert [change["what"] for change in _board("film-000123-b0001-shot01")["shots"][2]["changes"]] == ["posture"]
     assert reference_position(_board("film-000123-b0001-shot01")["shots"][2]) == "middle"
+
+
+def test_distinct_camera_prefers_another_setup_of_the_same_entity_and_lowers_same_setup_reads():
+    # cinedance-010673 第 3 镜（下标 2）：第 1 镜与目标同为 Location 1 中近景平视，第 2 镜是过肩；开避同机位后第 2 镜入选。
+    from mspc.data.reference_routing import camera_setup
+    board = _board("cinedance-010673-b0001-shot01")
+    shots = board["shots"]
+    assert camera_setup(shots[0]) == camera_setup(shots[2]) != camera_setup(shots[1])
+    assert 1 not in select_references(board, span=(2, 3), candidates=range(2), frames_max=10, distinct_camera=False)
+    assert 1 in select_references(board, span=(2, 3), candidates=range(2), frames_max=10, distinct_camera=True)
+    same = {False: [0, 0], True: [0, 0]}
+    for story in DEV:
+        board = execution_storyboard(story["storyboard"])
+        shots = board["shots"]
+        for target in range(1, len(shots)):
+            wanted = set(_names(board, target))
+            for flag in (False, True):
+                for index in select_references(board, span=(target, target + 1), candidates=range(target),
+                                               frames_max=10, distinct_camera=flag):
+                    if wanted & set(_names(board, index)):
+                        setup = camera_setup(shots[index])
+                        same[flag][0] += setup is None or camera_setup(shots[target]) in (None, setup)
+                        same[flag][1] += 1
+    assert same[True][0] / same[True][1] < 0.5 * same[False][0] / same[False][1]

@@ -286,10 +286,17 @@ def load_pure_t2v_pipeline(
     experts = [pipe.dit] if low_noise_dit is None else [pipe.dit, getattr(pipe, "dit2", None)]
     if low_noise_dit is not None and pipe.dit2 is None:
         raise RuntimeError("DiffSynth did not load the low-noise expert as dit2")
+    target_device = torch.device(device)
+    stage_dual_experts = (
+        low_noise_dit is not None
+        and target_device.type == "cuda"
+        and torch.cuda.is_available()
+        and torch.cuda.get_device_properties(target_device).total_memory < 110 * 1024 ** 3
+    )
     for dit in experts if dit_loaded else []:
         from mspc.models.wan22_precision import apply_wan22_parameter_storage
         apply_wan22_parameter_storage(dit)
-        if low_noise_dit is not None:
+        if low_noise_dit is not None and not stage_dual_experts:
             # Convert each original FP32 expert on the host before GPU residency.
             # Keep both unconverted experts out of the GPU startup peak.
             dit.to(device=device)
@@ -325,6 +332,13 @@ def load_pure_t2v_pipeline(
 
     pipe.in_iteration_models = ("dit",) if dit_loaded else tuple()
     pipe.in_iteration_models_2 = ("dit2",) if low_noise_dit is not None else tuple()
+    if stage_dual_experts:
+        if text_loaded:
+            pipe.text_encoder.to(device="cpu")
+        torch.cuda.empty_cache()
+        pipe.stage_models_on_device = ("text_encoder", "dit", "dit2")
+    else:
+        pipe.stage_models_on_device = ()
     pipe.post_units = []
     wanted_units = _UNITS_BY_COMPONENT_MODE[mode]
     pipe.units = [

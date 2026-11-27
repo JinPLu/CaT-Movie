@@ -1831,7 +1831,10 @@ def model_fn_wan_video(
         if memory_attention_window is not None:
             if not isinstance(memory_attention_window, MemoryAttentionWindow):
                 raise ValueError("memory_attention_window must be a MemoryAttentionWindow")
-            if not memory_attention_window.full:
+            if memory_attention_policy in ROUTED_MEMORY_ATTENTION_POLICIES:
+                if not memory_attention_window.full_layers:
+                    raise ValueError("memory_attention_window requires all layers")
+            elif not memory_attention_window.full:
                 raise ValueError("memory_attention_window requires the full window")
             if not isinstance(timestep, torch.Tensor) or timestep.numel() != 1:
                 raise ValueError("a memory attention window requires one scheduler timestep")
@@ -2159,7 +2162,8 @@ def model_fn_wan_video(
             block_freqs = freqs
             if use_shot_phase:
                 if any(block.self_attn.self_attention_policy in
-                       ("holocine_first_frame", "first_frame_communication", "first_frame_interface")
+                       ("holocine_first_frame", "holocine_own_shot_only", "first_frame_communication",
+                        "first_frame_interface")
                        for block in dit.blocks):
                     raise ValueError("first-frame communication requires native temporal positions (no shot phase)")
                 block_freqs = shot_phase_adjusted_freqs(
@@ -2219,6 +2223,12 @@ def model_fn_wan_video(
                     t_mod = torch.cat([t_mod, t_mod[:, -1:].expand(-1, len(starts) * first_frame_tokens, -1, -1)],
                                       dim=1)
                 x = torch.cat([x, extra.states(len(starts), x.dtype)], dim=1)
+            active_reference_routing = (
+                None if reference_routing is None else (
+                    reference_routing if memory_attention_window.contains_timestep(memory_t)
+                    else tuple(() for _ in reference_routing)
+                )
+            )
             # Block
             for block_id, block in enumerate(dit.blocks):
                 if skip_9th_layer:
@@ -2268,7 +2278,7 @@ def model_fn_wan_video(
                         planner_layout=planner_layout,
                         source_identity_condition=(None if source_identity_condition is None else
                             source_identity_condition.for_layer(block_id, len(dit.blocks))),
-                        reference_routing=reference_routing,
+                        reference_routing=active_reference_routing,
                         first_frame_tokens=first_frame_tokens,
                     )
                     x = block_prediction.hidden_states

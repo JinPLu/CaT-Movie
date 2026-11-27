@@ -122,7 +122,21 @@ class BlockRow:
 
 #: 训练参考的唯一取法：同块窗外（窗前窗后）可用镜里随机抽张数、随机帧，见 :meth:`BlockDataset.references`。
 #: 推理端的选帧规则（:mod:`mspc.data.reference_selection` 等）在训练分布之内，可在同一份权重上免训练比较。
-REFERENCE_POLICY = "random_frame"
+#: 训练参考的选法：``random_frame`` 共有实体优先、层内随机（不看机位）；``distinct_camera_first`` 异机位优先、同机位只作兜底、
+#: 空位用无关镜补回张数；``distinct_camera_only`` 同上但不兜底、不给同机位参考；``distinct_camera_shared_only`` 只给异机位
+#: 共有实体参考、不兜底也不补无关镜，无异机位候选时参考置空退化为纯窗内首潜帧互读
+#: （:func:`mspc.data.reference_routing.distinct_camera_first`）；``distinct_camera_character_coverage`` 异机位优先、按在场实体
+#: 逐个补齐（缺的先补异机位、再补同机位）、只补一张同地点场景镜、不补无关镜
+#: （:func:`mspc.data.reference_routing.distinct_camera_character_coverage`）。抽签键与上限相同，只改选哪几镜。
+REFERENCE_POLICY_RANDOM_FRAME = "random_frame"
+REFERENCE_POLICY_DISTINCT_CAMERA_FIRST = "distinct_camera_first"
+REFERENCE_POLICY_DISTINCT_CAMERA_ONLY = "distinct_camera_only"
+REFERENCE_POLICY_DISTINCT_CAMERA_SHARED_ONLY = "distinct_camera_shared_only"
+REFERENCE_POLICY_DISTINCT_CAMERA_CHARACTER_COVERAGE = "distinct_camera_character_coverage"
+REFERENCE_POLICIES = frozenset({REFERENCE_POLICY_RANDOM_FRAME, REFERENCE_POLICY_DISTINCT_CAMERA_FIRST,
+                                REFERENCE_POLICY_DISTINCT_CAMERA_ONLY,
+                                REFERENCE_POLICY_DISTINCT_CAMERA_SHARED_ONLY,
+                                REFERENCE_POLICY_DISTINCT_CAMERA_CHARACTER_COVERAGE})
 #: 参考时间格上可取的帧间隔：16fps 标注格上每 4 帧（0、4、8…），SAM 标签与裁剪框也在这些帧上。
 REFERENCE_FRAME_GRID = 4
 #: 长单镜要求的镜内活动（块标注 ``activity``，见 ``configs/data/block_annotation_v18.json``）。
@@ -325,8 +339,8 @@ class BlockDataset(torch.utils.data.Dataset):
         # 只决定每条样本的注意力帧对（负载上限与组批），不改抽签与文字。
         self.self_attention_policy = self_attention_policy
         self.references_enabled = memory_prefix_options is not None
-        if reference_policy != REFERENCE_POLICY:
-            raise ValueError(f"reference_policy must be {REFERENCE_POLICY}")
+        if reference_policy not in REFERENCE_POLICIES:
+            raise ValueError(f"reference_policy must be one of {sorted(REFERENCE_POLICIES)}")
         self.reference_policy = reference_policy
         if box_dropout_p is not None and (type(box_dropout_p) not in (int, float) or not 0 <= box_dropout_p < 1):
             raise ValueError("box_dropout_p must be in [0, 1)")
@@ -602,7 +616,8 @@ class BlockDataset(torch.utils.data.Dataset):
     def references(self, data_id: int, span, key) -> tuple[tuple[int, int], ...]:
         """本样本实际给模型的参考帧（块内镜下标, 参考格帧号），最终按镜序排列。
 
-        与目标在场实体相交的镜优先、层内随机，不足时补无关镜到已抽张数，每镜在候选帧里均匀选一帧。
+        ``random_frame``：与目标在场实体相交的镜优先、层内随机，不足时补无关镜到已抽张数；``distinct_camera_first``（兜底）与
+        ``distinct_camera_only``（不兜底）：见 :func:`mspc.data.reference_routing.distinct_camera_first`。每镜在候选帧里均匀选一帧。
         抽签键名（reference_group／reference_count／reference_pick／reference_frame）与 06776a926 逐项相同。
         """
         row = self.row_by_case[self.sampling_manifest[data_id]["case_id"]]
@@ -614,7 +629,20 @@ class BlockDataset(torch.utils.data.Dataset):
             shared = wanted.intersection(entry["name"] for entry in shots[position]["present"])
             return (not shared, unit_draw("reference_pick", *key, position))
 
-        chosen = sorted(frames, key=priority)[:count]
+        if self.reference_policy == REFERENCE_POLICY_DISTINCT_CAMERA_CHARACTER_COVERAGE:
+            from mspc.data.reference_routing import distinct_camera_character_coverage
+            ordered = sorted(frames, key=lambda position: unit_draw("reference_pick", *key, position))
+            chosen = distinct_camera_character_coverage(shots, candidates=ordered, target_shots=range(*span),
+                                                        count=count, limit=self.memory_options.frames_max)
+        elif self.reference_policy != REFERENCE_POLICY_RANDOM_FRAME:
+            from mspc.data.reference_routing import distinct_camera_first
+            ordered = sorted(frames, key=lambda position: unit_draw("reference_pick", *key, position))
+            chosen = distinct_camera_first(
+                shots, candidates=ordered, target_shots=range(*span), count=count, limit=self.memory_options.frames_max,
+                same_camera_fallback=self.reference_policy == REFERENCE_POLICY_DISTINCT_CAMERA_FIRST,
+                fill_unrelated=self.reference_policy != REFERENCE_POLICY_DISTINCT_CAMERA_SHARED_ONLY)
+        else:
+            chosen = sorted(frames, key=priority)[:count]
         return tuple((position, frames[position][int(unit_draw("reference_frame", *key, position) * len(frames[position]))])
                      for position in sorted(chosen))
 
@@ -842,13 +870,39 @@ class BlockDataset(torch.utils.data.Dataset):
         reference_images = torch.empty((0, 3, self.height, self.width), dtype=torch.uint8)
         reference_timing = {f"reference_{stage}_seconds": 0.0
                             for stage in ("open", "index", "decode", "crop", "read")}
+        routing, reasons, shifted_slots = None, None, None
+        if count and self.memory_options.attention_policy in ROUTED_MEMORY_ATTENTION_POLICIES:
+            routing, reasons = reference_readers(self.memory_options.attention_policy, self.annotations[case]["shots"],
+                                                 reference_shots=[shot for shot, _ in draw.references],
+                                                 target_shots=range(*draw.span))
         if count:
             member = self.members[case]
             source_indices = self.reference_source_frames(draw)
             reference_images, reference_timing = read_reference_frames(
                 member["scene"], source_indices, video_decode_num_threads=self.video_decode_num_threads, media=self.media)
-            if self.reference_crops is not None:
-                reference_images = apply_crops(reference_images, self.reference_crops.for_draw(item, draw))
+            if self.reference_crops is not None and self.reference_crops.same_camera_shift is not None:
+                # 同机位参考整帧缩小并贴到一侧（不再裁剪），其余参考照旧按离线表裁剪。
+                from mspc.data.reference_crops import same_camera_slots, shift_same_camera
+                flags = same_camera_slots(self.annotations[case]["shots"],
+                                          reference_shots=[shot for shot, _ in draw.references],
+                                          target_shots=range(*draw.span), routing=routing)
+                boxes = [None if flag else box for flag, box in zip(flags, self.reference_crops.for_draw(item, draw),
+                                                                    strict=True)]
+                reference_images = apply_crops(reference_images, boxes)
+                draws = [tuple(unit_draw(f"reference_shift_{part}", *draw.key, slot)
+                               for part in ("scale", "x", "y", "side")) for slot in range(count)]
+                reference_images = shift_same_camera(reference_images, flags, draws,
+                                                     **self.reference_crops.same_camera_shift)
+                shifted_slots = [slot for slot, flag in enumerate(flags) if flag]
+            elif self.reference_crops is not None:
+                boxes = self.reference_crops.for_draw(item, draw)
+                if self.reference_crops.only_same_camera:
+                    from mspc.data.reference_crops import select_same_camera_boxes
+                    boxes = select_same_camera_boxes(
+                        boxes, shots=self.annotations[case]["shots"],
+                        reference_shots=[shot for shot, _ in draw.references],
+                        target_shots=range(*draw.span), routing=routing)
+                reference_images = apply_crops(reference_images, boxes)
         rgb_lengths = draw.row.frame_counts[slice(*draw.span)]
         lengths = [latent_frames(n) for n in rgb_lengths]
         rgb_edges, latent_edges = [0, *accumulate(rgb_lengths)], [0, *accumulate(lengths)]
@@ -892,15 +946,15 @@ class BlockDataset(torch.utils.data.Dataset):
                                             for row in sample["reference_entities"]]
         if count:
             sample["reference_offset"] = list(draw.reference_offset)
-        if count and self.memory_options.attention_policy in ROUTED_MEMORY_ATTENTION_POLICIES:
-            routing, reasons = reference_readers(self.memory_options.attention_policy, self.annotations[case]["shots"],
-                                                 reference_shots=[shot for shot, _ in draw.references],
-                                                 target_shots=range(*draw.span))
+        if routing is not None:
             sample["reference_routing"] = [list(entry) for entry in routing]
             # 元数据按镜号（从 1 起）：每个目标镜读到的参考源镜，及每张参考的路由依据。
             sample["_sample_metadata"].update(
                 reference_routing=[[draw.references[j][0] + 1 for j in entry] for entry in routing],
                 reference_routing_reasons=list(reasons))
+        if shifted_slots is not None:
+            # 被缩小平移的同机位参考（参考序号，从 0 起），供训练日志按机位关系拆参考收益。
+            sample["_sample_metadata"]["reference_shifted"] = shifted_slots
         if self.planner_tokens is not None:
             sample["planner_tokens"] = self.planner_tokens.tokens(
                 item, draw.span, lengths, training_seed=self.training_seed, key=draw.key, case_id=case)
