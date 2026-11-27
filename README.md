@@ -28,6 +28,8 @@
 
 **TL;DR:** **CaT-Movie** decouples long multi-shot video generation into a training-free **Global Storyboard Planner** (`Qwen3.8-27B` + deterministic state compiler) and a **Local Window Renderer** (`Wan2.2-TI2V-5B`, `704p`, `24 fps`) with **shot-wise cross-attention**, **reference-routed sparse self-attention**, and storyboard-indexed **anchor recall**—executing planned cuts cleanly while preserving entities and states across window boundaries.
 
+> **What's New — CaT-Movie v1.1 Released:** Retrained on the full `202,144`-shot `704p` pool with refined per-entity reference supervision on the same `5B` backbone, **CaT-Movie v1.1** reaches **`0.612`** overall on `CaT-MBench` (`Establish` `0.468 → 0.629`, `Object` `0.497 → 0.564` `#1` overall). `v1.1` weights (`v1.1/step-3000.safetensors`), `training_inputs/v1.1/`, full `202,144`-shot VAE caches, and `598 GB` spatial/depth annotations are all live on [Hugging Face](https://huggingface.co/collections/JinPLU/cat-movie-6afcfb908ad5cc8c7f1f9206).
+
 ---
 
 ## Overview
@@ -47,7 +49,7 @@ All checkpoints, datasets, caches, source clips, and benchmark assets live in th
 | Resource | Tier | Summary | Link |
 |---|---|---|---|
 | **Codebase** | **Core** | Planner, renderer training/inference, data curation & `CaT-MBench` (`mspc`) | [GitHub](https://github.com/JinPLu/CaT-Movie) |
-| **CaT-Movie-5B** | **Core** | Finetuned `Wan2.2-TI2V-5B` renderer weights: v1.0 (paper, `step-3000.safetensors`) and v1.1 (`v1.1/step-3000.safetensors`: more training data, refined references), `9.44 GiB` each | [`JinPLU/CaT-Movie`](https://huggingface.co/JinPLU/CaT-Movie) |
+| **CaT-Movie-5B** | **Core** | Finetuned `Wan2.2-TI2V-5B` renderer weights: **v1.1** (`0.612` Avg., recommended, `v1.1/step-3000.safetensors`) & **v1.0** (`0.597` Avg., paper Table 1, `step-3000.safetensors`), `9.44 GiB` each | [`JinPLU/CaT-Movie`](https://huggingface.co/JinPLU/CaT-Movie) |
 | **CaT-Movie-Data** | **Core** | `75,461` scene blocks (`358,302` shots), `Qwen3.7-Flash` schemas, grounding, spatial annotations (boxes, masks, depth, cameras; `598.0 GB`) & `96,000`-window training inputs for v1.0 and v1.1 | [`JinPLU/CaT-Movie-Data`](https://huggingface.co/datasets/JinPLU/CaT-Movie-Data) |
 | **CaT-Movie-T5-Cache** | **Core** | Precomputed `umT5-XXL` BF16 text context tensors (`332,516` unique prompts) | [`JinPLU/CaT-Movie-T5-Cache`](https://huggingface.co/datasets/JinPLU/CaT-Movie-T5-Cache) |
 | **CaT-Movie-VAE-Caches** | **Core** | Precomputed target VAE latents (`Wan2.2 704p` `202,144` + `Wan2.1 480p` `103,365` shots) | [`JinPLU/CaT-Movie-VAE-Caches`](https://huggingface.co/datasets/JinPLU/CaT-Movie-VAE-Caches) |
@@ -71,24 +73,27 @@ One film pool and one unified storyboard schema back both training (**Film Story
 
 | Cut-Gated Evaluation (`CaT-MBench`) | Breaking the Baseline Pareto Frontier (`92` Test Stories) |
 | :---: | :---: |
-| <img src="assets/cut_gate_teaser.png" width="340" alt="CaT-MBench cut-gated evaluation prevents frame copying from inflating consistency"> | <img src="assets/pareto_consistency_control.png" width="460" alt="Inter-shot consistency vs. transition control on CaT-MBench"> |
+| <img src="assets/cut_gate_teaser.png" width="340" alt="CaT-MBench cut-gated evaluation prevents frame copying from inflating consistency"> | <img src="assets/pareto_consistency_control.png" width="460" alt="Inter-shot consistency vs. transition control on CaT-MBench for CaT-Movie v1.0 and v1.1"> |
 
 ### Main Comparison on `CaT-MBench` (`92` Test Stories)
 
-Evaluated with seed `42` across all methods (`Table 1`): baselines convert annotated **reference storyboards** into native prompt formats, whereas **CaT-Movie** renders its **Qwen3.8-27B** planner's storyboard generated solely from the `shots` request (best **bold**, second *italic*; baseline adapters in [`src/mspc/comparison_methods/`](src/mspc/comparison_methods/README.md)):
+Evaluated with seed `42` across all methods (rows 1–8 match Paper Table 1; `CaT-Movie v1.1` follows the identical protocol). Baselines convert annotated **reference storyboards** into native prompt formats, whereas **CaT-Movie** renders its **Qwen3.8-27B** planner's storyboard generated solely from the `shots` request (best **bold**, second *italic*; baseline adapters in [`src/mspc/comparison_methods/`](src/mspc/comparison_methods/README.md)):
 
 | Method (Video Base & Regime) | Cut F1 ↑ | Exec. ↑ | Char. ↑ | Obj. ↑ | Scene ↑ | Est. ↑ | Persist ↑ | Align. ↑ | Avg. ↑ |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Wan2.1, per shot *(1.3B, per-shot)* | *0.998* | *0.994* | 0.219 | 0.169 | 0.310 | 0.274 | 0.694 | 0.181 | 0.474 |
-| Wan2.2, per shot *(5B, per-shot)* | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | *0.701* | 0.174 | 0.497 |
-| StoryMem *(A14B-I2V, per-shot)* | 0.928 | 0.719 | *0.631* | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
-| StoryDiffusion *(A14B-I2V, per-shot)* | 0.905 | 0.825 | 0.300 | 0.265 | 0.245 | *0.597* | 0.535 | 0.171 | 0.468 |
+| Wan2.2, per shot *(5B, per-shot)* | **0.999** | **0.996** | 0.227 | 0.275 | 0.310 | 0.387 | 0.701 | 0.174 | 0.497 |
+| StoryMem *(A14B-I2V, per-shot)* | 0.928 | 0.719 | 0.631 | 0.453 | **0.687** | 0.484 | 0.545 | 0.179 | 0.527 |
+| StoryDiffusion *(A14B-I2V, per-shot)* | 0.905 | 0.825 | 0.300 | 0.265 | 0.245 | 0.597 | 0.535 | 0.171 | 0.468 |
 | IC-LoRA *(A14B-I2V, per-shot)* | 0.976 | 0.961 | 0.168 | 0.133 | 0.406 | 0.452 | 0.663 | 0.176 | 0.484 |
 | MultiShotMaster *(1.3B, joint)* | 0.994 | 0.990 | 0.538 | 0.254 | 0.582 | 0.371 | 0.587 | 0.178 | 0.527 |
-| HoloCine *(A14B-T2V, joint)* | 0.748 | 0.967 | 0.517 | **0.512** | 0.586 | **0.694** | 0.691 | **0.195** | *0.571* |
-| **CaT-Movie (Ours)** *(5B, joint)* | 0.995 | 0.974 | **0.651** | *0.497* | *0.630* | 0.468 | **0.785** | *0.186* | **0.597** |
+| HoloCine *(A14B-T2V, joint)* | 0.748 | 0.967 | 0.517 | *0.512* | 0.586 | **0.694** | 0.691 | **0.195** | 0.571 |
+| **CaT-Movie v1.0 (Ours, paper)** *(5B, joint)* | 0.995 | 0.974 | **0.651** | 0.497 | 0.630 | 0.468 | **0.785** | 0.186 | *0.597* |
+| **CaT-Movie v1.1 (Ours)** *(5B, joint)* | 0.995 | 0.951 | *0.635* | **0.564** | *0.645* | *0.629* | *0.715* | *0.189* | **0.612** |
 
 *(Bases: `Wan2.1-T2V-1.3B`, `Wan2.2-TI2V-5B`, `Wan2.2-I2V-A14B`, `Wan2.2-T2V-A14B`. Columns shorten `Execution`, `Character`, `Object`, `Scene`, `Establish`, `Text Alignment`.)*
+
+Scaling to the full `202K` shot pool (`2×` window exposure) with per-entity distinct-camera-first reference selection and off-grid same-camera canvas shifts lifts **`CaT-Movie v1.1`** to `#1` overall on `Object` (`0.564`) and pushes `Establish` (`0.629`) into the 14B baseline range on the same `5B` backbone. **Which checkpoint to pick:** start with **`v1.1`** for the best overall quality, dynamic within-shot state changes, and object/scene consistency; choose **`v1.0`** for exact paper reproduction, sharpest cut execution (`0.974`), and state persistence (`0.785`)—see the [Model Card](https://huggingface.co/JinPLU/CaT-Movie#what-changed-in-v11) for full details.
 
 ---
 
@@ -103,20 +108,24 @@ uv sync && source .venv/bin/activate   # add --extra gpu-wan for GPU rendering/t
 export MSPC_SHARED_ROOT=/path/to/cat_movie_workspace
 export MSPC_CODE_ROOT="$(pwd)"
 
+# Base Wan2.2-TI2V-5B backbone
 hf download Wan-AI/Wan2.2-TI2V-5B --local-dir "$MSPC_SHARED_ROOT/checkpoints/Wan2.2-TI2V-5B"
+
+# CaT-Movie v1.1 (recommended, 0.612 Avg.)
+hf download JinPLU/CaT-Movie v1.1/step-3000.safetensors --local-dir "$MSPC_SHARED_ROOT/checkpoints/CaT-Movie"
+
+# Or CaT-Movie v1.0 (paper Table 1 reproduction, 0.597 Avg.)
 hf download JinPLU/CaT-Movie step-3000.safetensors --local-dir "$MSPC_SHARED_ROOT/checkpoints/CaT-Movie"
-# v1.1 instead: hf download JinPLU/CaT-Movie v1.1/step-3000.safetensors --local-dir "$MSPC_SHARED_ROOT/checkpoints/CaT-Movie"
 ```
 
 ### 2. Render a story (`704p`, `24 fps`)
 
-Always invoke `run/render_story.py` (rather than stock Wan2.2 `generate.py`) so CaT-Movie's window attention and negative-RoPE routed references are enabled (`--prepare-only` runs CPU preflight first):
-
-For v1.1, pass `--config configs/infer/cat_movie_5b_v1_1.py`; the [model card](https://huggingface.co/JinPLU/CaT-Movie) explains what changed and when to use which checkpoint.
+Always invoke `run/render_story.py` (rather than stock Wan2.2 `generate.py`) so CaT-Movie's window attention and negative-RoPE routed references are enabled (`--prepare-only` runs CPU preflight first). Use `configs/infer/cat_movie_5b_v1_1.py` for **v1.1** (recommended default) or `configs/infer/cat_movie_5b.py` for **v1.0** (paper reproduction):
 
 ```bash
+# Swap --config to configs/infer/cat_movie_5b.py to reproduce v1.0 (Paper Table 1)
 PYTHONPATH=.:src python run/render_story.py \
-  --config configs/infer/cat_movie_5b.py \
+  --config configs/infer/cat_movie_5b_v1_1.py \
   --storyboard examples/sample_storyboard.json \
   --story-id cinedance-008935-b0001-shot01 \
   --output outputs/demo/cinedance-008935-b0001-shot01 \
@@ -195,7 +204,8 @@ PYTHONPATH=src python -m mspc.benchmark.layout_baseline prepare \
 ### Training & Paper Table 2 Ablation Configs
 
 Launch via `run/train.sh <CONFIG>` after restoring caches below (or regenerating via `tools/data/build_shot_targets.py` and `configs/runtime/wan22_final_long_single_shot_targets.py`):
-- [`configs/train/renderer_wan22_final.py`](configs/train/renderer_wan22_final.py) — Full **CaT-Movie** model (`Step 3000` weights released)
+- [`configs/train/renderer_wan22_5b_fulldit_character_coverage_704p.py`](configs/train/renderer_wan22_5b_fulldit_character_coverage_704p.py) — **CaT-Movie v1.1** (`v1.1/step-3000.safetensors` released; uses `training_inputs/v1.1/` + `consumer-index-202k.jsonl`)
+- [`configs/train/renderer_wan22_final.py`](configs/train/renderer_wan22_final.py) — **CaT-Movie v1.0 (paper)** (`step-3000.safetensors` released)
 - [`configs/train/renderer_wan22_final_fixed_role_rows.py`](configs/train/renderer_wan22_final_fixed_role_rows.py) — Table 2: **Trained without identity lines** (`fixed_role_v1`)
 - [`configs/train/renderer_wan22_final_window_shared.py`](configs/train/renderer_wan22_final_window_shared.py) — Table 2: **Trained without routing** (`window_shared_self_only_v1`)
 - [`configs/train/renderer_wan22_final_without_references.py`](configs/train/renderer_wan22_final_without_references.py) — Table 2: **Trained without references** (`memory_prefix = None`)
